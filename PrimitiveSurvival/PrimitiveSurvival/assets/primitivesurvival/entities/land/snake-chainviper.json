@@ -1,0 +1,323 @@
+{
+  "code": "chainviper",
+  "class": "EntityAgent",
+  "hitboxSize": {
+    "x": 1,
+    "y": 0.6
+  },
+  "deadHitboxSize": {
+    "x": 1,
+    "y": 0.6
+  },
+  "falldamage": false,
+  "eyeHeight": 0.3,
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "shape": { "base": "entity/land/snakevenomous" },
+    "size": 1.5,
+    "textures": {
+      "eye": {
+        "base": "primitivesurvival:entity/land/snake/eye-chainviper"
+      },
+      "tongue": {
+        "base": "primitivesurvival:entity/land/snake/tongue-chainviper"
+      },
+      "scales": {
+        "base": "primitivesurvival:entity/land/snake/scales-chainviper"
+      },
+      "bone": {
+        "base": "primitivesurvival:entity/land/snake/bone"
+      }
+    },
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": true
+      },
+      { "code": "interpolateposition" },
+      { "code": "harvestable" },
+      {
+        "code": "despawn",
+        "minPlayerDistance": 48,
+        "minSeconds": 100
+      }
+    ],
+    "animations": [
+      {
+        "code": "die",
+        "animation": "die",
+        "animationSpeed": 1,
+        "weight": 10,
+        "blendMode": "AddAverage",
+        "triggeredBy": { "onControls": [ "dead" ] }
+      },
+      {
+        "code": "idle",
+        "animation": "idle",
+        "blendMode": "AddAverage",
+        "animationSpeed": 1,
+        "weight": 1
+      },
+      {
+        "code": "sleep",
+        "animation": "sleep",
+        "animationSpeed": 0.5,
+        "weight": 1,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "sit",
+        "animation": "sit",
+        "animationSpeed": 0.5,
+        "weight": 1,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "wander",
+        "animation": "wander",
+        "animationSpeed": 0.5,
+        "weight": 1,
+        "blendMode": "AddAverage",
+        "triggeredBy": { "defaultAnim": true }
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      },
+      {
+        "code": "health", // Adds a health bar to the entity
+        "currenthealth": 8,
+        "maxhealth": 8
+      },
+      {
+        "code": "deaddecay", // Makes the dead entity stay for one hour
+        "hoursToDecay": 1
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": true
+      },
+      {
+        "code": "harvestable",
+        "drops": [
+          {
+            "type": "item",
+            "code": "primitivesurvival:snakemeat-raw",
+            "quantity": {
+              "avg": 8,
+              "var": 2
+            }
+          }
+        ]
+      },
+      {
+        "code": "emotionstates", // Adds different emotion states
+        "states": [
+          {
+            "code": "fleeondamage", // After the entity is hit it will try to flee for 10 seconds
+            "duration": 10,
+            "chance": 0.2,
+            "slot": 0,
+            "priority": 1,
+            "accumType": "max"
+          }
+        ]
+      },
+      {
+        "code": "despawn", // Makes the entity despawn if there is no player within 48 blocks
+        "minPlayerDistance": 48,
+        "minSeconds": 5
+      },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "meleeattackvenomous",
+            "entityCodes": [ "player" ],
+            "priority": 3,
+            "damage": 8,
+            "damageType": "SlashingAttack",
+            "slot": 1,
+            "mincooldown": 1500,
+            "maxcooldown": 4500,
+            "movespeed": 0.08,
+            "attackDurationMs": 0,
+            "damagePlayerAtMs": 0,
+            "animation": "wander",
+            "animationSpeed": 0.4,
+            "whenInEmotionState": "aggressiveondamage"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": [ "player" ],
+            "priority": 2.5,
+            "movespeed": 0.01,
+            "seekingRange": 20,
+            "animation": "wander",
+            "mincooldown": 1500,
+            "maxcooldown": 4500,
+            "animationSpeed": 0.4,
+            "whenInEmotionState": "aggressiveondamage"
+          },
+          {
+            "code": "fleeentity",
+            "entityCodes": [ "player" ],
+            "priority": 2,
+            "movespeed": 0.008,
+            "mincooldown": 1500,
+            "maxcooldown": 4500,
+            "seekingRange": 14,
+            "animation": "wander",
+            "animationSpeed": 0.4
+          },
+
+          {
+            "code": "meleeattackvenomous",
+            "entityCodes": [ "player" ],
+            "priority": 1.6,
+            "damage": 8,
+            "slot": 1,
+            "mincooldown": 1500,
+            "maxcooldown": 4500,
+            "movespeed": 0.008,
+            "attackDurationMs": 300,
+            "damagePlayerAtMs": 500,
+            "animation": "wander",
+            "animationSpeed": 0.4
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": [ "hare-*" ],
+            "priority": 1.5,
+            "movespeed": 0.006,
+            "mincooldown": 1500,
+            "maxcooldown": 4500,
+            "animationSpeed": 0.4,
+            "seekingRange": 20,
+            "animation": "wander",
+            "whenNotInEmotionState": "saturated"
+          },
+
+          {
+            "code": "getoutofwater",
+            "priority": 1.4,
+            "movespeed": 0.014,
+            "mincooldown": 1500,
+            "maxcooldown": 4500,
+            "animation": "wander",
+            "animationSpeed": 0.4
+          },
+          {
+            "code": "idle",
+            "priority": 1.38,
+            "minduration": 200000,
+            "maxduration": 800000,
+            "animation": "sleep",
+            "movespeed": 0.0,
+            "animationSpeed": 1,
+            "mincooldown": 10000,
+            "maxcooldown": 30000,
+            "whenNotInEmotionState": "aggressiveondamage",
+            "duringDayTimeFrames": [
+              {
+                "fromHour": 10,
+                "toHour": 18
+              },
+              {
+                "fromHour": 1,
+                "toHour": 4
+              }
+            ],
+            "stopOnNearbyEntityCodes": [ "player" ],
+            "stopRange": 8,
+            "stopOnHurt": true
+          },
+          {
+            "code": "wander",
+            "priority": 1.0,
+            "priorityForCancel": 1.35,
+            "movespeed": 0.008,
+            "mincooldown": 1500,
+            "maxcooldown": 4500,
+            "animation": "wander",
+            "animationSpeed": 0.4,
+            "preferredLightLevel": 20
+          },
+          {
+            "code": "idle",
+            "priority": 5,
+            "minduration": 2000,
+            "maxduration": 30000,
+            "mincooldown": 2000,
+            "maxcooldown": 120000,
+            "animation": "sleep",
+            "movespeed": 0.0,
+            "animationSpeed": 1,
+            "stopOnNearbyEntityCodes": [ "player" ],
+            "stopRange": 8,
+            "stopOnHurt": true
+          },
+          {
+            "code": "lookaround",
+            "priority": 0.5,
+            "animation": "sit",
+            "movespeed": 0.0,
+            "animationSpeed": 0.5,
+            "minduration": 2000,
+            "maxduration": 3000
+          }
+        ]
+      }
+    ],
+    "spawnconditions": {
+      "worldgen": {
+        "TriesPerChunk": {
+          "avg": 0.075,
+          "var": 0
+        },
+        "tryOnlySurface": true,
+        "groupSize": {
+          "dist": "verynarrowgaussian",
+          "avg": 1,
+          "var": 0
+        },
+        "insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
+        "minTemp": 10,
+        "maxTemp": 80,
+        "maxRain": 0.5
+      },
+      "runtime": {
+        "group": "neutral",
+        "tryOnlySurface": true,
+        "mindistancetoplayer": 48,
+        "maxQuantity": 1,
+        "__comment": "Make them spawn away from artifical light so they don't spawn inside farmland",
+        "maxLightLevel": 7,
+        "lightLevelType": "onlyBlockLight",
+        "groupSize": {
+          "dist": "verynarrowgaussian",
+          "avg": 1,
+          "var": 0
+        },
+        "insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
+        "minTemp": 10,
+        "maxTemp": 80,
+        "maxRain": 0.5,
+        "minForest": 0,
+        "maxForest": 0.5,
+        "chance": 0.003
+      }
+    }
+  }
+}

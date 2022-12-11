@@ -1,0 +1,271 @@
+{
+  "code": "bioluminescent",
+  "class": "itembioluminescent",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "jelly",
+        "globe",
+        "worm",
+        "orangejelly"
+      ]
+    }
+  ],
+  "maxstacksize": 64,
+  "shapeByType": {
+    "*-jelly": { "base": "entity/water/jelly" },
+    "*-globe": { "base": "entity/water/globe" },
+    "*-worm": { "base": "entity/water/worm" },
+    "*-orangejelly": { "base": "entity/water/orangejelly" }
+  },
+  "texturesByType": {
+    "*-jelly": {
+      "top": { "base": "entity/water/jelly/top" },
+      "sides": { "base": "entity/water/jelly/sides" },
+      "bottom": { "base": "entity/water/jelly/bottom" }
+    },
+    "*-globe": {
+      "all": { "base": "entity/water/globe" }
+    },
+    "*-worm": {
+      "all": { "base": "entity/water/worm" }
+    },
+    "*-orangejelly": {
+      "orangejelly": { "base": "entity/water/orangejelly" }
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "creatures": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "materialDensity": 600,
+  "fpHandTransformbytype": {
+    "*-jelly": {
+      "translation": {
+        "x": 0.42,
+        "y": -0.45,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 68,
+        "z": -26
+      },
+      "origin": {
+        "x": 0.2,
+        "y": 0.8,
+        "z": 1.3
+      },
+      "scale": 0.99
+    },
+    "*-globe": {
+      "translation": {
+        "x": 0.42,
+        "y": -0.45,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": -22,
+        "z": -86
+      },
+      "origin": {
+        "x": 0.3,
+        "y": 0.8,
+        "z": 0.8
+      },
+      "scale": 2.08
+    },
+    "*-worm": {
+      "translation": {
+        "x": 0.42,
+        "y": -0.45,
+        "z": 0
+      },
+      "rotation": {
+        "x": -54,
+        "y": -37,
+        "z": 67
+      },
+      "origin": {
+        "x": 0.2,
+        "y": 0.5,
+        "z": 0.7
+      },
+      "scale": 1.76
+    },
+    "*-orangejelly": {
+      "translation": {
+        "x": 0.42,
+        "y": -0.45,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 68,
+        "z": -26
+      },
+      "origin": {
+        "x": 0.2,
+        "y": 1.3,
+        "z": 1.3
+      },
+      "scale": 0.99
+    }
+  },
+  "guiTransformbytype": {
+    "*-jelly": {
+      "rotate": true,
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -26,
+        "y": 59,
+        "z": -180
+      },
+      "origin": {
+        "x": 0.55,
+        "y": 1.46,
+        "z": 0.5
+      },
+      "scale": 1.45
+    },
+    "*-globe": {
+      "rotate": true,
+      "translation": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -26,
+        "y": 23,
+        "z": -36
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "scale": 3.5
+    },
+    "*-worm": {
+      "rotate": true,
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -66,
+        "y": 92,
+        "z": 43
+      },
+      "origin": {
+        "x": 0.55,
+        "y": 0.6,
+        "z": 0.52
+      },
+      "scale": 2.29
+    },
+    "*-orangejelly": {
+      "rotate": true,
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -144,
+        "y": -113,
+        "z": 61
+      },
+      "origin": {
+        "x": 0.55,
+        "y": 0.6,
+        "z": 0.52
+      },
+      "scale": 1.45
+    }
+  },
+  "tpHandTransformbytype": {
+    "*-jelly": {
+      "translation": {
+        "x": -2.3,
+        "y": -1.4,
+        "z": 0.1
+      },
+      "rotation": {
+        "x": 13,
+        "y": -169,
+        "z": 83
+      },
+      "origin": {
+        "x": 1.15,
+        "y": 1.8,
+        "z": -0.78
+      },
+      "scale": 0.7799
+    },
+    "*-globe": {
+      "translation": {
+        "x": -2,
+        "y": -1.3,
+        "z": 0.2
+      },
+      "rotation": {
+        "x": 8,
+        "y": -118,
+        "z": 62
+      },
+      "origin": {
+        "x": 0.95,
+        "y": 1.4,
+        "z": 0.12
+      },
+      "scale": 0.7799
+    },
+    "*-worm": {
+      "translation": {
+        "x": -2,
+        "y": -1.3,
+        "z": 0.2
+      },
+      "rotation": {
+        "x": 0,
+        "y": -118,
+        "z": 62
+      },
+      "origin": {
+        "x": 0.95,
+        "y": 1.5,
+        "z": 0.12
+      },
+      "scale": 0.7799
+    },
+    "*-orangejelly": {
+      "translation": {
+        "x": -2.4,
+        "y": -1.3,
+        "z": 0.1
+      },
+      "rotation": {
+        "x": 13,
+        "y": -169,
+        "z": 83
+      },
+      "origin": {
+        "x": 1.05,
+        "y": 1.7,
+        "z": -0.7799
+      },
+      "scale": 0.7799
+    }
+  }
+}

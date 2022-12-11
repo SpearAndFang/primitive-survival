@@ -1,0 +1,10 @@
+{
+  "ingredientPattern": "SPS	P_P	SPS",
+  "width": 3,
+  "height": 3,
+  "ingredients": {
+    "P": { "type": "item", "code": "primitivesurvival:cordage" },
+    "S": { "type": "item", "code": "game:stick" }
+  },
+  "output": { "type": "block", "code": "primitivesurvival:fishbasket-north" }
+} 

@@ -1,0 +1,118 @@
+{
+    "code": "woodspikes",
+    "class": "blockspiketrap",
+    "maxstacksize": 16,
+    "behaviors": [ { "name": "Unstable" } ],
+    "blockmaterial": "Wood",
+    "drawtype": "json",
+    "rainpermeable": true,
+    "lightabsorption": 0,
+    "sideopaque": {
+        "all": false
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "drops": [
+        {
+            "type": "item",
+            "code": "woodspikebundle"
+        }
+    ],
+    "resistance": 1,
+    "requiredminingtier": 0,
+    "shape": { "base": "block/woodspikes" },
+    "textures": {
+        "stake": { "base": "block/stake" }
+    },
+    "combustibleProps": {
+        "burnTemperature": 400,
+        "burnDuration": 5
+    },
+    "materialDensity": 600,
+    "guiTransformByType": {
+        "*": {
+            "translation": {
+                "x": 0,
+                "y": 3,
+                "z": 0
+            },
+            "origin": {
+                "x": 0.5,
+                "y": 0.0625,
+                "z": 0.5
+            },
+            "scale": 1.25
+        }
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.1,
+            "z": 0
+        },
+        "rotation": {
+            "x": 65,
+            "y": 113,
+            "z": 4
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 1.75
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.77,
+            "y": -0.15,
+            "z": -0.64
+        },
+        "rotation": {
+            "x": 0,
+            "y": -71,
+            "z": 18
+        },
+        "origin": {
+            "x": 0.3,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 0.71
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": -45,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 4
+    },
+    "collisionbox": {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.4,
+        "z2": 1
+    },
+    "selectionbox": {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.4,
+        "z2": 1
+    }
+}

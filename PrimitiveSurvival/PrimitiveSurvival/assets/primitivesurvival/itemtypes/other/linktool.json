@@ -1,0 +1,85 @@
+{
+  "code": "linktool",
+  "class": "itemlinktool",
+  "shape": {
+    "base": "item/linktool"
+  },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "maxstacksize": 1,
+  "guiTransform": {
+    "translation": {
+      "x": 7.3,
+      "y": 4.2,
+      "z": 0
+    },
+    "rotation": {
+      "x": -74,
+      "y": -33,
+      "z": 180
+    },
+    "origin": {
+      "x": 0.44,
+      "y": 0.1,
+      "z": 0.38
+    },
+    "scale": 1.79
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": -0.1,
+      "y": 0.7,
+      "z": 0.4
+    },
+    "rotation": {
+      "x": 85,
+      "y": -20,
+      "z": 63
+    },
+    "origin": {
+      "x": 0.2,
+      "y": -0.1,
+      "z": 0.5
+    },
+    "scale": 0.9
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.42,
+      "z": 0
+    },
+    "rotation": {
+      "x": -180,
+      "y": 180,
+      "z": -180
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5299
+    },
+    "scale": 4.1
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.95,
+      "y": 0,
+      "z": 0.2
+    },
+    "rotation": {
+      "x": 55,
+      "y": -118,
+      "z": -28
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 0.55
+  }
+}

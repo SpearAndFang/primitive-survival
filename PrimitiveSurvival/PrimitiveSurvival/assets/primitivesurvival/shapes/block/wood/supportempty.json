@@ -1,0 +1,29 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "bambooorigin",
+			"from": [ 9.0, -12.5, -19.5 ], 
+			"to": [ 9.0, -12.5, -19.5 ], 
+			"rotationOrigin": [ 9.0, -12.5, -19.5 ],
+			"rotationX": 42.0,
+			"rotationY": -90.0,
+			"faces": {
+				"north": { "texture": "#stem-brown", "uv": [ 0.0, 0.0, 0.25, 0.25 ], "enabled": false },
+				"east": { "texture": "#stem-brown", "uv": [ 0.0, 0.0, 0.25, 0.25 ], "enabled": false },
+				"south": { "texture": "#stem-brown", "uv": [ 0.0, 0.0, 0.25, 0.25 ], "enabled": false },
+				"west": { "texture": "#stem-brown", "uv": [ 0.0, 0.0, 0.25, 0.25 ], "enabled": false },
+				"up": { "texture": "#stem-brown", "uv": [ 0.0, 0.0, 0.25, 0.25 ], "enabled": false },
+				"down": { "texture": "#stem-brown", "uv": [ 0.0, 0.0, 0.25, 0.25 ], "enabled": false }
+			}
+		}
+	]}

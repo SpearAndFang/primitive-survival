@@ -1,0 +1,24 @@
+{
+  "ingredientPattern": "P_	_S",
+  "width": 2,
+  "height": 2,
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "game:stone-*",
+      "name": "stone",
+      "allowedVariants": [
+        "granite",
+        "andesite",
+        "basalt",
+        "obsidian",
+        "peridotite"
+      ]
+    },
+    "S": { "type": "item", "code": "game:stick" }
+  },
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:deadfall-set-{stone}-north"
+  }
+}

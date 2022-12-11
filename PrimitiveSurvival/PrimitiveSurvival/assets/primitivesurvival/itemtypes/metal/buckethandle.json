@@ -1,0 +1,102 @@
+{
+	"code": "buckethandle",
+	"variantgroups": [
+		{
+			"code": "material",
+			"states": [ "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ]
+		}
+	],
+	"shapeByType": {
+		"*-copper": { "base": "item/buckethandle" },
+		"*-tinbronze": { "base": "item/buckethandle" },
+		"*-bismuthbronze": { "base": "item/buckethandle" },
+		"*-blackbronze": { "base": "item/buckethandle" },
+		"*-iron": { "base": "item/buckethandle" },
+		"*-meteoriciron": { "base": "item/buckethandle" },
+		"*": { "base": "item/buckethandle" }
+	},
+	"texturesByType": {
+		"*": {
+			"material": { "base": "game:block/metal/ingot/{material}" }
+		}
+	},
+	"maxstacksize": 16,
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ],
+		"primitive": [ "*" ]
+	},
+	"fpHandTransformByType": {
+		"*": {
+			"translation": {
+				"x": 0.1,
+				"y": 0.4,
+				"z": 0.4
+			},
+			"rotation": {
+				"x": -20,
+				"y": 59,
+				"z": 61
+			},
+			"origin": {
+				"x": 0.4,
+				"y": 0.4,
+				"z": 1
+			},
+			"scale": 2.42
+		}
+	},
+	"guiTransformByType": {
+		"*": {
+			"translation": {
+				"x": 3,
+				"y": 0,
+				"z": 0
+			},
+			"rotation": {
+				"x": 117,
+				"y": 0,
+				"z": 0
+			},
+			"origin": {
+				"x": 0.5,
+				"y": -0.15,
+				"z": 0.6
+			},
+			"scale": 1.95
+		}
+	},
+	"groundTransform": {
+		"translation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"rotation": {
+			"x": 90,
+			"y": 0,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0,
+			"z": 0.55
+		},
+		"scale": 3.5
+	},
+	"tpHandTransformByType": {
+		"*": {
+			"translation": {
+				"x": -0.54,
+				"y": -0.08,
+				"z": -0.48
+			},
+			"rotation": {
+				"x": 0,
+				"y": 0,
+				"z": -10
+			},
+			"scale": 1
+		}
+	}
+}

@@ -1,0 +1,325 @@
+{
+  "code": "snake",
+  "class": "itemsnake",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "blackrat", "coachwhip", "pitviper", "chainviper" ]
+    }
+  ],
+  "maxstacksize": 64,
+  "shapebytype": {
+    "*-blackrat": {
+      "base": "entity/land/snake"
+    },
+    "*-coachwhip": {
+      "base": "entity/land/snake"
+    },
+    "*-pitviper": {
+      "base": "entity/land/snakevenomous"
+    },
+    "*-chainviper": {
+      "base": "entity/land/snakevenomous"
+    }
+  },
+  "texturesbytype": {
+    "*": {
+      "eye": {
+        "base": "entity/land/snake/eye-{type}"
+      },
+      "tongue": {
+        "base": "entity/land/snake/tongue-{type}"
+      },
+      "scales": {
+        "base": "entity/land/snake/scales-{type}"
+      },
+      "bone": {
+        "base": "entity/land/snake/bone"
+      }
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "creatures": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "materialDensity": 600,
+  "fpHandTransformbytype": {
+    "*-blackrat": {
+      "rotation": {
+        "x": 123,
+        "y": 95,
+        "z": -180
+      },
+      "origin": {
+        "x": 0.5,
+        "y": -0.05,
+        "z": 0.5
+      },
+      "scale": 1.85
+    },
+    "*-coachwhip": {
+      "rotation": {
+        "x": 123,
+        "y": 95,
+        "z": -180
+      },
+      "origin": {
+        "x": 0.5,
+        "y": -0.05,
+        "z": 0.5
+      },
+      "scale": 1.65
+    },
+    "*-pitviper": {
+      "rotation": {
+        "x": 123,
+        "y": 95,
+        "z": -180
+      },
+      "origin": {
+        "x": 0.4,
+        "y": -0.05,
+        "z": 0.3
+      },
+      "scale": 1.3
+    },
+    "*-chainviper": {
+      "rotation": {
+        "x": 123,
+        "y": 95,
+        "z": -180
+      },
+      "origin": {
+        "x": 0.5,
+        "y": -0.05,
+        "z": 0.5
+      },
+      "scale": 2.14
+    }
+  },
+  "guiTransformbytype": {
+    "*-blackrat": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 148,
+        "y": -127,
+        "z": -8
+      },
+      "origin": {
+        "x": 0.05,
+        "y": 0,
+        "z": 0.45
+      },
+      "scale": 6
+    },
+    "*-coachwhip": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 148,
+        "y": -127,
+        "z": -8
+      },
+      "origin": {
+        "x": 0.05,
+        "y": 0,
+        "z": 0.45
+      },
+      "scale": 5.2
+    },
+    "*-pitviper": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 148,
+        "y": -127,
+        "z": -8
+      },
+      "origin": {
+        "x": 0.05,
+        "y": 0,
+        "z": 0.45
+      },
+      "scale": 4
+    },
+    "*-chainviper": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 148,
+        "y": -127,
+        "z": -8
+      },
+      "origin": {
+        "x": 0.05,
+        "y": 0,
+        "z": 0.45
+      },
+      "scale": 7
+    }
+  },
+  "tpHandTransformbytype": {
+    "*-blackrat": {
+      "translation": {
+        "x": -0.35,
+        "y": -1.1,
+        "z": -0.65
+      },
+      "rotation": {
+        "x": 180,
+        "y": 174,
+        "z": -5
+      },
+      "origin": {
+        "x": 0.4,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "scale": 0.75
+    },
+    "*-coachwhip": {
+        "translation": {
+          "x": -0.35,
+          "y": -1.1,
+          "z": -0.65
+        },
+        "rotation": {
+          "x": 180,
+          "y": 174,
+          "z": -5
+        },
+        "origin": {
+          "x": 0.4,
+          "y": 0.5,
+          "z": 0.45
+        },
+        "scale": 0.65
+    },
+    "*-pitviper": {
+      "translation": {
+        "x": -0.35,
+        "y": -1.1,
+        "z": -0.65
+      },
+      "rotation": {
+        "x": 180,
+        "y": 174,
+        "z": -5
+      },
+      "origin": {
+        "x": 0.3,
+        "y": 0.4,
+        "z": 0.4
+      },
+      "scale": 0.48
+    },
+    "*-chainviper": {
+      "translation": {
+        "x": -0.25,
+        "y": -1.1,
+        "z": -0.65
+      },
+      "rotation": {
+        "x": 180,
+        "y": 174,
+        "z": -5
+      },
+      "origin": {
+        "x": 1.6,
+        "y": 0.6,
+        "z": 0.5
+      },
+      "scale": 0.93
+    }
+  },
+  "groundTransformbytype": {
+    "*-blackrat": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 90,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5299
+      },
+      "scale": 3.43
+    },
+    "*-coachwhip": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 90,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5299
+      },
+      "scale": 3.13
+    },
+    "*-pitviper": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 90,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5299
+      },
+      "scale": 2.2
+    },
+    "*-chainviper": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 90,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5299
+      },
+      "scale": 5.12
+    }
+  }
+}

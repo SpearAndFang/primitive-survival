@@ -1,0 +1,231 @@
+{
+  "code": "metalfishinghook",
+  "maxstacksize": 64,
+  "attributes": {
+    "reinforcementStrengthByType": {
+      "*-copper": 150,
+      "*-tinbronze": 300,
+      "*-bismuthbronze": 300,
+      "*-blackbronze": 400,
+      "*-iron": 800
+    },
+    "handbook": {
+      "groupBy": [ "metalfishinghook-*" ],
+      "createdBy": "metalmolding"
+    }
+  },
+  "variantgroups": [
+    {
+      "code": "metal",
+      "states": [ "bismuth", "bismuthbronze", "blackbronze", "brass", "copper", "gold", "lead", "molybdochalkos", "silver", "tin", "tinbronze", "zinc" ]
+    }
+  ],
+  "attributesByType": {
+    "hook-lead": {
+      "workableTemperature": 0
+    }
+  },
+  "storageFlags": 5,
+
+  "shape": { "base": "item/fishing/fishinghook" },
+  "textures": {
+    "hookmaterial": { "base": "game:block/metal/ingot/{metal}" }
+  },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "materialDensityByType": {
+    "*-bismuth": 9790,
+    "*-bismuthbronze": 7900,
+    "*-blackbronze": 9000,
+    "*-brass": 8500,
+    "*-copper": 8960,
+    "*-gold": 19300,
+    "*-lead": 11300,
+    "*-molybdochalkos": 9600,
+    "*-silver": 10500,
+    "*-tin": 7260,
+    "*-tinbronze": 7600,
+    "*-zinc": 7140
+  },
+  "combustiblePropsByType": {
+    "metalfishinghook-copper": {
+      "meltingPoint": 1084,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-copper"
+      }
+    },
+    "metalfishinghook-brass": {
+      "meltingPoint": 920,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-brass"
+      }
+    },
+    "metalfishinghook-tinbronze": {
+      "meltingPoint": 950,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-tinbronze"
+      }
+    },
+    "metalfishinghook-bismuthbronze": {
+      "meltingPoint": 850,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-bismuthbronze"
+      }
+    },
+    "metalfishinghook-blackbronze": {
+      "meltingPoint": 1020,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-blackbronze"
+      }
+    },
+    "metalfishinghook-gold": {
+      "meltingPoint": 1063,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-gold"
+      }
+    },
+    "metalfishinghook-lead": {
+      "meltingPoint": 327,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-lead"
+      }
+    },
+    "metalfishinghook-tin": {
+      "meltingPoint": 232,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-tin"
+      }
+    },
+    "metalfishinghook-zinc": {
+      "meltingPoint": 419,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-zinc"
+      }
+    },
+    "metalfishinghook-silver": {
+      "meltingPoint": 961,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-silver"
+      }
+    },
+    "metalfishinghook-bismuth": {
+      "meltingPoint": 271,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-bismuth"
+      }
+    },
+    "metalfishinghook-molybdochalkos": {
+      "meltingPoint": 902,
+      "meltingDuration": 30,
+      "smeltedRatio": 6,
+      "smeltedStack": {
+        "type": "item",
+        "code": "game:ingot-molybdochalkos"
+      }
+    }
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": -0.5,
+      "y": 0.4,
+      "z": 0.4
+    },
+    "rotation": {
+      "x": -34,
+      "y": -180,
+      "z": -179
+    },
+    "origin": {
+      "x": 0.4,
+      "y": 0.07,
+      "z": 0.8
+    },
+    "scale": 0.86
+  },
+  "guiTransform": {
+    "translation": {
+      "x": -3,
+      "y": -1.7,
+      "z": 0
+    },
+    "rotation": {
+      "x": -3,
+      "y": -152,
+      "z": 134
+    },
+    "origin": {
+      "x": 0.49,
+      "y": -0.04,
+      "z": 0.56
+    },
+    "scale": 3.4
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.55
+    },
+    "scale": 3.5
+  },
+
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.6,
+      "y": -1.2,
+      "z": -0.85
+    },
+    "rotation": {
+      "x": 0,
+      "y": -180,
+      "z": -115
+    },
+    "scale": 0.53
+  }
+}

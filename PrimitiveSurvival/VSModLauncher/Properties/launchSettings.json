@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "start-debug-in-game": {
+      "commandName": "Executable",
+      "executablePath": "$(VINTAGE_STORY)/Vintagestory.exe",
+      "commandLineArgs": "--addModPath=\"$(SolutionDir)VSModLauncher\\bin\\$(Configuration)\\\\\" \"$(SolutionDir)PrimitiveSurvival\\bin\\$(Configuration)\\\\\" "
+    }
+  }
+}

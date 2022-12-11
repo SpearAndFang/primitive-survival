@@ -1,0 +1,188 @@
+[
+  {
+    "ingredientPattern": "BC,FS",
+    "ingredients": {
+      "B": {
+        "type": "item",
+        "code": "game:blastingpowder"
+      },
+      "C": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      },
+      "F": {
+        "type": "block",
+        "code": "game:linen-*"
+      },
+      "S": {
+        "type": "block",
+        "code": "stake-empty"
+      }
+    },
+    "width": 2,
+    "height": 2,
+    "shapeless": false,
+    "output": {
+      "type": "block",
+      "code": "firework-missile",
+      "quantity": 4
+    }
+  },
+  {
+    "ingredientPattern": "CB,FS",
+    "ingredients": {
+      "C": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      },
+      "B": {
+        "type": "item",
+        "code": "game:blastingpowder",
+        "quantity": 2
+      },
+      "F": {
+        "type": "block",
+        "code": "game:linen-*"
+      },
+      "S": {
+        "type": "block",
+        "code": "stake-empty"
+      }
+    },
+    "width": 2,
+    "height": 2,
+    "shapeless": false,
+    "output": {
+      "type": "block",
+      "code": "firework-fountain",
+      "quantity": 4
+    }
+  },
+  {
+    "ingredientPattern": "BCN,FSM",
+    "ingredients": {
+      "B": {
+        "type": "item",
+        "code": "game:blastingpowder"
+      },
+      "C": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      },
+      "F": {
+        "type": "block",
+        "code": "game:linen-*"
+      },
+      "S": {
+        "type": "block",
+        "code": "stake-empty"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:beenade-*"
+      },
+      "M": {
+        "type": "item",
+        "code": "game:beenade-*"
+      }
+    },
+    "width": 3,
+    "height": 2,
+    "shapeless": false,
+    "output": {
+      "type": "block",
+      "code": "firework-beehive",
+      "quantity": 4
+    }
+  },
+  {
+    "ingredientPattern": "BBB,FSM",
+    "ingredients": {
+      "B": {
+        "type": "item",
+        "code": "game:blastingpowder"
+      },
+      "F": {
+        "type": "block",
+        "code": "game:linen-*"
+      },
+      "S": {
+        "type": "block",
+        "code": "stake-empty"
+      },
+      "M": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      }
+    },
+    "width": 3,
+    "height": 2,
+    "shapeless": false,
+    "output": {
+      "type": "block",
+      "code": "firework-boomer",
+      "quantity": 4
+    }
+  },
+  {
+    "ingredientPattern": "CB,FS",
+    "ingredients": {
+      "C": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      },
+      "B": {
+        "type": "item",
+        "code": "game:blastingpowder",
+        "quantity": 2
+      },
+      "F": {
+        "type": "item",
+        "code": "game:bamboostakes"
+      },
+      "S": {
+        "type": "block",
+        "code": "stake-empty"
+      }
+    },
+    "width": 2,
+    "height": 2,
+    "shapeless": false,
+    "output": {
+      "type": "block",
+      "code": "firework-bamboobarrage",
+      "quantity": 4
+    }
+  },
+  {
+    "ingredientPattern": "CB,FS",
+    "ingredients": {
+      "C": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      },
+      "B": {
+        "type": "item",
+        "code": "game:blastingpowder",
+        "quantity": 2
+      },
+      "F": {
+        "type": "item",
+        "code": "game:fruit-cherry",
+        "quantity": 2
+      },
+      "S": {
+        "type": "block",
+        "code": "stake-empty"
+      }
+    },
+    "width": 2,
+    "height": 2,
+    "shapeless": false,
+    "output": {
+      "type": "block",
+      "code": "firework-cherrybomb",
+      "quantity": 4
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "K,B",
+  "enabled": true,
+  "shapeless": true,
+  "ingredients": {
+    "K": {
+      "type": "item",
+      "code": "game:candle",
+      "quantity": 1
+    },
+    "B": { "type": "block", "code": "primitivesurvival:handofthedead-empty-north", "quantity": 1 }
+  },
+  "name": "handofthedeadcandle",
+  "width": 1,
+  "height": 2,
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:handofthedead-candle-north",
+    "quantity": 1
+  }
+}

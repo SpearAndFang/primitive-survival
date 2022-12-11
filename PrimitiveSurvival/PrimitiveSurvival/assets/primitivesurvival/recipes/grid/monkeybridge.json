@@ -1,0 +1,14 @@
+{
+    "ingredientPattern": "P P,_R_",
+    "width": 3,
+    "height": 2,
+    "ingredients": {
+        "P": { "type": "item", "code": "primitivesurvival:cordage" },
+        "R": { "type": "item", "code": "game:rope" }
+  },
+    "output": {
+        "type": "item",
+        "code": "primitivesurvival:monkeybridge",
+        "quantity": 4
+    }
+}

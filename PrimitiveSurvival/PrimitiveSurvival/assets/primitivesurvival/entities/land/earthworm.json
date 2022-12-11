@@ -1,0 +1,123 @@
+{
+  "code": "earthworm",
+  "class": "entityearthworm",
+  "hitboxSize": {
+    "x": 0.4,
+    "y": 0.4
+  },
+  "deadHitboxSize": {
+    "x": 0.4,
+    "y": 0.4
+  },
+  "falldamage": false,
+  "eyeHeight": 0,
+  "client": {
+    "renderer": "Shape",
+    "shape": { "base": "entity/land/earthworm" },
+    "texture": { "base": "entity/land/earthworm" },
+    "behaviors": [
+        {
+            "code": "controlledphysics",
+            "stepHeight": 0.2
+        },
+
+      { "code": "interpolateposition" },
+      { "code": "carryable" }
+    ],
+    "animations": [
+        {
+            "code": "move",
+            "animation": "move",
+            "animationSpeed": 1,
+            "weight": 0.4,
+            "blendMode": "AddAverage"
+        },
+        {
+            "code": "idle",
+            "animation": "idle",
+            "animationSpeed": 0,
+            "weight": 1,
+            "blendMode": "AddAverage"
+        },
+        {
+            "code": "lookaround",
+            "animation": "burrow",
+            "animationSpeed": 1,
+            "weight": 0.5,
+            "blendMode": "AddAverage"
+        },
+        {
+            "code": "sit",
+            "animation": "sit",
+            "animationSpeed": 0.5,
+            "weight": 0.4,
+            "blendMode": "AddAverage"
+        }
+    ]
+  },
+  "server": {
+    "behaviors": [
+        {
+            "code": "controlledphysics",
+            "stepHeight": 0.2
+        },
+        {
+            "code": "floatupwhenstuck",
+            "onlyWhenDead": false
+        },
+        {
+            "code": "taskai",
+            "aitasks": [
+                {
+                    "code": "idle",
+                    "priority": 1,
+                    "movespeed": 0,
+                    "minduration": 1000,
+                    "maxduration": 3000,
+                    "mincooldown": 2000,
+                    "maxcooldown": 5000,
+                    "animation": "idle",
+                    "animationSpeed": 1,
+                    "preferredLightLevel": 15
+                },
+                {
+                    "code": "wander",
+                    "priority": 0.5,
+                    "movespeed": 0.0016,
+                    "animationSpeed": 1,
+                    "minduration": 1000,
+                    "maxduration": 3000,
+                    "mincooldown": 1000,
+                    "maxcooldown": 5000,
+                    "animation": "move",
+                    "preferredLightLevel": 15
+                },
+                {
+                    "code": "wander",
+                    "priority": 0.5,
+                    "movespeed": 0.0016,
+                    "minduration": 1500,
+                    "maxduration": 1500,
+                    "mincooldown": 2000,
+                    "maxcooldown": 5000,
+                    "animationSpeed": 1,
+                    "animation": "burrow",
+                    "preferredLightLevel": 15
+                },
+                {
+                    "code": "lookaround",
+                    "priority": 0.5,
+                    "movespeed": 0.0003,
+                    "animationSpeed": 0.5,
+                    "minduration": 2000,
+                    "maxduration": 5000,
+                    "mincooldown": 2000,
+                    "maxcooldown": 5000,
+                    "animation": "sit",
+                    "preferredLightLevel": 15
+                }
+            ]
+        }
+    ]
+  }
+}

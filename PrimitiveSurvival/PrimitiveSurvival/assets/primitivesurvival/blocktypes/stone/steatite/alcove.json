@@ -1,0 +1,131 @@
+{
+  "code": "steatitealcove",
+  "class": "blockalcove",
+  "entityclass": "bealcove",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "temporal", "astral", "ethereal" ]
+    },
+    {
+      "code": "type",
+      "states": [ "unlit", "lit" ]
+    },
+    { "loadFromProperties": "abstract/horizontalorientation" }
+  ],
+
+  "shapebytype": {
+    "*-north": {
+      "base": "primitivesurvival:block/stone/steatite/alcove-{type}",
+      "rotateY": 0
+    },
+    "*-east": {
+      "base": "primitivesurvival:block/stone/steatite/alcove-{type}",
+      "rotateY": 270
+    },
+    "*-south": {
+      "base": "primitivesurvival:block/stone/steatite/alcove-{type}",
+      "rotateY": 180
+    },
+    "*-west": {
+      "base": "primitivesurvival:block/stone/steatite/alcove-{type}",
+      "rotateY": 90
+    }
+  },
+  "drawtype": "json",
+  "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal": "transparent",
+    "*-astral": "BlendNoCull"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "faceCullModebyType": {
+    "*-ethereal": "liquid",
+    "*-astral": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
+  "lightHsvbyType": {
+    "*ethereal-lit*": [ 0, 12, 12 ],
+    "*astral-lit*": [ 44, 16, 18 ],
+    "*temporal-lit*": [ 5, 9, 9 ],
+    "*": [ 0, 0, 0 ]
+  },
+  "vertexFlagsbyType": {
+    "*ethereal*": { "glowLevel": 32 },
+    "*astral-lit*": {
+      "glowLevel": 40,
+      "reflective": false
+    },
+    "*temporal-lit*": { "glowLevel": 0 },
+    "*astral*": {
+      "glowLevel": 0,
+      "reflective": false
+    },
+    "*": { "glowLevel": 0 }
+  },
+  "creativeinventory": {
+    "general": [ "*-{material}-unlit-north" ],
+    "construction": [ "*-{material}-unlit-north" ],
+    "primitive": [ "*-{material}-unlit-north" ]
+  },
+  "replaceable": 700,
+  "resistance": 3,
+  "textures": {
+    "alcove": {
+      "base": "block/stone/steatite/alcove/{material}"
+    }
+  },
+  "sounds": {
+    "walk": "game:walk/stone1",
+    "byTool": {
+      "Pickaxe": {
+        "hit": "game:block/rock-hit-pickaxe",
+        "break": "game:block/rock-break-pickaxe"
+      }
+    }
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  },
+
+  "selectionboxByType": {
+    "*": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 1,
+      "z2": 1
+    }
+  },
+  "collisionboxByType": {
+    "*": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 1,
+      "z2": 1
+    }
+  }
+}

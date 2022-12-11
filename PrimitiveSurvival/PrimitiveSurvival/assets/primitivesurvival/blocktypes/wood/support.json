@@ -1,0 +1,201 @@
+{
+  "code": "support",
+  "class": "blocksupport",
+  "entityClassByType": {
+    "*-main-*": "besupport"
+  },
+  "rainpermeable": true,
+  "snowcoverage": false,
+  "lightabsorption": 0,
+  "maxstacksize": 16,
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": ["wood", "bamboo"]
+    },
+    {
+      "code": "type",
+      "states": ["main", "mainempty", "mainbelow", "mainbelowempty"]
+    },
+    {
+      "code": "side",
+      "states": ["north", "south", "east", "west"]
+    }
+  ],
+  "drops": [
+    {
+      "type": "block",
+      "code": "primitivesurvival:support-{material}-main-north",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "drawtype": "json",
+  "shapebytype": {
+    "*-main-north": {
+      "base": "block/{material}/support",
+      "rotateY": 180
+    },
+    "*-main-east": {
+      "base": "block/{material}/support",
+      "rotateY": 90
+    },
+    "*-main-south": {
+      "base": "block/{material}/support"
+    },
+    "*-main-west": {
+      "base": "block/{material}/support",
+      "rotateY": 270
+    },
+    "*-north": {
+      "base": "block/{material}/supportempty",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "block/{material}/supportempty",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "block/{material}/supportempty"
+    },
+    "*-west": {
+      "base": "block/{material}/supportempty",
+      "rotateY": 270
+    }
+  },
+  "texturesByType": {
+    "*-main*": {
+      "support": {
+        "base": "block/{material}/support"
+      },
+      "rope": {
+        "base": "block/raft/rope"
+      }
+    }
+  },
+  "creativeinventory": {
+    "general": ["*-{material}-main-north"],
+    "primitive": ["*-{material}-main-north"]
+  },
+  "materialDensity": 150,
+  "blockmaterial": "Wood",
+  "lightAbsorption": 0,
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "replaceable": 500,
+  "resistance": 1,
+  "fpHandTransform": {
+    "rotate": false,
+    "translation": {
+      "x": 0.3,
+      "y": -0.1,
+      "z": 0
+    },
+    "rotation": {
+      "x": 4,
+      "y": -77,
+      "z": 3
+    },
+    "origin": {
+      "x": 0.9,
+      "y": -3.5,
+      "z": 0.5
+    },
+    "scale": 2.27
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -28,
+      "y": -52,
+      "z": -3
+    },
+    "origin": {
+      "x": 0.5,
+      "y": -0.6,
+      "z": 0
+    },
+    "scale": 0.57
+  },
+  "tpHandTransform": {
+    "rotate": false,
+    "translation": {
+      "x": -1.9899,
+      "y": 1.0099,
+      "z": -0.13
+    },
+    "rotation": {
+      "x": -99,
+      "y": 87,
+      "z": -98
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 7.7,
+      "z": -0.1
+    },
+    "scale": 0.89
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -56,
+      "z": 91
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.1,
+      "z": 0.5
+    },
+    "scale": 3.88
+  },
+  "collisionSelectionBoxesByType": {
+    "*-main-*": [
+      {
+        "x1": 0,
+        "y1": 0.25,
+        "z1": 0.75,
+        "x2": 1,
+        "y2": 0.85,
+        "z2": 1.25,
+        "rotateYByType": {
+          "*-north": 180,
+          "*-east": 90,
+          "*-west": 270
+        }
+      }
+    ],
+    "*-mainempty-*": [
+      {
+        "x1": 0,
+        "y1": 0.25,
+        "z1": 0.75,
+        "x2": 1,
+        "y2": 0.85,
+        "z2": 1.25,
+        "rotateYByType": {
+          "*-south": 180,
+          "*-west": 90,
+          "*-east": 270
+        }
+      }
+    ],
+    "*": [
+      {
+        "x1": 0,
+        "y1": 0.99,
+        "z1": 0,
+        "x2": 0,
+        "y2": 1,
+        "z2": 0
+      }
+    ]
+  }
+}

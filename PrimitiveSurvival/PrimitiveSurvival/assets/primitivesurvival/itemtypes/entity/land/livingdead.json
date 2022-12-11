@@ -1,0 +1,71 @@
+{
+  "code": "livingdead",
+  "class": "itemlivingdead",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": ["normal"]
+    }
+  ],
+  "maxstacksize": 64,
+  "shapeByType": {
+    "*-normal": { "base": "entity/land/livingdead" }
+  },
+  "texturesByType": {
+    "*-normal": {
+      "tinbronze": {
+        "base": "entity/land/livingdead/tinbronze"
+      },
+      "skindark": {
+        "base": "entity/land/livingdead/skindark"
+      },
+      "skinlight": {
+        "base": "entity/land/livingdead/skinlight"
+      },
+      "bonedark": {
+        "base": "entity/land/livingdead/bonedark"
+      },
+      "bonelight": {
+        "base": "entity/land/livingdead/bonelight"
+      }
+    }
+  },
+  "creativeinventory": {
+    "general": ["*"],
+    "creatures": ["*"],
+    "primitive": ["*"]
+  },
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "materialDensity": 600,
+  "fpHandTransform": {
+    "translation": { "x": 0.42, "y": -0.45, "z": 0 },
+    "rotation": { "x": 17, "y": 86, "z": -20 },
+    "origin": { "x": -0.1, "y": 0.7, "z": 1.3 },
+    "scale": 0.88
+  },
+  "guiTransform": {
+    "rotate": true,
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 33,
+      "z": 145
+    },
+    "origin": {
+      "x": 0.4,
+      "y": 3.7,
+      "z": 0.5
+    },
+    "scale": 1.07
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.3, "y": -0.9, "z": -0.8 },
+    "rotation": { "x": -153, "y": 172, "z": 93 },
+    "origin": { "x": 2.25, "y": -0.9, "z": 0.12 },
+    "scale": 0.87
+  }
+}

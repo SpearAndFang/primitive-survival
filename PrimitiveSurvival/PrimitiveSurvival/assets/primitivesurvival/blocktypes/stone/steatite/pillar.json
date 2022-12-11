@@ -1,0 +1,219 @@
+{
+  "code": "steatitepillar",
+  "class": "blockpspillar",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "temporal", "astral", "ethereal" ]
+    },
+    {
+      "code": "type",
+      "states": [ "top", "middle", "bottom" ]
+    },
+    {
+      "code": "dir",
+      "states": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest"
+      ]
+    }
+  ],
+  "creativeinventory": {
+    "general": [ "*-{material}-middle-north" ],
+    "construction": [ "*-{material}-middle-north" ],
+    "primitive": [ "*-{material}-middle-north" ]
+  },
+  "shapebytype": {
+    "*-middle-north": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 0
+    },
+    "*-middle-northeast": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 315
+    },
+    "*-middle-east": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 270
+    },
+    "*-middle-southeast": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 235
+    },
+    "*-middle-south": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 180
+    },
+    "*-middle-southwest": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 135
+    },
+    "*-middle-west": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 90
+    },
+    "*-middle-northwest": {
+      "base": "primitivesurvival:block/basic/pillar/middle",
+      "rotateY": 45
+    },
+    "*-top-north": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 0
+    },
+    "*-top-northeast": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 315
+    },
+    "*-top-east": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 270
+    },
+    "*-top-southeast": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 235
+    },
+    "*-top-south": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 180
+    },
+    "*-top-southwest": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 135
+    },
+    "*-top-west": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 90
+    },
+    "*-top-northwest": {
+      "base": "primitivesurvival:block/basic/pillar/top",
+      "rotateY": 45
+    },
+    "*-bottom-north": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 0
+    },
+    "*-bottom-northeast": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 315
+    },
+    "*-bottom-east": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 270
+    },
+    "*-bottom-southeast": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 235
+    },
+    "*-bottom-south": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 180
+    },
+    "*-bottom-southwest": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 135
+    },
+    "*-bottom-west": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 90
+    },
+    "*-bottom-northwest": {
+      "base": "primitivesurvival:block/basic/pillar/bottom",
+      "rotateY": 45
+    }
+  },
+  "drawtype": "json",
+  "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal": "transparent",
+    "*-astral": "BlendNoCull"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": false
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal": "liquid",
+    "*-astral": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
+  "texturesByType": {
+    "*": {
+      "all": {
+        "base": "primitivesurvival:block/stone/steatite/pillar/side-{material}"
+      },
+      "topbottom": {
+        "base": "primitivesurvival:block/stone/steatite/pillar/topbottom-{material}"
+      }
+    }
+  },
+  "replaceable": 700,
+  "resistance": 3,
+  "sounds": {
+    "walk": "game:walk/stone1",
+    "byTool": {
+      "Pickaxe": {
+        "hit": "game:block/rock-hit-pickaxe",
+        "break": "game:block/rock-break-pickaxe"
+      }
+    }
+  },
+  "drops": [
+    {
+      "type": "block",
+      "code": "steatitepillar-{material}-middle-north",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "collisionbox": {
+    "x1": 0.15,
+    "y1": 0,
+    "z1": 0.15,
+    "x2": 0.85,
+    "y2": 1,
+    "z2": 0.85
+  },
+  "selectionbox": {
+    "x1": 0.15,
+    "y1": 0,
+    "z1": 0.15,
+    "x2": 0.85,
+    "y2": 1,
+    "z2": 0.85
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  }
+}

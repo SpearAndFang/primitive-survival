@@ -1,0 +1,6 @@
+{
+  "code": "textureastral",
+  "textures": {
+    "temporal": { "base": "item/resource/astralgear" }
+  }
+}

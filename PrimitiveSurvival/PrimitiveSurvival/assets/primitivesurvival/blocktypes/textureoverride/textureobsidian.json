@@ -1,0 +1,6 @@
+{
+  "code": "textureobsidian",
+  "textures": {
+    "hookmaterial": { "base": "game:block/stone/rock/obsidian1" }
+  }
+}

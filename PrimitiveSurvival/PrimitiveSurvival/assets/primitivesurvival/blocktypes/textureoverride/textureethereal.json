@@ -1,0 +1,6 @@
+{
+  "code": "textureethereal",
+  "textures": {
+    "temporal": { "base": "item/resource/etherealgear" }
+  }
+}

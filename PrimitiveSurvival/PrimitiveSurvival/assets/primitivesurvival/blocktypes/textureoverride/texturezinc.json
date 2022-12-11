@@ -1,0 +1,6 @@
+{
+  "code": "texturezinc",
+  "textures": {
+    "hookmaterial": { "base": "game:block/metal/ingot/zinc" }
+  }
+}

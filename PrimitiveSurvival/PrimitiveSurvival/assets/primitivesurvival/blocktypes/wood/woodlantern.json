@@ -1,0 +1,302 @@
+{
+  "code": "woodlantern",
+  "storageFlags": 257,
+  "behaviors": [
+    {
+      "name": "OmniAttachable",
+      "properties": {
+        "facingCode": "position",
+        "attachmentAreas": {
+          "down": {
+            "x1": 7,
+            "y1": 15,
+            "z1": 7,
+            "x2": 8,
+            "y2": 15,
+            "z2": 8
+          },
+          "up": {
+            "x1": 4,
+            "y1": 0,
+            "z1": 4,
+            "x2": 11,
+            "y2": 0,
+            "z2": 11
+          },
+          "north": {
+            "x1": 7,
+            "y1": 11,
+            "z1": 0,
+            "x2": 8,
+            "y2": 13,
+            "z2": 1
+          },
+          "east": {
+            "x1": 7,
+            "y1": 11,
+            "z1": 0,
+            "x2": 8,
+            "y2": 13,
+            "z2": 1,
+            "rotateY": 90
+          },
+          "south": {
+            "x1": 7,
+            "y1": 11,
+            "z1": 0,
+            "x2": 8,
+            "y2": 13,
+            "z2": 1,
+            "rotateY": 180
+          },
+          "west": {
+            "x1": 7,
+            "y1": 11,
+            "z1": 0,
+            "x2": 8,
+            "y2": 13,
+            "z2": 1,
+            "rotateY": 270
+          }
+        }
+      }
+    },
+    { "name": "RightClickPickup" }
+  ],
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "heldLeftTpIdleAnimation": "holdinglanternlefthand",
+
+  "variantgroups": [
+    {
+      "code": "wood",
+      "states": [ "aged" ],
+      "loadFromProperties": "block/wood"
+    },
+    {
+      "code": "position",
+      "states": [ "up", "down" ],
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ],
+  "attributes": {
+    "handbook": {
+      "groupBy": [ "woodlantern-*" ]
+    }
+  },
+  "shapebytype": {
+    "*-down": {
+      "base": "block/wood/lantern/woodlanternceiling"
+    },
+    "*-up": {
+      "base": "block/wood/lantern/woodlanternground"
+    },
+    "*-north": {
+      "base": "block/wood/lantern/woodlanternwall",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "block/wood/lantern/woodlanternwall",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "block/wood/lantern/woodlanternwall",
+      "rotateY": 0
+    },
+    "*-west": {
+      "base": "block/wood/lantern/woodlanternwall",
+      "rotateY": 270
+    }
+  },
+  "textures": {
+    "copper": { "base": "game:block/metal/lantern/copper" },
+    "woodlantern": {
+      "base": "block/wood/lantern/woodlantern-{wood}"
+    }
+  },
+  "creativeinventory": {},
+  "creativeinventoryStacksByType": {
+    "*-up": [
+      {
+        "tabs": [ "general", "decorative", "primitive" ],
+        "stacks": [
+          {
+            "type": "block",
+            "code": "woodlantern-{wood}-up",
+            "attributes": {
+              "material": "wood",
+              "lining": "plain",
+              "glass": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "materialDensity": 150,
+  "blockmaterial": "Wood",
+  "lightAbsorption": 0,
+  "lightHsv": [ 4, 2, 16 ],
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "replaceable": 500,
+  "resistance": 1,
+  "fpHandTransform": {
+    "translation": {
+      "x": 0.3,
+      "y": -0.1,
+      "z": 0
+    },
+    "rotation": {
+      "x": -2,
+      "y": 46,
+      "z": 0
+    },
+    "scale": 1.1799
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -28,
+      "y": -52,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.33,
+      "z": 0.5
+    },
+    "scale": 1.37
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.59,
+      "y": -0.89,
+      "z": -0.83
+    },
+    "rotation": {
+      "x": 0,
+      "y": -8,
+      "z": -96
+    },
+    "scale": 0.55
+  },
+  "groundTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2
+  },
+  "selectionboxbytype": {
+    "*-up": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 0.8,
+      "z2": 0.75
+    },
+    "*-down": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 0.75
+    },
+    "*-east": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 270
+    },
+    "*-south": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 180
+    },
+    "*-west": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 90
+    },
+    "*-north": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 0
+    }
+  },
+  "collisionboxbytype": {
+    "*-up": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.6875,
+      "y2": 0.8,
+      "z2": 0.75
+    },
+    "*-down": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 0.75
+    },
+    "*-east": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 270
+    },
+    "*-south": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 180
+    },
+    "*-west": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 90
+    },
+    "*-north": {
+      "x1": 0.25,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 0.75,
+      "y2": 1,
+      "z2": 1,
+      "rotateY": 0
+    }
+  }
+}

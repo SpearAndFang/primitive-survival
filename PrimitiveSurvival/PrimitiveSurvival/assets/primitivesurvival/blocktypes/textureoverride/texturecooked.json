@@ -1,0 +1,15 @@
+{
+  "code": "texturecooked",
+  "textures": {
+    "troutmaterial": { "base": "item/fishing/fish-trout-cooked" },
+    "perchmaterial": { "base": "item/fishing/fish-perch-cooked" },
+    "salmonmaterial": { "base": "item/fishing/fish-salmon-cooked" },
+    "carpmaterial": { "base": "item/fishing/fish-carp-cooked" },
+    "bassmaterial": { "base": "item/fishing/fish-bass-cooked" },
+    "pikematerial": { "base": "item/fishing/fish-pike-cooked" },
+    "arcticcharmaterial": { "base": "item/fishing/fish-arcticchar-cooked" },
+    "catfishmaterial": { "base": "item/fishing/fish-catfish-cooked" },
+    "bluegillmaterial": { "base": "item/fishing/fish-bluegill-cooked" },
+    "mutantmaterial": { "base": "item/fishing/fish-mutant-cooked" }
+  }
+}

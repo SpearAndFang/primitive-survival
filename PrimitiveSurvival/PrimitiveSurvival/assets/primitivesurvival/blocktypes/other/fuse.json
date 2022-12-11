@@ -1,0 +1,450 @@
+{
+  "code": "bfuse",
+  "class": "blockfuse",
+  "entityClass": "befuse",
+  "behaviors": [
+    { "name": "Unstable" },
+    {
+      "name": "CanAttach",
+      "properties": { "sides": ["up", "down"] }
+    }
+  ],
+  "attributes": {
+    "isFence": false,
+    "handbook": {
+      "groupBy": ["bfuse-*"]
+    },
+    "blastRadius": 0,
+    "injureRadius": 2,
+    "blastType": 0
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": ["blackmatch"]
+    },
+    {
+      "code": "dir",
+      "states": [
+        "empty",
+        "n",
+        "e",
+        "s",
+        "w",
+        "ne",
+        "ns",
+        "nw",
+        "es",
+        "ew",
+        "sw",
+        "nes",
+        "new",
+        "nsw",
+        "esw",
+        "nesw"
+      ]
+    }
+  ],
+  "shapebytype": {
+    "*-empty": { "base": "block/fuse/empty" },
+    "*-n": {
+      "base": "block/fuse/w",
+      "rotateY": 270
+    },
+    "*-e": {
+      "base": "block/fuse/w",
+      "rotateY": 180
+    },
+    "*-s": {
+      "base": "block/fuse/w",
+      "rotateY": 90
+    },
+    "*-w": {
+      "base": "block/fuse/w",
+      "rotateY": 0
+    },
+
+    "*-ns": {
+      "base": "block/fuse/ew",
+      "rotateY": 90
+    },
+    "*-ew": {
+      "base": "block/fuse/ew",
+      "rotateY": 0
+    },
+
+    "*-ne": {
+      "base": "block/fuse/sw",
+      "rotateY": 180
+    },
+    "*-nw": {
+      "base": "block/fuse/sw",
+      "rotateY": 270
+    },
+    "*-es": {
+      "base": "block/fuse/sw",
+      "rotateY": 90
+    },
+    "*-sw": {
+      "base": "block/fuse/sw",
+      "rotateY": 0
+    },
+
+    "*-nes": {
+      "base": "block/fuse/nsw",
+      "rotateY": 180
+    },
+    "*-new": {
+      "base": "block/fuse/nsw",
+      "rotateY": 270
+    },
+    "*-nsw": {
+      "base": "block/fuse/nsw",
+      "rotateY": 0
+    },
+    "*-esw": {
+      "base": "block/fuse/nsw",
+      "rotateY": 90
+    },
+
+    "*-nesw": {
+      "base": "block/fuse/nesw",
+      "rotateY": 0
+    }
+  },
+  "maxstacksize": 256,
+  "drops": [
+    {
+      "type": "item",
+      "code": "fuse-{type}"
+    }
+  ],
+  "drawtype": "JSON",
+  "blockmaterial": "cloth",
+  "resistance": 0.2,
+  "lightAbsorption": 0,
+  "combustibleProps": {
+    "burnTemperature": 400,
+    "burnDuration": 1
+  },
+  "materialDensity": 410,
+  "collisionbox": null,
+  "sounds": {
+    "place": "game:block/cloth",
+    "break": "game:block/cloth",
+    "hit": "game:block/cloth",
+    "walk": "game:walk/cloth"
+  },
+  "selectionboxbytype": {
+    "*-empty": {
+      "x1": 0.4,
+      "y1": 0,
+      "z1": 0.4,
+      "x2": 0.6,
+      "y2": 0.22,
+      "z2": 0.6
+    },
+    "*-n": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.4,
+      "x2": 0.6,
+      "y2": 0.22,
+      "z2": 0.6,
+      "rotateY": 270
+    },
+    "*-e": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.4,
+      "x2": 0.6,
+      "y2": 0.22,
+      "z2": 0.6,
+      "rotateY": 180
+    },
+    "*-s": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.4,
+      "x2": 0.6,
+      "y2": 0.22,
+      "z2": 0.6,
+      "rotateY": 90
+    },
+    "*-w": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.4,
+      "x2": 0.6,
+      "y2": 0.22,
+      "z2": 0.6
+    },
+
+    "*-ns": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.4,
+      "x2": 1,
+      "y2": 0.22,
+      "z2": 0.6,
+      "rotateY": 90
+    },
+    "*-ew": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.4,
+      "x2": 1,
+      "y2": 0.22,
+      "z2": 0.6
+    }
+  },
+  "selectionboxesbytype": {
+    "*-sw": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 0
+      }
+    ],
+    "*-ne": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1,
+        "rotateY": 180
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 180
+      }
+    ],
+    "*-nw": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1,
+        "rotateY": 270
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 270
+      }
+    ],
+    "*-es": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1,
+        "rotateY": 90
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 90
+      }
+    ],
+
+    "*-nes": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1,
+        "rotateY": 180
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 180
+      }
+    ],
+    "*-new": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1,
+        "rotateY": 270
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 270
+      }
+    ],
+    "*-nsw": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1,
+        "rotateY": 0
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 0
+      }
+    ],
+    "*-esw": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1,
+        "rotateY": 90
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 0.4,
+        "y2": 0.22,
+        "z2": 0.6,
+        "rotateY": 90
+      }
+    ],
+
+    "*-nesw": [
+      {
+        "x1": 0.4,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.6,
+        "y2": 0.22,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.4,
+        "x2": 1,
+        "y2": 0.22,
+        "z2": 0.6
+      }
+    ]
+  },
+
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "facecullmode": "nevercull",
+  "requiredminingtier": 0,
+  "creativeinventory": {},
+
+  "textures": {
+    "fuse": {
+      "base": "block/fuse/{type}"
+    }
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": -45
+    },
+    "scale": 1.19
+  },
+  "fpHandTransform": {
+    "rotation": {
+      "x": 12,
+      "y": 18,
+      "z": 113
+    },
+    "scale": 1.2
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.18,
+      "y": -0.1,
+      "z": -0.87
+    },
+    "rotation": {
+      "x": -41,
+      "y": -16,
+      "z": 102
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.1,
+      "z": 0.5
+    },
+    "scale": 0.67
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 93,
+      "z": 91
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3.62
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"ingredient": {
+		"type": "item",
+		"code": "game:ingot-*",
+		"name": "metal",
+		"allowedVariants": [ "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ]
+	},
+	"pattern": [
+		[
+			"____########____",
+			"___#________#___",
+			"___#________#___",
+			"___#________#___"
+		]
+	],
+	"name": "Bucket Handle",
+	"output": {
+		"type": "item",
+		"code": "buckethandle-{metal}"
+	}
+}

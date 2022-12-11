@@ -1,0 +1,26 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Cube",
+			"from": [ 0.0, 0.0, 0.0 ], 
+			"to": [ 16.0, 15.0, 16.0 ], 
+			"faces": {
+				"north": { "texture": "#earthwormcastings", "uv": [ 8.0, 8.0, 16.0, 16.0 ], "autoUv": false },
+				"east": { "texture": "#earthwormcastings", "uv": [ 8.0, 8.0, 16.0, 16.0 ], "autoUv": false },
+				"south": { "texture": "#earthwormcastings", "uv": [ 8.0, 8.0, 16.0, 16.0 ], "autoUv": false },
+				"west": { "texture": "#earthwormcastings", "uv": [ 8.0, 8.0, 16.0, 16.0 ], "autoUv": false },
+				"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 8.0, 8.0 ], "autoUv": false },
+				"down": { "texture": "#earthwormcastings", "uv": [ 8.0, 8.0, 16.0, 16.0 ], "autoUv": false }
+			}
+		}
+	]}

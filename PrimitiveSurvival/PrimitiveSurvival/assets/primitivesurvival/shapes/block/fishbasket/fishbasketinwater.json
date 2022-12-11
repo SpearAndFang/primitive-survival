@@ -1,0 +1,27 @@
+{
+  "editor": {
+    "allAngles": false,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {},
+  "elements": [
+    {
+      "name": "Origin",
+      "from": [0.0, 0.0, 0.0],
+      "to": [0.0, 0.0, 0.0],
+      "rotationOrigin": [8.0, 0.0, 8.0],
+      "rotationY": 180.0,
+      "faces": {
+        "north": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "east": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "south": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "west": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "up": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "down": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] }
+      }
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "code": "steatitewindow",
+  "class": "blocknsew",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "temporal", "astral", "ethereal" ]
+    },
+    { "loadFromProperties": "abstract/horizontalorientation" }
+  ],
+  "shapebytype": {
+    "*-north": {
+      "base": "primitivesurvival:block/stone/steatite/window",
+      "rotateY": 0
+    },
+    "*-east": {
+      "base": "primitivesurvival:block/stone/steatite/window",
+      "rotateY": 270
+    },
+    "*-south": {
+      "base": "primitivesurvival:block/stone/steatite/window",
+      "rotateY": 180
+    },
+    "*-west": {
+      "base": "primitivesurvival:block/stone/steatite/window",
+      "rotateY": 90
+    }
+  },
+  "drawtype": "json",
+  "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal": "transparent",
+    "*-astral": "BlendNoCull"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": false
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal": "liquid",
+    "*-astral": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
+  "creativeinventory": {
+    "general": [ "*-{material}-north" ],
+    "construction": [ "*-{material}-north" ],
+    "primitive": [ "*-{material}-north" ]
+  },
+  "replaceable": 700,
+  "resistance": 3,
+  "textures": {
+    "horizontal": {
+      "base": "block/stone/steatite/window/{material}-horizontal"
+    },
+    "vertical": { "base": "block/stone/steatite/window/{material}-vertical" }
+  },
+  "sounds": {
+    "walk": "game:walk/stone1",
+    "byTool": {
+      "Pickaxe": {
+        "hit": "game:block/rock-hit-pickaxe",
+        "break": "game:block/rock-break-pickaxe"
+      }
+    }
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  },
+
+  "selectionboxByType": {
+    "*-north": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 0
+    },
+    "*-south": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 180
+    },
+    "*-west": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 270
+    },
+    "*-east": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 90
+    }
+  },
+  "collisionboxByType": {
+    "*-north": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 0
+    },
+    "*-south": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 180
+    },
+    "*-west": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 270
+    },
+    "*-east": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.75,
+      "rotateY": 90
+    }
+  }
+}

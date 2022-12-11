@@ -1,0 +1,9 @@
+[
+  {
+    "file": "game:itemtypes/tool/hoe",
+    "side": "server",
+    "op": "replace",
+    "path": "/class",
+    "value": "ItemHoeExtended"
+  }
+]

@@ -1,0 +1,303 @@
+{
+  "code": "treehollowgrown",
+  "class": "blocktreehollowgrown",
+  "entityClass": "betreehollowgrown",
+    "behaviors": [
+      {
+        "name": "PushEventOnBlockBroken",
+        "properties": { "eventName": "testForDecay" }
+      }
+    ],
+    "attributes": {
+      "preventsDecay": true,
+      "forageStatAffected": true,
+      "treeFellingGroupCode": "{wood}",
+      "treeFellingGroupSpreadIndex": 3
+    },
+    "variantgroups": [
+      {
+        "code": "type",
+        "states": [ "base", "base2", "up", "up2" ]
+      },
+      {
+        "code": "wood",
+        "states": [ "acacia", "birch", "kapok", "larch", "maple", "oak", "pine", "walnut" ]
+      },
+      {
+        "code": "side",
+        "loadFromProperties": "abstract/horizontalorientation"
+      }
+    ],
+    "drops": [],
+    "sideopaque": {
+      "all": false
+    },
+    "sidesolid": {
+      "all": false
+    },
+    "shapebytype": {
+      "*-north": {
+        "base": "primitivesurvival:block/wood/treehollow-{type}"
+      },
+      "*-east": {
+        "base": "primitivesurvival:block/wood/treehollow-{type}",
+        "rotateY": 270
+      },
+      "*-south": {
+        "base": "primitivesurvival:block/wood/treehollow-{type}",
+        "rotateY": 180
+      },
+      "*-west": {
+        "base": "primitivesurvival:block/wood/treehollow-{type}",
+        "rotateY": 90
+      }
+    },
+    "sounds": {
+      "place": "game:block/planks",
+      "walk": "game:walk/wood",
+      "hit": "game:block/planks",
+      "break": "game:block/planks",
+      "byTool": {
+        "Axe": {
+          "hit": "game:block/chop",
+          "break": "game:block/planks"
+        }
+      }
+    },
+    "combustiblePropsByType": {
+      "treehollow*-birch-*": {
+        "burnTemperature": 800,
+        "burnDuration": 58
+      },
+      "treehollow*-oak-*": {
+        "burnTemperature": 800,
+        "burnDuration": 78
+      },
+      "treehollow*-pine-*": {
+        "burnTemperature": 800,
+        "burnDuration": 40
+      },
+      "treehollow*-acacia-*": {
+        "burnTemperature": 800,
+        "burnDuration": 69
+      },
+      "treehollow*-kapok-*": {
+        "burnTemperature": 800,
+        "burnDuration": 27
+      },
+      "treehollow*-maple-*": {
+        "burnTemperature": 800,
+        "burnDuration": 59
+      },
+      "*": {
+        "burnTemperature": 800,
+        "burnDuration": 52
+      }
+    },
+    "replaceable": 500,
+    "resistance": 4.5,
+    "lightAbsorption": 0,
+    "textures": {
+      "sides": {
+        "base": "game:block/wood/bark/{wood}"
+      },
+      "inside": {
+        "base": "block/wood/inside"
+      },
+      "topbottom": {
+        "base": "game:block/wood/treetrunk/{wood}"
+      },
+      "baitmaterial": {
+        "base": "primitivesurvival:item/seeds"
+      }
+    },
+    "maxStackSize": 16,
+    "materialDensity": 700,
+    "drawtype": "json",
+    "blockmaterial": "Wood",
+    "requiredMiningTier": 1,
+    "heldTpIdleAnimation": "holdbothhandslarge",
+    "heldTpUseAnimation": "twohandplaceblock",
+    "tpHandTransform": {
+      "translation": {
+        "x": -1.2,
+        "y": -1.1,
+        "z": -0.8
+      },
+      "rotation": {
+        "x": -2,
+        "y": 25,
+        "z": -78
+      },
+      "scale": 0.37
+    },
+    "guiTransform": {
+      "rotation": {
+        "x": -22.6,
+        "y": -145,
+        "z": 0
+      }
+    },
+    "CollisionSelectionBoxesByType": {
+      "treehollow*-up*": [
+        {
+          "x1": 0,
+          "y1": 0.7799,
+          "z1": 0,
+          "x2": 1,
+          "y2": 1,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0.25,
+          "y1": 0.23,
+          "z1": 0,
+          "x2": 0,
+          "y2": 0.7799,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 1,
+          "y1": 0.23,
+          "z1": 0,
+          "x2": 0.75,
+          "y2": 0.7799,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 1,
+          "y2": 0.23,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0.25,
+          "y1": 0.23,
+          "z1": 0,
+          "x2": 0.75,
+          "y2": 0.78,
+          "z2": 0.25,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        }
+      ],
+      "treehollow*-base*": [
+        {
+          "x1": 0,
+          "y1": 0.8114,
+          "z1": 0,
+          "x2": 1,
+          "y2": 1,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0.7185,
+          "y1": 0.03,
+          "z1": 0,
+          "x2": 1,
+          "y2": 0.8114,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0,
+          "y1": 0.03,
+          "z1": 0,
+          "x2": 0.2873,
+          "y2": 0.8114,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 1,
+          "y2": 0.03,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0.2873,
+          "y1": 0.03,
+          "z1": 0,
+          "x2": 0.7185,
+          "y2": 0.8114,
+          "z2": 0.25,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0.5935,
+          "y1": 0.625,
+          "z1": 0.75,
+          "x2": 0.7185,
+          "y2": 0.8125,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        },
+        {
+          "x1": 0.2873,
+          "y1": 0.5625,
+          "z1": 0.75,
+          "x2": 0.406,
+          "y2": 0.8125,
+          "z2": 1,
+          "rotateYByType": {
+            "*-west": 90,
+            "*-south": 180,
+            "*-east": 270
+          }
+        }
+      ]
+    }
+  }

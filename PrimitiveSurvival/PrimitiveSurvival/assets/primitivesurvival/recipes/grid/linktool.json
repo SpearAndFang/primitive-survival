@@ -1,0 +1,53 @@
+{
+  "ingredientPattern": "HCK,OPB,_M_",
+  "ingredients": {
+    "H": {
+      "type": "item",
+      "code": "game:hammer-*",
+      "isTool": true,
+      "toolDurabilityCost": 10
+    },
+    "C": {
+      "type": "item",
+      "code": "game:chisel-*",
+      "isTool": true,
+      "toolDurabilityCost": 10
+    },
+    "K": {
+      "type": "item",
+      "code": "game:knife-*",
+      "isTool": true,
+      "toolDurabilityCost": 10
+    },
+    "O": {
+      "type": "item",
+      "code": "game:ore-olivine"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:metalplate-*",
+      "allowedVariants": [
+        "tinbronze",
+        "bismuthbronze",
+        "iron",
+        "meteoriciron",
+        "steel"
+      ]
+    },
+    "B": {
+      "type": "item",
+      "code": "game:bone"
+    },
+    "M": {
+      "type": "block",
+      "code": "game:metal-parts"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "output": {
+    "type": "item",
+    "code": "primitivesurvival:linktool",
+    "quantity": 1
+  }
+}

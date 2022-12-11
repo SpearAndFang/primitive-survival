@@ -1,0 +1,9 @@
+[
+  {
+    "file": "game:itemtypes/resource/stick",
+    "side": "server",
+    "op": "add",
+    "path": "/class",
+    "value": "itemstick"
+  }
+]

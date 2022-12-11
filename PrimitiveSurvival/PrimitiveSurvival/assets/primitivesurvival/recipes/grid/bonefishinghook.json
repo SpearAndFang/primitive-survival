@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "K,B",
+  "enabled": true,
+  "shapeless": false,
+  "ingredients": {
+    "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+    "B": { "type": "item", "code": "game:bone", "quantity": 1 }
+  },
+  "name": "bonefishinghook",
+  "width": 1,
+  "height": 2,
+  "output": {
+    "type": "item",
+    "code": "primitivesurvival:fishinghook-bone",
+    "quantity": 1
+  }
+}

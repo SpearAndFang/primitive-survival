@@ -1,0 +1,213 @@
+{
+  "code": "fireflies",
+  "class": "entityfireflies",
+  "hitboxSize": {
+    "x": 0.3,
+    "y": 0.3
+  },
+  "falldamage": false,
+  "eyeHeight": 0.2,
+  "knockbackResistance": 10,
+  "drops": [],
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "treetop", "mysticlantern", "blueghost", "rover", "fairyring", "candle", "marshimp" ]
+    }
+  ],
+  "attributesbytype": {
+    "*-treetop": {
+      "lightHsv": [ 34, 7, 5 ],
+      "strobeFrequency": 2.0,
+      "minLightLevel": 1.0
+    },
+    "*-mysticlantern": {
+      "lightHsv": [ 13, 7, 7 ],
+      "minLightLevel": 1.0
+    },
+    "*-blueghost": {
+      "lightHsv": [ 43, 7, 9 ],
+      "minLightLevel": 2
+    },
+    "*-rover": {
+      "lightHsv": [ 17, 7, 5 ],
+      "strobeFrequency": 2.5,
+      "minLightLevel": 0.4
+    },
+    "*-fairyring": {
+      "lightHsv": [ 37, 7, 7 ],
+      "minLightLevel": 1.0
+    },
+    "*-candle": {
+      "lightHsv": [ 5, 7, 7 ],
+      "strobeFrequency": 4.0,
+      "minLightLevel": 2.0
+    },
+    "*-marshimp": {
+      "lightHsv": [ 3, 7, 6 ],
+      "minLightLevel": 3.0
+    },
+    "*": {
+      "lightHsv": [ 0, 0, 0 ],
+      "strobeFrequency": 2.0,
+      "minLightLevel": 1.0
+    }
+  },
+  "client": {
+    "renderer": "entitygenericshaperenderer",
+    "shapebytype": {
+      "*-mysticlantern*": {
+        "base": "entity/land/firefliesglowing"
+      },
+      "*-blueghost*": {
+        "base": "entity/land/firefliesglowing"
+      },
+      "*-fairyring*": {
+        "base": "entity/land/firefliesglowing"
+      },
+      "*-marshimp*": {
+        "base": "entity/land/firefliesglowing"
+      },
+      "*": {
+        "base": "entity/land/fireflies"
+      }
+    },
+    "size": 1.4,
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 0.6
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": false
+      },
+      { "code": "interpolateposition" },
+      { "code": "carryable" }
+    ],
+    "animations": [
+      {
+        "code": "wander",
+        "animation": "idle",
+        "blendMode": "AddAverage",
+        "weight": 1
+      }
+    ],
+    "texturesbytype": {
+      "*-treetop*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "color": {
+          "base": "entity/land/fireflies/34"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      },
+      "*-mysticlantern*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "color": {
+          "base": "entity/land/fireflies/13"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      },
+      "*-blueghost*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "color": {
+          "base": "entity/land/fireflies/6"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      },
+      "*-rover*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "color": {
+          "base": "entity/land/fireflies/17"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      },
+      "*-fairyring*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "color": {
+          "base": "entity/land/fireflies/37"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      },
+      "*-candle*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "color": {
+          "base": "entity/land/fireflies/18"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      },
+      "*-marshimp*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "color": {
+          "base": "entity/land/fireflies/20"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      },
+      "*": {
+        "plug": {
+          "base": "entity/land/fireflies/plug"
+        },
+        "bait": {
+          "base": "entity/land/fireflies/bait"
+        },
+        "glass": {
+          "base": "entity/land/fireflies/glass"
+        }
+      }
+    }
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 0.6
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": false
+      },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "wander",
+            "priority": 1,
+            "movespeed": 0,
+            "animationSpeed": 1.0,
+            "animation": "idle"
+          }
+        ]
+      }
+    ]
+  }
+}

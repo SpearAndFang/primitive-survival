@@ -1,0 +1,46 @@
+[
+  {
+    "ingredientPattern": "B_B,CB_,B_B",
+    "ingredients": {
+      "B": {
+        "type": "item",
+        "code": "game:stick"
+      },
+      "C": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "shapeless": false,
+    "enabled": false,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:support-wood-main-north",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "B_B,CB_,B_B",
+    "ingredients": {
+      "B": {
+        "type": "item",
+        "code": "game:bamboostakes"
+      },
+      "C": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "shapeless": false,
+    "enabled": false,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:support-bamboo-main-north",
+      "quantity": 1
+    }
+  }
+]

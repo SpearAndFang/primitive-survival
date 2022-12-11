@@ -1,0 +1,190 @@
+{
+  "code": "fishbasketinwater",
+  "class": "blockfishbasket",
+  "entityclass": "befishbasket",
+  "behaviors": [ { "name": "UnstableFalling" } ],
+  "maxstacksize": 4,
+  "variantgroups": [ { "loadFromProperties": "abstract/horizontalorientation" } ],
+  "shapebytype": {
+    "*-north": {
+      "base": "block/fishbasket/fishbasket",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "block/fishbasket/fishbasket",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "block/fishbasket/fishbasket",
+      "rotateY": 0
+    },
+    "*-west": {
+      "base": "block/fishbasket/fishbasket",
+      "rotateY": 270
+    }
+  },
+  "dropsbytype": {
+    "fishbasket*": [
+      {
+        "type": "block",
+        "code": "fishbasket-north",
+        "quantity": { "avg": 1 }
+      }
+    ]
+  },
+  "drawtype": "JSON",
+  "blockmaterial": "wood",
+  "lightAbsorption": 0,
+  "collisionbox": {
+    "x1": 0.1,
+    "y1": 0,
+    "z1": 0,
+    "x2": 0.9,
+    "y2": 0.8,
+    "z2": 0.9
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "resistance": 0.75,
+  "requiredminingtier": 0,
+  "sounds": {
+    "place": "game:block/planks",
+  },
+  "textures": {
+    "stringmaterial": {
+      "base": "game:block/fat"
+    },
+    "woodmaterial": {
+      "base": "game:block/wood/debarked/oak"
+    },
+    "bassmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-bass-raw"
+    },
+    "troutmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-trout-raw"
+    },
+    "perchmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-perch-raw"
+    },
+    "salmonmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-salmon-raw"
+    },
+    "carpmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-carp-raw"
+    },
+    "pikematerial": {
+      "base": "primitivesurvival:item/fishing/fish-pike-raw"
+    },
+    "arcticcharmaterial": { "base": "item/fishing/fish-arcticchar-raw" },
+    "catfishmaterial": { "base": "item/fishing/fish-catfish-raw" },
+    "bluegillmaterial": { "base": "item/fishing/fish-bluegill-raw" },
+    "mutantmaterial": { "base": "item/fishing/fish-mutant-raw" },
+    "baitmaterial": {
+      "base": "primitivesurvival:item/fishing/bait"
+    }
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 1,
+      "y": 3.9,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.2625,
+      "z": 0.5
+    },
+    "scale": 1.4
+  },
+  "fpHandTransform": {
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 90
+    },
+    "scale": 1.2
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.9,
+      "y": -0.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -41,
+      "y": 83,
+      "z": 61
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.1,
+      "z": 0.5
+    },
+    "scale": 0.67
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3
+  },
+  "selectionboxesByType": {
+    "*-north": [
+      {
+        "x1": 0.1,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.9,
+        "y2": 0.8,
+        "z2": 1
+      }
+    ],
+    "*-south": [
+      {
+        "x1": 0.1,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.9,
+        "y2": 0.8,
+        "z2": 1
+      }
+    ],
+    "*-west": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.1,
+        "x2": 1,
+        "y2": 0.8,
+        "z2": 0.9
+      }
+    ],
+
+    "*-east": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.1,
+        "x2": 1,
+        "y2": 0.8,
+        "z2": 0.9
+      }
+    ]
+  }
+}

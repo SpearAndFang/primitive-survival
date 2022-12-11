@@ -1,0 +1,241 @@
+{
+  "code": "firework",
+  "class": "blockfirework",
+  "entityClass": "befirework",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": ["missile", "fountain", "beehive", "boomer", "bamboobarrage", "cherrybomb"]
+    }
+  ],
+  "attributes": {
+    "blastRadius": 0,
+    "injureRadius": 2,
+    "blastType": 0
+  },
+  "behaviors": [{ "name": "Unstable" }],
+  "shape": {
+      "base": "block/firework/{type}",
+  },
+  "maxstacksize": 64,
+  "drops": [
+    {
+      "type": "block",
+      "code": "firework-{type}"
+    }
+  ],
+  "drawtype": "JSON",
+  "blockmaterial": "wood",
+  "resistance": 1,
+  "lightAbsorption": 0,
+  "combustibleProps": {
+    "burnTemperature": 1400,
+    "burnDuration": 1
+  },
+  "materialDensity": 600,
+  "collisionselectionboxesbytype": {
+    "*-missile": [
+      {
+        "x1": 0.35,
+        "y1": 0,
+        "z1": 0.35,
+        "x2": 0.65,
+        "y2": 1,
+        "z2": 0.65
+      }
+    ],
+    "*-fountain": [
+      {
+        "x1": 0.35,
+        "y1": 0,
+        "z1": 0.35,
+        "x2": 0.65,
+        "y2": 0.8,
+        "z2": 0.65
+      }
+    ],
+    "*-beehive": [
+      {
+        "x1": 0.275,
+        "y1": 0,
+        "z1": 0.275,
+        "x2": 0.725,
+        "y2": 0.8315,
+        "z2": 0.725
+      }
+    ],
+    "*-boomer": [
+      {
+        "x1": 0.275,
+        "y1": 0,
+        "z1": 0.275,
+        "x2": 0.725,
+        "y2": 1,
+        "z2": 0.725
+      }
+    ],
+    "*-bamboobarrage": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0.3,
+        "x2": 0.7,
+        "y2": 1,
+        "z2": 0.7
+      }
+    ],
+    "*-cherrybomb": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0.3,
+        "x2": 0.7,
+        "y2": 1,
+        "z2": 0.7
+      }
+    ]
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "requiredminingtier": 0,
+  "sounds": {
+    "place": "game:block/planks",
+    "walk": "game:block/planks"
+  },
+
+  "creativeinventory": {
+    "general": ["firework-*"],
+    "decorative": ["firework-*"],
+    "primitive": ["firework-*"]
+  },
+
+  "texturesbytype": {
+    "*-missile": {
+      "firework": {
+        "base": "block/firework/{type}"
+      },
+      "wood": {
+        "base": "game:block/wood/displaycase/wood"
+      },
+      "fuse": {
+        "base": "game:block/bone-yellow"
+      }
+    },
+    "*-fountain": {
+      "firework": {
+        "base": "block/firework/{type}"
+      },
+      "wood": {
+        "base": "game:block/wood/displaycase/wood"
+      },
+      "fuse": {
+        "base": "game:block/bone-yellow"
+      }
+    },
+    "*-beehive": {
+      "firework": {
+        "base": "block/firework/{type}"
+      },
+      "wood": {
+        "base": "game:block/wood/displaycase/wood"
+      },
+      "fuse": {
+        "base": "game:block/bone-yellow"
+      }
+    },
+    "*-boomer": {
+      "firework": {
+        "base": "block/firework/{type}"
+      },
+      "wood": {
+        "base": "game:block/wood/displaycase/wood"
+      },
+      "fuse": {
+        "base": "game:block/bone-yellow"
+      }
+    },
+    "*-bamboobarrage": {
+      "stem": {
+        "base": "game:block/plant/bamboo/stem-brown"
+      },
+      "wood": {
+        "base": "game:block/wood/displaycase/wood"
+      },
+      "fuse": {
+        "base": "game:block/bone-yellow"
+      }
+    },
+    "*-cherrybomb": {
+      "cherry": {
+        "base": "game:item/food/fruit/cherry"
+      },
+      "wood": {
+        "base": "game:block/wood/displaycase/wood"
+      },
+      "fuse": {
+        "base": "game:block/bone-yellow"
+      }
+    }
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": -45
+    },
+    "scale": 2
+  },
+  "fpHandTransform": {
+    "rotation": {
+      "x": -180,
+      "y": 101,
+      "z": 133
+    },
+    "origin": {
+      "x": 0.7,
+      "y": 0.6,
+      "z": 0.5
+    },
+    "scale": 1.31
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.1799,
+      "y": -0.1,
+      "z": -0.87
+    },
+    "rotation": {
+      "x": -41,
+      "y": 180,
+      "z": 102
+    },
+    "origin": {
+      "x": 0.7,
+      "y": 0.1,
+      "z": 0.5
+    },
+    "scale": 0.67
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 93,
+      "z": 91
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3.62
+  }
+}

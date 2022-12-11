@@ -1,0 +1,102 @@
+[
+  {
+    "ingredientPattern": "K,H",
+    "enabled": false,
+    "shapeless": false,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:saw-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "game:plank-*",
+        "quantity": 1
+      }
+    },
+    "name": "pipe",
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:pipe-wood-plain-none-north",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": false,
+    "shapeless": false,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "block",
+        "code": "primitivesurvival:pipe-wood-plain-none-north",
+        "quantity": 1
+      }
+    },
+    "name": "pipe",
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:pipe-wood-aerated-none-north",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": false,
+    "shapeless": false,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:saw-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "game:bamboostakes",
+        "quantity": 1
+      }
+    },
+    "name": "pipe",
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:pipe-bamboo-plain-none-north",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": false,
+    "shapeless": false,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "block",
+        "code": "primitivesurvival:pipe-bamboo-plain-none-north",
+        "quantity": 1
+      }
+    },
+    "name": "pipe",
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:pipe-bamboo-aerated-none-north",
+      "quantity": 1
+    }
+  }
+]

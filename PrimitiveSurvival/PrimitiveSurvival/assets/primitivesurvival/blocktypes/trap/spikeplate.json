@@ -1,0 +1,151 @@
+{
+    "code": "spikeplate",
+    "class": "blockspiketrap",
+    "maxstacksize": 16,
+    "behaviors": [ { "name": "UnstableFalling" } ],
+    "blockmaterial": "Metal",
+    "drawtype": "json",
+    "rainpermeable": false,
+    "lightabsorption": 0,
+    "sideopaque": {
+        "all": false
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "resistance": 2,
+    "requiredminingtier": 0,
+    "attributes": {
+        "reinforcementStrengthByType": {
+            "*-copper": 150,
+            "*-tinbronze": 300,
+            "*-bismuthbronze": 300,
+            "*-blackbronze": 400
+        },
+      "handbook": {
+        "groupBy": [ "spikeplate-*" ],
+        "createdBy": "metalmolding"
+      }
+    },
+    "variantgroups": [
+      {
+        "code": "metal",
+        "states": [ "bismuth", "bismuthbronze", "blackbronze", "brass", "copper", "gold", "lead", "molybdochalkos", "silver", "tin", "tinbronze", "zinc" ]
+      }
+    ],
+    "attributesByType": {
+        "spikeplate-lead": {
+            "workableTemperature": 0
+        }
+    },
+    "storageFlags": 5,
+
+    "shape": { "base": "block/spikeplate" },
+    "textures": {
+        "metal": { "base": "game:block/metal/ingot/{metal}" }
+    },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "primitive": [ "*" ]
+    },
+  "materialDensityByType": {
+    "*-bismuth": 9790,
+    "*-bismuthbronze": 7900,
+    "*-blackbronze": 9000,
+    "*-brass": 8500,
+    "*-copper": 8960,
+    "*-gold": 19300,
+    "*-lead": 11300,
+    "*-molybdochalkos": 9600,
+    "*-silver": 10500,
+    "*-tin": 7260,
+    "*-tinbronze": 7600,
+    "*-zinc": 7140
+  },
+    "guiTransformByType": {
+        "*": {
+            "translation": {
+                "x": 0,
+                "y": 3,
+                "z": 0
+            },
+            "origin": {
+                "x": 0.5,
+                "y": 0.0625,
+                "z": 0.5
+            },
+            "scale": 1.25
+        }
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.1,
+            "z": 0
+        },
+        "rotation": {
+            "x": 65,
+            "y": 113,
+            "z": 4
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 1.75
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.77,
+            "y": -0.15,
+            "z": -0.64
+        },
+        "rotation": {
+            "x": 0,
+            "y": -71,
+            "z": 18
+        },
+        "origin": {
+            "x": 0.3,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 0.71
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": -45,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 4
+    },
+    "collisionbox": {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+    },
+    "selectionbox": {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+    }
+}

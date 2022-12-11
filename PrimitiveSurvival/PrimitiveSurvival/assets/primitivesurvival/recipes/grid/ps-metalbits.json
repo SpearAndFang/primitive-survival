@@ -1,0 +1,68 @@
+[
+  {
+    "ingredientPattern": "C,I",
+    "ingredients": {
+      "C": {
+        "type": "item",
+        "code": "game:chisel-*",
+        "isTool": true
+      },
+      "I": {
+        "type": "item",
+        "code": "primitivesurvival:metalfishinghook-*",
+        "name": "metal"
+      }
+    },
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "game:metalbit-{metal}",
+      "quantity": 3
+    }
+  },
+  {
+    "ingredientPattern": "C,I",
+    "ingredients": {
+      "C": {
+        "type": "item",
+        "code": "game:chisel-*",
+        "isTool": true
+      },
+      "I": {
+        "type": "item",
+        "code": "primitivesurvival:fishinglure-*",
+        "name": "metal"
+      }
+    },
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "game:metalbit-{metal}",
+      "quantity": 5
+    }
+  },
+  {
+    "ingredientPattern": "C,I",
+    "ingredients": {
+      "C": {
+        "type": "item",
+        "code": "game:chisel-*",
+        "isTool": true
+      },
+      "I": {
+        "type": "block",
+        "code": "primitivesurvival:spikeplate-*",
+        "name": "metal"
+      }
+    },
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "game:metalbit-{metal}",
+      "quantity": 40
+    }
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "code": "furrowedland",
+  "class": "blockfurrowedland",
+  "entityclass": "befurrowedland",
+  "attributes": {
+    "renderSides": "nsew",
+    "sideShape": "block/pipe/soil/side"
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "soil", "high", "low", "medium", "verylow", "compost" ]
+    },
+    {
+      "code": "cover",
+      "states": [ "free" ]
+    }
+  ],
+  "creativeinventory": { "general": [ "" ] },
+  "shapebytype": {
+    "*": { "base": "block/pipe/soil/base" }
+  },
+  "texturesbytype": {
+    "*-soil-*": { "fertcompost": { "base": "game:block/soil/fertcompost" } },
+    "*": { "fertcompost": { "base": "game:block/soil/fert{type}" } }
+  },
+  "drawtypeByType": {
+    "*-free": "JSON"
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "renderPass": "BlendNoCull",
+  "faceCullMode": "MergeMaterial",
+  "blockmaterial": "Soil",
+  "replaceable": 400,
+  "resistance": 1.5,
+  "drops": [],
+  "lightAbsorption": 0,
+
+  "vertexFlags": {
+    "zOffset": 2,
+    "shiny": false
+  },
+  "sounds": {
+    "place": "game:block/dirt",
+    "break": "game:block/dirt",
+    "hit": "game:block/dirt",
+    "walk": "game:walk/grass"
+  }
+}

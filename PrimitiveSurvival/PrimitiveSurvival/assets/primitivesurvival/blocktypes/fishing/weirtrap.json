@@ -1,0 +1,148 @@
+{
+  "code": "weirtrap",
+  "class": "blockweirtrap",
+  "entityclass": "beweirtrap",
+  "attributes": {
+    "pushVectorByType": {
+      "*-n-*": {
+        "x": 0,
+        "y": 0,
+        "z": -0.0015
+      },
+      "*-ne-*": {
+        "x": 0.0015,
+        "y": 0,
+        "z": -0.0015
+      },
+      "*-e-*": {
+        "x": 0.0015,
+        "y": 0,
+        "z": 0
+      },
+      "*-se-*": {
+        "x": 0.0015,
+        "y": 0,
+        "z": 0.0015
+      },
+      "*-s-*": {
+        "x": 0,
+        "y": 0,
+        "z": 0.0015
+      },
+      "*-sw-*": {
+        "x": -0.0015,
+        "y": 0,
+        "z": 0.0015
+      },
+      "*-w-*": {
+        "x": -0.0015,
+        "y": 0,
+        "z": 0
+      },
+      "*-nw-*": {
+        "x": -0.0015,
+        "y": 0,
+        "z": -0.0015
+      },
+      "*-d-*": {
+        "x": 0,
+        "y": -0.003,
+        "z": 0
+      }
+    }
+  },
+  "variantgroups": [ { "loadFromProperties": "abstract/horizontalorientation" } ],
+  "shapebytype": {
+    "*-north": {
+      "base": "game:block/basic/cube",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "game:block/basic/cube",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "game:block/basic/cube",
+      "rotateY": 0
+    },
+    "*-west": {
+      "base": "game:block/basic/cube",
+      "rotateY": 270
+    }
+  },
+  "drawtype": "JSONAndWater",
+  "renderpass": "liquid",
+  "matterstate": "liquid",
+  "blockmaterial": "liquid",
+  "faceCullMode": "liquid",
+  "liquidCode": "water",
+  "snowCoverage": false,
+  "materialdensity": 1000,
+  "resistance": 9999,
+  "lightAbsorption": 2,
+  "climateColorMap": "climateWaterTint",
+  "drops": [],
+  "liquidLevelByType": {
+    "*-7": 7
+  },
+  "textures": {
+    "bassmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-bass-raw"
+    },
+    "troutmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-trout-raw"
+    },
+    "pikematerial": {
+      "base": "primitivesurvival:item/fishing/fish-pike-raw"
+    },
+    "perchmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-perch-raw"
+    },
+    "salmonmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-salmon-raw"
+    },
+    "carpmaterial": {
+      "base": "primitivesurvival:item/fishing/fish-carp-raw"
+    },
+    "arcticcharmaterial": { "base": "item/fishing/fish-arcticchar-raw" },
+    "catfishmaterial": { "base": "item/fishing/fish-catfish-raw" },
+    "bluegillmaterial": { "base": "item/fishing/fish-bluegill-raw" },
+    "mutantmaterial": { "base": "item/fishing/fish-mutant-raw" },
+    "all": { "base": "game:block/liquid/water" },
+    "specialSecondTexture": { "base": "game:block/liquid/water2" }
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "collisionbox": null,
+  "selectionbox": null,
+  "particlePropertiesByType": {
+    "water-still-*": []
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  },
+  "selectionBox": {
+    "x1": -0.2,
+    "y1": 0,
+    "z1": -0.2,
+    "x2": 1.2,
+    "y2": 0.5,
+    "z2": 1.2
+  }
+}

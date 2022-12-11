@@ -1,0 +1,57 @@
+[
+  {
+    "ingredientPattern": "HKV",
+    "enabled": true,
+    "shapeless": false,
+    "ingredients": {
+      "H": {
+        "type": "item",
+        "code": "game:hammer-*",
+        "isTool": true
+      },
+      "K": {
+        "type": "item",
+        "code": "game:chisel-*",
+        "isTool": true
+      },
+      "V": {
+        "type": "block",
+        "code": "game:storagevessel-burned",
+        "quantity": 1
+      }
+    },
+    "name": "irrigationvessel-normal",
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:irrigationvessel-normal",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": false,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:resin",
+        "quantity": 1
+      },
+      "H": {
+        "type": "block",
+        "code": "primitivesurvival:irrigationvessel-normal",
+        "quantity": 1
+      }
+    },
+    "copyAttributesFrom": "H",
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "block",
+      "code": "game:storagevessel-burned",
+      "quantity": 1
+    }
+  }
+]

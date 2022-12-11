@@ -1,0 +1,26 @@
+{
+  "code": "cordage",
+  "class": "itemcordage",
+  "texture": { "base": "item/fishing/cordage" },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "maxstacksize": 64,
+  "materialDensity": 410,
+  "guiTransform": {
+    "rotate": true,
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.9
+  }
+}

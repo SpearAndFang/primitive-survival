@@ -1,0 +1,369 @@
+{
+  "editor": {
+    "allAngles": true,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {},
+  "elements": [
+    {
+      "name": "Origin",
+      "from": [0.0, 0.0, 0.0],
+      "to": [0.0, 0.0, 0.0],
+      "faces": {
+        "north": {
+          "texture": "#baitmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "east": {
+          "texture": "#baitmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "south": {
+          "texture": "#baitmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "west": {
+          "texture": "#baitmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "up": {
+          "texture": "#baitmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        },
+        "down": {
+          "texture": "#baitmaterial",
+          "uv": [0.0, 0.0, 0.5, 0.5],
+          "enabled": false
+        }
+      },
+      "children": [
+        {
+          "name": "Bait1",
+          "from": [9.3, -1.6, 7.95],
+          "to": [10.3, -0.6, 8.95],
+          "rotationOrigin": [9.3, -1.6, 7.2],
+          "rotationX": 112.5,
+          "rotationY": -45.0,
+          "faces": {
+            "north": {
+              "texture": "#baitmaterial",
+              "uv": [14.5, 6.5, 15.5, 7.5]
+            },
+            "east": {
+              "texture": "#baitmaterial",
+              "uv": [15.0, 3.5, 16.0, 4.5]
+            },
+            "south": {
+              "texture": "#baitmaterial",
+              "uv": [15.0, 3.5, 16.0, 4.5]
+            },
+            "west": {
+              "texture": "#baitmaterial",
+              "uv": [14.5, 6.0, 15.5, 7.0]
+            },
+            "up": { "texture": "#baitmaterial", "uv": [14.5, 0.0, 15.5, 1.0] },
+            "down": { "texture": "#baitmaterial", "uv": [14.5, 0.0, 15.5, 1.0] }
+          },
+          "children": [
+            {
+              "name": "Bait8",
+              "from": [-0.25, 0.25, 0.25],
+              "to": [0.0, 0.75, 0.75],
+              "rotationOrigin": [0.0, 0.0, -0.75],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 6.0, 5.0, 6.5]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [12.5, 5.0, 13.0, 5.5]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [13.0, 2.0, 13.5, 2.5]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [14.0, 4.5, 14.5, 5.0]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [14.0, 3.0, 14.5, 3.5]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [0.0, 0.0, 0.5, 0.5]
+                }
+              }
+            },
+            {
+              "name": "Bait9",
+              "from": [1.5, 0.15, 0.35],
+              "to": [1.75, 0.65, 0.85],
+              "rotationOrigin": [1.5, -0.1, -0.65],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 3.0, 5.0, 3.5]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.5, 3.0, 7.0, 3.5]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.5, 5.0, 7.0, 5.5]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.0, 4.5, 6.5, 5.0]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.0, 4.5, 5.5, 5.0]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.5, 2.0, 4.0, 2.5]
+                }
+              }
+            },
+            {
+              "name": "Bait10",
+              "from": [0.25, -0.25, 0.25],
+              "to": [0.75, 0.0, 0.75],
+              "rotationOrigin": [1.0, 0.0, -0.75],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 3.5, 5.0, 4.0]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 5.0, 5.0, 5.5]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [2.0, 7.0, 2.5, 7.5]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.5, 4.5, 4.0, 5.0]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [2.0, 5.0, 2.5, 5.5]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.5, 2.0, 7.0, 2.5]
+                }
+              }
+            },
+            {
+              "name": "Bait11",
+              "from": [0.25, 1.0, 0.25],
+              "to": [0.75, 1.25, 0.75],
+              "rotationOrigin": [1.0, 1.0, -0.75],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [7.0, 3.5, 7.5, 4.0]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.0, 3.5, 5.5, 4.0]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [8.0, 4.5, 8.5, 5.0]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.0, 3.0, 3.5, 3.5]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.0, 5.0, 3.5, 5.5]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [8.5, 4.0, 9.0, 4.5]
+                }
+              }
+            },
+            {
+              "name": "Bait12",
+              "from": [0.15, 0.35, 1.0],
+              "to": [0.65, 0.85, 1.25],
+              "rotationOrigin": [0.9, 0.1, 0.25],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.5, 3.5, 4.0, 4.0]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [9.5, 4.0, 10.0, 4.5]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.5, 3.5, 6.0, 4.0]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.5, 11.0, 4.0, 11.5]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.0, 2.5, 6.5, 3.0]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [7.0, 2.0, 7.5, 2.5]
+                }
+              }
+            },
+            {
+              "name": "Bait13",
+              "from": [0.35, 0.15, -0.25],
+              "to": [0.85, 0.65, 0.0],
+              "rotationOrigin": [1.1, -0.1, -0.75],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [8.5, 3.5, 9.0, 4.0]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.0, 5.0, 6.5, 5.5]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [7.0, 5.0, 7.5, 5.5]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 5.0, 5.0, 5.5]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.0, 5.0, 3.5, 5.5]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [9.5, 6.0, 10.0, 6.5]
+                }
+              }
+            },
+            {
+              "name": "Bait14",
+              "from": [1.0, 0.25, 0.25],
+              "to": [1.25, 0.85, 0.85],
+              "rotationOrigin": [1.0, 0.0, -0.75],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 2.0, 5.0, 2.5]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.0, 3.5, 3.5, 4.0]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 3.0, 5.0, 3.5]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.5, 4.0, 6.0, 4.5]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.0, 1.5, 5.5, 2.0]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.0, 3.0, 6.5, 3.5]
+                }
+              }
+            },
+            {
+              "name": "Bait15",
+              "from": [1.2, 0.15, 0.15],
+              "to": [1.55, 0.75, 0.75],
+              "rotationOrigin": [1.2, -0.1, -0.85],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.0, 4.0, 4.5, 4.5]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [7.5, 4.0, 8.0, 4.5]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [4.5, 3.0, 5.0, 3.5]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.5, 2.0, 6.0, 2.5]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.5, 5.5, 7.0, 6.0]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [3.5, 2.5, 4.0, 3.0]
+                }
+              }
+            },
+            {
+              "name": "Bait16",
+              "from": [1.7, 0.25, 0.55],
+              "to": [1.95, 0.75, 1.05],
+              "rotationOrigin": [1.7, 0.0, -0.45],
+              "faces": {
+                "north": {
+                  "texture": "#baitmaterial",
+                  "uv": [6.5, 3.0, 7.0, 3.5]
+                },
+                "east": {
+                  "texture": "#baitmaterial",
+                  "uv": [7.0, 6.5, 7.5, 7.0]
+                },
+                "south": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.5, 5.5, 6.0, 6.0]
+                },
+                "west": {
+                  "texture": "#baitmaterial",
+                  "uv": [10.5, 7.0, 11.0, 7.5]
+                },
+                "up": {
+                  "texture": "#baitmaterial",
+                  "uv": [5.5, 10.5, 6.0, 11.0]
+                },
+                "down": {
+                  "texture": "#baitmaterial",
+                  "uv": [13.5, 4.5, 14.0, 5.0]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

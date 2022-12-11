@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- ILRepack -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="MergeTheThing" AfterTargets="build" Condition="$(Configuration.Contains('Release'))">
+    <ItemGroup>
+      <InputAssemblies Include="$(OutputPath)$(TargetName)$(TargetExt)" />
+      <InputAssemblies Include="$(OutputPath)*.dll" Exclude="$(OutputPath)$(TargetName)$(TargetExt)" />
+    </ItemGroup>
+    <ItemGroup>
+      <LibraryPath Include="$(OutputPath)" />
+      <LibraryPath Include="$(VINTAGE_STORY)/Lib/" />
+    </ItemGroup>
+    <ItemGroup>
+      <DoNotInternalizeAssemblies Include="VintagestoryAPI.dll" />
+      <DoNotInternalizeAssemblies Include="VintagestoryLib.dll" />
+      <DoNotInternalizeAssemblies Include="VSSurvivalMod.dll" />
+      <DoNotInternalizeAssemblies Include="VSEssentials.dll" />
+      <DoNotInternalizeAssemblies Include="VSCreativeMod.dll" />
+      <DoNotInternalizeAssemblies Include="Newtonsoft.Json.dll" />
+      <DoNotInternalizeAssemblies Include="0Harmony.dll" />
+      <DoNotInternalizeAssemblies Include="protobuf-net.dll" />
+      <DoNotInternalizeAssemblies Include="System.Data.SQLite.dll" />
+    </ItemGroup>
+    <ILRepack Parallel="true"
+              DebugInfo="true"
+              Verbose="true"
+              Internalize="true"
+              InternalizeExclude="@(DoNotInternalizeAssemblies)"
+              Wildcards="true"
+              InputAssemblies="@(InputAssemblies)"
+              LibraryPath="@(LibraryPath)"
+              KeyFile="$(AssemblyOriginatorKeyFile)"
+              TargetKind="SameAsPrimaryAssembly"
+              OutputFile="$(OutputPath)$(AssemblyName)$(TargetExt)" />
+  </Target>
+  <Target
+  Name="CleanTheOutput"
+  AfterTargets="MergeTheThing"
+  Condition="$(Configuration.Contains('Release'))">
+    <Delete Files="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)%(Filename)%(Extension)')" />
+    <ItemGroup>
+      <Directories Include="$([System.IO.Directory]::GetDirectories('$(OutDir)%(DestinationSubDirectory)', '*', System.IO.SearchOption.AllDirectories))" />
+      <Directories>
+        <Files>$([System.IO.Directory]::GetFiles("%(Directories.Identity)", "*", System.IO.SearchOption.AllDirectories).get_Length())</Files>
+      </Directories>
+    </ItemGroup>
+  </Target>
+</Project>
+
+
+<!-- 
+new standard 2.0 solution with name of mod
+add assets folder
+add src folder
+copy VSModLauncher in
+add to solution
+set VSModLauncher build dependency to include mod
+set VSModLauncher as startup
+change command line arguments to include new mod's bin\Debug folder
+add nuget.config with nuget source
+add ILRepack.Lib.MSBuild.Task nuget package
+add ILRepack.targets file
+set .csproj > PackageReference > PrivateAssets="all"
+update .csproj with debug, copylocallock, reference to vintage story libs, copy modinfo.json to output always
+-->

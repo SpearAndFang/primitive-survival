@@ -1,0 +1,63 @@
+[
+  {
+    "ingredientPattern": "WB",
+    "ingredients": {
+      "W": {
+        "type": "block",
+        "code": "primitivesurvival:metalbucket-empty-*"
+      },
+      "B": {
+        "type": "item",
+        "code": "game:bandage-clean"
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "attributes": {
+      "liquidContainerProps": {
+        "requiresContent": {
+          "type": "item",
+          "code": "game:alcoholportion"
+        },
+        "requiresLitres": 0.2
+      }
+    },
+    "shapeless": true,
+    "output": {
+      "type": "item",
+      "code": "game:bandage-alcoholed"
+    }
+  },
+  {
+    "ingredientPattern": "WF",
+    "ingredients": {
+      "W": {
+        "type": "block",
+        "code": "primitivesurvival:metalbucket-empty-*"
+      },
+      "F": {
+        "type": "item",
+        "code": "game:flour-*",
+        "allowedVariants": [ "flax", "millet", "rice", "rye", "spelt", "cassava", "amaranth", "sunflower" ],
+        "name": "type"
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "attributes": {
+      "liquidContainerProps": {
+        "requiresContent": {
+          "type": "item",
+          "code": "game:waterportion"
+        },
+        "requiresLitres": 1
+      }
+    },
+    "name": "dough",
+    "shapeless": true,
+    "output": {
+      "type": "item",
+      "code": "game:dough-{type}"
+    }
+  }
+]

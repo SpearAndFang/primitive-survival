@@ -1,0 +1,665 @@
+{
+  "code": "steatitestairs",
+  "class": "blockpsstairs",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "temporal", "astral", "ethereal" ]
+    },
+    {
+      "code": "type",
+      "states": [ "normal", "inside", "outside" ]
+    },
+    {
+      "code": "updown",
+      "states": [ "up", "down", "sideways" ]
+    },
+
+    {
+      "code": "dir",
+      "states": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest"
+      ]
+    },
+    {
+      "code": "cover",
+      "states": [ "free", "snow" ]
+    }
+  ],
+  "skipVariants": [
+    "*-down-north-snow",
+    "*-down-east-snow",
+    "*-down-south-snow",
+    "*-down-west-snow",
+    "*-down-northeast-snow",
+    "*-down-southeast-snow",
+    "*-down-southwest-snow",
+    "*-down-northwestwest-snow",
+    "*-sideways-north-snow",
+    "*-sideways-east-snow",
+    "*-sideways-south-snow",
+    "*-sideways-west-snow",
+    "*-sideways-northeast-snow",
+    "*-sideways-southeast-snow",
+    "*-sideways-southwest-snow",
+    "*-sideways-northwestwest-snow"
+  ],
+  "attributes": {
+    "canChisel": true,
+    "chiselShapeFromCollisionBox": true,
+    "partialAttachable": true
+  },
+  "creativeinventory": {
+    "general": [ "*-{material}-normal-up-north-free" ],
+    "construction": [ "*-{material}-normal-up-north-free" ],
+    "primitive": [ "*-{material}-normal-up-north-free" ]
+  },
+  "drops": [
+    {
+      "type": "block",
+      "code": "steatitestairs-{material}-normal-up-north-free",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal": "transparent",
+    "*-astral": "BlendNoCull"
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": false
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal": "liquid",
+    "*-astral": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
+  "replaceable": 700,
+  "resistance": 3,
+  "sidesolidByType": {
+    "*-up-north-*": {
+      "all": false,
+      "down": true,
+      "north": true
+    },
+    "*-up-west-*": {
+      "all": false,
+      "down": true,
+      "west": true
+    },
+    "*-up-south-*": {
+      "all": false,
+      "down": true,
+      "south": true
+    },
+    "*-up-east-*": {
+      "all": false,
+      "down": true,
+      "east": true
+    },
+    "*-up-northwest-*": {
+      "all": false,
+      "down": true,
+      "north": true,
+      "west": true
+    },
+    "*-up-southwest-*": {
+      "all": false,
+      "down": true,
+      "south": true,
+      "west": true
+    },
+    "*-up-southeast-*": {
+      "all": false,
+      "down": true,
+      "south": true,
+      "east": true
+    },
+    "*-up-northeast-*": {
+      "all": false,
+      "down": true,
+      "north": true,
+      "east": true
+    },
+    "*-down-north-free": {
+      "all": false,
+      "up": true,
+      "north": true
+    },
+    "*-down-south-free": {
+      "all": false,
+      "up": true,
+      "south": true
+    },
+    "*-down-west-free": {
+      "all": false,
+      "up": true,
+      "west": true
+    },
+    "*-down-east-free": {
+      "all": false,
+      "up": true,
+      "east": true
+    },
+    "*-down-northwest-free": {
+      "all": false,
+      "up": true,
+      "north": true
+    },
+    "*-down-southeast-free": {
+      "all": false,
+      "up": true,
+      "south": true
+    },
+    "*-down-southwest-free": {
+      "all": false,
+      "up": true,
+      "west": true
+    },
+    "*-down-northeast-free": {
+      "all": false,
+      "up": true,
+      "east": true
+    },
+    "*-sideways-*": {
+      "all": false
+    }
+  },
+  "sideopaqueByType": {
+    "*-up-north-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-west-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-south-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-east-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-northwest-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-southwest-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-southeast-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-northeast-*": {
+      "all": false,
+      "down": true
+    },
+    "*-down-north-free": {
+      "all": false,
+      "up": true
+    },
+    "*-down-south-free": {
+      "all": false,
+      "up": true
+    },
+    "*-down-west-free": {
+      "all": false,
+      "up": true
+    },
+    "*-down-east-free": {
+      "all": false,
+      "up": true
+    },
+    "*-down-northwest-free": {
+      "all": false,
+      "up": true
+    },
+    "*-down-southwest-free": {
+      "all": false,
+      "up": true
+    },
+    "*-down-southeast-free": {
+      "all": false,
+      "up": true
+    },
+    "*-down-northeast-free": {
+      "all": false,
+      "up": true
+    },
+    "*-sideways-*": {
+      "all": false
+    }
+  },
+  "shapebytype": {
+    "*-normal-up-north-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 180
+    },
+    "*-normal-up-west-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 270
+    },
+    "*-normal-up-south-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 0
+    },
+    "*-normal-up-east-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 90
+    },
+    "*-normal-sideways-north-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 180,
+      "rotateZ": 90
+    },
+    "*-normal-sideways-west-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 270,
+      "rotateZ": 90
+    },
+    "*-normal-sideways-south-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 0,
+      "rotateZ": 90
+    },
+    "*-normal-sideways-east-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 90,
+      "rotateZ": 90
+    },
+
+    "*-outside-up-northwest-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 270
+    },
+    "*-outside-up-southwest-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 0
+    },
+    "*-outside-up-southeast-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 90
+    },
+    "*-outside-up-northeast-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 180
+    },
+    "*-inside-up-northwest-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 180
+    },
+    "*-inside-up-southwest-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 270
+    },
+    "*-inside-up-southeast-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 0
+    },
+    "*-inside-up-northeast-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 90
+    },
+    "*-up-north-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 0
+    },
+    "*-up-west-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 90
+    },
+    "*-up-south-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 180
+    },
+    "*-up-east-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 270
+    },
+    "*-outside-up-northwest-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 270
+    },
+    "*-outside-up-southwest-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 0
+    },
+    "*-outside-up-southeast-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 90
+    },
+    "*-outside-up-northeast-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 270
+    },
+    "*-inside-up-northwest-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 180
+    },
+    "*-inside-up-southwest-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 270
+    },
+    "*-inside-up-southeast-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 0
+    },
+    "*-inside-up-northeast-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 90
+    },
+    "*-normal-down-north-free": {
+      "base": "game:block/basic/stairs/flipped",
+      "rotateY": 180
+    },
+    "*-normal-down-west-free": {
+      "base": "game:block/basic/stairs/flipped",
+      "rotateY": 270
+    },
+    "*-normal-down-south-free": {
+      "base": "game:block/basic/stairs/flipped",
+      "rotateY": 0
+    },
+    "*-normal-down-east-free": {
+      "base": "game:block/basic/stairs/flipped",
+      "rotateY": 90
+    },
+    "*-outside-down-northwest-free": {
+      "base": "primitivesurvival:block/basic/stairs/outside-flipped",
+      "rotateY": 270
+    },
+    "*-outside-down-southwest-free": {
+      "base": "primitivesurvival:block/basic/stairs/outside-flipped",
+      "rotateY": 0
+    },
+    "*-outside-down-southeast-free": {
+      "base": "primitivesurvival:block/basic/stairs/outside-flipped",
+      "rotateY": 90
+    },
+    "*-outside-down-northeast-free": {
+      "base": "primitivesurvival:block/basic/stairs/outside-flipped",
+      "rotateY": 180
+    },
+    "*-inside-down-northwest-free": {
+      "base": "primitivesurvival:block/basic/stairs/inside-flipped",
+      "rotateY": 180
+    },
+    "*-inside-down-southwest-free": {
+      "base": "primitivesurvival:block/basic/stairs/inside-flipped",
+      "rotateY": 270
+    },
+    "*-inside-down-southeast-free": {
+      "base": "primitivesurvival:block/basic/stairs/inside-flipped",
+      "rotateY": 0
+    },
+    "*-inside-down-northeast-free": {
+      "base": "primitivesurvival:block/basic/stairs/inside-flipped",
+      "rotateY": 90
+    }
+  },
+
+  "textures": {
+    "horizontals": {
+      "base": "primitivesurvival:block/stone/steatite/stairs/side-{material}"
+    },
+    "up": {
+      "base": "primitivesurvival:block/stone/steatite/stairs/top-{material}"
+    },
+    "down": {
+      "base": "primitivesurvival:block/stone/steatite/stairs/bottom-{material}"
+    }
+  },
+
+  "emitSideAo": { "all": true },
+  "sounds": {
+    "walk": "game:walk/stone1",
+    "byTool": {
+      "Pickaxe": {
+        "hit": "game:block/rock-hit-pickaxe",
+        "break": "game:block/rock-break-pickaxe"
+      }
+    }
+  },
+  "collisionSelectionBoxesByType": {
+    "*normal-down-*": [
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      }
+    ],
+    "*normal-up-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      }
+    ],
+    "*normal-sideways-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        },
+        "rotateZ": 90
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        },
+        "rotateZ": 90
+      }
+    ],
+    "*inside-down-*": [
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.5,
+        "y2": 0.5,
+        "z2": 0.5,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ],
+    "*inside-up-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 0.5,
+        "y2": 1,
+        "z2": 0.5,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ],
+    "*outside-down-*": [
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.5,
+        "x2": 0.5,
+        "y2": 0.5,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ],
+    "*outside-up-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0.5,
+        "x2": 0.5,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ]
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  }
+}

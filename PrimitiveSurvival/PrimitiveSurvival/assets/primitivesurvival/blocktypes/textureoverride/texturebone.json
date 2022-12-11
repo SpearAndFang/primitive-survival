@@ -1,0 +1,6 @@
+{
+  "code": "texturebone",
+  "textures": {
+    "hookmaterial": { "base": "game:block/bone" }
+  }
+}

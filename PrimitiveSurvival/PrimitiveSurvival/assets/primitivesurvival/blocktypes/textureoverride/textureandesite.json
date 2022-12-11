@@ -1,0 +1,6 @@
+{
+  "code": "textureandesite",
+  "textures": {
+    "hookmaterial": { "base": "game:block/stone/rock/andesite1" }
+  }
+}

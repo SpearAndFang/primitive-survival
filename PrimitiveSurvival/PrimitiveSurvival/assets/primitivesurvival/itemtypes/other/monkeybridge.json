@@ -1,0 +1,25 @@
+{
+  "code": "monkeybridge",
+  "class": "itemmonkeybridge",
+  "texture": { "base": "item/monkeybridge" },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "maxstacksize": 128,
+  "materialDensity": 410,
+  "fpHandTransform": {
+    "rotation": {
+      "x": 180,
+      "y": 145,
+      "z": -14
+    },
+    "origin": {
+      "x": 0.4,
+      "y": 0.4,
+      "z": 1.1
+    },
+    "scale": 0.9
+  }
+}

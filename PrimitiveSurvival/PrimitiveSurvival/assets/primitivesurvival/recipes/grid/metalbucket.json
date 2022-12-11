@@ -1,0 +1,65 @@
+[
+	{
+		"ingredientPattern": "_H_,P_P,PPP",
+		"ingredients": {
+			"H": {
+				"type": "item",
+				"code": "buckethandle-*",
+				"name": "material"
+			},
+			"P": {
+				"type": "item",
+				"code": "game:metalplate-iron"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"output": {
+			"type": "block",
+			"code": "metalbucket-empty-iron-{material}",
+			"quantity": 1
+		}
+	},
+	{
+		"ingredientPattern": "_H_,P_P,PPP",
+		"ingredients": {
+			"H": {
+				"type": "item",
+				"code": "buckethandle-*",
+				"name": "material"
+			},
+			"P": {
+				"type": "item",
+				"code": "game:metalplate-meteoriciron"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"output": {
+			"type": "block",
+			"code": "metalbucket-empty-meteoriciron-{material}",
+			"quantity": 1
+		}
+	},
+	{
+		"ingredientPattern": "_H_,P_P,PPP",
+		"ingredients": {
+			"H": {
+				"type": "item",
+				"code": "buckethandle-*",
+				"name": "material"
+			},
+			"P": {
+				"type": "item",
+				"code": "game:metalplate-steel"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"output": {
+			"type": "block",
+			"code": "metalbucket-empty-steel-{material}",
+			"quantity": 1
+		}
+	}
+]

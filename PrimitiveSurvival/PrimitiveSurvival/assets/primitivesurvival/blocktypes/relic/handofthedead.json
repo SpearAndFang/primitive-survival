@@ -1,0 +1,464 @@
+{
+  "code": "handofthedead",
+  "class": "blockhandofthedead",
+  "behaviors": [
+    {
+      "name": "RightClickPickup",
+      "properties": {
+        "dropsPickupMode": true,
+        "sound": "game:sounds/block/loosestone"
+      }
+    }
+  ],
+  "storageFlags": 257,
+  "blockmaterial": "Wood",
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "heldLeftTpIdleAnimation": "holdinglanternlefthand",
+  "drawtype": "json",
+  "lightabsorption": 0,
+  "lightHsvbyType": {
+    "*-candle*": [ 4, 2, 22 ]
+  },
+  "materialDensity": 200,
+  "combustibleProps": {
+    "burnTemperature": 700,
+    "burnDuration": 8
+  },
+  "maxstacksize": 1,
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "resistance": 1,
+  "requiredminingtier": 1,
+  "sounds": {
+    "place": "game:walk/stone3",
+    "walk": "game:walk/stone3"
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "empty", "candle", "candleplaced" ]
+    },
+    {
+      "code": "dir",
+      "states": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest"
+      ]
+    }
+  ],
+  "collisionSelectionbox": {
+    "x1": 0.2125,
+    "y1": 0,
+    "z1": 0.2125,
+    "x2": 0.7875,
+    "y2": 0.375,
+    "z2": 0.7875
+  },
+  "guiTransform": {
+    "translation": {
+      "x": -0.1,
+      "y": 0.4,
+      "z": 0
+    },
+    "rotation": {
+      "x": 1,
+      "y": 40,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.2,
+      "z": 0.5
+    },
+    "scale": 3
+  },
+  "groundTransform": {
+    "scale": 4
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.6,
+      "y": 0.3,
+      "z": 0.2
+    },
+    "rotation": {
+      "x": -83,
+      "y": -6,
+      "z": -101
+    },
+    "origin": {
+      "x": 0.6,
+      "y": 0.1,
+      "z": -0.1
+    },
+    "scale": 1.08
+  },
+  "tpOffHandTransform": {
+    "translation": {
+      "x": -0.6,
+      "y": 0.3,
+      "z": 0.2
+    },
+    "rotation": {
+      "x": -83,
+      "y": -6,
+      "z": -83
+    },
+    "origin": {
+      "x": 0.6,
+      "y": 0.1,
+      "z": -0.1
+    },
+    "scale": 1.08
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 125,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.3
+    },
+    "scale": 2.64
+  },
+  "dropsByType": {
+    "*-empty*": [
+      {
+        "type": "block",
+        "code": "handofthedead-empty-north"
+      }
+    ],
+    "*-candle*": [
+      {
+        "type": "block",
+        "code": "handofthedead-candle-north"
+      }
+    ]
+  },
+  "textures": {
+    "tinbronze": {
+      "base": "entity/land/livingdead/tinbronze"
+    },
+    "skindark": {
+      "base": "entity/land/livingdead/skindark"
+    },
+    "skinlight": {
+      "base": "entity/land/livingdead/skinlight"
+    },
+    "bonedark": {
+      "base": "entity/land/livingdead/bonedark"
+    },
+    "bonelight": {
+      "base": "entity/land/livingdead/bonelight"
+    },
+    "candle": {
+      "base": "game:block/candle"
+    }
+  },
+  "shapebytype": {
+    "*-empty*": {
+      "base": "block/relic/handofthedead",
+      "rotateYByType": {
+        "*-north": 270,
+        "*-northeast": 225,
+        "*-east": 180,
+        "*-southeast": 135,
+        "*-south": 90,
+        "*-southwest": 45,
+        "*-west": 0,
+        "*-northwest": 315
+      }
+    },
+    "*-candle*": {
+      "base": "block/relic/handofthedeadcandle",
+      "rotateYByType": {
+        "*-north": 270,
+        "*-northeast": 225,
+        "*-east": 180,
+        "*-southeast": 135,
+        "*-south": 90,
+        "*-southwest": 45,
+        "*-west": 0,
+        "*-northwest": 315
+      }
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*empty-north", "*candle-north" ],
+    "primitive": [ "*empty-north", "*candle-north" ]
+  },
+  "particlePropertiesbyType": {
+    "*-candle*": [
+      {
+        "__comment": "Ember cubicles",
+        "hsvaColor": [
+          {
+            "avg": 20,
+            "var": 20
+          },
+          {
+            "avg": 255,
+            "var": 50
+          },
+          {
+            "avg": 255,
+            "var": 50
+          },
+          {
+            "avg": 255,
+            "var": 0
+          }
+        ],
+        "gravityEffect": {
+          "dist": "invexp",
+          "avg": -0.07,
+          "var": 0.4
+        },
+        "posOffsetByType": {
+          "*-candleplaced*": [
+            {
+              "avg": 0,
+              "var": 0.1
+            },
+            {
+              "avg": 0.1,
+              "var": 0
+            },
+            {
+              "avg": 0,
+              "var": 0.1
+            }
+          ],
+          "*": [
+            {
+              "avg": 0,
+              "var": 0.1
+            },
+            {
+              "avg": -0.05,
+              "var": 0
+            },
+            {
+              "avg": 0,
+              "var": 0.1
+            }
+          ]
+        },
+        "velocity": [
+          {
+            "avg": 0,
+            "var": 0.15
+          },
+          {
+            "avg": 0.5,
+            "var": 0.1
+          },
+          {
+            "avg": 0,
+            "var": 0.15
+          }
+        ],
+        "quantity": { "avg": 0.015 },
+        "size": {
+          "avg": 0.4,
+          "var": 0
+        },
+        "sizeEvolve": {
+          "transform": "quadratic",
+          "factor": -0.7
+        },
+        "lifeLength": { "avg": 1.5 },
+        "vertexFlags": 128,
+        "windAffectednes": 0.2
+      },
+      {
+        "__comment": "Smoke quads",
+        "hsvaColor": [
+          {
+            "avg": 0,
+            "var": 0
+          },
+          {
+            "avg": 0,
+            "var": 0
+          },
+          {
+            "avg": 40,
+            "var": 30
+          },
+          {
+            "avg": 220,
+            "var": 50
+          }
+        ],
+        "opacityEvolve": {
+          "transform": "quadratic",
+          "factor": -16
+        },
+        "gravityEffect": {
+          "avg": 0,
+          "var": 0
+        },
+        "posOffsetByType": {
+          "*-candleplaced*": [
+            {
+              "avg": 0,
+              "var": 0.1
+            },
+            {
+              "avg": 0.11,
+              "var": 0
+            },
+            {
+              "avg": 0,
+              "var": 0.1
+            }
+          ],
+          "*": [
+            {
+              "avg": 0,
+              "var": 0.1
+            },
+            {
+              "avg": -0.05,
+              "var": 0
+            },
+            {
+              "avg": 0,
+              "var": 0.1
+            }
+          ]
+        },
+        "velocity": [
+          {
+            "avg": 0,
+            "var": 0.025
+          },
+          {
+            "avg": 0.15,
+            "var": 0.1
+          },
+          {
+            "avg": 0,
+            "var": 0.025
+          }
+        ],
+        "quantity": { "avg": 0.05 },
+        "size": {
+          "avg": 0.25,
+          "var": 0.05
+        },
+        "sizeEvolve": {
+          "transform": "linear",
+          "factor": 0.5
+        },
+        "particleModel": "Quad",
+        "windAffectednes": 0.7
+      },
+      {
+        "__comment": "Fire quads",
+        "hsvaColor": [
+          {
+            "avg": 20,
+            "var": 20
+          },
+          {
+            "avg": 255,
+            "var": 50
+          },
+          {
+            "avg": 255,
+            "var": 50
+          },
+          {
+            "avg": 255,
+            "var": 0
+          }
+        ],
+        "opacityEvolve": {
+          "transform": "quadratic",
+          "factor": -16
+        },
+        "gravityEffect": {
+          "avg": 0,
+          "var": 0
+        },
+        "posOffsetByType": {
+          "*-candleplaced*": [
+            {
+              "avg": 0,
+              "var": 0.12
+            },
+            {
+              "avg": 0.11,
+              "var": 0
+            },
+            {
+              "avg": 0,
+              "var": 0.12
+            }
+          ],
+          "*": [
+            {
+              "avg": 0,
+              "var": 0.12
+            },
+            {
+              "avg": -0.05,
+              "var": 0
+            },
+            {
+              "avg": 0,
+              "var": 0.12
+            }
+          ]
+        },
+        "velocity": [
+          {
+            "avg": 0,
+            "var": 0.025
+          },
+          {
+            "avg": 0.18,
+            "var": 0.07
+          },
+          {
+            "avg": 0,
+            "var": 0.025
+          }
+        ],
+        "quantity": { "avg": 0.4 },
+        "size": {
+          "avg": 0.25,
+          "var": 0.05
+        },
+        "lifeLength": { "avg": 0.5 },
+        "sizeEvolve": {
+          "transform": "linear",
+          "factor": 0.5
+        },
+        "particleModel": "Quad",
+        "vertexFlags": 128,
+        "windAffectednes": 0.7
+      }
+    ]
+  }
+}

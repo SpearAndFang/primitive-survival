@@ -1,0 +1,16 @@
+[
+  {
+    "file": "game:blocktypes/cloth/oreblastingbomb",
+    "side": "server",
+    "op": "replace",
+    "path": "/class",
+    "value": "blockbombfuse"
+  },
+  {
+    "file": "game:blocktypes/cloth/oreblastingbomb",
+    "side": "server",
+    "op": "replace",
+    "path": "/entityClass",
+    "value": "bebombfuse"
+  }
+]

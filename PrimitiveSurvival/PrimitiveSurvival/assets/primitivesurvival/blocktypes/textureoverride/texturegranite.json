@@ -1,0 +1,6 @@
+{
+  "code": "texturegranite",
+  "textures": {
+    "hookmaterial": { "base": "game:block/stone/rock/granite1" }
+  }
+}

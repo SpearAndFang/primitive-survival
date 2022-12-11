@@ -1,0 +1,6 @@
+{
+  "code": "texturesilver",
+  "textures": {
+    "hookmaterial": { "base": "game:block/metal/ingot/silver" }
+  }
+}

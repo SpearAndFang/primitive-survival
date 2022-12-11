@@ -1,0 +1,252 @@
+{
+  "code": "crabmeat",
+  "maxstacksize": 64,
+  "attributes": {
+    "inFirePitProps": {
+      "transformbytype": {
+        "*": {
+          "scale": 0.35,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0,
+            "y": 0.2,
+            "z": 0
+          },
+          "rotation": {
+            "x": 90,
+            "y": 0,
+            "z": 90
+          }
+        }
+      },
+      "useFirepitModel": "Spit"
+    },
+    "nutritionPropsWhenInMeal": {
+      "satiety": 164,
+      "foodcategory": "Protein"
+    },
+    "bakingPropertiesByType": {
+      "*-raw": {
+        "temp": 150,
+        "levelFrom": 0.0,
+        "levelTo": 0.25,
+        "startScaleY": 1.0,
+        "endScaleY": 1.0,
+        "resultCode": "primitivesurvival:crabmeat-partbaked"
+      },
+      "*-partbaked": {
+        "temp": 150,
+        "levelFrom": 0.25,
+        "levelTo": 0.5,
+        "startScaleY": 1.0,
+        "endScaleY": 1.0,
+        "resultCode": "primitivesurvival:crabmeat-cooked",
+        "initialCode": "primitivesurvival:crabmeat-raw"
+      },
+      "*-cooked": {
+        "temp": 150,
+        "levelFrom": 0.5,
+        "levelTo": 0.75,
+        "startScaleY": 1.0,
+        "endScaleY": 1.0,
+        "resultCode": "primitivesurvival:crabmeat-charred",
+        "initialCode": "primitivesurvival:crabmeat-partbaked"
+      },
+      "*-charred": {
+        "temp": 150,
+        "levelFrom": 0.75,
+        "levelTo": 1.0,
+        "startScaleY": 1.0,
+        "endScaleY": 0.9,
+        "initialCode": "primitivesurvival:crabmeat-cooked"
+      }
+    },
+    "onDisplayTransformByType": {
+      "*": {
+        "translation": {
+          "x": 0,
+          "y": -0.2,
+          "z": 0
+        },
+        "scale": 0.6
+      }
+    },
+    "inPiePropertiesByType": {
+      "*-raw": {
+        "texture": "game:block/food/pie/fill-crab",
+        "partType": "Filling"
+      }
+    }
+  },
+  "variantgroups": [
+    {
+      "code": "state",
+      "states": [ "raw", "partbaked", "cooked", "charred" ]
+    }
+  ],
+  "shape": { "base": "item/food/meat/crabmeat" },
+  "texturesbytype": {
+    "*": {
+      "normal": { "base": "item/crab/crabmeat-{state}" }
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "nutritionPropsByType": {
+    "*-partbaked": {
+      "satiety": 106,
+      "foodcategory": "Protein"
+    },
+    "*-cooked": {
+      "satiety": 116,
+      "foodcategory": "Protein"
+    },
+    "*-charred": {
+      "satiety": 96,
+      "foodcategory": "Protein"
+    }
+  },
+  "materialDensity": 150,
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 130,
+      "y": -19,
+      "z": -3
+    },
+    "origin": {
+      "x": 0.34,
+      "y": 0.38,
+      "z": 0.24
+    },
+    "scale": 1.76
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 2.2,
+      "y": -0.9,
+      "z": -0.4
+    },
+    "rotation": {
+      "x": -131,
+      "y": -155,
+      "z": 164
+    },
+    "origin": {
+      "x": 0.4,
+      "y": 1.8,
+      "z": -0.1
+    },
+    "scale": 2.45
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0.2,
+      "y": -0.1,
+      "z": -0.6
+    },
+    "rotation": {
+      "x": -121,
+      "y": 52,
+      "z": -59
+    },
+    "origin": {
+      "x": 0.1,
+      "y": 0,
+      "z": 0.2
+    },
+    "scale": 0.49
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.2,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -2,
+      "z": -4
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.25,
+      "z": 0.5
+    },
+    "scale": 2.5
+  },
+  "combustiblePropsByType": {
+    "*-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 7.5,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "crabmeat-cooked"
+      },
+      "requiresContainer": false
+    }
+  },
+  "transitionablePropsByType": {
+    "*-partbaked": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 120 },
+        "spoilHours": { "avg": 36 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ],
+    "*-cooked": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 120 },
+        "spoilHours": { "avg": 36 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ],
+    "*-charred": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 240 },
+        "spoilHours": { "avg": 72 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ],
+    "*-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 48 },
+        "spoilHours": { "avg": 12 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ]
+  }
+}

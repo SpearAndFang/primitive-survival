@@ -1,0 +1,27 @@
+{
+    "code": "foilage",
+    "maxstacksize": 64,
+    "blockmaterial": "Leaves",
+    "drawtype": "json",
+    "rainpermeable": true,
+    "lightabsorption": 1,
+    "sideopaque": {
+        "all": false
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "resistance": 0.5,
+    "requiredminingtier": 0,
+    "shape": { "base": "block/foilage" },
+    "variantgroups": [
+        {
+            "code": "type",
+            "states": [ "1", "2", "3" ]
+        }
+    ],
+    "textures": {
+        "up": { "base": "block/foilage/foilage-{type}" }
+    },
+    "materialDensity": 300
+}

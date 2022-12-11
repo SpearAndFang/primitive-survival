@@ -1,0 +1,201 @@
+{
+  "code": "pslargemold",
+  "classByType": {
+    "pslargemold-raw-*": "Block",
+    "pslargemold-burned-*": "BlockToolMold"
+  },
+  "behaviorsByType": {
+    "*-raw-*": [
+      {
+        "name": "GroundStorable",
+        "properties": { "layout": "SingleCenter" }
+      },
+      {
+        "name": "Unplaceable",
+        "__comment": "The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility"
+      },
+      { "name": "RightClickPickup" }
+    ],
+    "*": [ { "name": "UnstableFalling" } ]
+  },
+  "variantgroups": [
+    {
+      "code": "materialtype",
+      "states": [ "raw", "burned" ]
+    },
+    {
+      "code": "tooltype",
+      "states": [
+        "fishinglure",
+        "metalfishinghook",
+        "spikeplate"
+      ]
+    }
+  ],
+  "attributesByType": {
+    "pslargemold-burned-fishinglure": {
+      "requiredUnits": 100,
+      "moldrackable": true,
+      "onmoldrackTransform": { "rotation": { "z": 90 } },
+      "fillHeight": 1,
+      "drop": {
+        "type": "item",
+        "code": "{tooltype}-{metal}",
+        "quantity": 4
+      }
+    },
+    "pslargemold-burned-metalfishinghook": {
+      "requiredUnits": 100,
+      "moldrackable": true,
+      "onmoldrackTransform": { "rotation": { "z": 90 } },
+      "fillHeight": 1,
+      "drop": {
+        "type": "item",
+        "code": "{tooltype}-{metal}",
+        "quantity": 6
+      }
+    },
+    "pslargemold-burned-spikeplate": {
+      "requiredUnits": 200,
+      "fillHeight": 7,
+      "drop": {
+        "type": "block",
+        "code": "{tooltype}-{metal}",
+        "quantity": 1
+      }
+    }
+  },
+  "entityClassByType": {
+    "pslargemold-burned-*": "ToolMold"
+  },
+  "combustiblePropsByType": {
+    "pslargemold-raw-*": {
+      "meltingPoint": 650,
+      "meltingDuration": 45,
+      "smeltedRatio": 1,
+      "smeltingType": "fire",
+      "smeltedStack": {
+        "type": "block",
+        "code": "pslargemold-burned-{tooltype}"
+      },
+      "requiresContainer": false
+    }
+  },
+  "blockmaterial": "Ceramic",
+  "creativeinventory": {
+    "general": [ "*" ],
+    "construction": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "replaceable": 700,
+  "resistance": 1.5,
+  "maxStackSize": 8,
+  "lightAbsorption": 0,
+  "texturesByType": {
+    "pslargemold-raw-*": { "all": { "base": "game:block/clay/blueclay" } },
+    "pslargemold-burned-*": {
+      "floor": { "base": "game:block/clay/ceramic-dark" },
+      "other": { "base": "game:block/clay/ceramic" }
+    }
+  },
+  "shape": {
+    "base": "primitivesurvival:block/clay/mold/{tooltype}",
+    "rotateY": 90
+  },
+  "sounds": {
+    "walk": "walk/stone"
+  },
+  "collisionboxByType": {
+    "*spikeplate": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.4,
+      "z2": 1
+    },
+    "*": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.1875,
+      "z2": 1
+    }
+  },
+  "selectionboxByType": {
+    "*spikeplate": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.4,
+      "z2": 1
+    },
+    "*": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.1875,
+      "z2": 1
+    }
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "guiTransformByType": {
+    "*spikeplate": {
+      "translation": {
+        "x": 0,
+        "y": 3,
+        "z": 0
+      },
+      "rotation": {
+        "x": -22.6,
+        "y": -46,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.2625,
+        "z": 0.5
+      },
+      "scale": 1.25
+    },
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 3,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.0625,
+        "z": 0.5
+      },
+      "scale": 1.33
+    }
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2.2
+  }
+}

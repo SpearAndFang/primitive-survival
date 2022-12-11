@@ -1,0 +1,167 @@
+{
+  "code": "skullofthedead",
+  "class": "entityskullofthedead",
+  "canClimb": false,
+  "hitboxSize": {
+    "x": 1,
+    "y": 2
+  },
+  "deadHitboxSize": {
+    "x": 1,
+    "y": 2
+  },
+  "knockbackResistance": 1,
+  "falldamage": false,
+  "eyeHeight": 4,
+  "attributes": {
+    "lightHsv": [ 1, 4, 1 ],
+    "minLightLevel": 0,
+    "strobeFrequency": 1
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "normal" ]
+    }
+  ],
+  "drops": [],
+  "client": {
+    "renderer": "entitygenericshaperenderer",
+    "pitchStep": false,
+    "shapebytype": {
+      "*-normal*": {
+        "base": "entity/land/skullofthedead"
+      }
+    },
+    "texturesByType": {
+      "*-normal*": {
+        "tinbronze": {
+          "base": "entity/land/livingdead/tinbronze"
+        },
+        "skindark": {
+          "base": "entity/land/livingdead/skindark"
+        },
+        "skinlight": {
+          "base": "entity/land/livingdead/skinlight"
+        },
+        "bonedark": {
+          "base": "entity/land/livingdead/bonedark"
+        },
+        "bonelight": {
+          "base": "entity/land/livingdead/bonelight"
+        }
+      }
+    },
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "carryable" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 0
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": true
+      },
+      { "code": "interpolateposition" }
+    ],
+    "animations": [
+      {
+        "code": "idle",
+        "animation": "idle",
+        "blendMode": "Average",
+        "triggeredBy": { "defaultAnim": true }
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 0
+      },
+      {
+        "code": "health",
+        "currenthealthByType": {
+          "*-normal*": 100
+        },
+        "maxhealthByType": {
+          "*-normal*": 100
+        }
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": true
+      },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "meleeattack",
+            "entityCodes": [ "*" ],
+            "priority": 2,
+            "damageByType": {
+              "*-normal": 1
+            },
+            "damageTierByType": {
+              "*-normal": 1
+            },
+            "damageTypeByType": {
+              "*-normal": "SlashingAttack"
+            },
+            "mincooldown": 500,
+            "maxcooldown": 1750,
+            "damagePlayerAtMs": 400,
+            "attackDurationMs": 1000,
+            "animation": "attack",
+            "animationSpeed": 1.5
+          },
+          {
+            "code": "idle",
+            "entityCodes": [ "*" ],
+            "priority": 1.5,
+            "priorityForCancel": 9,
+            "mincooldown": 1000,
+            "maxcooldown": 10000,
+            "durationMs": 1500,
+            "releaseAtMs": 700,
+            "seekingRange": 15,
+            "animationSpeed": 1.5,
+            "animation": "scream",
+            "sound": "entity/livingdead/screech"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": [ "*" ],
+            "priority": 1.5,
+            "mincooldown": 400,
+            "maxcooldown": 800,
+            "movespeed": 0.0,
+            "seekingRange": 20,
+            "animationSpeed": 1.3,
+            "animation": "idle"
+          },
+          {
+            "code": "idle",
+            "priority": 1.2,
+            "priorityForCancel": 1.35,
+            "minduration": 4000,
+            "maxduration": 6000,
+            "chance": 0.001,
+            "initialMinCoolDown": 2000,
+            "initialMaxCoolDown": 150000,
+            "mincooldown": 300000,
+            "maxcooldown": 10000000,
+            "animation": "idle",
+            "animationSpeed": 1.25
+          },
+          {
+            "code": "lookaround",
+            "priority": 0.5
+          }
+        ]
+      }
+    ]
+  }
+}

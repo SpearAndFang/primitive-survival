@@ -1,0 +1,123 @@
+{
+  "code": "trussedmeat",
+  "maxstacksize": 16,
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "redmeat",
+        "bushmeat",
+        "poultry",
+        "fish"
+      ]
+    },
+    {
+      "code": "state",
+      "states": ["raw", "smoked"]
+    }
+  ],
+  "shape": { "base": "item/food/smoker/trussedmeat-{type}-{state}" },
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "creativeinventory": {
+    "general": ["*-raw"],
+    "items": ["*-raw"],
+    "primitive": ["*-raw"]
+  },
+  "materialDensity": 150,
+  "guiTransformByType": {
+	 "*-poultry-*": {
+		"rotate": "true",
+		"translation": { "x": 0.1, "y": 0, "z": 0 },
+		"rotation": { "x": 180, "y": 25, "z": 0 },
+		"origin": { "x": 0.47, "y": 0.16, "z": 0.45 },
+		"scale": 2.84
+	 },
+	 "*-fish-*": {
+		"rotate": "true",
+		"translation": { "x": 0.1, "y": 0, "z": 0 },
+		"rotation": { "x": 180, "y": 25, "z": 0 },
+		"origin": { "x": 0.47, "y": 0.1, "z": 0.45 },
+		"scale": 1.75
+	 },
+	 "*": {
+		"rotate": "true",
+		"translation": { "x": 0.1, "y": 0, "z": 0 },
+		"rotation": { "x": 180, "y": 25, "z": 0 },
+		"origin": { "x": 0.47, "y": 0.2, "z": 0.45 },
+		"scale": 3.09
+	}
+  },
+  "fpHandTransformByType": {
+	 "*-fish-*": {
+		"rotation": { "x": -170, "y": 70, "z": 171 },
+		"origin": { "x": 0.6, "y": 1, "z": -0.6 },
+    "scale": 4.24
+   },
+	 "*": {
+		"rotation": { "x": 22, "y": 98, "z": -22 },
+		"origin": { "x": 0.6, "y": -1.3, "z": 0.2 },
+		"scale": 2.36
+	 }
+	},
+	"tpHandTransformByType": {
+	 "*-redmeat-*": {
+		"rotation": { "x": 81, "y": -11, "z": -79 },
+		"origin": { "x": 0.41, "y": 1.61, "z": 1.0599 },
+		"scale": 0.66
+	 },
+	 "*-fish-*": {
+		"rotation": { "x": 81, "y": -10, "z": -77 },
+		"origin": { "x": 0.59, "y": 1.02, "z": 0.7099 },
+		"scale": 0.5
+	 },
+	 "*": {
+		"rotation": { "x": 81, "y": -10, "z": -80 },
+		"origin": { "x": 0.41, "y": 1.54, "z": 1.0499 },
+		"scale": 0.66
+	 }	
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 90, "y": 0, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.5, "z": 0.5299 },
+		"scale": 3.45
+	},
+  "transitionablePropsByType": {
+	"*-redmeat-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 36 },
+        "transitionHours": { "avg": 24 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 4
+      }
+    ],
+	  "*-bushmeat-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 36 },
+        "transitionHours": { "avg": 24 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 4
+      }
+    ],
+  	"*-poultry-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 36 },
+        "transitionHours": { "avg": 24 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 4
+      }
+    ],
+    "*-fish-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 36 },
+        "transitionHours": { "avg": 24 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 4
+      }
+    ]
+  }
+}

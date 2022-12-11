@@ -1,0 +1,31 @@
+{
+    "ingredientPattern": "BCB,BPB,BBB",
+    "ingredients": {
+        "P": {
+            "type": "item",
+            "code": "game:metalplate-copper"
+        },
+        "C": {
+            "type": "item",
+            "code": "game:candle"
+        },
+        "B": {
+            "type": "item",
+            "code": "game:plank-*",
+          "allowedVariants": [ "acacia", "aged", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart" ],
+            "name": "wood"
+        }
+    },
+    "width": 3,
+    "height": 3,
+    "output": {
+        "type": "block",
+        "code": "primitivesurvival:woodlantern-{wood}-up",
+        "attributes": {
+            "material": "wood",
+            "lining": "plain",
+            "glass": ""
+        }
+    }
+}
+

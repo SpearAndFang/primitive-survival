@@ -1,0 +1,132 @@
+{
+  "code": "particulator",
+  "class": "blockparticulator",
+  "entityclass": "beparticulator",
+  "behaviors": [ { "name": "HorizontalOrientable" }],
+    "variantgroups": [
+    {
+      "code": "side",
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ],
+  "shape": {
+    "base": "block/particulator",
+    "rotateYByType": {
+      "*-north": 180,
+      "*-east": 90,
+      "*-south": 0,
+      "*-west": 270
+    }
+  },
+  "textures": {
+    "material": { "base": "block/sides" },
+    "frame": { "base": "block/frame" },
+    "frontframe": { "base": "block/frontframe" }
+  },
+  "drawtype": "json",
+  "blockmaterial": "Glass",
+  "faceCullMode": "MergeMaterial",
+  "replaceable": 2000,
+  "lightAbsorption": 0,
+  "renderPass": "Transparent",
+  "vertexFlags": {
+    "zOffset": 2,
+    "shiny": true
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "drops": [
+    {
+      "type": "block",
+      "code": "particulator-north",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "resistance": 0.5,
+  "lightabsorption": 0,
+  "creativeinventory": {
+    "general": [ "*-north" ],
+    "primitive": [ "*-north" ]
+  },
+  "sounds": {
+    "place": "game:player/buildhigh",
+    "break": "game:block/glass",
+    "hit": "game:block/glass"
+  },
+  "groundTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": -0.01,
+      "z": 0.5
+    }
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  },
+  "collisionSelectionBoxes": [
+    {
+      "x1": 0,
+      "y1": 0.95,
+      "z1": 0,
+      "x2": 1,
+      "y2": 1,
+      "z2": 1
+    },
+    {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.05,
+      "z2": 1
+    },
+    {
+      "x1": 0.95,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 1,
+      "z2": 1
+    },
+    {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 0.05,
+      "y2": 1,
+      "z2": 1
+    },
+    {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0.95,
+      "x2": 1,
+      "y2": 1,
+      "z2": 1
+    },
+    {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 1,
+      "z2": 0.05
+    }
+  ]
+}

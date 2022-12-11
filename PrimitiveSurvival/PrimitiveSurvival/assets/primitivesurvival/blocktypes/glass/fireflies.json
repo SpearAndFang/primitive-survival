@@ -1,0 +1,280 @@
+{
+  "code": "fireflies",
+  "class": "blockfireflies",
+  "entityClassByType": {
+    "*-baited*": "befireflies"
+  },
+  "storageFlags": 257,
+  "behaviors": [{ "name": "RightClickPickupFireflies" }],
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "heldLeftTpIdleAnimation": "holdinglanternlefthand",
+  "maxstacksizeByType": {
+    "*-empty*": 16,
+    "*-baited*": 16,
+    "*": 1
+  },
+  "creativeinventorybytype": {
+    "*-empty-*": {
+      "general": [ "*-straight" ],
+      "decorative": [ "*-straight" ],
+      "primitive": [ "*-straight" ]
+    },
+    "*-baited-*": {
+      "general": [ "*-straight" ],
+      "decorative": [ "*-straight" ],
+      "primitive": [ "*-straight" ]
+    },
+    "*": {
+      "general": [ "*-straight" ],
+      "creatures": [ "*-straight" ],
+      "primitive": [ "*-straight" ]
+    }
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "empty", "baited", "treetop", "mysticlantern", "blueghost", "rover", "fairyring", "candle", "marshimp" ]
+    },
+    {
+      "code": "dir",
+      "states": [
+        "straight",
+        "angled"
+      ]
+    }
+  ],
+  "shapebytype": {
+    "*-empty-straight": {
+      "base": "block/glass/fireflyjarempty",
+      "rotateY": 0,
+      "scale": 1.4
+    },
+    "*-baited-straight": {
+      "base": "block/glass/fireflyjarbaited",
+      "rotateY": 0,
+      "scale": 1.4
+    },
+    "*-empty-angled": {
+      "base": "block/glass/fireflyjarempty",
+      "rotateY": 45,
+      "scale": 1.4
+    },
+    "*-baited-angled": {
+      "base": "block/glass/fireflyjarbaited",
+      "rotateY": 45,
+      "scale": 1.4
+    },
+    "*": {
+      "base": "entity/land/firefliesglowing",
+      "scale": 1.4
+    }
+  },
+  "texturesbytype": {
+    "*-treetop*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "color": {
+        "base": "entity/land/fireflies/34"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    },
+    "*-mysticlantern*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "color": {
+        "base": "entity/land/fireflies/13"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    },
+    "*-blueghost*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "color": {
+        "base": "entity/land/fireflies/6"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    },
+    "*-rover*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "color": {
+        "base": "entity/land/fireflies/17"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    },
+    "*-fairyring*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "color": {
+        "base": "entity/land/fireflies/37"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    },
+    "*-candle*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "color": {
+        "base": "entity/land/fireflies/18"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    },
+    "*-marshimp*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "color": {
+        "base": "entity/land/fireflies/20"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    },
+    "*": {
+      "plug": {
+        "base": "entity/land/fireflies/plug"
+      },
+      "bait": {
+        "base": "entity/land/fireflies/bait"
+      },
+      "glass": {
+        "base": "entity/land/fireflies/glass"
+      }
+    }
+  },
+  "lightHsvbyType": {
+    "*-treetop*": [ 34, 7, 5 ],
+    "*-mysticlantern*": [ 13, 7, 7 ],
+    "*-blueghost*": [ 43, 7, 9 ],
+    "*-rover*": [ 17, 7, 5 ],
+    "*-fairyring*": [ 37, 7, 7 ],
+    "*-candle*": [ 5, 7, 7 ],
+    "*-marshimp*": [ 3, 7, 6 ],
+    "*": [ 0, 0, 0 ]
+  },
+  "dropsbytype": {
+    "*-empty*": [
+      {
+        "type": "block",
+        "code": "fireflies-empty-straight"
+      }
+    ],
+    "*-baited*": [
+      {
+        "type": "block",
+        "code": "fireflies-baited-straight"
+      }
+    ]
+  },
+  "materialDensity": 150,
+  "blockmaterial": "Glass",
+  "drawtype": "json",
+  "renderpass": "transparent",
+  "lightAbsorption": 0,
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "replaceable": 500,
+  "resistance": 0.5,
+  "sounds": {
+    "place": "game:player/buildhigh",
+    "break": "game:block/glass",
+    "hit": "game:block/glass"
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": -0.15,
+      "y": -0.25,
+      "z": 0.5
+    },
+    "rotation": {
+      "x": 96,
+      "y": 43,
+      "z": -82
+    },
+    "origin": {
+      "x": 0.31,
+      "y": -0.01,
+      "z": 0.14
+    },
+    "scale": 1.8
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -25,
+      "y": -25,
+      "z": -2
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.16,
+      "z": 0.5
+    },
+    "scale": 2.4
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.6,
+      "y": -2.6,
+      "z": -0.5
+    },
+    "rotation": {
+      "x": 138,
+      "y": -5,
+      "z": -88
+    },
+    "origin": {
+      "x": -0.03,
+      "y": 2.21,
+      "z": 1.31
+    },
+    "scale": 0.8
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.7,
+      "z": 0.5899
+    },
+    "scale": 4
+  },
+  "selectionBox": {
+    "x1": 0.344,
+    "y1": 0,
+    "z1": 0.344,
+    "x2": 0.656,
+    "y2": 0.4249,
+    "z2": 0.656
+  }
+
+}

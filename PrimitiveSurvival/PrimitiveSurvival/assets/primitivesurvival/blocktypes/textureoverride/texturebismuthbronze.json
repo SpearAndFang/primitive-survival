@@ -1,0 +1,6 @@
+{
+  "code": "texturebismuthbronze",
+  "textures": {
+    "hookmaterial": { "base": "game:block/metal/ingot/bismuthbronze" }
+  }
+}

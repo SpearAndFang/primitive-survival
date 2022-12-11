@@ -1,0 +1,140 @@
+{
+  "code": "skullofthedead",
+  "class": "blockskullofthedead",
+  "blockmaterial": "Wood",
+  "drawtype": "json",
+  "lightabsorption": 0,
+  "materialDensity": 200,
+  "combustibleProps": {
+    "burnTemperature": 700,
+    "burnDuration": 8
+  },
+  "maxstacksize": 16,
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "resistance": 1,
+  "requiredminingtier": 1,
+  "sounds": {
+    "place": "game:walk/stone3",
+    "walk": "game:walk/stone3"
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "normal" ]
+    }
+  ],
+  "selectionbox": {
+    "x1": 0.2125,
+    "y1": 0,
+    "z1": 0.2125,
+    "x2": 0.7875,
+    "y2": 0.375,
+    "z2": 0.7875
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": 1,
+      "y": -72,
+      "z": 0
+    },
+    "origin": {
+      "x": 0,
+      "y": 1.3,
+      "z": 0.5
+    },
+    "scale": 1.72
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -94,
+      "y": 24,
+      "z": -47
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.1,
+      "z": 0.1
+    },
+    "scale": 5
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.4,
+      "y": 0.1,
+      "z": 0.1
+    },
+    "rotation": {
+      "x": -10,
+      "y": -23,
+      "z": -49
+    },
+    "origin": {
+      "x": 0.4,
+      "y": 0,
+      "z": 0.2
+    },
+    "scale": 1.08
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 7,
+      "z": -15
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.7,
+      "z": 0.3
+    },
+    "scale": 2.21
+  },
+  "dropsByType": {
+    "*": [
+      {
+        "type": "block",
+        "code": "skullofthedead-normal"
+      }
+    ]
+  },
+  "textures": {
+    "tinbronze": {
+      "base": "entity/land/livingdead/tinbronze"
+    },
+    "skindark": {
+      "base": "entity/land/livingdead/skindark"
+    },
+    "skinlight": {
+      "base": "entity/land/livingdead/skinlight"
+    },
+    "bonedark": {
+      "base": "entity/land/livingdead/bonedark"
+    },
+    "bonelight": {
+      "base": "entity/land/livingdead/bonelight"
+    }
+  },
+  "shapebytype": {
+    "*": {
+      "base": "entity/land/skullofthedead"
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "primitive": [ "*" ]
+  }
+}

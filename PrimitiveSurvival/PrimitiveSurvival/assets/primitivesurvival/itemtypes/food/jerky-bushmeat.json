@@ -1,0 +1,115 @@
+{
+  "code": "jerky-bushmeat",
+  "maxstacksize": 256,
+  "attributes": {
+    "inContainerTextureByType": {
+      "*-raw": { "base": "game:block/wood/barrel/{type}-bushmeat" },
+      "*-cured": { "base": "game:block/wood/barrel/{type}-bushmeat" }
+    },
+    "inFirePitProps": {
+      "transform": {
+        "scale": 0.85,
+        "origin": { "x": 0.5, "y": 0.0625, "z": 0.5 },
+        "translation": { "x": -0.03125, "y": 0.125, "z": 0 },
+        "rotation": { "x": 0, "y": 0, "z": 90 }
+      },
+      "useFirepitModel": "Spit"
+    },
+    "nutritionPropsWhenInMeal": { "satiety": 45, "foodcategory": "Protein" },
+    "handbook": {
+      "extraSections": [
+        {
+          "title": "handbook-item-sources",
+          "text": "Obtained by harvesting dead wild animals"
+        }
+      ]
+    }
+  },
+  "variantgroups": [{ "code": "type", "states": ["raw", "cooked", "cured"] }],
+  "shape": { "base": "item/food/meat/jerky-bushmeat" },
+  "textures": {
+    "meat": { "base": "game:item/food/meat/{type}" }
+  },
+  "creativeinventory": { "general": ["*"], "items": ["*"], "primitive": ["*"] },
+  "nutritionPropsByType": {
+    "*-cooked": { "satiety": 30, "foodcategory": "Protein" },
+    "*-cured": { "satiety": 22.5, "foodcategory": "Protein" }
+  },
+  "materialDensity": 150,
+  "guiTransformByType": {
+    "*-cured": {
+      "rotate": false,
+      "translation": { "x": 0.5, "y": 0, "z": 0 },
+      "rotation": { "x": 171, "y": -122, "z": 28 },
+      "origin": { "x": 0.5, "y": 0.05, "z": 0.53 },
+      "scale": 4.3
+    },
+    "*": {
+      "rotate": false,
+      "translation": { "x": 0, "y": 0, "z": 0 },
+      "rotation": { "x": 171, "y": -122, "z": 33 },
+      "origin": { "x": 0.5, "y": 0.04, "z": 0.53 },
+      "scale": 4.7199
+    }
+  },
+  "fpHandTransform": {
+    "translation": { "x": -0.06, "y": 0.36, "z": 0.23 },
+    "rotation": { "x": 40, "y": 91, "z": 15 },
+    "origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+    "scale": 2.5
+  },
+  "tpHandTransform": {
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 5, "y": 41, "z": -31 },
+    "origin": { "x": 0.23, "y": 0, "z": 0.13 },
+    "scale": 0.75
+  },
+  "groundTransform": {
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 180, "y": 33, "z": -180 },
+    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+    "scale": 5
+  },
+  "combustiblePropsByType": {
+    "jerky-bushmeat-raw": {
+      "meltingPoint": 100,
+      "meltingDuration": 8,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": { "type": "item", "code": "jerky-bushmeat-cooked" },
+      "requiresContainer": false
+    }
+  },
+  "transitionablePropsByType": {
+    "*-raw": [
+      {
+        "type": "Cure",
+        "freshHours": { "avg": 0 },
+        "transitionHours": { "avg": 4 },
+        "transitionedStack": { "type": "item", "code": "jerky-bushmeat-cured" },
+        "transitionRatio": 1
+      }
+    ],
+    "*-cooked": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 120 },
+        "spoilHours": { "avg": 36 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 1
+      }
+    ],
+    "*-cured": [
+        {
+            "type": "Perish",
+            "freshHours": { "avg": 336 },
+            "spoilHours": { "avg": 168 },
+            "transitionedStack": {
+                "type": "item",
+                "code": "game:rot"
+            },
+            "transitionRatio": 1
+        }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "editor": {
+    "allAngles": true,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {},
+  "elements": [
+    {
+      "name": "Origin",
+      "from": [0.0, 0.0, 0.0],
+      "to": [0.0, 0.0, 0.0],
+      "faces": {
+        "north": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "east": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "south": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "west": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "up": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "down": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 0.5, 0.5] }
+      },
+      "children": [
+        {
+          "name": "Stick",
+          "from": [9.5, 0.0, 1.0],
+          "to": [10.5, 6.3, 2.0],
+          "rotationOrigin": [9.0, 0.0, 1.0],
+          "rotationX": 136.0,
+          "rotationY": 47.0,
+          "rotationZ": -55.0,
+          "faces": {
+            "north": {
+              "texture": "#woodmaterial",
+              "uv": [0.0, 0.0, 1.0, 13.0],
+              "autoUv": false
+            },
+            "east": { "texture": "#woodmaterial", "uv": [7.0, 0.0, 8.0, 6.0] },
+            "south": { "texture": "#woodmaterial", "uv": [3.0, 0.0, 4.0, 6.0] },
+            "west": {
+              "texture": "#woodmaterial",
+              "uv": [11.0, 0.0, 12.0, 6.0]
+            },
+            "up": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 1.0, 1.0] },
+            "down": { "texture": "#woodmaterial", "uv": [0.0, 0.0, 1.0, 1.0] }
+          }
+        },
+        {
+          "name": "Rock",
+          "from": [1.5, 0.0, 11.0],
+          "to": [10.5, 9.0, 13.0],
+          "rotationOrigin": [2.0, 1.0, 12.0],
+          "rotationX": -91.0,
+          "rotationZ": -17.0,
+          "faces": {
+            "north": { "texture": "#rockmaterial", "uv": [0.0, 0.0, 9.0, 9.0] },
+            "east": { "texture": "#rockmaterial", "uv": [0.0, 0.0, 2.0, 9.0] },
+            "south": { "texture": "#rockmaterial", "uv": [0.0, 0.0, 9.0, 9.0] },
+            "west": { "texture": "#rockmaterial", "uv": [0.0, 0.0, 2.0, 9.0] },
+            "up": { "texture": "#rockmaterial", "uv": [0.0, 0.0, 9.0, 2.0] },
+            "down": { "texture": "#rockmaterial", "uv": [0.0, 0.0, 9.0, 2.0] }
+          }
+        }
+      ]
+    }
+  ]
+}

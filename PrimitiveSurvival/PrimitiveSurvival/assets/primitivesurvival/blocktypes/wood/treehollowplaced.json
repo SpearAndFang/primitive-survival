@@ -1,0 +1,244 @@
+{
+  "code": "treehollowplaced",
+  "class": "blocktreehollowplaced",
+  "entityClass": "betreehollowplaced",
+  "behaviors": [
+    { "name": "Container" },
+    {
+      "name": "HorizontalOrientable",
+      "properties": { "dropBlockFace": "north" }
+    }
+  ],
+  "attributes": {
+    "partialAttachable": true,
+    "inventoryClassName": "chest",
+    "defaultType": "base",
+    "types": [ "base", "base2", "up", "up2" ],
+    "drop": {
+      "base": true,
+      "base2": true,
+      "up": true,
+      "up2": true
+    },
+    "quantitySlots": {
+      "base": 10,
+      "base2": 12,
+      "up": 10,
+      "up2": 12
+    },
+    "dialogTitleLangCode": {
+      "base": "primitivesurvival:treehollowcontents",
+      "base2": "primitivesurvival:treehollowcontents",
+      "up": "primitivesurvival:treehollowcontents",
+      "up2": "primitivesurvival:treehollowcontents"
+    },
+    "storageType": {
+      "base": 189,
+      "base2": 189,
+      "up": 189,
+      "up2": 189
+    },
+    "retrieveOnly": {
+      "base": false,
+      "base2": false,
+      "up": false,
+      "up2": false
+    },
+    "shape": {
+      "base": "primitivesurvival:block/wood/treehollow-base",
+      "base2": "primitivesurvival:block/wood/treehollow-base2",
+      "up": "primitivesurvival:block/wood/treehollow-up",
+      "up2": "primitivesurvival:block/wood/treehollow-up2"
+    },
+    "variantByGroup": "wood",
+    "variantByGroupInventory": "wood",
+    "openSound": "game:sounds/block/sand",
+    "closeSound": "game:sounds/block/sand",
+  },
+  "variantgroups": [
+    {
+      "code": "wood",
+      "states": [ "acacia", "birch", "kapok", "larch", "maple", "oak", "pine", "walnut" ]
+    },
+    {
+      "code": "side",
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ],
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sounds": {
+    "place": "game:block/planks",
+    "walk": "game:walk/wood",
+    "hit": "game:block/planks",
+    "break": "game:block/planks",
+    "byTool": {
+      "Axe": {
+        "hit": "game:block/chop",
+        "break": "game:block/planks"
+      }
+    }
+  },
+  "combustiblePropsByType": {
+    "treehollow*-birch-*": {
+      "burnTemperature": 800,
+      "burnDuration": 58
+    },
+    "treehollow*-oak-*": {
+      "burnTemperature": 800,
+      "burnDuration": 78
+    },
+    "treehollow*-pine-*": {
+      "burnTemperature": 800,
+      "burnDuration": 40
+    },
+    "treehollow*-acacia-*": {
+      "burnTemperature": 800,
+      "burnDuration": 69
+    },
+    "treehollow*-kapok-*": {
+      "burnTemperature": 800,
+      "burnDuration": 27
+    },
+    "treehollow*-maple-*": {
+      "burnTemperature": 800,
+      "burnDuration": 59
+    },
+    "*": {
+      "burnTemperature": 800,
+      "burnDuration": 52
+    }
+  },
+  "replaceable": 500,
+  "resistance": 4.5,
+  "lightAbsorption": 0,
+  "shapeInventory": {
+    "base": "primitivesurvival:block/wood/treehollow-base"
+  },
+  "shapebytype": {
+    "*-north": {
+      "base": "primitivesurvival:block/wood/treehollow-base"
+    },
+    "*-east": {
+      "base": "primitivesurvival:block/wood/treehollow-base",
+      "rotateY": 270
+    },
+    "*-south": {
+      "base": "primitivesurvival:block/wood/treehollow-base",
+      "rotateY": 180
+    },
+    "*-west": {
+      "base": "primitivesurvival:block/wood/treehollow-base",
+      "rotateY": 90
+    }
+  },
+  "textures": {
+    "sides": {
+      "base": "game:block/wood/bark/{wood}"
+    },
+    "inside": {
+      "base": "block/wood/inside"
+    },
+    "topbottom": {
+      "base": "game:block/wood/treetrunk/{wood}"
+    },
+    "base-sides": {
+      "base": "game:block/wood/bark/{wood}"
+    },
+    "base-inside": {
+      "base": "block/wood/inside"
+    },
+    "base-topbottom": {
+      "base": "game:block/wood/treetrunk/{wood}"
+    },
+    "base2-sides": {
+      "base": "game:block/wood/bark/{wood}"
+    },
+    "base2-inside": {
+      "base": "block/wood/inside"
+    },
+    "base2-topbottom": {
+      "base": "game:block/wood/treetrunk/{wood}"
+    },
+    "up-sides": {
+      "base": "game:block/wood/bark/{wood}"
+    },
+    "up-inside": {
+      "base": "block/wood/inside"
+    },
+    "up-topbottom": {
+      "base": "game:block/wood/treetrunk/{wood}"
+    },
+    "up2-sides": {
+      "base": "game:block/wood/bark/{wood}"
+    },
+    "up2-inside": {
+      "base": "block/wood/inside"
+    },
+    "up2-topbottom": {
+      "base": "game:block/wood/treetrunk/{wood}"
+    }
+  },
+  "maxStackSize": 16,
+  "materialDensity": 700,
+  "drawtype": "json",
+  "blockmaterial": "Wood",
+  "requiredMiningTier": 1,
+  "creativeinventory": {},
+  "creativeinventoryStacksByType": {
+    "*-north": [
+      {
+        "tabs": [ "general", "primitive" ],
+        "stacks": [
+          {
+            "type": "block",
+            "code": "treehollowplaced-{wood}-north",
+            "attributes": { "type": "base" }
+          },
+          {
+            "type": "block",
+            "code": "treehollowplaced-{wood}-north",
+            "attributes": { "type": "base2" }
+          },
+          {
+            "type": "block",
+            "code": "treehollowplaced-{wood}-north",
+            "attributes": { "type": "up" }
+          },
+          {
+            "type": "block",
+            "code": "treehollowplaced-{wood}-north",
+            "attributes": { "type": "up2" }
+          }
+        ]
+      }
+    ]
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -22.6,
+      "y": -145,
+      "z": 0
+    }
+  }
+}
+

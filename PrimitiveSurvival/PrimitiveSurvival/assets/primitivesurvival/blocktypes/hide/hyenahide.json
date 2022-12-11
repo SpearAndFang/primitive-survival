@@ -1,0 +1,162 @@
+{
+  "code": "hyenahide",
+  "class": "blockhide",
+  "behaviors": [ { "name": "Unstable" } ],
+  "variantgroups": [
+    {
+      "code": "species",
+      "states": [ "hyena" ]
+    },
+    {
+      "code": "type",
+      "states": [ "female", "male" ]
+    },
+    {
+      "code": "dir",
+      "states": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest"
+      ]
+    }
+  ],
+  "attributes": {
+    "handbook": {
+      "groupBy": [ "hyenahide-*" ]
+    }
+  },
+  "drops": [
+    {
+      "type": "item",
+      "code": "game:hide-pelt-medium",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "shapebytype": {
+    "*-north": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 270
+    },
+    "*-northeast": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 225
+    },
+    "*-east": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 180
+    },
+    "*-southeast": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 135
+    },
+    "*-south": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 90
+    },
+    "*-southwest": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 45
+    },
+    "*-west": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 0
+    },
+    "*-northwest": {
+      "base": "block/hide/hyenahide",
+      "rotateY": 315
+    }
+  },
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "blockmaterial": "Cloth",
+  "creativeinventory": {
+    "general": [ "*-{species}-{type}-north" ],
+    "decorative": [ "*-{species}-{type}-north" ],
+    "primitive": [ "*-{species}-{type}-north" ]
+  },
+  "replaceable": 5200,
+  "resistance": 0.5,
+  "vertexFlags": {
+    "zOffset": 5
+  },
+  "lightAbsorption": 0,
+  "texturesByType": {
+    "*": {
+      "normal": {
+        "base": "game:entity/hyena/hyena-{type}1"
+      }
+    }
+  },
+  "selectionBox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 1,
+    "y2": 0.25,
+    "z2": 1
+  },
+
+  "collisionbox": null,
+  "combustibleProps": {
+    "burnTemperature": 400,
+    "burnDuration": 10
+  },
+  "sounds": {
+    "place": "game:block/cloth",
+    "walk": "game:walk/cloth"
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 3,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.0625,
+      "z": 0.5
+    },
+    "scale": 0.58
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": -0.02,
+      "z": 0.5
+    },
+    "scale": 1.5
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.7,
+      "y": 0.1,
+      "z": -1.5
+    },
+    "rotation": {
+      "x": -46,
+      "y": 0,
+      "z": -2
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    }
+  },
+  "materialDensity": 200
+}

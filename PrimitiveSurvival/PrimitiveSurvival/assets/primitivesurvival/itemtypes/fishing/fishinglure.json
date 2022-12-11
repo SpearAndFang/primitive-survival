@@ -1,0 +1,234 @@
+{
+    "code": "fishinglure",
+    "maxstacksize": 64,
+    "attributes": {
+        "reinforcementStrengthByType": {
+            "*-copper": 150,
+            "*-tinbronze": 300,
+            "*-bismuthbronze": 300,
+            "*-blackbronze": 400
+        },
+      "handbook": {
+        "groupBy": [ "fishinglure-*" ],
+        "createdBy": "metalmolding"
+      }
+    },
+    "variantgroups": [
+      {
+        "code": "metal",
+        "states": [ "bismuth", "bismuthbronze", "blackbronze", "brass", "copper", "gold", "lead", "molybdochalkos", "silver", "tin", "tinbronze", "zinc" ]
+      }
+    ],
+    "attributesByType": {
+        "lure-lead": {
+            "workableTemperature": 0
+        }
+    },
+    "storageFlags": 5,
+
+    "shape": { "base": "item/fishing/fishinglure" },
+    "textures": {
+        "hookmaterial": { "base": "game:block/metal/ingot/{metal}" }
+    },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "primitive": [ "*" ]
+    },
+  "materialDensityByType": {
+    "*-bismuth": 9790,
+    "*-bismuthbronze": 7900,
+    "*-blackbronze": 9000,
+    "*-brass": 8500,
+    "*-copper": 8960,
+    "*-gold": 19300,
+    "*-lead": 11300,
+    "*-molybdochalkos": 9600,
+    "*-silver": 10500,
+    "*-tin": 7260,
+    "*-tinbronze": 7600,
+    "*-zinc": 7140
+  },
+    "combustiblePropsByType": {
+        "fishinglure-copper": {
+            "meltingPoint": 1084,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-copper"
+            }
+        },
+        "fishinglure-brass": {
+            "meltingPoint": 920,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-brass"
+            }
+        },
+        "fishinglure-tinbronze": {
+            "meltingPoint": 950,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-tinbronze"
+            }
+        },
+        "fishinglure-bismuthbronze": {
+            "meltingPoint": 850,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-bismuthbronze"
+            }
+        },
+        "fishinglure-blackbronze": {
+            "meltingPoint": 1020,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-blackbronze"
+            }
+        },
+        "fishinglure-gold": {
+            "meltingPoint": 1063,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-gold"
+            }
+        },
+        "fishinglure-lead": {
+            "meltingPoint": 327,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-lead"
+            }
+        },
+        "fishinglure-tin": {
+            "meltingPoint": 232,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-tin"
+            }
+        },
+        "fishinglure-zinc": {
+            "meltingPoint": 419,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-zinc"
+            }
+        },
+        "fishinglure-silver": {
+            "meltingPoint": 961,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-silver"
+            }
+        },
+        "fishinglure-bismuth": {
+            "meltingPoint": 271,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-bismuth"
+            }
+        },
+        "fishinglure-molybdochalkos": {
+            "meltingPoint": 902,
+            "meltingDuration": 30,
+            "smeltedRatio": 4,
+            "smeltedStack": {
+                "type": "item",
+                "code": "game:ingot-molybdochalkos"
+            }
+        }
+    },
+    "guiTransform": {
+        "translation": {
+            "x": -1,
+            "y": 2.4,
+            "z": 0
+        },
+        "rotation": {
+            "x": 154,
+            "y": -57,
+            "z": -99
+        },
+        "origin": {
+            "x": 0.53,
+            "y": -0.2,
+            "z": 0.4
+        },
+        "scale": 3.66
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.1,
+            "z": 0
+        },
+        "rotation": {
+            "x": -156,
+            "y": -56,
+            "z": -150
+        },
+        "origin": {
+            "x": 0.6,
+            "y": -1.2,
+            "z": 0.2
+        },
+        "scale": 1.84
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.77,
+            "y": -0.35,
+            "z": -0.64
+        },
+        "rotation": {
+            "x": 11,
+            "y": -160,
+            "z": 57
+        },
+        "origin": {
+            "x": 0.4,
+            "y": 0.1,
+            "z": 0.9
+        },
+        "scale": 0.75
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 10
+    }
+}

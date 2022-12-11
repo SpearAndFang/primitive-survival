@@ -1,0 +1,183 @@
+{
+  "code": "crab",
+  "class": "itemcrab",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "landcrab", "bairdicrab" ]
+    }
+  ],
+  "maxstacksize": 64,
+  "shapebytype": {
+    "*land*": {
+      "base": "entity/land/landcrab"
+    },
+    "*bairdi*": {
+      "base": "entity/land/bairdicrab"
+    }
+  },
+  "texturesbytype": {
+    "*land*": {
+      "crab": {
+        "base": "entity/land/crab/landcrab"
+      }
+    },
+    "*bairdi*": {
+      "crab": {
+        "base": "entity/land/crab/bairdicrab"
+      }
+    }
+  },
+  "creativeinventory": {
+    "general": ["*"],
+    "items": ["*"],
+    "creatures": ["*"],
+    "primitive": ["*"]
+  },
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "materialDensity": 600,
+  "fpHandTransformbytype": {
+    "*-landcrab": {
+      "rotation": {
+        "x": 119,
+        "y": 60,
+        "z": 168
+      },
+      "origin": {
+        "x": 0.5,
+        "y": -0.35,
+        "z": -0.2
+      },
+      "scale": 2.2
+    },
+    "*-bairdicrab": {
+      "rotation": {
+        "x": 119,
+        "y": 60,
+        "z": 168
+      },
+      "origin": {
+        "x": 0.5,
+        "y": -0.35,
+        "z": -0.2
+      },
+      "scale": 2.6
+    }
+  },
+  "guiTransformbytype": {
+    "*-landcrab": {
+      "rotate": true,
+      "translation": {
+        "x": -0.1,
+        "y": 6.3,
+        "z": 0
+      },
+      "rotation": {
+        "x": 44,
+        "y": -127,
+        "z": 171
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "scale": 1.3
+    },
+    "*-bairdicrab": {
+      "rotate": true,
+      "translation": {
+        "x": -0.1,
+        "y": 6.3,
+        "z": 0
+      },
+      "rotation": {
+        "x": 44,
+        "y": -127,
+        "z": 171
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "scale": 1.6
+    }
+  },
+  "tpHandTransformbytype": {
+    "*-landcrab": {
+      "translation": {
+        "x": -0.15,
+        "y": -0.8,
+        "z": -0.45
+      },
+      "rotation": {
+        "x": 180,
+        "y": 174,
+        "z": -5
+      },
+      "origin": {
+        "x": 0.1,
+        "y": 0.4,
+        "z": 0.4
+      },
+      "scale": 0.7
+    },
+    "*-bairdicrab": {
+      "translation": {
+        "x": -0.15,
+        "y": -0.8,
+        "z": -0.45
+      },
+      "rotation": {
+        "x": 180,
+        "y": 174,
+        "z": -5
+      },
+      "origin": {
+        "x": 0.4,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "scale": 0.9
+    }
+  },
+  "groundTransformbytype": {
+    "*-landcrab": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -8,
+        "y": 142,
+        "z": 180
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.15,
+        "z": 0.5299
+      },
+      "scale": 4
+    },
+    "*-bairdicrab": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -8,
+        "y": 142,
+        "z": 180
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.15,
+        "z": 0.5299
+      },
+      "scale": 4.5
+    }
+  }
+}

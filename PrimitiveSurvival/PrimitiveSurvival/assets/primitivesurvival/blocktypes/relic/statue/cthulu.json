@@ -1,0 +1,148 @@
+{
+  "code": "cthulu-statue",
+  "class": "blocktemporal",
+  "behaviors": [
+    { "name": "UnstableFalling" },
+    {
+      "name": "RightClickPickup",
+      "properties": {
+        "dropsPickupMode": true,
+        "sound": "game:sounds/block/loosestone"
+      }
+    }
+  ],
+  "attributes": {
+    "placement": "top",
+    "placetype": "statue"
+  },
+  "blockmaterial": "Stone",
+  "drawtype": "json",
+  "lightabsorption": 0,
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "resistance": 5,
+  "requiredminingtier": 2,
+  "sounds": {
+    "place": "game:walk/stone3",
+    "walk": "game:walk/stone3"
+  },
+  "variantgroups": [{ "loadFromProperties": "abstract/horizontalorientation" }],
+  "collisionBoxesByType": {
+    "*": [
+      {
+        "x1": 0.275,
+        "y1": 0,
+        "z1": 0.275,
+        "x2": 0.725,
+        "y2": 0.5,
+        "z2": 0.725
+      }
+    ]
+  },
+  "selectionBoxesByType": {
+    "*": [
+      {
+        "x1": 0.275,
+        "y1": 0,
+        "z1": 0.275,
+        "x2": 0.725,
+        "y2": 0.5,
+        "z2": 0.725
+      }
+    ]
+  },
+  "guiTransform": {
+    "translation": {
+      "x": -0.1,
+      "y": 0.4,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.2,
+      "z": 0.5
+    },
+    "scale": 3
+  },
+  "groundTransform": {
+    "scale": 4
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": -0.4,
+      "z": 0
+    },
+    "rotation": {
+      "x": 9,
+      "y": -48,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": -1.2,
+      "z": 0.5
+    },
+    "scale": 1.84
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.7,
+      "y": -0.1,
+      "z": 0.2
+    },
+    "rotation": {
+      "x": 3,
+      "y": -85,
+      "z": -20
+    },
+    "origin": {
+      "x": 0.2,
+      "y": 0.3,
+      "z": 0
+    },
+    "scale": 1.08
+  },
+  "drops": [
+    {
+      "type": "block",
+      "code": "primitivesurvival:cthulu-statue-north"
+    }
+  ],
+  "textures": {
+    "relic": {
+      "base": "primitivesurvival:block/relic"
+    }
+  },
+  "shapebytype": {
+    "*-north": {
+      "base": "block/relic/statue/cthulu",
+      "rotateY": 270
+    },
+    "*-east": {
+      "base": "block/relic/statue/cthulu",
+      "rotateY": 180
+    },
+    "*-south": {
+      "base": "block/relic/statue/cthulu",
+      "rotateY": 90
+    },
+    "*-west": {
+      "base": "block/relic/statue/cthulu",
+      "rotateY": 0
+    }
+  },
+  "creativeinventory": {
+    "general": ["*-north"],
+    "primitive": ["*-north"]
+  }
+}

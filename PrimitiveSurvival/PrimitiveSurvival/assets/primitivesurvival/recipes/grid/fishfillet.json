@@ -1,0 +1,252 @@
+[
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-bass-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-bluegill-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-mutant-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-arcticchar-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 2
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-carp-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 2
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-perch-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 2
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-salmon-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 2
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-pike-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 2
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-trout-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 2
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-catfish-raw",
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 4
+    }
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "code": "textureperidotite",
+  "textures": {
+    "hookmaterial": { "base": "game:block/stone/rock/peridotite1" }
+  }
+}

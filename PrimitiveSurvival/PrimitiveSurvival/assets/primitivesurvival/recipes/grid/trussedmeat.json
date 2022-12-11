@@ -1,0 +1,68 @@
+[
+  {
+    "ingredientPattern": "MT",
+    "ingredients": {
+      "M": {
+        "type": "item",
+        "code": "game:*-raw",
+        "allowedVariants": [ "redmeat", "poultry", "fish", "bushmeat" ],
+        "name": "meat",
+        "quantity": 4
+      },
+      "T": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "shapeless": true,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:trussedmeat-{meat}-raw",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "MT",
+    "ingredients": {
+      "M": {
+        "type": "item",
+        "code": "primitivesurvival:fishfillet-raw",
+        "quantity": 8
+      },
+      "T": {
+        "type": "item",
+        "code": "game:flaxtwine"
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "shapeless": true,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:trussedmeat-fish-raw",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "M",
+    "ingredients": {
+      "M": {
+        "type": "item",
+        "code": "primitivesurvival:trussedmeat-*-raw",
+        "allowedVariants": [ "redmeat", "poultry", "fish", "bushmeat" ],
+        "name": "meat",
+        "quantity": 4
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "output": {
+      "type": "item",
+      "code": "game:{meat}-raw",
+      "quantity": 4
+    }
+  }
+]

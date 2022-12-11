@@ -1,0 +1,16 @@
+{
+  "code": "texturerot",
+  "textures": {
+    "baitmaterial": { "base": "item/fishing/rot" },
+    "troutmaterial": { "base": "item/fishing/rot" },
+    "perchmaterial": { "base": "item/fishing/rot" },
+    "salmonmaterial": { "base": "item/fishing/rot" },
+    "carpmaterial": { "base": "item/fishing/rot" },
+    "bassmaterial": { "base": "item/fishing/rot" },
+    "pikematerial": { "base": "item/fishing/rot" },
+    "arcticcharmaterial": { "base": "item/fishing/rot" },
+    "catfishmaterial": { "base": "item/fishing/rot" },
+    "bluegillmaterial": { "base": "item/fishing/rot" },
+    "mutantmaterial": { "base": "item/fishing/rot" }
+  }
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "ingredientPattern": "SSS,SKS,SSS",
+    "width": 3,
+    "height": 3,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "S": {
+        "type": "item",
+        "code": "game:stick"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:woodspikebundle",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "SSS,_K_",
+    "width": 3,
+    "height": 2,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "S": {
+        "type": "item",
+        "code": "game:bamboostakes"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:woodspikebundle",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": false,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "game:stick"
+      }
+    },
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "block",
+      "code": "stake-empty"
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": false,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "code": "game:bamboostakes"
+      }
+    },
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "block",
+      "code": "stake-empty",
+      "quantity": 3
+    }
+  }
+]

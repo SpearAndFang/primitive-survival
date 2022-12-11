@@ -1,0 +1,329 @@
+{
+  "code": "monkeybridge",
+  "class": "blockmonkeybridge",
+  "vertexFlags": {
+    "zOffset": 5,
+    "windMode": "Water"
+  },
+  "maxstacksize": 64,
+  "shapebytype": {
+    "*-middle-north": {
+      "base": "block/monkeybridge/monkeybridge-middle",
+      "rotateY": 180
+    },
+    "*-middle-east": {
+      "base": "block/monkeybridge/monkeybridge-middle",
+      "rotateY": 90
+    },
+    "*-middle-south": {
+      "base": "block/monkeybridge/monkeybridge-middle",
+      "rotateY": 0
+    },
+    "*-middle-west": {
+      "base": "block/monkeybridge/monkeybridge-middle",
+      "rotateY": 270
+    },
+    "*-end-north": {
+      "base": "block/monkeybridge/monkeybridge-end",
+      "rotateY": 180
+    },
+    "*-end-east": {
+      "base": "block/monkeybridge/monkeybridge-end",
+      "rotateY": 90
+    },
+    "*-end-south": {
+      "base": "block/monkeybridge/monkeybridge-end",
+      "rotateY": 0
+    },
+    "*-end-west": {
+      "base": "block/monkeybridge/monkeybridge-end",
+      "rotateY": 270
+    },
+    "*": {
+      "base": "block/monkeybridge/monkeybridge-null"
+    }
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "end",
+        "middle",
+        "null"
+      ]
+    },
+    { "loadFromProperties": "abstract/horizontalorientation" }
+  ],
+  "dropsbytype": {
+    "*": [
+      {
+        "type": "item",
+        "code": "monkeybridge",
+        "quantity": { "avg": 1 }
+      }
+    ]
+  },
+  "drawtype": "JSON",
+  "materialDensity": 700,
+  "lightabsorption": 0,
+
+
+  "collisionSelectionBoxesByType": {
+    "*-middle-north": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 0
+      },
+      {
+        "x1": 0,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 0.1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 0
+      },
+      {
+        "x1": 0.9,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 0
+      }
+    ],
+    "*-middle-south": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 0
+      },
+      {
+        "x1": 0,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 0.1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 0
+      },
+      {
+        "x1": 0.9,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 0
+      }
+    ],
+    "*-middle-west": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 90
+      },
+      {
+        "x1": 0,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 0.1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 90
+      },
+      {
+        "x1": 0.9,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 90
+      }
+    ],
+
+    "*-middle-east": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 90
+      },
+      {
+        "x1": 0,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 0.1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 90
+      },
+      {
+        "x1": 0.9,
+        "y1": 1.1,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1.2,
+        "z2": 1,
+        "rotateY": 90
+      }
+    ],
+    "*-end-north": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 0
+      }
+    ],
+    "*-end-south": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 0
+      }
+    ],
+    "*-end-west": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 90
+      }
+    ],
+    "*-end-east": [
+      {
+        "x1": 0.3,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 90
+      }
+    ],
+    "*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0,
+        "y2": 0,
+        "z2": 0
+      }
+    ]
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "facecullmode": "nevercull",
+  "resistance": 0.75,
+  "requiredminingtier": 0,
+  "sounds": {
+    "place": "game:block/snow",
+    "walk": "game:walk/default1"
+  },
+  "texturesByType": {
+    "*": {
+      "stringmaterial": { "base": "game:block/vines/basket/normal-northsouth" }
+    }
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 1.1,
+      "y": 6,
+      "z": 0
+    },
+    "rotation": {
+      "x": 3,
+      "y": 73,
+      "z": 31
+    },
+    "origin": {
+      "x": 0.3,
+      "y": 0.6625,
+      "z": 0.7
+    },
+    "scale": 0.87
+  },
+  "fpHandTransform": {
+    "rotation": {
+      "x": 29,
+      "y": -76,
+      "z": -8
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0
+    },
+    "scale": 0.69
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.1799,
+      "y": -0.1,
+      "z": -0.87
+    },
+    "rotation": {
+      "x": 41,
+      "y": -16,
+      "z": 102
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.4
+    },
+    "scale": 0.5
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 41,
+      "y": -11,
+      "z": -40
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3.62
+  }
+}

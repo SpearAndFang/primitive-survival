@@ -1,0 +1,59 @@
+{
+  "ingredientPattern": "HCK,ORT,GMP",
+  "ingredients": {
+    "H": {
+      "type": "item",
+      "code": "game:hammer-*",
+      "isTool": true,
+      "toolDurabilityCost": 10
+    },
+    "C": {
+      "type": "item",
+      "code": "game:chisel-*",
+      "isTool": true,
+      "toolDurabilityCost": 10
+    },
+    "K": {
+      "type": "item",
+      "code": "game:knife-*",
+      "isTool": true,
+      "toolDurabilityCost": 10
+    },
+    "O": {
+      "type": "block",
+      "code": "firework-missile"
+    },
+    "R": {
+      "type": "block",
+      "code": "firework-beehive"
+    },
+    "T": {
+      "type": "block",
+      "code": "firework-fountain"
+    },
+    "G": {
+      "type": "block",
+      "code": "game:glass-*",
+      "name": "type",
+      "allowedVariants": [ "quartz", "plain" ]
+    },
+    "M": {
+      "type": "block",
+      "code": "game:metal-parts",
+      "quantity": 2
+    },
+    "P": {
+      "type": "item",
+      "code": "game:metalplate-*",
+      "allowedVariants": [ "tinbronze", "bismuthbronze", "iron", "meteoriciron", "steel" ]
+    },
+  },
+  "width": 3,
+  "height": 3,
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:particulator-north",
+    "quantity": 1
+  }
+}
+

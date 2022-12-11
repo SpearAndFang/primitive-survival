@@ -1,0 +1,141 @@
+{
+  "code": "fisheggs",
+  "class": "itemfisheggs",
+  "maxstacksize": 64,
+  "variantgroups": [
+    {
+      "code": "state",
+      "states": [ "raw" ]
+    },
+    {
+      "code": "type",
+      "states": [ "normal", "ovulated" ]
+    }
+  ],
+  "attributes": {
+    "handbook": {
+      "groupBy": [ "fisheggs*" ]
+    }
+   },
+  "nutritionPropsByType": {
+    "*": {
+      "satiety": 60,
+      "foodcategory": "Protein"
+    }
+  },
+  "shape": { "base": "item/fishing/fisheggs" },
+  "texturesbytype": {
+    "*": {
+      "normal": { "base": "item/fishing/fisheggs-raw-{type}" }
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "materialDensitybyType": {
+    "*-normal": 900,
+    "*-ovulated": 1020
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 130,
+      "y": -19,
+      "z": -3
+    },
+    "origin": {
+      "x": 0.4,
+      "y": 0.3,
+      "z": 0.3
+    },
+    "scale": 2.78
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 2.2,
+      "y": -0.9,
+      "z": -0.4
+    },
+    "rotation": {
+      "x": -131,
+      "y": -155,
+      "z": 164
+    },
+    "origin": {
+      "x": 0.6,
+      "y": 1.6,
+      "z": 0.2
+    },
+    "scale": 3.37
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0.3,
+      "y": -0.1,
+      "z": -0.6
+    },
+    "rotation": {
+      "x": -121,
+      "y": 22,
+      "z": -53
+    },
+    "origin": {
+      "x": 0.1,
+      "y": 0,
+      "z": 0.2
+    },
+    "scale": 0.76
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.2,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -2,
+      "z": -4
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.25,
+      "z": 0.5
+    },
+    "scale": 2.5
+  },
+  "combustiblePropsByType": {
+    "*": {
+      "meltingPoint": 150,
+      "maxTemperature": 300,
+      "meltingDuration": 10,
+      "smeltingType": "cook",
+      "smeltedRatio": 1,
+      "smeltedStack": {
+        "type": "item",
+        "code": "primitivesurvival:fisheggscooked"
+      },
+      "requiresContainer": false
+    }
+  },
+  "transitionablePropsByType": {
+    "*": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 4 },
+        "spoilHours": { "avg": 2 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ]
+  }
+}

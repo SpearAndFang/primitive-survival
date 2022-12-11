@@ -1,0 +1,95 @@
+{
+  "code": "snare",
+  "class": "blocksnare",
+  "entityclass": "besnare",
+  "behaviors": [{ "name": "Unstable" }],
+  "blockmaterial": "Wood",
+  "drawtype": "json",
+  "rainpermeable": true,
+  "lightabsorption": 0,
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "resistance": 0.25,
+  "requiredminingtier": 0,
+  "sounds": {
+    "place": "game:walk/wood2",
+    "walk": "game:walk/wood2"
+  },
+  "collisionBoxesByType": {
+    "*-tripped*": [
+      { "x1": 0.1, "y1": 0, "z1": 0.1, "x2": 0.9, "y2": 0.1, "z2": 0.9 }
+    ],
+    "*": [{ "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.9, "z2": 1 }]
+  },
+  "selectionBoxesByType": {
+    "*-tripped*": [{ "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1 }],
+    "*": [
+      { "x1": 0.15, "y1": 0, "z1": 0.15, "x2": 0.85, "y2": 0.85, "z2": 0.85 }
+    ]
+  },
+  "guiTransform": {
+    "translation": { "x": 1.5, "y": -0.9, "z": 0 },
+    "rotation": { "x": 30, "y": 30, "z": 0 },
+    "origin": { "x": 0.6, "y": 0.5, "z": 0.5 },
+    "scale": 1.3
+  },
+  "groundTransform": {
+    "scale": 1.2
+  },
+  "fpHandTransform": {
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 7, "y": -34, "z": 0 },
+    "scale": 1.2
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.6, "y": 0, "z": 0.3 },
+    "rotation": { "x": 3, "y": -85, "z": -20 },
+    "origin": { "x": 0, "y": 0, "z": 0 },
+    "scale": 0.84
+  },
+  "variantgroups": [
+    { "code": "type", "states": ["set", "tripped"] },
+    { "loadFromProperties": "abstract/horizontalorientation" }
+  ],
+  "drops": [
+    { "type": "item", "code": "primitivesurvival:cordage" },
+    { "type": "block", "code": "primitivesurvival:stake-empty" }
+  ],
+  "textures": {
+    "stringmaterial": {
+      "base": "game:block/fat"
+    },
+    "woodmaterial": {
+      "base": "game:block/wood/debarked/oak"
+    },
+    "baitmaterial": {
+      "base": "primitivesurvival:item/fishing/bait"
+    }
+  },
+  "shapebytype": {
+    "*-north": {
+      "base": "block/snare/snare-{type}",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "block/snare/snare-{type}",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "block/snare/snare-{type}",
+      "rotateY": 0
+    },
+    "*-west": {
+      "base": "block/snare/snare-{type}",
+      "rotateY": 270
+    }
+  },
+  "creativeinventory": {
+    "general": ["*set-north"],
+    "primitive": ["*set-north"]
+  }
+}

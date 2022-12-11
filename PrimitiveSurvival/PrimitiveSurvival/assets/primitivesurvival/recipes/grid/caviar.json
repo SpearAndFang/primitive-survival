@@ -1,0 +1,28 @@
+[
+  {
+    "ingredientPattern": "H,S",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "H": {
+        "type": "item",
+        "code": "primitivesurvival:fisheggs-raw-*",
+        "allowedVariants": [ "normal", "ovulated" ],
+        "quantity": 1
+      },
+      "S": {
+        "type": "item",
+        "code": "game:salt",
+        "quantity": 1
+      }
+    },
+    "name": "caviar",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:caviar-curing",
+      "quantity": 1
+    }
+  }
+]

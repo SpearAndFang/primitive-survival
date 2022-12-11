@@ -1,0 +1,192 @@
+{
+  "code": "steatiteslab",
+  "__comment": "This block class removes the bottom snow section from vertically standing slabs when there is no ground below",
+  "class": "BlockSlabSnowRemove",
+  "behaviors": [
+    {
+      "name": "OmniRotatable",
+      "properties": {
+        "rotateSides": true,
+        "facing": "block"
+      }
+    }
+  ],
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "temporal", "astral", "ethereal" ]
+    },
+    {
+      "code": "rot",
+      "states": [ "north", "east", "south", "west", "up", "down" ]
+    },
+    {
+      "code": "cover",
+      "states": [ "free", "snow" ]
+    }
+  ],
+  "skipVariants": [ "*-up-snow" ],
+  "attributes": {
+    "canChisel": true,
+    "chiselShapeFromCollisionBox": true,
+    "partialAttachableByType": {
+      "*-down": true,
+      "*-up": true
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*-{material}-down-free" ],
+    "construction": [ "*-{material}-down-free" ],
+    "primitive": [ "*-{material}-down-free" ]
+  },
+  "blockmaterial": "Stone",
+  "renderpassByType": {
+    "*-ethereal": "transparent",
+    "*-astral": "BlendNoCull"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "vertexFlagsbyType": {
+    "*-ethereal*": {
+      "zOffset": 1,
+      "glowLevel": 32,
+      "lowContrast": true
+    },
+    "*-astral*": {
+      "reflective": false
+    }
+  },
+  "faceCullModebyType": {
+    "*-ethereal": "liquid",
+    "*-astral": "liquid"
+  },
+  "lightabsorptionByType": {
+    "*-ethereal*": 0,
+    "*": 99
+  },
+  "replaceable": 700,
+  "resistance": 3,
+  "drops": [ { "code": "steatiteslab-{material}-down-free" } ],
+  "shapeByType": {
+    "*-snow": { "base": "game:block/basic/slab/snow-slab-{rot}" },
+    "*": { "base": "game:block/basic/slab/slab-{rot}" }
+  },
+  "textures": {
+    "all": {
+      "base": "primitivesurvival:block/stone/steatite/slab/topbottom-{material}"
+    }
+  },
+  "sideSolidOpaqueAoByType": {
+    "*-north-*": {
+      "all": false,
+      "north": true
+    },
+    "*-east-*": {
+      "all": false,
+      "east": true
+    },
+    "*-south-*": {
+      "all": false,
+      "south": true
+    },
+    "*-west-*": {
+      "all": false,
+      "west": true
+    },
+    "*-up-*": {
+      "all": false,
+      "up": true
+    },
+    "*-down-*": {
+      "all": false,
+      "down": true
+    }
+  },
+  "emitSideAoByType": {
+    "*-up-*": {
+      "all": false,
+      "up": true
+    },
+    "*-down-*": {
+      "all": false,
+      "down": true
+    },
+    "*": { "all": false }
+  },
+  "collisionbox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 1,
+    "y2": 0.5,
+    "z2": 1,
+    "rotateXByType": {
+      "*-north-*": 90,
+      "*-south-*": 270,
+      "*-up-*": 180,
+      "*-down-*": 0
+    },
+    "rotateZByType": {
+      "*-east-*": 90,
+      "*-west-*": 270
+    }
+  },
+  "selectionbox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 1,
+    "y2": 0.5,
+    "z2": 1,
+    "rotateXByType": {
+      "*-north-*": 90,
+      "*-south-*": 270,
+      "*-up-*": 180,
+      "*-down-*": 0
+    },
+    "rotateZByType": {
+      "*-east-*": 90,
+      "*-west-*": 270
+    }
+  },
+  "sounds": {
+    "walk": "game:walk/stone1",
+    "byTool": {
+      "Pickaxe": {
+        "hit": "game:block/rock-hit-pickaxe",
+        "break": "game:block/rock-break-pickaxe"
+      }
+    }
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 2,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.25,
+      "z": 0.5
+    }
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.2,
+      "y": -1.1,
+      "z": -0.8
+    },
+    "rotation": {
+      "x": -2,
+      "y": 25,
+      "z": -78
+    },
+    "scale": 0.37
+  }
+}

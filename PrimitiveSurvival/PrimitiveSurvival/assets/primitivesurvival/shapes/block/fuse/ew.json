@@ -1,0 +1,25 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "center",
+			"from": [ 0.0, 0.0, 7.85 ], 
+			"to": [ 16.0, 0.3, 8.15 ], 
+			"rotationOrigin": [ -4.0, 1.0, -1.9 ],
+			"faces": {
+				"north": { "texture": "#fuse", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"east": { "texture": "#fuse", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#fuse", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"west": { "texture": "#fuse", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#fuse", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"down": { "texture": "#fuse", "uv": [ 0.0, 0.0, 16.0, 0.5 ] }
+			}
+		}
+	]}

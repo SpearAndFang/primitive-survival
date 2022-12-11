@@ -1,0 +1,86 @@
+{
+    "code": "woodsupportspikes",
+    "class": "blockwoodsupportspikes",
+    "entityclass": "bewoodsupportspikes",
+    "maxstacksize": 16,
+
+    "blockmaterial": "Wood",
+    "faceCullMode": "MergeMaterial",
+    "replaceable": 900,
+    "lightAbsorption": 0,
+    "renderPass": "opaquenocull",
+    "vertexFlags": {
+        "zOffset": 2,
+        "shiny": false
+    },
+
+
+    "drawtype": "json",
+    "rainpermeable": true,
+    "sideopaque": {
+        "all": false
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "variantgroups": [
+        { "loadFromProperties": "abstract/horizontalorientation" }
+    ],
+    "drops": [
+        {
+            "type": "item",
+            "code": "woodspikebundle"
+        }
+    ],
+    "resistance": 1,
+    "requiredminingtier": 0,
+    "shapebytype": {
+        "*-north": {
+            "base": "block/woodsupportspikes",
+            "rotateY": 180,
+            "rotateX": 270
+        },
+        "*-east": {
+            "base": "block/woodsupportspikes",
+            "rotateY": 0,
+            "rotateX": 90,
+            "rotateZ": 270
+
+        },
+        "*-west": {
+            "base": "block/woodsupportspikes",
+            "rotateY": 0,
+            "rotateX": 90,
+            "rotateZ": 90
+        },
+        "*-south": {
+            "base": "block/woodsupportspikes",
+            "rotateY": 0,
+            "rotateX": 90
+        }
+    },
+    "textures": {
+        "stake": { "base": "block/stake" }
+    },
+    "combustibleProps": {
+        "burnTemperature": 400,
+        "burnDuration": 5
+    },
+    "materialDensity": 600,
+    "collisionbox": {
+        "x1": 0,
+        "y1": 0.75,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.95,
+        "z2": 1
+    },
+    "selectionbox": {
+        "x1": 0,
+        "y1": 0.75,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1
+    }
+}

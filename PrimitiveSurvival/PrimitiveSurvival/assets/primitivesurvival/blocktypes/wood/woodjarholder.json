@@ -1,0 +1,131 @@
+{
+  "code": "woodjarholder",
+  "behaviors": [ { "name": "HorizontalAttachable" } ],
+  "creativeinventory": {
+    "general": [ "*-north" ],
+    "primitive": [ "*-north" ]
+  },
+  "variantgroups": [ { "loadFromProperties": "abstract/horizontalorientation" } ],
+  "drops": [
+    {
+      "type": "block",
+      "code": "woodjarholder-north"
+    }
+  ],
+  "shapebytype": {
+    "*-north": {
+      "base": "block/wood/woodjarholder",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "block/wood/woodjarholder",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "block/wood/woodjarholder",
+      "rotateY": 0
+    },
+    "*-west": {
+      "base": "block/wood/woodjarholder",
+      "rotateY": 270
+    }
+  },
+  "textures": {
+    "plug": {
+      "base": "entity/land/fireflies/plug.png"
+    }
+  },
+  "materialDensity": 150,
+  "blockmaterial": "Wood",
+  "drawtype": "json",
+  "lightAbsorption": 0,
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "replaceable": 500,
+  "resistance": 1,
+  "fpHandTransform": {
+    "translation": {
+      "x": 0.3,
+      "y": -0.1,
+      "z": 0
+    },
+    "rotation": {
+      "x": 17,
+      "y": -75,
+      "z": 3
+    },
+    "origin": {
+      "x": -2.5,
+      "y": 2.9,
+      "z": 0
+    },
+    "scale": 1.21
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -38,
+      "y": 6,
+      "z": -1
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.8,
+      "z": 0.4
+    },
+    "scale": 1.65
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.5899,
+      "y": -0.89,
+      "z": -0.83
+    },
+    "rotation": {
+      "x": -74,
+      "y": 89,
+      "z": -66
+    },
+    "origin": {
+      "x": 0.1,
+      "y": 0.2,
+      "z": 0.4
+    },
+    "scale": 0.81
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2.79
+  },
+  "collisionselectionBox": {
+    "x1": 0.3,
+    "y1": 0.8,
+    "z1": 0,
+    "x2": 0.7,
+    "y2": 1,
+    "z2": 0.65,
+    "rotateYByType": {
+      "*-east": 270,
+      "*-south": 180,
+      "*-west": 90,
+      "*-north": 0
+    }
+  }
+}

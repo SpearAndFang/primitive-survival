@@ -1,0 +1,310 @@
+{
+	"editor": {
+		"allAngles": true,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Origin",
+			"from": [ 6.5, 0.0, 7.3 ], 
+			"to": [ 6.5, 0.0, 7.3 ], 
+			"rotationOrigin": [ 6.5, 0.0, 7.3 ],
+			"faces": {
+				"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "enabled": false },
+				"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false, "autoUv": false },
+				"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "enabled": false },
+				"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "enabled": false },
+				"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "enabled": false },
+				"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 1.0, 1.0 ], "enabled": false }
+			},
+			"children": [
+				{
+					"name": "Bait1",
+					"from": [ 2.0, 0.0, 0.0 ], 
+					"to": [ 3.0, 1.0, 1.0 ], 
+					"rotationOrigin": [ 2.0, 2.0, -3.0 ],
+					"rotationX": 3.0,
+					"rotationY": 8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait2",
+					"from": [ 1.7, -0.8, 3.0 ], 
+					"to": [ 2.7, 0.2, 4.0 ], 
+					"rotationOrigin": [ -0.3, -0.8, 0.0 ],
+					"rotationX": 4.4639200085089914E-7,
+					"rotationY": 16.99999641530578,
+					"rotationZ": 16.99999671214028,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait3",
+					"from": [ 1.0, -0.6, -1.0 ], 
+					"to": [ 2.0, 0.4, 0.0 ], 
+					"rotationOrigin": [ 1.0, 1.4, -4.0 ],
+					"rotationX": -8.0,
+					"rotationY": 6.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait4",
+					"from": [ 1.0, 0.0, 2.0 ], 
+					"to": [ 2.0, 1.0, 3.0 ], 
+					"rotationOrigin": [ 1.0, 1.0, 2.0 ],
+					"rotationX": 3.0,
+					"rotationY": 6.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait5",
+					"from": [ 1.8, 0.5, 0.8 ], 
+					"to": [ 2.8, 1.5, 1.8 ], 
+					"rotationOrigin": [ 1.8, 1.5, 0.8 ],
+					"rotationX": 39.0,
+					"rotationY": 6.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait6",
+					"from": [ 1.0, 0.0, 0.0 ], 
+					"to": [ 2.0, 1.0, 1.0 ], 
+					"rotationOrigin": [ 1.0, 1.0, 0.0 ],
+					"rotationX": -19.0,
+					"rotationY": -3.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait7",
+					"from": [ 0.0, 0.0, 0.0 ], 
+					"to": [ 1.0, 1.0, 1.0 ], 
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait9",
+					"from": [ 1.9, 0.0, 1.2 ], 
+					"to": [ 2.9, 1.0, 2.2 ], 
+					"rotationOrigin": [ 1.9, 1.0, 1.2 ],
+					"rotationX": -3.0,
+					"rotationY": 6.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait10",
+					"from": [ 2.4, 0.0, 1.2 ], 
+					"to": [ 3.4, 1.0, 2.2 ], 
+					"rotationOrigin": [ 2.4, 2.0, -1.8 ],
+					"rotationX": 3.0,
+					"rotationY": 8.0,
+					"rotationZ": 3.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait11",
+					"from": [ 0.1, 0.0, -1.2 ], 
+					"to": [ 1.1, 1.0, -0.2 ], 
+					"rotationOrigin": [ 0.1, 0.0, -1.2 ],
+					"rotationX": 3.0,
+					"rotationY": 3.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait12",
+					"from": [ 0.2, 0.0, 1.8 ], 
+					"to": [ 1.2, 1.0, 2.8 ], 
+					"rotationOrigin": [ 0.2, 1.0, 1.8 ],
+					"rotationX": -19.0,
+					"rotationY": 58.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait13",
+					"from": [ 0.8, 0.3, 1.0 ], 
+					"to": [ 1.8, 1.3, 2.0 ], 
+					"rotationOrigin": [ 0.8, 1.3, 1.0 ],
+					"rotationX": -28.0,
+					"rotationY": 6.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait14",
+					"from": [ 0.8, 0.3, -0.5 ], 
+					"to": [ 1.8, 1.3, 0.5 ], 
+					"rotationOrigin": [ 0.8, 1.3, -0.5 ],
+					"rotationX": -14.0,
+					"rotationY": 6.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait15",
+					"from": [ 1.8, 0.3, 1.5 ], 
+					"to": [ 2.8, 1.3, 2.5 ], 
+					"rotationOrigin": [ 1.8, 1.3, 1.5 ],
+					"rotationX": -14.0,
+					"rotationY": 6.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait16",
+					"from": [ -0.2, 0.5, 1.1 ], 
+					"to": [ 0.8, 1.5, 2.1 ], 
+					"rotationOrigin": [ -0.2, 1.5, 1.1 ],
+					"rotationX": 39.0,
+					"rotationY": 6.0,
+					"rotationZ": -8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait17",
+					"from": [ -1.1, 0.0, 1.2 ], 
+					"to": [ -0.1, 1.0, 2.2 ], 
+					"rotationOrigin": [ -1.1, 2.0, -1.8 ],
+					"rotationX": 3.0,
+					"rotationY": 8.0,
+					"rotationZ": 3.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Bait18",
+					"from": [ -1.0, 0.0, -0.4 ], 
+					"to": [ 0.0, 1.0, 0.6 ], 
+					"rotationOrigin": [ -1.0, 2.0, -3.4 ],
+					"rotationX": 3.0,
+					"rotationY": 8.0,
+					"faces": {
+						"north": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"west": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 15.0 ], "autoUv": false },
+						"down": { "texture": "#earthwormcastings", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				}
+			]
+		}
+	]}

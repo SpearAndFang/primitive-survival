@@ -1,0 +1,76 @@
+{
+    "code": "woodspikebundle",
+    "class": "itemwoodspikebundle",
+    "shape": { "base": "item/woodspikebundle" },
+    "texture": { "base": "block/stake" },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "primitive": [ "*" ]
+    },
+    "maxstacksize": 16,
+    "materialDensity": 410,
+    "fpHandTransform": {
+        "rotation": {
+            "x": 151,
+            "y": -118,
+            "z": 147
+        },
+        "origin": {
+            "x": 0.8,
+            "y": 0.7,
+            "z": 0.5
+        },
+        "scale": 3.39
+    },
+  "guiTransform": {
+    "rotate": true,
+    "rotation": {
+      "x": -180,
+      "y": -121,
+      "z": 43
+    },
+    "origin": {
+      "x": 0.6,
+      "y": 0.25,
+      "z": 0.1
+    },
+    "scale": 2.25
+  },
+    "tpHandTransform": {
+        "translation": {
+            "x": -2.5,
+            "y": 2,
+            "z": -1
+        },
+        "rotation": {
+            "x": 12,
+            "y": -48,
+            "z": -28
+        },
+        "origin": {
+            "x": -0.1,
+            "y": 8.9,
+            "z": 0.1
+        },
+        "scale": 1.37
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.5299
+        },
+        "scale": 4.58
+    }
+}

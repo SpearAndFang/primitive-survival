@@ -1,0 +1,2079 @@
+{
+  "editor": {
+    "allAngles": false,
+    "entityTextureMode": true
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {},
+  "elements": [
+    {
+      "name": "Origin",
+      "from": [0.0, 0.0, 0.0],
+      "to": [0.0, 0.0, 0.0],
+      "uv": [0.0, 0.0],
+      "faces": {
+        "north": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "east": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "south": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "west": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "up": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+        "down": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] }
+      },
+      "children": [
+        {
+          "name": "Body",
+          "from": [3.5, 0.0, 12.25],
+          "to": [3.5, 0.0, 12.25],
+          "uv": [0.0, 0.0],
+          "rotationOrigin": [3.5, 0.0, 12.25],
+          "rotationY": 90.0,
+          "faces": {
+            "north": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+            "east": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+            "south": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+            "west": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+            "up": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] },
+            "down": { "texture": "#earthworm", "uv": [0.0, 0.0, 0.5, 0.5] }
+          },
+          "children": [
+            {
+              "name": "FrontSeg",
+              "from": [0.0, 0.0, 0.0],
+              "to": [0.0, 0.0, 0.0],
+              "uv": [2.0, 4.5],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [3.0, 4.5, 3.25, 4.75]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 13.5, 9.25, 13.75]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [2.0, 5.0, 2.25, 5.25]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [5.5, 13.5, 5.75, 13.75]
+                },
+                "up": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 14.0, 9.5, 14.5],
+                  "rotation": 90
+                },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 13.0, 6.5, 13.5],
+                  "rotation": 90
+                }
+              },
+              "children": [
+                {
+                  "name": "FrontSeg1",
+                  "from": [4.2, 0.0, 2.5],
+                  "to": [4.68, 0.48, 3.0],
+                  "uv": [3.0, 4.5],
+                  "rotationOrigin": [4.2, 0.0, 2.5],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [3.0, 6.0, 4.0, 7.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 6.0, 5.0, 7.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [5.0, 6.0, 6.0, 7.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [6.0, 6.0, 7.0, 7.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [3.0, 5.0, 3.5, 5.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 5.0, 4.5, 5.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "FrontSeg2",
+                  "from": [4.1, 0.0, 3.0],
+                  "to": [4.59, 0.49, 3.5],
+                  "uv": [2.0, 4.5],
+                  "rotationOrigin": [4.1, 0.0, 3.0],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [2.0, 6.0, 3.0, 7.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [3.0, 6.0, 4.0, 7.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 6.0, 5.0, 7.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [5.0, 6.0, 6.0, 7.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [2.0, 5.0, 2.5, 5.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [3.0, 5.0, 3.5, 5.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "FrontSeg3",
+                  "from": [4.0, 0.0, 3.5],
+                  "to": [4.5, 0.5, 4.0],
+                  "uv": [2.0, 4.5],
+                  "rotationOrigin": [4.0, 0.0, 3.5],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 13.0, 5.0, 14.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 12.0, 5.0, 13.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 10.0, 5.0, 11.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 12.0, 5.0, 13.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 11.0, 4.5, 11.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 11.0, 4.5, 11.5],
+                      "rotation": 90
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "MiddleSeg",
+              "from": [0.0, 0.0, 0.0],
+              "to": [0.0, 0.0, 0.0],
+              "uv": [7.0, 3.0],
+              "rotationOrigin": [3.95, -1.05, 4.0],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [8.5, 13.5, 8.75, 13.75]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [9.5, 3.0, 9.75, 3.25]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [8.75, 4.5, 9.5, 5.0],
+                  "autoUv": false
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [9.5, 5.5, 9.75, 5.75]
+                },
+                "up": {
+                  "texture": "#earthworm",
+                  "uv": [8.0, 5.0, 8.5, 5.5],
+                  "rotation": 90
+                },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [7.0, 5.0, 7.5, 5.5],
+                  "rotation": 90
+                }
+              },
+              "children": [
+                {
+                  "name": "MiddleSeg1",
+                  "from": [3.95, -0.05, 4.0],
+                  "to": [4.55, 0.55, 4.5],
+                  "uv": [7.0, 3.0],
+                  "rotationOrigin": [3.95, -0.05, 4.0],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 4.0, 9.0, 5.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 2.0, 8.0, 3.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [7.75, 3.5, 8.5, 4.0],
+                      "autoUv": false
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 3.0, 9.0, 4.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 3.0, 8.5, 3.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 2.0, 8.5, 2.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "MiddleSeg2",
+                  "from": [3.95, -0.05, 4.5],
+                  "to": [4.55, 0.55, 5.0],
+                  "uv": [7.0, 3.0],
+                  "rotationOrigin": [3.95, -0.05, 4.5],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 4.0, 8.0, 5.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 4.0, 9.0, 5.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [5.75, 3.5, 6.5, 4.0],
+                      "autoUv": false
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 4.0, 10.0, 5.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 3.0, 7.5, 3.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 3.0, 8.5, 3.5],
+                      "rotation": 90
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "BackSeg",
+              "from": [0.0, 0.0, 0.0],
+              "to": [0.0, 0.0, 0.0],
+              "uv": [2.0, 4.5],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [2.0, 4.5, 2.25, 4.75]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [6.5, 13.5, 6.75, 13.75]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [2.5, 5.0, 2.75, 5.25]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [6.5, 13.0, 6.75, 13.25]
+                },
+                "up": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 13.0, 9.5, 13.5],
+                  "rotation": 90
+                },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 14.0, 6.5, 14.5],
+                  "rotation": 90
+                }
+              },
+              "children": [
+                {
+                  "name": "BackSeg1",
+                  "from": [4.0, 0.0, 5.0],
+                  "to": [4.5, 0.5, 5.5],
+                  "uv": [2.0, 4.5],
+                  "rotationOrigin": [4.0, 0.0, 5.0],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 11.0, 12.0, 12.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 10.0, 12.0, 11.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 11.0, 12.0, 12.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 10.0, 12.0, 11.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 11.0, 11.5, 11.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 9.0, 11.5, 9.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "BackSeg2",
+                  "from": [3.9, 0.0, 5.5],
+                  "to": [4.39, 0.49, 6.0],
+                  "uv": [2.0, 4.5],
+                  "rotationOrigin": [3.9, 0.0, 5.5],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [2.0, 6.0, 3.0, 7.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [3.0, 6.0, 4.0, 7.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [4.0, 6.0, 5.0, 7.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [5.0, 6.0, 6.0, 7.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [2.0, 5.0, 2.5, 5.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [3.0, 5.0, 3.5, 5.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "BackSeg3",
+                  "from": [3.8, 0.0, 6.0],
+                  "to": [4.28, 0.48, 6.5],
+                  "uv": [9.0, 4.5],
+                  "rotationOrigin": [3.8, 0.0, 6.0],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 6.0, 10.0, 7.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [10.0, 6.0, 11.0, 7.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 6.0, 12.0, 7.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [12.0, 6.0, 13.0, 7.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 5.0, 9.5, 5.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [10.0, 5.0, 10.5, 5.5],
+                      "rotation": 90
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "FrontMedSeg",
+          "from": [0.0, 0.0, 0.0],
+          "to": [0.0, 0.0, 0.0],
+          "uv": [6.0, 13.0],
+          "rotationOrigin": [0.0, 0.0, 1.0],
+          "faces": {
+            "north": {
+              "texture": "#earthworm",
+              "uv": [8.5, 13.5, 11.0, 13.0],
+              "autoUv": false
+            },
+            "east": { "texture": "#earthworm", "uv": [6.5, 13.5, 6.75, 13.75] },
+            "south": {
+              "texture": "#earthworm",
+              "uv": [7.75, 13.25, 8.0, 13.5]
+            },
+            "west": {
+              "texture": "#earthworm",
+              "uv": [6.5, 13.0, 8.25, 13.5],
+              "autoUv": false
+            },
+            "up": {
+              "texture": "#earthworm",
+              "uv": [8.5, 14.0, 11.0, 14.5],
+              "autoUv": false
+            },
+            "down": {
+              "texture": "#earthworm",
+              "uv": [6.0, 13.5, 9.0, 14.0],
+              "rotation": 90,
+              "autoUv": false
+            }
+          },
+          "children": [
+            {
+              "name": "FrontSmallSeg",
+              "from": [0.0, 0.0, 0.0],
+              "to": [0.0, 0.0, 0.0],
+              "uv": [6.0, 12.75],
+              "rotationOrigin": [0.0, 0.0, 0.8],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [7.75, 13.25, 8.0, 13.5]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [6.5, 13.5, 6.75, 13.75]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 12.75, 9.25, 13.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [7.5, 13.5, 7.75, 13.75]
+                },
+                "up": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 13.0, 9.5, 13.5],
+                  "rotation": 90
+                },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 14.0, 6.5, 14.5],
+                  "rotation": 90
+                }
+              },
+              "children": [
+                {
+                  "name": "FrontSmallSeg1",
+                  "from": [3.0, 0.0, 7.85],
+                  "to": [3.5, 0.27, 8.12],
+                  "uv": [0.0, 12.75],
+                  "rotationOrigin": [3.0, 0.0, 8.8],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [0.0, 14.0, 1.0, 15.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [1.0, 14.0, 2.0, 15.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [2.0, 14.0, 3.0, 15.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [3.0, 14.0, 4.0, 15.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [0.0, 13.0, 0.5, 13.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [1.0, 13.0, 1.5, 13.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "FrontSmallSeg2",
+                  "from": [3.5, 0.0, 7.85],
+                  "to": [4.0, 0.28, 8.13],
+                  "uv": [6.0, 12.75],
+                  "rotationOrigin": [3.5, 0.0, 8.8],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [6.0, 14.0, 7.0, 15.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 14.0, 8.0, 15.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 14.0, 9.0, 15.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 14.0, 10.0, 15.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [6.0, 13.0, 6.5, 13.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 13.0, 7.5, 13.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "FrontSmallSeg3",
+                  "from": [4.0, 0.0, 7.95],
+                  "to": [4.5, 0.29, 8.24],
+                  "uv": [8.0, 12.75],
+                  "rotationOrigin": [4.0, 0.0, 8.9],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 14.0, 9.0, 15.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 14.0, 10.0, 15.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [10.0, 14.0, 11.0, 15.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [11.0, 14.0, 12.0, 15.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 13.0, 8.5, 13.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 13.0, 9.5, 13.5],
+                      "rotation": 90
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "FrontMedSeg1",
+              "from": [4.5, 0.0, 7.9],
+              "to": [5.0, 0.38, 8.28],
+              "uv": [6.0, 13.0],
+              "rotationOrigin": [4.5, 0.0, 8.9],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 14.0, 7.0, 15.0]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [7.0, 14.0, 8.0, 15.0]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [8.0, 14.0, 9.0, 15.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 14.0, 10.0, 15.0]
+                },
+                "up": { "texture": "#earthworm", "uv": [6.0, 13.0, 7.0, 14.0] },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [7.0, 13.0, 7.5, 13.5],
+                  "rotation": 90
+                }
+              }
+            },
+            {
+              "name": "FrontMedSeg2",
+              "from": [5.0, 0.0, 7.8],
+              "to": [5.5, 0.39, 8.19],
+              "uv": [5.0, 13.0],
+              "rotationOrigin": [5.0, 0.0, 8.8],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [5.0, 14.0, 6.0, 15.0]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 14.0, 7.0, 15.0]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [7.0, 14.0, 8.0, 15.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [8.0, 14.0, 9.0, 15.0]
+                },
+                "up": { "texture": "#earthworm", "uv": [5.0, 13.0, 6.0, 14.0] },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 13.0, 6.5, 13.5],
+                  "rotation": 90
+                }
+              }
+            },
+            {
+              "name": "FrontMedSeg3",
+              "from": [5.5, 0.0, 7.7],
+              "to": [6.0, 0.4, 8.1],
+              "uv": [9.0, 14.0],
+              "rotationOrigin": [5.5, 0.0, 8.7],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 15.0, 10.0, 16.0]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [10.0, 15.0, 11.0, 16.0]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [11.0, 15.0, 12.0, 16.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [12.0, 15.0, 13.0, 16.0]
+                },
+                "up": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 14.0, 10.0, 15.0]
+                },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [10.0, 14.0, 10.5, 14.5],
+                  "rotation": 90
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "BackMedSeg",
+          "from": [5.5, 0.0, 0.0],
+          "to": [5.5, 0.0, 0.0],
+          "uv": [6.0, 13.0],
+          "rotationOrigin": [5.5, 0.0, 1.0],
+          "faces": {
+            "north": {
+              "texture": "#earthworm",
+              "uv": [8.5, 13.5, 11.0, 13.0],
+              "autoUv": false
+            },
+            "east": { "texture": "#earthworm", "uv": [6.5, 13.5, 6.75, 13.75] },
+            "south": {
+              "texture": "#earthworm",
+              "uv": [7.75, 13.25, 8.0, 13.5]
+            },
+            "west": {
+              "texture": "#earthworm",
+              "uv": [6.5, 13.0, 8.25, 13.5],
+              "autoUv": false
+            },
+            "up": {
+              "texture": "#earthworm",
+              "uv": [8.5, 14.0, 11.0, 14.5],
+              "autoUv": false
+            },
+            "down": {
+              "texture": "#earthworm",
+              "uv": [6.0, 13.5, 9.0, 14.0],
+              "rotation": 90,
+              "autoUv": false
+            }
+          },
+          "children": [
+            {
+              "name": "BackSmallSeg",
+              "from": [2.5, 0.0, 0.0],
+              "to": [2.5, 0.0, 0.0],
+              "uv": [6.0, 12.75],
+              "rotationOrigin": [2.5, 0.0, 0.8],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [7.75, 13.25, 8.0, 13.5]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [6.5, 13.5, 6.75, 13.75]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 12.75, 9.25, 13.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [7.5, 13.5, 7.75, 13.75]
+                },
+                "up": {
+                  "texture": "#earthworm",
+                  "uv": [9.0, 13.0, 9.5, 13.5],
+                  "rotation": 90
+                },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 14.0, 6.5, 14.5],
+                  "rotation": 90
+                }
+              },
+              "children": [
+                {
+                  "name": "BackSmallSeg1",
+                  "from": [4.0, 0.0, 7.95],
+                  "to": [4.5, 0.29, 8.24],
+                  "uv": [5.0, 8.75],
+                  "rotationOrigin": [4.0, 0.0, 8.9],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [5.0, 10.0, 6.0, 11.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [6.0, 10.0, 7.0, 11.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 10.0, 8.0, 11.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 10.0, 9.0, 11.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [5.0, 9.0, 5.5, 9.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [6.0, 9.0, 6.5, 9.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "BackSmallSeg2",
+                  "from": [3.5, 0.0, 7.85],
+                  "to": [4.0, 0.3, 8.15],
+                  "uv": [6.0, 12.75],
+                  "rotationOrigin": [3.5, 0.0, 8.8],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [6.0, 14.0, 7.0, 15.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 14.0, 8.0, 15.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 14.0, 9.0, 15.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 14.0, 10.0, 15.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [6.0, 13.0, 6.5, 13.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 13.0, 7.5, 13.5],
+                      "rotation": 90
+                    }
+                  }
+                },
+                {
+                  "name": "BackSmallSeg3",
+                  "from": [4.4, 0.0, 7.85],
+                  "to": [4.9, 0.28, 8.13],
+                  "uv": [7.0, 12.75],
+                  "rotationOrigin": [4.4, 0.0, 8.8],
+                  "faces": {
+                    "north": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 14.0, 8.0, 15.0]
+                    },
+                    "east": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 14.0, 9.0, 15.0]
+                    },
+                    "south": {
+                      "texture": "#earthworm",
+                      "uv": [9.0, 14.0, 10.0, 15.0]
+                    },
+                    "west": {
+                      "texture": "#earthworm",
+                      "uv": [10.0, 14.0, 11.0, 15.0]
+                    },
+                    "up": {
+                      "texture": "#earthworm",
+                      "uv": [7.0, 13.0, 7.5, 13.5],
+                      "rotation": 90
+                    },
+                    "down": {
+                      "texture": "#earthworm",
+                      "uv": [8.0, 13.0, 8.5, 13.5],
+                      "rotation": 90
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "BackMedSeg1",
+              "from": [4.5, 0.0, 8.0],
+              "to": [5.0, 0.4, 8.39],
+              "uv": [1.0, 13.0],
+              "rotationOrigin": [4.5, 0.0, 9.0],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [1.0, 14.0, 2.0, 15.0]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [2.0, 14.0, 3.0, 15.0]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [3.0, 14.0, 4.0, 15.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [4.0, 14.0, 5.0, 15.0]
+                },
+                "up": { "texture": "#earthworm", "uv": [1.0, 13.0, 2.0, 14.0] },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [2.0, 13.0, 2.5, 13.5],
+                  "rotation": 90
+                }
+              }
+            },
+            {
+              "name": "BackMedSeg3",
+              "from": [5.5, 0.0, 7.8],
+              "to": [6.0, 0.37, 8.17],
+              "uv": [12.0, 13.0],
+              "rotationOrigin": [5.5, 0.0, 8.8],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [12.0, 14.0, 13.0, 15.0]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [13.0, 14.0, 14.0, 15.0]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [14.0, 14.0, 15.0, 15.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [15.0, 14.0, 16.0, 15.0]
+                },
+                "up": {
+                  "texture": "#earthworm",
+                  "uv": [12.0, 13.0, 13.0, 14.0]
+                },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [13.0, 13.0, 13.5, 13.5],
+                  "rotation": 90
+                }
+              }
+            },
+            {
+              "name": "BackMedSeg2",
+              "from": [5.0, 0.0, 7.9],
+              "to": [5.5, 0.38, 8.28],
+              "uv": [5.0, 13.0],
+              "rotationOrigin": [5.0, 0.0, 8.9],
+              "faces": {
+                "north": {
+                  "texture": "#earthworm",
+                  "uv": [5.0, 14.0, 6.0, 15.0]
+                },
+                "east": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 14.0, 7.0, 15.0]
+                },
+                "south": {
+                  "texture": "#earthworm",
+                  "uv": [7.0, 14.0, 8.0, 15.0]
+                },
+                "west": {
+                  "texture": "#earthworm",
+                  "uv": [8.0, 14.0, 9.0, 15.0]
+                },
+                "up": { "texture": "#earthworm", "uv": [5.0, 13.0, 6.0, 14.0] },
+                "down": {
+                  "texture": "#earthworm",
+                  "uv": [6.0, 13.0, 6.5, 13.5],
+                  "rotation": 90
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animations": [
+    {
+      "name": "move",
+      "code": "move",
+      "quantityframes": 31,
+      "onActivityStopped": "Rewind",
+      "onAnimationEnd": "Repeat",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "Origin": {},
+            "Body": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.2, "offsetY": 0.0, "offsetZ": -0.0 },
+            "FrontSeg": {},
+            "FrontSeg3": { "offsetX": -0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg1": { "offsetX": -0.2, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSmallSeg": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.1
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 1.1, "offsetY": 0.0, "offsetZ": 0.1 },
+            "BackSmallSeg2": { "offsetX": 1.5, "offsetY": 0.0, "offsetZ": 0.2 },
+            "BackSmallSeg1": { "offsetX": 0.5, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.1 },
+            "BackMedSeg1": { "offsetX": 1.0, "offsetY": 0.0, "offsetZ": -0.2 },
+            "BackMedSeg2": { "offsetX": 1.0, "offsetY": 0.0, "offsetZ": -0.1 }
+          }
+        },
+        {
+          "frame": 15,
+          "elements": {
+            "Origin": {},
+            "BackMedSeg": { "offsetX": -1.0, "offsetY": -0.0, "offsetZ": 0.0 },
+            "BackSmallSeg": { "offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg1": {
+              "offsetX": -0.5,
+              "offsetY": 0.0,
+              "offsetZ": -0.1
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": -0.0
+            },
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.0
+            },
+            "BackMedSeg1": { "offsetX": -0.5, "offsetY": 0.0, "offsetZ": -0.2 },
+            "BackMedSeg2": { "offsetX": -0.5, "offsetY": 0.0, "offsetZ": -0.1 },
+            "BackMedSeg3": { "offsetX": -0.5, "offsetY": 0.0, "offsetZ": -0.0 },
+            "FrontMedSeg": { "offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSmallSeg": { "offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": -1.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.1
+            },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.1 },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.1 },
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg2": { "offsetX": -0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg1": { "offsetX": -0.2, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0,
+              "rotationX": 0.0,
+              "rotationY": 0.0,
+              "rotationZ": 0.0
+            },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.2, "offsetY": 0.0, "offsetZ": -0.0 }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "idle",
+      "code": "idle",
+      "quantityframes": 1,
+      "onActivityStopped": "Rewind",
+      "onAnimationEnd": "Repeat",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "Origin": {},
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg2": {
+              "offsetX": -0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg3": { "offsetX": -0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "burrow",
+      "code": "burrow",
+      "quantityframes": 80,
+      "onActivityStopped": "PlayTillEnd",
+      "onAnimationEnd": "Repeat",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "Origin": {},
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "Body": {},
+            "MiddleSeg": {},
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg": {},
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 5,
+          "elements": {
+            "Origin": {},
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -0.5,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 10,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 15,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 20,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 25,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 30,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -0.5,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 35,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -0.5,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 40,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 45,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 50,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -0.5,
+              "offsetZ": 0.0
+            },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 55,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 60,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 65,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 70,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 75,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.5,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "FrontMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -0.5,
+              "offsetZ": 0.0
+            },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": -1.0,
+              "offsetZ": 0.0
+            },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "sit",
+      "code": "sit",
+      "quantityframes": 15,
+      "onActivityStopped": "Rewind",
+      "onAnimationEnd": "Repeat",
+      "keyframes": [
+        {
+          "frame": 0,
+          "elements": {
+            "Origin": {},
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": -0.0,
+              "offsetZ": 0.0
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.1
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.1
+            },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSmallSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "Body": {},
+            "BackSeg": {},
+            "BackSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 5,
+          "elements": {
+            "Origin": {},
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg1": {
+              "offsetX": -0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.4
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.3
+            },
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.1
+            },
+            "BackMedSeg": {},
+            "BackSmallSeg": {},
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.3
+            },
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.3
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.1
+            },
+            "Body": {},
+            "MiddleSeg": {},
+            "MiddleSeg2": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": -0.0 },
+            "BackSeg": {},
+            "BackSeg1": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg2": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg3": { "offsetX": 0.2, "offsetY": 0.0, "offsetZ": 0.0 }
+          }
+        },
+        {
+          "frame": 10,
+          "elements": {
+            "Origin": {},
+            "Body": {},
+            "FrontSeg": {},
+            "FrontSeg1": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg2": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg": {},
+            "BackSeg3": { "offsetX": 0.3, "offsetY": 0.0, "offsetZ": -0.0 },
+            "BackSeg2": { "offsetX": 0.2, "offsetY": 0.0, "offsetZ": 0.0 },
+            "BackSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "MiddleSeg": {},
+            "MiddleSeg2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+            "FrontMedSeg": {},
+            "FrontSmallSeg": {},
+            "FrontSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.1
+            },
+            "FrontSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.1
+            },
+            "FrontSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": 0.0
+            },
+            "BackMedSeg": {},
+            "BackMedSeg1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.5 },
+            "BackSmallSeg": {},
+            "BackSmallSeg3": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.3
+            },
+            "BackSmallSeg1": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.3
+            },
+            "BackSmallSeg2": {
+              "offsetX": 0.0,
+              "offsetY": 0.0,
+              "offsetZ": -0.2
+            },
+            "BackMedSeg3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.3 },
+            "BackMedSeg2": { "offsetX": -0.0, "offsetY": 0.0, "offsetZ": -0.5 }
+          }
+        }
+      ]
+    }
+  ]
+}

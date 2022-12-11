@@ -1,0 +1,6 @@
+{
+  "code": "texturebasalt",
+  "textures": {
+    "hookmaterial": { "base": "game:block/stone/rock/basalt1" }
+  }
+}

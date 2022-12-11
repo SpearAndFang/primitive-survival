@@ -1,0 +1,148 @@
+{
+    "code": "metalbucket",
+    "classByType": {
+        "*-empty*": "blockmetalbucket",
+        "*-filled*": "blockmetalbucketfilled"
+    },
+
+    "entityClassByType": {
+        "*-empty*": "bemetalbucket",
+        "*-filled*": "bemetalbucketfilled"
+
+    },
+    "behaviorsbyType": {
+        "*-empty*": [
+            { "name": "UnstableFalling" },
+            { "name": "RightClickPickup" }
+        ],
+        "*-filled*": [
+            { "name": "UnstableFalling" },
+            { "name": "RightClickPickup" }
+        ]
+    },
+  "attributesByType": {
+    "*-empty*": {
+      "liquidContainerProps": {
+        "capacityLitres": 10,
+        "transferSizeLitres": 10,
+        "emptyShapeLoc": "shapes/block/metalbucket/empty",
+        "opaqueContentShapeLoc": "game:shapes/block/wood/bucket/contents",
+        "liquidContentShapeLoc": "game:shapes/block/wood/bucket/liquidcontents",
+        "liquidMaxYTranslate": 0.4375
+      }
+    },
+    "*-filled*": {
+      "liquidContainerProps": {
+        "capacityLitres": 0,
+        "transferSizeLitres": 0,
+        "emptyShapeLoc": "shapes/block/metalbucket/filled",
+        "opaqueContentShapeLoc": "game:shapes/block/wood/bucket/contents",
+        "liquidContentShapeLoc": "game:shapes/block/wood/bucket/liquidcontents",
+        "liquidMaxYTranslate": 0.4375
+      }
+    }
+  },
+    "creativeinventory": {
+        "general": [ "metalbucket-empty-*" ],
+        "decorative": [ "metalbucket-empty-*" ],
+        "primitive": [ "metalbucket-empty-*" ]
+    },
+    "variantgroups": [
+        {
+            "code": "type",
+            "states": [ "empty", "filled" ]
+        },
+        {
+            "code": "basematerial",
+            "states": [ "iron", "meteoriciron", "steel" ]
+        },
+        {
+            "code": "handlematerial",
+            "states": [ "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ]
+        }
+    ],
+    "shapebytype": {
+        "*": {
+            "base": "block/metalbucket/{type}"
+        }
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "sideopaque": {
+        "all": false
+    },
+    "blockmaterial": "Metal",
+    "textures": {
+        "sides": { "base": "game:block/metal/ingot/{basematerial}" },
+        "inner side": { "base": "game:block/metal/ingot/{basematerial}" },
+        "contents": { "base": "block/metalbucket/lava" },
+        "normal1": {
+            "base": "game:block/metal/ingot/{handlematerial}"
+        },
+        "handle": { "base": "game:block/metal/ingot/{handlematerial}" },
+        "honeyportion": { "base": "game:block/liquid/honey" }
+    },
+    "replaceable": 500,
+    "resistance": 1.5,
+    "liquidSelectable": true,
+    "lightAbsorption": 0,
+    "maxstacksizebytype": {
+        "*": 1
+    },
+    "sounds": {
+        "place": "game:block/plate",
+        "hit": "game:block/plate",
+        "break": "game:block/plate",
+        "walk": "game:block/plate"
+    },
+    "collisionbox": {
+        "x1": 0.25,
+        "y1": 0,
+        "z1": 0.25,
+        "x2": 0.75,
+        "y2": 0.75,
+        "z2": 0.75
+    },
+    "selectionbox": {
+        "x1": 0.25,
+        "y1": 0,
+        "z1": 0.25,
+        "x2": 0.75,
+        "y2": 0.75,
+        "z2": 0.75
+    },
+    "materialDensity": 400,
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.86,
+            "y": -1.03,
+            "z": -0.88
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "scale": 0.55
+    },
+    "guiTransform": {
+        "origin": {
+            "x": 0.5,
+            "y": 0.35,
+            "z": 0.5
+        },
+        "scale": 1.75
+    },
+    "fpHandTransform": {
+        "scale": 1.5
+    },
+    "groundTransform": {
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 2
+    }
+}

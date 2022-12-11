@@ -1,0 +1,32 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"oak-dark": "game:block/wood/oak-dark",
+		"basalt1": "game:block/stone/cobblestone/basalt1",
+		"oak": "game:block/wood/debarked/oak",
+		"granite1": "game:block/stone/cobblestone/granite1",
+		"oak1": "game:block/wood/planks/oak1"
+	},
+	"elements": [
+		{
+			"name": "Cube27",
+			"from": [ 2.3, 2.1, 8.0 ], 
+			"to": [ 15.3, 4.1, 10.0 ], 
+			"rotationOrigin": [ 2.3, 1.1, 8.0 ],
+			"faces": {
+				"north": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 13.0, 2.0 ] },
+				"east": { "texture": "#oak-dark", "uv": [ 0.0, 14.0, 2.0, 16.0 ] },
+				"south": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 13.0, 2.0 ] },
+				"west": { "texture": "#oak-dark", "uv": [ 0.0, 14.0, 2.0, 16.0 ], "rotation": 90 },
+				"up": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 13.0, 2.0 ] },
+				"down": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 13.0, 2.0 ] }
+			}
+		}
+	]}

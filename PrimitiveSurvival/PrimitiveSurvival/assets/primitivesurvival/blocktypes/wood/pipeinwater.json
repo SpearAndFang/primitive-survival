@@ -1,0 +1,182 @@
+{
+  "code": "pipeinwater",
+  "class": "blockpipe",
+  "rainpermeable": true,
+  "snowcoverage": false,
+  "lightabsorption": 0,
+  "drawtype": "JSONAndWater",
+
+  "maxstacksize": 64,
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": ["bamboo", "wood"]
+    },
+    {
+      "code": "type",
+      "states": ["plain", "aerated"]
+    },
+    {
+      "code": "ends",
+      "states": [ "none", "onene", "onesw", "two", "empty" ]
+    },
+    {
+      "code": "side",
+      "states": ["north", "south", "east", "west"]
+    }
+  ],
+  "drops": [
+    {
+      "type": "block",
+      "code": "primitivesurvival:pipe-{material}-{type}-none-north",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "shapebytype": {
+    "*-north": {
+      "base": "block/pipe/{ends}",
+      "rotateY": 90
+    },
+    "*-east": {
+      "base": "block/pipe/{ends}",
+      "rotateY": 0
+    },
+    "*-south": {
+      "base": "block/pipe/{ends}",
+      "rotateY": 270
+    },
+    "*-west": {
+      "base": "block/pipe/{ends}",
+      "rotateY": 180
+    }
+  },
+  "textures": {
+    "material": { "base": "block/pipe/{material}/{type}" },
+    "water": { "base": "game:block/liquid/water" },
+    "north": { "base": "game:block/liquid/water" },
+    "east": { "base": "game:block/liquid/water" },
+    "south": { "base": "game:block/liquid/water" },
+    "west": { "base": "game:block/liquid/water" },
+    "up": { "base": "game:block/liquid/water" },
+    "down": { "base": "game:block/liquid/water" }
+  },
+  "creativeinventory": {},
+  "renderpass": "liquid",
+  "matterstate": "liquid",
+  "blockmaterial": "liquid",
+  "faceCullMode": "liquid",
+  "liquidCode": "water",
+  "liquidLevel": 7,
+  "lightAbsorption": 2,
+  "climateColorMap": "climateWaterTint",
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "replaceable": 500,
+  "resistance": 1,
+  "combustibleProps": {
+    "burnTemperature": 700,
+    "burnDuration": 1
+  },
+  "materialDensity": 200,
+  "guiTransform": {
+    "rotate": false,
+    "rotation": {
+      "x": -47,
+      "y": -119,
+      "z": 5
+    },
+    "origin": {
+      "x": 0.6,
+      "y": 1.1,
+      "z": 0.73
+    },
+    "scale": 1.46
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0.0468,
+      "y": -0.3437,
+      "z": 0
+    },
+    "rotation": {
+      "x": 29,
+      "y": 100,
+      "z": 15
+    },
+    "origin": {
+      "x": 0.8,
+      "y": 0.5,
+      "z": 0.3
+    },
+    "scale": 1.18
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.6,
+      "y": -1.7,
+      "z": -1.1
+    },
+    "rotation": {
+      "x": 134,
+      "y": -45,
+      "z": -79
+    },
+    "scale": 0.39
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": -27
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2.45
+  },
+  "collisionSelectionBoxesByType": {
+    "*-empty-*": [
+      {
+        "x1": 0,
+        "y1": 0.25,
+        "z1": 0.75,
+        "x2": 1,
+        "y2": 0.85,
+        "z2": 1.25,
+        "rotateYByType": {
+          "*-north": 90,
+          "*-east": 0,
+          "*-south": 270,
+          "*-west": 180
+        }
+      }
+    ],
+    "*": [
+      {
+        "x1": 0,
+        "y1": 0.25,
+        "z1": 0.75,
+        "x2": 1,
+        "y2": 0.85,
+        "z2": 1.25,
+        "rotateYByType": {
+          "*-north": 90,
+          "*-east": 0,
+          "*-south": 270,
+          "*-west": 180
+        }
+      }
+    ]
+  }
+}

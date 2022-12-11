@@ -1,0 +1,177 @@
+{
+  "code": "bearhead",
+  "class": "blockhide",
+  "variantgroups": [
+    {
+      "code": "species",
+      "states": [ "black1", "brown1", "brown2", "brown3", "panda1", "polar1", "sun1" ]
+    },
+    {
+      "code": "type",
+      "states": [ "male", "female" ]
+    },
+    {
+      "code": "dir",
+      "states": [
+        "north",
+        "east",
+        "south",
+        "west"
+      ]
+    }
+  ],
+  "attributes": {
+    "handbook": {
+      "groupBy": [ "bearhead-*" ]
+    }
+  },
+  "drops": [
+    {
+      "type": "item",
+      "code": "game:hide-pelt-huge",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "shapebytype": {
+    "*-north": {
+      "base": "block/hide/bearhead",
+      "rotateY": 270
+    },
+    "*-east": {
+      "base": "block/hide/bearhead",
+      "rotateY": 180
+    },
+    "*-south": {
+      "base": "block/hide/bearhead",
+      "rotateY": 90
+    },
+    "*-west": {
+      "base": "block/hide/bearhead",
+      "rotateY": 0
+    }
+  },
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "blockmaterial": "Cloth",
+  "creativeinventory": {
+    "general": [ "*-{species}-{type}-north" ],
+    "decorative": [ "*-{species}-{type}-north" ],
+    "primitive": [ "*-{species}-{type}-north" ]
+  },
+  "replaceable": 5200,
+  "resistance": 0.5,
+  "vertexFlags": {
+    "zOffset": 5
+  },
+  "lightAbsorption": 0,
+  "texturesByType": {
+    "*": {
+      "normal": {
+        "base": "game:entity/bear/{species}"
+      },
+      "plaque": {
+        "base": "game:block/beehive/floor"
+      }
+    }
+  },
+  "selectionBoxByType": {
+    "*-north": {
+      "x1": 0.15,
+      "y1": 0.15,
+      "z1": 0.5,
+      "x2": 0.85,
+      "y2": 0.85,
+      "z2": 1
+    },
+    "*-east": {
+      "x1": 0,
+      "y1": 0.15,
+      "z1": 0.15,
+      "x2": 0.5,
+      "y2": 0.85,
+      "z2": 0.85
+    },
+    "*-south": {
+      "x1": 0.15,
+      "y1": 0.15,
+      "z1": 0,
+      "x2": 0.85,
+      "y2": 0.85,
+      "z2": 0.5
+    },
+    "*-west": {
+      "x1": 0.5,
+      "y1": 0.15,
+      "z1": 0.15,
+      "x2": 1,
+      "y2": 0.85,
+      "z2": 0.85
+    }
+  },
+  "collisionbox": null,
+  "combustibleProps": {
+    "burnTemperature": 400,
+    "burnDuration": 10
+  },
+  "sounds": {
+    "place": "game:block/cloth",
+    "walk": "game:walk/cloth"
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 3,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.4625,
+      "z": 0.7
+    },
+    "scale": 1.95
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": -0.02,
+      "z": 0.5
+    },
+    "scale": 3
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1,
+      "y": -0.8,
+      "z": -1
+    },
+    "rotation": {
+      "x": -46,
+      "y": 0,
+      "z": -2
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 1,
+      "z": 0.5
+    },
+    "scale": 0.69
+  },
+  "fpHandTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": -1,
+      "z": 1.5
+    }
+  },
+  "materialDensity": 200
+}

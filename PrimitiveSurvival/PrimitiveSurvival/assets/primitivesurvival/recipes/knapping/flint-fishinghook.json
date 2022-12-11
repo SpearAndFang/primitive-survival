@@ -1,0 +1,23 @@
+{
+  "ingredient": { "type": "item", "code": "game:flint" },
+  "pattern": [
+    [
+      "___#__#___",
+      "___#__#___",
+      "_#_#__#_#_",
+      "_###__###_",
+      "__________",
+      "__________",
+      "_###__###_",
+      "_#_#__#_#_",
+      "___#__#___",
+      "___#__#___"
+    ]
+  ],
+  "name": "Flint fishing hook",
+  "output": {
+    "type": "item",
+    "code": "primitivesurvival:fishinghook-flint",
+    "stacksize": 4
+  }
+}

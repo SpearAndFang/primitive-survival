@@ -1,0 +1,13 @@
+{
+  "ingredientPattern": "P_	_S",
+  "width": 2,
+  "height": 2,
+  "ingredients": {
+    "P": { "type": "item", "code": "primitivesurvival:cordage" },
+    "S": { "type": "block", "code": "primitivesurvival:stake-empty" }
+  },
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:snare-set-north"
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "code": "bioluminescent",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "jelly",
+        "globe",
+        "worm",
+        "orangejelly"
+      ]
+    }
+  ],
+  "class": "entitybioluminescent",
+  "canclimb": false,
+  "hitboxSize": {
+    "x": 2,
+    "y": 2
+  },
+  "falldamage": false,
+  "eyeHeight": 1,
+  "attributesbytype": {
+    "*-jelly": {
+      "lightHsv": [ 34, 3, 5 ],
+      "strobeFrequency": 1.9,
+      "minLightLevel": 0.2,
+      "physics": {
+        "airMovingStrength": 0
+      }
+    },
+    "*-globe": {
+      "lightHsv": [ 5, 2, 4 ],
+      "strobeFrequency": 5,
+      "minLightLevel": 0,
+      "physics": {
+        "airMovingStrength": 0.01
+      }
+    },
+    "*-worm": {
+      "lightHsv": [ 43, 2, 2 ],
+      "strobeFrequency": 3.5,
+      "minLightLevel": 0.5,
+      "physics": {
+        "airMovingStrength": 0.01
+      }
+    },
+    "*-orangejelly": {
+      "lightHsv": [ 48, 3, 5 ],
+      "strobeFrequency": 2,
+      "minLightLevel": 0,
+      "physics": {
+        "airMovingStrength": 0
+      }
+    }
+  },
+  "client": {
+    "renderer": "entitygenericshaperenderer",
+    "sizeByType": {
+      "*-jelly": 0.8,
+      "*-globe": 2,
+      "*-worm": 1.5,
+      "*-orangejelly": 1.2
+    },
+    "shapeByType": {
+      "*-jelly": { "base": "entity/water/jelly" },
+      "*-globe": { "base": "entity/water/globe" },
+      "*-worm": { "base": "entity/water/worm" },
+      "*-orangejelly": { "base": "entity/water/orangejelly" }
+    },
+    "texturesByType": {
+      "*-jelly": {
+        "top": { "base": "entity/water/jelly/top" },
+        "sides": { "base": "entity/water/jelly/sides" },
+        "bottom": { "base": "entity/water/jelly/bottom" }
+      },
+      "*-globe": {
+        "all": { "base": "entity/water/globe" }
+      },
+      "*-worm": {
+        "all": { "base": "entity/water/worm" }
+      },
+      "*-orangejelly": {
+        "all": { "base": "entity/water/orangejelly" }
+      }
+    },
+    "behaviors": [
+      {
+        "code": "controlledphysics",
+        "stepHeight": 0.1
+      },
+      {
+        "code": "passivephysics",
+        "waterDragfactor": 1,
+        "gravityFactor": 0.1
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": true
+      },
+      { "code": "interpolateposition" },
+      {
+        "code": "despawn",
+        "minPlayerDistance": 28,
+        "minSeconds": 40
+      }
+    ],
+    "animations": [
+      {
+        "code": "feed",
+        "animation": "feed",
+        "animationSpeed": 0.001,
+        "weight": 1,
+        "blendMode": "Add"
+      },
+      {
+        "code": "rest",
+        "animation": "rest",
+        "animationSpeed": 0.0005,
+        "weight": 1,
+        "blendMode": "Add"
+      },
+      {
+        "code": "fly",
+        "animation": "fly",
+        "animationSpeed": 0.001,
+        "weight": 1,
+        "blendMode": "Add"
+      }
+    ]
+  },
+  "server": {
+    "attributes": {
+      "pathfinder": {
+        "minTurnAnglePerSec": 10,
+        "maxTurnAnglePerSec": 20
+      }
+    },
+    "behaviors": [
+      {
+        "code": "controlledphysics",
+        "stepHeight": 0.1
+      },
+      {
+        "code": "passivephysics",
+        "waterDragfactor": 1,
+        "gravityFactor": 0.1
+      },
+      {
+        "code": "despawn",
+        "minPlayerDistance": 48,
+        "minSeconds": 20
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": false
+      },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "fleeentity",
+            "priority": 1.5,
+            "movespeed": 0.01,
+            "minduration": 200000,
+            "maxduration": 800000,
+            "maxHeight": -10,
+            "targetDistance": 15,
+            "mincooldownHours": 1,
+            "maxcooldownHours": 2
+          },
+          {
+            "code": "idle",
+            "priority": 1.4,
+            "movespeed": 0.002,
+            "minduration": 20000,
+            "maxduration": 80000,
+            "maxHeight": -20,
+            "targetDistance": 1,
+            "mincooldownHours": 0,
+            "maxcooldownHours": 1
+          },
+          {
+            "code": "lookaround",
+            "priority": 1.3,
+            "movespeed": 0.005,
+            "minduration": 200000,
+            "maxduration": 800000,
+            "targetDistance": 0.15,
+            "mincooldownHours": 1,
+            "maxcooldownHours": 2
+          },
+          {
+            "code": "seekfoodandeat",
+            "priority": 1.2,
+            "movespeed": 0.001,
+            "minduration": 20000,
+            "maxduration": 80000,
+            "maxHeight": -20,
+            "targetDistance": 0.15
+          },
+          {
+            "code": "butterflywander",
+            "priority": 1.0,
+            "movespeed": 0.01,
+            "minduration": 200000,
+            "maxduration": 800000,
+            "maxHeight": -20,
+            "targetDistance": 0.15
+          }
+        ]
+      }
+    ],
+    "spawnconditions": {
+      "runtime": {
+        "group": "neutral",
+        "tryOnlySurface": false,
+        "mindistancetoplayer": 36,
+        "maxQuantity": 6,
+        "__comment": "Make them spawn away from artifical light so they don't spawn inside farmland",
+        "maxLightLevel": 7,
+        "lightLevelType": "onlyBlockLight",
+        "groupSize": {
+          "dist": "verynarrowgaussian",
+          "avg": 4,
+          "var": 2
+        },
+        "insideBlockCodes": [ "game:water-still-7" ],
+        "chance": 0.005,
+        "minY": 0,
+        "maxY": 0.65
+      }
+    }
+  }
+}

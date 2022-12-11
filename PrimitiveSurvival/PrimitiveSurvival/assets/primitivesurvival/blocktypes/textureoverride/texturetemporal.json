@@ -1,0 +1,6 @@
+{
+  "code": "texturetemporal",
+  "textures": {
+    "temporal": { "base": "item/resource/temporalgear" }
+  }
+}

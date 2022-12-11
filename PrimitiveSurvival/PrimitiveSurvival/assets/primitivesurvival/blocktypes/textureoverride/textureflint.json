@@ -1,0 +1,6 @@
+{
+  "code": "textureflint",
+  "textures": {
+    "hookmaterial": { "base": "game:block/stone/flint" }
+  }
+}

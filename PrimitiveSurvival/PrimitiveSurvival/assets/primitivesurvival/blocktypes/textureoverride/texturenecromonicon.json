@@ -1,0 +1,6 @@
+{
+  "code": "texturenecronomicon",
+  "textures": {
+    "temporal": { "base": "block/necronomicon" }
+  }
+}

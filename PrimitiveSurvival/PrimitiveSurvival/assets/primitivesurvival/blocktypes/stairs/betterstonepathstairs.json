@@ -1,0 +1,420 @@
+{
+  "code": "betterstonepathstairs",
+  "class": "blockbstairs",
+  "attributes": {
+    "noDownVariant": true
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": ["normal", "inside", "outside"]
+    },
+    {
+      "code": "updown",
+      "states": ["up"]
+    },
+
+    {
+      "code": "dir",
+      "states": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest"
+      ]
+    },
+    { "code": "cover", "states": ["free", "snow"] }
+  ],
+  "creativeinventory": {
+    "general": ["*-normal-up-north-free"],
+    "construction": ["*-normal-up-north-free"],
+    "primitive": ["*-normal-up-north-free"]
+  },
+  "drops": [{ "code": "betterstonepathstairs-normal-up-north-free" }],
+  "sidesolidByType": {
+    "*-up-north-*": {
+      "all": false,
+      "down": true,
+      "north": true
+    },
+    "*-up-west-*": {
+      "all": false,
+      "down": true,
+      "west": true
+    },
+    "*-up-south-*": {
+      "all": false,
+      "down": true,
+      "south": true
+    },
+    "*-up-east-*": {
+      "all": false,
+      "down": true,
+      "east": true
+    },
+    "*-up-northwest-*": {
+      "all": false,
+      "down": true,
+      "north": true,
+      "west": true
+    },
+    "*-up-southwest-*": {
+      "all": false,
+      "down": true,
+      "south": true,
+      "west": true
+    },
+    "*-up-southeast-*": {
+      "all": false,
+      "down": true,
+      "south": true,
+      "east": true
+    },
+    "*-up-northeast-*": {
+      "all": false,
+      "down": true,
+      "north": true,
+      "east": true
+    }
+  },
+  "sideopaqueByType": {
+    "*-up-north-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-west-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-south-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-east-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-northwest-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-southwest-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-southeast-*": {
+      "all": false,
+      "down": true
+    },
+    "*-up-northeast-*": {
+      "all": false,
+      "down": true
+    }
+  },
+  "shapebytype": {
+    "*-normal-up-north-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 180
+    },
+    "*-normal-up-west-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 270
+    },
+    "*-normal-up-south-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 0
+    },
+    "*-normal-up-east-free": {
+      "base": "game:block/basic/stairs/normal",
+      "rotateY": 90
+    },
+    "*-outside-up-northwest-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 270
+    },
+    "*-outside-up-southwest-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 0
+    },
+    "*-outside-up-southeast-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 90
+    },
+    "*-outside-up-northeast-free": {
+      "base": "game:block/basic/stairs/outside",
+      "rotateY": 180
+    },
+    "*-inside-up-northwest-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 180
+    },
+    "*-inside-up-southwest-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 270
+    },
+    "*-inside-up-southeast-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 0
+    },
+    "*-inside-up-northeast-free": {
+      "base": "game:block/basic/stairs/inside",
+      "rotateY": 90
+    },
+    "*-up-north-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 180
+    },
+    "*-up-west-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 270
+    },
+    "*-up-south-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 0
+    },
+    "*-up-east-snow": {
+      "base": "game:block/basic/stairs/snow-normal",
+      "rotateY": 90
+    },
+    "*-outside-up-northwest-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 270
+    },
+    "*-outside-up-southwest-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 0
+    },
+    "*-outside-up-southeast-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 90
+    },
+    "*-outside-up-northeast-snow": {
+      "base": "game:block/basic/stairs/snow-outside",
+      "rotateY": 180
+    },
+    "*-inside-up-northwest-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 180
+    },
+    "*-inside-up-southwest-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 270
+    },
+    "*-inside-up-southeast-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 0
+    },
+    "*-inside-up-northeast-snow": {
+      "base": "game:block/basic/stairs/snow-inside",
+      "rotateY": 90
+    }
+  },
+  "blockmaterial": "Gravel",
+  "textures": {
+    "all": {
+      "base": "game:block/stone/path/normal1",
+      "alternates": [
+        { "base": "game:block/stone/path/normal2" },
+        { "base": "game:block/stone/path/normal3" },
+        { "base": "game:block/stone/path/normal4" },
+        { "base": "game:block/stone/path/normal5" },
+        { "base": "game:block/stone/path/normal6" }
+      ]
+    }
+  },
+  "replaceable": 900,
+  "resistance": 2.4,
+  "emitSideAo": { "all": true },
+  "walkspeedmultiplier": 1.2,
+  "collisionSelectionBoxesByType": {
+    "*normal-down-*": [
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      }
+    ],
+    "*normal-up-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      }
+    ],
+    "*inside-down-*": [
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0.5,
+        "y2": 0.5,
+        "z2": 0.5,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ],
+    "*inside-up-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0.5,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 0.5,
+        "y2": 1,
+        "z2": 0.5,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ],
+    "*outside-down-*": [
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.5,
+        "x2": 0.5,
+        "y2": 0.5,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ],
+    "*outside-up-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0.5,
+        "x2": 0.5,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-northeast-*": 0,
+          "*-southeast-*": 270,
+          "*-southwest-*": 180,
+          "*-northwest-*": 90
+        }
+      }
+    ]
+  },
+  "heldTpIdleAnimation": "holdbothhandslarge",
+  "heldTpUseAnimation": "twohandplaceblock",
+  "tpHandTransform": {
+    "translation": { "x": -1.2, "y": -1.1, "z": -0.8 },
+    "rotation": { "x": -2, "y": 25, "z": -78 },
+    "scale": 0.37
+  },
+  "sounds": {
+    "place": "game:block/gravel",
+    "break": "game:block/gravel",
+    "hit": "game:block/gravel",
+    "walk": "game:walk/gravel"
+  }
+}

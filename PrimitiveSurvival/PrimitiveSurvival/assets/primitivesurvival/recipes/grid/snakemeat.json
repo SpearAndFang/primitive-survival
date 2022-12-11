@@ -1,0 +1,86 @@
+[
+  {
+    "ingredientPattern": "K,B",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:snake-blackrat",
+        "quantity": 1
+      }
+    },
+    "name": "blackrat",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:snakemeat-raw",
+      "quantity": 6
+    }
+  },
+  {
+    "ingredientPattern": "K,B",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:snake-chainviper",
+        "quantity": 1
+      }
+    },
+    "name": "chainviper",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:snakemeat-raw",
+      "quantity": 8
+    }
+  },
+  {
+    "ingredientPattern": "K,B",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:snake-coachwhip",
+        "quantity": 1
+      }
+    },
+    "name": "coachwhip",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:snakemeat-raw",
+      "quantity": 4
+    }
+  },
+  {
+    "ingredientPattern": "K,B",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:snake-pitviper",
+        "quantity": 1
+      }
+    },
+    "name": "pitviper",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:snakemeat-raw",
+      "quantity": 3
+    }
+  }
+]

@@ -1,0 +1,194 @@
+{
+  "code": "pighide",
+  "class": "blockhide",
+  "behaviors": [ { "name": "Unstable" } ],
+  "variantgroups": [
+    {
+      "code": "species",
+      "states": [ "wild" ]
+    },
+    {
+      "code": "type",
+      "states": [ "male", "female" ]
+    },
+    {
+      "code": "dir",
+      "states": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest"
+      ]
+    }
+  ],
+  "attributes": {
+    "handbook": {
+      "groupBy": [ "pighide-*" ]
+    }
+  },
+  "drops": [
+    {
+      "type": "item",
+      "code": "game:hide-pelt-medium",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "shapebytype": {
+    "*female-north": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 270
+    },
+    "*female-northeast": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 225
+    },
+    "*female-east": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 180
+    },
+    "*female-southeast": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 135
+    },
+    "*female-south": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 90
+    },
+    "*female-southwest": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 45
+    },
+    "*female-west": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 0
+    },
+    "*female-northwest": {
+      "base": "block/hide/femalepighide",
+      "rotateY": 315
+    },
+    "*male-north": {
+      "base": "block/hide/malepighide",
+      "rotateY": 270
+    },
+    "*male-northeast": {
+      "base": "block/hide/malepighide",
+      "rotateY": 225
+    },
+    "*male-east": {
+      "base": "block/hide/malepighide",
+      "rotateY": 180
+    },
+    "*male-southeast": {
+      "base": "block/hide/malepighide",
+      "rotateY": 135
+    },
+    "*male-south": {
+      "base": "block/hide/malepighide",
+      "rotateY": 90
+    },
+    "*male-southwest": {
+      "base": "block/hide/malepighide",
+      "rotateY": 45
+    },
+    "*male-west": {
+      "base": "block/hide/malepighide",
+      "rotateY": 0
+    },
+    "*male-northwest": {
+      "base": "block/hide/malepighide",
+      "rotateY": 315
+    }
+  },
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "blockmaterial": "Cloth",
+  "creativeinventory": {
+    "general": [ "*-{species}-{type}-north" ],
+    "decorative": [ "*-{species}-{type}-north" ],
+    "primitive": [ "*-{species}-{type}-north" ]
+  },
+  "replaceable": 5200,
+  "resistance": 0.5,
+  "vertexFlags": {
+    "zOffset": 5
+  },
+  "lightAbsorption": 0,
+  "texturesByType": {
+    "*": {
+      "normal": {
+        "base": "game:entity/pig/pig-{species}-{type}1"
+      }
+    }
+  },
+  "selectionBox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 1,
+    "y2": 0.3,
+    "z2": 1
+  },
+
+  "collisionbox": null,
+  "combustibleProps": {
+    "burnTemperature": 400,
+    "burnDuration": 10
+  },
+  "sounds": {
+    "place": "game:block/cloth",
+    "walk": "game:walk/cloth"
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 3,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.0625,
+      "z": 0.5
+    },
+    "scale": 0.8
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": -0.02,
+      "z": 0.5
+    },
+    "scale": 1.5
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.7,
+      "y": 0.1,
+      "z": -1.5
+    },
+    "rotation": {
+      "x": -46,
+      "y": 0,
+      "z": -2
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    }
+  },
+  "materialDensity": 200
+}

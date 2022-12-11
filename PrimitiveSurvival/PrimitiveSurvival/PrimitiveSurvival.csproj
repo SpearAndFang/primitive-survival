@@ -1,0 +1,146 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="VSModTemplate Properties">
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <!-- These are necessary because we're kind of jury rigging everything together between .NET Standard 2.0 and .NET 4.5.2. -->
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <!-- We also want to include debugging symbols in our NuGet packages, to make it easier for everyone (we don't care too much about the additional space requirement) -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- And SourceLink requires us to have a repository available -->
+    <RepositoryUrl>https://gitlab.com/vsmods-public/foundation</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <!-- We have a custom Configuration, so need to add it here -->
+    <Configurations>Debug;Release;ReleaseAndZip</Configurations>
+    <NoWarn>IDE0130;IDE1006</NoWarn>
+  </PropertyGroup>
+  
+  <PropertyGroup Label="VSModTemplate Debug Properties" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  
+  <!-- Template default references: -->
+  <ItemGroup Label="VSModTemplate References">
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VINTAGE_STORY)/VintagestoryAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VintagestoryLib">
+      <HintPath>$(VINTAGE_STORY)/VintagestoryLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(VINTAGE_STORY)/Mods/VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(VINTAGE_STORY)/Mods/VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>$(VINTAGE_STORY)/Mods/VSCreativeMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(VINTAGE_STORY)/Lib/Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Harmony">
+      <HintPath>$(VINTAGE_STORY)/Lib/0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>$(VINTAGE_STORY)/Lib/protobuf-net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SQLite">
+      <HintPath>$(VINTAGE_STORY)/Lib/System.Data.SQLite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="cairo-sharp">
+      <HintPath>$(VINTAGE_STORY)/Lib/cairo-sharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!-- Template includes: -->
+  <ItemGroup Label="VSModTemplate Includes">
+    <!-- This is what allows us to do the fancy IL weaving so we end up with a single dependency-version-independent release .dll! -->
+    <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.18.2" PrivateAssets="all" />
+    <!-- Needed for SourceLink on GitLab -->
+    <PackageReference Include="Microsoft.SourceLink.GitLab" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <!-- Template ReleaseAndZip: -->
+  <PropertyGroup Label="Template ReleaseAndZipProperties" Condition="$(Configuration)=='ReleaseAndZip'">
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <Target Name="Package" AfterTargets="CleanTheOutput" Condition="'$(Configuration)' == 'ReleaseAndZip'">
+    <Delete Files="$(TargetDir)/$(TargetName).zip" ContinueOnError="true" />
+    <ZipDirectory DestinationFile="bin/$(TargetName).zip" SourceDirectory="$(TargetDir)" Overwrite="true" />
+    <RemoveDir Directories="$(TargetDir)" />
+    <Move SourceFiles="bin/$(TargetName).zip" DestinationFiles="$(TargetDir)/$(TargetName).zip" />
+  </Target>
+
+  <!-- Template content: -->
+  <ItemGroup Label="VSModTemplate Content">
+    <Content Include="assets/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="assets\primitivesurvival\blocktypes\clay\irrigationvessel.json" />
+    <None Remove="assets\primitivesurvival\blocktypes\other\fuse.json" />
+    <None Remove="assets\primitivesurvival\blocktypes\raft\raftkk.json" />
+    <None Remove="assets\primitivesurvival\blocktypes\raft\raftps.json" />
+    <None Remove="assets\primitivesurvival\blocktypes\wood\pipeinwater.json" />
+    <None Remove="assets\primitivesurvival\blocktypes\wood\support.json" />
+    <None Remove="assets\primitivesurvival\blocktypes\wood\treehollowplaced.json" />
+    <None Remove="assets\primitivesurvival\entities\land\crab-bairdi.json" />
+    <None Remove="assets\primitivesurvival\entities\land\crab-bairdicrab.json" />
+    <None Remove="assets\primitivesurvival\entities\land\snake-coachwhip.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\fishing\caviar.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\fishing\fisheggs.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\fishing\fisheggscooked.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\food\crabmeat.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\food\trussedrot.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\other\crab.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\other\fuse.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\other\grunter.json" />
+    <None Remove="assets\primitivesurvival\itemtypes\other\snake.json" />
+    <None Remove="assets\primitivesurvival\patches\ps-carryon.json" />
+    <None Remove="assets\primitivesurvival\patches\ps-crabmeat-meals.json" />
+    <None Remove="assets\primitivesurvival\patches\ps-oreminingbomb.json" />
+    <None Remove="assets\primitivesurvival\patches\ps-smokedmeat-meals.json" />
+    <None Remove="assets\primitivesurvival\patches\ps-snakemeat-meals.json" />
+    <None Remove="assets\primitivesurvival\patches\ps-stick.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\caviar.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\fireflyjars.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\firewood.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\firework.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\fuse.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\grunter.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\handofthedeadcandle.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\irrigationvessel.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\ps-metalbits.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\smoker.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\trussedmeat.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\woodjarholders.json" />
+    <None Remove="assets\primitivesurvival\shapes\block\fuse\empty.json" />
+    <None Remove="assets\primitivesurvival\shapes\block\fuse\ew.json" />
+    <None Remove="assets\primitivesurvival\shapes\block\fuse\nesw.json" />
+    <None Remove="assets\primitivesurvival\shapes\block\fuse\nsw.json" />
+    <None Remove="assets\primitivesurvival\shapes\block\fuse\sw.json" />
+    <None Remove="assets\primitivesurvival\shapes\block\fuse\w.json" />
+    <None Remove="assets\primitivesurvival\shapes\item\grunter.json" />
+    <None Remove="assets\primitivesurvival\textures\entity\land\crab\bairdicrabsmall.png" />
+    <None Remove="assets\primitivesurvival\textures\entity\land\crab\landcrabsmall.png" />
+    <None Update="modinfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="modicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,96 @@
+{
+  "code": "irrigationvessel",
+  "class": "blockirrigationvessel",
+  "entityClass": "beirrigationvessel",
+  "behaviors": [
+    { "name": "UnstableFalling" }
+  ],
+  "attributes": {
+    "liquidContainerProps": {
+      "capacityLitres": 50,
+      "transferSizeLitres": 1,
+      "emptyShapeLoc": "block/clay/irrigationvessel/irrigationvessel",
+      "opaqueContentShapeLoc": "primitivesurvival:shapes/block/clay/irrigationvessel/contents",
+      "liquidContentShapeLoc": "primitivesurvival:shapes/block/clay/irrigationvessel/liquidcontents",
+      "liquidMaxYTranslate": 0.9275
+    }
+  },
+  "creativeinventory": {
+    "general": [ "irrigationvessel-normal" ],
+    "decorative": [ "irrigationvessel-normal" ],
+    "primitive": [ "irrigationvessel-normal" ]
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "normal" ]
+    }
+  ],
+  "shapebytype": {
+    "*": {
+      "base": "block/clay/irrigationvessel/irrigationvessel"
+    }
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "blockmaterial": "Ceramic",
+  "texturesByType": {
+    "*": {
+      "ceramic": { "base": "game:block/clay/ceramic" },
+      "top": { "base": "primitivesurvival:block/clay/topburned" },
+      "sides": { "base": "game:block/clay/vessel/sides/burned" },
+      "inside": { "base": "game:block/clay/vessel/inside/burned" },
+      "up": { "base": "primitivesurvival:block/clay/fertcompost-moist" },
+      "side": { "base": "game:block/soil/fertcompost" },
+      "updry": { "base": "primitivesurvival:block/clay/fertcompost-dry" },
+      "sidedry": { "base": "game:block/soil/fertlow" }
+    }
+  },
+  "drops": [
+    {
+      "type": "block",
+      "code": "primitivesurvival:irrigationvessel-normal",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "replaceable": 1000,
+  "resistance": 0.8,
+  "liquidSelectable": true,
+  "lightAbsorption": 0,
+  "maxstacksizebytype": {
+    "*": 1
+  },
+  "sounds": {
+    "walk": "game:walk/stone",
+    "break": "game:block/ceramicplace",
+    "hit": "game:block/ceramichit",
+    "place": "game:block/ceramicplace"
+  },
+  "collisionSelectionBox": {
+    "x1": 0.125,
+    "y1": 0,
+    "z1": 0.125,
+    "x2": 0.875,
+    "y2": 1,
+    "z2": 0.875
+  },
+  "heldTpIdleAnimation": "holdunderarm",
+  "tpHandTransform": {
+    "translation": {
+      "x": -1,
+      "y": -0.5,
+      "z": -0.5
+    },
+    "rotation": {
+      "x": 25,
+      "y": -20,
+      "z": -99
+    },
+    "scale": 0.56
+  }
+}
+

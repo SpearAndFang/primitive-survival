@@ -1,0 +1,348 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 64,
+	"textureHeight": 64,
+	"textureSizes": {
+	},
+  "textures": {
+    "fertcompost": "game:block/soil/fertcompost",
+    "water": "game:block/liquid/water",
+    "oak": "game:block/wood/debarked/oak",
+    "string": "game:item/tool/material/linen",
+    "bundle": "game:block/hay/bamboo-top",
+    "rot": "game:item/resource/rot/rot-solids",
+    "base": "game:item/resource/rot/rot-spill"
+  },
+	"elements": [
+		{
+			"name": "origin",
+			"from": [ 8.0, 9.0, 8.0 ], 
+			"to": [ 8.0, 9.0, 8.0 ], 
+			"rotationOrigin": [ 8.0, 9.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"up": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 4.0, 4.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube1",
+					"from": [ -8.0, -9.0, -8.0 ], 
+					"to": [ 8.0, 2.0, 8.0 ], 
+					"rotationOrigin": [ -8.0, -9.0, -8.0 ],
+					"faces": {
+						"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 64.0, 64.0 ], "autoUv": false },
+						"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 64.0, 62.0 ], "autoUv": false },
+						"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 64.0, 64.0 ], "autoUv": false },
+						"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 64.0, 62.0 ], "autoUv": false },
+						"up": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 64.0, 64.0 ], "autoUv": false },
+						"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 64.0, 64.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "origin18",
+					"from": [ 0.0, 0.0, 0.0 ], 
+					"to": [ 0.0, 0.0, 0.0 ], 
+					"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+					"rotationY": 90.0,
+					"faces": {
+						"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"up": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+					},
+					"children": [
+						{
+							"name": "Cube19",
+							"from": [ -8.0, 2.0, -8.0 ], 
+							"to": [ -3.95, 6.9, -7.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -8.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 22.0, 20.0, 38.0, 38.0 ], "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 4.0, 10.0, 8.0, 30.0 ], "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 14.0, 14.0, 18.0, 18.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 12.0, 18.0, 16.0, 40.0 ], "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 28.0, 42.0, 33.0 ], "rotation": 180, "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 4.0, 8.0, 8.0, 9.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube20",
+							"from": [ -8.0, 2.0, -7.0 ], 
+							"to": [ -6.9, 6.9, -4.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -7.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 3.0, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 28.0, 20.0, 32.0, 40.0 ], "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 32.0, 16.0, 43.0, 33.0 ], "rotation": 180, "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 20.0, 32.0, 36.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 3.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube21",
+							"from": [ -4.7, 2.0, -7.8 ], 
+							"to": [ -3.7, 6.86, -3.49 ], 
+							"rotationOrigin": [ -4.7, 2.0, -7.7 ],
+							"rotationY": -45.0,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 5.0, 4.5 ], "enabled": false, "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 10.0, 10.0, 26.0, 30.0 ], "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 12.0, 10.0 ], "enabled": false, "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 14.0, 10.0 ], "enabled": false, "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 6.0, 10.0, 10.0, 26.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube22",
+							"from": [ -6.1, 2.0, -7.9 ], 
+							"to": [ -4.5, 6.88, -5.4 ], 
+							"rotationOrigin": [ -6.1, 2.0, -7.9 ],
+							"rotationY": -44.999996548644546,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 8.0, 32.0, 16.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 2.5 ], "enabled": false }
+							}
+						}
+					]
+				},
+				{
+					"name": "origin8",
+					"from": [ 0.0, 0.0, 0.0 ], 
+					"to": [ 0.0, 0.0, 0.0 ], 
+					"faces": {
+						"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"up": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+					},
+					"children": [
+						{
+							"name": "Cube9",
+							"from": [ -8.0, 2.0, -8.0 ], 
+							"to": [ -3.95, 6.9, -7.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -8.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 22.0, 20.0, 38.0, 38.0 ], "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 4.0, 10.0, 8.0, 30.0 ], "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 14.0, 14.0, 18.0, 18.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 12.0, 18.0, 16.0, 40.0 ], "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 28.0, 42.0, 33.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 4.0, 8.0, 8.0, 9.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube10",
+							"from": [ -8.0, 2.0, -7.0 ], 
+							"to": [ -6.9, 6.9, -4.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -7.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 3.0, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 28.0, 20.0, 32.0, 40.0 ], "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 32.0, 16.0, 43.0, 33.0 ], "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 20.0, 32.0, 36.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 3.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube11",
+							"from": [ -4.7, 2.0, -7.8 ], 
+							"to": [ -3.7, 6.86, -3.49 ], 
+							"rotationOrigin": [ -4.7, 2.0, -7.7 ],
+							"rotationY": -45.0,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 5.0, 4.5 ], "enabled": false, "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 10.0, 10.0, 26.0, 30.0 ], "rotation": 180, "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 12.0, 10.0 ], "enabled": false, "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 14.0, 10.0 ], "enabled": false, "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 6.0, 10.0, 10.0, 26.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube12",
+							"from": [ -6.1, 2.0, -7.9 ], 
+							"to": [ -4.5, 6.88, -5.4 ], 
+							"rotationOrigin": [ -6.1, 2.0, -7.9 ],
+							"rotationY": -44.999996548644546,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 8.0, 32.0, 16.0 ], "rotation": 90, "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 2.5 ], "enabled": false }
+							}
+						}
+					]
+				},
+				{
+					"name": "origin13",
+					"from": [ 0.0, 0.0, 0.0 ], 
+					"to": [ 0.0, 0.0, 0.0 ], 
+					"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+					"rotationY": -180.0,
+					"faces": {
+						"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"up": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+					},
+					"children": [
+						{
+							"name": "Cube14",
+							"from": [ -8.0, 2.0, -8.0 ], 
+							"to": [ -3.95, 6.9, -7.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -8.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 22.0, 20.0, 38.0, 38.0 ], "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 4.0, 10.0, 8.0, 30.0 ], "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 14.0, 14.0, 18.0, 18.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 12.0, 18.0, 16.0, 40.0 ], "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 28.0, 42.0, 33.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 4.0, 8.0, 8.0, 9.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube15",
+							"from": [ -8.0, 2.0, -7.0 ], 
+							"to": [ -6.9, 6.9, -4.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -7.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 3.0, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 28.0, 20.0, 32.0, 40.0 ], "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 32.0, 16.0, 43.0, 33.0 ], "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 20.0, 32.0, 36.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 3.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube16",
+							"from": [ -4.7, 2.0, -7.8 ], 
+							"to": [ -3.7, 6.86, -3.49 ], 
+							"rotationOrigin": [ -4.7, 2.0, -7.7 ],
+							"rotationY": -45.0,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 5.0, 4.5 ], "enabled": false, "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 10.0, 10.0, 26.0, 30.0 ], "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 12.0, 10.0 ], "enabled": false, "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 14.0, 10.0 ], "enabled": false, "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 6.0, 10.0, 10.0, 26.0 ], "rotation": 180, "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube17",
+							"from": [ -6.1, 2.0, -7.9 ], 
+							"to": [ -4.5, 6.88, -5.4 ], 
+							"rotationOrigin": [ -6.1, 2.0, -7.9 ],
+							"rotationY": -44.999996548644546,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 8.0, 32.0, 16.0 ], "rotation": 90, "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 2.5 ], "enabled": false }
+							}
+						}
+					]
+				},
+				{
+					"name": "origin19",
+					"from": [ 0.0, 0.0, 0.0 ], 
+					"to": [ 0.0, 0.0, 0.0 ], 
+					"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+					"rotationY": -90.0,
+					"faces": {
+						"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"up": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.0, 2.0 ] }
+					},
+					"children": [
+						{
+							"name": "Cube23",
+							"from": [ -8.0, 2.0, -8.0 ], 
+							"to": [ -3.95, 6.9, -7.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -8.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 22.0, 20.0, 38.0, 38.0 ], "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 4.0, 10.0, 8.0, 30.0 ], "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 14.0, 14.0, 18.0, 18.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 12.0, 18.0, 16.0, 40.0 ], "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 28.0, 42.0, 33.0 ], "rotation": 180, "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 4.0, 8.0, 8.0, 9.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube23",
+							"from": [ -8.0, 2.0, -7.0 ], 
+							"to": [ -6.9, 6.9, -4.0 ], 
+							"rotationOrigin": [ -8.0, 2.0, -7.0 ],
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 3.0, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 28.0, 20.0, 32.0, 40.0 ], "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 32.0, 16.0, 43.0, 33.0 ], "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 20.0, 32.0, 36.0 ], "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 3.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube23",
+							"from": [ -4.7, 2.0, -7.8 ], 
+							"to": [ -3.7, 6.86, -3.49 ], 
+							"rotationOrigin": [ -4.7, 2.0, -7.7 ],
+							"rotationY": -45.0,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 5.0, 4.5 ], "enabled": false, "autoUv": false },
+								"east": { "texture": "#fertcompost", "uv": [ 10.0, 10.0, 26.0, 30.0 ], "autoUv": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 12.0, 10.0 ], "enabled": false, "autoUv": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 14.0, 10.0 ], "enabled": false, "autoUv": false },
+								"up": { "texture": "#fertcompost", "uv": [ 6.0, 10.0, 10.0, 26.0 ], "rotation": 180, "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.0, 4.0 ], "enabled": false }
+							}
+						},
+						{
+							"name": "Cube23",
+							"from": [ -6.1, 2.0, -7.9 ], 
+							"to": [ -4.5, 6.88, -5.4 ], 
+							"rotationOrigin": [ -6.1, 2.0, -7.9 ],
+							"rotationY": -44.999996548644546,
+							"faces": {
+								"north": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"east": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"south": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 4.5 ], "enabled": false },
+								"west": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 2.5, 4.5 ], "enabled": false },
+								"up": { "texture": "#fertcompost", "uv": [ 26.0, 8.0, 32.0, 16.0 ], "rotation": 180, "autoUv": false },
+								"down": { "texture": "#fertcompost", "uv": [ 0.0, 0.0, 1.5, 2.5 ], "enabled": false }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}

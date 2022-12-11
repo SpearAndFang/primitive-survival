@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "K,H",
+  "enabled": true,
+  "shapeless": true,
+  "ingredients": {
+    "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+    "H": { "type": "item", "code": "game:bushmeat-raw", "quantity": 1 }
+  },
+  "name": "jerky-bushmeat",
+  "width": 1,
+  "height": 2,
+  "output": {
+    "type": "item",
+    "code": "primitivesurvival:jerky-bushmeat-raw",
+    "quantity": 4
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "code": "textureblackbronze",
+  "textures": {
+    "hookmaterial": { "base": "game:block/metal/ingot/blackbronze" }
+  }
+}

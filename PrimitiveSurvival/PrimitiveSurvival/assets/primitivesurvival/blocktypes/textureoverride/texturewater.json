@@ -1,0 +1,6 @@
+{
+  "code": "texturewater",
+  "textures": {
+    "water": { "base": "game:block/liquid/water2" }
+  }
+}

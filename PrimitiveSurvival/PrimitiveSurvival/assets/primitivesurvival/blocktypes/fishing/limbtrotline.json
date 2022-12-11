@@ -1,0 +1,244 @@
+{
+  "code": "limbtrotlinelure",
+  "class": "blocklimbtrotlinelure",
+  "entityclass": "belimbtrotlinelure",
+  "maxstacksize": 64,
+  "shapebytype": {
+    "*-north": {
+      "base": "block/limbtrotline/limbtrotline-middle",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "block/limbtrotline/limbtrotline-middle",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "block/limbtrotline/limbtrotline-middle",
+      "rotateY": 0
+    },
+    "*-west": {
+      "base": "block/limbtrotline/limbtrotline-middle",
+      "rotateY": 270
+    }
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "end-small",
+        "end-medium",
+        "end-large",
+        "end-small-withmiddle",
+        "end-medium-withmiddle",
+        "end-large-withmiddle",
+        "middle"
+      ]
+    },
+    { "loadFromProperties": "abstract/horizontalorientation" }
+  ],
+  "dropsbytype": {
+    "*": [
+      {
+        "type": "item",
+        "code": "cordage",
+        "quantity": { "avg": 1 }
+      }
+    ]
+  },
+  "vertexFlags": {
+    "zOffset": 1,
+    "windMode": "Water"
+  },
+  "drawtype": "JSON",
+  "materialDensity": 700,
+  "lightabsorption": 0,
+  "collisionbox": null,
+  "selectionboxesByType": {
+    "*-north": [
+      {
+        "x1": 0.3,
+        "y1": -0.2,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 0
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0,
+        "y2": 0,
+        "z2": 0,
+        "rotateY": 0
+      }
+    ],
+    "*-south": [
+      {
+        "x1": 0.3,
+        "y1": -0.2,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 180
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0,
+        "y2": 0,
+        "z2": 0,
+        "rotateY": 180
+      }
+    ],
+    "*-west": [
+      {
+        "x1": 0.3,
+        "y1": -0.2,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 270
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0,
+        "y2": 0,
+        "z2": 0,
+        "rotateY": 270
+      }
+    ],
+
+    "*-east": [
+      {
+        "x1": 0.3,
+        "y1": -0.2,
+        "z1": 0,
+        "x2": 0.7,
+        "y2": 0.2,
+        "z2": 1,
+        "rotateY": 90
+      },
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 0,
+        "y2": 0,
+        "z2": 0,
+        "rotateY": 90
+      }
+    ]
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "renderpass": "BlendNoCull",
+  "resistance": 0.75,
+  "requiredminingtier": 0,
+  "sounds": {
+    "place": "game:block/planks",
+    "walk": "game:block/planks"
+  },
+  "texturesByType": {
+    "*": {
+      "hookmaterial": { "base": "game:block/stone/flint" },
+      "woodmaterial": { "base": "game:block/wood/debarked/oak" },
+      "stringmaterial": { "base": "game:block/vines/basket/normal-northsouth" },
+      "baitmaterial": { "base": "primitivesurvival:item/fishing/bait" },
+      "troutmaterial": {
+        "base": "primitivesurvival:item/fishing/fish-trout-raw"
+      },
+      "perchmaterial": {
+        "base": "primitivesurvival:item/fishing/fish-perch-raw"
+      },
+      "salmonmaterial": {
+        "base": "primitivesurvival:item/fishing/fish-salmon-raw"
+      },
+      "carpmaterial": {
+        "base": "primitivesurvival:item/fishing/fish-carp-raw"
+      },
+      "pikematerial": {
+        "base": "primitivesurvival:item/fishing/fish-pike-raw"
+      },
+      "arcticcharmaterial": { "base": "item/fishing/fish-arcticchar-raw" },
+      "catfishmaterial": { "base": "item/fishing/fish-catfish-raw" },
+      "bluegillmaterial": { "base": "item/fishing/fish-bluegill-raw" },
+      "bassmaterial": {
+        "base": "primitivesurvival:item/fishing/fish-bass-raw"
+      },
+      "mutantmaterial": { "base": "item/fishing/fish-mutant-raw" }
+    }
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 1.1,
+      "y": 6,
+      "z": 0
+    },
+    "rotation": {
+      "x": -22.6,
+      "y": -45.3,
+      "z": 113
+    },
+    "origin": {
+      "x": 0.3,
+      "y": 0.0625,
+      "z": 0.6
+    },
+    "scale": 1.71
+  },
+  "fpHandTransform": {
+    "rotation": {
+      "x": 12,
+      "y": 18,
+      "z": 113
+    },
+    "scale": 1.2
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.18,
+      "y": -0.1,
+      "z": -0.87
+    },
+    "rotation": {
+      "x": -41,
+      "y": -16,
+      "z": 102
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.1,
+      "z": 0.5
+    },
+    "scale": 0.67
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 93,
+      "z": 91
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3.62
+  }
+}

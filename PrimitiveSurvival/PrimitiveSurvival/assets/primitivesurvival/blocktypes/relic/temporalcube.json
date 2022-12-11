@@ -1,0 +1,135 @@
+{
+  "code": "temporalcube",
+  "class": "blocktemporalcube",
+  "entityclass": "betemporalcube",
+  "behaviors": [{ "name": "UnstableFalling" }],
+  "attributes": {
+    "placement": "middle",
+    "placetype": "cube"
+  },
+  "blockmaterial": "Stone",
+  "drawtype": "json",
+  "lightabsorption": 0,
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "resistance": 5,
+  "requiredminingtier": 2,
+  "sounds": {
+    "place": "game:walk/stone3",
+    "walk": "game:walk/stone3"
+  },
+  "variantgroups": [{ "loadFromProperties": "abstract/horizontalorientation" }],
+  "collisionBoxesByType": {
+    "*": [
+      {
+        "x1": 0.15,
+        "y1": 0,
+        "z1": 0.15,
+        "x2": 0.85,
+        "y2": 0.65,
+        "z2": 0.85
+      }
+    ]
+  },
+  "selectionBoxesByType": {
+    "*": [
+      {
+        "x1": 0.15,
+        "y1": 0,
+        "z1": 0.15,
+        "x2": 0.85,
+        "y2": 0.65,
+        "z2": 0.85
+      }
+    ]
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 1.5,
+      "y": 2.1,
+      "z": 0
+    },
+    "rotation": {
+      "x": 1,
+      "y": -53,
+      "z": -25
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.23,
+      "z": 0.5
+    },
+    "scale": 1.89
+  },
+  "groundTransform": {
+    "scale": 4
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": -0.2,
+      "z": 0
+    },
+    "rotation": {
+      "x": 48,
+      "y": -157,
+      "z": -34
+    },
+    "scale": 1.54
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.6,
+      "y": 0,
+      "z": 0.3
+    },
+    "rotation": {
+      "x": 3,
+      "y": -85,
+      "z": -20
+    },
+    "origin": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 0.72
+  },
+  "drops": [
+    {
+      "type": "block",
+      "code": "primitivesurvival:temporalcube-north"
+    }
+  ],
+  "textures": {
+    "relic": {
+      "base": "primitivesurvival:block/relic"
+    }
+  },
+  "shapebytype": {
+    "*-north": {
+      "base": "block/relic/temporalcube",
+      "rotateY": 180
+    },
+    "*-east": {
+      "base": "block/relic/temporalcube",
+      "rotateY": 90
+    },
+    "*-south": {
+      "base": "block/relic/temporalcube",
+      "rotateY": 0
+    },
+    "*-west": {
+      "base": "block/relic/temporalcube",
+      "rotateY": 270
+    }
+  },
+  "creativeinventory": {
+    "general": ["*-north"],
+    "primitive": ["*-north"]
+  }
+}

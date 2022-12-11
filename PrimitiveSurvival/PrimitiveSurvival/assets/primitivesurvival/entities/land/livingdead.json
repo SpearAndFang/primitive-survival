@@ -1,0 +1,377 @@
+{
+  "code": "livingdead",
+  "class": "entitylivingdead",
+  "canClimb": true,
+  "collisionBoxSize": {
+    "x": 1,
+    "y": 1.3
+  },
+  "deadCollisionboxSize": {
+    "x": 1.2,
+    "y": 0.75
+  },
+  "selectionBoxSize": {
+    "x": 1.2,
+    "y": 4
+  },
+  "deadSelectionboxSize": {
+    "x": 1.2,
+    "y": 1
+  },
+  "falldamage": false,
+  "eyeHeight": 4,
+  "knockbackResistance": 1,
+  "attributes": {
+    "glitchAffected": true,
+    "reckless": true,
+    "extraSplashParticlesMul": 4,
+    "spawnCloserDuringLowStability": true,
+    "onDeathStabilityRecoveryByType": {
+      "*": 0.01
+    },
+    "lightHsv": [ 1, 4, 1 ],
+    "minLightLevel": 0,
+    "strobeFrequency": 1
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [ "normal" ]
+    }
+  ],
+  "drops": [],
+  "client": {
+    "renderer": "entitygenericshaperenderer",
+    "pitchStep": false,
+    "shapeByType": {
+      "*-normal": { "base": "entity/land/livingdead" }
+    },
+    "texturesByType": {
+      "*-normal": {
+        "tinbronze": {
+          "base": "entity/land/livingdead/tinbronze"
+        },
+        "skindark": {
+          "base": "entity/land/livingdead/skindark"
+        },
+        "skinlight": {
+          "base": "entity/land/livingdead/skinlight"
+        },
+        "bonedark": {
+          "base": "entity/land/livingdead/bonedark"
+        },
+        "bonelight": {
+          "base": "entity/land/livingdead/bonelight"
+        }
+      }
+    },
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": true
+      },
+      { "code": "interpolateposition" },
+      {
+        "code": "harvestable",
+        "duration": 2
+      }
+    ],
+    "animations": [
+      {
+        "code": "hurt",
+        "animation": "hurt",
+        "animationSpeed": 2,
+        "weight": 10,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "die",
+        "animation": "die",
+        "animationSpeed": 0.7,
+        "weight": 10,
+        "blendMode": "Average",
+        "triggeredBy": { "onControls": [ "dead" ] }
+      },
+      {
+        "code": "idle",
+        "animation": "idle",
+        "blendMode": "Average",
+        "triggeredBy": { "defaultAnim": true }
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      },
+      {
+        "code": "health",
+        "currenthealthByType": {
+          "*-normal": 100
+        },
+        "maxhealthByType": {
+          "*-normal": 100
+        }
+      },
+      {
+        "code": "deaddecay",
+        "hoursToDecay": 3
+      },
+      {
+        "code": "floatupwhenstuck",
+        "onlyWhenDead": true
+      },
+      {
+        "code": "despawn",
+        "minPlayerDistance": 32,
+        "minSeconds": 30
+      },
+      {
+        "code": "despawn",
+        "minPlayerDistance": 64,
+        "minSeconds": 6
+      },
+      {
+        "code": "emotionstates",
+        "states": [
+          {
+            "code": "aggressiveondamage",
+            "duration": 30,
+            "chance": 1,
+            "slot": 1,
+            "priority": 1,
+            "accumType": "noaccum"
+          }
+        ]
+      },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "meleeattack",
+            "entityCodes": [ "player" ],
+            "priority": 3,
+            "damage": 30,
+            "damageTier": 4,
+            "damageType": "SlashingAttack",
+            "mincooldown": 500,
+            "maxcooldown": 1750,
+            "damagePlayerAtMs": 400,
+            "attackDurationMs": 1000,
+            "animation": "attack",
+            "animationSpeed": 1.5,
+            "sound": "entity/livingdead/rattle",
+            "soundStartMs": 400
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": [ "player" ],
+            "priority": 3,
+            "damage": 30,
+            "damageTier": 4,
+            "damageType": "SlashingAttack",
+            "mincooldown": 500,
+            "maxcooldown": 1750,
+            "damagePlayerAtMs": 400,
+            "attackDurationMs": 1000,
+            "animation": "attack",
+            "animationSpeed": 1.5,
+            "sound": "entity/livingdead/rattle",
+            "soundStartMs": 400,
+            "whenInEmotionState": "aggressiveondamage"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": [ "player" ],
+            "priority": 2.5,
+            "mincooldown": 400,
+            "maxcooldown": 800,
+            "movespeed": 0.018,
+            "seekingRange": 20,
+            "animationSpeed": 1.3,
+            "animation": "walk",
+            "sound": "entity/livingdead/rattle"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": [ "player" ],
+            "priority": 2.5,
+            "mincooldown": 400,
+            "maxcooldown": 800,
+            "movespeed": 0.018,
+            "seekingRange": 20,
+            "animationSpeed": 1.3,
+            "animation": "walk",
+            "sound": "entity/livingdead/rattle",
+            "whenInEmotionState": "aggressiveondamage"
+          },
+          {
+            "code": "fleeentity",
+            "entityCodes": [ "player" ],
+            "priority": 2,
+            "movespeed": 0.018,
+            "seekingRange": 20,
+            "fleeingDistance": 64,
+            "fleeDurationMs": 9999999,
+            "minDayLightByType": {
+              "*-normal": 2
+            },
+            "ignoreDeepDayLight": true,
+            "cancelOnHurt": true,
+            "executionChance": 0.003,
+            "animation": "walk",
+            "animationSpeed": 1.3
+          },
+          {
+            "code": "fleeentity",
+            "entityCodes": [ "player" ],
+            "priority": 1.8,
+            "movespeed": 0.018,
+            "seekingRange": 12,
+            "cancelOnHurt": true,
+            "animation": "walk",
+            "animationSpeed": 1.3,
+            "sound": "entity/livingdead/rattle",
+            "soundStartMs": 400
+          },
+          {
+            "code": "idle",
+            "entityCodes": [ "player" ],
+            "priority": 1.5,
+            "priorityForCancel": 9,
+            "mincooldown": 1000,
+            "maxcooldown": 10000,
+            "durationMs": 1500,
+            "releaseAtMs": 700,
+            "seekingRange": 15,
+            "animationSpeed": 1.5,
+            "animation": "scream",
+            "sound": "entity/livingdead/screech"
+          },
+
+          {
+            "code": "idle",
+            "priority": 1.2,
+            "priorityForCancel": 1.35,
+            "minduration": 4000,
+            "maxduration": 6000,
+            "chance": 0.001,
+            "initialMinCoolDown": 2000,
+            "initialMaxCoolDown": 150000,
+            "mincooldown": 300000,
+            "maxcooldown": 10000000,
+            "animation": "idle",
+            "animationSpeed": 1.25
+          },
+          {
+            "code": "idle",
+            "priority": 1.2,
+            "priorityForCancel": 2.1,
+            "minduration": 4000,
+            "maxduration": 6000,
+            "chance": 0.001,
+            "initialMinCoolDown": 2000,
+            "initialMaxCoolDown": 150000,
+            "mincooldown": 300000,
+            "maxcooldown": 10000000,
+            "animation": "idle",
+            "animationSpeed": 1
+          },
+          {
+            "code": "wander",
+            "priority": 1.0,
+            "movespeed": 0.01,
+            "animationSpeed": 1.2,
+            "animation": "walk",
+            "preferredLightLevel": 15,
+            "sound": "entity/livingdead/rattle",
+            "soundStartMs": 400
+          },
+          {
+            "code": "wander",
+            "priority": 0.99,
+            "priorityForCancel": 1.1,
+            "movespeed": 0.008,
+            "animationSpeed": 1.1,
+            "animation": "walk",
+            "preferredLightLevel": 15,
+            "sound": "entity/livingdead/rattle",
+            "soundStartMs": 400
+          },
+          {
+            "code": "getoutofwater",
+            "priority": 1.4,
+            "movespeed": 0.015,
+            "animation": "walk",
+            "animationSpeed": 1.55
+          },
+          {
+            "code": "lookaround",
+            "priority": 0.5
+          }
+        ]
+      },
+      {
+        "code": "harvestable",
+        "duration": 2,
+        "dropsByType": {
+          "*-normal": [
+            {
+              "type": "item",
+              "code": "gear-temporal",
+              "quantity": {
+                "avg": 1,
+                "var": 0
+              }
+            },
+            {
+              "type": "block",
+              "code": "primitivesurvival:handofthedead-empty-north",
+              "quantity": {
+                "avg": 0.25,
+                "var": 0
+              }
+            },
+            {
+              "type": "block",
+              "code": "primitivesurvival:skullofthedead-normal",
+              "quantity": {
+                "avg": 0.25,
+                "var": 0
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "spawnconditions": {
+      "runtime": {
+        "group": "hostile",
+        "maxQuantity": 2,
+        "maxLightLevel": 5,
+        "chance": 0.002,
+        "lightLevelType": "MaxTimeOfDayLight",
+        "groupSize": {
+          "dist": "invexp",
+          "avg": 1,
+          "var": 0
+        },
+        "insideBlockCodes": [ "game:air" ],
+        "maxY": 0.4
+      }
+    }
+  },
+  "idleSoundRange": 14,
+  "sounds": {
+    "hurt": "entity/livingdead/growl",
+    "death": "entity/livingdead/breathe"
+  }
+}

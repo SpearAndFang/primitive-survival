@@ -1,0 +1,371 @@
+{
+  "code": "smokedmeat",
+  "maxstacksize": 64,
+  "attributes": {
+    "inContainerTexture": {
+      "base": "block/wood/barrel/smoked-{type}"
+    },
+    "nutritionPropsWhenInMealByType": {
+      "*-redmeat-*": {
+        "satiety": 380,
+        "foodcategory": "Protein"
+      },
+      "*-bushmeat-*": {
+        "satiety": 160,
+        "foodcategory": "Protein"
+      },
+      "*-fish-*": {
+        "satiety": 340,
+        "foodcategory": "Protein"
+      },
+      "*-poultry-*": {
+        "satiety": 340,
+        "foodcategory": "Protein"
+      }
+    },
+    "displaycaseable": true,
+    "shelvable": true,
+    "bakingPropertiesByType": {
+      "*-raw": {
+        "temp": 150,
+        "levelFrom": 0.0,
+        "levelTo": 0.25,
+        "startScaleY": 1.0,
+        "endScaleY": 1.0,
+        "resultCode": "primitivesurvival:smokedmeat-{type}-partbaked"
+      },
+      "*-partbaked": {
+        "temp": 150,
+        "levelFrom": 0.25,
+        "levelTo": 0.5,
+        "startScaleY": 1.0,
+        "endScaleY": 1.0,
+        "resultCode": "primitivesurvival:smokedmeat-{type}-cooked",
+        "initialCode": "primitivesurvival:smokedmeat-{type}-raw"
+      },
+      "*-cooked": {
+        "temp": 150,
+        "levelFrom": 0.5,
+        "levelTo": 0.75,
+        "startScaleY": 1.0,
+        "endScaleY": 1.0,
+        "resultCode": "primitivesurvival:smokedmeat-{type}-charred",
+        "initialCode": "primitivesurvival:smokedmeat-{type}-partbaked"
+      },
+      "*-charred": {
+        "temp": 150,
+        "levelFrom": 0.75,
+        "levelTo": 1.0,
+        "startScaleY": 1.0,
+        "endScaleY": 0.9,
+        "initialCode": "primitivesurvival:smokedmeat-{type}-cooked"
+      }
+    },
+    "onDisplayTransformByType": {
+      "*": {
+        "translation": {
+          "x": 0,
+          "y": -0.2,
+          "z": 0
+        },
+        "scale": 0.6
+      }
+    },
+    "inPiePropertiesByType": {
+      "*-redmeat-*": {
+        "texture": "block/pie/fill-smoked-redmeat",
+        "partType": "Filling"
+      },
+      "*-bushmeat-*": {
+        "texture": "block/pie/fill-smoked-bushmeat",
+        "partType": "Filling"
+      },
+      "*-fish-*": {
+        "texture": "block/pie/fill-smoked-fish",
+        "partType": "Filling"
+      },
+      "*-poultry-*": {
+        "texture": "block/pie/fill-smoked-poultry",
+        "partType": "Filling"
+      }
+    }
+  },
+  "nutritionPropsByType": {
+    "*-redmeat-raw": {"satiety": 180,"foodcategory": "Protein"},
+    "*-redmeat-partbaked": {"satiety": 180,"foodcategory": "Protein"},
+    "*-redmeat-cooked": {"satiety": 220, "foodcategory": "Protein"},
+    "*-redmeat-charred": {"satiety": 200,"foodcategory": "Protein"},
+    "*-bushmeat-raw": {"satiety": 80,"foodcategory": "Protein"},
+    "*-bushmeat-partbaked": {"satiety": 80,"foodcategory": "Protein"},
+    "*-bushmeat-cooked": {"satiety": 120, "foodcategory": "Protein"},
+    "*-bushmeat-charred": {"satiety": 100,"foodcategory": "Protein"},
+    "*-fish-raw": {"satiety": 130,"foodcategory": "Protein"},
+    "*-fish-partbaked": {"satiety": 130,"foodcategory": "Protein"},
+    "*-fish-cooked": {"satiety": 170, "foodcategory": "Protein"},
+    "*-fish-charred": {"satiety": 150,"foodcategory": "Protein"},
+    "*-poultry-raw": {"satiety": 130,"foodcategory": "Protein"},
+    "*-poultry-partbaked": {"satiety": 130,"foodcategory": "Protein"},
+    "*-poultry-cooked": {"satiety": 170, "foodcategory": "Protein"},
+    "*-poultry-charred": {"satiety": 150,"foodcategory": "Protein"}
+  },
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "redmeat",
+        "bushmeat",
+        "poultry",
+        "fish"
+      ]
+    },
+    {
+      "code": "state",
+      "states": [ "raw", "partbaked", "cooked", "charred" ]
+    }
+  ],
+  "shape": { "base": "item/food/smoker/{type}-smoked" },
+  "creativeinventory": {
+    "general": [ "*-raw" ],
+    "items": [ "*-raw" ],
+    "primitive": [ "*-raw" ]
+  },
+  "materialDensity": 150,
+  "guiTransformByType": {
+    "*-redmeat-*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 171,
+        "y": -122,
+        "z": 33
+      },
+      "origin": {
+        "x": 0.5,
+        "y": -0.01,
+        "z": 0.4199
+      },
+      "scale": 4.7199
+    },
+    "*-fish-*": {
+      "translation": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -22.5,
+        "y": -44.6875,
+        "z": -158
+      },
+      "origin": {
+        "x": 0.55,
+        "y": 0.03,
+        "z": 0.51
+      },
+      "scale": 2.81
+    },
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 171,
+        "y": -122,
+        "z": 33
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.04,
+        "z": 0.53
+      },
+      "scale": 4.7199
+    }
+  },
+  "fpHandTransformByType": {
+    "*-redmeat-*": {
+      "translation": {
+        "x": -0.06,
+        "y": 0.36,
+        "z": 0.23
+      },
+      "rotation": {
+        "x": 40,
+        "y": 91,
+        "z": 15
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.1,
+        "z": 0.5
+      },
+      "scale": 2.5
+    },
+    "*-fish-*": {
+      "translation": {
+        "x": 0.1,
+        "y": 0.2,
+        "z": 0.2
+      },
+      "rotation": {
+        "x": 44,
+        "y": 99,
+        "z": 20
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.1,
+        "z": 0.5
+      },
+      "scale": 1.67
+    },
+    "*-poultry-*": {
+      "translation": {
+        "x": -0.06,
+        "y": 0.36,
+        "z": 0.23
+      },
+      "rotation": {
+        "x": 86,
+        "y": -83,
+        "z": 24
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.1,
+        "z": 0.5
+      },
+      "scale": 2.5
+    },
+    "*": {
+      "translation": {
+        "x": -0.06,
+        "y": 0.36,
+        "z": 0.23
+      },
+      "rotation": {
+        "x": 40,
+        "y": 91,
+        "z": 15
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.1,
+        "z": 0.5
+      },
+      "scale": 2.5
+    }
+  },
+  "tpHandTransformByType": {
+    "*-redmeat-*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 5,
+        "y": 41,
+        "z": -31
+      },
+      "origin": {
+        "x": 0.23,
+        "y": 0,
+        "z": 0.13
+      },
+      "scale": 0.75
+    },
+    "*-fish-*": {
+      "translation": {
+        "x": -0.75,
+        "y": -0.2,
+        "z": -0.8
+      },
+      "rotation": {
+        "x": -59,
+        "y": -1,
+        "z": -8
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.1,
+        "z": 0.5
+      },
+      "scale": 0.58
+    },
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 5,
+        "y": 41,
+        "z": -31
+      },
+      "origin": {
+        "x": 0.23,
+        "y": 0,
+        "z": 0.13
+      },
+      "scale": 0.75
+    }
+  },
+  "GroundTransformByType": {
+    "*-fish-*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "scale": 1.9
+    },
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 180,
+        "y": 33,
+        "z": -180
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "scale": 5
+    }
+  },
+  "transitionablePropsByType": {
+    "*": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 4380 },
+        "transitionHours": { "avg": 2190 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ]
+  }
+}

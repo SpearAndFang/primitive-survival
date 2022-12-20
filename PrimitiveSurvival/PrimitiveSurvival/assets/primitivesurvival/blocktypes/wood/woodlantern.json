@@ -69,8 +69,7 @@
   "variantgroups": [
     {
       "code": "wood",
-      "states": [ "aged" ],
-      "loadFromProperties": "block/wood"
+      "states": [ "aged", "birch", "oak", "maple", "pine", "acacia", "kapok", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart" ]
     },
     {
       "code": "position",

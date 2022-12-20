@@ -133,7 +133,7 @@ namespace PrimitiveSurvival.ModSystem
                 }
             }
             */
-                return false;
+            return false;
         }
 
         internal void OnBreak() // IPlayer byPlayer, BlockPos pos)

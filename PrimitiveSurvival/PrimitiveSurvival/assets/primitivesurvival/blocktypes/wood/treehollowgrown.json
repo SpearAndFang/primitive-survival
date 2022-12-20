@@ -8,12 +8,24 @@
         "properties": { "eventName": "testForDecay" }
       }
     ],
-    "attributes": {
-      "preventsDecay": true,
-      "forageStatAffected": true,
-      "treeFellingGroupCode": "{wood}",
-      "treeFellingGroupSpreadIndex": 3
+  "attributes": {
+    "preventsDecay": true,
+    "forageStatAffected": true,
+    "treeFellingGroupCodeByType": {
+      "treehollowgrown-*": "{wood}"
     },
+    "treeFellingGroupSpreadIndexByType": {
+      "*-birch-*": 4,
+      "*-oak-*": 4,
+      "*-maple-*": 4,
+      "*-pine-*": 3,
+      "*-acacia-*": 4,
+      "*-kapok-*": 3,
+      "*-larch-*": 3,
+      "*-walnut-*": 4,
+      "*": 4
+    }
+  },
     "variantgroups": [
       {
         "code": "type",

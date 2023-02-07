@@ -7,19 +7,19 @@
     },
     "nutritionPropsWhenInMealByType": {
       "*-redmeat-*": {
-        "satiety": 380,
+        "satiety": 330,
         "foodcategory": "Protein"
       },
       "*-bushmeat-*": {
-        "satiety": 160,
+        "satiety": 180,
         "foodcategory": "Protein"
       },
       "*-fish-*": {
-        "satiety": 340,
+        "satiety": 255,
         "foodcategory": "Protein"
       },
       "*-poultry-*": {
-        "satiety": 340,
+        "satiety": 255,
         "foodcategory": "Protein"
       }
     },
@@ -358,7 +358,7 @@
     "*": [
       {
         "type": "Perish",
-        "freshHours": { "avg": 4380 },
+        "freshHours": { "avg": 2190 },
         "transitionHours": { "avg": 2190 },
         "transitionedStack": {
           "type": "item",

@@ -18,7 +18,10 @@ namespace PrimitiveSurvival.ModSystem
             base.OnLoaded(api);
 
             if (api.Side != EnumAppSide.Client)
+            {
                 return;
+            }
+
             var capi = api as ICoreClientAPI;
 
             this.interactions = ObjectCacheUtil.GetOrCreate(api, "bombInteractions", () =>
@@ -31,7 +34,9 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         var stacks = obj.GetHandBookStacks(capi);
                         if (stacks != null)
+                        {
                             canIgniteStacks.AddRange(stacks);
+                        }
                     }
                 }
 
@@ -53,7 +58,9 @@ namespace PrimitiveSurvival.ModSystem
         public override EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
         {
             if (!(byEntity.World.BlockAccessor.GetBlockEntity(pos) is BEBombFuse bebomb) || bebomb.IsLit)
+            {
                 return EnumIgniteState.NotIgnitablePreventDefault;
+            }
 
             if (secondsIgniting > 0.75f)
             {
@@ -66,15 +73,20 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
         {
             if (secondsIgniting < 0.7f)
+            {
                 return;
+            }
 
             handling = EnumHandling.PreventDefault;
 
             IPlayer byPlayer = null;
             if (byEntity is EntityPlayer)
+            {
                 byPlayer = byEntity.World.PlayerByUid(((EntityPlayer)byEntity).PlayerUID);
+            }
+
             if (byPlayer == null)
-                return;
+            { return; }
 
             var bebomb = byPlayer.Entity.World.BlockAccessor.GetBlockEntity(pos) as BEBombFuse;
             bebomb?.OnIgnite(byPlayer);

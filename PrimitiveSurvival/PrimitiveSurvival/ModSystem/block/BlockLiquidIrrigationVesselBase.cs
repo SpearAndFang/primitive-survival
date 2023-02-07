@@ -2,6 +2,7 @@ namespace PrimitiveSurvival.ModSystem
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
@@ -440,7 +441,7 @@ namespace PrimitiveSurvival.ModSystem
                 { return 0; }
 
                 var maxItems = sink.CapacityLitres * props.ItemsPerLitre;
-                var placeableItems = (int)(maxItems - (float)stack.StackSize);
+                var placeableItems = (int)(maxItems - stack.StackSize);
 
                 //If the quantity isn't available dont add or return some other number ffs
                 //stack.StackSize += Math.Min(placeableItems, desiredItems);
@@ -480,7 +481,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (!stack.Equals(this.api.World, liquidStack, GlobalConstants.IgnoredStackAttributes))
                 { return 0; }
 
-                var placeableItems = (int)Math.Min(availItems, maxItems - (float)stack.StackSize);
+                var placeableItems = (int)Math.Min(availItems, maxItems - stack.StackSize);
                 var movedItems = Math.Min(placeableItems, desiredItems);
                 stack.StackSize += movedItems;
                 this.api.World.BlockAccessor.GetBlockEntity(pos).MarkDirty(true);
@@ -915,20 +916,26 @@ namespace PrimitiveSurvival.ModSystem
 
         public override string GetPlacedBlockInfo(IWorldAccessor world, BlockPos pos, IPlayer forPlayer)
         {
+            string text = base.GetPlacedBlockInfo(world, pos, forPlayer);
+            string[] stringSeparators = new string[] { "\r\n" };
+            text = text.Split(stringSeparators, StringSplitOptions.None).Last();
             var litres = this.GetCurrentLitres(pos);
             if (!(world.BlockAccessor.GetBlockEntity(pos) is BlockEntityContainer becontainer))
-            { return ""; }
+            { return text; }
 
             var slot = becontainer.Inventory[this.GetContainerSlotId(pos)];
             var contentStack = slot.Itemstack;
             if (litres <= 0)
-            { return Lang.Get("Empty"); }
+            {
+                text += Lang.Get("Empty");
+                return text;
+            }
 
             var incontainername = Lang.Get(contentStack.Collectible.Code.Domain + ":incontainer-" + contentStack.Class.ToString().ToLowerInvariant() + "-" + contentStack.Collectible.Code.Path);
-            var text = Lang.Get("Contents:") + "\n" + Lang.Get("{0} litres of {1}", litres, incontainername);
+            text += Lang.Get("Contents:") + "\n" + Lang.Get("{0} litres of {1}", litres, incontainername);
             if (litres == 1)
             {
-                text = Lang.Get("Contents:") + "\n" + Lang.Get("{0} litre of {1}", litres, incontainername);
+                text += Lang.Get("Contents:") + "\n" + Lang.Get("{0} litre of {1}", litres, incontainername);
             }
 
             text += PerishableInfoCompact(this.api, slot, 0, false);

@@ -512,7 +512,7 @@ namespace PrimitiveSurvival.ModSystem
                         }
                     }
                 }
-                else if(this.Block.LastCodePart() == "bamboobarrage")
+                else if (this.Block.LastCodePart() == "bamboobarrage")
                 {
                     if (this.Api.Side == EnumAppSide.Client)
                     {
@@ -769,7 +769,7 @@ namespace PrimitiveSurvival.ModSystem
             { g = 0; }
             if (flip == 2 || flip == 4 || flip == 5)
             { b = 0; }
-            
+
             particles.Color = ColorUtil.ToRgba(255, r, g, b);
             particles.basePos = this.Pos.ToVec3d().AddCopy(0.5, 1.5, 0.5);
             particles.basePos = particles.basePos.Add(0.5 + (0 * rand.NextDouble()), 1.5 + (0 * rand.NextDouble()), 0.5 + (0 * rand.NextDouble()));

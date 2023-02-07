@@ -31,8 +31,7 @@
   "item-fishinghook-bone": "Fishing Hook (Bone)",
 
   "itemdesc-fishinghook-*": "Attach this to a limb line or your trotline.",
-  "item-handbooktext-fishinghook-*": "Get your line in the water!",
-
+ 
   "block-fishbasket*": "Fish Basket",
   "blockdesc-fishbasket*": "Place this in the water (with open water all around it) to catch something.",
   "blockdesc-fishbasket-catch": "There's something in your basket.",
@@ -130,8 +129,7 @@
   "item-fishinglure-zinc": "Fishing Lure (Zinc)",
   "item-fishinglure-molybdochalkos": "Fishing Lure (Molybdochalkos)",
   "itemdesc-fishinglure-*": "Add this to your hook to increase your chances of catching something.",
-  "item-handbooktext-fishinglure-*": "Attracts more fish",
-
+ 
   "item-metalfishinghook-bismuth": "Fishing Hook (Bismuth)",
   "item-metalfishinghook-bismuthbronze": "Fishing Hook (Bismuth Bronze)",
   "item-metalfishinghook-blackbronze": "Fishing Hook (Black Bronze)",
@@ -145,8 +143,7 @@
   "item-metalfishinghook-zinc": "Fishing Hook (Zinc)",
   "item-metalfishinghook-molybdochalkos": "Fishing Hook (Molybdochalkos)",
   "itemdesc-metalfishinghook-*": "Attach this to a limb line or your trotline.",
-  "item-handbooktext-metalfishinghook-*": "Get your line in the water!",
-
+ 
   "block-spikeplate-bismuth": "Bed-O-Nails (Bismuth)",
   "block-spikeplate-bismuthbronze": "Bed-O-Nails (Bismuth Bronze)",
   "block-spikeplate-blackbronze": "Bed-O-Nails (Black Bronze)",
@@ -160,11 +157,9 @@
   "block-spikeplate-zinc": "Bed-O-Nails (Zinc)",
   "block-spikeplate-molybdochalkos": "Bed-O-Nails (Molybdochalkos)",
   "blockdesc-spikeplate-*": "Severely damages entities that walk or fall on it.",
-  "block-handbooktext-spikeplate-*": "This thing is hazardous.",
-
+ 
   "block-woodspikes": "Wood Spikes",
   "blockdesc-woodspikes": "Damages entities that walk or fall on them.",
-  "block-handbooktext-woodspikes": "These things are hazardous.",
   "block-woodsupportspikes-*": "Conceal Your Pit",
   "blockdesc-woodsupportspikes": "Cover with plants and/or dry grass.",
 
@@ -911,10 +906,20 @@
 
   "block-firework-cherrybomb": "Firework (Cherry Bomb)",
 
-
   "game:handhelp-trench": "Furrow",
   "block-furrowedland-*": "Furrowed Farmland",
   "item-blockage": "Debris is causing a problem with irrigation.",
   "ingameerror-debris": "Remove the debris first!",
-  "blockhelp-furrowedland-removedebris":  "Remove debris"
+  "blockhelp-furrowedland-removedebris": "Remove debris",
+
+  "block-fishmount-bass-*": "Small Bass (Mounted)",
+  "block-fishmount-trout-*": "Trout (Mounted)",
+  "block-fishmount-perch-*": "Perch (Mounted)",
+  "block-fishmount-salmon-*": "Salmon (Mounted)",
+  "block-fishmount-carp-*": "Carp (Mounted)",
+  "block-fishmount-pike-*": "Pike (Mounted)",
+  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
+  "block-fishmount-catfish-*": "Catfish (Mounted)",
+  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
+  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
 }

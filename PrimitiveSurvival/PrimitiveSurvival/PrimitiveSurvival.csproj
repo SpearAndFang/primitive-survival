@@ -91,6 +91,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Remove="assets\primitivesurvival\blocktypes\clay\irrigationvessel.json" />
+    <None Remove="assets\primitivesurvival\blocktypes\fishing\fishmount.json" />
     <None Remove="assets\primitivesurvival\blocktypes\other\fuse.json" />
     <None Remove="assets\primitivesurvival\blocktypes\raft\raftkk.json" />
     <None Remove="assets\primitivesurvival\blocktypes\raft\raftps.json" />
@@ -119,6 +120,7 @@
     <None Remove="assets\primitivesurvival\recipes\grid\fireflyjars.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\firewood.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\firework.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\fishmount.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\fuse.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\grunter.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\handofthedeadcandle.json" />

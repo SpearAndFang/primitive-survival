@@ -1633,7 +1633,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (data.bouncy)
                 {
                     // 1.17 bouncy was changed from boolean to float
-                        // this is a temp fix
+                    // this is a temp fix
                     this.res += "\t\tbouncy: 0.7f,\n";
                 }
                 if (data.randomVelocityChange)
@@ -1816,10 +1816,10 @@ namespace PrimitiveSurvival.ModSystem
             if (data.shouldSwimOnLiquid)
             { result += "\tparticles.SwimOnLiquid = true;\n"; }
             if (data.bouncy)
-            { 
+            {
                 // 1.17 bouncy was changed from boolean to float
                 // this is a temp fix
-                result += "\tparticles.Bouncy = 0.7f;\n"; 
+                result += "\tparticles.Bouncy = 0.7f;\n";
             }
             if (data.randomVelocityChange)
             { result += "\tparticles.RandomVelocityChange = true;\n"; }

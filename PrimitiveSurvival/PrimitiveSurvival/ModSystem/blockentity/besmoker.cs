@@ -109,7 +109,7 @@ namespace PrimitiveSurvival.ModSystem
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
-            this.inventory.LateInitialize("smoker" + "-" + Pos.X + "/" + Pos.Y + "/" + Pos.Z, api);
+            this.inventory.LateInitialize("smoker" + "-" + this.Pos.X + "/" + this.Pos.Y + "/" + this.Pos.Z, api);
             this.RegisterGameTickListener(this.OnGameTick, 100);
             this.doorOpenSound = new AssetLocation("game", "sounds/block/chestopen");
             this.doorCloseSound = new AssetLocation("game", "sounds/block/chestclose");
@@ -184,7 +184,7 @@ namespace PrimitiveSurvival.ModSystem
         public bool TryIgnite()
         {
             if (!this.CanIgnite() || this.IsBurning)
-                return false;
+            { return false; }
 
             this.IsBurning = true;
             this.State = "lit";
@@ -402,7 +402,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (!takeOK) //player has no free slots
                 {
                     //Debug.WriteLine("spawn in world");
-                    Api.World.SpawnItemEntity(tempStack, byPlayer.Entity.Pos.XYZ.Add(0, 0.5, 0));
+                    this.Api.World.SpawnItemEntity(tempStack, byPlayer.Entity.Pos.XYZ.Add(0, 0.5, 0));
                 }
                 sourceSlot.Itemstack = null;
                 //sourceSlot.TakeOut(1);

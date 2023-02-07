@@ -1,0 +1,96 @@
+[
+  {
+    "ingredientPattern": "AB,CK",
+    "width": 2,
+    "height": 2,
+    "shapeless": true,
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:salt",
+        "quantity": 1
+      },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-*-raw",
+        "name": "fish",
+        "quantity": 1,
+        "allowedVariants": [
+          "trout",
+          "perch",
+          "salmon",
+          "carp",
+          "bass",
+          "pike",
+          "arcticchar",
+          "catfish",
+          "bluegill",
+          "mutant"
+        ]
+
+      },
+      "C": {
+        "type": "item",
+        "code": "game:drygrass",
+        "quantity": 1
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:fishmount-{fish}-normal-north",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "AB,CK",
+    "width": 2,
+    "height": 2,
+    "shapeless": true,
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:powderedborax",
+        "quantity": 1
+      },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:psfish-*-raw",
+        "name": "fish",
+        "quantity": 1,
+        "allowedVariants": [
+          "trout",
+          "perch",
+          "salmon",
+          "carp",
+          "bass",
+          "pike",
+          "arcticchar",
+          "catfish",
+          "bluegill",
+          "mutant"
+        ]
+
+      },
+      "C": {
+        "type": "item",
+        "code": "game:drygrass",
+        "quantity": 1
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:fishmount-{fish}-normal-north",
+      "quantity": 1
+    }
+  }
+]

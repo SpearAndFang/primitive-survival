@@ -16,7 +16,7 @@ namespace PrimitiveSurvival.ModSystem
             //return null;
         }
 
-     
+
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             if (!this.CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))

@@ -31,7 +31,6 @@
   "item-fishinghook-bone": "Anzol (Osso)",
 
   "itemdesc-fishinghook-*": "Prenda isso a uma linha de pesca ou seu espinhel.",
-  "item-handbooktext-fishinghook-*": "Coloque sua linha na água!",
 
   "block-fishbasket*": "Cesto de peixe",
   "blockdesc-fishbasket*": "Coloque isso na água (com água aberta à sua volta) para pegar algo.",
@@ -130,8 +129,7 @@
   "item-fishinglure-zinc": "Isca de Pesca (Zinco)",
   "item-fishinglure-molybdochalkos": "Isca de Pesca (Molybdochalkos)",
   "itemdesc-fishinglure-*": "Coloque isso no seu Anzol para aumentar sua chance de fisgar algo.",
-  "item-handbooktext-fishinglure-*": "Atrai mais peixes",
-
+ 
   "item-metalfishinghook-bismuth": "Anzol (Bismuto)",
   "item-metalfishinghook-bismuthbronze": "Anzol (Bronze de Bismuto)",
   "item-metalfishinghook-blackbronze": "Anzol (Bronze Negro Coríntio)",
@@ -145,7 +143,6 @@
   "item-metalfishinghook-zinc": "Anzol (Zinco)",
   "item-metalfishinghook-molybdochalkos": "Anzol (Molybdochalkos)",
   "itemdesc-metalfishinghook-*": "Prenda isso numa linha de pesca ou no seu espinhel.",
-  "item-handbooktext-metalfishinghook-*": "Coloque sua linha na água!",
 
   "block-spikeplate-bismuth": "Cama de Pregos (Bismuto)",
   "block-spikeplate-bismuthbronze": "Cama de Pregos (Bronze de Bismuto)",
@@ -160,11 +157,9 @@
   "block-spikeplate-zinc": "Bed-O-Nails (Zinco)",
   "block-spikeplate-molybdochalkos": "Cama de Pregos (Molybdochalkos)",
   "blockdesc-spikeplate-*": "Dano severo a entidades que andarem ou cairem nisso.",
-  "block-handbooktext-spikeplate-*": "Essa coisa é perigosa.",
 
   "block-woodspikes": "Espinhos de Madeira",
   "blockdesc-woodspikes": "Causa dano a entidades que andem ou caiam neles.",
-  "block-handbooktext-woodspikes": "Essas coisas são perigosas.",
   "block-woodsupportspikes-*": "Esconda seu poço",
   "blockdesc-woodsupportspikes": "Cubra com plantas e/ou grama seca.",
 
@@ -911,10 +906,21 @@
 
   "block-firework-cherrybomb": "Fogos de Artifício (Bomba Cereja)",
 
+  "game:handhelp-trench": "Sulco",
+  "block-furrowedland-*": "Sulco em terra arada",
+  "item-blockage": "Resíduos estão causando um problema com a irrigação.",
+  "ingameerror-debris": "Remova os resíduos primeiro!",
+  "blockhelp-furrowedland-removedebris": "Remover resíduos",
 
-  "game:handhelp-trench": "Furrow",
-  "block-furrowedland-*": "Furrowed Farmland",
-  "item-blockage": "Debris is causing a problem with irrigation.",
-  "ingameerror-debris": "Remove the debris first!",
-  "blockhelp-furrowedland-removedebris": "Remove debris"
+
+  "block-fishmount-bass-*": "Small Bass (Mounted)",
+  "block-fishmount-trout-*": "Trout (Mounted)",
+  "block-fishmount-perch-*": "Perch (Mounted)",
+  "block-fishmount-salmon-*": "Salmon (Mounted)",
+  "block-fishmount-carp-*": "Carp (Mounted)",
+  "block-fishmount-pike-*": "Pike (Mounted)",
+  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
+  "block-fishmount-catfish-*": "Catfish (Mounted)",
+  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
+  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
 }

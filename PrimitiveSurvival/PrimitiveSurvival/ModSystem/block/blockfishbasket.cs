@@ -104,10 +104,10 @@ namespace PrimitiveSurvival.ModSystem
                 newPath = newPath.Replace("north", facing);
                 //if (inWater)
                 //{
-                    if (!newPath.Contains("fishbasketinwater"))
-                    { newPath = newPath.Replace("fishbasket", "fishbasketinwater"); }
-                    blockToPlace = this.api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
-                    world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
+                if (!newPath.Contains("fishbasketinwater"))
+                { newPath = newPath.Replace("fishbasket", "fishbasketinwater"); }
+                blockToPlace = this.api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
+                world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
                 //}
                 //else
                 /*

@@ -25,7 +25,7 @@ namespace PrimitiveSurvival.ModSystem
             this.inventory = new InventoryGeneric(1, null, null);
         }
 
-        
+
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);

@@ -111,8 +111,6 @@ namespace PrimitiveSurvival.ModSystem
 
                 if (!byPlayer.Entity.Controls.Sneak && byPlayer.InventoryManager.ActiveHotbarSlot.Empty)
                 {
-                    //if (world.Side == EnumAppSide.Server)
-                    //{
                     var blockToBreak = true;
                     foreach (var stack in stacks)
                     {
@@ -132,9 +130,7 @@ namespace PrimitiveSurvival.ModSystem
                         }
                     }
                     return true;
-                   // }
                 }
-                //failureCode = EnumHandling.PreventDefault;
                 return false;
             }
 

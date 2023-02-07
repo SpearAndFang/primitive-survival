@@ -52,7 +52,7 @@ namespace PrimitiveSurvival.ModSystem
             }
         }
 
-       private BlockPos RelativeToSpawn(BlockPos pos)
+        private BlockPos RelativeToSpawn(BlockPos pos)
         {
             var worldSpawn = this.Api.World.DefaultSpawnPosition.XYZ.AsBlockPos;
             var blockPos = pos.SubCopy(worldSpawn);

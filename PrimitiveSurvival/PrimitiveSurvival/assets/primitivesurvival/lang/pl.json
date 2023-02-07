@@ -31,11 +31,9 @@
   "item-fishinghook-bone": "Haczyk na ryby (Kość)",
 
   "itemdesc-fishinghook-*": "Przymocuj to do powrozu.",
-  "item-handbooktext-fishinghook-*": "Włóż swój powróz do wody!",
 
   "block-fishbasket*": "Pułapka na ryby",
   "blockdesc-fishbasket*": "Umieść to w wodzie (z otwartą wodą dookoła), aby coś złapać.",
-  "block-handbooktext-fishbasket*": "Wiesz, ",
   "blockdesc-fishbasket-catch": "Masz coś w pułapce.",
   "blockdesc-fishbasket-catch-rotten": "Pachnie tam trochę dziwnie.",
 
@@ -131,8 +129,7 @@
   "item-fishinglure-zinc": "Wabik wędkarski (Cynk)",
   "item-fishinglure-molybdochalkos": "Wabik wędkarski (Ołów miedziany)",
   "itemdesc-fishinglure-*": "Dodaj to do swojego haczyka, aby zwiększyć swoje szanse na złapanie czegoś.",
-  "item-handbooktext-fishinglure-*": "Zwabia więcej ryb",
-
+ 
   "item-metalfishinghook-bismuth": "Haczyk na ryby (Bizmut)",
   "item-metalfishinghook-bismuthbronze": "Haczyk na ryby (Brąz bizmutowy)",
   "item-metalfishinghook-blackbronze": "Haczyk na ryby (Brąz koryncki)",
@@ -146,8 +143,7 @@
   "item-metalfishinghook-zinc": "Haczyk na ryby (Cynk)",
   "item-metalfishinghook-molybdochalkos": "Haczyk na ryby (Ołów miedziany)",
   "itemdesc-metalfishinghook-*": "Przymocuj to do powrozu.",
-  "item-handbooktext-metalfishinghook-*": "Włóż swój powróz do wody!",
-
+ 
   "block-spikeplate-bismuth": "Płyta z kolcami (Bizmut)",
   "block-spikeplate-bismuthbronze": "Płyta z kolcami (Brąz bizmutowy)",
   "block-spikeplate-blackbronze": "Płyta z kolcami (Brąz koryncki)",
@@ -161,11 +157,9 @@
   "block-spikeplate-zinc": "Płyta z kolcami (Cynk)",
   "block-spikeplate-molybdochalkos": "Płyta z kolcami (Ołów miedziany)",
   "blockdesc-spikeplate-*": "Poważnie uszkadza stworzenia, które chodzą lub upadają na nią.",
-  "block-handbooktext-spikeplate-*": "To jest niebezpieczne.",
-
+ 
   "block-woodspikes": "Drewniane kolce",
   "blockdesc-woodspikes": "Uszkadza stworzenia, które chodzą lub upadają na nie.",
-  "block-handbooktext-woodspikes": "To jest niebezpieczne.",
   "block-woodsupportspikes-*": "Ukryj swój wilczy dół",
   "blockdesc-woodsupportspikes": "Przykryj roślinami i / lub suchą trawą.",
 
@@ -912,10 +906,21 @@
 
   "block-firework-cherrybomb": "Firework (Cherry Bomb)",
 
-
   "game:handhelp-trench": "Furrow",
   "block-furrowedland-*": "Furrowed Farmland",
   "item-blockage": "Debris is causing a problem with irrigation.",
   "ingameerror-debris": "Remove the debris first!",
-  "blockhelp-furrowedland-removedebris": "Remove debris"
+  "blockhelp-furrowedland-removedebris": "Remove debris",
+
+
+  "block-fishmount-bass-*": "Small Bass (Mounted)",
+  "block-fishmount-trout-*": "Trout (Mounted)",
+  "block-fishmount-perch-*": "Perch (Mounted)",
+  "block-fishmount-salmon-*": "Salmon (Mounted)",
+  "block-fishmount-carp-*": "Carp (Mounted)",
+  "block-fishmount-pike-*": "Pike (Mounted)",
+  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
+  "block-fishmount-catfish-*": "Catfish (Mounted)",
+  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
+  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
 }

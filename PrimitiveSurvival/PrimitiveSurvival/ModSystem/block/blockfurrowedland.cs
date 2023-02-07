@@ -6,7 +6,10 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.API.Client;
     using Vintagestory.API.Server;
+    using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Util;
+    using System.Diagnostics;
+
     //using System.Diagnostics;
 
 
@@ -102,6 +105,19 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
                     world.BlockAccessor.TriggerNeighbourBlockUpdate(waterPos);
+                }
+            }
+        }
+
+
+        //if the entity is standing on the land when furrowing, push them up a bit
+        public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
+        {
+            if (isImpact && facing.Axis == EnumAxis.Y)
+            {
+                if ((entity.Pos.Motion.Y > -0.03) && (entity.Pos.Motion.Y < 0))
+                {
+                    entity.Pos.Motion.Y *= -2;
                 }
             }
         }

@@ -21,7 +21,8 @@ namespace VSModLauncher
 
         private void OnServerLogEntry(EnumLogType logType, string message, params object[] args)
         {
-            if (logType == EnumLogType.VerboseDebug)  return;
+            if (logType == EnumLogType.VerboseDebug)
+            { return; }
             System.Diagnostics.Debug.WriteLine("[Server " + logType + "] " + message, args);
         }
 
@@ -32,7 +33,8 @@ namespace VSModLauncher
 
         private void OnClientLogEntry(EnumLogType logType, string message, params object[] args)
         {
-            if (logType == EnumLogType.VerboseDebug) return;
+            if (logType == EnumLogType.VerboseDebug)
+            { return; }
             System.Diagnostics.Debug.WriteLine("[Client " + logType + "] " + message, args);
         }
     }

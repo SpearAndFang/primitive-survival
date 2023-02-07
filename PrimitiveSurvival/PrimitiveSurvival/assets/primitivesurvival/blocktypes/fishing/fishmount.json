@@ -1,0 +1,236 @@
+{
+  "code": "fishmount",
+  "maxstacksize": 16,
+  "behaviors": [ { "name": "HorizontalOrientable" } ],
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "trout",
+        "perch",
+        "salmon",
+        "carp",
+        "bass",
+        "pike",
+        "arcticchar",
+        "catfish",
+        "bluegill",
+        "mutant"
+      ]
+    },
+    {
+      "code": "state",
+      "states": [ "normal" ]
+    },
+    {
+      "code": "side",
+      "states": [
+        "north",
+        "east",
+        "south",
+        "west"
+      ]
+    }
+  ],
+  "drops": [
+    {
+      "type": "block",
+      "code": "fishmount-{type}-{state}-north",
+      "quantity": { "avg": 1 }
+    }
+  ],
+  "shapebytype": {
+    "*-north": {
+      "base": "block/fishmount/fish-{type}",
+      "rotateY": 0
+    },
+    "*-east": {
+      "base": "block/fishmount/fish-{type}",
+      "rotateY": 270
+    },
+    "*-south": {
+      "base": "block/fishmount/fish-{type}",
+      "rotateY": 180
+    },
+    "*-west": {
+      "base": "block/fishmount/fish-{type}",
+      "rotateY": 90
+    }
+  },
+  "texturesbytype": {
+    "*": {
+      "material": { "base": "item/fishing/fish-{type}-raw" },
+      "plaque": {
+        "base": "block/stand"
+      }
+    }
+  },
+  "creativeinventory": {
+    "general": [ "*-north" ],
+    "primitive": [ "*-north" ]
+  },
+  "replaceable": 5200,
+  "resistance": 0.5,
+  "vertexFlags": {
+    "zOffset": 3,
+    "reflective": true,
+    "lowContrast":  true
+  },
+  "lightAbsorption": 0,
+  "drawtype": "json",
+  "materialDensity": 150,
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "sideao": { "all": false },
+  "renderpass": "opaquenocull",
+  "ambientocclusion":  false,
+  "blockmaterial": "Cloth",
+  "selectionBoxByType": {
+    "*-north": {
+      "x1": 0.625,
+      "y1": 0.15,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.85,
+      "z2": 1,
+      "RotateY": 90
+    },
+    "*-east": {
+      "x1": 0.625,
+      "y1": 0.15,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.85,
+      "z2": 1,
+      "RotateY": 0
+    },
+    "*-south": {
+      "x1": 0.625,
+      "y1": 0.15,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.85,
+      "z2": 1,
+      "RotateY": 270
+    },
+    "*-west": {
+      "x1": 0.625,
+      "y1": 0.15,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.85,
+      "z2": 1,
+      "RotateY": 180
+    }
+  },
+  "collisionbox": null,
+  "guiTransformByType": {
+    "*catfish*": {
+      "rotate": false,
+      "rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.52,
+        "z": 0
+      },
+      "scale": 1.35
+    },
+    "*": {
+      "rotate": false,
+      "rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.52,
+        "z": 0
+      },
+      "scale": 1.61
+    }
+  },
+  "fpHandTransformByType": {
+    "*catfish*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 180,
+        "y": 82,
+        "z": -130
+      },
+      "origin": {
+        "x": 0.3,
+        "y": -0.3,
+        "z": -0.7
+      },
+      "scale": 1.59
+    },
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 180,
+        "y": 82,
+        "z": -130
+      },
+      "origin": {
+        "x": 0.3,
+        "y": -0.3,
+        "z": -0.7
+      },
+      "scale": 1.59
+    }
+  },
+
+  "tpHandTransformByType": {
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": -1,
+        "z": 0
+      },
+      "rotation": {
+        "x": 12,
+        "y": 9,
+        "z": 73
+      },
+      "origin": {
+        "x": -0.4,
+        "y": 0,
+        "z": -0.07
+      },
+      "scale": 0.75
+    }
+  },
+  "groundTransformByType": {
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 0.2,
+        "z": 0
+      },
+      "rotation": {
+        "x": -84,
+        "y": -3,
+        "z": -11
+      },
+      "origin": {
+        "x": 0.6,
+        "y": 0.1,
+        "z": 0.3
+      },
+      "scale": 4
+    }
+  }
+}

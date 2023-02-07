@@ -1,6 +1,7 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using System;
+    using System.Linq;
     using Vintagestory.API.Common;
     using Vintagestory.API.Client;
     using PrimitiveSurvival.ModConfig;
@@ -14,6 +15,7 @@ namespace PrimitiveSurvival.ModSystem
         public long lookCount;
         static Random rand = new Random();
         private ILoadedSound wsound;
+        private readonly string[] raftTypes = { "raftps", "raftcrab", "raftdolphin", "raftshark", "rafttuna", "raftps" };
 
         //private AssetLocation splashSound = new AssetLocation("game", "sounds/environment/waterwaves");
 
@@ -82,7 +84,10 @@ namespace PrimitiveSurvival.ModSystem
                             if (byPlayer.PlayerName == "KineticKnight") //SpearAndFang KineticKnight
                             { newPath = newPath.Replace("raft", "raftkk"); }
                             else
-                            { newPath = newPath.Replace("raft", "raftps"); }
+                            {
+                                var rafttype = this.api.World.Rand.Next(this.raftTypes.Count());
+                                newPath = newPath.Replace("raft", this.raftTypes[rafttype]);
+                            }
                             block = this.api.World.GetBlock(block.CodeWithPath(newPath));
                             this.api.World.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
                             this.api.World.PlaySoundAt(new AssetLocation("game:sounds/block/metaldoor-place"), blockSel.Position.X + 0.5, blockSel.Position.Y + 0.5, blockSel.Position.Z + 0.5, null);

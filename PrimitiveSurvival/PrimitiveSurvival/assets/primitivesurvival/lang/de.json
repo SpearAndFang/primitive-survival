@@ -31,11 +31,9 @@
   "item-fishinghook-bone": "Angelhaken (Knochen)",
 
   "itemdesc-fishinghook-*": "Befestige dies an deiner Limbline oder Trotline.",
-  "item-handbooktext-fishinghook-*": "Bring deine Leine ins wasser!",
-
+ 
   "block-fishbasket*": "Fisch Fangkorb",
   "blockdesc-fishbasket*": "Plaziere ihn im Wasser (Mit offenem Wasser rund herum), um etwas zu Fangen.",
-  "block-handbooktext-fishbasket*": "Du weißt es",
   "blockdesc-fishbasket-catch": "Da ist was in deinem, Fangkorb.",
   "blockdesc-fishbasket-catch-rotten": "Es riecht da drin merkwürdig.",
 
@@ -131,8 +129,7 @@
   "item-fishinglure-zinc": "Fischköder (Zink)",
   "item-fishinglure-molybdochalkos": "Fischköder (Molybdochalkos)",
   "itemdesc-fishinglure-*": "Füge dies zu deinem Haken hinzu, um die Chancen zu erhöhen, etwas zu fangen.",
-  "item-handbooktext-fishinglure-*": "Zieht mehr Fische an",
-
+ 
   "item-metalfishinghook-bismuth": "Angelhaken (Wismut)",
   "item-metalfishinghook-bismuthbronze": "Angelhaken (Wismutbronze)",
   "item-metalfishinghook-blackbronze": "Angelhaken (Schwarzbronze)",
@@ -146,8 +143,7 @@
   "item-metalfishinghook-zinc": "Angelhaken (Zink)",
   "item-metalfishinghook-molybdochalkos": "Angelhaken (Molybdochalkos)",
   "itemdesc-metalfishinghook-*": "Befestige dies an deiner Limbline oder Trotline.",
-  "item-handbooktext-metalfishinghook-*": "Bring deine Leine ins wasser!",
-
+ 
   "block-spikeplate-bismuth": "Stachelplatte (Wismut)",
   "block-spikeplate-bismuthbronze": "Stachelplatte (Wismutbronze)",
   "block-spikeplate-blackbronze": "Stachelplatte (Schwarzbronze)",
@@ -161,8 +157,7 @@
   "block-spikeplate-zinc": "Stachelplatte (Zink)",
   "block-spikeplate-molybdochalkos": "Stachelplatte (Molybdochalkos)",
   "blockdesc-spikeplate-*": "Verursacht schweren Schaden an Wesen die darauf fallen oder drüber laufen.",
-  "block-handbooktext-spikeplate-*": "Dieses Ding ist gefährlich.",
-
+ 
   "block-woodspikes": "Holzstacheln",
   "blockdesc-woodspikes": "Verursacht Schaden an Wesen die darauf gehen oder fallen.",
   "block-handbooktext-woodspikes": "Dieses Ding ist gefährlich.",
@@ -912,10 +907,21 @@
 
   "block-firework-cherrybomb": "Firework (Cherry Bomb)",
 
-
   "game:handhelp-trench": "Furrow",
   "block-furrowedland-*": "Furrowed Farmland",
   "item-blockage": "Debris is causing a problem with irrigation.",
   "ingameerror-debris": "Remove the debris first!",
-  "blockhelp-furrowedland-removedebris": "Remove debris"
+  "blockhelp-furrowedland-removedebris": "Remove debris",
+
+
+  "block-fishmount-bass-*": "Small Bass (Mounted)",
+  "block-fishmount-trout-*": "Trout (Mounted)",
+  "block-fishmount-perch-*": "Perch (Mounted)",
+  "block-fishmount-salmon-*": "Salmon (Mounted)",
+  "block-fishmount-carp-*": "Carp (Mounted)",
+  "block-fishmount-pike-*": "Pike (Mounted)",
+  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
+  "block-fishmount-catfish-*": "Catfish (Mounted)",
+  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
+  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
 }

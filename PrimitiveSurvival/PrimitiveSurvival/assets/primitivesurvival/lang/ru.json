@@ -31,11 +31,9 @@
   "item-fishinghook-bone": "Крючок (Кость)",
 
   "itemdesc-fishinghook-*": "Прикпепите это на установленный перемет.",
-  "item-handbooktext-fishinghook-*": "Поместите снасти в воду!",
 
   "block-fishbasket*": "Рыбная корзина",
   "blockdesc-fishbasket*": "Поместите это в воду (в место, которое окружено водой со всех сторон) чтобы что-нибудь поймать.",
-  "block-handbooktext-fishbasket*": "Знаете",
   "blockdesc-fishbasket-catch": "Что-то попалось в вашу рыбную корзину.",
   "blockdesc-fishbasket-catch-rotten": "Чем-то воняет.",
 
@@ -135,8 +133,7 @@
   "item-fishinglure-zinc": "Блесна (Цинк)",
   "item-fishinglure-molybdochalkos": "Блесна (Молибдохалкос)",
   "itemdesc-fishinglure-*": "Прикрепите блесну на крюк, чтобы увеличить шанс поймать что-нибудь.",
-  "item-handbooktext-fishinglure-*": "Привлекает больше рыбы",
-
+ 
   "item-metalfishinghook-bismuth": "Рыболовный крючок (Висмут)",
   "item-metalfishinghook-bismuthbronze": "Рыболовный крючок (Висмутовая бронза)",
   "item-metalfishinghook-blackbronze": "Рыболовный крючок (Черная бронза)",
@@ -150,7 +147,6 @@
   "item-metalfishinghook-zinc": "Рыболовный крючок (Цинк)",
   "item-metalfishinghook-molybdochalkos": "Рыболовный крючок (Молибдохалкос)",
   "itemdesc-metalfishinghook-*": "Прикрепите это на снасть.",
-  "item-handbooktext-metalfishinghook-*": "Снасти в воду!",
 
   "block-spikeplate-bismuth": "Кровать Йога (Висмут)",
   "block-spikeplate-bismuthbronze": "Кровать Йога (Висмутовая бронза)",
@@ -165,11 +161,9 @@
   "block-spikeplate-zinc": "Кровать Йога (Цинк)",
   "block-spikeplate-molybdochalkos": "Bed-O-Nails (Молибдохалкос)",
   "blockdesc-spikeplate-*": "Наносит серьезный урон существам, которые касаются этих шипов.",
-  "block-handbooktext-spikeplate-*": "Осторожно! Опасно!",
 
   "block-woodspikes": "Деревянные колья",
   "blockdesc-woodspikes": "Наносят урон существам, которые касаются этих кольев.",
-  "block-handbooktext-woodspikes": "Осторожно! Опасно!",
   "block-woodsupportspikes-*": "Замаскируйте свои ямы",
   "blockdesc-woodsupportspikes": "Прикройте сухой травой или набросайте растений.",
 
@@ -916,10 +910,21 @@
 
   "block-firework-cherrybomb": "Firework (Cherry Bomb)",
 
-
   "game:handhelp-trench": "Furrow",
   "block-furrowedland-*": "Furrowed Farmland",
   "item-blockage": "Debris is causing a problem with irrigation.",
   "ingameerror-debris": "Remove the debris first!",
-  "blockhelp-furrowedland-removedebris": "Remove debris"
+  "blockhelp-furrowedland-removedebris": "Remove debris",
+
+
+  "block-fishmount-bass-*": "Small Bass (Mounted)",
+  "block-fishmount-trout-*": "Trout (Mounted)",
+  "block-fishmount-perch-*": "Perch (Mounted)",
+  "block-fishmount-salmon-*": "Salmon (Mounted)",
+  "block-fishmount-carp-*": "Carp (Mounted)",
+  "block-fishmount-pike-*": "Pike (Mounted)",
+  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
+  "block-fishmount-catfish-*": "Catfish (Mounted)",
+  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
+  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
 }

@@ -325,7 +325,7 @@ namespace PrimitiveSurvival.ModSystem
         private bool TryPut(ItemSlot playerSlot)
         {
             var index = -1;
-            var playerStack = playerSlot.Itemstack; 
+            var playerStack = playerSlot.Itemstack;
             if (this.inventory != null)
             {
                 var stacks = this.inventory.Where(slot => !slot.Empty).Select(slot => slot.Itemstack).ToArray();

@@ -31,8 +31,7 @@
   "item-fishinghook-bone": "Hameçon (os)",
 
   "itemdesc-fishinghook-*": "Attachez ceci à votre ligne ou cordeau.",
-  "item-handbooktext-fishinghook-*": "Mettez votre ligne à l'eau !",
-
+ 
   "block-fishbasket*": "Nasse",
   "blockdesc-fishbasket*": "Placez le dans de l'eau (avec de l'eau tout autour) pour attrapper quelque chose.",
   "blockdesc-fishbasket-catch": "Il y a quelque chose dans votre nasse.",
@@ -130,8 +129,7 @@
   "item-fishinglure-zinc": "Leurre de pêche (zinc)",
   "item-fishinglure-molybdochalkos": "Leurre de pêche (molybdochalkos)",
   "itemdesc-fishinglure-*": "Ajoutez à votre hameçon pour augmenter les chances d'attirer quelque chose.",
-  "item-handbooktext-fishinglure-*": "Attire plus de poisson",
-
+  
   "item-metalfishinghook-bismuth": "Hameçon (bismuth)",
   "item-metalfishinghook-bismuthbronze": "Hameçon (bronze au bismuth)",
   "item-metalfishinghook-blackbronze": "Fishing Hook (bronze noir)",
@@ -145,8 +143,7 @@
   "item-metalfishinghook-zinc": "Hameçon (zinc)",
   "item-metalfishinghook-molybdochalkos": "Hameçon (molybdochalkos)",
   "itemdesc-metalfishinghook-*": "Attachez ceci à votre ligne ou cordeau.",
-  "item-handbooktext-metalfishinghook-*": "Mettez votre ligne à l'eau !",
-
+ 
   "block-spikeplate-bismuth": "Lit de clous (bismuth)",
   "block-spikeplate-bismuthbronze": "Lit de clous (bronze au bismuth)",
   "block-spikeplate-blackbronze": "Lit de clous (bronze noir)",
@@ -160,11 +157,9 @@
   "block-spikeplate-zinc": "Lit de clous (zinc)",
   "block-spikeplate-molybdochalkos": "Lit de clous (molybdochalkos)",
   "blockdesc-spikeplate-*": "Cause de sévères dégâts à toute entitée marchant ou tombant dessus.",
-  "block-handbooktext-spikeplate-*": "Cette chose est dangereuse.",
 
   "block-woodspikes": "Piques en bois",
   "blockdesc-woodspikes": "Cause des dégâts aux entités marchant ou tombant dessus.",
-  "block-handbooktext-woodspikes": "Ces choses sont dangereuses.",
   "block-woodsupportspikes-*": "Pour cacher votre fosse",
   "blockdesc-woodsupportspikes": "Recouvrez avec des plantes et/ou de l'herbe sèche.",
 
@@ -911,10 +906,20 @@
 
   "block-firework-cherrybomb": "Firework (Cherry Bomb)",
 
-
   "game:handhelp-trench": "Furrow",
   "block-furrowedland-*": "Furrowed Farmland",
   "item-blockage": "Debris is causing a problem with irrigation.",
   "ingameerror-debris": "Remove the debris first!",
-  "blockhelp-furrowedland-removedebris": "Remove debris"
+  "blockhelp-furrowedland-removedebris": "Remove debris",
+
+  "block-fishmount-bass-*": "Small Bass (Mounted)",
+  "block-fishmount-trout-*": "Trout (Mounted)",
+  "block-fishmount-perch-*": "Perch (Mounted)",
+  "block-fishmount-salmon-*": "Salmon (Mounted)",
+  "block-fishmount-carp-*": "Carp (Mounted)",
+  "block-fishmount-pike-*": "Pike (Mounted)",
+  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
+  "block-fishmount-catfish-*": "Catfish (Mounted)",
+  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
+  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
 }

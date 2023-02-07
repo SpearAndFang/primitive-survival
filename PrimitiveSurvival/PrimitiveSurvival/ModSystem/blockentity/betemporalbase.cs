@@ -652,11 +652,12 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             endString = "primitivesurvival:blockdesc-temporalbase-gateway-open-failure";
                         }
-                    sb.Append(Lang.Get("primitivesurvival:blockdesc-temporalbase-gateway-open") + " " + holesize + " " + Lang.Get(endString));                    }
+                        sb.Append(Lang.Get("primitivesurvival:blockdesc-temporalbase-gateway-open") + " " + Lang.Get(holesize) + " " + Lang.Get(endString));
+                    }
                     else if (gearcount > 0)
                     {
                         sb.Append(Lang.Get("primitivesurvival:blockdesc-temporalbase-area-needed"));
-                    }                    
+                    }
                     else
                     { sb.Append(Lang.Get("primitivesurvival:blockdesc-temporalbase-complete")); }
                 }

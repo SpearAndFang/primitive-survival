@@ -54,10 +54,10 @@
     "end": {
       "base": "game:block/wood/treetrunk/oak"
     },
-    "octopus": {
+    "skin": {
       "base": "primitivesurvival:block/raft/octopus"
     },
-    "octopus2": {
+    "skin2": {
       "base": "primitivesurvival:block/raft/octopus2"
     }
   },

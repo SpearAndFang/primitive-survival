@@ -37,8 +37,7 @@
   "item-fishinghook-bone": "釣り針(骨)",
 
   "itemdesc-fishinghook-*": "これをリムラインやトロットラインに取り付けて下さい。",
-  "item-handbooktext-fishinghook-*": "ラインを水に入れろ!",
-
+ 
   "block-fishbasket*": "魚籠",
   "blockdesc-fishbasket*": "これを水中（周りは何もない水）に置くと、何かが釣れる。",
   "blockdesc-fishbasket-catch": "籠の中に何か入っています。",
@@ -136,8 +135,7 @@
   "item-fishinglure-zinc": "釣り用ルアー(亜鉛)",
   "item-fishinglure-molybdochalkos": "釣り用ルアー(モリブドカルコス)",
   "itemdesc-fishinglure-*": "これを釣り針につけると、釣れる確率が上がります。",
-  "item-handbooktext-fishinglure-*": "より多くの魚を引き寄せる",
-
+ 
   "item-metalfishinghook-bismuth": "釣り針(ビスマス)",
   "item-metalfishinghook-bismuthbronze": "釣り針(ビスマス青銅)",
   "item-metalfishinghook-blackbronze": "釣り針(黒青銅)",
@@ -151,7 +149,6 @@
   "item-metalfishinghook-zinc": "釣り針(亜鉛)",
   "item-metalfishinghook-molybdochalkos": "釣り針(モリブドカルコス)",
   "itemdesc-metalfishinghook-*": "これをリムラインやトロットラインに取り付けて下さい。",
-  "item-handbooktext-metalfishinghook-*": "ラインを水に入れろ!",
 
   "block-spikeplate-bismuth": "針のむしろ(ビスマス)",
   "block-spikeplate-bismuthbronze": "針のむしろ(ビスマス青銅)",
@@ -166,11 +163,9 @@
   "block-spikeplate-zinc": "針のむしろ(亜鉛)",
   "block-spikeplate-molybdochalkos": "針のむしろ(モリブドカルコス)",
   "blockdesc-spikeplate-*": "その上を歩いたり、転んだりすると重大な損傷を受ける。",
-  "block-handbooktext-spikeplate-*": "これは危険なものだ。",
-
+ 
   "block-woodspikes": "木の棘",
   "blockdesc-woodspikes": "その上を歩いたり、転んだりすると損害を受ける。",
-  "block-handbooktext-woodspikes": "こういうのは危険なんです。",
   "block-woodsupportspikes-*": "穴を隠す",
   "blockdesc-woodsupportspikes": "植物や枯れ草などで覆う。",
 
@@ -921,5 +916,17 @@
   "block-furrowedland-*": "轍(わだち)のある農地",
   "item-blockage": "ゴミが原因で灌漑に支障が出ている。",
   "ingameerror-debris": "まず、ゴミを取り除いて！",
-  "blockhelp-furrowedland-removedebris": "ゴミの除去"
+  "blockhelp-furrowedland-removedebris": "ゴミの除去",
+
+
+  "block-fishmount-bass-*": "Small Bass (Mounted)",
+  "block-fishmount-trout-*": "Trout (Mounted)",
+  "block-fishmount-perch-*": "Perch (Mounted)",
+  "block-fishmount-salmon-*": "Salmon (Mounted)",
+  "block-fishmount-carp-*": "Carp (Mounted)",
+  "block-fishmount-pike-*": "Pike (Mounted)",
+  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
+  "block-fishmount-catfish-*": "Catfish (Mounted)",
+  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
+  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
 }

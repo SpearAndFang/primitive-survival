@@ -19,6 +19,9 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int FurrowedLandUpdateFrequency = ModConfig.Loaded.FurrowedLandUpdateFrequency;
         private readonly double FurrowedLandBlockageChancePercent = ModConfig.Loaded.FurrowedLandBlockageChancePercent;
 
+        private readonly double FurrowedLandMinMoistureClose = ModConfig.Loaded.FurrowedLandMinMoistureClose;
+        private readonly double FurrowedLandMinMoistureFar = ModConfig.Loaded.FurrowedLandMinMoistureFar;
+
         public ICoreClientAPI capi;
         public ICoreServerAPI sapi;
         private static readonly Random Rnd = new Random();
@@ -118,7 +121,7 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             //Debug.WriteLine(be.MoistureLevel);
                             //var testBlock = this.Api.World.BlockAccessor.GetBlock(neib);
-                            if (be.MoistureLevel < 0.8)
+                            if (be.MoistureLevel < this.FurrowedLandMinMoistureClose)
                             {
                                 // add 0.1 to it
                                 be.WaterFarmland(0.1f, false); //no neighbors until nearby watered
@@ -143,7 +146,7 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             //Debug.WriteLine(be.MoistureLevel);
                             //var testBlock = this.Api.World.BlockAccessor.GetBlock(neib);
-                            if (be.MoistureLevel < 0.6)
+                            if (be.MoistureLevel < this.FurrowedLandMinMoistureFar)
                             {
                                 // add 0.05 to it
                                 be.WaterFarmland(0.05f, false); //no neighbors until nearby watered

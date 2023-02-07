@@ -38,8 +38,6 @@ namespace PrimitiveSurvival.ModSystem
         {
             base.DoRender3DOpaque(dt, isShadowPass);
 
-
-            
             if (isShadowPass)
             { return; }
 
@@ -77,7 +75,7 @@ namespace PrimitiveSurvival.ModSystem
             prog.Uniform("fogMinIn", rapi.FogMin);
             prog.Uniform("fogDensityIn", rapi.FogDensity);
             prog.BindTexture2D("entityTex", this.capi.EntityTextureAtlas.AtlasTextureIds[0], 0);
-            
+
             prog.UniformMatrix("modelMatrix", this.ModelMat);
 
             //prog.UniformMatrix("viewMatrix", capi.Render.CurrentModelviewMatrix);
@@ -117,11 +115,7 @@ namespace PrimitiveSurvival.ModSystem
             if (this.meshRefOit != null)
             { this.capi.Render.RenderMesh(this.meshRefOit); }
             prog.Stop();
-
-            
         }
-
-
     }
 }
 

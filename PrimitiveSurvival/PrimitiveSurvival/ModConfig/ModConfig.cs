@@ -27,8 +27,12 @@ namespace PrimitiveSurvival.ModConfig
         public int FishEggsChunkRepletionRate { get; set; } = 10;
         public int FishChunkMaxDepletionPercent { get; set; } = 95;
         public int FurrowedLandUpdateFrequency { get; set; } = 120;
-        public double FurrowedLandBlockageChancePercent { get; set; } = 0.10;
-        public int LimbTrotlineCatchPercent { get; set; } = 5;
+        public double FurrowedLandBlockageChancePercent { get; set; } = 0.05;
+
+        public double FurrowedLandMinMoistureClose { get; set; } = 0.85;
+        public double FurrowedLandMinMoistureFar { get; set; } = 0.6;
+
+        public int LimbTrotlineCatchPercent { get; set; } = 3;
         public int LimbTrotlineBaitedCatchPercent { get; set; } = 10;
         public int LimbTrotlineLuredCatchPercent { get; set; } = 10;
         public int LimbTrotlineBaitedLuredCatchPercent { get; set; } = 15;
@@ -40,6 +44,8 @@ namespace PrimitiveSurvival.ModConfig
         public bool ParticulatorHideCodeTabs { get; set; } = false;
         public float RaftWaterSpeedModifier { get; set; } = 0.2f;
         public float RaftFlotationModifier { get; set; } = 0.03f;
+        public bool ShowModNameInHud { get; set; } = true;
+        public bool ShowModNameInGuis { get; set; } = true;
         public int SnareBaitStolenPercent { get; set; } = 10;
         public float SnareMaxAnimalHeight { get; set; } = 0.8f;
         public int SnareMaxDamageSet { get; set; } = 12;
@@ -47,7 +53,7 @@ namespace PrimitiveSurvival.ModConfig
         public int SnareTrippedPercent { get; set; } = 10;
         public int TreeHollowsMaxItems { get; set; } = 8;
         public int TreeHollowsMaxPerChunk { get; set; } = 1;
-        public float TreeHollowsSpawnProbability { get; set; } = 0.2f;
+        public float TreeHollowsSpawnProbability { get; set; } = 0.1f;
         public double TreeHollowsUpdateMinutes { get; set; } = 360.0;
         public int WeirTrapCatchPercent { get; set; } = 5;
         public int WeirTrapEscapePercent { get; set; } = 10;

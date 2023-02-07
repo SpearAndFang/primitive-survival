@@ -1,7 +1,9 @@
 namespace PrimitiveSurvival.ModSystem
 {
-    using System.Linq;
+    using HarmonyLib;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
     using Vintagestory.API.Common;
     using Vintagestory.API.Server;
     using Vintagestory.API.Client;
@@ -30,15 +32,35 @@ namespace PrimitiveSurvival.ModSystem
         //readonly IShaderProgram overlayShaderProg;
         private VenomOverlayRenderer vrenderer;
 
+        private readonly Harmony harmony = new Harmony("com.spearandfang.primitivesurvival");
+
         public override void StartClientSide(ICoreClientAPI api)
         {
-            this.capi = api;
+            base.StartClientSide(api);
 
+            //this.harmony.PatchAll();
+            var PSPumpkinPatchOriginal = typeof(PumpkinCropBehavior).GetMethod(nameof(PumpkinCropBehavior.CanSupportPumpkin));
+            var PSPumpkinPatchPrefix = typeof(PS_CanSupportPumpkin_Patch).GetMethod(nameof(PS_CanSupportPumpkin_Patch.PSCanSupportPumpkinPrefix));
+            this.harmony.Patch(PSPumpkinPatchOriginal, prefix: new HarmonyMethod(PSPumpkinPatchPrefix));
+
+            if (ModConfig.Loaded.ShowModNameInHud)
+            {
+                var PSBlockGetPlacedBlockInfoOriginal = typeof(Block).GetMethod(nameof(Block.GetPlacedBlockInfo));
+                var PSBlockGetPlacedBlockInfoPostfix = typeof(PS_BlockGetPlacedBlockInfo_Patch).GetMethod(nameof(PS_BlockGetPlacedBlockInfo_Patch.PSBlockGetPlacedBlockInfoPostfix));
+                this.harmony.Patch(PSBlockGetPlacedBlockInfoOriginal, postfix: new HarmonyMethod(PSBlockGetPlacedBlockInfoPostfix));
+            }
+
+            if (ModConfig.Loaded.ShowModNameInGuis)
+            {
+                var PSCollectibleGetHeldItemInfoOriginal = typeof(CollectibleObject).GetMethod(nameof(CollectibleObject.GetHeldItemInfo));
+                var PSCollectibleGetHeldItemInfoPostfix = typeof(PS_CollectibleGetHeldItemInfo_Patch).GetMethod(nameof(PS_CollectibleGetHeldItemInfo_Patch.PSCollectibleGetHeldItemInfoPostfix));
+                this.harmony.Patch(PSCollectibleGetHeldItemInfoOriginal, postfix: new HarmonyMethod(PSCollectibleGetHeldItemInfoPostfix));
+            }
+
+            this.capi = api;
             this.capi.Event.ReloadShader += this.LoadCustomShaders;
             this.LoadCustomShaders();
-
             this.capi.RegisterEntityRendererClass("entitygenericshaperenderer", typeof(EntityGenericShapeRenderer));
-
             this.vrenderer = new VenomOverlayRenderer(api);
             api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
         }
@@ -322,6 +344,82 @@ namespace PrimitiveSurvival.ModSystem
                 rate = fishingChunks[chunk];
             }
             return rate;
+        }
+
+        public override void Dispose()
+        {
+            //this.harmony.UnpatchAll("psharmony");
+            var PSPumpkinPatchOriginal = typeof(PumpkinCropBehavior).GetMethod(nameof(PumpkinCropBehavior.CanSupportPumpkin));
+            this.harmony.Unpatch(PSPumpkinPatchOriginal, HarmonyPatchType.Prefix, "*");
+
+            if (ModConfig.Loaded.ShowModNameInHud)
+            {
+                var PSBlockGetPlacedBlockInfoOriginal = typeof(Block).GetMethod(nameof(Block.GetPlacedBlockInfo));
+                this.harmony.Unpatch(PSBlockGetPlacedBlockInfoOriginal, HarmonyPatchType.Postfix, "*");
+            }
+
+            if (ModConfig.Loaded.ShowModNameInGuis)
+            {
+                var PSCollectibleGetHeldItemInfoOriginal = typeof(CollectibleObject).GetMethod(nameof(CollectibleObject.GetHeldItemInfo));
+                this.harmony.Unpatch(PSCollectibleGetHeldItemInfoOriginal, HarmonyPatchType.Postfix, "*");
+            }
+
+            base.Dispose();
+        }
+
+        //allow pumpkin vines to grow on furrowed land and irrigation vessels
+        //[HarmonyPatch(typeof(PumpkinCropBehavior), nameof(PumpkinCropBehavior.CanSupportPumpkin))]
+        public class PS_CanSupportPumpkin_Patch
+        {
+            [HarmonyPrefix]
+            public static bool PSCanSupportPumpkinPrefix(ref bool __result, ICoreAPI api, BlockPos pos)
+            {
+                var bclass = api.World.BlockAccessor.GetBlock(pos, 1).Class;
+                if (bclass == "blockfurrowedland" || bclass == "blockirrigationvessel")
+                {
+                    __result = true;
+                    return false; //skip original
+                }
+                return true;
+            }
+        }
+
+        // display mod name in the hud for blocks
+        //[HarmonyPatch(typeof(Block), nameof(Block.GetPlacedBlockInfo))]
+        public class PS_BlockGetPlacedBlockInfo_Patch
+        {
+            [HarmonyPostfix]
+            public static void PSBlockGetPlacedBlockInfoPostfix(ref string __result, IPlayer forPlayer) //IWorldAccessor world, BlockPos pos
+            {
+                var domain = forPlayer.Entity?.BlockSelection?.Block?.Code?.Domain;
+                if (domain != null)
+                {
+                    if (domain == "primitivesurvival")
+                    {
+                        //forPlayer.Entity?.Api?.ModLoader?.GetMod(domain).Info.Name
+                        __result += "\n\n<font color=\"#D8EAA3\"><i>Primitive Survival</i></font>\n\n";
+                    }
+                }
+            }
+        }
+
+
+        //[HarmonyPatch(typeof(CollectibleObject), nameof(Block.GetHeldItemInfo))]
+        public class PS_CollectibleGetHeldItemInfo_Patch
+        {
+            [HarmonyPostfix]
+            public static void PSCollectibleGetHeldItemInfoPostfix(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world) //bool withDebugInfo
+            {
+                var domain = inSlot.Itemstack?.Collectible?.Code?.Domain;
+                if (domain != null)
+                {
+                    if (domain == "primitivesurvival")
+                    {
+                        //world.Api?.ModLoader?.GetMod(domain).Info.Name
+                        dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>Primitive Survival</i></font>");
+                    }
+                }
+            }
         }
     }
 }

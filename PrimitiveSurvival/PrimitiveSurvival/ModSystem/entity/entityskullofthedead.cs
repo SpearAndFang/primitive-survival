@@ -11,7 +11,7 @@ namespace PrimitiveSurvival.ModSystem
     public class EntitySkullOfTheDead : EntityGenericGlowingAgent
     {
         public EntitySkullOfTheDead()
-        {}
+        { }
 
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
         {
@@ -38,8 +38,6 @@ namespace PrimitiveSurvival.ModSystem
             //indestructable
             return false;
         }
-
-        
 
         int cnt;
         public override void OnGameTick(float dt)

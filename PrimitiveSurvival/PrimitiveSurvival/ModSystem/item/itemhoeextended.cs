@@ -25,7 +25,7 @@ namespace PrimitiveSurvival.ModSystem
             var capi = api as ICoreClientAPI;
 
             ObjectCacheUtil.Delete(api, "hoeInteractions");
-            interactions = ObjectCacheUtil.GetOrCreate(api, "hoeInteractions", () =>
+            this.interactions = ObjectCacheUtil.GetOrCreate(api, "hoeInteractions", () =>
             {
                 var stacks = new List<ItemStack>();
                 var farmlandStacks = new List<ItemStack>();

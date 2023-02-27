@@ -5,7 +5,7 @@
     "canChisel": true,
     "chiselShapeFromCollisionBox": true,
     "handbook": {
-      "groupBy": [ "betterbrickstairs-*-up-north-free" ],
+      "groupBy": ["betterbrickstairs-*-up-north-free"],
       "excludeByType": {
         "*-brown-*": true,
         "*-red-*": true
@@ -433,7 +433,7 @@
   "emitSideAo": { "all": true },
   "lightAbsorption": 99,
   "textures": {
-    "snowcover": { "base": "game:block/snow/normal1" },
+    "snowcover": { "base": "game:block/liquid/snow/normal1" },
     "all": {
       "base": "game:block/clay/brickstairs/{material}"
     }

@@ -46,7 +46,7 @@
     }
   },
   "client": {
-    "renderer": "entitygenericshaperenderer",
+    "renderer": "Shape", //"entitygenericshaperenderer",
     "sizeByType": {
       "*-green": 1.1,
       "*-white": 0.8,

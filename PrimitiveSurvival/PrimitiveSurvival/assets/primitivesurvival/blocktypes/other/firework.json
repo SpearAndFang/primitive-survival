@@ -5,7 +5,14 @@
   "variantgroups": [
     {
       "code": "type",
-      "states": ["missile", "fountain", "beehive", "boomer", "bamboobarrage", "cherrybomb"]
+      "states": [
+        "missile",
+        "fountain",
+        "beehive",
+        "boomer",
+        "bamboobarrage",
+        "cherrybomb"
+      ]
     }
   ],
   "attributes": {
@@ -15,7 +22,7 @@
   },
   "behaviors": [{ "name": "Unstable" }],
   "shape": {
-      "base": "block/firework/{type}",
+    "base": "block/firework/{type}"
   },
   "maxstacksize": 64,
   "drops": [
@@ -122,7 +129,7 @@
         "base": "game:block/wood/displaycase/wood"
       },
       "fuse": {
-        "base": "game:block/bone-yellow"
+        "base": "game:block/creature/bone-yellow"
       }
     },
     "*-fountain": {
@@ -133,7 +140,7 @@
         "base": "game:block/wood/displaycase/wood"
       },
       "fuse": {
-        "base": "game:block/bone-yellow"
+        "base": "game:block/creature/bone-yellow"
       }
     },
     "*-beehive": {
@@ -144,7 +151,7 @@
         "base": "game:block/wood/displaycase/wood"
       },
       "fuse": {
-        "base": "game:block/bone-yellow"
+        "base": "game:block/creature/bone-yellow"
       }
     },
     "*-boomer": {
@@ -155,7 +162,7 @@
         "base": "game:block/wood/displaycase/wood"
       },
       "fuse": {
-        "base": "game:block/bone-yellow"
+        "base": "game:block/creature/bone-yellow"
       }
     },
     "*-bamboobarrage": {
@@ -166,7 +173,7 @@
         "base": "game:block/wood/displaycase/wood"
       },
       "fuse": {
-        "base": "game:block/bone-yellow"
+        "base": "game:block/creature/bone-yellow"
       }
     },
     "*-cherrybomb": {
@@ -177,7 +184,7 @@
         "base": "game:block/wood/displaycase/wood"
       },
       "fuse": {
-        "base": "game:block/bone-yellow"
+        "base": "game:block/creature/bone-yellow"
       }
     }
   },

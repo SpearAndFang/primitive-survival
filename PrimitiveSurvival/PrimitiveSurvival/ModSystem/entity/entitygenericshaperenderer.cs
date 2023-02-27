@@ -6,14 +6,17 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.GameContent;
     //using System.Diagnostics;
+    using Vintagestory.API.MathTools; //1.18
 
 
-    public class EntityGenericShapeRenderer : EntityShapeRenderer
+    public class EntityGenericShapeRenderer : EntityShapeRenderer, ITexPositionSource
     {
+        
         private readonly PrimitiveSurvivalSystem modSystem;
         private double time = 0;
         private readonly float strobeFrequency;
         private readonly double offset;
+
 
         public EntityGenericShapeRenderer(Entity entity, ICoreClientAPI api) : base(entity, api)
         {
@@ -74,7 +77,10 @@ namespace PrimitiveSurvival.ModSystem
             prog.Uniform("rgbaFogIn", rapi.FogColor);
             prog.Uniform("fogMinIn", rapi.FogMin);
             prog.Uniform("fogDensityIn", rapi.FogDensity);
-            prog.BindTexture2D("entityTex", this.capi.EntityTextureAtlas.AtlasTextureIds[0], 0);
+
+            //1.18
+            //prog.BindTexture2D("entityTex", this.capi.EntityTextureAtlas.AtlasTextureIds[0], 0);
+            prog.BindTexture2D("entityTex", this.capi.EntityTextureAtlas.Positions[0].atlasTextureId, 0);
 
             prog.UniformMatrix("modelMatrix", this.ModelMat);
 
@@ -103,17 +109,25 @@ namespace PrimitiveSurvival.ModSystem
             var strength = (float)(this.glitchAffected ? Math.Max(0, 1 - (1 / 0.4f * stabMin)) : 0);
             prog.Uniform("glitchEffectStrength", strength);
 
-            prog.UniformMatrices(
+            /*prog.UniformMatrices(
                "elementTransforms",
                GlobalConstants.MaxAnimatedElements,
                this.entity.AnimManager.Animator.Matrices
+           ); */ //1.18
+            prog.UniformMatrices(
+               "elementTransforms",
+               GlobalConstants.MaxAnimatedElements,
+               this.entity.AnimManager.Animator.Matrices4x3
            );
 
             if (this.meshRefOpaque != null)
             { this.capi.Render.RenderMesh(this.meshRefOpaque); }
 
+            /*
             if (this.meshRefOit != null)
             { this.capi.Render.RenderMesh(this.meshRefOit); }
+            */ //1.18 is gone
+
             prog.Stop();
         }
     }

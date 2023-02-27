@@ -12,6 +12,7 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
 
+    //public class BETreeHollowGrown : BlockEntityDisplayCase //1.18
     public class BETreeHollowGrown : BlockEntityDisplayCase, ITexPositionSource
     {
         private readonly int maxSlots = 8;
@@ -31,7 +32,8 @@ namespace PrimitiveSurvival.ModSystem
         public BETreeHollowGrown()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes  = new MeshData[this.maxSlots];
         }
 
         public override void Initialize(ICoreAPI api)

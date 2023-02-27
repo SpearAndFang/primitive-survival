@@ -9,7 +9,9 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
 
 
-    public class BlockBombFuse : Block
+    //public class BlockBombFuse : Block //1.18
+    public class BlockBombFuse : Block, IIgnitable
+
     {
         WorldInteraction[] interactions;
 
@@ -55,7 +57,8 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        public override EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
+        //public override EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting) //1.18
+        public EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
         {
             if (!(byEntity.World.BlockAccessor.GetBlockEntity(pos) is BEBombFuse bebomb) || bebomb.IsLit)
             {
@@ -70,7 +73,8 @@ namespace PrimitiveSurvival.ModSystem
             return EnumIgniteState.Ignitable;
         }
 
-        public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
+        //public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
+        public void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling) //1.18
         {
             if (secondsIgniting < 0.7f)
             {

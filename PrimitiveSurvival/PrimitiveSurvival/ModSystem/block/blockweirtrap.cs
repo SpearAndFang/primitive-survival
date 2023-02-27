@@ -110,7 +110,7 @@ namespace PrimitiveSurvival.ModSystem
                     foreach (var neighbor in weirSidesPos) // check for open in any of the stakes on the four sides
                     {
                         testBlock = world.BlockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
-                        if (testBlock.Code.Path.Contains("open") && testBlock.Code.Path.Contains("stakeinwater"))
+                        if (testBlock.Code.Path.Contains("open") && testBlock.Code.Path.Contains("stake-")) //1.18 was stakeinwater
                         {
                             world.BlockAccessor.BreakBlock(pos, null);
                             var newPath = testBlock.Code.Path.Replace("open", "").Replace("we", "ew").Replace("sn", "ns");

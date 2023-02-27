@@ -7,8 +7,9 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     using Vintagestory.API.MathTools;
     //using System.Diagnostics;
+    using Vintagestory.API.Client.Tesselation;
 
-    public class BlockRaft : Block
+    public class BlockRaft : Block, IDrawYAdjustable
     {
 
         private long handlerId;
@@ -47,13 +48,31 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
-            //prevent placing raft on wall
-            if (blockSel.Face.IsHorizontal)
+            bool placed;
+            var facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();
+            if (this.isWater(world.BlockAccessor, blockSel.Position.UpCopy()))
+            {
+                blockSel = blockSel.Clone();
+                blockSel.Position = blockSel.Position.Up();
+                placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
+                if (placed)
+                {
+                    var block = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
+                    var newPath = block.Code.Path;
+                    newPath = newPath.Replace("north", facing);
+                    block = this.api.World.GetBlock(block.CodeWithPath(newPath));
+                    this.api.World.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+                }
+                return placed;
+            }
+
+            //prevent placing raft on wall or in partial water
+            var testBlock = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
+            if (blockSel.Face.IsHorizontal || testBlock.Code.Path.Contains("water"))
             {
                 return false;
             }
-            var facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();
-            bool placed;
+
             placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             if (placed)
             {
@@ -65,6 +84,45 @@ namespace PrimitiveSurvival.ModSystem
             }
             return placed;
         }
+
+
+        public bool isWater(IBlockAccessor blockAccessor, BlockPos pos)
+        {
+            var waterblock = blockAccessor.GetBlock(pos.DownCopy(), BlockLayersAccess.Fluid);
+            var upblock = blockAccessor.GetBlock(pos, BlockLayersAccess.Fluid);
+            return waterblock.IsLiquid() && waterblock.LiquidLevel == 7 && waterblock.LiquidCode.Contains("water") && upblock.Id == 0;
+        }
+
+        public float AdjustYPosition(Block[] chunkExtBlocks, int extIndex3d)
+        {
+            var nblock = chunkExtBlocks[extIndex3d + TileSideEnum.MoveIndex[TileSideEnum.Down]];
+            return nblock.BlockId == 0 ? -0.1625f : 0f;
+        }
+
+        public override void OnJsonTesselation(ref MeshData sourceMesh, ref int[] lightRgbsByCorner, BlockPos pos, Block[] chunkExtBlocks, int extIndex3d)
+        {
+            sourceMesh.XyzInstanced = true;
+            base.OnJsonTesselation(ref sourceMesh, ref lightRgbsByCorner, pos, chunkExtBlocks, extIndex3d);
+
+            var below = pos.DownCopy();
+            var downSolidBlock = this.api.World.BlockAccessor.GetBlock(below, BlockLayersAccess.Solid);
+            var downWaterBlock = this.api.World.BlockAccessor.GetBlock(below, BlockLayersAccess.Fluid);
+            int windData = this.VertexFlags.Normal;
+            if (downWaterBlock.Code.Path.Contains("water") && downSolidBlock.Id == 0)
+            {
+                windData = this.VertexFlags.Normal | EnumWindBitModeMask.Water | this.VertexFlags.ZOffset;
+                
+                //sourceMesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0.11f, 0, 0);
+            }
+            for (var i = 0; i < sourceMesh.FlagsCount; i++)
+            {
+                sourceMesh.Flags[i] = windData;
+            }
+            
+
+
+        }
+
 
         public override void OnBeingLookedAt(IPlayer byPlayer, BlockSelection blockSel, bool firstTick)
         {

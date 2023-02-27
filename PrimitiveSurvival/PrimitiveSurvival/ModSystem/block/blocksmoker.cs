@@ -5,8 +5,11 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
     //using System.Diagnostics;
+    using System.Linq; //1.18
+    using Vintagestory.GameContent; //1.18
 
-    public class BlockSmoker : Block
+    //public class BlockSmoker : Block //1.18
+    public class BlockSmoker : Block, IIgnitable
     {
 
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
@@ -49,7 +52,8 @@ namespace PrimitiveSurvival.ModSystem
             }
         }
 
-        public override EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
+        //public override EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting) //1.18
+        public EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
         {
             var be = byEntity.World.BlockAccessor.GetBlockEntity(pos) as BESmoker;
             if (!be.CanIgnite())
@@ -57,7 +61,8 @@ namespace PrimitiveSurvival.ModSystem
             return secondsIgniting > 4 ? EnumIgniteState.IgniteNow : EnumIgniteState.Ignitable;
         }
 
-        public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
+        // public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling) //1.18
+        public void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
         {
             handling = EnumHandling.PreventDefault;
             var be = byEntity.World.BlockAccessor.GetBlockEntity(pos) as BESmoker;

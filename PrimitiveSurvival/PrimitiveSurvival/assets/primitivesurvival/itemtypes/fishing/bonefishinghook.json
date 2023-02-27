@@ -3,7 +3,7 @@
     "maxstacksize": 64,
     "shape": { "base": "item/fishing/fishinghook" },
     "textures": {
-        "hookmaterial": { "base": "game:block/bone" }
+        "hookmaterial": { "base": "game:block/creature/bone" }
     },
     "creativeinventory": {
         "general": [ "*" ],

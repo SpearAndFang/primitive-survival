@@ -13,7 +13,8 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
 
-    public class BEFishBasket : BlockEntityDisplayCase
+    //public class BEFishBasket : BlockEntityDisplayCase //1.18
+    public class BEFishBasket : BlockEntityDisplayCase, ITexPositionSource
     {
         private readonly int catchPercent = ModConfig.Loaded.FishBasketCatchPercent;
         private readonly int baitedCatchPercent = ModConfig.Loaded.FishBasketBaitedCatchPercent;
@@ -34,8 +35,7 @@ namespace PrimitiveSurvival.ModSystem
         private long particleTick;
 
         public override string InventoryClassName => "fishbasket";
-
-        //protected InventoryGeneric inventory;
+        protected InventoryGeneric inventory; //1.18
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -45,7 +45,8 @@ namespace PrimitiveSurvival.ModSystem
         public BEFishBasket()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes = new MeshData[this.maxSlots];
         }
 
 

@@ -5,22 +5,42 @@
     "canChisel": true,
     "chiselShapeFromCollisionBox": true,
     "handbook": {
-      "groupBy": [ "bettercobblestonestairs-*-up-north-free" ]
+      "groupBy": ["bettercobblestonestairs-*-up-north-free"]
     },
     "partialAttachable": true
   },
   "variantgroups": [
     {
       "code": "rock",
-      "states": [ "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite", "kimberlite", "suevite", "whitemarble", "redmarble", "greenmarble" ]
+      "states": [
+        "andesite",
+        "chalk",
+        "chert",
+        "conglomerate",
+        "limestone",
+        "claystone",
+        "granite",
+        "sandstone",
+        "shale",
+        "basalt",
+        "peridotite",
+        "phyllite",
+        "slate",
+        "bauxite",
+        "kimberlite",
+        "suevite",
+        "whitemarble",
+        "redmarble",
+        "greenmarble"
+      ]
     },
     {
       "code": "type",
-      "states": [ "normal", "inside", "outside" ]
+      "states": ["normal", "inside", "outside"]
     },
     {
       "code": "updown",
-      "states": [ "up", "down", "sideways" ]
+      "states": ["up", "down", "sideways"]
     },
 
     {
@@ -38,7 +58,7 @@
     },
     {
       "code": "cover",
-      "states": [ "free", "snow" ]
+      "states": ["free", "snow"]
     }
   ],
   "skipVariants": [
@@ -431,7 +451,7 @@
   },
   "blockmaterial": "Stone",
   "textures": {
-    "snowcover": { "base": "game:block/snow/normal1" },
+    "snowcover": { "base": "game:block/liquid/snow/normal1" },
     "all": { "base": "game:block/stone/cobblestonestairs/{rock}" }
   },
   "replaceable": 160,

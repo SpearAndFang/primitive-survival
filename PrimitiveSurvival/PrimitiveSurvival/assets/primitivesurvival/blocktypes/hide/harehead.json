@@ -70,7 +70,7 @@
         "base": "game:entity/hare/{type}-{species}"
       },
       "plaque": {
-        "base": "game:block/beehive/floor"
+        "base": "game:block/reed/beehive/floor"
       }
     }
   },

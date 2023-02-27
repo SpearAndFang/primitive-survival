@@ -1,5 +1,5 @@
 {
-  "game:tabname-primitive": "Primitive",
+  "game:tabname-primitive": "Primitive Survival",
   "game:ps-quickstart-title": "Primitive Survival: Szybki poradnik na start",
   "game:ps-quickstart-text": "<strong>Primitive Survival: Szybki poradnik na start</strong><br><i>Krok pierwszy: Przetrwaj. Krok drugi: Rozwiń się!</i><br><br>Aktualną wersję tego moda i ewentualną dokumentację znajdziesz <a href=\"https://mods.vintagestory.at/primitivesurvival\">tutaj</a>.<br><br><strong>Wprowadzenie</strong><br>Ten mod ma być nieco realistyczną alternatywą dla takich działań jak polowanie i hodowla zwierząt, mimo to całkiem dobrze także uzupełnia te dziedziny. <br><br>Aby odnieść sukces jako prymitywny survivalista, będziesz musiał wykorzystać różnorodne taktyki opisane poniżej, zyskasz bardzo poszukiwane wysokokaloryczne źródła białka (wraz z innymi korzyściami jakie zapewniają ssaki).<br><br><strong>Lokalizacja, Lokalizacja, Lokalizacja </strong><br>Ważne jest, aby wybrać odpowiednią lokalizację, którą możesz nazwać domem, najlepiej w pobliżu przyzwoitego źródła wody, które ma pod dostatkiem <a href=\"handbook://block-tallplant-coopersreed-land-normal-free\">pałki szerokolistnej</a> w okolicy. Jeśli to możliwe, zbierz trochę jedzenia, <a href=\"handbook://item-stick\">patyków</a> i twardych <a href=\"handbook://item-stone-granite\">kamieni</a> po drodze.<br><br><strong>Podstawy</strong><br>Chociaż kije, kamienie i zapasy jedzenie wystarczą do rozpoczęcia tworzenia pułapek, prawdopodobnie będziesz potrzebować kilku innych, podstawowych składników, aby stosować wielorakie prymitywne podejście do przetrwania. Rozważ <a href=\"handbook://craftinginfo-knapping\">wyłupanie</a> noża aby zrobić kilka <a href=\"handbook://block-primitivesurvival:stake-empty\">kołków</a> (i aby zdobyć odżypałki z pałki szerokolistnej). Użyj odżypałki aby zrobić kilka <a href=\"handbook://item-primitivesurvival:cordage\">powrozów</a>.<br><br><strong>Zastawianie sideł</strong><br>Zbuduj kilka <a href=\"handbooksearch://Kamienna pułapka\">pułapek kamiennych</a> i/lub <a href=\"handbook://block-primitivesurvival:snare-set-north\">sideł</a> i ustaw je w ważnych miejscach, w okolicy. Te pułapki są znacznie skuteczniejsze, gdy zawierają przynęte, możesz ją dodać klikając jakimś rodzajem jedzenia w aktywnym slocie ekwipunku. Jeżeli pułapka będzie już zużyta, kliknij prawym skradając się aby zastawić ponownie i dodaj przynętę jeżeli potrzebujesz.<br><br>Sidła wymagają trochę więcej czasu aby je ustawić, ale są w stanie złapać większe ssaki niż pułapka kamienna.<br><br>Możesz także łapać i zabijać ssaki, naostrzając garść patyków, aby zrobić <a href=\"handbook://item-primitivesurvival:woodspikebundle\">wiązkę drewnianych kolców</a>, następnie wetknij je w miękki grunt (najlepiej w dole). Użyj tych samych drewnianych kolców, aby zbudować osłonę maskującą dla swojej pułapki. Po zakończeniu pobliskie ssaki przyjdą i miejmy nadzieję wpadną w twoją pułapkę. <br><br>Po opanowaniu formowania i wytapiania gliny możesz wykonać formę na <a href=\"handbooksearch://Płyta z kolcami\">płytę z kolcami</a> która powoduje jeszcze większe szkody niż drewniane kolce i można ją umieścić na dowolnej powierzchni. <br><br><strong>Rybołówstwo</strong><br>Użyj patyków i parowozu do budowy <a href=\"handbook://block-primitivesurvival:fishbasket-north\">pułapki na ryby</a>, połóż ją w wodzie aby zacząć łapać ryby. Możesz zachęcić więcej ryb jeżeli dodasz przynętę do pułapki na ryby (podobnie jak w innych pułapkach).<br><br>Możesz też po prostu użyć kołków i zrobić <strong> pułapkę jazową</strong>. Aby to zrobić, zbuduj ogrodzony teren w wodzie lub na skraju wody z otwartym blokiem wody na środku, następnie kliknij skradając się po najdalszej od lądu stronie ogrodzenia. Ogrodzenie będzie miało kształt litery M, co oznacza, że pułapka jazowa jest aktywna. <br><br>Możesz mieć więcej szczęścia w łowieniu, jeśli ustawisz <strong>takle</strong> lub <strong>trotline</strong> (używając powrozu, a może i kołków). Wybierz dowolny odpowiedni blok (jak drzewo, blok ziemi lub umieść kołek w ziemi obok źródła wody). W przypadku trotline, umieść kolejny odpowiedni klocek bezpośrednio po drugiej stronie wody. Następnie, mając powróz w aktywnym slocie ekwipunku, wyceluj w jeden kołek / blok, stojąc twarzą do wody i kliknij ppm, aby przymocować powróz.<br><br>Następnie musisz wyłupać kilka <a href=\"handbooksearch://Haczyk na ryby\">haczyków wędkarskich</a> aby przymocować je do powrozu, lub wyciąć jeden z <a href=\"handbook://item-bone\">kości</a>. Mając haczyki w aktywnym slocie ekwipunku, kliknij powróz nad wodą, aby je przyczepić. Na koniec rozważ założenie przynęty (podobnie jak w pułapkach), aby zwiększyć ich skuteczność. <br><br>Takle lub trotline mogą okazać się bardziej skuteczne w łowieniu ryb i nie mają takich samych ograniczeń przestrzennych jak pułapka na ryby (więc nie będziesz potrzebować dużo wody). Po opanowaniu formowania i wytapiania gliny możesz wykonać formy do metalowych haczyków wędkarskich i <a href=\"handbooksearch://Wabik wędkarski\">wabików wędkarskich</a>. Przymocuj przynętę do haczyka, aby zwiększyć swoje szanse na złowienie ryb.<br><br><strong>Artykuły spożywcze</strong><br><br>Gotuj ryby na ogniu, aby uzyskać bardzo potrzebne białko. Możesz również dodawać ryby do zup i gulaszu zamiast mięsa. <a href=\"handbook://item-primitivesurvival:fishfillet-raw\">Ofiletuj</a> swoje ryby aby łatwiej je gotowac i przechowywać.<br><br>Jeśli będziesz przeszukiwać lub zaglądać pod gałęzie i kamienie, możesz być w stanie złapać (kliknięcie ukradkiem) <a href=\"handbook://item-primitivesurvival:earthworm\">dżdżownice</a>, a następnie użyj jej do różnych celów. Zjedz ją, aby uzyskać szybki zastrzyk białka, przynęta na haczyki lub kosze z rybami, umieść ją na żyznej glebie, aby napowietrzać i nawozić ogród, lub umieść ją w dziurze z żyzną glebą, aby stworzyć <a href=\"handbook://item-primitivesurvival:earthwormcastings\">wermikompost</a> który można następnie wykorzystać jako nawóz. <br><br>Jeśli masz jakieś czerwone mięso lub dzikie mięso, pokrój je aby przyrządzić <a href=\"handbook://item-primitivesurvival:jerky-redmeat-raw\">surowe szarpane czerwone mięso</a> lub <a href=\"handbook://item-primitivesurvival:jerky-bushmeat-raw\">surowe szarpane dzikie mięso</a>. Nadal będziesz musiał poczekać, aż się wysuszy, zanim będziesz mógł je zjeść (lub możesz je ugotować, jeśli jesteś niecierpliwy). <br><br><strong>Inne</strong><br><br>Z <a href=\"handbooksearch://Futro\">futrem</a> w dłoni, kliknij na ziemię, aby je położyć i ożywić swoje skromne mieszkanie. <br><br>Jeśli pomyślnie umieściłeś trotline, wiesz wystarczająco dużo, aby zbudować sobie <a href=\"handbook://item-primitivesurvival:monkeybridge\">most linowy</a> aby z łatwością przedostać się przez duże wąwozy lub jeziora. Jedyną prawdziwą różnicą jest to, że dwa punkty końcowe muszą być dużymi blokami (na dwa wysokie) lub drzewami.<br><br>Możesz również wykuć metalowy uchwyt i razem z metalowymi płytkami zrobić sobie <a href=\"handbooksearch://Metalowe wiadro\">metalowe wiadro</a>. To wiadro może być używane do wielu tych samych rzeczy co drewniane, ale może być również używane do przenoszenia lawy. <br><br>Muszle morskie i inne niespodzianki (<strong> rzeczy, których nie należy nazywać </ strong >) mogą od czasu do czasu trafiać do twoich pułapek na ryby i pułapek jazowych.<br><br>",
   "item-cordage": "Powróz",
@@ -129,7 +129,7 @@
   "item-fishinglure-zinc": "Wabik wędkarski (Cynk)",
   "item-fishinglure-molybdochalkos": "Wabik wędkarski (Ołów miedziany)",
   "itemdesc-fishinglure-*": "Dodaj to do swojego haczyka, aby zwiększyć swoje szanse na złapanie czegoś.",
- 
+
   "item-metalfishinghook-bismuth": "Haczyk na ryby (Bizmut)",
   "item-metalfishinghook-bismuthbronze": "Haczyk na ryby (Brąz bizmutowy)",
   "item-metalfishinghook-blackbronze": "Haczyk na ryby (Brąz koryncki)",
@@ -143,7 +143,7 @@
   "item-metalfishinghook-zinc": "Haczyk na ryby (Cynk)",
   "item-metalfishinghook-molybdochalkos": "Haczyk na ryby (Ołów miedziany)",
   "itemdesc-metalfishinghook-*": "Przymocuj to do powrozu.",
- 
+
   "block-spikeplate-bismuth": "Płyta z kolcami (Bizmut)",
   "block-spikeplate-bismuthbronze": "Płyta z kolcami (Brąz bizmutowy)",
   "block-spikeplate-blackbronze": "Płyta z kolcami (Brąz koryncki)",
@@ -157,7 +157,7 @@
   "block-spikeplate-zinc": "Płyta z kolcami (Cynk)",
   "block-spikeplate-molybdochalkos": "Płyta z kolcami (Ołów miedziany)",
   "blockdesc-spikeplate-*": "Poważnie uszkadza stworzenia, które chodzą lub upadają na nią.",
- 
+
   "block-woodspikes": "Drewniane kolce",
   "blockdesc-woodspikes": "Uszkadza stworzenia, które chodzą lub upadają na nie.",
   "block-woodsupportspikes-*": "Ukryj swój wilczy dół",
@@ -814,10 +814,10 @@
   "block-support-wood-main-*": "Pipe Support (Wood)",
   "block-support-bamboo-main-*": "Pipe Support (Bamboo)",
   "blockdesc-support-*": "Place on your farmland to hold irrigation pipes",
-  "block-pipe-wood-plain-*": "Wood Pipe (Plain)",
-  "block-pipe-wood-aerated-*": "Wood Pipe (Aerated)",
-  "block-pipe-bamboo-plain-*": "Split Bamboo Pipe (Plain)",
-  "block-pipe-bamboo-aerated-*": "Split Bamboo Pipe (Aerated)",
+  "block-pipe-wood-plain": "Wood Pipe (Plain)",
+  "block-pipe-wood-aerated": "Wood Pipe (Aerated)",
+  "block-pipe-bamboo-plain": "Split Bamboo Pipe (Plain)",
+  "block-pipe-bamboo-aerated": "Split Bamboo Pipe (Aerated)",
   "blockdesc-pipe-*": "Used to transport water and irrigate farmland",
   "block-irrigationvessel-*": "Irrigation Vessel",
   "blockdesc-irrigationvessel-*": "Use instead of water blocks for better farmland irrigation.",

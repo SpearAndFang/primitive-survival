@@ -86,7 +86,7 @@
         "base": "game:entity/pig/pig-{species}-{type}1"
       },
       "plaque": {
-        "base": "game:block/beehive/floor"
+        "base": "game:block/reed/beehive/floor"
       }
     }
   },

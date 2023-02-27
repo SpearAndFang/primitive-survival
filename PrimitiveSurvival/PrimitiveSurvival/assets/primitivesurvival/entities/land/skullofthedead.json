@@ -14,19 +14,19 @@
   "falldamage": false,
   "eyeHeight": 4,
   "attributes": {
-    "lightHsv": [ 1, 4, 1 ],
+    "lightHsv": [1, 4, 1],
     "minLightLevel": 0,
     "strobeFrequency": 1
   },
   "variantgroups": [
     {
       "code": "type",
-      "states": [ "normal" ]
+      "states": ["normal"]
     }
   ],
   "drops": [],
   "client": {
-    "renderer": "entitygenericshaperenderer",
+    "renderer": "Shape", //"entitygenericshaperenderer",
     "pitchStep": false,
     "shapebytype": {
       "*-normal*": {
@@ -99,7 +99,7 @@
         "aitasks": [
           {
             "code": "meleeattack",
-            "entityCodes": [ "*" ],
+            "entityCodes": ["*"],
             "priority": 2,
             "damageByType": {
               "*-normal": 1
@@ -119,7 +119,7 @@
           },
           {
             "code": "idle",
-            "entityCodes": [ "*" ],
+            "entityCodes": ["*"],
             "priority": 1.5,
             "priorityForCancel": 9,
             "mincooldown": 1000,
@@ -133,7 +133,7 @@
           },
           {
             "code": "seekentity",
-            "entityCodes": [ "*" ],
+            "entityCodes": ["*"],
             "priority": 1.5,
             "mincooldown": 400,
             "maxcooldown": 800,

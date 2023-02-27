@@ -1,11 +1,10 @@
 {
   "code": "pipe",
-  "class":  "blockpipe",
+  "class": "blockpipe",
   "rainpermeable": true,
   "snowcoverage": false,
   "lightabsorption": 0,
-  "drawtype": "json",
-
+  "drawtype: ": "json",
   "maxstacksize": 64,
   "variantgroups": [
     {
@@ -15,54 +14,28 @@
     {
       "code": "type",
       "states": [ "plain", "aerated" ]
-    },
-    {
-      "code": "ends",
-      "states": [ "none", "onene", "onesw", "two", "empty" ]
-    },
-    {
-      "code": "side",
-      "states": [ "north", "south", "east", "west" ]
     }
   ],
   "drops": [
     {
       "type": "block",
-      "code": "primitivesurvival:pipe-{material}-{type}-none-north",
+      "code": "primitivesurvival:pipe-{material}-{type}",
       "quantity": { "avg": 1 }
     }
   ],
-  "shapebytype": {
-    "*-north": {
-      "base": "block/pipe/{ends}",
-      "rotateY": 90
-    },
-    "*-east": {
-      "base": "block/pipe/{ends}",
-      "rotateY": 0
-    },
-    "*-south": {
-      "base": "block/pipe/{ends}",
-      "rotateY": 270
-    },
-    "*-west": {
-      "base": "block/pipe/{ends}",
-      "rotateY": 180
-    }
-  },
+  "shape": {"base": "block/pipe/wood/base"},
   "textures": {
-    "material": { "base": "block/pipe/{material}/{type}" },
-    "water": { "base": "game:block/liquid/water" }
+    "material": { "base": "block/pipe/{material}/{type}" }
   },
   "creativeinventory": {
     "general": [
-      "*-{material}-{type}-none-north"
+      "*-{material}-{type}"
     ],
     "items": [
-      "*-{material}-{type}-none-north"
+      "*-{material}-{type}"
     ],
     "primitive": [
-      "*-{material}-{type}-none-north",
+      "*-{material}-{type}"
     ]
   },
   "blockmaterial": "Wood",
@@ -89,14 +62,14 @@
     },
     "origin": {
       "x": 0.6,
-      "y": 1.1,
-      "z": 0.73
+      "y": 0,
+      "z": 0.43
     },
     "scale": 1.46
   },
   "fpHandTransform": {
     "translation": {
-      "x": 0.0468,
+      "x": 0.3468,
       "y": -0.3437,
       "z": 0
     },
@@ -107,16 +80,16 @@
     },
     "origin": {
       "x": 0.8,
-      "y": 0.5,
+      "y": 1.5,
       "z": 0.3
     },
     "scale": 1.18
   },
   "tpHandTransform": {
     "translation": {
-      "x": -1.6,
-      "y": -1.7,
-      "z": -1.1
+      "x": -2.1,
+      "y": -1.2,
+      "z": -1.3
     },
     "rotation": {
       "x": 134,
@@ -142,40 +115,5 @@
       "z": 0.5
     },
     "scale": 2.45
-  },
-  "collisionSelectionBoxesByType": {
-    "*-empty-*": [
-      {
-        "x1": 0,
-        "y1": 0.25,
-        "z1": 0.75,
-        "x2": 1,
-        "y2": 0.85,
-        "z2": 1.25,
-        "rotateYByType": {
-          "*-north": 270,
-          "*-east": 180,
-          "*-south": 90,
-          "*-west": 0
-        }
-      }
-    ],
-    "*": [
-      {
-        "x1": 0,
-        "y1": 0.25,
-        "z1": 0.75,
-        "x2": 1,
-        "y2": 0.85,
-        "z2": 1.25,
-        "rotateYByType": {
-          "*-north": 90,
-          "*-east": 0,
-          "*-south": 270,
-          "*-west": 180
-
-        }
-      }
-    ]
   }
 }

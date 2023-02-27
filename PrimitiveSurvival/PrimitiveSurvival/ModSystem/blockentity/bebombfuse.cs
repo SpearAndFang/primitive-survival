@@ -19,6 +19,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public IPlayer IgnitedPlayer;
 
+        public bool CascadeLit { get; set; } //1.18
 
         static BEBombFuse()
         {
@@ -161,6 +162,7 @@ namespace PrimitiveSurvival.ModSystem
                 if ((!this.IsLit || this.remainingSeconds > 0.3) && !this.NearToClaimedLand())
                 {
                     this.Api.World.RegisterCallback(this.Combust, 250);
+                    this.CascadeLit = true; //1.18
                 }
 
             }

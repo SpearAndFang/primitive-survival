@@ -14,7 +14,8 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
 
-    public class BEFurrowedLand : BlockEntityDisplayCase //maybe something more generic?
+    //public class BEFurrowedLand : BlockEntityDisplayCase //1.18
+    public class BEFurrowedLand : BlockEntityDisplayCase, ITexPositionSource
     {
         private readonly int FurrowedLandUpdateFrequency = ModConfig.Loaded.FurrowedLandUpdateFrequency;
         private readonly double FurrowedLandBlockageChancePercent = ModConfig.Loaded.FurrowedLandBlockageChancePercent;
@@ -32,6 +33,13 @@ namespace PrimitiveSurvival.ModSystem
         //inventory setup
         private readonly int maxSlots = 1;
         public override string InventoryClassName => "furrowedland";
+        protected InventoryGeneric inventory; //1.18
+
+        public BEFurrowedLand() //1.18
+        {
+            this.inventory = new InventoryGeneric(this.maxSlots, null, null);
+            var meshes = new MeshData[this.maxSlots];
+        }
         public override InventoryBase Inventory => this.inventory;
 
         public ItemSlot OtherSlot => this.inventory[0]; //i.e. blockage

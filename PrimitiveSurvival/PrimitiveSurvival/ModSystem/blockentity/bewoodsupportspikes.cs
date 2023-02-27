@@ -9,13 +9,12 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Config;
 
-
-    public class BEWoodSupportSpikes : BlockEntityDisplayCase, IAnimalFoodSource
+    //public class BEWoodSupportSpikes : BlockEntityDisplayCase, IAnimalFoodSource //1.18
+    public class BEWoodSupportSpikes : BlockEntityDisplayCase, IAnimalFoodSource, ITexPositionSource
     {
 
         protected static readonly Random Rnd = new Random();
         private readonly int maxSlots = 4;
-
 
         public override void Initialize(ICoreAPI api)
         {
@@ -69,7 +68,7 @@ namespace PrimitiveSurvival.ModSystem
 
 
         public override string InventoryClassName => "woodsupportspikes";
-        //protected InventoryGeneric inventory;
+        protected InventoryGeneric inventory; //1.18
 
 
         public override InventoryBase Inventory => this.inventory;
@@ -78,7 +77,8 @@ namespace PrimitiveSurvival.ModSystem
         public BEWoodSupportSpikes()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes  = new MeshData[this.maxSlots];
         }
 
 

@@ -3,12 +3,7 @@
   "variantgroups": [
     {
       "code": "type",
-      "states": [
-        "jelly",
-        "globe",
-        "worm",
-        "orangejelly"
-      ]
+      "states": ["jelly", "globe", "worm", "orangejelly"]
     }
   ],
   "class": "entitybioluminescent",
@@ -21,7 +16,7 @@
   "eyeHeight": 1,
   "attributesbytype": {
     "*-jelly": {
-      "lightHsv": [ 34, 3, 5 ],
+      "lightHsv": [34, 3, 5],
       "strobeFrequency": 1.9,
       "minLightLevel": 0.2,
       "physics": {
@@ -29,7 +24,7 @@
       }
     },
     "*-globe": {
-      "lightHsv": [ 5, 2, 4 ],
+      "lightHsv": [5, 2, 4],
       "strobeFrequency": 5,
       "minLightLevel": 0,
       "physics": {
@@ -37,7 +32,7 @@
       }
     },
     "*-worm": {
-      "lightHsv": [ 43, 2, 2 ],
+      "lightHsv": [43, 2, 2],
       "strobeFrequency": 3.5,
       "minLightLevel": 0.5,
       "physics": {
@@ -45,7 +40,7 @@
       }
     },
     "*-orangejelly": {
-      "lightHsv": [ 48, 3, 5 ],
+      "lightHsv": [48, 3, 5],
       "strobeFrequency": 2,
       "minLightLevel": 0,
       "physics": {
@@ -54,7 +49,7 @@
     }
   },
   "client": {
-    "renderer": "entitygenericshaperenderer",
+    "renderer": "Shape", //"entitygenericshaperenderer",
     "sizeByType": {
       "*-jelly": 0.8,
       "*-globe": 2,
@@ -224,7 +219,7 @@
           "avg": 4,
           "var": 2
         },
-        "insideBlockCodes": [ "game:water-still-7" ],
+        "insideBlockCodes": ["game:water-still-7"],
         "chance": 0.005,
         "minY": 0,
         "maxY": 0.65

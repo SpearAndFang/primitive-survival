@@ -11,59 +11,65 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["wood", "bamboo"]
+      "states": ["wood", "bamboo","none"]
     },
     {
       "code": "type",
-      "states": ["main", "mainempty", "mainbelow", "mainbelowempty"]
+      "states": ["main", "empty"]
     },
     {
       "code": "side",
-      "states": ["north", "south", "east", "west"]
+      "states": ["ns", "ew"]
     }
   ],
-  "drops": [
-    {
-      "type": "block",
-      "code": "primitivesurvival:support-{material}-main-north",
-      "quantity": { "avg": 1 }
-    }
-  ],
+  "dropsbyType": {
+    "*-wood-*": [
+      {
+        "type": "block",
+        "code": "primitivesurvival:support-{material}-main-ns",
+        "quantity": { "avg": 1 }
+      }
+    ],
+    "*-bamboo-*": [
+      {
+        "type": "block",
+        "code": "primitivesurvival:support-{material}-main-ns",
+        "quantity": { "avg": 1 }
+      }
+    ]
+  },
   "drawtype": "json",
   "shapebytype": {
-    "*-main-north": {
-      "base": "block/{material}/support",
+    "*-wood-main-ns": {
+      "base": "block/support/support",
       "rotateY": 180
     },
-    "*-main-east": {
-      "base": "block/{material}/support",
+    "*-wood-main-ew": {
+      "base": "block/support/support",
       "rotateY": 90
     },
-    "*-main-south": {
-      "base": "block/{material}/support"
-    },
-    "*-main-west": {
-      "base": "block/{material}/support",
-      "rotateY": 270
-    },
-    "*-north": {
-      "base": "block/{material}/supportempty",
+    "*-bamboo-main-ns": {
+      "base": "block/support/support",
       "rotateY": 180
     },
-    "*-east": {
-      "base": "block/{material}/supportempty",
+    "*-bamboo-main-ew": {
+      "base": "block/support/support",
       "rotateY": 90
     },
-    "*-south": {
-      "base": "block/{material}/supportempty"
-    },
-    "*-west": {
-      "base": "block/{material}/supportempty",
-      "rotateY": 270
+    "*": {
+      "base": "block/support/supportempty"
     }
   },
   "texturesByType": {
-    "*-main*": {
+    "*-wood-main*": {
+      "support": {
+        "base": "block/{material}/support"
+      },
+      "rope": {
+        "base": "block/raft/rope"
+      }
+    },
+    "*-bamboo-main*": {
       "support": {
         "base": "block/{material}/support"
       },
@@ -73,8 +79,8 @@
     }
   },
   "creativeinventory": {
-    "general": ["*-{material}-main-north"],
-    "primitive": ["*-{material}-main-north"]
+    "general": [ "*-wood-main-ns", "*-bamboo-main-ns" ],
+    "primitive": [ "*-wood-main-ns", "*-bamboo-main-ns" ]
   },
   "materialDensity": 150,
   "blockmaterial": "Wood",
@@ -150,51 +156,55 @@
       "z": 91
     },
     "origin": {
-      "x": 0.5,
+      "x": 0.41,
       "y": 0.1,
       "z": 0.5
     },
     "scale": 3.88
   },
   "collisionSelectionBoxesByType": {
-    "*-main-*": [
+    "*-main-ns": [
       {
         "x1": 0,
-        "y1": 0.25,
+        "y1": 0,
         "z1": 0.75,
         "x2": 1,
-        "y2": 0.85,
+        "y2": 0.5,
         "z2": 1.25,
-        "rotateYByType": {
-          "*-north": 180,
-          "*-east": 90,
-          "*-west": 270
-        }
+        "rotateY": 180
       }
     ],
-    "*-mainempty-*": [
+    "*-main-ew": [
       {
         "x1": 0,
-        "y1": 0.25,
+        "y1": 0.5,
         "z1": 0.75,
         "x2": 1,
-        "y2": 0.85,
-        "z2": 1.25,
-        "rotateYByType": {
-          "*-south": 180,
-          "*-west": 90,
-          "*-east": 270
-        }
-      }
-    ],
-    "*": [
-      {
-        "x1": 0,
-        "y1": 0.99,
-        "z1": 0,
-        "x2": 0,
         "y2": 1,
-        "z2": 0
+        "z2": 1.25,
+        "rotateY": 90
+      }
+    ],
+    "*-ns": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0.75,
+        "x2": 1,
+        "y2": 0.5,
+        "z2": 1.25,
+        "rotateY": 0
+      }
+    ],
+    "*-ew": [
+      {
+        "x1": 0,
+        "y1": 0.5,
+        "z1": 0.75,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1.25,
+        "rotateY": 270
       }
     ]
   }

@@ -1,5 +1,5 @@
 {
-  "game:tabname-primitive": "Primitiv",
+  "game:tabname-primitive": "Primitiv Survival",
   "game:ps-quickstart-title": "Primitiv Survival: Schnellstart Anleitung",
   "game:ps-quickstart-text": "<strong> Primitiv Survival: Schnellstart Anleitung </strong><br><i> Erstens: Bleib am Leben.  Zweitens: Wachse und gedeihe!</i><br><br> Aktuelle Versionen des Mods sowie einige Beschreibungen kannst du <a href=\"https://mods.vintagestory.at/primitivesurvival\">hier</a> finden.<br><br><strong>Einleitung</strong><br>Dieser Mod soll eine einigermaßen realistische Alternative zu Aktivitäten wie der Jagd und der Tierhaltung sein, obwohl er diese Ansätze ganz gut ergänzt.<br><br>Um ein erfolgreicher Überlebenskünstler zu sein, musst du eine Vielzahl der unten beschriebenen Taktiken nutzen, um an das Begehrte Eiweiß zu kommen (zusammen mit den anderen lebensnotwendigen Gütern die Säugetiere anbieten).<br><br><strong>Standort, Standort, Standort</strong><br>Es ist wichtig, einen geeigneten Standort zu wählen, der idealerweise in der Nähe einer ausreichend großen Wasserquelle liegt, die viel <a href=\"handbook://block-tallplant-coopersreed-land-normal-free\">Schilf</a> um sich herum hat. Wenn möglich, sammeln Sie unterwegs etwas Nahrung, <a href=\"handbook://item-stick\">Stöcke</a> und <a href=\"handbook://item-stone-granite\">Granitstein</a>.<br><br><strong>Grundlagen</strong><br> Obwohl Stöcke, Steine und Nahrung ausreichen, um Ihre Trapline (fischen) in Gang zu bringen, werden Sie wahrscheinlich noch ein paar andere Kernzutaten benötigen, um einen vielseitigen primitiven Überlebensansatz zu verfolgen. Erwäge durch <a href=\"handbook://craftinginfo-knapping\">Steinbearbeitung</a> ein Messer herzustellen, um einige <a href=\"handbooksearch://Pfahl\">Pfähle</a> herzustellen (und um Rohrkolben aus Schilf zu ernten). Benutze das Schilf um <a href=\"handbook://item-primitivesurvival:cordage\">Tauwerk</a> herzustellen.<br><br><strong>Fallen</strong><br>Baue einige <a href=\"handbooksearch://Totfalle\">Totfallen</a> und/oder <a href=\"handbook://block-primitivesurvival:snare-set-north\">Schlingen</a> und stelle sie an verschiedenen Orten in der Nähe auf. Diese Fallen sind viel effektiver, wenn sie mit einem Köder versehen sind. Das erreichst du, indem du sie mit einer Art von Nahrung in deinem aktiven Inventarplatz anklickst. Wenn eine Falle ausgelöst wurde, klicke mit der rechten Maustaste auf die Falle, um sie erneut auszulösen, und lege bei Bedarf einen neuen Köder aus. <br><br> Schlingen erfordern etwas mehr Zeit und Mühe bei der Montage, sind aber in der Lage, größere Säugetiere zu fangen als eine Totfalle.<br><br>Du kannst auch Säugetiere fangen und töten, indem du eine Handvoll Stöcke zu einem <a href=\"handbook://item-primitivesurvival:woodspikebundle\">Bündel Holzstacheln</a> anspitzt und diese dann in weichen Boden (idealerweise in eine Grube) steckst. Verwende die gleichen Holzspieße, um eine Tarnabdeckung für deine Grubenfalle zu bauen. Sobald sie fertiggestellt ist, werden Säugetiere aus der Nähe kommen und sie untersuchen und hoffentlich in deine Falle tappen.<br><br>Nachdem du das Formen und Brennen von Ton gemeistert hast, kannst du eine <a href=\"handbooksearch://Stachelplattenform\">Stachelplattenform</a> herstellen. Diese richten noch mehr Schaden als Holzspieße an und können auf jeder Oberfläche platziert werden.<br><br><strong>Fischen</strong><br>Baue mit Stöcken und Tauwerk einen<a href=\"handbook://block-primitivesurvival:fishbasket-north\">Fischkorb</a> und setze ihn ins Wasser, um mit dem Fischen zu beginnen. Du lockst mehr Fische an, wenn du einen Köder im Fischkorb anbringst (genau wie bei Fallen).<br><br> Alternativ kannst du auch einfach Pfähle verwenden um eine <strong>Wehrfalle</strong> zu bauen. Baue dazu einen eingezäunten Bereich im Wasser oder am Rande des Wassers mit einem offenen Wasserblock in der Mitte, und klicke dann schleichend auf die große Seite des Zauns. Der Zaun wird eine M-Form bilden, was bedeutet, dass die Wehrfalle aktiv ist.<br><br> Du hast möglicherweise mehr Glück beim Angeln, wenn du eine <strong>LimbLine</strong> oder <strong>Trotline</strong> (mit Schnur und eventuell Pfählen) einrichtest. Wählen Sie einen geeigneten Block (z. B. einen Baum, einen Erdblock oder einen Pfahl im Boden neben einer Wasserquelle). Für eine Trotline platzierst du einen anderen geeigneten Block direkt auf der anderen Seite des Wassers. Klicke mit Tauwerk im aktiven Inventarplatz den Pfahl/Block an, während du auf das Wasser schaust.<br><br> Als Nächstes musst du einige <a href=\"handbooksearch://Angelhaken\">Angelhaken</a> anfertigen, um sie an der Leine zu befestigen. Wenn sich die Haken in deinem aktiven Inventarfach befinden, klicke auf die Schnur über dem Wasser, um sie zu befestigen. Ziehe schließlich in Erwägung, die Haken mit Ködern zu versehen, um sie effektiver zu machen.<br><br>Eine LimbLine oder Trotline kann sich als effektiver zum Fangen von Fischen erweisen und hat nicht die gleichen Platzbeschränkungen wie ein Angelkorb (Sie brauchen also nicht viel Wasser). Sobald Sie das Formen und Brennen von Ton beherrschen, können Sie Formen für Angelhaken und <a href=\"handbooksearch://Fischköder\">Fischköder</a> aus Metall herstellen. Wenn du einen Köder an deinem Haken befestigst, erhöhst du deine Fang Chance.<br><br><strong>Lebensmittel</strong><br><br>Koche deinen Fisch auf dem Feuer, um etwas dringend benötigtes Eiweiß zu erhalten.  Du kannst Fisch auch in Suppen- und Eintopfrezepten anstelle von Fleisch verwenden. Wenn du den Fisch zu <a href=\"handbooksearch://Fischfilet\">Fischfilet</a> verarbeitest, kannst du ihn besser Kochen oder aufbewahren.<br><br>Wenn du dich umsiehst oder unter Ästen und Steinen nachsiehst, kannst du vielleicht einige <a href=\"handbook://item-primitivesurvival:earthworm\">Regenwürmer</a> einfangen (beim schleichen klicken) und sie dann für eine Vielzahl von Dingen verwenden.  Esse sie für einen schnellen Proteinschub oder als Köder für Angeln bzw. Fischkörbe. Lege Sie (beim schleichen klicken) auf fruchtbaren Boden, um deinen Garten zu lüften und düngen. Oder lege sie in ein Loch mit fruchtbarem Boden um <a href=\"handbook://item-primitivesurvival:earthwormcastings\">Wurmkot</a> zu erzeugen, der dann als Dünger verwendet werden kann.<br><br>Wenn du rotes Fleisch oder Buschfleisch hast, schneide es auf, um <a href=\"handbook://item-primitivesurvival:jerky-redmeat-raw\">rote Fleischstreifen (roh)</a> oder <a href=\"handbook://item-primitivesurvival:jerky-bushmeat-raw\">Buschfleischstreifen (roh)</a> zu bekommen. Du musst es immer noch reifen lassen, bevor du es essen kannst (oder du kannst es kochen, wenn du ungeduldig wirst).<br><br><strong>Anderes</strong><br><br>Wenn du mit einem <a href=\"handbooksearch://Fell\">Fell</a> in der Hand auf den Boden klickst, kannst du deine bescheidene Behausung aufpeppen. <br><br>Da du bereits erfolgreich eine Trotline platziert hast, weißt du genug um eine <a href=\"handbook://item-primitivesurvival:monkeybridge\">Affenbrücke</a> zu bauen. Damit kannst du mit Leichtigkeit große Schluchten oder Seen überqueren.  Der einzige wirkliche Unterschied ist, dass die beiden Endpunkte große Blöcke (zwei hoch) oder Bäume sein müssen. <br><br>Du kannst auch einen Metallgriff schmieden und dir zusammen mit Metallplatten einen <a href=\"handbooksearch://Metall-Eimer\">Metall-Eimer</a> bauen. Dieser Eimer kann für die gleichen Dinge wie ein Holzeimer, aber auch zum Bewegen von Lava verwendet werden. <br><br>Muscheln und andere Überraschungen (<strong>Dinge, deren Namen nicht genannt werden sollen</strong>) können gelegentlich den Weg in deine Fischkörbe und Wehrfallen finden. <br><br>",
   "item-cordage": "Tauwerk",
@@ -31,7 +31,7 @@
   "item-fishinghook-bone": "Angelhaken (Knochen)",
 
   "itemdesc-fishinghook-*": "Befestige dies an deiner Limbline oder Trotline.",
- 
+
   "block-fishbasket*": "Fisch Fangkorb",
   "blockdesc-fishbasket*": "Plaziere ihn im Wasser (Mit offenem Wasser rund herum), um etwas zu Fangen.",
   "blockdesc-fishbasket-catch": "Da ist was in deinem, Fangkorb.",
@@ -129,7 +129,7 @@
   "item-fishinglure-zinc": "Fischköder (Zink)",
   "item-fishinglure-molybdochalkos": "Fischköder (Molybdochalkos)",
   "itemdesc-fishinglure-*": "Füge dies zu deinem Haken hinzu, um die Chancen zu erhöhen, etwas zu fangen.",
- 
+
   "item-metalfishinghook-bismuth": "Angelhaken (Wismut)",
   "item-metalfishinghook-bismuthbronze": "Angelhaken (Wismutbronze)",
   "item-metalfishinghook-blackbronze": "Angelhaken (Schwarzbronze)",
@@ -143,7 +143,7 @@
   "item-metalfishinghook-zinc": "Angelhaken (Zink)",
   "item-metalfishinghook-molybdochalkos": "Angelhaken (Molybdochalkos)",
   "itemdesc-metalfishinghook-*": "Befestige dies an deiner Limbline oder Trotline.",
- 
+
   "block-spikeplate-bismuth": "Stachelplatte (Wismut)",
   "block-spikeplate-bismuthbronze": "Stachelplatte (Wismutbronze)",
   "block-spikeplate-blackbronze": "Stachelplatte (Schwarzbronze)",
@@ -157,7 +157,7 @@
   "block-spikeplate-zinc": "Stachelplatte (Zink)",
   "block-spikeplate-molybdochalkos": "Stachelplatte (Molybdochalkos)",
   "blockdesc-spikeplate-*": "Verursacht schweren Schaden an Wesen die darauf fallen oder drüber laufen.",
- 
+
   "block-woodspikes": "Holzstacheln",
   "blockdesc-woodspikes": "Verursacht Schaden an Wesen die darauf gehen oder fallen.",
   "block-handbooktext-woodspikes": "Dieses Ding ist gefährlich.",
@@ -815,10 +815,10 @@
   "block-support-wood-main-*": "Pipe Support (Wood)",
   "block-support-bamboo-main-*": "Pipe Support (Bamboo)",
   "blockdesc-support-*": "Place on your farmland to hold irrigation pipes",
-  "block-pipe-wood-plain-*": "Wood Pipe (Plain)",
-  "block-pipe-wood-aerated-*": "Wood Pipe (Aerated)",
-  "block-pipe-bamboo-plain-*": "Split Bamboo Pipe (Plain)",
-  "block-pipe-bamboo-aerated-*": "Split Bamboo Pipe (Aerated)",
+  "block-pipe-wood-plain": "Wood Pipe (Plain)",
+  "block-pipe-wood-aerated": "Wood Pipe (Aerated)",
+  "block-pipe-bamboo-plain": "Split Bamboo Pipe (Plain)",
+  "block-pipe-bamboo-aerated": "Split Bamboo Pipe (Aerated)",
   "blockdesc-pipe-*": "Used to transport water and irrigate farmland",
   "block-irrigationvessel-*": "Irrigation Vessel",
   "blockdesc-irrigationvessel-*": "Use instead of water blocks for better farmland irrigation.",

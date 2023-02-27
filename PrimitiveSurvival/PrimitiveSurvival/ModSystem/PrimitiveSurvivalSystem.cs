@@ -158,10 +158,10 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockClass("blockskullofthedead", typeof(BlockSkullOfTheDead));
             api.RegisterBlockClass("blockbombfuse", typeof(BlockBombFuse));
             api.RegisterBlockClass("blocksupport", typeof(BlockSupport));
-            api.RegisterBlockClass("blockpipe", typeof(BlockPipe));
             api.RegisterBlockClass("blockirrigationvessel", typeof(BlockIrrigationVessel));
             api.RegisterBlockClass("blocksmoker", typeof(BlockSmoker));
             api.RegisterBlockClass("blockfurrowedland", typeof(BlockFurrowedLand));
+            api.RegisterBlockClass("blockpipe", typeof(BlockPipe));
 
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));
             api.RegisterItemClass("itemfuse", typeof(ItemFuse));
@@ -190,7 +190,7 @@ namespace PrimitiveSurvival.ModSystem
             this.sapi = api;
 
             // Load/create common config file in ..\VintageStoryData\ModConfig\primitivesurvival.json
-            var cfgFileName = this.thisModID + ".json";
+            var cfgFileName = this.thisModID + "118.json";
             try
             {
                 ModConfig fromDisk;

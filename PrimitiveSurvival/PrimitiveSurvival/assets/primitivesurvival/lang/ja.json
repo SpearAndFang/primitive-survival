@@ -4,7 +4,7 @@
   // Translated By: Macoto Hino
   // Machine translation using PCOT and DeepL
 
-  "game:tabname-primitive": "Primitive",
+  "game:tabname-primitive": "Primitive Survival",
   "game:ps-quickstart-title": "Primitive Survival(原始的な生存術):クイックスタートガイド",
   "game:ps-quickstart-text": "<strong>Primitive Survival(原始的な生存術):クイックスタートガイド</strong><br><i>ステップ1：生き残る。ステップ2：繁栄する！</i><br><br>このMODの更新バージョンと追加のドキュメントは、<a href=\"https://mods.vintagestory.at/primitivesurvival\">ここ</a>にあります。<br><br><strong>イントロダクション</strong><br>このMODは、狩猟や畜産といった活動のやや現実的な代替となることを意図していますが、それらのアプローチを非常にうまく補完するものです。<br><br>原始時代のサバイバリストとして成功するには、高カロリーのタンパク質（哺乳類が提供する他の必需品と共に）を得る為に、以下に述べる様々な戦術を駆使しなければならないでしょう。<br><br><strong>場所選びが重要</strong><br>拠点には<a href=\"handbook://block-tallplant-coopersreed-land-normal-free\">葦</a>がたくさん生えている水源に近い場所を選ぶことが大切です。可能であれば、途中で食べ物、<a href=\"handbook://item-stick\">棒</a>、硬い<a href=\"handbook://item-stone-granite\">石</a>などを集めておくとよいでしょう。<br><br><strong>必需品</strong><br>トレッキングを始めるには、棒と石と食料があれば十分ですが、多方面から原始的なサバイバルに取り組むには、他にもいくつかの核となる材料が必要でしょう。<a href=\"handbook://craftinginfo-knapping\">ナッピング</a>してナイフを作り、<a href=\"handbook://block-primitivesurvival:stake-empty\">杭</a>を作ることも考えてみましょう（葦からガマを収穫することも出来ます）。 ガマで<a href=\"handbook://item-primitivesurvival:cordage\">縄</a>を作ろう。<br><br><strong>罠を仕掛ける</strong><br><a href=\"handbooksearch://落とし罠\">落とし罠</a>や<a href=\"handbook://block-primitivesurvival:snare-set-north\">杭</a>をいくつか作り、近くの色々な場所に設置します。罠は、餌をつけるとより効果的です。インベントリスロットに何かの餌がある状態で、罠をクリックすることで取り付けます。罠に掛かった場合、右クリックで罠を再設置し、必要に応じて餌を撒いて下さい。<br><br>杭は、組み立てに少し手間が掛かりますが、落とし罠よりも大型の哺乳類を捕獲することが出来ます。<br><br>また、棒を削って<a href=\"handbook://item-primitivesurvival:woodspikebundle\">木の棘束</a>を作り、柔らかい地面（理想的には穴の中）に押し込めば、哺乳類を捕らえてる事が出来ます。同じく木の棘を使って、落とし穴のカモフラージュ・カバーを作ります。完成すると、近くの哺乳類が寄って来てくれます（上手くいけば罠にかかるかもしれません）。  <br><br>粘土の成形と鍛治をマスターしたら、木の棘よりさらにダメージが大きく、どんな場所にも設置出来る<a href=\"handbooksearch://針のむしろ\">針のむしろ</a>の鋳型を作ることが出来ます。<br><br><strong>魚を獲る</strong><br>棒や縄を使って<a href=\"handbook://block-primitivesurvival:fishbasket-north\">魚籠</a>を作り、水中に置いて魚獲りを始めます。魚籠に餌（罠の餌と同じ）をつけると、より多くの魚が寄ってきます。<br><br>また、シンプルに杭を使って<strong>囲み罠</strong>を作ることも出来ます。水中や水際に柵を作り、その真ん中に水の空間を作り、その柵で囲まれた空間（杭）の向こう側を右クリックします。杭がM字型になり、囲み罠が出来た事が分かります。<br><br><strong>リムライン</strong>や<strong>トロットライン</strong>（縄や杭を使用）を設置すると、効率的に魚獲りが出来るかもしれません。適当なブロック（木、土の塊、水源地の横の地 面に杭を打つなど）を選び、トロットラインの場合は、水面を挟んで別の適切なブロックを置きます。次に、インベントリスロットに縄を入れて、水辺に面した杭やブロックを1つ選び、クリックして縄を取り付けます。<br><br>次に、ラインに取り付ける<a href=\"handbooksearch://釣り針\">釣り針</a>をいくつか作る為に、<a href=\"handbook://item-primitivesurvival:fishinghook-bone\">骨</a>から削り出す必要があります。釣り針をインベントリスロットに入れた状態で、水面上の釣り糸をクリックして釣り針を取り付けます。最後に、釣り針に餌（罠のように）をつけるとより効果的です。<br><br>また、魚籠のようなスペース的な制約もない（だから水もあまり必要ない）ので、リムラインやトロットラインの方がより効果的に魚を捕らえることが出来るかもしれません。粘土の成形と鍛治をマスターしたら、金属製の釣り針や釣り針用<a href=\"handbooksearch://ルアー\">ルアー</a>の鋳型を作ることが出来ます。釣り針にルアーをつけて、釣れる確率を上げましょう。<br><br><strong>食べ物</strong><br><br>魚を火で炙り、必要なタンパク質を摂取しましょう。また、スープやシチューのレシピに、肉の代わりに魚を加えてもよいでしょう。魚を<a href=\"handbook://item-primitivesurvival:fishfillet-raw\">切り身</a>にすると、調理や保存がしやすくなります。<br><br>枝や石の下を探して、ミミズを捕まえて、色々なことに利用出来るかもしれません。 ミミズを食べてタンパク質を摂取したり、釣り針や魚籠の餌にしたり、肥沃な土の上に（しゃがんでクリックで）置いて、置いて耕してもらったり、肥沃な土の穴の中に入れて<a href=\"handbook://item-primitivesurvival:earthwormcastings\">ミミズのフン</a>を作り、肥料として使うことも出来ます。<br><br>レッドミートやブッシュミートがあれば、それをカットして<a href=\"handbook://item-primitivesurvival:jerky-redmeat-raw\">生のレッドミートジャーキー</a>や<a href=\"handbook://item-primitivesurvival:jerky-bushmeat-raw\">ブッシュミートジャーキ</a>を作ってみましょう。それでも、食べる前に熟成するのを待つ必要があります（せっかちな人は調理してもいいでしょう）。<br><br><strong>その他</strong><br><br><a href=\"handbooksearch://毛皮 (\">毛皮</a>を手に持ち、地面をクリックすると毛皮が設置されて、住まいを華やかにします。<br><br>トロットラインの配置に成功した人は、大きな谷や湖を簡単に渡る為の<a href=\"handbook://item-primitivesurvival:monkeybridge\">モンキーブリッジ</a>を自分で作ることが出来ます。唯一の違いは、両端が大きなブロック（2段重ね）か木である必要があります。<br><br>また、金属の取っ手を鍛造して、金属板と一緒に<a href=\"handbooksearch://金属製のバケツ\">金属製のバケツ</a>を作ることも出来ます。 このバケツは木のバケツと同じように使えますが、溶岩を移動させるのにも使えます。<br><br>貝殻やその他のサプライズ(<strong>名前を言ってはいけないもの</strong>)が魚籠や囲い罠に入り込むことがあります。<br><br>",
 
@@ -37,7 +37,7 @@
   "item-fishinghook-bone": "釣り針(骨)",
 
   "itemdesc-fishinghook-*": "これをリムラインやトロットラインに取り付けて下さい。",
- 
+
   "block-fishbasket*": "魚籠",
   "blockdesc-fishbasket*": "これを水中（周りは何もない水）に置くと、何かが釣れる。",
   "blockdesc-fishbasket-catch": "籠の中に何か入っています。",
@@ -135,7 +135,7 @@
   "item-fishinglure-zinc": "釣り用ルアー(亜鉛)",
   "item-fishinglure-molybdochalkos": "釣り用ルアー(モリブドカルコス)",
   "itemdesc-fishinglure-*": "これを釣り針につけると、釣れる確率が上がります。",
- 
+
   "item-metalfishinghook-bismuth": "釣り針(ビスマス)",
   "item-metalfishinghook-bismuthbronze": "釣り針(ビスマス青銅)",
   "item-metalfishinghook-blackbronze": "釣り針(黒青銅)",
@@ -163,7 +163,7 @@
   "block-spikeplate-zinc": "針のむしろ(亜鉛)",
   "block-spikeplate-molybdochalkos": "針のむしろ(モリブドカルコス)",
   "blockdesc-spikeplate-*": "その上を歩いたり、転んだりすると重大な損傷を受ける。",
- 
+
   "block-woodspikes": "木の棘",
   "blockdesc-woodspikes": "その上を歩いたり、転んだりすると損害を受ける。",
   "block-woodsupportspikes-*": "穴を隠す",
@@ -820,10 +820,10 @@
   "block-support-wood-main-*": "パイプサポート(木)",
   "block-support-bamboo-main-*": "パイプサポート(竹)",
   "blockdesc-support-*": "農地に灌漑用パイプを設置する際に使用します。",
-  "block-pipe-wood-plain-*": "木のパイプ(穴無し)",
-  "block-pipe-wood-aerated-*": "木のパイプ(穴有り)",
-  "block-pipe-bamboo-plain-*": "竹の分岐パイプ(穴無し)",
-  "block-pipe-bamboo-aerated-*": "竹の分岐パイプ(穴有り)",
+  "block-pipe-wood-plain": "木のパイプ(穴無し)",
+  "block-pipe-wood-aerated": "木のパイプ(穴有り)",
+  "block-pipe-bamboo-plain": "竹の分岐パイプ(穴無し)",
+  "block-pipe-bamboo-aerated": "竹の分岐パイプ(穴有り)",
   "blockdesc-pipe-*": "水の運搬や農地の灌漑に使用します。",
   "block-irrigationvessel-*": "灌漑用容器",
   "blockdesc-irrigationvessel-*": "水ブロックの代わりに使用することで、より良い農地の灌漑が可能になります。",
@@ -918,15 +918,14 @@
   "ingameerror-debris": "まず、ゴミを取り除いて！",
   "blockhelp-furrowedland-removedebris": "ゴミの除去",
 
-
-  "block-fishmount-bass-*": "Small Bass (Mounted)",
-  "block-fishmount-trout-*": "Trout (Mounted)",
-  "block-fishmount-perch-*": "Perch (Mounted)",
-  "block-fishmount-salmon-*": "Salmon (Mounted)",
-  "block-fishmount-carp-*": "Carp (Mounted)",
-  "block-fishmount-pike-*": "Pike (Mounted)",
-  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
-  "block-fishmount-catfish-*": "Catfish (Mounted)",
-  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
-  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
+  "block-fishmount-bass-": "小さなバス(飾り)",
+  "block-fishmount-trout-": "マス(飾り)",
+  "block-fishmount-perch-": "スズキ(飾り)",
+  "block-fishmount-salmon-": "サケ(飾り)",
+  "block-fishmount-carp-": "コイ(飾り)",
+  "block-fishmount-pike-": "パイク(飾り)",
+  "block-fishmount-arcticchar-": "イワナ(飾り)",
+  "block-fishmount-catfish-": "ナマズ(飾り)",
+  "block-fishmount-bluegill-": "ブルーギル(飾り)",
+  "block-fishmount-mutant-": "突然変異した魚(飾り)"
 }

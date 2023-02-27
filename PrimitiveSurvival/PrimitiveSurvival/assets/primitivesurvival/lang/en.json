@@ -1,5 +1,5 @@
 {
-  "game:tabname-primitive": "Primitive",
+  "game:tabname-primitive": "Primitive Survival",
   "game:ps-quickstart-title": "Primitive Survival: Quick Start Guide",
   "game:ps-quickstart-text": "<strong>Primitive Survival: Quick Start Guide</strong><br><i>Step one: Survive.  Step two: Thrive!</i><br><br>Updated versions of this mod and additional documentation can be found <a href=\"https://mods.vintagestory.at/primitivesurvival\">here</a>.<br><br><strong>Introduction</strong><br>This mod is intended to be a somewhat realistic alternative to activities such as hunting and animal husbandry, although it will complement those approaches quite nicely.<br><br>To be a successful primitve survivalist, you'll have to leverage a variety of the tactics described below in order to acquire much sought after high calorie proteins (along with the other necessities that mammals provide).<br><br><strong>Location, Location, Location</strong><br>It's important to choose an appropriate location to call home, ideally near a decent size water source that has plenty of <a href=\"handbook://block-tallplant-coopersreed-land-normal-free\">reeds</a> around. If possible, collect some food, <a href=\"handbook://item-stick\">sticks</a> and hard <a href=\"handbook://item-stone-granite\">stones</a> along the way.<br><br><strong>Essentials</strong><br>Although sticks, stones, and food are enough to get your trapline started, you are probably going to want a few other core ingredients in order to take a multi-pronged primitive survival approach.  Consider <a href=\"handbook://craftinginfo-knapping\">knapping</a> a knife to make some <a href=\"handbook://block-primitivesurvival:stake-empty\">stakes</a> (and to harvest cattails from reeds).  Use the cattails to make some <a href=\"handbook://item-primitivesurvival:cordage\">cordage</a>.<br><br><strong>Trapping</strong><br>Build some <a href=\"handbooksearch://Deadfall\">deadfalls</a> and/or <a href=\"handbook://block-primitivesurvival:snare-set-north\">snares</a> and set them up at various locations nearby.  These traps are much more effective when baited, which can be done by clicking on them with some sort of food in your active inventory slot.  If a trap has been tripped, sneak-right click to set it again, and re-bait it as required.<br><br>Snares require a bit more time and effort to assemble, but are capable of catching larger mammals than a deadfall.<br><br>You can also trap and kill mammals by sharpening a handful of sticks to make a <a href=\"handbook://item-primitivesurvival:woodspikebundle\">bundle of wood spikes</a>, then push them into soft ground (ideally in a pit).  Use these same wood spikes to build a camouflage cover for your pit trap.  Once completed, nearby mammals will come and investigate (and hopefully fall into your trap).  <br><br>After you've mastered clay forming and smelting, you can make a mold for a <a href=\"handbooksearch://Bed-O-Nails\">bed-o-nails</a> which does even more damage than wood spikes and can be placed on any suface.<br><br><strong>Fishing</strong><br>Use sticks and cordage to build <a href=\"handbook://block-primitivesurvival:fishbasket-north\">fish baskets</a> and place them in the water to start fishing.  You will attract more fish if you bait your fish basket (just like baiting a trap).<br><br>Alternatively, simply use stakes and make a <strong>weir trap</strong>. To do so, use stakes to build a fenced in area in the water or at the edge of the water with an open block of water in the middle of it, then right click on the far side of that fenced in area (the stake).  The stakes will form an M shape, meaning that the weir trap is active.<br><br>You may have better luck fishing if you set up a <strong>limb line</strong> or <strong>trotline</strong> (using cordage, and perhaps stakes).  Choose any suitable block (like a tree, block of dirt, or place a stake in the ground next to a water source). For a trotline, place another suitable block directly across the water from it.  Then, with cordage in your active inventory slot, target one stake/block while facing the water and click to attach your cordage.<br><br>Next, you'll need to knap some <a href=\"handbooksearch://Fishing Hook\">fishing hooks</a> to attach to your line, or carve one out of <a href=\"handbook://item-primitivesurvival:fishinghook-bone\">bone</a>. With hooks in your active inventory slot, click on the line above the water to attach them.  Finally, consider baiting the hooks (just like traps) to make them more effective.<br><br>A limb line or trotline may prove to be more effective for catching fish and it doesn't have the same space restrictions as a fishing basket (so you won't need much water).  Once you've mastered clayforming and smelting you can make molds for metal fishing hooks and <a href=\"handbooksearch://Fishing Lure\">fishing lures</a>. Attach a lure to your hook to improve your odds of catching fish.<br><br><strong>Foodstuffs</strong><br><br>Cook your fish on a fire to get some much needed protein.  You can also add fish to soup and stew recipes in place of meat.  <a href=\"handbook://item-primitivesurvival:fishfillet-raw\">Fillet</a> your fish for easier cooking and storage.<br><br>If you search around or look under branches and stones, you might be able to capture (sneak click) some <a href=\"handbook://item-primitivesurvival:earthworm\">earthworms</a> and then use them for a variety of things.  Eat them for a quick protein boost, bait your hooks or fish baskets with them, place (sneak click) them on fertile soil to aerate and fertilize your garden, or place them in a hole of fertile soil to create <a href=\"handbook://item-primitivesurvival:earthwormcastings\">worm castings</a> which can then be used as fertilizer.<br><br>If you've got some red meat or bushmeat, cut it up to make to make <a href=\"handbook://item-primitivesurvival:jerky-redmeat-raw\">raw redmeat jerky</a> or <a href=\"handbook://item-primitivesurvival:jerky-bushmeat-raw\">raw bushmeat jerky</a>.  You'll still have to wait for it to cure before you can eat it (or you can cook it if you're growing impatient).<br><br><strong>Other</strong><br><br>With a <a href=\"handbooksearch://pelt (\">pelt</a> in hand, click on the ground to place it down and liven up your humble abode.<br><br>If you've successfully placed a trotline, you know enough to build yourself a <a href=\"handbook://item-primitivesurvival:monkeybridge\">monkey bridge</a> to get across large ravines or lakes with ease.  The only real difference is that the two end points need to be large blocks (stacked two high) or trees.<br><br>You can also smith a metal handle, and along with metal plates make yourself a <a href=\"handbooksearch://metal bucket\">metal bucket</a>.  This bucket can be used for many of the same things as a wooden bucket, but can also be used to move lava.<br><br>Sea shells and other suprises (<strong>the things that shall not be named</strong>) may occasionally find their way into your fish baskets and weir traps.<br><br>",
   "item-cordage": "Cordage",
@@ -31,7 +31,7 @@
   "item-fishinghook-bone": "Fishing Hook (Bone)",
 
   "itemdesc-fishinghook-*": "Attach this to a limb line or your trotline.",
- 
+
   "block-fishbasket*": "Fish Basket",
   "blockdesc-fishbasket*": "Place this in the water (with open water all around it) to catch something.",
   "blockdesc-fishbasket-catch": "There's something in your basket.",
@@ -129,7 +129,7 @@
   "item-fishinglure-zinc": "Fishing Lure (Zinc)",
   "item-fishinglure-molybdochalkos": "Fishing Lure (Molybdochalkos)",
   "itemdesc-fishinglure-*": "Add this to your hook to increase your chances of catching something.",
- 
+
   "item-metalfishinghook-bismuth": "Fishing Hook (Bismuth)",
   "item-metalfishinghook-bismuthbronze": "Fishing Hook (Bismuth Bronze)",
   "item-metalfishinghook-blackbronze": "Fishing Hook (Black Bronze)",
@@ -143,7 +143,7 @@
   "item-metalfishinghook-zinc": "Fishing Hook (Zinc)",
   "item-metalfishinghook-molybdochalkos": "Fishing Hook (Molybdochalkos)",
   "itemdesc-metalfishinghook-*": "Attach this to a limb line or your trotline.",
- 
+
   "block-spikeplate-bismuth": "Bed-O-Nails (Bismuth)",
   "block-spikeplate-bismuthbronze": "Bed-O-Nails (Bismuth Bronze)",
   "block-spikeplate-blackbronze": "Bed-O-Nails (Black Bronze)",
@@ -157,7 +157,7 @@
   "block-spikeplate-zinc": "Bed-O-Nails (Zinc)",
   "block-spikeplate-molybdochalkos": "Bed-O-Nails (Molybdochalkos)",
   "blockdesc-spikeplate-*": "Severely damages entities that walk or fall on it.",
- 
+
   "block-woodspikes": "Wood Spikes",
   "blockdesc-woodspikes": "Damages entities that walk or fall on them.",
   "block-woodsupportspikes-*": "Conceal Your Pit",
@@ -814,10 +814,12 @@
   "block-support-wood-main-*": "Pipe Support (Wood)",
   "block-support-bamboo-main-*": "Pipe Support (Bamboo)",
   "blockdesc-support-*": "Place on your farmland to hold irrigation pipes",
-  "block-pipe-wood-plain-*": "Wood Pipe (Plain)",
-  "block-pipe-wood-aerated-*": "Wood Pipe (Aerated)",
-  "block-pipe-bamboo-plain-*": "Split Bamboo Pipe (Plain)",
-  "block-pipe-bamboo-aerated-*": "Split Bamboo Pipe (Aerated)",
+
+  "block-pipe-wood-plain": "Wood Pipe (Plain)",
+  "block-pipe-wood-aerated": "Wood Pipe (Aerated)",
+  "block-pipe-bamboo-plain": "Split Bamboo Pipe (Plain)",
+  "block-pipe-bamboo-aerated": "Split Bamboo Pipe (Aerated)",
+
   "blockdesc-pipe-*": "Used to transport water and irrigate farmland",
   "block-irrigationvessel-*": "Irrigation Vessel",
   "blockdesc-irrigationvessel-*": "Use instead of water blocks for better farmland irrigation.",

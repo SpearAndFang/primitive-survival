@@ -5,14 +5,28 @@
     "canChisel": true,
     "chiselShapeFromCollisionBox": true,
     "handbook": {
-      "groupBy": [ "betterplankstairs-*" ]
+      "groupBy": ["betterplankstairs-*"]
     },
-    "partialAttachable": true,
+    "partialAttachable": true
   },
   "variantgroups": [
     {
       "code": "wood",
-      "states": [ "aged", "birch", "oak", "maple", "pine", "acacia", "kapok", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart" ]
+      "states": [
+        "aged",
+        "birch",
+        "oak",
+        "maple",
+        "pine",
+        "acacia",
+        "kapok",
+        "baldcypress",
+        "larch",
+        "redwood",
+        "ebony",
+        "walnut",
+        "purpleheart"
+      ]
     },
     {
       "code": "type",
@@ -428,7 +442,7 @@
   },
   "blockmaterial": "Wood",
   "textures": {
-    "snowcover": { "base": "game:block/snow/normal1" },
+    "snowcover": { "base": "game:block/liquid/snow/normal1" },
     "all": { "base": "game:block/wood/planks/{wood}1" }
   },
   "lightAbsorption": 99,

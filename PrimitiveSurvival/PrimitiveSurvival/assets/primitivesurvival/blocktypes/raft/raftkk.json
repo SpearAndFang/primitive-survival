@@ -1,9 +1,9 @@
 {
   "code": "raftkk",
   "class": "blockraft",
+  "liquidSelectable": true,
   "behaviors": [
-    { "name": "RightClickPickupRaft" },
-    { "name": "UnstableFalling" }
+    { "name": "RightClickPickupRaft" }
   ],
   "sidesolid": {
     "all": false
@@ -175,10 +175,10 @@
     }
   },
   "sounds": {
-      "place": "game:block/planks",
-      "hit": "game:block/planks",
-      "break": "game:block/planks",
-      "walk": "game:walk/wood"
+    "place": "game:block/planks",
+    "hit": "game:block/planks",
+    "break": "game:block/planks",
+    "walk": "game:walk/wood"
   },
   "materialDensity": 400
 }   

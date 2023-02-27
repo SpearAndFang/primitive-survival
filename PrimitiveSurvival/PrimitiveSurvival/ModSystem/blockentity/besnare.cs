@@ -11,7 +11,8 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     //using System.Diagnostics;
 
-    public class BESnare : BlockEntityDisplayCase, IAnimalFoodSource
+    // public class BESnare : BlockEntityDisplayCase, IAnimalFoodSource //1.18
+    public class BESnare : BlockEntityDisplayCase, IAnimalFoodSource, ITexPositionSource
     {
 
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
@@ -95,7 +96,7 @@ namespace PrimitiveSurvival.ModSystem
 
 
         public override string InventoryClassName => "snare";
-        //protected InventoryGeneric inventory;
+        protected InventoryGeneric inventory; //1.18
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -103,7 +104,8 @@ namespace PrimitiveSurvival.ModSystem
         public BESnare()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes = new MeshData[this.maxSlots];
         }
 
 

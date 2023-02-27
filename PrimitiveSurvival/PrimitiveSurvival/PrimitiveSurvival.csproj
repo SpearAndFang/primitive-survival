@@ -95,7 +95,6 @@
     <None Remove="assets\primitivesurvival\blocktypes\other\fuse.json" />
     <None Remove="assets\primitivesurvival\blocktypes\raft\raftkk.json" />
     <None Remove="assets\primitivesurvival\blocktypes\raft\raftps.json" />
-    <None Remove="assets\primitivesurvival\blocktypes\wood\pipeinwater.json" />
     <None Remove="assets\primitivesurvival\blocktypes\wood\support.json" />
     <None Remove="assets\primitivesurvival\blocktypes\wood\treehollowplaced.json" />
     <None Remove="assets\primitivesurvival\entities\land\crab-bairdi.json" />

@@ -11,8 +11,8 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
     //using System.Diagnostics;
 
-
-    public class BESmoker : BlockEntityDisplayCase
+    // public class BESmoker : BlockEntityDisplayCase //1.18
+    public class BESmoker : BlockEntityDisplayCase, ITexPositionSource
     {
         static SimpleParticleProperties breakSparks;
         static SimpleParticleProperties smallMetalSparks;
@@ -28,6 +28,8 @@ namespace PrimitiveSurvival.ModSystem
         private double burningUntilTotalDays;
         private double burningStartTotalDays;
         public override string InventoryClassName => "smoker";
+        protected InventoryGeneric inventory; //1.18
+
         public override InventoryBase Inventory => this.inventory;
 
         private AssetLocation doorOpenSound;
@@ -93,7 +95,8 @@ namespace PrimitiveSurvival.ModSystem
         public BESmoker()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes  = new MeshData[this.maxSlots];
         }
 
         public bool IsBurning { get; private set; }

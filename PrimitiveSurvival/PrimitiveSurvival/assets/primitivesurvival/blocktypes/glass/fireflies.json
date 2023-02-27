@@ -11,7 +11,7 @@
   "maxstacksizeByType": {
     "*-empty*": 16,
     "*-baited*": 16,
-    "*": 1
+    "*": 16
   },
   "creativeinventorybytype": {
     "*-empty-*": {

@@ -12,49 +12,57 @@
   "variantgroups": [
     {
       "code": "type",
-      "states": [ "treetop", "mysticlantern", "blueghost", "rover", "fairyring", "candle", "marshimp" ]
+      "states": [
+        "treetop",
+        "mysticlantern",
+        "blueghost",
+        "rover",
+        "fairyring",
+        "candle",
+        "marshimp"
+      ]
     }
   ],
   "attributesbytype": {
     "*-treetop": {
-      "lightHsv": [ 34, 7, 5 ],
+      "lightHsv": [34, 7, 5],
       "strobeFrequency": 2.0,
       "minLightLevel": 1.0
     },
     "*-mysticlantern": {
-      "lightHsv": [ 13, 7, 7 ],
+      "lightHsv": [13, 7, 7],
       "minLightLevel": 1.0
     },
     "*-blueghost": {
-      "lightHsv": [ 43, 7, 9 ],
+      "lightHsv": [43, 7, 9],
       "minLightLevel": 2
     },
     "*-rover": {
-      "lightHsv": [ 17, 7, 5 ],
+      "lightHsv": [17, 7, 5],
       "strobeFrequency": 2.5,
       "minLightLevel": 0.4
     },
     "*-fairyring": {
-      "lightHsv": [ 37, 7, 7 ],
+      "lightHsv": [37, 7, 7],
       "minLightLevel": 1.0
     },
     "*-candle": {
-      "lightHsv": [ 5, 7, 7 ],
+      "lightHsv": [5, 7, 7],
       "strobeFrequency": 4.0,
       "minLightLevel": 2.0
     },
     "*-marshimp": {
-      "lightHsv": [ 3, 7, 6 ],
+      "lightHsv": [3, 7, 6],
       "minLightLevel": 3.0
     },
     "*": {
-      "lightHsv": [ 0, 0, 0 ],
+      "lightHsv": [0, 0, 0],
       "strobeFrequency": 2.0,
       "minLightLevel": 1.0
     }
   },
   "client": {
-    "renderer": "entitygenericshaperenderer",
+    "renderer": "Shape", //"entitygenericshaperenderer",
     "shapebytype": {
       "*-mysticlantern*": {
         "base": "entity/land/firefliesglowing"

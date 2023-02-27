@@ -4,15 +4,30 @@
   "variantgroups": [
     {
       "code": "rock",
-      "states": [ "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite" ]
+      "states": [
+        "andesite",
+        "chalk",
+        "chert",
+        "conglomerate",
+        "limestone",
+        "claystone",
+        "granite",
+        "sandstone",
+        "shale",
+        "basalt",
+        "peridotite",
+        "phyllite",
+        "slate",
+        "bauxite"
+      ]
     },
     {
       "code": "type",
-      "states": [ "normal", "inside", "outside" ]
+      "states": ["normal", "inside", "outside"]
     },
     {
       "code": "updown",
-      "states": [ "up", "down", "sideways" ]
+      "states": ["up", "down", "sideways"]
     },
     {
       "code": "dir",
@@ -29,7 +44,7 @@
     },
     {
       "code": "cover",
-      "states": [ "free", "snow" ]
+      "states": ["free", "snow"]
     }
   ],
   "skipVariants": [
@@ -47,7 +62,7 @@
     "chiselShapeFromCollisionBox": true,
     "partialAttachable": true,
     "handbook": {
-      "groupBy": [ "betterstonebrickstairs-*-up-north-free" ]
+      "groupBy": ["betterstonebrickstairs-*-up-north-free"]
     }
   },
   "creativeinventory": {
@@ -430,7 +445,7 @@
   },
   "blockmaterial": "Stone",
   "textures": {
-    "snowcover": { "base": "game:block/snow/normal1" },
+    "snowcover": { "base": "game:block/liquid/snow/normal1" },
     "all": { "base": "game:block/stone/brick/{rock}*" }
   },
   "replaceable": 160,

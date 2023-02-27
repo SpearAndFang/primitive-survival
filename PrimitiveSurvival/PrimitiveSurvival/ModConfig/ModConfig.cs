@@ -42,10 +42,13 @@ namespace PrimitiveSurvival.ModConfig
         public int ParticulatorMaxParticlesQuantity { get; set; } = 5000;
         public int ParticulatorMaxParticlesSize { get; set; } = 255;
         public bool ParticulatorHideCodeTabs { get; set; } = false;
+        public int PipeUpdateFrequency { get; set; } = 130;
+        public double PipeBlockageChancePercent { get; set; } = 0.02;
+        public double PipeMinMoisture { get; set; } = 0.92;
         public float RaftWaterSpeedModifier { get; set; } = 0.2f;
         public float RaftFlotationModifier { get; set; } = 0.03f;
         public bool ShowModNameInHud { get; set; } = true;
-        public bool ShowModNameInGuis { get; set; } = true;
+        public bool ShowModNameInGuis { get; set; } = false;
         public int SnareBaitStolenPercent { get; set; } = 10;
         public float SnareMaxAnimalHeight { get; set; } = 0.8f;
         public int SnareMaxDamageSet { get; set; } = 12;

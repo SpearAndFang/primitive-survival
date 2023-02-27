@@ -29,19 +29,19 @@
     "onDeathStabilityRecoveryByType": {
       "*": 0.01
     },
-    "lightHsv": [ 1, 4, 1 ],
+    "lightHsv": [1, 4, 1],
     "minLightLevel": 0,
     "strobeFrequency": 1
   },
   "variantgroups": [
     {
       "code": "type",
-      "states": [ "normal" ]
+      "states": ["normal"]
     }
   ],
   "drops": [],
   "client": {
-    "renderer": "entitygenericshaperenderer",
+    "renderer": "Shape", //"entitygenericshaperenderer",
     "pitchStep": false,
     "shapeByType": {
       "*-normal": { "base": "entity/land/livingdead" }
@@ -95,7 +95,7 @@
         "animationSpeed": 0.7,
         "weight": 10,
         "blendMode": "Average",
-        "triggeredBy": { "onControls": [ "dead" ] }
+        "triggeredBy": { "onControls": ["dead"] }
       },
       {
         "code": "idle",
@@ -157,7 +157,7 @@
         "aitasks": [
           {
             "code": "meleeattack",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 3,
             "damage": 30,
             "damageTier": 4,
@@ -173,7 +173,7 @@
           },
           {
             "code": "meleeattack",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 3,
             "damage": 30,
             "damageTier": 4,
@@ -190,7 +190,7 @@
           },
           {
             "code": "seekentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 2.5,
             "mincooldown": 400,
             "maxcooldown": 800,
@@ -202,7 +202,7 @@
           },
           {
             "code": "seekentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 2.5,
             "mincooldown": 400,
             "maxcooldown": 800,
@@ -215,7 +215,7 @@
           },
           {
             "code": "fleeentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 2,
             "movespeed": 0.018,
             "seekingRange": 20,
@@ -232,7 +232,7 @@
           },
           {
             "code": "fleeentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 1.8,
             "movespeed": 0.018,
             "seekingRange": 12,
@@ -244,7 +244,7 @@
           },
           {
             "code": "idle",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 1.5,
             "priorityForCancel": 9,
             "mincooldown": 1000,
@@ -364,7 +364,7 @@
           "avg": 1,
           "var": 0
         },
-        "insideBlockCodes": [ "game:air" ],
+        "insideBlockCodes": ["game:air"],
         "maxY": 0.4
       }
     }

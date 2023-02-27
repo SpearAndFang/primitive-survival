@@ -1,9 +1,9 @@
 {
   "code": "rafttuna",
   "class": "blockraft",
+  "liquidSelectable": true,
   "behaviors": [
-    { "name": "RightClickPickupRaft" },
-    { "name": "UnstableFalling" }
+    { "name": "RightClickPickupRaft" }
   ],
   "sidesolid": {
     "all": false

@@ -5,7 +5,7 @@
     "canChisel": true,
     "chiselShapeFromCollisionBox": true,
     "handbook": {
-      "groupBy": [ "betterclayshinglestairs-*" ]
+      "groupBy": ["betterclayshinglestairs-*"]
     }
   },
   "variantgroups": [
@@ -428,7 +428,7 @@
   "emitSideAo": { "all": true },
   "lightAbsorption": 99,
   "textures": {
-    "snowcover": { "base": "game:block/snow/normal1" },
+    "snowcover": { "base": "game:block/liquid/snow/normal1" },
     "all": { "base": "game:block/clay/shingles/{variant}" }
   },
   "sounds": {

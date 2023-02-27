@@ -11,11 +11,13 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
 
 
-    public class BEDeadfall : BlockEntityDisplayCase, IAnimalFoodSource
+    //public class BEDeadfall : BlockEntityDisplayCase, IAnimalFoodSource //1.18
+    public class BEDeadfall : BlockEntityDisplayCase, IAnimalFoodSource, ITexPositionSource
     {
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
         protected static readonly Random Rnd = new Random();
         private readonly int maxSlots = 1;
+
 
         public ItemSlot BaitSlot => this.inventory[0];
 
@@ -92,7 +94,7 @@ namespace PrimitiveSurvival.ModSystem
 
 
         public override string InventoryClassName => "deadfall";
-        //protected InventoryGeneric inventory;
+        protected InventoryGeneric inventory; //1.18
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -100,7 +102,8 @@ namespace PrimitiveSurvival.ModSystem
         public BEDeadfall()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes = new MeshData[this.maxSlots];
         }
 
 

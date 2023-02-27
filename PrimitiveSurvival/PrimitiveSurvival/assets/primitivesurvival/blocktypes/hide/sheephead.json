@@ -86,7 +86,7 @@
         "base": "game:entity/sheep/sheep-{species}-{type}"
       },
       "plaque": {
-        "base": "game:block/beehive/floor"
+        "base": "game:block/reed/beehive/floor"
       }
     }
   },

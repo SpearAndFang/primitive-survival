@@ -13,8 +13,8 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
 
-
-    public class BEWeirTrap : BlockEntityDisplayCase
+    //public class BEWeirTrap : BlockEntityDisplayCase //1.18
+    public class BEWeirTrap : BlockEntityDisplayCase, ITexPositionSource
     {
 
         private readonly int catchPercent = ModConfig.Loaded.WeirTrapCatchPercent;
@@ -33,7 +33,7 @@ namespace PrimitiveSurvival.ModSystem
         private long particleTick;
 
         public override string InventoryClassName => "weirtrap";
-        //protected InventoryGeneric inventory;
+        protected InventoryGeneric inventory; //1.18
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -41,7 +41,8 @@ namespace PrimitiveSurvival.ModSystem
         public BEWeirTrap()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes  = new MeshData[this.maxSlots];
         }
 
         public ItemSlot Catch1Slot => this.inventory[0];

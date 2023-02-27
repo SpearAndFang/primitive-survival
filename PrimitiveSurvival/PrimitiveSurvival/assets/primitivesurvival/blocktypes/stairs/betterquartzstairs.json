@@ -424,7 +424,7 @@
   },
   "blockmaterial": "Stone",
   "textures": {
-    "snowcover": { "base": "game:block/snow/normal1" },
+    "snowcover": { "base": "game:block/liquid/snow/normal1" },
     "horizontals": { "base": "game:block/stone/quartz/stairs/side" },
     "up": { "base": "game:block/stone/quartz/stairs/top" },
     "down": { "base": "game:block/stone/quartz/stairs/bottom" }

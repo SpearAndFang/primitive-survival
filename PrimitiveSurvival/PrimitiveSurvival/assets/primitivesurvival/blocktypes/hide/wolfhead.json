@@ -74,7 +74,7 @@
         "base": "primitivesurvival:block/hide/wolf/wolf-{species}-{type}"
       },
       "plaque": {
-        "base": "game:block/beehive/floor"
+        "base": "game:block/reed/beehive/floor"
       }
     }
   },

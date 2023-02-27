@@ -8,14 +8,14 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
     using Vintagestory.API.Config;
 
-
-    public class BETemporallectern : BlockEntityDisplayCase
+    //public class BETemporallectern : BlockEntityDisplayCase //1.18
+    public class BETemporallectern : BlockEntityDisplayCase, ITexPositionSource
     {
 
         private readonly int maxSlots = 2;
 
         public override string InventoryClassName => "temporallectern";
-        //protected InventoryGeneric inventory;
+        protected InventoryGeneric inventory; //1.18
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -23,7 +23,8 @@ namespace PrimitiveSurvival.ModSystem
         public BETemporallectern()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots];
+            var meshes  = new MeshData[this.maxSlots];
         }
 
 

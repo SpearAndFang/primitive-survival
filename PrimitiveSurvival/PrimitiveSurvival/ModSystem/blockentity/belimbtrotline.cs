@@ -13,8 +13,8 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
 
-
-    public class BELimbTrotLineLure : BlockEntityDisplayCase
+    //public class BELimbTrotLineLure : BlockEntityDisplayCase //1.18
+    public class BELimbTrotLineLure : BlockEntityDisplayCase, ITexPositionSource
     {
         private readonly int catchPercent = ModConfig.Loaded.LimbTrotlineCatchPercent;
         private readonly int baitedCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedCatchPercent;
@@ -33,7 +33,7 @@ namespace PrimitiveSurvival.ModSystem
         private long particleTick;
 
         public override string InventoryClassName => "limbtrotlinelure";
-        //protected InventoryGeneric inventory;
+        protected InventoryGeneric inventory; //1.18
 
         public override InventoryBase Inventory => this.inventory;
 
@@ -43,7 +43,8 @@ namespace PrimitiveSurvival.ModSystem
         public BELimbTrotLineLure()
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
-            this.meshes = new MeshData[this.maxSlots];
+            //this.meshes = new MeshData[this.maxSlots]; //1.18
+            var meshes  = new MeshData[this.maxSlots];
         }
 
         public ItemSlot HookSlot => this.inventory[0];

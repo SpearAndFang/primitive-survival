@@ -5,7 +5,7 @@
     "inFirePitProps": {
       "transformbytype": {
         "*": {
-          "scale": 0.35,
+          "scale": 0.45,
           "origin": {
             "x": 0.5,
             "y": 0,
@@ -13,13 +13,13 @@
           },
           "translation": {
             "x": 0,
-            "y": 0.2,
+            "y": 0.3,
             "z": 0
           },
           "rotation": {
-            "x": 90,
-            "y": 0,
-            "z": 90
+            "x": -90,
+            "y": 180,
+            "z": 225
           }
         }
       },

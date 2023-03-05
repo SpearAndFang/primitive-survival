@@ -8,6 +8,7 @@ namespace PrimitiveSurvival.ModSystem
 
     public class RightClickPickupRaft : BlockBehavior
     {
+        private AssetLocation pickupSound;
         public RightClickPickupRaft(Block block) : base(block)
         {
         }
@@ -16,6 +17,8 @@ namespace PrimitiveSurvival.ModSystem
         public override void Initialize(JsonObject properties)
         {
             base.Initialize(properties);
+            var strloc = this.block.Attributes?["placeSound"].AsString();
+            this.pickupSound = strloc == null ? null : AssetLocation.Create(strloc, this.block.Code.Domain);
         }
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
@@ -35,6 +38,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         world.BlockAccessor.SetBlock(0, blockSel.Position);
                         world.BlockAccessor.TriggerNeighbourBlockUpdate(blockSel.Position);
+                        world.PlaySoundAt(this.pickupSound ?? this.block.GetSounds(world.BlockAccessor, blockSel.Position).Place, byPlayer, null);
                         handling = EnumHandling.PreventDefault;
                         return true;
                     }

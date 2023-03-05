@@ -72,7 +72,9 @@ namespace PrimitiveSurvival.ModSystem
             {
                 return false;
             }
-
+            var testBlock2 = this.api.World.BlockAccessor.GetBlock(blockSel.Position.DownCopy(), BlockLayersAccess.Default);
+            if (testBlock2.Code.Path.Contains("lakeice"))
+            { return false; } //prevent placing raft on ice because of rendering issues
             placed = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             if (placed)
             {
@@ -96,7 +98,11 @@ namespace PrimitiveSurvival.ModSystem
         public float AdjustYPosition(Block[] chunkExtBlocks, int extIndex3d)
         {
             var nblock = chunkExtBlocks[extIndex3d + TileSideEnum.MoveIndex[TileSideEnum.Down]];
-            return nblock.BlockId == 0 ? -0.1625f : 0f;
+            var boxes = nblock.CollisionBoxes;
+            var boxHeight = 0f;
+            if (boxes != null && boxes.Length > 0)
+            { boxHeight = boxes.Max(c => c.Y2); }
+            return boxHeight < 0.8f ? -0.3f : 0f;
         }
 
         public override void OnJsonTesselation(ref MeshData sourceMesh, ref int[] lightRgbsByCorner, BlockPos pos, Block[] chunkExtBlocks, int extIndex3d)
@@ -106,21 +112,33 @@ namespace PrimitiveSurvival.ModSystem
 
             var below = pos.DownCopy();
             var downSolidBlock = this.api.World.BlockAccessor.GetBlock(below, BlockLayersAccess.Solid);
+
+            //if block below isn't a full block it will shift down
+            var boxes = downSolidBlock.CollisionBoxes;
+            var boxHeight = 0f;
+            if (boxes != null && boxes.Length > 0)
+            { boxHeight = boxes.Max(c => c.Y2); }
+
             var downWaterBlock = this.api.World.BlockAccessor.GetBlock(below, BlockLayersAccess.Fluid);
             int windData = this.VertexFlags.Normal;
-            if (downWaterBlock.Code.Path.Contains("water") && downSolidBlock.Id == 0)
+            if (downWaterBlock.Code.Path.Contains("water") && (downSolidBlock.Id == 0 || boxHeight < 0.8f))
             {
                 windData = this.VertexFlags.Normal | EnumWindBitModeMask.Water | this.VertexFlags.ZOffset;
-                
-                //sourceMesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0.11f, 0, 0);
             }
             for (var i = 0; i < sourceMesh.FlagsCount; i++)
             {
                 sourceMesh.Flags[i] = windData;
             }
-            
+        }
 
 
+        public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
+        {
+            var bottomBlock = world.BlockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
+            if (bottomBlock.Id == 0) //block was broken
+            { world.BlockAccessor.BreakBlock(pos, null); }
+            else
+            { base.OnNeighbourBlockChange(world, pos, neibpos); }
         }
 
 
@@ -139,7 +157,7 @@ namespace PrimitiveSurvival.ModSystem
                         this.lookCount++;
                         if (this.lookCount > 200)
                         {
-                            if (byPlayer.PlayerName == "KineticKnight") //SpearAndFang KineticKnight
+                            if (byPlayer.PlayerName == "KineticKnight") 
                             { newPath = newPath.Replace("raft", "raftkk"); }
                             else
                             {

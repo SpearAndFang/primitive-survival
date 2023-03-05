@@ -32,7 +32,9 @@ namespace PrimitiveSurvival.ModSystem
             var stack = new ItemStack(byEntity.World.GetBlock(new AssetLocation(location)));
             if (!byEntity.TryGiveItemStack(stack))
             { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+            this.World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5, null, false, 16);
             this.Die(); //remove from the ground
+            
             return;
         }
     }

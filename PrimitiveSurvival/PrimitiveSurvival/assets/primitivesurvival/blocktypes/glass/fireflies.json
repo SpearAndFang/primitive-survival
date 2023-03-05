@@ -197,7 +197,7 @@
   "replaceable": 500,
   "resistance": 0.5,
   "sounds": {
-    "place": "game:player/buildhigh",
+    "place": "game:block/planks",
     "break": "game:block/glass",
     "hit": "game:block/glass"
   },

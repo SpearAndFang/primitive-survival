@@ -73,8 +73,19 @@ namespace PrimitiveSurvival.ModSystem
         /// Called when a number of chunks have been generated. For each chunk we first determine if we should place a tree hollow
         /// and if we should we then loop through each block to find a tree. When one is found we place the block.
         /// </summary>
-        private void OnChunkColumnGeneration(IServerChunk[] chunks, int chunkX, int chunkZ, ITreeAttribute chunkgenparams)
+
+
+        //1.17pre.6 look like this
+        //private void OnChunkColumnGeneration(IServerChunk[] chunks, int chunkX, int chunkZ, ITreeAttribute chunkgenparams)
+
+        //1.17pre.7 like this
+        private void OnChunkColumnGeneration(IChunkColumnGenerateRequest request)
         {
+            var chunks = request.Chunks;
+            var chunkX = request.ChunkX;
+            var chunkZ = request.ChunkZ;
+            //END of 1.17pre.7 like this
+
             //Moved from PlaceTreeHollow to hopefully speed things up...a lot
             if (!this.ShouldPlaceHollow())
             { return; }

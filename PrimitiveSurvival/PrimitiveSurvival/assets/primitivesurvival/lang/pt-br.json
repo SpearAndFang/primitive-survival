@@ -912,15 +912,14 @@
   "ingameerror-debris": "Remova os resíduos primeiro!",
   "blockhelp-furrowedland-removedebris": "Remover resíduos",
 
-
-  "block-fishmount-bass-*": "Small Bass (Mounted)",
-  "block-fishmount-trout-*": "Trout (Mounted)",
-  "block-fishmount-perch-*": "Perch (Mounted)",
-  "block-fishmount-salmon-*": "Salmon (Mounted)",
-  "block-fishmount-carp-*": "Carp (Mounted)",
-  "block-fishmount-pike-*": "Pike (Mounted)",
-  "block-fishmount-arcticchar-*": "Arctic Char (Mounted)",
-  "block-fishmount-catfish-*": "Catfish (Mounted)",
-  "block-fishmount-bluegill-*": "Bluegill (Mounted)",
-  "block-fishmount-mutant-*": "Mutated Fish (Mounted)"
+  "block-fishmount-bass-*": "Robalo Pequeno (Troféu de parede)",
+  "block-fishmount-trout-*": "Truta (Troféu de parede)",
+  "block-fishmount-perch-*": "Perca (Troféu de parede)",
+  "block-fishmount-salmon-*": "Salmão (Troféu de parede)",
+  "block-fishmount-carp-*": "Carpa (Troféu de parede)",
+  "block-fishmount-pike-*": "Lúcio (Troféu de parede)",
+  "block-fishmount-arcticchar-*": "Truta-do-Ártico (Troféu de parede)",
+  "block-fishmount-catfish-*": "Bagre (Troféu de parede)",
+  "block-fishmount-bluegill-*": "Perca-Sol (Troféu de parede)",
+  "block-fishmount-mutant-*": "Peixe Mutante (Troféu de parede)"
 }

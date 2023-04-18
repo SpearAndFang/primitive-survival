@@ -19,7 +19,7 @@ namespace PrimitiveSurvival.ModSystem
     {
         public IShaderProgram EntityGenericShaderProgram { get; private set; }
 
-        private readonly string thisModID = "primitivesurvival";
+        private readonly string thisModID = "primitivesurvival118";
         private static Dictionary<IServerChunk, int> fishingChunks;
 
         public static List<string> chunkList;
@@ -64,6 +64,30 @@ namespace PrimitiveSurvival.ModSystem
             this.vrenderer = new VenomOverlayRenderer(api);
             api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
         }
+
+
+        public override void StartPre(ICoreAPI api)
+        {
+            // Load/create common config file in ..\VintageStoryData\ModConfig\thisModID
+            var cfgFileName = this.thisModID + ".json";
+            try
+            {
+                ModConfig fromDisk;
+                if ((fromDisk = api.LoadModConfig<ModConfig>(cfgFileName)) == null)
+                { api.StoreModConfig(ModConfig.Loaded, cfgFileName); }
+                else
+                { ModConfig.Loaded = fromDisk; }
+            }
+            catch
+            {
+                api.StoreModConfig(ModConfig.Loaded, cfgFileName);
+            }
+            //to disable furrowed farm land in case of xskills
+            api.World.Config.SetBool("FurrowedLandEnabled", ModConfig.Loaded.FurrowedLandEnabled);
+            base.StartPre(api);
+        }
+
+
 
         public bool LoadCustomShaders()
         {
@@ -189,20 +213,7 @@ namespace PrimitiveSurvival.ModSystem
             base.StartServerSide(api);
             this.sapi = api;
 
-            // Load/create common config file in ..\VintageStoryData\ModConfig\primitivesurvival.json
-            var cfgFileName = this.thisModID + "118.json";
-            try
-            {
-                ModConfig fromDisk;
-                if ((fromDisk = api.LoadModConfig<ModConfig>(cfgFileName)) == null)
-                { api.StoreModConfig(ModConfig.Loaded, cfgFileName); }
-                else
-                { ModConfig.Loaded = fromDisk; }
-            }
-            catch
-            {
-                api.StoreModConfig(ModConfig.Loaded, cfgFileName);
-            }
+           
 
             api.Event.SaveGameLoaded += this.OnSaveGameLoading;
             api.Event.GameWorldSave += this.OnSaveGameSaving;

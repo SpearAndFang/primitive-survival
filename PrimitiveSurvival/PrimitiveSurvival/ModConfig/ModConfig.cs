@@ -28,7 +28,7 @@ namespace PrimitiveSurvival.ModConfig
         public int FishChunkMaxDepletionPercent { get; set; } = 95;
         public int FurrowedLandUpdateFrequency { get; set; } = 120;
         public double FurrowedLandBlockageChancePercent { get; set; } = 0.05;
-
+        public bool FurrowedLandEnabled { get; set; } = true;
         public double FurrowedLandMinMoistureClose { get; set; } = 0.85;
         public double FurrowedLandMinMoistureFar { get; set; } = 0.6;
 

@@ -142,7 +142,7 @@ namespace PrimitiveSurvival.ModSystem
             ((IServerWorldAccessor)this.Api.World).CreateExplosion(this.Pos, this.BlastType, this.BlastRadius, this.InjureRadius);
         }
 
-        public bool NearToClaimedLand()
+        private bool NearToClaimedLand()
         {
             var rad = (int)Math.Ceiling(this.BlastRadius);
             var exploArea = new Cuboidi(this.Pos.AddCopy(-rad, -rad, -rad), this.Pos.AddCopy(rad, rad, rad));

@@ -12,7 +12,7 @@ namespace PrimitiveSurvival.ModSystem
     //using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
     using System.Diagnostics;
-    using System.Threading;
+    using Vintagestory.API.Util;
 
     //using System.Diagnostics;
 
@@ -32,10 +32,14 @@ namespace PrimitiveSurvival.ModSystem
         //attributes
         //private readonly string renderSides = "nsew";
         //the shape file(s)
+        private readonly string endShape = "block/pipe/wood/end";
         private readonly string sideShape = "block/pipe/wood/side";
+
         //tree attributes
         private string currentConnections = ""; //i.e. "" for none, or  "nsew" for all
+        private string currentEndpoints = "";
 
+        //tickers
         private long particleTick;
         private long pipeTick;
 
@@ -46,7 +50,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
             //this.meshes = new MeshData[this.maxSlots]; //1.18
-            var meshes  = new MeshData[this.maxSlots];
+            var meshes = new MeshData[this.maxSlots];
         }
 
         //inventory setup
@@ -98,7 +102,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        private void GenerateWaterParticles(BlockPos pos, IWorldAccessor world, string dir)
+        private void GenerateWaterParticles(BlockPos pos, string dir)
         {
             float minQuantity = 1;
             float maxQuantity = 1;
@@ -163,7 +167,7 @@ namespace PrimitiveSurvival.ModSystem
             waterParticles.ShouldDieInAir = false;
             waterParticles.Bounciness = 0.25f;
             waterParticles.SelfPropelled = true;
-            world.SpawnParticles(waterParticles);
+            this.Api.World.SpawnParticles(waterParticles);
         }
 
         private bool isSupported(BlockPos pos, string dir)
@@ -182,7 +186,7 @@ namespace PrimitiveSurvival.ModSystem
                 else
                 { pos = pos.WestCopy(); }
 
-                if (Api.World.BlockAccessor.GetBlockEntity(pos) is BESupport be)
+                if (this.Api.World.BlockAccessor.GetBlockEntity(pos) is BESupport be)
                 {
                     if (be.PipeStack == null)
                     { supported = false; }
@@ -203,52 +207,217 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+        public void BreakIfUnsupported(BlockPos pos)
+        {
+            //check for enough support
+            //as in an actual support 4 blocks in either direction
+            //with a pipe connection along the way
+            //the block we are checking
+            var block = this.Api.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default) as BlockSupport;
+            var dir = block.LastCodePart();
+            var type = block.FirstCodePart(1);
+            var rSupported = true;
+            var lSupported = true;
+            if (type == "none")
+            {
+                if (dir == "ew")
+                {
+                    rSupported = this.isSupported(pos, "n");
+                    lSupported = this.isSupported(pos, "s");
+                }
+                else  //ns
+                {
+                    rSupported = this.isSupported(pos, "e");
+                    lSupported = this.isSupported(pos, "w");
+                }
+            }
+            if (!rSupported && !lSupported)
+            {
+                if (this.Api.World.BlockAccessor.GetBlockEntity(pos) is BESupport be)
+                {
+                    be.OnBreak();
+                    //this is the actual block?, not the placeholder
+                    this.Api.World.BlockAccessor.SetBlock(0, pos);
+                    this.Api.World.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
+
+                    if (dir == "ns")
+                    {
+                        this.Api.World.BlockAccessor.SetBlock(0, pos.NorthCopy());
+                    }
+                    else
+                    {
+                        this.Api.World.BlockAccessor.SetBlock(0, pos.EastCopy());
+                    }
+                }
+            }
+        }
+
+
+        private void TryWaterFarmland(BlockPos pos, string dir)
+        {
+            /*
+              For each of the two positions, search down until we find a block
+              if the block if farmland, water it
+            */
+            BlockPos neibPos;
+            int maxDistance;
+            //find neighbor
+            if (dir == "ns")
+            {
+                neibPos = pos.NorthCopy();
+                maxDistance = 6; //only check for 6 blocks
+            }
+            else
+            {
+                neibPos = pos.EastCopy();
+                maxDistance = 5; //ew blocks are one lower
+            }
+            BlockPos[] positions = { pos, neibPos };
+            foreach (var position in positions)
+            {
+                var found = false;
+                var distance = 0;
+                var downPos = position.DownCopy();
+                do
+                {
+                    var block = this.Api.World.BlockAccessor.GetBlock(downPos, BlockLayersAccess.Default);
+                    if (block.Id != 0 && block.FirstCodePart() != "support" )
+                    {
+                        found = true;
+                        if (block.Class == "BlockCrop" || block.Class == "BlockTallGrass" || block.Class == "BlockPlant")
+                        {
+                            //might have hit the crop or plant of some kind, go down once more
+                            downPos = downPos.DownCopy();
+                            block = this.Api.World.BlockAccessor.GetBlock(downPos, BlockLayersAccess.Default);
+                        }
+
+                        
+                        if (this.Api.World.BlockAccessor.GetBlockEntity(downPos) is BlockEntityFarmland be)
+                        {
+                            //Debug.WriteLine("watering:" + block.Code.Path);
+                            if (be.MoistureLevel <= 0.99)
+                            {
+                                // add 0.1 to it
+                                be.WaterFarmland(0.1f, false); //no neighbors until nearby watered
+                            }
+                        }
+                        else
+                        {
+                            Debug.WriteLine("IGNORING:" + block.Class);
+                        }
+                    }
+                    distance++;
+                    downPos = downPos.DownCopy();
+                }
+                while (!found && distance < maxDistance);
+
+            }
+        }
+
+
+        private void AdjustWaterFromSourceOrNeib()
+        {
+            //look for barrel or irrigation vessel or water
+            //do I even need supportDir here? ns or ew
+            string[] sourceTypes = { "water-", "barrel", "irrigationvessel-normal" };
+            var dir = this.Block.LastCodePart();
+            //is an endpoint?
+            if (this.currentEndpoints != null)
+            {
+                foreach (var side in dir)
+                {
+                    if (this.currentEndpoints.Contains(side))
+                    {
+                        //Debug.WriteLine("endpoint");
+                        var newStack = new ItemStack(this.Api.World.GetBlock(new AssetLocation("game:water-still-7")), 1);
+                        this.LiquidStack = newStack;
+                        this.MarkDirty();
+                    }
+                }
+            }
+            /*
+
+            var isWaterSource = false;
+            BlockPos[] neibPositions = null;
+            switch (side)
+            {
+                case 'e':
+                {
+                    if (supportDir == "ns")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.WestCopy(), this.Pos.WestCopy().NorthCopy()};
+                    }
+                    break;
+                }
+                case 'w':
+                {
+                    if (supportDir == "ns")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.EastCopy(), this.Pos.EastCopy().NorthCopy()};
+                    }
+                    break;
+                }
+                case 'n':
+                {
+                    if (supportDir == "ew")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.SouthCopy().UpCopy(), this.Pos.SouthCopy().EastCopy().UpCopy()};
+                    }
+                    break;
+                }
+                case 's':
+                {
+                    if (supportDir == "ew")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.NorthCopy().UpCopy(), this.Pos.NorthCopy().EastCopy().UpCopy()};
+                    }
+                    break;
+                }
+                default:
+                { break; }
+            }
+            if (neibPositions != null)
+            {
+                foreach (var neibPos in neibPositions)
+                {
+                    var block = this.Api.World.BlockAccessor.GetBlock(neibPos, BlockLayersAccess.Default);
+                    //Debug.WriteLine(side + ": " + block.Code.Path);
+                    foreach (var sourceType in sourceTypes)
+                    {
+                        if (block.Code.Path.StartsWith(sourceType))
+                        { isWaterSource = true; }
+                    }
+                }
+            }
+            */
+        }
+
+
         public void OnParticleTick(float par)
         {
             if (this.PipeStack != null)
             {
+                this.AdjustWaterFromSourceOrNeib();
+
                 var dir = this.Block.LastCodePart();
-                var type = this.Block.FirstCodePart(1);
-                if (this.PipeStack.Collectible.FirstCodePart(2) == "aerated")
+                if (this.PipeStack.Collectible.FirstCodePart(2) == "aerated" && !this.LiquidSlot.Empty)
                 {
                     var rando = Rnd.Next(3); //overall frequency of drips
                     if (rando == 0)
                     {
-                        this.GenerateWaterParticles(this.Pos, this.Api.World, dir);
-                    }
-                }
+                        this.GenerateWaterParticles(this.Pos, dir);
 
-                //check for enough support
-                //as in an actual support 4 blocks in either direction
-                //with a pipe connection along the way
-
-                //the block we are checking
-                var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockSupport;
-                var rSupported = true;
-                var lSupported = true;
-                if (type == "none")
-                {
-                    if (dir == "ew")
-                    {
-                        rSupported = this.isSupported(this.Pos, "n");
-                        lSupported = this.isSupported(this.Pos, "s");
-                    }
-                    else  //ns
-                    {
-                        rSupported = this.isSupported(this.Pos, "e");
-                        lSupported = this.isSupported(this.Pos, "w");
+                        //
+                        //water farmland here
+                        this.TryWaterFarmland(this.Pos, dir);
+                        //
                     }
                 }
-                if (!rSupported && !lSupported)
-                {
-                    if (this.Api.World.BlockAccessor.GetBlockEntity(this.Pos) is BESupport be)
-                    { be.OnBreak(); } //empty the inventory onto the ground
-                    this.Api.World.BlockAccessor.SetBlock(0, this.Pos);
-                    if (dir == "ns")
-                    { this.Api.World.BlockAccessor.SetBlock(0, this.Pos.NorthCopy()); }
-                    else
-                    { this.Api.World.BlockAccessor.SetBlock(0, this.Pos.EastCopy()); }
-                }
+                this.BreakIfUnsupported(this.Pos);
             }
         }
 
@@ -258,6 +427,7 @@ namespace PrimitiveSurvival.ModSystem
             //see bepipe's OnPipeTick for clues
             //PipeBlockageChancePercent
             //PipeMinMoisture
+
         }
 
 
@@ -358,6 +528,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         //here we need to look around and then set connections accordingly
                         this.currentConnections = "";
+                        this.currentEndpoints = "";
                     }
                     return moved > 0;
                 }
@@ -452,6 +623,7 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             //here we need to look around and then set connections accordingly
                             this.currentConnections = "";
+                            this.currentEndpoints = "";
                         }
                         return moved > 0;
                     }*/
@@ -465,6 +637,12 @@ namespace PrimitiveSurvival.ModSystem
         {
             return this.currentConnections;
         }
+
+        internal string GetEndpoints()
+        {
+            return this.currentEndpoints;
+        }
+
 
         internal bool AddConnection(BlockPos pos, BlockFacing facing)
         {
@@ -483,6 +661,26 @@ namespace PrimitiveSurvival.ModSystem
             if (this.currentConnections.Contains(face))
             {
                 this.currentConnections = this.currentConnections.Replace(face, string.Empty);
+                return true;
+            }
+            return false;
+        }
+
+        internal bool AddEndpoint(char face)
+        {
+            if (!this.currentEndpoints.Contains(face))
+            {
+                this.currentEndpoints += face;
+                return true;
+            }
+            return false;
+        }
+
+        internal bool RemoveEndpoint(char face)
+        {
+            if (this.currentEndpoints.Contains(face))
+            {
+                this.currentEndpoints = this.currentEndpoints.Replace(face.ToString(), string.Empty);
                 return true;
             }
             return false;
@@ -515,7 +713,7 @@ namespace PrimitiveSurvival.ModSystem
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
         {
             sb.AppendLine("Connections: " + this.currentConnections);
-            //var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default);
+            sb.AppendLine("Endpoints: " + this.currentEndpoints);
             if (!this.LiquidSlot.Empty)
             {
                 sb.AppendLine(Lang.Get("functional"));
@@ -636,6 +834,102 @@ namespace PrimitiveSurvival.ModSystem
             return null;
         }
 
+        private void CheckForWaterSource(char side, string supportDir)
+        {
+            //look for barrel or irrigation vessel or water
+            //do I even need supportDir here? ns or ew
+            string[] sourceTypes = { "water-", "barrel", "irrigationvessel-normal" };
+            BlockPos[] neibPositions = null;
+            switch (side)
+            {
+                case 'e':
+                {
+                    if (supportDir == "ns")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.WestCopy(), this.Pos.WestCopy().NorthCopy()};
+                    }
+                    break;
+                }
+                case 'w':
+                {
+                    if (supportDir == "ns")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.EastCopy(), this.Pos.EastCopy().NorthCopy()};
+                    }
+                    break;
+                }
+                case 'n':
+                {
+                    if (supportDir == "ew")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.SouthCopy().UpCopy(), this.Pos.SouthCopy().EastCopy().UpCopy()};
+                    }
+                    break;
+                }
+                case 's':
+                {
+                    if (supportDir == "ew")
+                    {
+                        neibPositions = new BlockPos[]
+                        { this.Pos.NorthCopy().UpCopy(), this.Pos.NorthCopy().EastCopy().UpCopy()};
+                    }
+                    break;
+                }
+                default:
+                { break; }
+            }
+            if (neibPositions != null)
+            {
+
+                foreach (var neibPos in neibPositions)
+                {
+                    var block = this.Api.World.BlockAccessor.GetBlock(neibPos, BlockLayersAccess.Default);
+                    //Debug.WriteLine(side + ": " + block.Code.Path);
+                    foreach (var sourceType in sourceTypes)
+                    {
+                        if (block.Code.Path.StartsWith(sourceType))
+                        {
+                            this.AddEndpoint(side);
+                        }
+                        else
+                        {
+                            this.RemoveEndpoint(side);
+                        }
+                    }
+                }
+            }
+        return;
+        }
+
+
+        private MeshData RenderWater(bool pipeEnd, string supportDir)
+        {
+            var shapePath = "primitivesurvival:shapes/block/pipe/wood/basewater";
+            if (pipeEnd)
+            { shapePath = "primitivesurvival:shapes/block/pipe/wood/endwater"; }
+
+            var tempBlock = this.Api.World.GetBlock(this.Block.CodeWithPath("texturewater"));
+            var tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tempBlock);
+            var mesh = this.GenInventoryMesh(this.capi, shapePath, tmpTextureSource, supportDir);
+            if (pipeEnd && mesh != null)
+            {
+                if (this.currentConnections == "e")
+                {
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, 180 * GameMath.DEG2RAD, 0);
+                    mesh.Translate(0f, 0f, -1f);
+                }
+                if (this.currentConnections == "n")
+                {
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, 180 * GameMath.DEG2RAD, 0);
+                    mesh.Translate(1f, 0f, 0f);
+                }
+            }
+            return mesh;
+        }
+
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
         {
@@ -649,7 +943,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 if (block.FirstCodePart(1) != "none")
                 {
-                    var texture = tesselator.GetTexSource(block);
+                    var texture = tesselator.GetTextureSource(block);
                     shapePath = "primitivesurvival:shapes/" + block.Shape.Base.Path;
                     mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, texture, supportDir);
                     mesher.AddMeshData(mesh);
@@ -668,39 +962,50 @@ namespace PrimitiveSurvival.ModSystem
                     if (this.PipeStack.Block != null)
                     {
                         tempBlock = this.Api.World.GetBlock(this.PipeStack.Block.Id);
-                        var texture = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(tempBlock);
+                        var texture = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tempBlock);
                         shapePath = "primitivesurvival:shapes/" + tempBlock.Shape.Base.Path;
                         mesh = this.GenInventoryMesh(this.capi, shapePath, texture, supportDir);
                         mesher.AddMeshData(mesh);
 
-                        //pipe ends?
-                        //Sides
-                        shapePath = this.BuildShapePath(this.sideShape); //this uses a single down facing side to render all sides
-
+                        bool pipeEnd = false;
+                        //pipe ends
                         foreach (var side in possibleConnections)
                         {
                             mesh = null;
                             if (!this.currentConnections.Contains(side) && shapePath != "")
-                            { mesh = this.GenSideMesh(this.capi, shapePath, texture, side, supportDir); }
+                            {
+                                shapePath = this.BuildShapePath(this.sideShape); //this uses a single down facing side to render all sides
+
+                                //this should be elsewhere
+                                this.CheckForWaterSource(side, supportDir);
+
+                                if (this.currentEndpoints.Contains(side))
+                                {
+                                    shapePath = this.BuildShapePath(this.endShape);
+                                    pipeEnd = true;
+                                }
+                                mesh = this.GenSideMesh(this.capi, shapePath, texture, side, supportDir);
+                            }
+                            if (mesh != null)
+                            {
+                                mesher.AddMeshData(mesh);
+                            }
+                        }
+
+                        //water TEST
+                        if (!this.LiquidSlot.Empty)
+                        {
+                            mesh = this.RenderWater(pipeEnd, supportDir);
                             if (mesh != null)
                             { mesher.AddMeshData(mesh); }
                         }
-
-                        //water
-                        /*
-                        shapePath = "primitivesurvival:shapes/block/pipe/water";
-                        tempBlock = this.Api.World.GetBlock(block.CodeWithPath("texturewater"));
-                        tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTexSource(tempBlock);
-                        mesh = this.GenInventoryMesh(this.capi, shapePath, tmpTextureSource, supportDir);
-                        mesher.AddMeshData(mesh);
-                        */
                     }
                 }
 
                 //Blockage
                 if (!this.OtherSlot.Empty)
                 {
-                    var tmpTextureSource = tesselator.GetTexSource(this.Block);
+                    var tmpTextureSource = tesselator.GetTextureSource(this.Block);
                     shapePath = this.BuildShapePath("block/pipe/soil/blockage-" + this.OtherStack.Collectible.Code.Path);
                     mesh = this.GenInventoryMesh(this.capi, shapePath, tmpTextureSource, supportDir);
                     if (mesh != null)
@@ -719,12 +1024,14 @@ namespace PrimitiveSurvival.ModSystem
         {
             base.FromTreeAttributes(tree, worldForResolve);
             this.currentConnections = tree.GetString("currentConnections");
+            this.currentEndpoints = tree.GetString("currentEndpoints");
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
             base.ToTreeAttributes(tree);
             tree.SetString("currentConnections", this.currentConnections);
+            tree.SetString("currentEndpoints", this.currentEndpoints);
         }
     }
 }

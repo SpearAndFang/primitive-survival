@@ -4,6 +4,10 @@
     "side": "server",
     "op": "replace",
     "path": "/class",
-    "value": "ItemHoeExtended"
+    "value": "ItemHoeExtended",
+    "condition": {
+      "when": "FurrowedLandEnabled",
+      "isValue": "true"
+    }
   }
 ]

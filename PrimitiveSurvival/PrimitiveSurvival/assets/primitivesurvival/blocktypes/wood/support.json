@@ -11,15 +11,15 @@
   "variantgroups": [
     {
       "code": "material",
-      "states": ["wood", "bamboo","none"]
+      "states": [ "wood", "bamboo", "none" ]
     },
     {
       "code": "type",
-      "states": ["main", "empty"]
+      "states": [ "main", "empty" ]
     },
     {
       "code": "side",
-      "states": ["ns", "ew"]
+      "states": [ "ns", "ew" ]
     }
   ],
   "dropsbyType": {
@@ -91,6 +91,7 @@
   "sideopaque": {
     "all": false
   },
+  "facecullmode": "nevercull",
   "replaceable": 500,
   "resistance": 1,
   "fpHandTransform": {

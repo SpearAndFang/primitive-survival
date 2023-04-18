@@ -200,6 +200,16 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+        //ok this is weird and not a good solution
+        public override void OnBlockPlaced(IWorldAccessor world, BlockPos blockPos, ItemStack byItemStack = null)
+        {
+            base.OnBlockPlaced(world, blockPos, byItemStack);
+            if (world.BlockAccessor.GetBlockEntity(blockPos) is BESupport be)
+            {
+                be.BreakIfUnsupported(blockPos);
+            }
+        }
+
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             var testBlock = this.api.World.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);

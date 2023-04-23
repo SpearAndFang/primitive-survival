@@ -1,11 +1,30 @@
 [
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": true,
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "game:plankstairs-*-up-north-free", name: "wood" },
+      "S": {
+        "type": "block",
+        "code": "game:plankstairs-*-up-north-free",
+        "name": "wood",
+        "allowedVariants": [
+          "aged",
+          "birch",
+          "oak",
+          "maple",
+          "pine",
+          "acacia",
+          "kapok",
+          "baldcypress",
+          "larch",
+          "redwood",
+          "ebony",
+          "walnut",
+          "purpleheart"
+        ]
+      }
     },
     "output": {
       "type": "block",
@@ -113,7 +132,26 @@
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "primitivesurvival:betterplankstairs-*-normal-up-north-free", name: "wood" },
+      "S": {
+        "type": "block",
+        "code": "primitivesurvival:betterplankstairs-*-normal-up-north-free",
+        "name": "wood",
+        "allowedVariants": [
+          "aged",
+          "birch",
+          "oak",
+          "maple",
+          "pine",
+          "acacia",
+          "kapok",
+          "baldcypress",
+          "larch",
+          "redwood",
+          "ebony",
+          "walnut",
+          "purpleheart"
+        ]
+      },
     },
     "output": {
       "type": "block",

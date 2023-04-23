@@ -1,0 +1,75 @@
+[
+  {
+    "ingredientPattern": "S",
+    "shapeless": true,
+    "width": 1,
+    "height": 1,
+    "ingredients": {
+      "S": {
+        "type": "block",
+        "code": "game:plankstairs-*-up-north-free",
+        "name": "wood",
+        "allowedVariants": [
+          "douglasfir",
+          "willow",
+          "honeylocust",
+          "bearnut",
+          "blackpoplar",
+          "pyramidalpoplar",
+          "catalpa",
+          "mahogany",
+          "sal",
+          "saxaul",
+          "spruce",
+          "sycamore",
+          "elm",
+          "beech",
+          "eucalyptus",
+          "cedar"
+        ]
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:betterplankstairs-{wood}-normal-up-north-free"
+    },
+    "dependsOn": [ { "modid": "wildcrafttrees" } ]
+  },
+
+  {
+    "ingredientPattern": "S",
+    "shapeless": true,
+    "width": 1,
+    "height": 1,
+    "ingredients": {
+      "S": {
+        "type": "block",
+        "code": "primitivesurvival:betterplankstairs-*-normal-up-north-free",
+        "name": "wood",
+        "allowedVariants": [
+          "douglasfir",
+          "willow",
+          "honeylocust",
+          "bearnut",
+          "blackpoplar",
+          "pyramidalpoplar",
+          "catalpa",
+          "mahogany",
+          "sal",
+          "saxaul",
+          "spruce",
+          "sycamore",
+          "elm",
+          "beech",
+          "eucalyptus",
+          "cedar"
+        ]
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "game:plankstairs-{wood}-up-north-free"
+    },
+    "dependsOn": [ { "modid": "wildcrafttrees" } ]
+  }
+]

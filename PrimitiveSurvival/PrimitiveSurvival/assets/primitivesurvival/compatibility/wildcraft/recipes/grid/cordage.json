@@ -1,0 +1,56 @@
+[
+  {
+    "ingredientPattern": "W",
+    "ingredients": {
+      "W": {
+        "type": "item",
+        "code": "wildcraft:plantfibers-brownsedge",
+        "quantity": 3
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:cordage",
+      "quantity": 1
+    },
+    "dependsOn": [ { "modid": "wildcraft" } ]
+  },
+  {
+    "ingredientPattern": "W",
+    "ingredients": {
+      "W": {
+        "type": "item",
+        "code": "wildcraft:plantfibers-hardsedge",
+        "quantity": 3
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:cordage",
+      "quantity": 1
+    },
+    "dependsOn": [ { "modid": "wildcraft" } ]
+  },
+  {
+    "ingredientPattern": "W",
+    "ingredients": {
+      "W": {
+        "type": "item",
+        "code": "wildcraft:plantfibers-tule",
+        "quantity": 3
+      }
+    },
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:cordage",
+      "quantity": 1
+    },
+    "dependsOn": [ { "modid": "wildcraft" } ]
+  }
+]

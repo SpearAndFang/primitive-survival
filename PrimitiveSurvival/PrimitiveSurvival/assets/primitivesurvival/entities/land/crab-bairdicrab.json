@@ -15,7 +15,9 @@
   "drops": [],
   "client": {
     "renderer": "Shape",
-    "shape": { "base": "entity/land/bairdicrab" },
+    "shape": {
+      "base": "entity/land/bairdicrab"
+    },
     "size": 1,
     "textures": {
       "crab": {
@@ -36,8 +38,12 @@
         "code": "floatupwhenstuck",
         "onlyWhenDead": false
       },
-      { "code": "interpolateposition" },
-      { "code": "harvestable" },
+      {
+        "code": "interpolateposition"
+      },
+      {
+        "code": "harvestable"
+      },
       {
         "code": "despawn",
         "minPlayerDistance": 28,
@@ -52,7 +58,11 @@
         "animationSpeed": 1,
         "weight": 10,
         "blendMode": "AddAverage",
-        "triggeredBy": { "onControls": [ "dead" ] }
+        "triggeredBy": {
+          "onControls": [
+            "dead"
+          ]
+        }
       },
       {
         "code": "idle",
@@ -71,7 +81,9 @@
         "animation": "sleep",
         "animationSpeed": 1,
         "blendMode": "AddAverage",
-        "triggeredBy": { "defaultAnim": true }
+        "triggeredBy": {
+          "defaultAnim": true
+        }
       },
       {
         "code": "wander",
@@ -141,7 +153,9 @@
         "aitasks": [
           {
             "code": "meleeattackcrab",
-            "entityCodes": [ "player" ],
+            "entityCodes": [
+              "player"
+            ],
             "priority": 3,
             "damage": 1,
             "damageType": "SlashingAttack",
@@ -157,7 +171,9 @@
           },
           {
             "code": "seekentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": [
+              "player"
+            ],
             "priority": 2.5,
             "movespeed": 0.02,
             "seekingRange": 20,
@@ -169,7 +185,9 @@
           },
           {
             "code": "fleeentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": [
+              "player"
+            ],
             "priority": 2,
             "movespeed": 0.02,
             "mincooldown": 1500,
@@ -180,7 +198,9 @@
           },
           {
             "code": "meleeattackcrab",
-            "entityCodes": [ "player" ],
+            "entityCodes": [
+              "player"
+            ],
             "priority": 1.6,
             "damage": 1,
             "slot": 1,
@@ -212,7 +232,9 @@
                 "toHour": 4
               }
             ],
-            "stopOnNearbyEntityCodes": [ "player" ],
+            "stopOnNearbyEntityCodes": [
+              "player"
+            ],
             "stopRange": 8,
             "stopOnHurt": true
           },
@@ -236,7 +258,9 @@
             "animation": "wander",
             "animationSpeed": 1,
             "movespeed": 0.0,
-            "stopOnNearbyEntityCodes": [ "player" ],
+            "stopOnNearbyEntityCodes": [
+              "player"
+            ],
             "stopRange": 8,
             "stopOnHurt": true
           },
@@ -264,7 +288,10 @@
           "avg": 5,
           "var": 2
         },
-        "insideBlockCodes": [ "game:water-still-7" ],
+        "insideBlockCodes": [
+          "game:water-still-7",
+          "game:saltwater-*"
+        ],
         "minTemp": 0,
         "maxTemp": 50,
         "minRain": 0.25
@@ -282,7 +309,10 @@
           "avg": 5,
           "var": 2
         },
-        "insideBlockCodes": [ "game:water-still-7" ],
+        "insideBlockCodes": [
+          "game:water-still-7",
+          "game:saltwater-*"
+        ],
         "minTemp": 0,
         "maxTemp": 50,
         "minRain": 0.25,

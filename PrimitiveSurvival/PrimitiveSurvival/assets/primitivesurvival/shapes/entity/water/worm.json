@@ -7,7 +7,8 @@
 	"textureHeight": 16,
 	"textureSizes": {
 	},
-	"textures": {},
+	"textures": {
+	},
 	"elements": [
 		{
 			"name": "Cube7",
@@ -91,9 +92,8 @@
 					"from": [ 13.125, 0.0, 12.675 ], 
 					"to": [ 13.125, 0.0, 12.675 ], 
 					"rotationOrigin": [ 13.05, 0.0, 12.6 ],
-					"rotationX": -179.99999011687993,
-					"rotationY": 5.008955855952477E-6,
-					"rotationZ": -179.99999011687993,
+					"rotationX": -180.0,
+					"rotationZ": -180.0,
 					"faces": {
 						"north": { "texture": "#all", "uv": [ 0.0, 0.0, 0.75, 0.75 ], "enabled": false },
 						"east": { "texture": "#all", "uv": [ 0.0, 0.0, 0.75, 0.75 ], "enabled": false },
@@ -228,9 +228,8 @@
 					"from": [ 13.125, 1.5, 12.675 ], 
 					"to": [ 13.125, 1.5, 12.675 ], 
 					"rotationOrigin": [ 13.05, 1.5, 12.6 ],
-					"rotationX": -179.99999011687993,
-					"rotationY": 5.008955855952477E-6,
-					"rotationZ": -179.99999011687993,
+					"rotationX": -180.0,
+					"rotationZ": -180.0,
 					"faces": {
 						"north": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
 						"east": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
@@ -351,9 +350,8 @@
 					"from": [ 13.125, 3.0, 12.675 ], 
 					"to": [ 13.125, 3.0, 12.675 ], 
 					"rotationOrigin": [ 13.05, 3.0, 12.6 ],
-					"rotationX": -179.99999011687993,
-					"rotationY": 5.008955855952477E-6,
-					"rotationZ": -179.99999011687993,
+					"rotationX": -180.0,
+					"rotationZ": -180.0,
 					"faces": {
 						"north": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
 						"east": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
@@ -474,9 +472,8 @@
 					"from": [ 13.125, 4.5, 12.675 ], 
 					"to": [ 13.125, 4.5, 12.675 ], 
 					"rotationOrigin": [ 13.05, 4.5, 12.6 ],
-					"rotationX": -179.99999011687993,
-					"rotationY": 5.008955855952477E-6,
-					"rotationZ": -179.99999011687993,
+					"rotationX": -180.0,
+					"rotationZ": -180.0,
 					"faces": {
 						"north": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
 						"east": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
@@ -597,9 +594,8 @@
 					"from": [ 10.5, 6.3, 10.14 ], 
 					"to": [ 10.5, 6.3, 10.14 ], 
 					"rotationOrigin": [ 10.44, 6.3, 10.08 ],
-					"rotationX": -179.99999011687993,
-					"rotationY": 5.008955855952477E-6,
-					"rotationZ": -179.99999011687993,
+					"rotationX": -180.0,
+					"rotationZ": -180.0,
 					"faces": {
 						"north": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
 						"east": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
@@ -720,9 +716,8 @@
 					"from": [ 10.5, -0.9, 10.14 ], 
 					"to": [ 10.5, -0.9, 10.14 ], 
 					"rotationOrigin": [ 10.44, -0.9, 10.08 ],
-					"rotationX": -179.99999011687993,
-					"rotationY": 5.008955855952477E-6,
-					"rotationZ": -179.99999011687993,
+					"rotationX": -180.0,
+					"rotationZ": -180.0,
 					"faces": {
 						"north": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
 						"east": { "texture": "#all", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
@@ -823,33 +818,17 @@
 		},
 
 		{
-			"name": "rest",
-			"code": "rest",
-			"quantityframes": 21,
-			"onActivityStopped": "EaseOut",
-			"onAnimationEnd": "Repeat",
-			"keyframes": [
-				{
-					"frame": 0,
-					"elements": {
-						"Cube7": { "offsetX": 1.5, "offsetY": 0.5, "offsetZ": 6.0 }
-					}
-				}
-			]
-		},
-
-		{
 			"name": "feed",
 			"code": "feed",
 			"quantityframes": 210,
-			"onActivityStopped": "EaseOut",
+			"onActivityStopped": "PlayTillEnd",
 			"onAnimationEnd": "Repeat",
 			"keyframes": [
 				{
 					"frame": 0,
 					"elements": {
-						"Cube7": { "offsetX": 1.5, "offsetY": -1.5, "offsetZ": 1.5, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": 22.5 },
-						"Cube1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+						"Cube7": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
@@ -870,6 +849,72 @@
 					"frame": 180,
 					"elements": {
 						"Cube7": { "offsetX": 3.5, "offsetY": -0.5, "offsetZ": 3.5, "rotationX": -22.5, "rotationY": 22.5, "rotationZ": 45.0 },
+						"Cube1": { "offsetX": 0.0, "offsetY": 9.0, "offsetZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "glide",
+			"code": "glide",
+			"quantityframes": 210,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cube7": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 70,
+					"elements": {
+						"Cube7": { "offsetX": 0.0, "offsetY": 3.0, "offsetZ": 0.0, "rotationX": 45.0, "rotationY": 22.5, "rotationZ": 22.5 },
+						"bottoml": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Cube1": { "offsetX": 0.0, "offsetY": 9.0, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 140,
+					"elements": {
+						"Cube7": { "offsetX": 3.0, "offsetY": -4.5, "offsetZ": 3.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 190,
+					"elements": {
+						"Cube7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"bottoml": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Cube1": { "offsetX": 0.0, "offsetY": 9.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "rest",
+			"code": "rest",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Cube7": {  },
+						"bottomr11": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Cube1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Cube7": {  },
+						"bottomr11": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
 						"Cube1": { "offsetX": 0.0, "offsetY": 9.0, "offsetZ": 0.0 }
 					}
 				}

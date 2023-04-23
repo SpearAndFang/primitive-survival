@@ -84,6 +84,8 @@ namespace PrimitiveSurvival.ModSystem
             }
             //to disable furrowed farm land in case of xskills
             api.World.Config.SetBool("FurrowedLandEnabled", ModConfig.Loaded.FurrowedLandEnabled);
+            //this next one is weird when someone already has a raft - but I wanted to disable the block too in order to remove it from the handbook
+            api.World.Config.SetBool("RaftEnabled", ModConfig.Loaded.RaftEnabled);
             base.StartPre(api);
         }
 

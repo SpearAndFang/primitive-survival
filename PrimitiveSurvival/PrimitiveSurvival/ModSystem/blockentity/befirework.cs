@@ -80,7 +80,7 @@ namespace PrimitiveSurvival.ModSystem
                     ShouldLoop = true,
                     Position = this.Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                     DisposeOnFinish = false,
-                    Volume = 0.1f,
+                    Volume = 0.2f,
                     Range = 16,
                 });
             }
@@ -94,7 +94,7 @@ namespace PrimitiveSurvival.ModSystem
                         ShouldLoop = true,
                         Position = this.Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                         DisposeOnFinish = false,
-                        Volume = 0.3f,
+                        Volume = 0.7f,
                         Range = 16,
                     });
                 }
@@ -109,7 +109,7 @@ namespace PrimitiveSurvival.ModSystem
                         ShouldLoop = true,
                         Position = this.Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                         DisposeOnFinish = false,
-                        Volume = 0.4f,
+                        Volume = 0.9f,
                         Range = 16,
                     });
                 }
@@ -124,7 +124,7 @@ namespace PrimitiveSurvival.ModSystem
                         ShouldLoop = true,
                         Position = this.Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                         DisposeOnFinish = false,
-                        Volume = 0.4f,
+                        Volume = 0.9f,
                         Range = 16,
                     });
                 }
@@ -140,7 +140,7 @@ namespace PrimitiveSurvival.ModSystem
                         ShouldLoop = false,
                         Position = this.Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                         DisposeOnFinish = false,
-                        Volume = 0.4f,
+                        Volume = 0.9f,
                         Range = 16,
                     });
                 }

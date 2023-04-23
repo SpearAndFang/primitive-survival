@@ -109,12 +109,15 @@
     <None Remove="assets\primitivesurvival\itemtypes\other\fuse.json" />
     <None Remove="assets\primitivesurvival\itemtypes\other\grunter.json" />
     <None Remove="assets\primitivesurvival\itemtypes\other\snake.json" />
+    <None Remove="assets\primitivesurvival\patches\disabler\ps-raft.json" />
     <None Remove="assets\primitivesurvival\patches\ps-carryon.json" />
     <None Remove="assets\primitivesurvival\patches\ps-crabmeat-meals.json" />
     <None Remove="assets\primitivesurvival\patches\ps-oreminingbomb.json" />
     <None Remove="assets\primitivesurvival\patches\ps-smokedmeat-meals.json" />
     <None Remove="assets\primitivesurvival\patches\ps-snakemeat-meals.json" />
     <None Remove="assets\primitivesurvival\patches\ps-stick.json" />
+    <None Remove="assets\primitivesurvival\patches\wildcrafttrees\ps-betterplankstairs.json" />
+    <None Remove="assets\primitivesurvival\patches\wildcrafttrees\ps-woodlantern.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\caviar.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\fireflyjars.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\firewood.json" />
@@ -127,6 +130,10 @@
     <None Remove="assets\primitivesurvival\recipes\grid\ps-metalbits.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\smoker.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\trussedmeat.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\wildcrafttrees\betterstairs.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\wildcrafttrees\raft.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\wildcrafttrees\woodlantern.json" />
+    <None Remove="assets\primitivesurvival\recipes\grid\wildcraft\cordage.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\woodjarholders.json" />
     <None Remove="assets\primitivesurvival\shapes\block\fuse\empty.json" />
     <None Remove="assets\primitivesurvival\shapes\block\fuse\ew.json" />

@@ -1,6 +1,6 @@
 {
   // Japanese localization file for 'Primitive Survival'
-  // Mod Version: 3.0.9
+  // Mod Version: 3.1.7
   // Translated By: Macoto Hino
   // Machine translation using PCOT and DeepL
 
@@ -95,9 +95,9 @@
   "itemdesc-jerky-*-cured": "夕食の時間です。",
   "itemdesc-jerky-*-cooked": "夕食の時間です。",
 
-  "block-temporalbase*": "テンポラルレリック",
-  "block-temporalcube*": "テンポラルキューブ(レリック)",
-  "block-temporallectern*": "テンポラルレクターン(レリック)",
+  "block-temporalbase*": "テンポラル・レリック",
+  "block-temporalcube*": "テンポラル・キューブ(レリック)",
+  "block-temporallectern*": "テンポラル・レクターン(レリック)",
   "block-dagon-statue*": "ダゴン神像(レリック)",
   "block-hydra-statue*": "ヒュドラ像(レリック)",
   "block-cthulu-statue*": "クトゥルフ神像(レリック)",
@@ -105,9 +105,9 @@
   "blockdesc-temporalbase-complete": "完成しているように見えます。",
   "blockdesc-temporalbase-incomplete": "何かが欠けているように見えます。",
 
-  "item-psgear-astral": "アストラルギア",
+  "item-psgear-astral": "アストラル・ギア",
   "itemdesc-psgear-astral": "宇宙の謎を解き明かすことが出来るのか？",
-  "item-psgear-ethereal": "エターナルギア",
+  "item-psgear-ethereal": "エターナル・ギア",
   "itemdesc-psgear-ethereal": "石のような重みがありながら、中身がない。",
 
   "block-pslargemold-raw-fishinglure": "釣り用ルアーの鋳型（未焼成）",
@@ -134,7 +134,7 @@
   "item-fishinglure-tinbronze": "釣り用ルアー(スズ青銅)",
   "item-fishinglure-zinc": "釣り用ルアー(亜鉛)",
   "item-fishinglure-molybdochalkos": "釣り用ルアー(モリブドカルコス)",
-  "itemdesc-fishinglure-*": "これを釣り針につけると、釣れる確率が上がります。",
+  "itemdesc-fishinglure-*": "これを釣り針に付けると、釣れる確率が上がります。",
 
   "item-metalfishinghook-bismuth": "釣り針(ビスマス)",
   "item-metalfishinghook-bismuthbronze": "釣り針(ビスマス青銅)",
@@ -271,37 +271,37 @@
   "game:meal-ingredient-stew-primary-fishfillet-raw": "魚",
   "game:meal-ingredient-stew-secondary-fishfillet-raw": "魚",
 
-  "block-steatitealcove-temporal*": "テンポラルアルコーブ",
-  "block-steatitealcove-astral*": "アストラルアルコーブ",
-  "block-steatitealcove-ethereal*": "エターナルアルコーブ",
+  "block-steatitealcove-temporal*": "テンポラル・アルコーブ",
+  "block-steatitealcove-astral*": "アストラル・アルコーブ",
+  "block-steatitealcove-ethereal*": "エターナル・アルコーブ",
 
-  "block-steatitewindow-temporal*": "テンポラルウィンドウ(鉄格子付)",
-  "block-steatitewindow-astral*": "アストラルウィンドウ(鉄格子付)",
-  "block-steatitewindow-ethereal*": "エターナルウィンドウ(鉄格子付)",
+  "block-steatitewindow-temporal*": "テンポラル・ウィンドウ(鉄格子付)",
+  "block-steatitewindow-astral*": "アストラル・ウィンドウ(鉄格子付)",
+  "block-steatitewindow-ethereal*": "エターナル・ウィンドウ(鉄格子付)",
 
-  "block-steatite-plain-temporal": "テンポラルブロック(無装飾)",
-  "block-steatite-plain-astral": "アストラルブロック(無装飾)",
-  "block-steatite-plain-ethereal": "エターナルブロック(無装飾)",
+  "block-steatite-plain-temporal": "テンポラル・ブロック(無装飾)",
+  "block-steatite-plain-astral": "アストラル・ブロック(無装飾)",
+  "block-steatite-plain-ethereal": "エターナル・ブロック(無装飾)",
 
-  "block-steatite-ornate-temporal": "テンポラルブロック(装飾付)",
-  "block-steatite-ornate-astral": "アストラルブロック(装飾付)",
-  "block-steatite-ornate-ethereal": "エターナルブロック(装飾付)",
+  "block-steatite-ornate-temporal": "テンポラル・ブロック(装飾付)",
+  "block-steatite-ornate-astral": "アストラル・ブロック(装飾付)",
+  "block-steatite-ornate-ethereal": "エターナル・ブロック(装飾付)",
 
-  "block-steatiteslab-temporal*": "テンポラルスラブ",
-  "block-steatiteslab-astral*": "アストラルスラブ",
-  "block-steatiteslab-ethereal*": "エターナルスラブ",
+  "block-steatiteslab-temporal*": "テンポラル・スラブ",
+  "block-steatiteslab-astral*": "アストラル・スラブ",
+  "block-steatiteslab-ethereal*": "エターナル・スラブ",
 
   "block-steatitestairs-temporal*": "テンポラスステア",
-  "block-steatitestairs-astral*": "アストラルステア",
-  "block-steatitestairs-ethereal*": "エターナルステア",
+  "block-steatitestairs-astral*": "アストラル・ステア",
+  "block-steatitestairs-ethereal*": "エターナル・ステア",
 
-  "block-steatitepillar-temporal*": "テンポラルピラー",
-  "block-steatitepillar-astral*": "アストラルピラー",
-  "block-steatitepillar-ethereal*": "エターナルピラー",
+  "block-steatitepillar-temporal*": "テンポラル・ピラー",
+  "block-steatitepillar-astral*": "アストラル・ピラー",
+  "block-steatitepillar-ethereal*": "エターナル・ピラー",
 
-  "block-steatiterail-temporal*": "テンポラルレール",
-  "block-steatiterail-astral*": "アストラルレール",
-  "block-steatiterail-ethereal*": "エターナルレール",
+  "block-steatiterail-temporal*": "テンポラル・レール",
+  "block-steatiterail-astral*": "アストラル・レール",
+  "block-steatiterail-ethereal*": "エターナル・レール",
 
   "item-monkeybridge": "モンキーブリッジ",
   "block-monkeybridge*": "モンキーブリッジ",
@@ -468,13 +468,13 @@
   "game:meal-ingredient-stew-primary-jerky-bushmeat-raw": "ブッシュミートジャーキー",
   "game:meal-ingredient-stew-secondary-jerky-bushmeat-raw": "ブッシュミートジャーキー",
 
-  "block-woodlantern-acacia-*": "木製ランタン(アカシア)",
-  "block-woodlantern-aged-*": "木製ランタン(古びた)",
-  "block-woodlantern-birch*": "木製ランタン(シラカバ)",
-  "block-woodlantern-kapok*": "木製ランタン(カポック)",
-  "block-woodlantern-maple*": "木製ランタン(カエデ)",
-  "block-woodlantern-oak*": "木製ランタン(オーク)",
-  "block-woodlantern-pine*": "木製ランタン(マツ)",
+  "block-woodlantern-acacia-*": "木のランタン(アカシア)",
+  "block-woodlantern-aged-*": "木のランタン(古びた)",
+  "block-woodlantern-birch*": "木のランタン(シラカバ)",
+  "block-woodlantern-kapok*": "木のランタン(カポック)",
+  "block-woodlantern-maple*": "木のランタン(カエデ)",
+  "block-woodlantern-oak*": "木のランタン(オーク)",
+  "block-woodlantern-pine*": "木のランタン(マツ)",
 
   "block-raft*": "筏（いかだ）",
   "itemdesc-lavaportion": "溶岩",
@@ -484,12 +484,12 @@
   "item-lavaportion": "溶岩（1L）",
   "block-blood-still-7": "血",
 
-  "block-woodlantern-baldcypress-*": "木製ランタン(ヌマスギ)",
-  "block-woodlantern-larch-*": "木製ランタン(カラマツ)",
-  "block-woodlantern-redwood-*": "木製ランタン(レッドウッド)",
-  "block-woodlantern-ebony-*": "木製ランタン(コクタン)",
-  "block-woodlantern-walnut-*": "木製ランタン(クルミ)",
-  "block-woodlantern-purpleheart-*": "木製ランタン(パープルハート)",
+  "block-woodlantern-baldcypress-*": "木のランタン(ヌマスギ)",
+  "block-woodlantern-larch-*": "木のランタン(カラマツ)",
+  "block-woodlantern-redwood-*": "木のランタン(レッドウッド)",
+  "block-woodlantern-ebony-*": "木のランタン(コクタン)",
+  "block-woodlantern-walnut-*": "木のランタン(クルミ)",
+  "block-woodlantern-purpleheart-*": "木のランタン(パープルハート)",
 
   "item-fisheggs-raw-normal": "魚卵(生)",
   "itemdesc-fisheggs-raw-normal": "調理や熟成が可能",
@@ -588,7 +588,7 @@
   "item-creature-fireflies-marshimp*": "マーシュインプ蛍",
   "creature-carryable": "右クリックで拾う",
 
-  "block-woodjarholder-north": "木製瓶ホルダー",
+  "block-woodjarholder-north": "木の瓶ホルダー",
   "blockdesc-woodjarholder-north": "蛍の瓶を壁に取り付けるのに最適です",
 
   "item-linktool": "Particulator Link Tool",
@@ -772,13 +772,13 @@
   "block-firework-boomer": "花火(Boomer)",
 
   "itemcraftdesc-buckethandle-*": "金属製のバケツを作るのに使われます。",
-  "block-nephrenka-statue*": "ネフレン＝カ像(relic)",
+  "block-nephrenka-statue*": "ネフレン＝カ像(レリック)",
   "blockdesc-nephrenka-statue*": "この不思議なオブジェは何だろう？ 何かの上に乗っているように見えるが...。",
 
-  "item-livingdead*": "リビングデッド",
-  "item-creature-livingdead*": "リビングデッド",
-  "item-dead-creature-livingdead*": "死んだリビングデッド",
-  "game:prefixandcreature-livingdeadnormal": "リビングデッド",
+  "item-livingdead*": "リビング・デッド",
+  "item-creature-livingdead*": "リビング・デッド",
+  "item-dead-creature-livingdead*": "死んだリビング・デッド",
+  "game:prefixandcreature-livingdeadnormal": "リビング・デッド",
 
   "block-skullofthedead*": "スカル・オブ・ザ・デッド(背骨付)",
   "blockdesc-skullofthedead**": "柔らかい地面に置くと、近くの生物からゆっくりと生命を吸い取る。",
@@ -809,7 +809,7 @@
   "item-fuse-blackmatch": "導火線(黒マッチ)",
   "itemdesc-fuse-*": "発火装置に接続する為、横に設置する。",
   "block-bfuse-blackmatch*": "導火線(黒マッチ)",
-  "blockdesc-bfuse-*": "発火装置連結用。 松明で点火する。",
+  "blockdesc-bfuse-*": "発火装置連結用。松明で点火する。",
 
   "item-grunter": "ミミズ呼び出し機",
   "itemdesc-grunter": "オフハンドに持って、ミミズを呼び出す為に棒と一緒に使う。",
@@ -834,7 +834,7 @@
 
   "game:block--storagevessel-burned": "貯蔵容器",
 
-  "block-smoker-open-*": "燻製機(開いている)",
+  "block-smoker-open-*": "燻製機(開)",
   "block-smoker-closed-*": "燻製機",
   "block-smoker-lit-*": "燻製機(点火)",
   "blockdesc-smoker-*": "4本の薪と生の束ねた肉を最大4本まで入れ、松明で火を点けて開始します。",
@@ -927,5 +927,39 @@
   "block-fishmount-arcticchar-": "イワナ(飾り)",
   "block-fishmount-catfish-": "ナマズ(飾り)",
   "block-fishmount-bluegill-": "ブルーギル(飾り)",
-  "block-fishmount-mutant-": "突然変異した魚(飾り)"
+  "block-fishmount-mutant-": "突然変異した魚(飾り)",
+
+  "block-betterplankstairs-douglasfir-*": "Better Douglas fir stairs",
+  "block-betterplankstairs-willow-*": "Better Willow stairs",
+  "block-betterplankstairs-honeylocust-*": "Better Honey locust stairs",
+  "block-betterplankstairs-bearnut-*": "Better Bearnut stairs",
+  "block-betterplankstairs-blackpoplar-*": "Better Black poplar stairs",
+  "block-betterplankstairs-pyramidalpoplar-*": "Better Pyramidal poplar stairs",
+  "block-betterplankstairs-catalpa-*": "Better Catalpa stairs",
+  "block-betterplankstairs-mahogany-*": "Better Mahogany stairs",
+  "block-betterplankstairs-sal-*": "Better Sal stairs",
+  "block-betterplankstairs-saxaul-*": "Better Saxaul stairs",
+  "block-betterplankstairs-spruce-*": "Better Spruce stairs",
+  "block-betterplankstairs-sycamore-*": "Better Sycamore stairs",
+  "block-betterplankstairs-elm-*": "Better Elm stairs",
+  "block-betterplankstairs-beech-*": "Better Beech stairs",
+  "block-betterplankstairs-eucalyptus-*": "Better Eucalyptus stairs",
+  "block-betterplankstairs-cedar-*": "Better Cedar stairs",
+
+  "block-woodlantern-douglasfir-*": "木のランタン(ベイマツ)",
+  "block-woodlantern-willow-*": "木のランタン(ヤナギ)",
+  "block-woodlantern-honeylocust-*": "木のランタン(サイカチ)",
+  "block-woodlantern-bearnut-*": "木のランタン(ベアナッツ)",
+  "block-woodlantern-blackpoplar-*": "木のランタン(クロヤマナラシ)",
+  "block-woodlantern-pyramidalpoplar-*": "木のランタン(ヤマナラシ)",
+  "block-woodlantern-catalpa-*": "木のランタン(キササゲ)",
+  "block-woodlantern-mahogany-*": "木のランタン(マホガニー)",
+  "block-woodlantern-sal-*": "木のランタン(サラソウジュ)",
+  "block-woodlantern-saxaul-*": "木のランタン(サクソル)",
+  "block-woodlantern-spruce-*": "木のランタン(トウヒ)",
+  "block-woodlantern-sycamore-*": "木のランタン(カジカエデ)",
+  "block-woodlantern-elm-*": "木のランタン(ニレ)",
+  "block-woodlantern-beech-*": "木のランタン(ブナ)",
+  "block-woodlantern-eucalyptus-*": "木のランタン(ユーカリ)",
+  "block-woodlantern-cedar-*": "木のランタン(ヒマラヤスギ)"
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/raft.json",
+    "condition": {
+      "when": "RaftEnabled",
+      "isValue": "false"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:blocktypes/raft/raft.json",
+    "condition": {
+      "when": "RaftEnabled",
+      "isValue": "false"
+    }
+  }
+]

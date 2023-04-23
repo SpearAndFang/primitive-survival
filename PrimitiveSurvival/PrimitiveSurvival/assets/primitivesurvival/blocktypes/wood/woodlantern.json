@@ -108,9 +108,8 @@
   },
   "textures": {
     "copper": { "base": "game:block/metal/lantern/copper" },
-    "woodlantern": {
-      "base": "block/wood/lantern/woodlantern-{wood}"
-    }
+	"candle": { "base": "game:block/candle" },
+    "wood": { "base": "game:block/wood/debarked/{wood}" }
   },
   "creativeinventory": {},
   "creativeinventoryStacksByType": {

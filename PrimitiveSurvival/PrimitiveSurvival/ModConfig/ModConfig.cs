@@ -45,6 +45,7 @@ namespace PrimitiveSurvival.ModConfig
         public int PipeUpdateFrequency { get; set; } = 130;
         public double PipeBlockageChancePercent { get; set; } = 0.02;
         public double PipeMinMoisture { get; set; } = 0.92;
+        public bool RaftEnabled { get; set; } = true;
         public float RaftWaterSpeedModifier { get; set; } = 0.2f;
         public float RaftFlotationModifier { get; set; } = 0.03f;
         public bool ShowModNameInHud { get; set; } = true;

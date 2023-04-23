@@ -1,0 +1,40 @@
+[
+  {
+    "file": "primitivesurvival:blocktypes/wood/woodlantern",
+    "side": "server",
+    "op": "replace",
+    "path": "/variantgroups/0/states",
+    "value": [
+      "aged",
+      "birch",
+      "oak",
+      "maple",
+      "pine",
+      "acacia",
+      "kapok",
+      "baldcypress",
+      "larch",
+      "redwood",
+      "ebony",
+      "walnut",
+      "purpleheart",
+      "douglasfir",
+      "willow",
+      "honeylocust",
+      "bearnut",
+      "blackpoplar",
+      "pyramidalpoplar",
+      "catalpa",
+      "mahogany",
+      "sal",
+      "saxaul",
+      "spruce",
+      "sycamore",
+      "elm",
+      "beech",
+      "eucalyptus",
+      "cedar"
+    ],
+    "dependsOn": [ { "modid": "wildcrafttrees" } ]
+  }
+]

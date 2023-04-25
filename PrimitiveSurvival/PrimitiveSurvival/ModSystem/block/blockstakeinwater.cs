@@ -59,12 +59,12 @@ namespace PrimitiveSurvival.ModSystem
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             bool placed;
-            bool inwater;
+            //bool inwater;
             var pos = blockSel.Position;
             var block = world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
             if (block.Class == "blockstakeinwater" || block.Code.Path.Contains("fishbasket-"))
             { return false; }
-            inwater = block.LiquidCode == "water";
+            //inwater = block.LiquidCode == "water";
             var blockSelBelow = blockSel.Clone();
             blockSelBelow.Position.Y -= 1;
             var blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position, BlockLayersAccess.Default);
@@ -253,11 +253,11 @@ namespace PrimitiveSurvival.ModSystem
                 foreach (var neighbor in weirBasesPos) // Examine bases
                 {
                     testBlock = world.BlockAccessor.GetBlock(neighbor, BlockLayersAccess.Default);
-                    if (testBlock.BlockId == 0 || (testBlock.LiquidCode == "water" && (testBlock.Class != "blockstakeinwater")))
+                    if (testBlock.BlockId == 0 || (testBlock.Code.Path.Contains("water") && (testBlock.Class != "blockstakeinwater")))
                     { areaOK = false; }
                 }
 
-                if (waterBlock.LiquidCode == "water" && areaOK)
+                if (waterBlock.Code.Path.Contains("water") && areaOK)
                 {
                     path += "open";
                     block = world.GetBlock(block.CodeWithPath(path));

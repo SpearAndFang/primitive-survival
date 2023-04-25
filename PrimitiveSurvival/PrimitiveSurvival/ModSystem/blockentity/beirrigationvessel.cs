@@ -49,6 +49,9 @@ namespace PrimitiveSurvival.ModSystem
             if (!this.inventory[0].Itemstack.Collectible.Code.Path.Contains("water"))
             { return; } //not water
 
+            if (this.inventory[0].Itemstack.Collectible.Code.Path.Contains("saltwater"))
+            { return; } //salt water - abort for now
+
             var neibPos = new BlockPos[] {
                 this.Pos.EastCopy(),
                 this.Pos.EastCopy().NorthCopy(),

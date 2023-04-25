@@ -63,34 +63,44 @@ namespace PrimitiveSurvival.ModSystem
                         //Debug.WriteLine("firstblock:" + blockBelow.FirstCodePart());
                         if (this.World.BlockAccessor.GetBlockEntity(belowPos) is BlockEntityFarmland befarmland)
                         {
-                            befarmland.WaterFarmland(0.3f); //aerate 
-                            var tree = new TreeAttribute();
-                            befarmland.ToTreeAttributes(tree);
-
-                            var slowN = tree.GetFloat("slowN");
-                            var slowK = tree.GetFloat("slowK");
-                            var slowP = tree.GetFloat("slowP");
-                            if (slowN <= 150)
-                            { slowN += 1; }//props.N;
-                            if (slowK <= 150)
-                            { slowK += 1; } //props.K;
-                            if (slowP <= 150)
-                            { slowP += 1; } //props.P;
-
-                            if (slowN < 150 && slowK < 150 && slowP < 150)
+                            if (this.Api.Side.IsServer())
                             {
-                                tree.SetFloat("slowN", slowN);
-                                tree.SetFloat("slowK", slowK);
-                                tree.SetFloat("slowP", slowP);
-                                befarmland.FromTreeAttributes(tree, this.World);
-                                befarmland.MarkDirty();
-                                this.World.BlockAccessor.MarkBlockEntityDirty(belowPos);
-                            }
-                            else
-                            {
-                                this.World.BlockAccessor.BreakBlock(belowPos, null); //For better or worse, you've created a block of Worm Castings
-                                var block = this.World.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:earthwormcastings"));
-                                this.World.BlockAccessor.SetBlock(block.BlockId, belowPos);
+                                {
+                                    // no idea how this next line can fail, but it can
+                                    // https://www.vintagestory.at/forums/topic/2399-primitive-survival/?page=20#comment-45545
+                                    befarmland?.WaterFarmland(0.3f); //aerate
+                                    var tree = new TreeAttribute();
+                                    befarmland?.ToTreeAttributes(tree);
+
+                                    if (tree != null)
+                                    {
+                                        var slowN = tree.GetFloat("slowN");
+                                        var slowK = tree.GetFloat("slowK");
+                                        var slowP = tree.GetFloat("slowP");
+                                        if (slowN <= 150)
+                                        { slowN += 1; }//props.N;
+                                        if (slowK <= 150)
+                                        { slowK += 1; } //props.K;
+                                        if (slowP <= 150)
+                                        { slowP += 1; } //props.P;
+
+                                        if (slowN < 150 && slowK < 150 && slowP < 150)
+                                        {
+                                            tree.SetFloat("slowN", slowN);
+                                            tree.SetFloat("slowK", slowK);
+                                            tree.SetFloat("slowP", slowP);
+                                            befarmland?.FromTreeAttributes(tree, this.World);
+                                            befarmland?.MarkDirty();
+                                            this.World.BlockAccessor.MarkBlockEntityDirty(belowPos);
+                                        }
+                                        else
+                                        {
+                                            this.World.BlockAccessor.BreakBlock(belowPos, null); //For better or worse, you've created a block of Worm Castings
+                                            var block = this.World.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:earthwormcastings"));
+                                            this.World.BlockAccessor.SetBlock(block.BlockId, belowPos);
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

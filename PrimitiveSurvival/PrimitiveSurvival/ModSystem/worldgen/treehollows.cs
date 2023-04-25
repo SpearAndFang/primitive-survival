@@ -23,10 +23,6 @@ namespace PrimitiveSurvival.ModSystem
         private readonly string[] dirs = { "north", "south", "east", "west" };
         private readonly string[] woods = { "acacia", "birch", "kapok", "larch", "maple", "oak", "pine", "walnut" };
 
-
-
-
-
         public override void StartServerSide(ICoreServerAPI api)
         {
             this.sapi = api;
@@ -350,6 +346,28 @@ namespace PrimitiveSurvival.ModSystem
             shuffleBag.Add("item-treeseed-birch", 3);
             shuffleBag.Add("item-treeseed-maple", 3);
             shuffleBag.Add("item-treeseed-kapok", 3);
+
+            if (PrimitiveSurvivalSystem.wildCraftTreesExists(sapi))
+            {
+                shuffleBag.Add("item-treeseed-alder", 3);
+                //shuffleBag.Add("item-treeseed-bearnut", 3);
+                //shuffleBag.Add("item-treeseed-beech", 3);
+                shuffleBag.Add("item-treeseed-bluespruce", 3);
+                shuffleBag.Add("item-treeseed-blackpoplar", 3);
+                shuffleBag.Add("item-treeseed-brideinwhite", 3);
+                //shuffleBag.Add("item-treeseed-catalpa", 3);
+                shuffleBag.Add("item-treeseed-douglasfir", 3);
+                //shuffleBag.Add("item-treeseed-elm", 3);
+                //shuffleBag.Add("item-treeseed-eucalyptus", 3);
+                shuffleBag.Add("item-treeseed-honeylocust", 3);
+                //shuffleBag.Add("item-treeseed-mahogany", 3);
+                //shuffleBag.Add("item-treeseed-pyramidalpoplar", 3);
+                //shuffleBag.Add("item-treeseed-sal", 3);
+                shuffleBag.Add("item-treeseed-saxaul", 3);
+                shuffleBag.Add("item-treeseed-spruce", 3);
+                shuffleBag.Add("item-treeseed-sycamore", 3);
+                shuffleBag.Add("item-treeseed-willow", 3);
+            }
             return shuffleBag;
         }
     }

@@ -27,6 +27,8 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int maxSlots = 3;
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
         private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+        private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
+
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
         private readonly string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
         private readonly string[] relics = { "psgear-astral", "psgear-ethereal" };
@@ -170,11 +172,11 @@ namespace PrimitiveSurvival.ModSystem
             foreach (var neib in neibPos)
             {
                 testBlock = this.Api.World.BlockAccessor.GetBlock(neib, BlockLayersAccess.Default);
-                if (testBlock.LiquidCode != "water")
+                if (!testBlock.Code.Path.Contains("water"))
                 { waterAllAround = false; }
             }
             testBlock = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Fluid);
-            if (testBlock.FirstCodePart() != "water")
+            if (!testBlock.FirstCodePart().Contains("water"))
             {
                 //Debug.WriteLine("basket IS ice");
                 waterAllAround = false;
@@ -194,9 +196,13 @@ namespace PrimitiveSurvival.ModSystem
             testBlock = this.Api.World.BlockAccessor.GetBlock(testPos, BlockLayersAccess.Fluid);
 
             //Debug.WriteLine("Opening is " + testBlock.Code.Path);
-            if (testBlock.FirstCodePart() != "water")
+            if (!testBlock.FirstCodePart().Contains("water"))
             {
                 //Debug.WriteLine("basket opening IS ice");
+                waterAllAround = false;
+            }
+            if (!testBlock.FirstCodePart().Contains("boiling"))
+            {
                 waterAllAround = false;
             }
 
@@ -290,7 +296,18 @@ namespace PrimitiveSurvival.ModSystem
                 { newStack = new ItemStack(this.Api.World.GetBlock(new AssetLocation("game:seashell-" + this.shellStates[Rnd.Next(this.shellStates.Count())] + "-" + this.shellColors[Rnd.Next(this.shellColors.Count())])), 1); }
             }
             else
-            { newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1); }
+            {
+                var waterBlock = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Fluid);
+
+                if (waterBlock.Code.Path.Contains("saltwater"))
+                {
+                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                }
+                else
+                {
+                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                }
+            }
             if (this.inventory[slot].Empty)
             {
                 if (newStack.Collectible.Code.Path.Contains("psfish"))

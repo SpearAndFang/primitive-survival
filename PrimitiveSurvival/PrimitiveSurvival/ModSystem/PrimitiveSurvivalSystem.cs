@@ -150,7 +150,8 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockClass("BlockLiquidIrrigationVesselBase", typeof(BlockLiquidIrrigationVesselBase));
             api.RegisterBlockClass("BlockLiquidIrrigationVesselTopOpened", typeof(BlockLiquidIrrigationVesselTopOpened));
 
-            api.RegisterBlockClass("blockstake", typeof(BlockStake));
+            //obsolete - use blockstakeinwater
+            //api.RegisterBlockClass("blockstake", typeof(BlockStake));
             api.RegisterBlockClass("blockfuse", typeof(BlockFuse));
             api.RegisterBlockClass("blockstakeinwater", typeof(BlockStakeInWater));
             api.RegisterBlockClass("blockdeadfall", typeof(BlockDeadfall));
@@ -214,9 +215,6 @@ namespace PrimitiveSurvival.ModSystem
             this.prevChunksLoaded = false;
             base.StartServerSide(api);
             this.sapi = api;
-
-           
-
             api.Event.SaveGameLoaded += this.OnSaveGameLoading;
             api.Event.GameWorldSave += this.OnSaveGameSaving;
             var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishChunkRepletionMinutes);
@@ -229,6 +227,14 @@ namespace PrimitiveSurvival.ModSystem
             this.RegisterClasses(api);
         }
 
+        public static bool wildCraftTreesExists(ICoreServerAPI sapi)
+        {
+            //for adding tree hollow support
+            var wctrees = sapi?.ModLoader?.GetMod("wildcrafttrees");
+            if (wctrees != null)
+            { return true; }
+            return false;
+        }
 
         private void OnSaveGameLoading()
         {

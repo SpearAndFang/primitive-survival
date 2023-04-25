@@ -99,7 +99,7 @@ namespace PrimitiveSurvival.ModSystem
         private void OnPipeTick(float dt)
         {
             var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Fluid);
-            if (block.Code.Path.Contains("water") && this.OtherSlot.Empty)
+            if (block.Code.Path.Contains("water") && this.OtherSlot.Empty && !block.Code.Path.Contains("saltwater"))
             {
                 //contains water and no blockage
                 if (Rnd.NextDouble() < (this.FurrowedLandBlockageChancePercent / 100))

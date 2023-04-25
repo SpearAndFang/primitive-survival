@@ -71,7 +71,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public bool FullWaterBlock(Block block)
         {
-            if (block.FirstCodePart() == "water" && block.LastCodePart() == "7")
+            if (block.FirstCodePart().Contains("water") && block.LastCodePart() == "7")
             { return true; }
             return false;
         }
@@ -81,14 +81,19 @@ namespace PrimitiveSurvival.ModSystem
         public void FillPlacedBlock(IWorldAccessor world, BlockPos pos)
         {
             //calling this from OnBlockPlaced below AND when we remove a blockage on the BE side
-            var waterBlock = world.GetBlock(new AssetLocation("game:water-still-7"));
             //if there's water directly above then fill the furrowed land
             if (this.WaterAbove(pos))
             {
                 var thisWaterBlock = world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Fluid);
                 if (!thisWaterBlock.Code.Path.Contains("ice"))
                 {
-                    world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
+                    var assetCode = "game:" + thisWaterBlock.FirstCodePart() + "-still-7";
+                    var waterBlock = world.GetBlock(new AssetLocation(assetCode));
+
+                    if (waterBlock != null)
+                    {
+                        world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
+                    }
                     world.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
                 }
             }
@@ -100,7 +105,13 @@ namespace PrimitiveSurvival.ModSystem
                 var blockChk = this.api.World.BlockAccessor.GetBlock(waterPos, BlockLayersAccess.Fluid);
                 if (this.FullWaterBlock(blockChk))
                 {
-                    world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
+                    var assetCode = "game:" + blockChk.FirstCodePart() + "-still-7";
+                    var waterBlock = world.GetBlock(new AssetLocation(assetCode));
+
+                    if (waterBlock != null)
+                    {
+                        world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
+                    }
                     world.BlockAccessor.TriggerNeighbourBlockUpdate(waterPos);
                 }
             }
@@ -137,19 +148,28 @@ namespace PrimitiveSurvival.ModSystem
             var waterFound = false;
             var positions = this.AreaAround(pos);
             positions.Append(pos.Copy());
+
+            var blockFound = "water";
             foreach (var waterPos in positions)
             {
                 var blockChk = this.api.World.BlockAccessor.GetBlock(waterPos, BlockLayersAccess.Fluid);
                 if (this.FullWaterBlock(blockChk))
-                { waterFound = true; }
+                {
+                    waterFound = true;
+                    blockFound = blockChk.FirstCodePart();
+                }
             }
             if (!waterFound)
             { world.BlockAccessor.SetBlock(0, pos, BlockLayersAccess.Fluid); }
             else
             {
-                //similar to how I handled lava instead
-                var waterBlock = world.GetBlock(new AssetLocation("game:water-still-3"));
-                world.BlockAccessor.SetBlock(waterBlock.Id, pos, BlockLayersAccess.Default);
+                //arbitrarily use the last water block found
+                string assetCode = "game:" + blockFound + "-still-3";
+                var waterBlock = world.GetBlock(new AssetLocation(assetCode));
+                if (waterBlock != null)
+                {
+                    world.BlockAccessor.SetBlock(waterBlock.Id, pos, BlockLayersAccess.Default);
+                }
             }
         }
 
@@ -179,8 +199,13 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (!thisWaterBlock.Code.Path.Contains("ice"))
                         {
-                            var waterBlock = world.GetBlock(new AssetLocation("game:water-still-7"));
-                            world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
+                            var assetCode = "game:" + thisWaterBlock.FirstCodePart() + "-still-7";
+                            var waterBlock = world.GetBlock(new AssetLocation(assetCode));
+
+                            if (waterBlock != null)
+                            {
+                                world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
+                            }
                         }
                     }
                 }
@@ -203,7 +228,13 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (!neibWaterBlock.Code.Path.Contains("ice"))
                         {
-                            var waterBlock = world.GetBlock(new AssetLocation("game:water-still-7"));
+                            var assetCode = "game:" + thisWaterBlock.FirstCodePart() + "-still-7";
+                            var waterBlock = world.GetBlock(new AssetLocation(assetCode));
+
+                            if (waterBlock != null)
+                            {
+                                world.BlockAccessor.SetBlock(waterBlock.BlockId, pos, BlockLayersAccess.Fluid);
+                            }
                             world.BlockAccessor.SetBlock(waterBlock.BlockId, neibpos, BlockLayersAccess.Fluid);
                         }
                     }

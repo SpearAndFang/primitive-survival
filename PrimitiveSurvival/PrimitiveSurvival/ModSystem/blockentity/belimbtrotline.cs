@@ -28,6 +28,8 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int maxSlots = 4;
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
         private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+        private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
+
         private static readonly Random Rnd = new Random();
 
         private long particleTick;
@@ -139,7 +141,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 var belowblock = new BlockPos(this.Pos.X, this.Pos.Y - 1, this.Pos.Z);
                 var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock, BlockLayersAccess.Default);
-                if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
+                if (belowBlock.Code.Path.Contains("water") && (!belowBlock.Code.Path.Contains("inwater")))
                 {
                     var rando = Rnd.Next(3);
                     if (rando == 0)
@@ -156,7 +158,7 @@ namespace PrimitiveSurvival.ModSystem
                 var belowblock = new BlockPos(this.Pos.X, this.Pos.Y - 1, this.Pos.Z);
                 var belowBlock = this.Api.World.BlockAccessor.GetBlock(belowblock, BlockLayersAccess.Default);
                 var belowBlockLiquid = this.Api.World.BlockAccessor.GetBlock(belowblock, BlockLayersAccess.Fluid); //check for ice
-                if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")) && belowBlockLiquid.Code.Path.Contains("water"))
+                if (belowBlock.Code.Path.Contains("water") && (!belowBlock.Code.Path.Contains("inwater")) && belowBlockLiquid.Code.Path.Contains("water") && !belowBlockLiquid.Code.Path.Contains("boiling"))
                 {
                     var caught = Rnd.Next(100);
                     if (!this.BaitSlot.Empty)
@@ -197,7 +199,14 @@ namespace PrimitiveSurvival.ModSystem
                                     }
                                     /*********************************************/
                                     //Debug.WriteLine("fish on hook");
-                                    this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                                    if (belowBlock.Code.Path.Contains("saltwater"))
+                                    {
+                                        this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                                    }
+                                    else
+                                    {
+                                        this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                                    }
                                     rando = Rnd.Next(2);
                                     if (rando == 0)
                                     { this.BaitSlot.TakeOut(1); }
@@ -232,7 +241,14 @@ namespace PrimitiveSurvival.ModSystem
                                 }
                                 /*********************************************/
                                 //Debug.WriteLine("fish on hook");
-                                this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                                if (belowBlock.Code.Path.Contains("saltwater"))
+                                {
+                                    this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                                }
+                                else
+                                {
+                                    this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                                }
                                 this.MarkDirty();
                                 //Api.World.BlockAccessor.MarkBlockDirty(Pos);
                                 //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
@@ -270,7 +286,7 @@ namespace PrimitiveSurvival.ModSystem
                 //if (this.TryTake(world, byPlayer, blockSel))
                 if (this.TryTake(byPlayer))
                 {
-                    if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
+                    if (belowBlock.Code.Path.Contains("water") && (!belowBlock.Code.Path.Contains("inwater")))
                     {
                         this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y - 1, blockSel.Position.Z, byPlayer);
                     }
@@ -291,7 +307,7 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     if (this.TryPut(playerSlot))
                     {
-                        if ((belowBlock.LiquidCode == "water") && (!belowBlock.Code.Path.Contains("inwater")))
+                        if (belowBlock.Code.Path.Contains("water") && (!belowBlock.Code.Path.Contains("inwater")))
                         {
                             this.Api.World.PlaySoundAt(this.wetPickupSound, blockSel.Position.X, blockSel.Position.Y - 1, blockSel.Position.Z, byPlayer);
                         }

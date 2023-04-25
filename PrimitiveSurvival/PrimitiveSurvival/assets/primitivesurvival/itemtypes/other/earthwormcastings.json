@@ -6,6 +6,7 @@
       "p": 10,
       "k": 10
     },
+    "fertilizerTextureCode": "castings",
     "dissolveInWater": false
   },
   "shape": { "base": "item/earthwormcastings" },

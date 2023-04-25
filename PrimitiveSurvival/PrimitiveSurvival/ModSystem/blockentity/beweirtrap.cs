@@ -25,6 +25,8 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int tickSeconds = 3;
         private readonly int maxSlots = 2;
         private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+        private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
+
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
         private readonly string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
         private readonly string[] relics = { "temporalbase", "temporalcube", "temporallectern", "cthulu-statue", "dagon-statue", "hydra-statue", "nephrenka-statue", "necronomicon" };
@@ -205,7 +207,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (testBlock.Code.Path.Contains("open"))
                 {
                     testBlock = this.Api.World.BlockAccessor.GetBlock(neib, BlockLayersAccess.Fluid);
-                    if (testBlock.LiquidCode == "water")
+                    if (testBlock.Code.Path.Contains("water"))
                     {
                         openWater = true;
                     }
@@ -214,9 +216,12 @@ namespace PrimitiveSurvival.ModSystem
 
             //now check the weir trap itself
             testBlock = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Fluid);
-            if (testBlock.FirstCodePart() != "water")
+            if (!testBlock.FirstCodePart().Contains("water"))
             {
-                //Debug.WriteLine("weirtrap IS ice");
+                openWater = false;
+            }
+            if (!testBlock.FirstCodePart().Contains("boiling"))
+            {
                 openWater = false;
             }
             if (openWater)
@@ -289,7 +294,16 @@ namespace PrimitiveSurvival.ModSystem
                 }
                 else
                 {
-                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                    var waterBlock = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Fluid);
+
+                    if (waterBlock.Code.Path.Contains("saltwater"))
+                    {
+                        newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                    }
+                    else
+                    {
+                        newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                    }
                 }
             }
             if (newStack == null)

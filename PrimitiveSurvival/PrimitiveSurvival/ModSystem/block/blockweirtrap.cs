@@ -93,7 +93,18 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
         {
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
-            world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("water-still-7")).BlockId, pos);
+
+            var tempBlock = world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Fluid);
+            if (tempBlock.Code.Path.Contains("saltwater"))
+            {
+                world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("saltwater-still-7")).BlockId, pos);
+            }
+            else
+            {
+                world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("water-still-7")).BlockId, pos);
+            }
+
+            
             world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default).OnNeighbourBlockChange(world, pos, pos);
         }
 
@@ -103,7 +114,7 @@ namespace PrimitiveSurvival.ModSystem
             var neibBlock = world.BlockAccessor.GetBlock(neibpos, BlockLayersAccess.Default);
             if (neibBlock != null)
             {
-                if (neibBlock.BlockId == 0 || neibBlock.Code.Path.StartsWith("water"))
+                if (neibBlock.BlockId == 0 || neibBlock.Code.Path.StartsWith("water") || neibBlock.Code.Path.StartsWith("saltwater"))
                 {
                     var weirSidesPos = new BlockPos[] { pos.EastCopy(), pos.WestCopy(), pos.NorthCopy(), pos.SouthCopy() };
                     Block testBlock;

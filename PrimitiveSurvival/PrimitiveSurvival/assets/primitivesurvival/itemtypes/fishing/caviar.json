@@ -1,22 +1,22 @@
 {
-  "code": "caviar",
+  "code": "caviar", 
   "maxstacksize": 64,
   "variantgroups": [
     {
-      "code": "state",
+      "code": "type",
       "states": [ "curing", "cured" ]
     }
   ],
   "shape": { "base": "item/fishing/fisheggs" },
   "texturesbytype": {
     "*": {
-      "normal": { "base": "item/fishing/caviar-{state}" }
+      "normal": { "base": "item/fishing/caviar-{type}" }
     }
   },
   "creativeinventory": {
-    "general": [ "*-cured" ],
-    "items": [ "*-cured" ],
-    "primitive": [ "*-cured" ]
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
   },
   "nutritionPropsByType": {
     "*-cured": {

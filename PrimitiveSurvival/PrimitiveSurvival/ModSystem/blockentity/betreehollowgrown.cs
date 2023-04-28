@@ -91,10 +91,8 @@ namespace PrimitiveSurvival.ModSystem
 
                 if (updatingInHours < 0)
                 {
-                    var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockTreeHollowGrown;
-
                     var uf = new TreeHollows();
-                    uf.AddItemStacks(this, uf.MakeItemStacks(block.FirstCodePart(1), this.Api as ICoreServerAPI));
+                    uf.AddItemStacks(this, uf.MakeItemStacks(this.Block, this.Api as ICoreServerAPI));
                     this.MarkDirty();
                 }
             }

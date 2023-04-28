@@ -227,15 +227,6 @@ namespace PrimitiveSurvival.ModSystem
             this.RegisterClasses(api);
         }
 
-        public static bool wildCraftTreesExists(ICoreServerAPI sapi)
-        {
-            //for adding tree hollow support
-            var wctrees = sapi?.ModLoader?.GetMod("wildcrafttrees");
-            if (wctrees != null)
-            { return true; }
-            return false;
-        }
-
         private void OnSaveGameLoading()
         {
             fishingChunks = new Dictionary<IServerChunk, int>();

@@ -24,6 +24,67 @@
       "*-larch-*": 3,
       "*-walnut-*": 4,
       "*": 4
+    },
+    "primitivesurvival":
+    {
+      "treeHollowTypeByType":
+      {
+        "*-base-*": "base",
+        "*-base2-*": "base",
+        "*-up-*": "up",
+        "*-up2-*": "up"
+      },
+      "treeHollowContentsByHollowType":
+      {
+        "base":
+        [
+          { "code": "primitivesurvival:item-earthworm", "amount": 6 },
+          { "code": "primitivesurvival:item-earthworm", "amount": 6 },
+          { "code": "primitivesurvival:item-earthworm", "amount": 6 },
+          { "code": "primitivesurvival:item-earthwormcastings", "amount": 6 },
+          { "code": "primitivesurvival:item-earthwormcastings", "amount": 6 },
+          { "code": "block-mushroom-kingbolete-normal", "amount": 3 },
+          { "code": "block-mushroom-fieldmushroom-normal", "amount": 5 }
+        ],
+        "up":
+        [
+          { "code": "item-honeycomb", "amount": 3 },
+          { "code": "item-resin", "amount": 4 },
+          { "code": "item-stick", "amount": 4 },
+          { "code": "item-insect-grub", "amount": 3 },
+          { "code": "item-insect-termite", "amount": 3 }
+        ],
+        "all":
+        [
+          { "code": "item-seeds-turnip", "amount": 3 },
+          { "code": "item-seeds-onion", "amount": 3 },
+          { "code": "item-seeds-peanut", "amount": 3 },
+          { "code": "item-seeds-flax", "amount": 3 },
+          { "code": "item-seeds-spelt", "amount": 3 },
+          { "code": "item-seeds-pumpkin", "amount": 3 },
+          { "code": "item-seeds-pineapple", "amount": 3 },
+          { "code": "item-seeds-carrot", "amount": 3 },
+          { "code": "item-seeds-rice", "amount": 3 },
+          { "code": "item-seeds-rye", "amount": 3 },
+          { "code": "item-seeds-cabbage", "amount": 3 },
+          { "code": "item-seeds-cassava", "amount": 3 },
+          { "code": "item-seeds-amaranth", "amount": 3 },
+          { "code": "item-seeds-sunflower", "amount": 3 },
+
+          { "code": "item-treeseed-oak", "amount": 3 },
+          { "code": "item-treeseed-pine", "amount": 3 },
+          { "code": "item-treeseed-larch", "amount": 3 },
+          { "code": "item-treeseed-crimsonkingmaple", "amount": 3 },
+          { "code": "item-treeseed-redwood", "amount": 3 },
+          { "code": "item-treeseed-ebony", "amount": 3 },
+          { "code": "item-treeseed-acacia", "amount": 3 },
+          { "code": "item-treeseed-walnut", "amount": 3 },
+          { "code": "item-treeseed-baldcypress", "amount": 3 },
+          { "code": "item-treeseed-birch", "amount": 3 },
+          { "code": "item-treeseed-maple", "amount": 3 },
+          { "code": "item-treeseed-kapok", "amount": 3 }
+        ]
+      }
     }
   },
     "variantgroups": [

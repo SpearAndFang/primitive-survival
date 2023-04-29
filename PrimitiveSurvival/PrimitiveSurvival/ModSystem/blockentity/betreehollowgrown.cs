@@ -190,6 +190,17 @@ namespace PrimitiveSurvival.ModSystem
             return slot;
         }
 
+        internal CollectibleObject GetDisplayedCollectible()
+        {
+            var index = this.LastFilledSlot();
+            if (index < 0)
+            {
+                return null;
+            }
+
+            return this.inventory[index].Itemstack.Collectible;
+        }
+
         /*
         //private bool TryPut(ItemSlot slot, BlockSelection blockSel)
         private bool TryPut()
@@ -333,6 +344,10 @@ namespace PrimitiveSurvival.ModSystem
                         { mesh.Translate(new Vec3f(0f, 0.03f, 0f)); }
                         else //up has thicker bottom
                         { mesh.Translate(new Vec3f(0f, 0.23f, 0f)); }
+                        if (stack.Collectible.GetBehavior<BehaviorInTreeHollowTransform>()?.Transform is ModelTransform transform)
+                        {
+                            mesh.ModelTransform(transform);
+                        }
                         if (block.LastCodePart() == "north" || block.LastCodePart() == "south")
                         {
                             mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, 90, 0);

@@ -63,6 +63,7 @@ namespace PrimitiveSurvival.ModSystem
             this.capi.RegisterEntityRendererClass("entitygenericshaperenderer", typeof(EntityGenericShapeRenderer));
             this.vrenderer = new VenomOverlayRenderer(api);
             api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
+            (capi.World as ClientMain).RegisterDialog(new GuiDialogHollowTransform(capi));
         }
 
 
@@ -118,6 +119,8 @@ namespace PrimitiveSurvival.ModSystem
 
             AiTaskRegistry.Register("meleeattackvenomous", typeof(AiTaskMeleeAttackVenomous));
             AiTaskRegistry.Register("meleeattackcrab", typeof(AiTaskMeleeAttackCrab));
+
+            api.RegisterCollectibleBehaviorClass("inTreeHollowTransform", typeof(BehaviorInTreeHollowTransform));
 
             api.RegisterBlockBehaviorClass("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
             api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));

@@ -296,15 +296,18 @@ namespace PrimitiveSurvival.ModSystem
             if (block == null)
             { return shuffleBag; }
 
-            var psAttributes = block.Attributes["primitivesurvival"];
+            var psAttributes = block.Attributes?["primitivesurvival"];
+            if (psAttributes == null)
+            { return shuffleBag; }
+
             var hollowType = psAttributes["treeHollowType"].AsString("all");
             var contentsByHollowType = psAttributes["treeHollowContentsByHollowType"];
 
             if (hollowType != "all")
             {
-                AddItemsToShuffleBag(shuffleBag, contentsByHollowType[hollowType]);
+                this.AddItemsToShuffleBag(shuffleBag, contentsByHollowType[hollowType]);
             }
-            AddItemsToShuffleBag(shuffleBag, contentsByHollowType["all"]);
+            this.AddItemsToShuffleBag(shuffleBag, contentsByHollowType["all"]);
 
             return shuffleBag;
         }

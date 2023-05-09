@@ -56,11 +56,12 @@ You have an item/block code and a transform, so you now have everything required
 },
 ```
 Note: If the object is from some other mod, look at this file for an example of how that object is added to hollows:
->primitivesurvival/patches/wildcrafttrees/ps-treehollowcontents.json
+```primitivesurvival/patches/wildcrafttrees/ps-treehollowcontents.json```
 
 
-#### 4. When you add contents to a tree hollow, it may not render correctly.  That's where the transform comes in. 
+#### 4. When you add contents to a tree hollow, it may not render correctly.  
 
+That's where the transform comes in. For example:
 ```
 {
 	"name": "intreeHollowTransform",
@@ -73,7 +74,7 @@ Note: If the object is from some other mod, look at this file for an example of 
 }
 ```
 
-For examples of how to add this correctly, see:
+To understand how to add these transforms correctly, see some files that I've already put them to use:
 
 ```itemtypes/other/earthwormcastings.json```
 An inTreeHollowTransform in action in Primitive Survival.

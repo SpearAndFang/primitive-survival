@@ -7,11 +7,11 @@ https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-a
 
 ## Developer Tools
 
-### Tree Hollow contents customization (in Primitive Survival 3.2.0 and newer), courtesy of JapanHasRice!  
+### Tree Hollow contents customization, courtesy of JapanHasRice!  
 
 _**Thanks so much for this JapanHasRice.  This is some amazing work you've done here!**_
 
-Tree hollow contents are no longer hardcoded. Not that it's simple to add your own contents, but if you have the intestinal fortitude read this.
+As of version 3.2.0 of Primitive Survival, tree hollow contents are no longer hardcoded. Not that it's simple to add your own contents, but if you have the intestinal fortitude read this.
 
 #### 1. You will need item/block codes.  
 

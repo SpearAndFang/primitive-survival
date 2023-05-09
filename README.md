@@ -35,7 +35,7 @@ primitivesurvival:item-earthworm
 
 Edit the modconfig file and set **"TreeHollowsEnableDeveloperTools"** to **true**. With this feature enabled, you will have a few new things at your disposal:
 
-- command **/hollow** - look at the ground a couple of blocks in front of you and use this command to place a GROWN tree hollow in front of you.  I recommend you have one that's facing north/south, and a second one that's facing east/west for testing purposes.
+- command **/hollow** - look at the ground a couple of blocks in front of you and use this command to place a grown and stocked tree hollow in front of you.  I recommend you have one that's facing north/south, and a second one that's facing east/west for testing purposes.
 
 - command **.hollowtfedit** - when you are looking at a tree hollow that has something in it, this command will allow you to reposition/rotate/resize that object so it looks good in a hollow.  Once it looks good, _Copy JSON_ and paste that code to some temporary location.  Then _Close & Apply_ so you can test your transform in a tree hollow that is oriented differently.
 

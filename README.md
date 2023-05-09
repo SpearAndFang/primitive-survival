@@ -5,11 +5,11 @@ https://mods.vintagestory.at/primitivesurvival
 https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
 
 
-## Developer Tools: Tree Hollow contents customization, courtesy of JapanHasRice!
+### Developer Tools: Tree Hollow contents customization, courtesy of JapanHasRice!
 
 Tree hollow contents are no longer hardcoded. Not that it's simple to add your own contents, but if you have the intestinal fortitude, read this:
 
-### 1. You will need item/block codes.  These can be easily identified as follows:
+#### 1. You will need item/block codes.  These can be easily identified as follows:
 - In the game, choose **Settings - Interface**, and enable **Developer Mode**
 - In the game, choose **Settings - Debug**, and enable **Extended Debug Info**
 
@@ -19,7 +19,7 @@ Page code:item-primitivesurvival:earthworm
 
 Note: when you use that information later in a json file, you will rearrange that page code slightly, like so: primitivesurvival:item-earthworm
 
-### 2. You will need to enable the Primitive Survival tree hollow developer tools.  Edit the modconfig file and set **"TreeHollowsEnableDeveloperTools"** to true.
+#### 2. You will need to enable the Primitive Survival tree hollow developer tools.  Edit the modconfig file and set **"TreeHollowsEnableDeveloperTools"** to true.
 
 With this feature enabled, you will have a few new things at your disposal:
 
@@ -32,7 +32,7 @@ With this feature enabled, you will have a few new things at your disposal:
 
 You have an item/block code and a transform, so you now have everything required to add something new to a hollow.
 
-### 3. For Primitive Survival and vanilla objects, edit	_primitivesurvival/blocktypes/wood/treehollowgrown.json_
+#### 3. For Primitive Survival and vanilla objects, edit	_primitivesurvival/blocktypes/wood/treehollowgrown.json_
 
 - locate the treeHollowContentsByHollowType key
 	- the "base" section is for items that can appear only at the base of the tree
@@ -49,7 +49,7 @@ You have an item/block code and a transform, so you now have everything required
 Note: If the object is from some other mod, look at this file for an example of how that object is added to hollows:
 >primitivesurvival/patches/wildcrafttrees/ps-treehollowcontents.json
 
-### 4. When you add contents to a tree hollow, it may not render correctly.  That's what the transform info is for. For examples of this in action, see:
+#### 4. When you add contents to a tree hollow, it may not render correctly.  That's what the transform info is for. For examples of this in action, see:
 
   -**itemtypes/other/earthwormcastings.json** for an example of the inTreeHollowTransform in action in Primitive Survival
   -**patches/ps-survival-hollowtransforms.json** for other examples for vanilla or any mod that isn't primitive survival.  Note it's propertiesByType we are patching, NOT behaviorsByType.

@@ -18,7 +18,11 @@ Now when you look up an object in the handbook, the _Page Code:_ will tell you e
 Page code:block-rottenlog-stump
 Page code:item-primitivesurvival:earthworm
 ```
-Note: when you use that information later in a json file, you will rearrange that page code slightly, like so: _primitivesurvival:item-earthworm_
+Note: when you use that information later in a json file, you will rearrange that page code slightly, like so:
+```
+block-rottenlog-stump
+primitivesurvival:item-earthworm
+```
 
 #### 2. You will need to enable the Primitive Survival tree hollow developer tools.  Edit the modconfig file and set **"TreeHollowsEnableDeveloperTools"** to true.
 
@@ -30,8 +34,8 @@ With this feature enabled, you will have a few new things at your disposal:
 
 - to test your new transform in hollows that are facing other directions, simply pick up that object and place it in another hollow.  This is the other feature provided by the developer tools.  Normally you cannot place things in grown hollows. 
 
-
 You have an item/block code and a transform, so you now have everything required to add something new to a hollow.
+
 
 #### 3. For Primitive Survival and vanilla objects, edit
 >primitivesurvival/blocktypes/wood/treehollowgrown.json
@@ -50,6 +54,7 @@ You have an item/block code and a transform, so you now have everything required
 ```
 Note: If the object is from some other mod, look at this file for an example of how that object is added to hollows:
 >primitivesurvival/patches/wildcrafttrees/ps-treehollowcontents.json
+
 
 #### 4. When you add contents to a tree hollow, it may not render correctly.  That's what the transform info is for. For examples of this in action, see:
 

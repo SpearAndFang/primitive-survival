@@ -86,6 +86,6 @@ An inTreeHollowTransform in action in Primitive Survival.
 ```patches/ps-survival-hollowtransforms.json```
 Other examples for vanilla or any mod that isn't primitive survival.  
 
-Note it's _propertiesByType_ we are patching, NOT _behaviorsByType_.
+Note it's _properties/propertiesByType_ we are patching, NOT _behaviors/behaviorsByType_.
 
 

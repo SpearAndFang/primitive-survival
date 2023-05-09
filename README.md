@@ -5,7 +5,11 @@ https://mods.vintagestory.at/primitivesurvival
 https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
 
 
-### Developer Tools: Tree Hollow contents customization, courtesy of JapanHasRice!
+## Developer Tools 
+
+### Tree Hollow contents customization, courtesy of JapanHasRice!  
+
+_**Thanks so much for this JapanHasRice.  This is some amazing work you've done here!**_
 
 Tree hollow contents are no longer hardcoded. Not that it's simple to add your own contents, but if you have the intestinal fortitude read this.
 
@@ -82,6 +86,6 @@ An inTreeHollowTransform in action in Primitive Survival.
 ```patches/ps-survival-hollowtransforms.json```
 Other examples for vanilla or any mod that isn't primitive survival.  
 
-Note it's propertiesByType we are patching, NOT behaviorsByType.
+Note it's _propertiesByType_ we are patching, NOT _behaviorsByType_.
 
 

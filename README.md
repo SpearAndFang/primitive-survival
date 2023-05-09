@@ -5,9 +5,9 @@ https://mods.vintagestory.at/primitivesurvival
 https://www.vintagestory.at/forums/topic/2399-primitive-survival-traps-fishing-and-other-surprises/
 
 
-## Developer Tools - COMING SOON
+## Developer Tools
 
-### Tree Hollow contents customization, courtesy of JapanHasRice!  
+### Tree Hollow contents customization (in Primitive Survival 3.2.0 and newer), courtesy of JapanHasRice!  
 
 _**Thanks so much for this JapanHasRice.  This is some amazing work you've done here!**_
 

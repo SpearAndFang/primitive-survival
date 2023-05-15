@@ -201,7 +201,7 @@ namespace PrimitiveSurvival.ModSystem
                 //Debug.WriteLine("basket opening IS ice");
                 waterAllAround = false;
             }
-            if (!testBlock.FirstCodePart().Contains("boiling"))
+            if (testBlock.FirstCodePart().Contains("boiling"))
             {
                 waterAllAround = false;
             }

@@ -12,7 +12,6 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
     using PrimitiveSurvival.ModConfig;
     using Vintagestory.Client.NoObf;
-    //using System.Diagnostics;
 
 
     public class PrimitiveSurvivalSystem : ModSystem
@@ -38,7 +37,6 @@ namespace PrimitiveSurvival.ModSystem
         {
             base.StartClientSide(api);
 
-            //this.harmony.PatchAll();
             var PSPumpkinPatchOriginal = typeof(PumpkinCropBehavior).GetMethod(nameof(PumpkinCropBehavior.CanSupportPumpkin));
             var PSPumpkinPatchPrefix = typeof(PS_CanSupportPumpkin_Patch).GetMethod(nameof(PS_CanSupportPumpkin_Patch.PSCanSupportPumpkinPrefix));
             this.harmony.Patch(PSPumpkinPatchOriginal, prefix: new HarmonyMethod(PSPumpkinPatchPrefix));
@@ -63,6 +61,10 @@ namespace PrimitiveSurvival.ModSystem
             this.capi.RegisterEntityRendererClass("entitygenericshaperenderer", typeof(EntityGenericShapeRenderer));
             this.vrenderer = new VenomOverlayRenderer(api);
             api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
+
+            //JHR
+            (this.capi.World as ClientMain).RegisterDialog(new GuiDialogHollowTransform(this.capi));
+            //END JHR
         }
 
 
@@ -119,6 +121,10 @@ namespace PrimitiveSurvival.ModSystem
             AiTaskRegistry.Register("meleeattackvenomous", typeof(AiTaskMeleeAttackVenomous));
             AiTaskRegistry.Register("meleeattackcrab", typeof(AiTaskMeleeAttackCrab));
 
+            //JHR
+            api.RegisterCollectibleBehaviorClass("inTreeHollowTransform", typeof(BehaviorInTreeHollowTransform));
+            //END JHR
+
             api.RegisterBlockBehaviorClass("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
             api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));
             api.RegisterBlockBehaviorClass("RightClickPickupFireflies", typeof(RightClickPickupFireflies));
@@ -150,8 +156,7 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockClass("BlockLiquidIrrigationVesselBase", typeof(BlockLiquidIrrigationVesselBase));
             api.RegisterBlockClass("BlockLiquidIrrigationVesselTopOpened", typeof(BlockLiquidIrrigationVesselTopOpened));
 
-            //obsolete - use blockstakeinwater
-            //api.RegisterBlockClass("blockstake", typeof(BlockStake));
+            api.RegisterBlockClass("blockearthwormcastings", typeof(BlockEarthwormCastings));
             api.RegisterBlockClass("blockfuse", typeof(BlockFuse));
             api.RegisterBlockClass("blockstakeinwater", typeof(BlockStakeInWater));
             api.RegisterBlockClass("blockdeadfall", typeof(BlockDeadfall));
@@ -227,14 +232,6 @@ namespace PrimitiveSurvival.ModSystem
             this.RegisterClasses(api);
         }
 
-        public static bool wildCraftTreesExists(ICoreServerAPI sapi)
-        {
-            //for adding tree hollow support
-            var wctrees = sapi?.ModLoader?.GetMod("wildcrafttrees");
-            if (wctrees != null)
-            { return true; }
-            return false;
-        }
 
         private void OnSaveGameLoading()
         {
@@ -242,10 +239,6 @@ namespace PrimitiveSurvival.ModSystem
             // attempt to load the (short) list of all active fishing chunks
             var data = this.sapi.WorldManager.SaveGame.GetData("chunklist");
             chunkList = data == null ? new List<string>() : SerializerUtil.Deserialize<List<string>>(data);
-            /*
-            foreach (var entry in chunkList)
-            { Debug.WriteLine(entry); }
-            */
         }
 
 
@@ -367,7 +360,6 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void Dispose()
         {
-            //this.harmony.UnpatchAll("psharmony");
             var PSPumpkinPatchOriginal = typeof(PumpkinCropBehavior).GetMethod(nameof(PumpkinCropBehavior.CanSupportPumpkin));
             this.harmony.Unpatch(PSPumpkinPatchOriginal, HarmonyPatchType.Prefix, "*");
 
@@ -387,7 +379,6 @@ namespace PrimitiveSurvival.ModSystem
         }
 
         //allow pumpkin vines to grow on furrowed land and irrigation vessels
-        //[HarmonyPatch(typeof(PumpkinCropBehavior), nameof(PumpkinCropBehavior.CanSupportPumpkin))]
         public class PS_CanSupportPumpkin_Patch
         {
             [HarmonyPrefix]
@@ -404,18 +395,16 @@ namespace PrimitiveSurvival.ModSystem
         }
 
         // display mod name in the hud for blocks
-        //[HarmonyPatch(typeof(Block), nameof(Block.GetPlacedBlockInfo))]
         public class PS_BlockGetPlacedBlockInfo_Patch
         {
             [HarmonyPostfix]
-            public static void PSBlockGetPlacedBlockInfoPostfix(ref string __result, IPlayer forPlayer) //IWorldAccessor world, BlockPos pos
+            public static void PSBlockGetPlacedBlockInfoPostfix(ref string __result, IPlayer forPlayer)
             {
                 var domain = forPlayer.Entity?.BlockSelection?.Block?.Code?.Domain;
                 if (domain != null)
                 {
                     if (domain == "primitivesurvival")
                     {
-                        //forPlayer.Entity?.Api?.ModLoader?.GetMod(domain).Info.Name
                         __result += "\n\n<font color=\"#D8EAA3\"><i>Primitive Survival</i></font>\n\n";
                     }
                 }
@@ -423,18 +412,16 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-        //[HarmonyPatch(typeof(CollectibleObject), nameof(Block.GetHeldItemInfo))]
         public class PS_CollectibleGetHeldItemInfo_Patch
         {
             [HarmonyPostfix]
-            public static void PSCollectibleGetHeldItemInfoPostfix(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world) //bool withDebugInfo
+            public static void PSCollectibleGetHeldItemInfoPostfix(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world)
             {
                 var domain = inSlot.Itemstack?.Collectible?.Code?.Domain;
                 if (domain != null)
                 {
                     if (domain == "primitivesurvival")
                     {
-                        //world.Api?.ModLoader?.GetMod(domain).Info.Name
                         dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>Primitive Survival</i></font>");
                     }
                 }

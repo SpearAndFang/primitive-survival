@@ -1,9 +1,9 @@
 {
-  "code": "smokedmeat",
+  "code": "curedsmokedmeat",
   "maxstacksize": 64,
   "attributes": {
     "inContainerTexture": {
-      "base": "primitivesurvival:block/pie/fill-smoked-{type}"
+      "base": "primitivesurvival:block/pie/fill-curedsmoked-{type}"
     },
     "nutritionPropsWhenInMealByType": {
       "*-redmeat-*": {
@@ -32,7 +32,7 @@
         "levelTo": 0.25,
         "startScaleY": 1.0,
         "endScaleY": 1.0,
-        "resultCode": "primitivesurvival:smokedmeat-{type}-partbaked"
+        "resultCode": "primitivesurvival:curedsmokedmeat-{type}-partbaked"
       },
       "*-partbaked": {
         "temp": 150,
@@ -40,8 +40,8 @@
         "levelTo": 0.5,
         "startScaleY": 1.0,
         "endScaleY": 1.0,
-        "resultCode": "primitivesurvival:smokedmeat-{type}-cooked",
-        "initialCode": "primitivesurvival:smokedmeat-{type}-raw"
+        "resultCode": "primitivesurvival:curedsmokedmeat-{type}-cooked",
+        "initialCode": "primitivesurvival:curedsmokedmeat-{type}-raw"
       },
       "*-cooked": {
         "temp": 150,
@@ -49,8 +49,8 @@
         "levelTo": 0.75,
         "startScaleY": 1.0,
         "endScaleY": 1.0,
-        "resultCode": "primitivesurvival:smokedmeat-{type}-charred",
-        "initialCode": "primitivesurvival:smokedmeat-{type}-partbaked"
+        "resultCode": "primitivesurvival:curedsmokedmeat-{type}-charred",
+        "initialCode": "primitivesurvival:curedsmokedmeat-{type}-partbaked"
       },
       "*-charred": {
         "temp": 150,
@@ -58,7 +58,7 @@
         "levelTo": 1.0,
         "startScaleY": 1.0,
         "endScaleY": 0.9,
-        "initialCode": "primitivesurvival:smokedmeat-{type}-cooked"
+        "initialCode": "primitivesurvival:curedsmokedmeat-{type}-cooked"
       }
     },
     "onDisplayTransformByType": {
@@ -73,19 +73,19 @@
     },
     "inPiePropertiesByType": {
       "*-redmeat-*": {
-        "texture": "block/pie/fill-smoked-redmeat",
+        "texture": "block/pie/fill-curedsmoked-redmeat",
         "partType": "Filling"
       },
       "*-bushmeat-*": {
-        "texture": "block/pie/fill-smoked-bushmeat",
+        "texture": "block/pie/fill-curedsmoked-bushmeat",
         "partType": "Filling"
       },
       "*-fish-*": {
-        "texture": "block/pie/fill-smoked-fish",
+        "texture": "block/pie/fill-curedsmoked-fish",
         "partType": "Filling"
       },
       "*-poultry-*": {
-        "texture": "block/pie/fill-smoked-poultry",
+        "texture": "block/pie/fill-curedsmoked-poultry",
         "partType": "Filling"
       }
     }
@@ -123,7 +123,7 @@
       "states": [ "raw", "partbaked", "cooked", "charred" ]
     }
   ],
-  "shape": { "base": "item/food/smoker/{type}-smoked" },
+  "shape": { "base": "item/food/smoker/{type}-curedsmoked" },
   "creativeinventory": {
     "general": [ "*-raw" ],
     "items": [ "*-raw" ],
@@ -358,8 +358,8 @@
     "*": [
       {
         "type": "Perish",
-        "freshHours": { "avg": 1095 },
-        "spoilHours": { "avg": 550 },
+		freshHours: { avg: 8760 },
+		spoilHours: { avg: 4380 },
         "transitionedStack": {
           "type": "item",
           "code": "game:rot"

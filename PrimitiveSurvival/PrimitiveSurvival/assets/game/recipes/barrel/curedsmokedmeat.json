@@ -1,0 +1,9 @@
+{
+	code: "curedsmokedmeat",
+	sealHours: 480,
+	ingredients: [
+		{ type: "item", code: "game:salt",  quantity: 2 },
+		{ type: "item", code: "primitivesurvival:smokedmeat-*-raw", name: "meat", quantity: 1, allowedVariants: ["redmeat", "poultry", "bushmeat", "fish"] }
+	],
+	output: { type: "item", code: "primitivesurvival:curedsmokedmeat-{meat}-raw", stackSize: 1 }
+}

@@ -1,0 +1,100 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"smoked": "game:item/food/meat/cured-smoked"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 4.0, 0.0, 6.0 ], 
+			"to": [ 10.0, 1.0, 7.5 ], 
+			"rotationOrigin": [ 4.0, 0.0, 6.0 ],
+			"faces": {
+				"north": { "texture": "#smoked", "uv": [ 0.0, 1.0, 6.0, 2.0 ] },
+				"east": { "texture": "#smoked", "uv": [ 6.0, 2.0, 7.5, 3.0 ] },
+				"south": { "texture": "#smoked", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+				"west": { "texture": "#smoked", "uv": [ 6.0, 3.0, 7.5, 4.0 ] },
+				"up": { "texture": "#smoked", "uv": [ 1.0, 1.0, 7.0, 2.5 ] },
+				"down": { "texture": "#smoked", "uv": [ 2.0, 0.0, 8.0, 1.5 ] }
+			},
+			"children": [
+				{
+					"name": "Cube3",
+					"from": [ 0.5, 0.0, 1.5 ], 
+					"to": [ 5.0, 1.0, 2.0 ], 
+					"rotationOrigin": [ 1.0, 0.0, -1.0 ],
+					"faces": {
+						"north": { "texture": "#smoked", "uv": [ 0.0, 0.0, 4.5, 1.0 ], "enabled": false },
+						"east": { "texture": "#smoked", "uv": [ 7.0, 2.0, 7.5, 3.0 ] },
+						"south": { "texture": "#smoked", "uv": [ 0.0, 0.0, 4.5, 1.0 ], "enabled": false },
+						"west": { "texture": "#smoked", "uv": [ 0.0, 1.0, 0.5, 2.0 ] },
+						"up": { "texture": "#smoked", "uv": [ 0.0, 0.5, 4.5, 1.0 ] },
+						"down": { "texture": "#smoked", "uv": [ 0.0, 0.0, 4.5, 0.5 ] }
+					}
+				},
+				{
+					"name": "Cube4",
+					"from": [ 0.5, 0.0, 2.0 ], 
+					"to": [ 5.5, 1.0, 2.5 ], 
+					"rotationOrigin": [ 1.0, 0.0, -1.0 ],
+					"faces": {
+						"north": { "texture": "#smoked", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
+						"east": { "texture": "#smoked", "uv": [ 7.0, 3.0, 7.5, 4.0 ] },
+						"south": { "texture": "#smoked", "uv": [ 1.0, 2.0, 6.0, 3.0 ] },
+						"west": { "texture": "#smoked", "uv": [ 7.0, 0.0, 7.5, 1.0 ] },
+						"up": { "texture": "#smoked", "uv": [ 0.0, 3.0, 5.0, 3.5 ] },
+						"down": { "texture": "#smoked", "uv": [ 0.0, 0.0, 5.0, 0.5 ] }
+					}
+				},
+				{
+					"name": "Cube5",
+					"from": [ 1.0, 0.0, -0.5 ], 
+					"to": [ 5.0, 1.0, 0.0 ], 
+					"rotationOrigin": [ 1.0, 0.0, -1.0 ],
+					"faces": {
+						"north": { "texture": "#smoked", "uv": [ 1.0, 3.0, 5.0, 4.0 ] },
+						"east": { "texture": "#smoked", "uv": [ 6.0, 3.0, 6.5, 4.0 ] },
+						"south": { "texture": "#smoked", "uv": [ 0.0, 0.0, 4.0, 1.0 ], "enabled": false },
+						"west": { "texture": "#smoked", "uv": [ 3.0, 3.0, 3.5, 4.0 ] },
+						"up": { "texture": "#smoked", "uv": [ 1.0, 3.0, 5.0, 3.5 ] },
+						"down": { "texture": "#smoked", "uv": [ 0.0, 0.0, 4.0, 0.5 ] }
+					}
+				},
+				{
+					"name": "Cube6",
+					"from": [ 1.5, 0.0, -1.0 ], 
+					"to": [ 4.5, 0.5, -0.5 ], 
+					"rotationOrigin": [ 1.0, 0.0, -1.0 ],
+					"faces": {
+						"north": { "texture": "#smoked", "uv": [ 0.0, 2.0, 3.0, 2.5 ] },
+						"east": { "texture": "#smoked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#smoked", "uv": [ 0.0, 0.0, 3.0, 0.5 ], "enabled": false },
+						"west": { "texture": "#smoked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#smoked", "uv": [ 1.0, 2.0, 4.0, 2.5 ] },
+						"down": { "texture": "#smoked", "uv": [ 0.0, 0.0, 3.0, 0.5 ] }
+					}
+				},
+				{
+					"name": "Cube7",
+					"from": [ 1.5, 0.0, 2.5 ], 
+					"to": [ 4.5, 0.5, 3.0 ], 
+					"rotationOrigin": [ 1.0, 0.0, -1.0 ],
+					"faces": {
+						"north": { "texture": "#smoked", "uv": [ 0.0, 0.0, 3.0, 0.5 ], "enabled": false },
+						"east": { "texture": "#smoked", "uv": [ 5.0, 1.0, 5.5, 1.5 ] },
+						"south": { "texture": "#smoked", "uv": [ 1.0, 3.0, 4.0, 3.5 ] },
+						"west": { "texture": "#smoked", "uv": [ 1.0, 3.0, 1.5, 3.5 ] },
+						"up": { "texture": "#smoked", "uv": [ 3.0, 3.0, 6.0, 3.5 ] },
+						"down": { "texture": "#smoked", "uv": [ 0.0, 0.0, 3.0, 0.5 ] }
+					}
+				}
+			]
+		}
+	]}

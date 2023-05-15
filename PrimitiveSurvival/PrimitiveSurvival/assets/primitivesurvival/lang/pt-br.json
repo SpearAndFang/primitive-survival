@@ -955,5 +955,66 @@
   "block-woodlantern-elm-*": "Wooden Lantern (Elm)",
   "block-woodlantern-beech-*": "Wooden Lantern (Beech)",
   "block-woodlantern-eucalyptus-*": "Wooden Lantern (Eucalyptus)",
-  "block-woodlantern-cedar-*": "Wooden Lantern (Cedar)"
+  "block-woodlantern-cedar-*": "Wooden Lantern (Cedar)",
+  
+  
+  
+  
+  "item-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
+  "item-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
+  "item-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
+  "item-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
+  
+  "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-raw": "Cured Smoked Redmeat pie (raw)",
+  "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-partbaked": "Cured Smoked Redmeat pie (part-baked)",
+  "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-perfect": "Cured Smoked Redmeat pie",
+  "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-charred": "Cured Smoked Redmeat pie (charred)",
+  "pie-single-primitivesurvival:curedsmokedmeat-poultry-raw-raw": "Cured Smoked Poultry pie (raw)",
+  "pie-single-primitivesurvival:curedsmokedmeat-poultry-raw-partbaked": "Cured Smoked Poultry pie (part-baked)",
+  "pie-single-primitivesurvival:curedsmokedmeat-poultry-raw-perfect": "Cured Smoked Poultry pie",
+  "pie-single-primitivesurvival:curedsmokedmeat-poultry-raw-charred": "Cured Smoked Poultry pie (charred)",
+  "pie-single-primitivesurvival:curedsmokedmeat-fish-raw-raw": "Cured Smoked Fish pie (raw)",
+  "pie-single-primitivesurvival:curedsmokedmeat-fish-raw-partbaked": "Cured Smoked Fish pie (part-baked)",
+  "pie-single-primitivesurvival:curedsmokedmeat-fish-raw-perfect": "Cured Smoked Fish pie",
+  "pie-single-primitivesurvival:curedsmokedmeat-fish-raw-charred": "Cured Smoked Fish pie (charred)",
+  "pie-single-primitivesurvival:curedsmokedmeat-bushmeat-raw-raw": "Cured Smoked Bushmeat pie (raw)",
+  "pie-single-primitivesurvival:curedsmokedmeat-bushmeat-raw-partbaked": "Cured Smoked Bushmeat pie (part-baked)",
+  "pie-single-primitivesurvival:curedsmokedmeat-bushmeat-raw-perfect": "Cured Smoked Bushmeat pie",
+  "pie-single-primitivesurvival:curedsmokedmeat-bushmeat-raw-charred": "Cured Smoked Bushmeat pie (charred)",
+
+  "game:recipeingredient-item-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
+  "game:recipeingredient-item-curedsmokedmeat-redmeat-raw-insturmentalcase": "Cured Smoked Redmeat",
+  "recipeingredient-item-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
+  "recipeingredient-item-curedsmokedmeat-redmeat-raw-insturmentalcase": "Cured Smoked Redmeat",
+  "game:meal-ingredient-soup-primary-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
+  "game:meal-ingredient-soup-secondary-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
+  "game:meal-ingredient-stew-primary-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
+  "game:meal-ingredient-stew-secondary-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
+
+  "game:recipeingredient-item-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
+  "game:recipeingredient-item-curedsmokedmeat-bushmeat-raw-insturmentalcase": "Cured Smoked Bushmeat",
+  "recipeingredient-item-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
+  "recipeingredient-item-curedsmokedmeat-bushmeat-raw-insturmentalcase": "Cured Smoked Bushmeat",
+  "game:meal-ingredient-soup-primary-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
+  "game:meal-ingredient-soup-secondary-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
+  "game:meal-ingredient-stew-primary-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
+  "game:meal-ingredient-stew-secondary-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
+
+  "game:recipeingredient-item-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
+  "game:recipeingredient-item-curedsmokedmeat-poultry-raw-insturmentalcase": "Cured Smoked Poultry",
+  "recipeingredient-item-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
+  "recipeingredient-item-curedsmokedmeat-poultry-raw-insturmentalcase": "Cured Smoked Poultry",
+  "game:meal-ingredient-soup-primary-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
+  "game:meal-ingredient-soup-secondary-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
+  "game:meal-ingredient-stew-primary-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
+  "game:meal-ingredient-stew-secondary-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
+
+  "game:recipeingredient-item-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
+  "game:recipeingredient-item-curedsmokedmeat-fish-raw-insturmentalcase": "Cured Smoked Fish",
+  "recipeingredient-item-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
+  "recipeingredient-item-curedsmokedmeat-fish-raw-insturmentalcase": "Cured Smoked Fish",
+  "game:meal-ingredient-soup-primary-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
+  "game:meal-ingredient-soup-secondary-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
+  "game:meal-ingredient-stew-primary-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
+  "game:meal-ingredient-stew-secondary-curedsmokedmeat-fish-raw": "Cured Smoked Fish"
 }

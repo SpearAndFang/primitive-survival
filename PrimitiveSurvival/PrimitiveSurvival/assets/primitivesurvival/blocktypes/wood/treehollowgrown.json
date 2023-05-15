@@ -24,6 +24,268 @@
       "*-larch-*": 3,
       "*-walnut-*": 4,
       "*": 4
+      //JHR
+    },
+    "primitivesurvival": {
+      "treeHollowTypeByType": {
+        "*-base-*": "base",
+        "*-base2-*": "base",
+        "*-up-*": "up",
+        "*-up2-*": "up"
+      },
+      "treeHollowContentsByHollowType": {
+        "base": [
+          {
+            "code": "primitivesurvival:item-earthworm",
+            "amount": 1
+          },
+          {
+            "code": "primitivesurvival:item-earthwormcastings",
+            "amount": 1
+          },
+          {
+            "code": "block-mushroom-kingbolete-normal",
+            "amount": 1
+          },
+          {
+            "code": "block-mushroom-fieldmushroom-normal",
+            "amount": 1
+          },
+          {
+            "code": "block-mushroom-devilstooth-normal",
+            "amount": 1
+          },
+          {
+            "code": "block-mushroom-violetwebcap-normal",
+            "amount": 1
+          },
+          {
+            "code": "block-mushroom-chanterelle-normal",
+            "amount": 1
+          },
+          {
+            "code": "block-mushroom-greencrackedrussula-normal",
+            "amount": 1
+          },
+          {
+            "code": "item-creature-wolf-pup",
+            "amount": 1
+          }
+        ],
+        "up": [
+          {
+            "code": "item-honeycomb",
+            "amount": 1
+          },
+          {
+            "code": "item-resin",
+            "amount": 1
+          },
+          {
+            "code": "item-stick",
+            "amount": 1
+          },
+          {
+            "code": "item-insect-grub",
+            "amount": 1
+          },
+          {
+            "code": "item-insect-termite",
+            "amount": 1
+          },
+          {
+            "code": "item-fruit-pomegranate",
+            "amount": 1
+          },
+          {
+            "code": "item-fruit-mango",
+            "amount": 1
+          }
+        ],
+        "all": [
+          {
+            "code": "item-seeds-turnip",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-turnip",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-onion",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-onion",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-peanut",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-flax",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-flax",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-spelt",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-spelt",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-pumpkin",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-pineapple",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-carrot",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-carrot",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-rice",
+            "amount": 3
+          },
+          {
+            "code": "item-seeds-rye",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-rye",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-cabbage",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-cassava",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-amaranth",
+            "amount": 1
+          },
+          {
+            "code": "item-seeds-sunflower",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-oak",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-oak",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-pine",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-pine",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-larch",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-crimsonkingmaple",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-redwood",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-ebony",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-acacia",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-walnut",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-baldcypress",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-birch",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-birch",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-maple",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-maple",
+            "amount": 1
+          },
+          {
+            "code": "item-treeseed-kapok",
+            "amount": 1
+          },
+          {
+            "code": "item-gear-rusty",
+            "amount": 1
+          },
+          {
+            "code": "item-gear-temporal",
+            "amount": 1
+          },
+          {
+            "code": "primitivesurvival:item-psgear-astral",
+            "amount": 1
+          },
+          {
+            "code": "primitivesurvival:item-psgear-ethereal",
+            "amount": 1
+          },
+          {
+            "code": "item-crystalizedore-poor-cassiterite-andesite",
+            "amount": 1
+          },
+          {
+            "code": "item-crystalizedore-poor-quartz_nativegold-granite",
+            "amount": 1
+          },
+          {
+            "code": "item-crystalizedore-poor-nativecopper-slate",
+            "amount": 1
+          },
+          {
+            "code": "item-wrench-copper",
+            "amount": 1
+          },
+          {
+            "code": "item-knife-generic-tinbronze",
+            "amount": 1
+          }
+        ]
+      }
+      //END JHR
     }
   },
     "variantgroups": [

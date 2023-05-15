@@ -56,6 +56,7 @@ namespace PrimitiveSurvival.ModConfig
         public int SnareMaxDamageBaited { get; set; } = 24;
         public int SnareTrippedPercent { get; set; } = 10;
         public int TreeHollowsMaxItems { get; set; } = 8;
+        public bool TreeHollowsEnableDeveloperTools { get; set; } = false;
         public int TreeHollowsMaxPerChunk { get; set; } = 1;
         public float TreeHollowsSpawnProbability { get; set; } = 0.1f;
         public double TreeHollowsUpdateMinutes { get; set; } = 360.0;

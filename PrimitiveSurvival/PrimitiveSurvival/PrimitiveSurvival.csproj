@@ -117,6 +117,8 @@
     <None Remove="assets\primitivesurvival\patches\ps-snakemeat-meals.json" />
     <None Remove="assets\primitivesurvival\patches\ps-stick.json" />
     <None Remove="assets\primitivesurvival\patches\wildcrafttrees\ps-betterplankstairs.json" />
+    <None Remove="assets\primitivesurvival\patches\wildcrafttrees\ps-treehollowcontents.json" />
+    <None Remove="assets\primitivesurvival\patches\wildcrafttrees\ps-wildcrafttrees-hollowtransforms.json" />
     <None Remove="assets\primitivesurvival\patches\wildcrafttrees\ps-woodlantern.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\caviar.json" />
     <None Remove="assets\primitivesurvival\recipes\grid\fireflyjars.json" />

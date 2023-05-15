@@ -220,7 +220,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 openWater = false;
             }
-            if (!testBlock.FirstCodePart().Contains("boiling"))
+            if (testBlock.FirstCodePart().Contains("boiling"))
             {
                 openWater = false;
             }

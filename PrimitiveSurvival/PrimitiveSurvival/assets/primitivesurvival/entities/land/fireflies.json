@@ -27,7 +27,7 @@
     "*-treetop": {
       "lightHsv": [34, 7, 5],
       "strobeFrequency": 2.0,
-      "minLightLevel": 1.0
+      "minLightLevel": 4.0
     },
     "*-mysticlantern": {
       "lightHsv": [13, 7, 7],
@@ -35,12 +35,12 @@
     },
     "*-blueghost": {
       "lightHsv": [43, 7, 9],
-      "minLightLevel": 2
+      "minLightLevel": 2.0
     },
     "*-rover": {
       "lightHsv": [17, 7, 5],
       "strobeFrequency": 2.5,
-      "minLightLevel": 0.4
+      "minLightLevel": 3.0
     },
     "*-fairyring": {
       "lightHsv": [37, 7, 7],
@@ -49,7 +49,7 @@
     "*-candle": {
       "lightHsv": [5, 7, 7],
       "strobeFrequency": 4.0,
-      "minLightLevel": 2.0
+      "minLightLevel": 6.0
     },
     "*-marshimp": {
       "lightHsv": [3, 7, 6],

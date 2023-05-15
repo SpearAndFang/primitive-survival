@@ -78,7 +78,7 @@ That's where the transform comes in. For example:
 }
 ```
 
-To understand how to add these transforms correctly, see some files that I've already put them to use:
+Currently these transforms only work for ITEMS.  To understand how to add these transforms correctly, see some files that I've already put them to use:
 
 ```itemtypes/other/earthwormcastings.json```
 An inTreeHollowTransform in action in Primitive Survival.

@@ -25,7 +25,7 @@ namespace PrimitiveSurvival.ModSystem
 
         private readonly int tickSeconds = 4;
         private readonly int maxSlots = 3;
-        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
+        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked", "insect" };
         private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
         private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
 
@@ -378,7 +378,7 @@ namespace PrimitiveSurvival.ModSystem
             else
             {
                 var colObj = slot.Itemstack.Collectible;
-                if (colObj.Attributes != null)
+                if ((colObj.Attributes != null) || (colObj?.Code?.Path == "insect-grub"))
                 {
                     if (this.TryPut(slot)) //, blockSel))
                     {

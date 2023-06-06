@@ -1,12 +1,10 @@
 namespace PrimitiveSurvival.ModSystem
 {
-    //using System;
     using Vintagestory.API.Common;
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.MathTools;
-    //using Vintagestory.GameContent;
-    //using Vintagestory.API.Datastructures;
     //using System.Diagnostics;
+
 
     public class EntitySkullOfTheDead : EntityGenericGlowingAgent
     {
@@ -39,26 +37,45 @@ namespace PrimitiveSurvival.ModSystem
             return false;
         }
 
-        int cnt;
+        private int cnt;
         public override void OnGameTick(float dt)
         {
-            base.OnGameTick(dt);
-
-            // Needed for GetWalkSpeedMultiplier(), less read those a little less often for performance
-            if (this.cnt++ > 500)
+            if (this.Api.Side == EnumAppSide.Server)
             {
-                this.cnt = 0;
-                var targetEntity = (EntitySkullOfTheDead)this.Api.World.GetNearestEntity(this.Pos.XYZ, 15, 5, (e) =>
+                base.OnGameTick(dt);
+
+                // Needed for GetWalkSpeedMultiplier(), less read those a little less often for performance
+                if (this.cnt++ > 250)
                 {
-                    if (!e.Alive)
-                    { return false; }
-                    var p = e.FirstCodePart();
-                    if (p == "player" || p == "livingdead" || p == "skullofthedead" || p == "fireflies" || p == "butterfly" || p == "earthworm" || p == "beemob" || p == "strawdummy")
-                    { return false; }
-                    //Debug.WriteLine(p);
-                    e.ReceiveDamage(new DamageSource { SourceEntity = null, Type = EnumDamageType.SlashingAttack }, 1);
-                    return false;
-                });
+                    this.cnt = 0;
+                    var targetEntity = (EntityAgent)this.Api.World.GetNearestEntity(this.Pos.XYZ, 15, 5, (e) =>
+                    {
+                        if (!e.Alive)
+                        { return false; } //keep looking
+                        var p = e.FirstCodePart();
+                        if (p == "strawdummy")
+                        { return true; } //straw dummy restricts attack range
+
+                        if (p == "player" || p == "livingdead" || p == "skullofthedead" || p == "fireflies" || p == "butterfly" || p == "earthworm" || p == "beemob")
+                        { return false; } //keep looking
+
+                        return true; //found, attack, and stop looking for more
+                    });
+
+                    if (targetEntity != null)
+                    {
+                        if (targetEntity.FirstCodePart() != "strawdummy")
+                        {
+                            //Debug.WriteLine("Attacking " + targetEntity.FirstCodePart());
+                            targetEntity.ReceiveDamage(new DamageSource { SourceEntity = null, Type = EnumDamageType.SlashingAttack }, 2);
+
+                        }
+                    }
+                    else
+                    {
+                        //Debug.WriteLine("Nothing in range");
+                    }
+                }
             }
         }
     }

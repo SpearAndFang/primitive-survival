@@ -22,6 +22,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public IPlayer IgnitedPlayer;
 
+        public bool NeibChecked = false;
 
         static BEFuse()
         {
@@ -97,8 +98,9 @@ namespace PrimitiveSurvival.ModSystem
                     this.Api.World.SpawnParticles(smallSparks);
                 }
 
-                if (this.remainingSeconds < 1)
+                if (this.Api.Side == EnumAppSide.Server && this.remainingSeconds < 1 && this.NeibChecked == false)
                 {
+                    this.NeibChecked = true; //ONLY CHECK ONCE
                     //Check and light neighbors
                     var path = this.Block.LastCodePart();
                     BlockPos[] neibBlockPos = null;
@@ -222,6 +224,8 @@ namespace PrimitiveSurvival.ModSystem
             if (this.Api.Side == EnumAppSide.Client)
             { this.fuseSound.Start(); }
             this.IsLit = true;
+            this.NeibChecked = false;
+
             this.remainingSeconds = this.FuseTimeSeconds;
             this.ignitedByPlayerUid = byPlayer?.PlayerUID;
             this.IgnitedPlayer = byPlayer;

@@ -36,6 +36,7 @@ namespace PrimitiveSurvival.ModSystem
         private double interval;
         private bool killOffThread = false;
         private bool particleInitialized = false;
+        public bool NeibChecked = false;
 
         static BEFirework()
         {
@@ -425,8 +426,9 @@ namespace PrimitiveSurvival.ModSystem
                     lightTime = 1;  //override light time
                 }
                 //light neighbor fuses
-                if (this.remainingSeconds < lightTime)
+                if (this.Api.Side == EnumAppSide.Server && this.remainingSeconds < lightTime && this.NeibChecked == false)
                 {
+                    this.NeibChecked = true; //ONLY CHECK ONCE
                     var neibBlockPos = AreaAround(this.Pos);
                     if (neibBlockPos != null)
                     {
@@ -596,7 +598,8 @@ namespace PrimitiveSurvival.ModSystem
             if (this.Api.Side == EnumAppSide.Client)
             { this.fuseSound.Start(); }
             this.IsLit = true;
-
+            this.NeibChecked = false;
+            
             this.remainingSeconds = this.FuseTimeSeconds;
             if (this.Block.LastCodePart() == "missile" || this.Block.LastCodePart() == "boomer")
             {

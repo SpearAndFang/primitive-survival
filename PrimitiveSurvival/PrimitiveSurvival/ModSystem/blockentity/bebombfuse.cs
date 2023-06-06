@@ -21,6 +21,8 @@ namespace PrimitiveSurvival.ModSystem
 
         public bool CascadeLit { get; set; } //1.18
 
+        public bool NeibChecked = false;
+
         static BEBombFuse()
         {
             smallSparks = new SimpleParticleProperties(
@@ -95,8 +97,9 @@ namespace PrimitiveSurvival.ModSystem
 
 
                 //light neighbor fuses
-                if (this.remainingSeconds < 2)
+                if (this.Api.Side == EnumAppSide.Server && this.remainingSeconds < 2 && this.NeibChecked == false)
                 {
+                    this.NeibChecked = true; //ONLY CHECK ONCE
                     var neibBlockPos = AreaAround(this.Pos);
                     if (neibBlockPos != null)
                     {
@@ -183,6 +186,8 @@ namespace PrimitiveSurvival.ModSystem
             }
 
             this.IsLit = true;
+            this.NeibChecked = false;
+
             this.remainingSeconds = this.FuseTimeSeconds;
             this.ignitedByPlayerUid = byPlayer?.PlayerUID;
             this.IgnitedPlayer = byPlayer;

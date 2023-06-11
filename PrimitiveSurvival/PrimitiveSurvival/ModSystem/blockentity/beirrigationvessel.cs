@@ -37,13 +37,22 @@ namespace PrimitiveSurvival.ModSystem
             }
             else //server
             {
-                var updateTick = this.RegisterGameTickListener(this.IrrigationVesselUpdate, (int)(this.updateMinutes * 60000));
+                // was 60000 rboys2
+                var updateTick = this.RegisterGameTickListener(this.IrrigationVesselUpdate, (int)(this.updateMinutes * 40000));
             }
         }
 
 
         public void IrrigationVesselUpdate(float par)
         {
+            //MARK rboys2
+            if (this.inventory[0].Empty && !this.Buried)
+            {
+                this.Api.World.BlockAccessor.SetBlock(0, this.Pos, BlockLayersAccess.Fluid); //clear water layer
+                return;
+            }
+            //MARK rboys2 end
+
             if (this.inventory[0].Empty || !this.Buried)
             { return; } //empty or not buried
             if (!this.inventory[0].Itemstack.Collectible.Code.Path.Contains("water"))
@@ -51,6 +60,14 @@ namespace PrimitiveSurvival.ModSystem
 
             if (this.inventory[0].Itemstack.Collectible.Code.Path.Contains("saltwater"))
             { return; } //salt water - abort for now
+
+
+            //must have water
+            //MARK rboys2
+            var assetCode = "game:water-still-6";
+            var waterBlock = this.Api.World.GetBlock(new AssetLocation(assetCode));
+            this.Api.World.BlockAccessor.SetBlock(waterBlock.BlockId, this.Pos, BlockLayersAccess.Fluid); //fill water layer
+            //MARK rboys2 end
 
             var neibPos = new BlockPos[] {
                 this.Pos.EastCopy(),
@@ -69,33 +86,24 @@ namespace PrimitiveSurvival.ModSystem
             {
                 if (this.Api.World.BlockAccessor.GetBlockEntity(neib) is BlockEntityFarmland be)
                 {
-                    //Debug.WriteLine(be.MoistureLevel);
-                    //var testBlock = this.Api.World.BlockAccessor.GetBlock(neib);
-                    if (be.MoistureLevel < 0.9)
-                    {
-                        // add 0.1 to it
-                        be.WaterFarmland(0.2f, false); //no neighbors until nearby watered
-                        waterUsed += 2;
-                    }
-                    else
-                    {
-                        //top it up to 100%
-                        var topUp = 1.0f - be.MoistureLevel + 0.1f;
-                        be.WaterFarmland(topUp, true); //neighbors too now
-                        waterUsed += topUp * 5; //use less water in this scenario
-                    }
+                    //MARK rboys2
+                    var topUp = 1.0f - be.MoistureLevel + 0.2f;
+                    be.WaterFarmland(topUp, true); //neighbors too now
+                    waterUsed += topUp * 2.5f; //use less water in this scenario
+                    //MARK rboys2 end
                     var tree = new TreeAttribute();
                     be.ToTreeAttributes(tree);
                 }
             }
-            //Debug.WriteLine("topped up: " + waterUsed + " ml");
             this.inventory[0].TakeOut((int)waterUsed);
             this.MarkDirty(true);
         }
 
         public override void OnBlockBroken(IPlayer forPlayer)
         {
-            // Don't drop inventory contents
+            //MARK rboys2
+            this.Api.World.BlockAccessor.SetBlock(0, this.Pos, BlockLayersAccess.Fluid); //clear water layer
+            //MARK rboys2 end
         }
 
 

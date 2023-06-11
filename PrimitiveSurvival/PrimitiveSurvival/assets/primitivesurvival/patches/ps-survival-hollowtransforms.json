@@ -1,26 +1,23 @@
 [
   {
     "op": "add",
-    "path": "/behaviors",
-    "value": [
-      {
-        "name": "inTreeHollowTransform",
-        "properties": {
-          "rotation": {
-            "x": 2,
-            "y": -72,
-            "z": 1
-          }
+    "path": "/behaviors/-",
+    "value": {
+      "name": "inTreeHollowTransform",
+      "properties": {
+        "rotation": {
+          "x": 2,
+          "y": -72,
+          "z": 1
         }
       }
-    ],
+    },
     "file": "game:itemtypes/tool/knife.json"
   },
   {
     "op": "add",
-    "path": "/behaviors",
-    "value": [
-      {
+    "path": "/behaviors/-",
+    "value": {
         "name": "inTreeHollowTransform",
         "properties": {
           "rotation": {
@@ -28,10 +25,9 @@
             "y": -84,
             "z": 5
           },
-          "scale": 0.89
-        }
+        "scale": 0.89
       }
-    ],
+	},
     "file": "game:itemtypes/tool/wrench.json"
   },
   {

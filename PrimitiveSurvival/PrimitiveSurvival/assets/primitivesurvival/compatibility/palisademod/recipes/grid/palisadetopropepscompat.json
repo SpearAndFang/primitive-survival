@@ -1,0 +1,118 @@
+[
+  {
+    "ingredientPattern": "HA,RL,_L",
+    "ingredients": {
+      "H": {
+        "type": "item",
+        "code": "game:hammer-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "A": {
+        "type": "item",
+        "code": "game:axe-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "L": {
+        "type": "block",
+        "code": "game:log-placed-*-ud",
+        "name": "wood"
+      },
+      "R": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      }
+    },
+    "width": 2,
+    "height": 3,
+    "output": {
+      "type": "block",
+      "code": "palisademod:palisade-{wood}-four-toprope-west",
+      "quantity": 4
+    },
+    "dependsOn": [{ "modid": "palisademod" }]
+  },
+  {
+    "ingredientPattern": "R,L",
+    "ingredients": {
+      "R": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      },
+      "L": {
+        "type": "block",
+        "code": "palisademod:palisade-*-four-top-west",
+        "name": "wood",
+        "quantity": 4
+      }
+    },
+    "width": 1,
+    "height": 2,
+    "shapeless": true,
+    "output": {
+      "type": "block",
+      "code": "palisademod:palisade-{wood}-four-toprope-west",
+      "quantity": 4
+    },
+    "dependsOn": [{ "modid": "palisademod" }]
+  },
+  {
+    "ingredientPattern": "AH,LR,L_",
+    "ingredients": {
+      "H": {
+        "type": "item",
+        "code": "game:hammer-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "A": {
+        "type": "item",
+        "code": "game:axe-*",
+        "isTool": true,
+        "toolDurabilityCost": 4
+      },
+      "L": {
+        "type": "block",
+        "code": "game:log-placed-*-ud",
+        "name": "wood"
+      },
+      "R": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      }
+    },
+    "width": 2,
+    "height": 3,
+    "output": {
+      "type": "block",
+      "code": "palisademod:palisade-{wood}-three-toprope-west",
+      "quantity": 4
+    },
+    "dependsOn": [{ "modid": "palisademod" }]
+  },
+  {
+    "ingredientPattern": "R,L",
+    "ingredients": {
+      "R": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      },
+      "L": {
+        "type": "block",
+        "code": "palisademod:palisade-*-three-top-west",
+        "name": "wood",
+        "quantity": 4
+      }
+    },
+    "width": 1,
+    "height": 2,
+    "shapeless": true,
+    "output": {
+      "type": "block",
+      "code": "palisademod:palisade-{wood}-three-toprope-west",
+      "quantity": 4
+    },
+    "dependsOn": [{ "modid": "palisademod" }]
+  }
+]

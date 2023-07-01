@@ -48,18 +48,29 @@ namespace PrimitiveSurvival.ModSystem
                 if (this.cnt++ > 250)
                 {
                     this.cnt = 0;
-                    var targetEntity = (EntityAgent)this.Api.World.GetNearestEntity(this.Pos.XYZ, 15, 5, (e) =>
+
+
+                    var targetEntity = this.Api.World.GetNearestEntity(this.Pos.XYZ, 15, 5, (e) =>
                     {
-                        if (!e.Alive)
-                        { return false; } //keep looking
-                        var p = e.FirstCodePart();
-                        if (p == "strawdummy")
-                        { return true; } //straw dummy restricts attack range
+                        if (e is null)
+                        { return false; } //possible? keep looking
+                        if (e is EntityAgent)
+                        {
+                            if (!e.Alive)
+                            { return false; } //keep looking
+                            var p = e.FirstCodePart();
+                            if (p == "strawdummy")
+                            { return true; } //straw dummy restricts attack range
 
-                        if (p == "player" || p == "livingdead" || p == "skullofthedead" || p == "fireflies" || p == "butterfly" || p == "earthworm" || p == "beemob")
-                        { return false; } //keep looking
+                            if (p == "player" || p == "livingdead" || p == "skullofthedead" || p == "fireflies" || p == "butterfly" || p == "earthworm" || p == "beemob")
+                            { return false; } //keep looking
 
-                        return true; //found, attack, and stop looking for more
+                            return true; //found, attack, and stop looking for more
+                        }
+                        else
+                        {
+                            return false; //cast failed, keep looking
+                        }
                     });
 
                     if (targetEntity != null)

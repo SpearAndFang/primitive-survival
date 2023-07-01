@@ -116,7 +116,7 @@
     },
     {
       "code": "rock",
-      "states": [ "granite", "andesite", "basalt", "obsidian", "peridotite" ]
+      "states": [ "granite", "andesite", "basalt", "obsidian", "peridotite", "shale", "phyllite", "slate", "bauxite" ]
     },
     { "loadFromProperties": "abstract/horizontalorientation" }
   ],

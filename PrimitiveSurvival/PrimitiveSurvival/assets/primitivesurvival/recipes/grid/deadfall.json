@@ -12,7 +12,11 @@
         "andesite",
         "basalt",
         "obsidian",
-        "peridotite"
+        "peridotite",
+        "shale",
+        "phyllite",
+        "slate",
+        "bauxite"
       ]
     },
     "S": { "type": "item", "code": "game:stick" }

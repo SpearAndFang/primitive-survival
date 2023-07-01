@@ -1,8 +1,8 @@
 {
-    "comment_description": "Japanese localization file for 'Primitive Survival'.",
-    "comment_version": "Mod Version: v3.2.3",
-    "comment_author": "Translated By: Macoto Hino",
-    "comment_technical_details": "Machine translation using PCOT and DeepL.",
+  "comment_description": "Japanese localization file for 'Primitive Survival'.",
+  "comment_version": "Mod Version: v3.2.4",
+  "comment_author": "Translated By: Macoto Hino",
+  "comment_technical_details": "Machine translation using PCOT and DeepL.",
 
   "game:tabname-primitive": "Primitive Survival",
   "game:ps-quickstart-title": "Primitive Survival(原始的な生存術):クイックスタートガイド",
@@ -962,14 +962,14 @@
   "block-woodlantern-beech-*": "木のランタン(ブナ)",
   "block-woodlantern-eucalyptus-*": "木のランタン(ユーカリ)",
   "block-woodlantern-cedar-*": "木のランタン(ヒマラヤスギ)",
-  
-  
-  
+
+
+
   "item-curedsmokedmeat-redmeat-raw": "熟成した燻した赤肉",
   "item-curedsmokedmeat-bushmeat-raw": "熟成した燻したブッシュミート",
   "item-curedsmokedmeat-poultry-raw": "熟成した燻した鶏肉",
   "item-curedsmokedmeat-fish-raw": "熟成した燻した魚肉",
-  
+
   "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-raw": "熟成した燻した赤肉のパイ(生)",
   "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-partbaked": "熟成した燻した赤肉のパイ(生焼け)",
   "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-perfect": "熟成した燻した赤肉のパイ",
@@ -1021,5 +1021,10 @@
   "game:meal-ingredient-soup-primary-curedsmokedmeat-fish-raw": "熟成した燻した魚肉",
   "game:meal-ingredient-soup-secondary-curedsmokedmeat-fish-raw": "熟成した燻した魚肉",
   "game:meal-ingredient-stew-primary-curedsmokedmeat-fish-raw": "熟成した燻した魚肉",
-  "game:meal-ingredient-stew-secondary-curedsmokedmeat-fish-raw": "熟成した燻した魚肉"
+  "game:meal-ingredient-stew-secondary-curedsmokedmeat-fish-raw": "熟成した燻した魚肉",
+
+  "block-deadfall-*-shale*": "泥板岩の落とし罠",
+  "block-deadfall-*-phyllite*": "千枚岩の落とし罠",
+  "block-deadfall-*-slate*": "粘板岩の落とし罠",
+  "block-deadfall-*-bauxite*": "ボーキサイト岩の落とし罠"
 }

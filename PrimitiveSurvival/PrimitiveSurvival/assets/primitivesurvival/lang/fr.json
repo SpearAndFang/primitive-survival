@@ -956,15 +956,15 @@
   "block-woodlantern-beech-*": "Wooden Lantern (Beech)",
   "block-woodlantern-eucalyptus-*": "Wooden Lantern (Eucalyptus)",
   "block-woodlantern-cedar-*": "Wooden Lantern (Cedar)",
-  
-  
-  
-  
+
+
+
+
   "item-curedsmokedmeat-redmeat-raw": "Cured Smoked Redmeat",
   "item-curedsmokedmeat-bushmeat-raw": "Cured Smoked Bushmeat",
   "item-curedsmokedmeat-poultry-raw": "Cured Smoked Poultry",
   "item-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
-  
+
   "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-raw": "Cured Smoked Redmeat pie (raw)",
   "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-partbaked": "Cured Smoked Redmeat pie (part-baked)",
   "pie-single-primitivesurvival:curedsmokedmeat-redmeat-raw-perfect": "Cured Smoked Redmeat pie",
@@ -1016,5 +1016,10 @@
   "game:meal-ingredient-soup-primary-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
   "game:meal-ingredient-soup-secondary-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
   "game:meal-ingredient-stew-primary-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
-  "game:meal-ingredient-stew-secondary-curedsmokedmeat-fish-raw": "Cured Smoked Fish"
+  "game:meal-ingredient-stew-secondary-curedsmokedmeat-fish-raw": "Cured Smoked Fish",
+
+  "block-deadfall-*-shale*": "Shale Deadfall",
+  "block-deadfall-*-phyllite*": "Phyllite Deadfall",
+  "block-deadfall-*-slate*": "Slate Deadfall",
+  "block-deadfall-*-bauxite*": "Bauxite Deadfall"
 }

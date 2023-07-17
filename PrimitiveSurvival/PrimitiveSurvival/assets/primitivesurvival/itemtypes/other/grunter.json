@@ -54,7 +54,7 @@
       }
     }
   ],
-  "damagedby": [ "blockbreaking", "attacking" ],
+  "damagedby": ["blockbreaking", "attacking"],
   "tooltier": 1,
   "durability": 500,
   "attackpower": 0.2,
@@ -70,10 +70,10 @@
     }
   },
   "creativeinventory": {
-    "general": [ "*" ],
-    "items": [ "*" ],
-    "tools": [ "*" ],
-    "primitive": [ "*" ]
+    "general": ["*"],
+    "items": ["*"],
+    "tools": ["*"],
+    "primitive": ["*"]
   },
   "maxstacksize": 1,
   "tpOffHandTransform": {

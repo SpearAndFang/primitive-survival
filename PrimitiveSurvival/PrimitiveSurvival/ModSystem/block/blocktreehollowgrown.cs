@@ -68,7 +68,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BETreeHollowGrown bedc)
             {
-                return bedc.OnInteract(byPlayer, blockSel);
+                return bedc.OnInteract(byPlayer);
             } //, blockSel); }
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }

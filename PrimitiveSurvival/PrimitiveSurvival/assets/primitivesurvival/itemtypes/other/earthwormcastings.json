@@ -1,23 +1,5 @@
 {
   "code": "earthwormcastings",
-  "behaviors": [
-    {
-      "name": "inTreeHollowTransform",
-      "properties": {
-        "rotation": {
-          "x": 13,
-          "y": -2,
-          "z": 9
-        },
-        "origin": {
-          "x": 0,
-          "y": 0.3,
-          "z": 0.65
-        },
-        "scale": 1.26
-      }
-    }
-  ],
   "attributes": {
     "fertilizerProps": {
       "n": 10,
@@ -30,9 +12,9 @@
   "shape": { "base": "item/earthwormcastings" },
   "texture": { "base": "primitivesurvival:item/earthwormcastings" },
   "creativeinventory": {
-    "general": [ "*" ],
-    "items": [ "*" ],
-    "primitive": [ "*" ]
+    "general": ["*"],
+    "items": ["*"],
+    "primitive": ["*"]
   },
   "maxstacksize": 64,
   "materialDensity": 900,

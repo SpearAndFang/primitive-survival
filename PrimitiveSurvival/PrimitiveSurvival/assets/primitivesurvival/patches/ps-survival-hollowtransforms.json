@@ -1,0 +1,163 @@
+[
+  {
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "inTreeHollowTransform",
+      "properties": {
+        "rotation": {
+          "x": 2,
+          "y": -72,
+          "z": 1
+        }
+      }
+    },
+    "file": "game:itemtypes/tool/knife.json"
+  },
+  {
+    "op": "add",
+    "path": "/behaviors/-",
+    "value": {
+        "name": "inTreeHollowTransform",
+        "properties": {
+          "rotation": {
+            "x": 4,
+            "y": -84,
+            "z": 5
+          },
+        "scale": 0.89
+      }
+	},
+    "file": "game:itemtypes/tool/wrench.json"
+  },
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "inTreeHollowTransform",
+        "propertiesByType": {
+          "*-maple": {
+            "rotation": {
+              "x": 67,
+              "y": -2,
+              "z": 9
+            },
+            "origin": {
+              "x": 0.6,
+              "y": 0.2,
+              "z": 0.45
+            },
+            "scale": 1.21
+          },
+          //the rest of these are wildcraft trees but should be fine here, mod or no mod
+          "*-bearnut": {
+            "rotation": {
+              "x": 67,
+              "y": -2,
+              "z": 8
+            },
+            "origin": {
+              "x": 1.6,
+              "y": -0.3,
+              "z": 0.45
+            },
+            "scale": 0.71
+          },
+          "*-beech": {
+            "rotation": {
+              "x": -5,
+              "y": -3,
+              "z": 4
+            },
+            "origin": {
+              "x": 1.2,
+              "y": 0.1,
+              "z": 0.25
+            },
+            "scale": 0.84
+          },
+          "*-catalpa": {
+            "rotation": {
+              "x": -5,
+              "y": -3,
+              "z": 4
+            },
+            "origin": {
+              "x": 1.2,
+              "y": 0.1,
+              "z": 0.25
+            },
+            "scale": 0.84
+          },
+          "*-elm": {
+            "rotation": {
+              "x": 78,
+              "y": -8,
+              "z": -13
+            },
+            "origin": {
+              "x": -2.7,
+              "y": 0.03,
+              "z": 1.15
+            },
+            "scale": 1.07
+          },
+          "*-eucalyptus": {
+            "rotation": {
+              "x": -5,
+              "y": 13,
+              "z": 11
+            },
+            "origin": {
+              "x": 1.2,
+              "y": 0.1,
+              "z": 0.25
+            },
+            "scale": 0.84
+          },
+          "*-mahogany": {
+            "rotation": {
+              "x": -5,
+              "y": -3,
+              "z": 4
+            },
+            "origin": {
+              "x": 0.9,
+              "y": 0.1,
+              "z": 0.85
+            },
+            "scale": 0.84
+          },
+          "*-pyramidalpoplar": {
+            "rotation": {
+              "x": -5,
+              "y": -3,
+              "z": 4
+            },
+            "origin": {
+              "x": 1.2,
+              "y": 0.1,
+              "z": 0.25
+            },
+            "scale": 0.84
+          },
+          "*-sal": {
+            "rotation": {
+              "x": -5,
+              "y": 0,
+              "z": 39
+            },
+            "origin": {
+              "x": 0.5,
+              "y": 0.3,
+              "z": 0.35
+            },
+            "scale": 1.39
+          }
+        }
+      }
+    ],
+    "file": "game:itemtypes/resource/treeseed.json"
+  }
+]

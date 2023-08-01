@@ -32,10 +32,15 @@ namespace PrimitiveSurvival.ModSystem
             this.LoadTreeTypes(this.treeTypes);
 
             //Registers our command with the system's command registry.
-            //1.17 disable /hollow
-            //this.sapi.RegisterCommand("hollow", "Place a tree hollow with random items", "", this.PlaceTreeHollowInFrontOfPlayer, Privilege.controlserver);
+            var devToolsEnabled = ModConfig.Loaded.TreeHollowsEnableDeveloperTools;
+            if (devToolsEnabled)
+            {
+                this.sapi.RegisterCommand("hollow", "Place a tree hollow with random items", "", this.PlaceTreeHollowInFrontOfPlayer, Privilege.controlserver);
+            }
+
             //Registers a delegate to be called so we can get a reference to the chunk gen block accessor
             this.sapi.Event.GetWorldgenBlockAccessor(this.OnWorldGenBlockAccessor);
+
             //Registers a delegate to be called when a chunk column is generating in the Vegetation phase of generation
             this.sapi.Event.ChunkColumnGeneration(this.OnChunkColumnGeneration, EnumWorldGenPass.PreDone, "standard");
         }
@@ -217,9 +222,18 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             var hollow = blockAccessor.GetBlockEntity(pos) as BETreeHollowGrown;
                             //hollow.Initialize(this.sapi); //SpawnBlockEntity does this already
-                            var makeStacks = this.MakeItemStacks(hollowType, this.sapi);
-                            if (makeStacks != null)
-                            { this.AddItemStacks(hollow, makeStacks); }
+
+                            // JHR
+                            //var makeStacks = this.MakeItemStacks(hollowType, this.sapi);
+                            if (block != null)
+                            {
+                                var makeStacks = this.MakeItemStacks(block, this.sapi);
+                            
+                            // END JHR
+
+                                if (makeStacks != null)
+                                { this.AddItemStacks(hollow, makeStacks); }
+                            }
                         }
                     }
                 }
@@ -236,9 +250,15 @@ namespace PrimitiveSurvival.ModSystem
         }
 
         // Makes a list of random ItemStacks to be placed inside our tree hollow
-        public IEnumerable<ItemStack> MakeItemStacks(string hollowType, ICoreServerAPI sapi)
+        //JHR
+        //public IEnumerable<ItemStack> MakeItemStacks(string hollowType, ICoreServerAPI sapi)
+        public IEnumerable<ItemStack> MakeItemStacks(Block block, ICoreServerAPI sapi)
         {
-            var shuffleBag = this.MakeShuffleBag(hollowType, sapi);
+            if (sapi == null)
+            { return null; }
+            //var shuffleBag = this.MakeShuffleBag(hollowType, sapi);
+            var shuffleBag = this.MakeShuffleBag(block, sapi);
+            // END JHR
             var itemStacks = new Dictionary<string, ItemStack>();
             var minDrops = MinItems;
             if (ModConfig.Loaded.TreeHollowsMaxItems < MinItems)
@@ -262,7 +282,7 @@ namespace PrimitiveSurvival.ModSystem
                 else //block
                 {
                     nextItem = nextItem.Replace("block-", "");
-                    var item = this.sapi.World.GetBlock(new AssetLocation(nextItem));
+                    var item = sapi.World.GetBlock(new AssetLocation(nextItem));
                     if (itemStacks.ContainsKey(nextItem))
                     { itemStacks[nextItem].StackSize++; }
                     else
@@ -289,86 +309,51 @@ namespace PrimitiveSurvival.ModSystem
         }
 
         // Creates our ShuffleBag to pick from when generating items for the tree hollow
-        private ShuffleBag<string> MakeShuffleBag(string hollowType, ICoreServerAPI sapi)
+
+        // JHR
+        //private ShuffleBag<string> MakeShuffleBag(string hollowType, ICoreServerAPI sapi)
+        private ShuffleBag<string> MakeShuffleBag(Block block, ICoreServerAPI sapi)
+        // END JHR
         {
             var shuffleBag = new ShuffleBag<string>(100, sapi.World.Rand);
-            if (hollowType.Contains("base"))
+            if (block == null)
+            { return shuffleBag; }
+
+            var psAttributes = block.Attributes?["primitivesurvival"];
+            if (psAttributes == null)
+            { return shuffleBag; }
+
+            var hollowType = psAttributes["treeHollowType"].AsString("all");
+            var contentsByHollowType = psAttributes["treeHollowContentsByHollowType"];
+
+            if (hollowType != "all")
             {
-
-                shuffleBag.Add("primitivesurvival:item-earthworm", 6);
-                shuffleBag.Add("primitivesurvival:item-earthworm", 6);
-                shuffleBag.Add("primitivesurvival:item-earthworm", 6);
-                shuffleBag.Add("primitivesurvival:item-earthwormcastings", 6);
-                shuffleBag.Add("primitivesurvival:item-earthwormcastings", 6);
-                //shuffleBag.Add("primitivesurvival:item-snake-blackrat", 1);
-                //shuffleBag.Add("primitivesurvival:item-snake-pitviper", 1);
-                //shuffleBag.Add("primitivesurvival:item-snake-coachwhip", 1);
-
-                // 1.16
-                // shuffleBag.Add("block-mushroom-bolete-normal-free", 3);
-                // shuffleBag.Add("block-mushroom-fieldmushroom-normal-free", 5);
-
-                shuffleBag.Add("block-mushroom-kingbolete-normal", 3);
-                shuffleBag.Add("block-mushroom-fieldmushroom-normal", 5);
+                this.AddItemsToShuffleBag(shuffleBag, contentsByHollowType[hollowType]);
             }
-            else
-            {
-                shuffleBag.Add("item-honeycomb", 3);
-                shuffleBag.Add("item-resin", 4);
-                shuffleBag.Add("item-stick", 4);
-                shuffleBag.Add("item-insect-grub", 3);
-                shuffleBag.Add("item-insect-termite", 3);
-            }
-            shuffleBag.Add("item-seeds-turnip", 3);
-            shuffleBag.Add("item-seeds-onion", 3);
-            shuffleBag.Add("item-seeds-peanut", 3);
-            shuffleBag.Add("item-seeds-flax", 3);
-            shuffleBag.Add("item-seeds-spelt", 3);
-            shuffleBag.Add("item-seeds-pumpkin", 3);
-            shuffleBag.Add("item-seeds-pineapple", 3);
-            shuffleBag.Add("item-seeds-carrot", 3);
-            shuffleBag.Add("item-seeds-rice", 3);
-            shuffleBag.Add("item-seeds-rye", 3);
-            shuffleBag.Add("item-seeds-cabbage", 3);
-            shuffleBag.Add("item-seeds-cassava", 3);
-            shuffleBag.Add("item-seeds-amaranth", 3);
-            shuffleBag.Add("item-seeds-sunflower", 3);
-
-            shuffleBag.Add("item-treeseed-oak", 3);
-            shuffleBag.Add("item-treeseed-pine", 3);
-            shuffleBag.Add("item-treeseed-larch", 3);
-            shuffleBag.Add("item-treeseed-crimsonkingmaple", 3);
-            shuffleBag.Add("item-treeseed-redwood", 3);
-            shuffleBag.Add("item-treeseed-ebony", 3);
-            shuffleBag.Add("item-treeseed-acacia", 3);
-            shuffleBag.Add("item-treeseed-walnut", 3);
-            shuffleBag.Add("item-treeseed-baldcypress", 3);
-            shuffleBag.Add("item-treeseed-birch", 3);
-            shuffleBag.Add("item-treeseed-maple", 3);
-            shuffleBag.Add("item-treeseed-kapok", 3);
-
-            if (PrimitiveSurvivalSystem.wildCraftTreesExists(sapi))
-            {
-                shuffleBag.Add("item-treeseed-alder", 3);
-                //shuffleBag.Add("item-treeseed-bearnut", 3);
-                //shuffleBag.Add("item-treeseed-beech", 3);
-                shuffleBag.Add("item-treeseed-bluespruce", 3);
-                shuffleBag.Add("item-treeseed-blackpoplar", 3);
-                shuffleBag.Add("item-treeseed-brideinwhite", 3);
-                //shuffleBag.Add("item-treeseed-catalpa", 3);
-                shuffleBag.Add("item-treeseed-douglasfir", 3);
-                //shuffleBag.Add("item-treeseed-elm", 3);
-                //shuffleBag.Add("item-treeseed-eucalyptus", 3);
-                shuffleBag.Add("item-treeseed-honeylocust", 3);
-                //shuffleBag.Add("item-treeseed-mahogany", 3);
-                //shuffleBag.Add("item-treeseed-pyramidalpoplar", 3);
-                //shuffleBag.Add("item-treeseed-sal", 3);
-                shuffleBag.Add("item-treeseed-saxaul", 3);
-                shuffleBag.Add("item-treeseed-spruce", 3);
-                shuffleBag.Add("item-treeseed-sycamore", 3);
-                shuffleBag.Add("item-treeseed-willow", 3);
-            }
+            this.AddItemsToShuffleBag(shuffleBag, contentsByHollowType["all"]);
             return shuffleBag;
+        }
+
+        private void AddItemsToShuffleBag(ShuffleBag<string> shuffleBag, JsonObject attributesObjectArray)
+        {
+            //THIS HELPS MAYBE?
+            if (shuffleBag == null)
+            { return; }
+            if (attributesObjectArray == null)
+            { return; }
+
+            var attArray = attributesObjectArray.AsArray();
+            if (attributesObjectArray == null)
+            { return; }
+
+
+            foreach (var collectible in attArray)
+            {
+                if (!collectible["code"].Exists)
+                { continue; }
+                shuffleBag.Add(collectible["code"].AsString(), collectible["amount"].AsInt(1));
+            }
+            //END JHR
         }
     }
 }

@@ -6,7 +6,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
-    //using System.Diagnostics;
+    using System.Diagnostics;
     //using Vintagestory.GameContent;
 
     public class BlockTreeHollowGrown : Block
@@ -68,7 +68,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BETreeHollowGrown bedc)
             {
-                return bedc.OnInteract(byPlayer);
+                return bedc.OnInteract(byPlayer, blockSel);
             } //, blockSel); }
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }

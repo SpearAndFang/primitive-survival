@@ -61,6 +61,10 @@ namespace PrimitiveSurvival.ModSystem
             this.capi.RegisterEntityRendererClass("entitygenericshaperenderer", typeof(EntityGenericShapeRenderer));
             this.vrenderer = new VenomOverlayRenderer(api);
             api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
+
+            //JHR
+            (this.capi.World as ClientMain).RegisterDialog(new GuiDialogHollowTransform(this.capi));
+            //END JHR
         }
 
 
@@ -116,6 +120,10 @@ namespace PrimitiveSurvival.ModSystem
 
             AiTaskRegistry.Register("meleeattackvenomous", typeof(AiTaskMeleeAttackVenomous));
             AiTaskRegistry.Register("meleeattackcrab", typeof(AiTaskMeleeAttackCrab));
+
+            //JHR
+            api.RegisterCollectibleBehaviorClass("inTreeHollowTransform", typeof(BehaviorInTreeHollowTransform));
+            //END JHR
 
             api.RegisterBlockBehaviorClass("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
             api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));
@@ -221,18 +229,9 @@ namespace PrimitiveSurvival.ModSystem
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
-            api.World.Logger.Event("started 'Primitive Survival' mod");
             this.RegisterClasses(api);
         }
 
-        public static bool wildCraftTreesExists(ICoreServerAPI sapi)
-        {
-            //for adding tree hollow support
-            var wctrees = sapi?.ModLoader?.GetMod("wildcrafttrees");
-            if (wctrees != null)
-            { return true; }
-            return false;
-        }
 
         private void OnSaveGameLoading()
         {

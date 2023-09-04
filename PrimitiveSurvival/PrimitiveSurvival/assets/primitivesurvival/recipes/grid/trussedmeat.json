@@ -92,17 +92,22 @@
     }
   },
   {
-    "ingredientPattern": "M",
+    "ingredientPattern": "MK",
     "ingredients": {
       "M": {
         "type": "item",
         "code": "primitivesurvival:trussedmeat-*-raw",
         "allowedVariants": [ "redmeat", "poultry", "fish", "bushmeat" ],
         "name": "meat",
-        "quantity": 4
+        "quantity": 1
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
       }
     },
-    "width": 1,
+    "width": 2,
     "height": 1,
     "shapeless": true,
     "output": {

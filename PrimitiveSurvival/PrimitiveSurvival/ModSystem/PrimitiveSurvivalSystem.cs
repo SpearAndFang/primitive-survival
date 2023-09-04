@@ -214,6 +214,53 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterItemClass("ItemHoeExtended", typeof(ItemHoeExtended));
         }
 
+        public void UpdateSpawnRate(ICoreAPI api, string entityCode, double multiplier)
+        {
+            if (multiplier == 1)
+            { return; }
+            if (multiplier >= 10)
+            { multiplier = 10; } //put a limiter on this to prevent a total lagfest
+
+            for (var i = api.World.EntityTypes.Count - 1; i >= 0; i--)
+            {
+                if (api.World.EntityTypes[i].Code.Path == entityCode)
+                {
+                    if (api.World.EntityTypes[i].Server?.SpawnConditions?.Runtime != null)
+                    {
+                        api.World.EntityTypes[i].Server.SpawnConditions.Runtime.Chance *= multiplier;
+                    }
+                    if (api.World.EntityTypes[i].Server?.SpawnConditions?.Worldgen != null)
+                    {
+                        api.World.EntityTypes[i].Server.SpawnConditions.Worldgen.TriesPerChunk.avg *= (float)multiplier;
+                    }
+                    break;
+                }
+            }
+        }
+
+
+        public void UpdateSpawnRates(ICoreAPI api)
+        {
+            this.UpdateSpawnRate(api, "bioluminescent-globe", ModConfig.Loaded.SpawnMultiplierBioluminescentGlobe);
+            this.UpdateSpawnRate(api, "bioluminescent-jelly", ModConfig.Loaded.SpawnMultiplierBioluminescentJelly);
+            this.UpdateSpawnRate(api, "bioluminescent-orangejelly", ModConfig.Loaded.SpawnMultiplierBioluminescentOrangeJelly);
+            this.UpdateSpawnRate(api, "bioluminescent-worm", ModConfig.Loaded.SpawnMultiplierBioluminescentWorm);
+
+            this.UpdateSpawnRate(api, "bairdicrab", ModConfig.Loaded.SpawnMultiplierCrabBairdi);
+            this.UpdateSpawnRate(api, "landcrab", ModConfig.Loaded.SpawnMultiplierCrabLand);
+
+            this.UpdateSpawnRate(api, "livingdead-normal", ModConfig.Loaded.SpawnMultiplierLivingDead);
+
+            this.UpdateSpawnRate(api, "blackrat", ModConfig.Loaded.SpawnMultiplierSnakeBlackRat);
+            this.UpdateSpawnRate(api, "chainviper", ModConfig.Loaded.SpawnMultiplierSnakeChainViper);
+            this.UpdateSpawnRate(api, "coachwhip", ModConfig.Loaded.SpawnMultiplierSnakeCoachWhip);
+            this.UpdateSpawnRate(api, "pitviper", ModConfig.Loaded.SpawnMultiplierSnakePitViper);
+
+            this.UpdateSpawnRate(api, "willowisp-green", ModConfig.Loaded.SpawnMultiplierWillowispGreen);
+            this.UpdateSpawnRate(api, "willowisp-white", ModConfig.Loaded.SpawnMultiplierWillowispWhite);
+            this.UpdateSpawnRate(api, "willowisp-yellow", ModConfig.Loaded.SpawnMultiplierWillowispYellow);
+        }
+
 
         public override void StartServerSide(ICoreServerAPI api)
         {
@@ -223,6 +270,12 @@ namespace PrimitiveSurvival.ModSystem
             api.Event.SaveGameLoaded += this.OnSaveGameLoading;
             api.Event.GameWorldSave += this.OnSaveGameSaving;
             var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishChunkRepletionMinutes);
+        }
+
+
+        public override void AssetsFinalize(ICoreAPI api)
+        {
+            this.UpdateSpawnRates(api);
         }
 
 

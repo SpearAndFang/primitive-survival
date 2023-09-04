@@ -262,7 +262,7 @@
     "spawnconditions": {
       "worldgen": {
         "TriesPerChunk": {
-          "avg": 0.08,
+          "avg": 0.02,
           "var": 0
         },
         "tryOnlySurface": true,
@@ -295,7 +295,7 @@
         "minForest": 0,
         "maxForest": 0.5,
         "minRain": 0.1,
-        "chance": 0.003
+        "chance": 0.001
       }
     }
   }

@@ -116,6 +116,9 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         // WHY DOES THIS SOMETIMES FAIL IN MULTIPLAYER?
                     }
+                    // force reset the timer if we end up here for some reason - added in 3.2.9
+                    this.lastEmptied = this.Api.World.Calendar.TotalHours;
+                    this.MarkDirty();
                 }
             }
         }

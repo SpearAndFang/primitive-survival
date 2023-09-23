@@ -1,7 +1,7 @@
 [
   {
     "ingredientPattern": "S",
-    "shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -33,11 +33,15 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "game:brickstairs-*-up-north-free", name: "type" },
+      "S": {
+        "type": "block",
+        "code": "game:brickstairs-*-up-north-free",
+        "name": "type"
+      }
     },
     "output": {
       "type": "block",
@@ -46,7 +50,7 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -54,7 +58,27 @@
         "type": "block",
         "code": "game:cobblestonestairs-*-up-north-free",
         "name": "rock",
-        "allowedVariants": [ "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite", "kimberlite", "suevite", "whitemarble", "redmarble", "greenmarble" ]
+        "allowedVariants": [
+          "andesite",
+          "chalk",
+          "chert",
+          "conglomerate",
+          "limestone",
+          "claystone",
+          "granite",
+          "sandstone",
+          "shale",
+          "basalt",
+          "peridotite",
+          "phyllite",
+          "slate",
+          "bauxite",
+          "kimberlite",
+          "suevite",
+          "whitemarble",
+          "redmarble",
+          "greenmarble"
+        ]
       }
     },
     "output": {
@@ -64,11 +88,11 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "game:quartzstairs-up-north-free"},
+      "S": { "type": "block", "code": "game:quartzstairs-up-north-free" }
     },
     "output": {
       "type": "block",
@@ -77,17 +101,17 @@
   },
   {
     "ingredientPattern": "S",
-    "shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "name": "type",
-    "allowedVariants": [ "blue", "red", "brown", "fire" ],
+    "allowedVariants": ["blue", "red", "brown", "fire"],
     "ingredients": {
       "S": {
         "type": "block",
         "code": "game:clayshinglestairs-*-up-north-free",
         "name": "type",
-        "allowedVariants": [ "blue", "red", "brown", "fire" ]
+        "allowedVariants": ["blue", "red", "brown", "fire"]
       }
     },
     "output": {
@@ -97,7 +121,7 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -105,7 +129,22 @@
         "type": "block",
         "code": "game:stonebrickstairs-*-up-north-free",
         "name": "rock",
-        "allowedVariants": [ "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite" ]
+        "allowedVariants": [
+          "andesite",
+          "chalk",
+          "chert",
+          "conglomerate",
+          "limestone",
+          "claystone",
+          "granite",
+          "sandstone",
+          "shale",
+          "basalt",
+          "peridotite",
+          "phyllite",
+          "slate",
+          "bauxite"
+        ]
       }
     },
     "output": {
@@ -113,22 +152,22 @@
       "code": "primitivesurvival:betterstonebrickstairs-{rock}-normal-up-north-free"
     }
   },
-    {
+  {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "game:stonepathstairs-up-north-free" },
+      "S": { "type": "block", "code": "game:stonepathstairs-up-north-free" }
     },
     "output": {
       "type": "block",
       "code": "primitivesurvival:betterstonepathstairs-normal-up-north-free"
     }
   },
-    {
+  {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -151,7 +190,7 @@
           "walnut",
           "purpleheart"
         ]
-      },
+      }
     },
     "output": {
       "type": "block",
@@ -160,11 +199,15 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "primitivesurvival:betterbrickstairs-*-normal-up-north-free", name: "type" },
+      "S": {
+        "type": "block",
+        "code": "primitivesurvival:betterbrickstairs-*-normal-up-north-free",
+        "name": "type"
+      }
     },
     "output": {
       "type": "block",
@@ -173,7 +216,7 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -181,8 +224,28 @@
         "type": "block",
         "code": "primitivesurvival:bettercobblestonestairs-*-normal-up-north-free",
         "name": "rock",
-        "allowedVariants": [ "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite", "kimberlite", "suevite", "whitemarble", "redmarble", "greenmarble" ]
-        }
+        "allowedVariants": [
+          "andesite",
+          "chalk",
+          "chert",
+          "conglomerate",
+          "limestone",
+          "claystone",
+          "granite",
+          "sandstone",
+          "shale",
+          "basalt",
+          "peridotite",
+          "phyllite",
+          "slate",
+          "bauxite",
+          "kimberlite",
+          "suevite",
+          "whitemarble",
+          "redmarble",
+          "greenmarble"
+        ]
+      }
     },
     "output": {
       "type": "block",
@@ -191,11 +254,14 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "primitivesurvival:betterquartzstairs-normal-up-north-free"},
+      "S": {
+        "type": "block",
+        "code": "primitivesurvival:betterquartzstairs-normal-up-north-free"
+      }
     },
     "output": {
       "type": "block",
@@ -204,11 +270,11 @@
   },
   {
     "ingredientPattern": "S",
-    "shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "name": "type",
-    "allowedVariants": [ "blue", "red", "brown", "fire" ],
+    "allowedVariants": ["blue", "red", "brown", "fire"],
     "ingredients": {
       "S": {
         "type": "block",
@@ -223,7 +289,7 @@
   },
   {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -231,7 +297,22 @@
         "type": "block",
         "code": "primitivesurvival:betterstonebrickstairs-*-normal-up-north-free",
         "name": "rock",
-        "allowedVariants": [ "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite" ]
+        "allowedVariants": [
+          "andesite",
+          "chalk",
+          "chert",
+          "conglomerate",
+          "limestone",
+          "claystone",
+          "granite",
+          "sandstone",
+          "shale",
+          "basalt",
+          "peridotite",
+          "phyllite",
+          "slate",
+          "bauxite"
+        ]
       }
     },
     "output": {
@@ -239,13 +320,16 @@
       "code": "game:stonebrickstairs-{rock}-up-north-free"
     }
   },
-    {
+  {
     "ingredientPattern": "S",
-	"shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "primitivesurvival:betterstonepathstairs-normal-up-north-free" },
+      "S": {
+        "type": "block",
+        "code": "primitivesurvival:betterstonepathstairs-normal-up-north-free"
+      }
     },
     "output": {
       "type": "block",

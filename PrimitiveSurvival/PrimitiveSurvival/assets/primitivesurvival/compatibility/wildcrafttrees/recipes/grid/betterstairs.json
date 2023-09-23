@@ -1,7 +1,7 @@
 [
   {
     "ingredientPattern": "S",
-    "shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -33,12 +33,12 @@
       "type": "block",
       "code": "primitivesurvival:betterplankstairs-{wood}-normal-up-north-free"
     },
-    "dependsOn": [ { "modid": "wildcrafttrees" } ]
+    "dependsOn": [{ "modid": "wildcrafttrees" }]
   },
 
   {
     "ingredientPattern": "S",
-    "shapeless": true,
+    "shapeless": false,
     "width": 1,
     "height": 1,
     "ingredients": {
@@ -70,6 +70,6 @@
       "type": "block",
       "code": "game:plankstairs-{wood}-up-north-free"
     },
-    "dependsOn": [ { "modid": "wildcrafttrees" } ]
+    "dependsOn": [{ "modid": "wildcrafttrees" }]
   }
 ]

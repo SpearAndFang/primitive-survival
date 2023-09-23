@@ -282,6 +282,7 @@ namespace PrimitiveSurvival.ModSystem
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
+            api.World.Logger.Event("started 'PrimitiveSurvival' mod");
             this.RegisterClasses(api);
         }
 

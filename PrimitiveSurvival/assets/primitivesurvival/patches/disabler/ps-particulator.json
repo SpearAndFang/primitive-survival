@@ -1,0 +1,42 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/particulator.json",
+    "condition": {
+      "when": "ParticulatorEnabled",
+      "isValue": "false"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:blocktypes/other/particulator.json",
+    "condition": {
+      "when": "ParticulatorEnabled",
+      "isValue": "false"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/linktool.json",
+    "condition": {
+      "when": "ParticulatorEnabled",
+      "isValue": "false"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:itemtypes/other/linktool.json",
+    "condition": {
+      "when": "ParticulatorEnabled",
+      "isValue": "false"
+    }
+  }
+]

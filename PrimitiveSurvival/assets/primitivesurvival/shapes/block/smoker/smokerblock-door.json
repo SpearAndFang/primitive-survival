@@ -1,0 +1,81 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"fire-orange": "game:block/fire-orange",
+		"side": "game:block/wood/firewood/side",
+		"south": "game:block/wood/firewood/south",
+		"bark": "game:block/wood/firewood/bark",
+		"oak-dark": "game:block/wood/oak-dark",
+		"basalt1": "game:block/stone/cobblestone/basalt1",
+		"oak": "game:block/wood/debarked/oak",
+		"granite1": "game:block/stone/cobblestone/granite1",
+		"oak1": "game:block/wood/planks/oak1"
+	},
+	"elements": [
+		{
+			"name": "Cube18",
+			"from": [ 0.05, 6.0, 3.0 ], 
+			"to": [ 1.05, 19.0, 13.0 ], 
+			"rotationOrigin": [ 0.0, 6.0, 3.0 ],
+			"rotationX": 0.1,
+			"faces": {
+				"north": { "texture": "#oak1", "uv": [ 0.5, 2.5, 1.5, 15.5 ] },
+				"east": { "texture": "#oak1", "uv": [ 0.0, 0.0, 10.0, 13.0 ] },
+				"south": { "texture": "#oak1", "uv": [ 13.5, 2.5, 14.5, 15.5 ] },
+				"west": { "texture": "#oak1", "uv": [ 3.0, 2.5, 13.0, 15.5 ] },
+				"up": { "texture": "#oak1", "uv": [ 6.0, 0.0, 16.0, 1.0 ], "rotation": 90 },
+				"down": { "texture": "#oak1", "uv": [ 0.0, 0.0, 1.0, 10.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube19",
+					"from": [ -1.0, 5.0, 8.5 ], 
+					"to": [ 0.0, 9.0, 9.5 ], 
+					"rotationOrigin": [ -1.0, 5.0, 8.5 ],
+					"faces": {
+						"north": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"east": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"south": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"west": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"up": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"down": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+					}
+				},
+				{
+					"name": "Cube20",
+					"from": [ 0.5, 10.0, -0.5 ], 
+					"to": [ 1.5, 12.0, 0.5 ], 
+					"rotationOrigin": [ 0.5, 10.0, -0.5 ],
+					"faces": {
+						"north": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"east": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"south": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"west": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"up": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"down": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+					}
+				},
+				{
+					"name": "Cube21",
+					"from": [ 0.5, 1.0, -0.5 ], 
+					"to": [ 1.5, 3.0, 0.5 ], 
+					"rotationOrigin": [ 0.5, 1.0, -0.5 ],
+					"faces": {
+						"north": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"east": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"south": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"west": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"up": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"down": { "texture": "#oak-dark", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+					}
+				}
+			]
+		}
+	]}

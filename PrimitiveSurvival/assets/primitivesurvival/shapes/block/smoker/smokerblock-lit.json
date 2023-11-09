@@ -1,0 +1,37 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"fire-orange": "game:block/fire-orange",
+		"side": "game:block/wood/firewood/side",
+		"south": "game:block/wood/firewood/south",
+		"bark": "game:block/wood/firewood/bark",
+		"oak-dark": "game:block/wood/oak-dark",
+		"basalt1": "game:block/stone/cobblestone/basalt1",
+		"oak": "game:block/wood/debarked/oak",
+		"granite1": "game:block/stone/cobblestone/granite1",
+		"oak1": "game:block/wood/planks/oak1"
+	},
+	"elements": [
+		{
+			"name": "Cube38",
+			"from": [ 1.5, 4.6, 7.9 ], 
+			"to": [ 14.5, 8.6, 11.9 ], 
+			"rotationOrigin": [ 1.5, 3.6, 6.9 ],
+			"rotationX": 3.0,
+			"faces": {
+				"north": { "texture": "#bark", "uv": [ 0.0, 0.0, 13.0, 4.0 ] },
+				"east": { "texture": "#south", "uv": [ 0.0, 12.0, 4.0, 16.0 ], "autoUv": false },
+				"south": { "texture": "#side", "uv": [ 0.0, 0.0, 13.0, 4.0 ] },
+				"west": { "texture": "#fire-orange", "uv": [ 0.0, 12.0, 4.0, 16.0 ], "rotation": 90, "autoUv": false },
+				"up": { "texture": "#bark", "uv": [ 0.0, 0.0, 13.0, 4.0 ] },
+				"down": { "texture": "#side", "uv": [ 0.0, 0.0, 13.0, 4.0 ] }
+			}
+		}
+	]}

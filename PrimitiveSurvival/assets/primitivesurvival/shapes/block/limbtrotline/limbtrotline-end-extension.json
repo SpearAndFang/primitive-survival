@@ -1,0 +1,48 @@
+{
+	"editor": {
+		"allAngles": true,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "origin",
+			"from": [ 16.7, 8.0, -6.8 ], 
+			"to": [ 16.7, 8.0, -5.8 ], 
+			"rotationOrigin": [ 8.0, 7.0, -6.58 ],
+			"rotationY": 90.0,
+			"rotationZ": 44.0,
+			"faces": {
+				"north": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"east": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "enabled": false },
+				"south": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"west": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 1.0, 0.5 ], "enabled": false },
+				"up": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 1.0 ], "enabled": false },
+				"down": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 1.0 ], "enabled": false }
+			},
+			"children": [
+				{
+					"name": "body32",
+					"from": [ -30.8, 7.4, 0.0 ], 
+					"to": [ -22.6, 7.9, 0.5 ], 
+					"rotationOrigin": [ -26.9, 7.3, 2.6 ],
+					"rotationX": 0.1,
+					"rotationY": 0.1,
+					"rotationZ": -44.0,
+					"faces": {
+						"north": { "texture": "#stringmaterial", "uv": [ 5.0, 6.0, 13.0, 6.5 ] },
+						"east": { "texture": "#stringmaterial", "uv": [ 2.0, 5.0, 2.5, 5.5 ] },
+						"south": { "texture": "#stringmaterial", "uv": [ 4.5, 10.5, 12.5, 11.0 ] },
+						"west": { "texture": "#stringmaterial", "uv": [ 2.0, 6.0, 2.5, 6.5 ] },
+						"up": { "texture": "#stringmaterial", "uv": [ 4.0, 0.0, 4.5, 8.0 ], "rotation": 90 },
+						"down": { "texture": "#stringmaterial", "uv": [ 0.0, 3.0, 8.0, 3.5 ] }
+					}
+				}
+			]
+		}
+	]}

@@ -1,0 +1,43 @@
+{
+	"editor": {
+		"allAngles": true,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "origin",
+			"from": [ 0.0, 0.0, 0.0 ], 
+			"to": [ 0.0, 0.0, 0.0 ], 
+			"faces": {
+				"north": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"east": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"south": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"west": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"up": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"down": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
+			},
+			"children": [
+				{
+					"name": "Cube1",
+					"from": [ 7.75, 0.4, 0.0 ], 
+					"to": [ 8.25, 0.9, 16.0 ], 
+					"rotationOrigin": [ 7.7, 0.4, 0.0 ],
+					"rotationZ": 0.3,
+					"faces": {
+						"north": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+						"south": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+						"up": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 16.0 ] },
+						"down": { "texture": "#stringmaterial", "uv": [ 0.0, 0.0, 0.5, 16.0 ] }
+					}
+				}
+			]
+		}
+	]}

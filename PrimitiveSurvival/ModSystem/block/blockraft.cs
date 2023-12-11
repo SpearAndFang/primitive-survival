@@ -223,7 +223,7 @@ namespace PrimitiveSurvival.ModSystem
                     this.FpHandTransform.Rotation.Z = 180;
                     this.FpHandTransform.Scale = 2f;
                     this.FpHandTransform.Translation.Y = -0.15f;
-                    this.FpHandTransform.Translation.Z = -0.1f;
+                    this.FpHandTransform.Translation.Z = -1.1f;
                     //
                     this.TpHandTransform.Translation.X = 0.3f;
                     this.TpHandTransform.Translation.Y = -0.35f;

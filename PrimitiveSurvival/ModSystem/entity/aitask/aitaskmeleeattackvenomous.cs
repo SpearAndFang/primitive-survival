@@ -32,7 +32,7 @@ namespace PrimitiveSurvival.ModSystem
         private readonly string[] seekEntityCodesExact = new string[] { "player" };
         private readonly string[] seekEntityCodesBeginsWith = new string[0];
         private new readonly float tamingGenerations = 10f;
-        private float curTurnRadPerSec;
+        private float curTurnRadPerSec = 0;
 
 
         public AiTaskMeleeAttackVenomous(EntityAgent entity) : base(entity)

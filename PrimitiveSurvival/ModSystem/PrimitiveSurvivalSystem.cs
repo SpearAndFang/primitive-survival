@@ -369,12 +369,14 @@ namespace PrimitiveSurvival.ModSystem
                 foreach (var chunk in chunkList)
                 {
                     var coords = chunk.Split(',');
+                    /*
                     var pos = new BlockPos
                     {
                         X = coords[0].ToInt(),
                         Y = coords[1].ToInt(),
                         Z = coords[2].ToInt()
-                    };
+                    };*/
+                    var pos = new BlockPos(coords[0].ToInt(), coords[1].ToInt(), coords[2].ToInt(), 0);
 
                     var getchunk = this.sapi.WorldManager.GetChunk(pos);
                     if (getchunk != null)

@@ -13,6 +13,7 @@
     "partialAttachable": true,
     "inventoryClassName": "chest",
     "defaultType": "base",
+    //"rotatatableInterval": "22.5deg",
     "types": [ "base", "base2", "up", "up2" ],
     "drop": {
       "base": true,
@@ -52,8 +53,12 @@
     },
     "variantByGroup": "wood",
     "variantByGroupInventory": "wood",
-    "openSound": "game:sounds/block/sand",
-    "closeSound": "game:sounds/block/sand",
+    "typedOpenSound": {
+      "*": "game:sounds/block/sand"
+    },
+    "typedCloseSound": {
+      "*": "game:sounds/block/sand"
+    }
   },
   "variantgroups": [
     {

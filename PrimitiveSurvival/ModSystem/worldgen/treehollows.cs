@@ -111,7 +111,8 @@ namespace PrimitiveSurvival.ModSystem
             var hollowsPlacedCount = 0;
             for (var i = 0; i < chunks.Length; i++)
             {
-                var blockPos = new BlockPos();
+                //var blockPos = new BlockPos();
+                var blockPos = new BlockPos(0,0,0,0);
                 for (var x = 0; x < this.chunkSize; x++)
                 {
                     for (var z = 0; z < this.chunkSize; z++)

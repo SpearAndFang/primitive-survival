@@ -26,9 +26,9 @@ namespace PrimitiveSurvival.ModSystem
         public virtual bool AllowHeldLiquidTransfer => this.Attributes["allowHeldLiquidTransfer"].AsBool() == true;
 
 
-        public override void OnLoadCollectibleMappings(IWorldAccessor worldForResolve, ItemSlot inSlot, Dictionary<int, AssetLocation> oldBlockIdMapping, Dictionary<int, AssetLocation> oldItemIdMapping)
+        public override void OnLoadCollectibleMappings(IWorldAccessor worldForResolve, ItemSlot inSlot, Dictionary<int, AssetLocation> oldBlockIdMapping, Dictionary<int, AssetLocation> oldItemIdMapping, bool resolveImports)
         {
-            base.OnLoadCollectibleMappings(worldForResolve, inSlot, oldBlockIdMapping, oldItemIdMapping);
+            base.OnLoadCollectibleMappings(worldForResolve, inSlot, oldBlockIdMapping, oldItemIdMapping, true);
         }
 
         Dictionary<string, ItemStack[]> recipeLiquidContents = new Dictionary<string, ItemStack[]>();

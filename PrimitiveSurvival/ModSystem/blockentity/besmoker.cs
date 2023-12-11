@@ -22,7 +22,7 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int maxSlots = 5;
         protected static readonly Random Rnd = new Random();
         public string State { get; protected set; }
-        private readonly long particleTick;
+        private readonly long particleTick = 0;
 
         private BlockFacing ownFacing;
         private double burningUntilTotalDays;

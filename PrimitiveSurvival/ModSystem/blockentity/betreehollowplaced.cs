@@ -14,42 +14,43 @@ namespace PrimitiveSurvival.ModSystem
     //using System.Diagnostics;
 
 
-    public class BETreeHollowPlaced : BlockEntityGenericTypedContainer
+    public class BETreeHollowPlaced : BlockEntityOpenableContainer //, IRotatable
     {
 
         internal InventoryGeneric inventory;
 
-        public new string type = "normal-generic";
-        public new string defaultType;
-        public new int quantitySlots = 10;
-        public new string inventoryClassName = "chest";
-        public new string dialogTitleLangCode = "chestcontents";
+        public string type = "normal-generic";
+        public string defaultType;
+        public int quantitySlots = 10;
+        public int quantityColumns = 4;
+        public string inventoryClassName = "chest";
+        public string dialogTitleLangCode = "chestcontents";
 
 
-        public new bool retrieveOnly = false;
+        public bool retrieveOnly = false;
         private float meshangle;
-        public override float MeshAngle
+        public virtual float MeshAngle
         {
-            get => this.meshangle;
+            get { return meshangle; }
             set
             {
-                this.meshangle = value;
-                this.rendererRot.Y = value * GameMath.RAD2DEG;
+                meshangle = value;
+                rendererRot.Y = value * GameMath.RAD2DEG;
             }
         }
 
         private MeshData ownMesh;
 
-        public new Cuboidf[] collisionSelectionBoxes;
+        public Cuboidf[] collisionSelectionBoxes;
 
 
-        public override string DialogTitle => Lang.Get(this.dialogTitleLangCode);
+        public virtual string DialogTitle => Lang.Get(this.dialogTitleLangCode);
 
         public override InventoryBase Inventory => this.inventory;
 
         public override string InventoryClassName => this.inventoryClassName;
 
-        private BlockEntityAnimationUtil AnimUtil => this.GetBehavior<BEBehaviorAnimatable>()?.animUtil;
+        private BlockEntityAnimationUtil AnimUtil => null; 
 
         private readonly Vec3f rendererRot = new Vec3f();
 
@@ -79,10 +80,7 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     this.type = nowType;
                     this.InitInventory(this.Block);
-                    this.Inventory.LateInitialize(this.InventoryClassName + "-" + this.Pos.X + "/" + this.Pos.Y + "/" + this.Pos.Z, this.Api);
-                    this.Inventory.ResolveBlocksOrItems();
-                    this.Inventory.OnAcquireTransitionSpeed = this.Inventory_OnAcquireTransitionSpeed;
-                    this.MarkDirty();
+                    LateInitInventory();
                 }
             }
             base.OnBlockPlaced();
@@ -91,6 +89,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
+            string prevType = type;
             this.type = tree.GetString("type", this.defaultType);
             this.MeshAngle = tree.GetFloat("meshAngle", this.MeshAngle);
             if (this.inventory == null)
@@ -109,6 +108,13 @@ namespace PrimitiveSurvival.ModSystem
                     var qslots = inventroytree.GetInt("qslots");
                     this.InitInventory(null);
                 }
+            }
+            else if (type != prevType)
+            {
+                InitInventory(Block);
+
+                if (Api == null) this.Api = worldForResolving.Api; // LateInitInventory needs the api
+                LateInitInventory();
             }
 
             if (this.Api != null && this.Api.Side == EnumAppSide.Client)
@@ -130,7 +136,7 @@ namespace PrimitiveSurvival.ModSystem
             tree.SetFloat("meshAngle", this.MeshAngle);
         }
 
-        protected override void InitInventory(Block block)
+        protected virtual void InitInventory(Block block)
         {
             block = this.Block;
             if (block?.Attributes != null)
@@ -139,6 +145,7 @@ namespace PrimitiveSurvival.ModSystem
                 this.inventoryClassName = block.Attributes["inventoryClassName"].AsString(this.inventoryClassName);
                 this.dialogTitleLangCode = block.Attributes["dialogTitleLangCode"][this.type].AsString(this.dialogTitleLangCode);
                 this.quantitySlots = block.Attributes["quantitySlots"][this.type].AsInt(this.quantitySlots);
+                this.quantityColumns = block.Attributes["quantityColumns"][type].AsInt(4);
                 this.retrieveOnly = block.Attributes["retrieveOnly"][this.type].AsBool(false);
 
                 if (block.Attributes["typedOpenSound"][this.type].Exists)
@@ -173,6 +180,14 @@ namespace PrimitiveSurvival.ModSystem
             this.inventory.OnInventoryOpened += this.OnInvOpened;
         }
 
+        public virtual void LateInitInventory()
+        {
+            Inventory.LateInitialize(InventoryClassName + "-" + Pos.X + "/" + Pos.Y + "/" + Pos.Z, Api);
+            Inventory.ResolveBlocksOrItems();
+            Inventory.OnAcquireTransitionSpeed = Inventory_OnAcquireTransitionSpeed;
+            MarkDirty();
+        }
+
         private ItemSlot GetAutoPullFromSlot(BlockFacing atBlockFace)
         {
             if (atBlockFace == BlockFacing.DOWN)
@@ -182,25 +197,13 @@ namespace PrimitiveSurvival.ModSystem
             return null;
         }
 
-        protected override void OnInvOpened(IPlayer player)
+        protected virtual void OnInvOpened(IPlayer player)
         {
             this.inventory.PutLocked = this.retrieveOnly && player.WorldData.CurrentGameMode != EnumGameMode.Creative;
-            if (this.Api.Side == EnumAppSide.Client)
-            {
-                this.AnimUtil?.StartAnimation(new AnimationMetaData()
-                {
-                    Animation = "lidopen",
-                    Code = "lidopen",
-                    AnimationSpeed = 1.8f,
-                    EaseOutSpeed = 6,
-                    EaseInSpeed = 15
-                });
-            }
         }
 
-        protected override void OnInvClosed(IPlayer player)
+        protected virtual void OnInvClosed(IPlayer player)
         {
-            this.AnimUtil?.StopAnimation("lidopen");
             this.inventory.PutLocked = this.retrieveOnly;
             // This is already handled elsewhere and also causes a stackoverflowexception, but seems needed somehow?
             var inv = this.invDialog;
@@ -225,7 +228,7 @@ namespace PrimitiveSurvival.ModSystem
                     var writer = new BinaryWriter(ms);
                     writer.Write("BlockEntityInventory");
                     writer.Write(this.DialogTitle);
-                    writer.Write((byte)4);
+                    writer.Write((byte)quantityColumns);
                     var tree = new TreeAttribute();
                     this.inventory.ToTreeAttributes(tree);
                     tree.ToBytes(writer);
@@ -241,7 +244,6 @@ namespace PrimitiveSurvival.ModSystem
             }
             return true;
         }
-
 
 
         private MeshData GenMesh(ITesselatorAPI tesselator)
@@ -264,46 +266,17 @@ namespace PrimitiveSurvival.ModSystem
             var shapename = this.Block.Attributes?["shape"][this.type].AsString();
             if (shapename == null)
             { return null; }
-            Shape shape = null;
-            if (this.AnimUtil != null)
-            {
-                var skeydict = "typedContainerShapes";
-                var shapes = ObjectCacheUtil.GetOrCreate(this.Api, skeydict, () =>
-                {
-                    return new Dictionary<string, Shape>();
-                });
-                var skey = this.Block.FirstCodePart() + block.Subtype + "-" + "-" + shapename + "-" + rndTexNum;
-                if (!shapes.TryGetValue(skey, out shape))
-                {
-                    shapes[skey] = shape = block.GetShape(this.Api as ICoreClientAPI, this.type, shapename, tesselator, rndTexNum);
-                }
-            }
-
             var meshKey = this.type + block.Subtype + "-" + rndTexNum;
             if (meshes.TryGetValue(meshKey, out var mesh))
             {
-                if (this.AnimUtil != null && this.AnimUtil.renderer == null)
-                {
-                    this.AnimUtil.InitializeAnimator(this.type + "-" + key, mesh, shape, this.rendererRot);
-                }
                 return mesh;
             }
             if (rndTexNum > 0)
             { rndTexNum = GameMath.MurmurHash3Mod(this.Pos.X, this.Pos.Y, this.Pos.Z, rndTexNum); }
-            if (this.AnimUtil != null)
-            {
-                if (this.AnimUtil.renderer == null)
-                {
-                    mesh = this.AnimUtil.InitializeAnimator(this.type + "-" + key, shape, block, this.rendererRot);
-                }
-                return meshes[meshKey] = mesh;
-            }
-            else
-            {
-                return meshes[meshKey] = block.GenMesh(this.Api as ICoreClientAPI, this.type, shapename, tesselator, new Vec3f(), rndTexNum);
-            }
-        }
 
+            return meshes[meshKey] = block.GenMesh(this.Api as ICoreClientAPI, this.type, shapename, tesselator, new Vec3f(), rndTexNum);
+        }
+  
 
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
@@ -320,6 +293,13 @@ namespace PrimitiveSurvival.ModSystem
                 mesher.AddMeshData(this.ownMesh.Clone().Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, this.MeshAngle, 0));
             }
             return true;
+        }
+
+        public void OnTransformed(ITreeAttribute tree, int degreeRotation, EnumAxis? flipAxis)
+        {
+            MeshAngle = tree.GetFloat("meshAngle");
+            MeshAngle -= degreeRotation * GameMath.DEG2RAD;
+            tree.SetFloat("meshAngle", MeshAngle);
         }
     }
 }

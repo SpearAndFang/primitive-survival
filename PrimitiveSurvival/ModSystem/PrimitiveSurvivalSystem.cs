@@ -154,8 +154,8 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockEntityClass("besmoker", typeof(BESmoker));
             api.RegisterBlockEntityClass("befurrowedland", typeof(BEFurrowedLand));
 
-            api.RegisterBlockClass("BlockLiquidIrrigationVesselBase", typeof(BlockLiquidIrrigationVesselBase));
-            api.RegisterBlockClass("BlockLiquidIrrigationVesselTopOpened", typeof(BlockLiquidIrrigationVesselTopOpened));
+            //api.RegisterBlockClass("BlockLiquidIrrigationVesselBase", typeof(BlockLiquidIrrigationVesselBase));
+            //api.RegisterBlockClass("BlockLiquidIrrigationVesselTopOpened", typeof(BlockLiquidIrrigationVesselTopOpened));
 
             api.RegisterBlockClass("blockearthwormcastings", typeof(BlockEarthwormCastings));
             api.RegisterBlockClass("blockfuse", typeof(BlockFuse));

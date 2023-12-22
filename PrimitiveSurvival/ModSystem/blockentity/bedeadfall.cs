@@ -73,7 +73,7 @@ namespace PrimitiveSurvival.ModSystem
 
         #region IAnimalFoodSource impl
         // ADDED DIET FOR 1.17
-        public bool IsSuitableFor(Entity entity, string[] diet)
+        public bool IsSuitableFor(Entity entity, CreatureDiet diet)
         //public bool IsSuitableFor(Entity entity)
         {
             //if (diet == null) //shouldn't need this at all
@@ -81,7 +81,7 @@ namespace PrimitiveSurvival.ModSystem
             return true;
         }
 
-        public float ConsumeOnePortion()
+        public float ConsumeOnePortion(Entity entity)
         {
             //TryClearContents();
             return 1f;

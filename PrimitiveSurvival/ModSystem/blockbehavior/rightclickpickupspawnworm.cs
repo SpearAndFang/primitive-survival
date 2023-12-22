@@ -17,6 +17,11 @@ namespace PrimitiveSurvival.ModSystem
         {
             var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
             var wormOdds = ModConfig.Loaded.WormFoundPercentRock; //10
+
+            var coachWhipNum = ModConfig.Loaded.SpawnMultiplierSnakeCoachWhip;
+            var pitViperNum = ModConfig.Loaded.SpawnMultiplierSnakeCoachWhip;
+
+
             if (!block.Code.Path.Contains("flint") && !block.Code.Path.Contains("stick"))
             { wormOdds = ModConfig.Loaded.WormFoundPercentStickFlint; } //25
             var rando = Rnd.Next(100);
@@ -44,9 +49,9 @@ namespace PrimitiveSurvival.ModSystem
                                 if (rando == 0)
                                 {
                                     rando = Rnd.Next(2);
-                                    if (rando == 0)
+                                    if (rando == 0 && coachWhipNum > 0)
                                     { type = world.GetEntityType(new AssetLocation("primitivesurvival:coachwhip")); }
-                                    else
+                                    else if (pitViperNum > 0)
                                     { type = world.GetEntityType(new AssetLocation("primitivesurvival:pitviper")); }
                                 }
                                 var entity = world.ClassRegistry.CreateEntity(type);

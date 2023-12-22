@@ -11,7 +11,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     //using System.Diagnostics;
 
-    public class BlockIrrigationVessel : BlockLiquidIrrigationVesselTopOpened
+    public class BlockIrrigationVessel : BlockLiquidContainerTopOpened // BlockLiquidIrrigationVesselTopOpened
     {
         public override float CapacityLitres => 50;
         public override bool CanDrinkFrom => false;

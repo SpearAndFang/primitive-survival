@@ -8,6 +8,8 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     //using System.Diagnostics;
     using Vintagestory.API.Client.Tesselation;
+    using Vintagestory.Client.NoObf;
+    using Vintagestory.API.Common.Entities;
 
     public class BlockRaft : Block, IDrawYAdjustable
     {
@@ -231,10 +233,23 @@ namespace PrimitiveSurvival.ModSystem
                     this.TpHandTransform.Rotation.X = -160;
                     this.TpHandTransform.Rotation.Y = 25;
                     this.TpHandTransform.Rotation.Z = -30;
-                    this.TpHandTransform.Origin.X = 0f;
                     this.TpHandTransform.Origin.Y = 0.22f;
-                    this.TpHandTransform.Origin.Z = -0.2f;
-                    this.TpHandTransform.Scale = 1.06f;
+
+
+                    var capi = api as ICoreClientAPI;
+                    if (capi.World.Player?.CameraMode == EnumCameraMode.FirstPerson)
+                    {
+                        this.TpHandTransform.Origin.X = 0.08f;
+                        this.TpHandTransform.Origin.Z = -0.5f;
+                        this.TpHandTransform.Scale = 1.45f;
+                    }
+                    else
+                    {
+                        this.TpHandTransform.Origin.X = 0f;
+                        this.TpHandTransform.Origin.Z = -0.2f;
+                        this.TpHandTransform.Scale = 1.06f;
+                    }
+
 
                     if (byEntity.IsEyesSubmerged()) //under water
                     {

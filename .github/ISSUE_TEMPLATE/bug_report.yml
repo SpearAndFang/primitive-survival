@@ -1,0 +1,76 @@
+name: Bugreport
+description: You can report a bug or issue here.
+labels: ["status: new"]
+assignees: ["SpearAndFang"]
+
+body:
+  - type: input
+    id: gameversion
+    attributes:
+      label: Game Version
+      description: What Game Version were you using?
+      placeholder: v1.20.7
+    validations:
+      required: false
+  - type: input
+    id: modversion
+    attributes:
+      label: Mod Version
+      description: What Version of this mod were you using?
+      placeholder: v1.1.8
+    validations:
+      required: false
+  - type: dropdown
+    id: operating-systems
+    attributes:
+      label: Platform
+      description: Select your operating system.
+      options:
+        - Windows
+        - Mac
+        - Linux
+    validations:
+      required: false
+  - type: dropdown
+    id: playmode
+    attributes:
+      label: SP/MP
+      description: Single- or Multiplayer
+      options:
+        - Singleplayer
+        - Multiplayer
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Explain the issue you're running into.
+      placeholder: Explain it here.
+    validations:
+      required: false
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: Explain how we could reproduce your bug/issue.
+      placeholder: 1. Make a '....' 2. Use it on '....' 3. It crashes / doesn't do the thing.
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Attach a screenshot if it helps explain the issue / shows a visual bug.
+      placeholder: Drag and drop pictures here.
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: In the game's `Logs` folder there will be useful information inside `client-main.log` and `server-main.log`. Please drag and drop those log files here. (For purely visual issues this may not be necessary.) Please provide both logs - or in Multiplayer, we likely only need to see the `client-main.log` if you're the player reporting the issue, or the `server-main.log` if you're the server owner. For crashes, `client-crash.log` may be useful. For missing / corrupt worldgen, `server-worldgen.log`.<br><br>If you re-started the game already after the issue occurred, your older logs are in folder `Logs\Archive`.<br><br>In the event of a crash please also copy & paste the information from the Crash Reporter screen, paste it between the triple quote marks in the box below. This helps us quickly find the issue, and may help other players with the same issue.
+      placeholder: Paste crash between the triple backticks. Or drag and drop full log files here. Or both.
+      value: "```Crash```"
+    validations:
+      required: false

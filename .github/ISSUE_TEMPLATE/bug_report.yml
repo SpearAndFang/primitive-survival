@@ -17,7 +17,7 @@ body:
     attributes:
       label: Mod Version
       description: What Version of this mod were you using?
-      placeholder: v1.1.8
+      placeholder: v3.7.6
     validations:
       required: false
   - type: dropdown

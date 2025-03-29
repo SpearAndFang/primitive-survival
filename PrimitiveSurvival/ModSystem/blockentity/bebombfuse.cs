@@ -1,6 +1,7 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using System;
+    //using System.Diagnostics;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.Datastructures;
@@ -76,7 +77,16 @@ namespace PrimitiveSurvival.ModSystem
 
             this.blastRadius = this.Block.Attributes["blastRadius"].AsInt(4);
             this.injureRadius = this.Block.Attributes["injureRadius"].AsInt(8);
-            this.blastType = (EnumBlastType)this.Block.Attributes["blastType"].AsInt((int)EnumBlastType.OreBlast);
+            if (this.Block.Code.Path == "rockblastingbomb")
+            {
+                this.blastType = (EnumBlastType)this.Block.Attributes["blastType"].AsInt((int)EnumBlastType.RockBlast);
+                //Debug.WriteLine("ROCK");
+            }
+            else
+            {
+                this.blastType = (EnumBlastType)this.Block.Attributes["blastType"].AsInt((int)EnumBlastType.OreBlast);
+                //Debug.WriteLine("ORE");
+            }
         }
 
 

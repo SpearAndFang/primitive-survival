@@ -1,0 +1,25 @@
+[
+  {
+    "ingredientPattern": "S,L,G",
+    "width": 1,
+    "height": 3,
+    "ingredients": {
+      "S": { "type": "item", "code": "game:saw-*", "istool": "true" },
+      "L": {
+        "type": "block",
+        "code": "floralzonescaperegion:log-*",
+        "allowedVariants": [
+          "placed-afrocarpusfalcatus-ud",
+          "placed-searsialancea-ud"
+        ],
+        "quantity": 1
+      },
+      "G": { "type": "item", "code": "game:resin" }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:woodjarholder-north",
+      "quantity": 4
+    }
+  }
+]

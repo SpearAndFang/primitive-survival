@@ -1,0 +1,92 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/smithing/buckethandle.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/metalbucket.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/metalbucket.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/2/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/metalbucket.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/2/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/metalbucket.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/metalbucketrecipes.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "primitivesurvival:recipes/grid/metalbucketrecipes.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:blocktypes/metal/metalbucketdonotpatch.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "primitivesurvival:itemtypes/metal/buckethandle.json",
+    "condition": {
+      "when": "MetalBucketDisabled",
+      "isValue": "true"
+    }
+  }
+]

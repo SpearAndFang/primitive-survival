@@ -1,7 +1,7 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using System;
-    using System.Diagnostics;
+    //using System.Diagnostics;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
 

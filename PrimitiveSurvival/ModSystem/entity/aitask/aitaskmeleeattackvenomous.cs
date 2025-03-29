@@ -43,79 +43,86 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool ShouldExecute()
         {
-            var ellapsedMs = this.entity.World.ElapsedMilliseconds;
-            if (ellapsedMs - this.lastCheckOrAttackMs < this.attackDurationMs || this.cooldownUntilMs > ellapsedMs)
+            try
             {
-                return false;
-            }
-
-            // 1.16
-            //if (this.whenInEmotionState != null && !this.entity.HasEmotionState(this.whenInEmotionState))
-            if (this.whenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.whenInEmotionState) != true)
-            {
-                return false;
-            }
-
-            // 1.16
-            //if (this.whenNotInEmotionState != null && this.entity.HasEmotionState(this.whenNotInEmotionState))
-            if (this.whenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.whenNotInEmotionState) == true)
-            {
-                return false;
-            }
-
-            var pos = this.entity.ServerPos.XYZ.Add(0, this.entity.CollisionBox.Y2 / 2, 0).Ahead(this.entity.CollisionBox.XSize / 2, 0, this.entity.ServerPos.Yaw);
-
-            var generation = this.entity.WatchedAttributes.GetInt("generation", 0);
-            var fearReductionFactor = Math.Max(0f, (this.tamingGenerations - generation) / this.tamingGenerations);
-            if (this.whenInEmotionState != null)
-            {
-                fearReductionFactor = 1;
-            }
-            if (fearReductionFactor <= 0)
-            {
-                return false;
-            }
-
-            this.targetEntity = this.entity.World.GetNearestEntity(pos, 3f * fearReductionFactor, 3f * fearReductionFactor, (e) =>
-            {
-                if (!e.Alive || !e.IsInteractable || e.EntityId == this.entity.EntityId)
+                var ellapsedMs = this.entity.World.ElapsedMilliseconds;
+                if (ellapsedMs - this.lastCheckOrAttackMs < this.attackDurationMs || this.cooldownUntilMs > ellapsedMs)
                 {
                     return false;
                 }
-                for (var i = 0; i < this.seekEntityCodesExact.Length; i++)
-                {
-                    if (e.Code.Path == this.seekEntityCodesExact[i])
-                    {
-                        if (e.Code.Path == "player")
-                        {
-                            var player = this.entity.World.PlayerByUid(((EntityPlayer)e).PlayerUID);
-                            var okplayer =
-                                player == null ||
-                                (player.WorldData.CurrentGameMode != EnumGameMode.Creative && player.WorldData.CurrentGameMode != EnumGameMode.Spectator && (player as IServerPlayer).ConnectionState == EnumClientState.Playing);
 
-                            return okplayer && this.HasDirectContact(e);
+                // 1.16
+                //if (this.whenInEmotionState != null && !this.entity.HasEmotionState(this.whenInEmotionState))
+                if (this.whenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.whenInEmotionState) != true)
+                {
+                    return false;
+                }
+
+                // 1.16
+                //if (this.whenNotInEmotionState != null && this.entity.HasEmotionState(this.whenNotInEmotionState))
+                if (this.whenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.whenNotInEmotionState) == true)
+                {
+                    return false;
+                }
+
+                var pos = this.entity.ServerPos.XYZ.Add(0, this.entity.CollisionBox.Y2 / 2, 0).Ahead(this.entity.CollisionBox.XSize / 2, 0, this.entity.ServerPos.Yaw);
+
+                var generation = this.entity.WatchedAttributes.GetInt("generation", 0);
+                var fearReductionFactor = Math.Max(0f, (this.tamingGenerations - generation) / this.tamingGenerations);
+                if (this.whenInEmotionState != null)
+                {
+                    fearReductionFactor = 1;
+                }
+                if (fearReductionFactor <= 0)
+                {
+                    return false;
+                }
+
+                this.targetEntity = this.entity.World.GetNearestEntity(pos, 3f * fearReductionFactor, 3f * fearReductionFactor, (e) =>
+                {
+                    if (e is null)
+                    { return false; }
+
+                    if (!e.Alive || !e.IsInteractable || e.EntityId == this.entity.EntityId)
+                    {
+                        return false;
+                    }
+                    for (var i = 0; i < this.seekEntityCodesExact.Length; i++)
+                    {
+                        if (e.Code.Path == this.seekEntityCodesExact[i])
+                        {
+                            if (e.Code.Path == "player")
+                            {
+                                var player = this.entity.World.PlayerByUid(((EntityPlayer)e).PlayerUID);
+                                var okplayer =
+                                    player == null ||
+                                    (player.WorldData.CurrentGameMode != EnumGameMode.Creative && player.WorldData.CurrentGameMode != EnumGameMode.Spectator && (player as IServerPlayer).ConnectionState == EnumClientState.Playing);
+
+                                return okplayer && this.HasDirectContact(e);
+                            }
+                            if (this.HasDirectContact(e))
+                            {
+                                return true;
+                            }
                         }
-                        if (this.HasDirectContact(e))
+                    }
+
+                    for (var i = 0; i < this.seekEntityCodesBeginsWith.Length; i++)
+                    {
+                        if (e.Code.Path.StartsWithFast(this.seekEntityCodesBeginsWith[i]) && this.HasDirectContact(e))
                         {
                             return true;
                         }
                     }
-                }
+                    return false;
+                });
 
-                for (var i = 0; i < this.seekEntityCodesBeginsWith.Length; i++)
-                {
-                    if (e.Code.Path.StartsWithFast(this.seekEntityCodesBeginsWith[i]) && this.HasDirectContact(e))
-                    {
-                        return true;
-                    }
-                }
-                return false;
-            });
+                this.lastCheckOrAttackMs = this.entity.World.ElapsedMilliseconds;
+                this.damageInflicted = false;
 
-            this.lastCheckOrAttackMs = this.entity.World.ElapsedMilliseconds;
-            this.damageInflicted = false;
-
-            return this.targetEntity != null;
+                return this.targetEntity != null;
+            }
+            catch { return false; }
         }
 
 

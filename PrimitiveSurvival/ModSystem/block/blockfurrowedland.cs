@@ -8,6 +8,10 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Server;
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Util;
+    using System.Text;
+    using PrimitiveSurvival.ModConfig;
+    using System.Diagnostics;
+
     //using System.Diagnostics;
 
     public class BlockFurrowedLand : Block
@@ -246,6 +250,17 @@ namespace PrimitiveSurvival.ModSystem
                 if (updated)
                 { bebBlock.MarkDirty(true); }
             }
+        }
+
+        public override string GetPlacedBlockInfo(IWorldAccessor world, BlockPos pos, IPlayer forPlayer)
+        {
+            var dsc = new StringBuilder();
+            //dsc.AppendLine(base.GetPlacedBlockInfo(world, pos, forPlayer));
+            if (ModConfig.Loaded.ShowModNameInHud)
+            {
+                dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>" + Lang.GetMatching("game:tabname-primitive") + "</i></font>").AppendLine();
+            }
+            return dsc.AppendLine().ToString();
         }
     }
 }

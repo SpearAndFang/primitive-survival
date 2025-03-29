@@ -22,6 +22,7 @@ namespace PrimitiveSurvival.ModSystem
             base.OnLoaded(api);
         }
 
+        /*
         public override bool ShouldPlayAmbientSound(IWorldAccessor world, BlockPos pos)
         {
             // Play water wave sound when above is air and below is a solid block
@@ -29,6 +30,7 @@ namespace PrimitiveSurvival.ModSystem
             var Pos2 = new BlockPos(pos.X, pos.Y - 1, pos.Z, 0);
             return world.BlockAccessor.GetBlock(Pos1, BlockLayersAccess.Default).Id == 0 && world.BlockAccessor.GetBlock(Pos2, BlockLayersAccess.Default).SideSolid[BlockFacing.UP.Index];
         }
+        */ //1.20 obsolete, probably never needed
     }
 }
 

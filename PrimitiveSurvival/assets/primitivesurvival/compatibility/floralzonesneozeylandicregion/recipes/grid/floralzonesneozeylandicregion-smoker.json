@@ -1,0 +1,27 @@
+[
+  {
+    "ingredientPattern": "TTT,P_P,CCC",
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "floralzonesneozeylandicregion:plank-*",
+        "name": "wood",
+        "quantity": 2
+      },
+      "P": {
+        "type": "item",
+        "code": "floralzonesneozeylandicregion:plank-*",
+        "name": "wood"
+      },
+      "C": { "type": "block", "code": "game:cobblestone-*", "name": "stone" }
+    },
+    "width": 3,
+    "height": 3,
+    "shapeless": false,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:smoker-closed-north",
+      "quantity": 1
+    }
+  }
+]

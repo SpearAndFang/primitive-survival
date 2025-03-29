@@ -1,6 +1,6 @@
 {
   "code": "skullofthedead",
-  "class": "entityskullofthedead",
+  "class": "entityskullofthedead", //EntityAgent
   "canClimb": false,
   "hitboxSize": {
     "x": 1,
@@ -26,7 +26,7 @@
   ],
   "drops": [],
   "client": {
-    "renderer": "Shape", //"entitygenericshaperenderer",
+    "renderer": "Shape", //"entitygenericshaperenderer", 1.20
     "pitchStep": false,
     "shapebytype": {
       "*-normal*": {
@@ -53,16 +53,16 @@
       }
     },
     "behaviors": [
-      { "code": "repulseagents" },
+      {
+        "code": "repulseagents",
+        "movable": false
+      },
       { "code": "carryable" },
       {
         "code": "controlledphysics",
         "stepHeight": 0
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      // { "code": "floatupwhenstuck", "onlyWhenDead": true },
       { "code": "interpolateposition" }
     ],
     "animations": [
@@ -76,7 +76,10 @@
   },
   "server": {
     "behaviors": [
-      { "code": "repulseagents" },
+      {
+        "code": "repulseagents",
+        "movable": false
+      },
       {
         "code": "controlledphysics",
         "stepHeight": 0
@@ -90,10 +93,7 @@
           "*-normal*": 100
         }
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      // {"code": "floatupwhenstuck", "onlyWhenDead": true },
       {
         "code": "taskai",
         "aitasks": [

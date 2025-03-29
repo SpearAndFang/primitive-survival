@@ -40,7 +40,8 @@
       "S": {
         "type": "block",
         "code": "game:brickstairs-*-up-north-free",
-        "name": "type"
+        "name": "type",
+        "allowedVariants": ["fire"] //1.20
       }
     },
     "output": {
@@ -92,7 +93,10 @@
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "game:quartzstairs-up-north-free" }
+      "S": {
+        "type": "block",
+        "code": "game:quartzstairs-up-north-free"
+      }
     },
     "output": {
       "type": "block",
@@ -105,13 +109,22 @@
     "width": 1,
     "height": 1,
     "name": "type",
-    "allowedVariants": ["blue", "red", "brown", "fire"],
+    //"allowedVariants": [ "black", "brown", "cream", "fire", "gray", "orange", "red", "tan" ],
     "ingredients": {
       "S": {
         "type": "block",
         "code": "game:clayshinglestairs-*-up-north-free",
         "name": "type",
-        "allowedVariants": ["blue", "red", "brown", "fire"]
+        "allowedVariants": [
+          "black",
+          "brown",
+          "cream",
+          "fire",
+          "gray",
+          "orange",
+          "red",
+          "tan"
+        ]
       }
     },
     "output": {
@@ -158,7 +171,10 @@
     "width": 1,
     "height": 1,
     "ingredients": {
-      "S": { "type": "block", "code": "game:stonepathstairs-up-north-free" }
+      "S": {
+        "type": "block",
+        "code": "game:stonepathstairs-up-north-free"
+      }
     },
     "output": {
       "type": "block",
@@ -206,7 +222,8 @@
       "S": {
         "type": "block",
         "code": "primitivesurvival:betterbrickstairs-*-normal-up-north-free",
-        "name": "type"
+        "name": "type",
+        "allowedVariants": ["fire"] //1.20
       }
     },
     "output": {
@@ -274,7 +291,16 @@
     "width": 1,
     "height": 1,
     "name": "type",
-    "allowedVariants": ["blue", "red", "brown", "fire"],
+    "allowedVariants": [
+      "black",
+      "brown",
+      "cream",
+      "fire",
+      "gray",
+      "orange",
+      "red",
+      "tan"
+    ],
     "ingredients": {
       "S": {
         "type": "block",
@@ -334,6 +360,110 @@
     "output": {
       "type": "block",
       "code": "game:stonepathstairs-up-north-free"
+    }
+  },
+  {
+    "ingredientPattern": "S",
+    "shapeless": false,
+    "width": 1,
+    "height": 1,
+    "ingredients": {
+      "S": {
+        "type": "block",
+        "code": "game:brickstairs-four-*-up-north-free",
+        "name": "type",
+        "allowedVariants": [
+          "black",
+          "brown",
+          "cream",
+          "gray",
+          "orange",
+          "red",
+          "tan"
+        ] //1.20
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:betterfoureightbrickstairs-four-{type}-normal-up-north-free"
+    }
+  },
+  {
+    "ingredientPattern": "S",
+    "shapeless": false,
+    "width": 1,
+    "height": 1,
+    "ingredients": {
+      "S": {
+        "type": "block",
+        "code": "game:brickstairs-eight-*-up-north-free",
+        "name": "type",
+        "allowedVariants": [
+          "black",
+          "brown",
+          "cream",
+          "gray",
+          "orange",
+          "red",
+          "tan"
+        ] //1.20
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:betterfoureightbrickstairs-eight-{type}-normal-up-north-free"
+    }
+  },
+  {
+    "ingredientPattern": "S",
+    "shapeless": false,
+    "width": 1,
+    "height": 1,
+    "ingredients": {
+      "S": {
+        "type": "block",
+        "code": "primitivesurvival:betterfoureightbrickstairs-four-*-up-north-free",
+        "name": "type",
+        "allowedVariants": [
+          "black",
+          "brown",
+          "cream",
+          "gray",
+          "orange",
+          "red",
+          "tan"
+        ] //1.20
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "game:brickstairs-four-{type}-up-north-free"
+    }
+  },
+  {
+    "ingredientPattern": "S",
+    "shapeless": false,
+    "width": 1,
+    "height": 1,
+    "ingredients": {
+      "S": {
+        "type": "block",
+        "code": "primitivesurvival:betterfoureightbrickstairs-eight-*-up-north-free",
+        "name": "type",
+        "allowedVariants": [
+          "black",
+          "brown",
+          "cream",
+          "gray",
+          "orange",
+          "red",
+          "tan"
+        ] //1.20
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "game:brickstairs-eight-{type}-up-north-free"
     }
   }
 ]

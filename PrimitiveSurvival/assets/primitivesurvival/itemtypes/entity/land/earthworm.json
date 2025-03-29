@@ -5,16 +5,16 @@
   "shape": { "base": "item/earthworm" },
   "texture": { "base": "primitivesurvival:item/earthworm" },
   "creativeinventory": {
-    "general": [ "*" ],
-    "items": [ "*" ],
-    "creatures": [ "*" ],
-    "primitive": [ "*" ]
+    "general": ["*"],
+    "items": ["*"],
+    "creatures": ["*"],
+    "primitive": ["*"]
   },
   "attributes": {
     "nutritionPropsWhenInMeal": {
-      "satiety": 20
-    },
-    "foodcategory": "Protein"
+      "satiety": 20,
+      "foodcategory": "Protein"
+    }
   },
   "nutritionProps": {
     "saturation": 20,

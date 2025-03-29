@@ -1,13 +1,13 @@
 {
   "code": "bairdicrab",
-  "class": "EntityAgent",
+  "class": "entitypsagent",
   "hitboxSize": {
     "x": 1,
-    "y": 1
+    "y": 0.5
   },
   "deadHitboxSize": {
     "x": 1,
-    "y": 1
+    "y": 0.5
   },
   "canClimb": false,
   "falldamage": false,
@@ -34,10 +34,7 @@
         "waterDragfactor": 0.3,
         "gravityFactor": 0.1
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": false
-      },
+      // {"code": "floatupwhenstuck","onlyWhenDead": false},
       {
         "code": "interpolateposition"
       },
@@ -59,9 +56,7 @@
         "weight": 10,
         "blendMode": "AddAverage",
         "triggeredBy": {
-          "onControls": [
-            "dead"
-          ]
+          "onControls": [ "dead" ]
         }
       },
       {
@@ -89,7 +84,7 @@
         "code": "wander",
         "animation": "wander",
         "animationSpeed": 1,
-        "blendMode": "AddAverage"
+        "blendMode": "Average"
       }
     ]
   },
@@ -106,17 +101,14 @@
       },
       {
         "code": "health", // Adds a health bar to the entity
-        "currenthealth": 8,
-        "maxhealth": 12
+        "currenthealth": 4,
+        "maxhealth": 6
       },
       {
         "code": "deaddecay", // Makes the dead entity stay for one hour
         "hoursToDecay": 1
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      // { "code": "floatupwhenstuck", "onlyWhenDead": true },
       {
         "code": "harvestable",
         "drops": [
@@ -153,11 +145,10 @@
         "aitasks": [
           {
             "code": "meleeattackcrab",
-            "entityCodes": [
-              "player"
-            ],
+            "entityCodes": [ "player" ],
             "priority": 3,
-            "damage": 1,
+            "damage": 0.7,
+            "minDist": 0.9,
             "damageType": "SlashingAttack",
             "slot": 1,
             "mincooldown": 1500,
@@ -171,9 +162,7 @@
           },
           {
             "code": "seekentity",
-            "entityCodes": [
-              "player"
-            ],
+            "entityCodes": [ "player" ],
             "priority": 2.5,
             "movespeed": 0.02,
             "seekingRange": 20,
@@ -185,9 +174,7 @@
           },
           {
             "code": "fleeentity",
-            "entityCodes": [
-              "player"
-            ],
+            "entityCodes": [ "player" ],
             "priority": 2,
             "movespeed": 0.02,
             "mincooldown": 1500,
@@ -198,11 +185,10 @@
           },
           {
             "code": "meleeattackcrab",
-            "entityCodes": [
-              "player"
-            ],
+            "entityCodes": [ "player" ],
             "priority": 1.6,
-            "damage": 1,
+            "damage": 0.7,
+            "minDist": 0.9,
             "slot": 1,
             "mincooldown": 1500,
             "maxcooldown": 4500,
@@ -232,9 +218,7 @@
                 "toHour": 4
               }
             ],
-            "stopOnNearbyEntityCodes": [
-              "player"
-            ],
+            "stopOnNearbyEntityCodes": [ "player" ],
             "stopRange": 8,
             "stopOnHurt": true
           },
@@ -258,9 +242,7 @@
             "animation": "wander",
             "animationSpeed": 1,
             "movespeed": 0.0,
-            "stopOnNearbyEntityCodes": [
-              "player"
-            ],
+            "stopOnNearbyEntityCodes": [ "player" ],
             "stopRange": 8,
             "stopOnHurt": true
           },
@@ -288,10 +270,7 @@
           "avg": 5,
           "var": 2
         },
-        "insideBlockCodes": [
-          "game:water-still-7",
-          "game:saltwater-*"
-        ],
+        "insideBlockCodes": [ "game:water-*" ],
         "minTemp": 0,
         "maxTemp": 50,
         "minRain": 0.25
@@ -309,10 +288,7 @@
           "avg": 5,
           "var": 2
         },
-        "insideBlockCodes": [
-          "game:water-still-7",
-          "game:saltwater-*"
-        ],
+        "insideBlockCodes": [ "game:water-*" ],
         "minTemp": 0,
         "maxTemp": 50,
         "minRain": 0.25,

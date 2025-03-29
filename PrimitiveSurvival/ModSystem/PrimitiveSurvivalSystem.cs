@@ -12,13 +12,15 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
     using PrimitiveSurvival.ModConfig;
     using Vintagestory.Client.NoObf;
+    using System.Diagnostics;
 
+    //using System.Diagnostics;
 
     public class PrimitiveSurvivalSystem : ModSystem
     {
         public IShaderProgram EntityGenericShaderProgram { get; private set; }
 
-        private readonly string thisModID = "primitivesurvival118";
+        private readonly string thisModID = "primitivesurvival119";
         private static Dictionary<IServerChunk, int> fishingChunks;
 
         public static List<string> chunkList;
@@ -28,7 +30,6 @@ namespace PrimitiveSurvival.ModSystem
         private ICoreServerAPI sapi;
         private ICoreClientAPI capi;
 
-        //readonly IShaderProgram overlayShaderProg;
         private VenomOverlayRenderer vrenderer;
 
         private readonly Harmony harmony = new Harmony("com.spearandfang.primitivesurvival");
@@ -40,6 +41,7 @@ namespace PrimitiveSurvival.ModSystem
             var PSPumpkinPatchOriginal = typeof(PumpkinCropBehavior).GetMethod(nameof(PumpkinCropBehavior.CanSupportPumpkin));
             var PSPumpkinPatchPrefix = typeof(PS_CanSupportPumpkin_Patch).GetMethod(nameof(PS_CanSupportPumpkin_Patch.PSCanSupportPumpkinPrefix));
             this.harmony.Patch(PSPumpkinPatchOriginal, prefix: new HarmonyMethod(PSPumpkinPatchPrefix));
+
 
             if (ModConfig.Loaded.ShowModNameInHud)
             {
@@ -58,7 +60,11 @@ namespace PrimitiveSurvival.ModSystem
             this.capi = api;
             this.capi.Event.ReloadShader += this.LoadCustomShaders;
             this.LoadCustomShaders();
-            this.capi.RegisterEntityRendererClass("entitygenericshaperenderer", typeof(EntityGenericShapeRenderer));
+            
+            //1.20 this broke again
+            //this.capi.RegisterEntityRendererClass("entitygenericshaperenderer", typeof(EntityGenericShapeRenderer));
+            
+
             this.vrenderer = new VenomOverlayRenderer(api);
             api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
 
@@ -88,19 +94,35 @@ namespace PrimitiveSurvival.ModSystem
             api.World.Config.SetBool("FurrowedLandEnabled", ModConfig.Loaded.FurrowedLandEnabled);
             //this next one is weird when someone already has a raft - but I wanted to disable the block too in order to remove it from the handbook
             api.World.Config.SetBool("RaftEnabled", ModConfig.Loaded.RaftEnabled);
+            api.World.Config.SetBool("MetalBucketDisabled", ModConfig.Loaded.MetalBucketDisabled);
+            api.World.Config.SetBool("RelicsDisabled", ModConfig.Loaded.RelicsDisabled);
             api.World.Config.SetBool("ParticulatorEnabled", ModConfig.Loaded.ParticulatorEnabled);
             base.StartPre(api);
-        }
 
+            // temp stupid bandaid
+            // doesn't take effect until after a restart but better than nothing
+            // if this doesn't minimize the bug reports then move to harmony patch
+            if (api.Side != EnumAppSide.Client)
+            {
+                var taheight = ClientSettings.Inst.Int["maxTextureAtlasHeight"];
+                if (taheight < 4096)
+                {
+                    try
+                    {
+                        ClientSettings.Inst.Int["maxTextureAtlasHeight"] = 4096;
+                    }
+                    catch { }
+                }
+            }
+            // end temp stupid bandaid
+        }
 
 
         public bool LoadCustomShaders()
         {
 
             this.EntityGenericShaderProgram = this.capi.Shader.NewShaderProgram();
-            // 1.17 My custom shader broke, but the built in shader works really well
-            (this.EntityGenericShaderProgram as ShaderProgram).AssetDomain = "game"; // this.Mod.Info.ModID;
-            //this.capi.Shader.RegisterFileShaderProgram("entitygenericshader", this.EntityGenericShaderProgram);
+            (this.EntityGenericShaderProgram as ShaderProgram).AssetDomain = "game";
             this.capi.Shader.RegisterFileShaderProgram("entityanimated", this.EntityGenericShaderProgram);
             this.EntityGenericShaderProgram.Compile();
             return true;
@@ -111,6 +133,7 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterEntity("entityearthworm", typeof(EntityEarthworm));
             api.RegisterEntity("entityfireflies", typeof(EntityFireflies));
             api.RegisterEntity("entitypsglowingagent", typeof(EntityPSGlowingAgent));
+            api.RegisterEntity("entitypsagent", typeof(EntityPSAgent));
             api.RegisterEntity("entitylivingdead", typeof(EntityLivingDead));
             api.RegisterEntity("entitygenericglowingagent", typeof(EntityGenericGlowingAgent));
             api.RegisterEntity("entityskullofthedead", typeof(EntitySkullOfTheDead));
@@ -122,12 +145,13 @@ namespace PrimitiveSurvival.ModSystem
             AiTaskRegistry.Register("meleeattackvenomous", typeof(AiTaskMeleeAttackVenomous));
             AiTaskRegistry.Register("meleeattackcrab", typeof(AiTaskMeleeAttackCrab));
 
-            //JHR
             api.RegisterCollectibleBehaviorClass("inTreeHollowTransform", typeof(BehaviorInTreeHollowTransform));
-            //END JHR
+            // ItemHoe class is preventing this from working
+            // api.RegisterCollectibleBehaviorClass("BehaviorFurrow", typeof(BehaviorFurrow));
 
             api.RegisterBlockBehaviorClass("RightClickPickupSpawnWorm", typeof(RightClickPickupSpawnWorm));
             api.RegisterBlockBehaviorClass("RightClickPickupRaft", typeof(RightClickPickupRaft));
+            api.RegisterBlockBehaviorClass("RightClickPickupFloatingDock", typeof(RightClickPickupFloatingDock));
             api.RegisterBlockBehaviorClass("RightClickPickupFireflies", typeof(RightClickPickupFireflies));
 
             api.RegisterBlockEntityClass("bedeadfall", typeof(BEDeadfall));
@@ -153,9 +177,7 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockEntityClass("beirrigationvessel", typeof(BEIrrigationVessel));
             api.RegisterBlockEntityClass("besmoker", typeof(BESmoker));
             api.RegisterBlockEntityClass("befurrowedland", typeof(BEFurrowedLand));
-
-            //api.RegisterBlockClass("BlockLiquidIrrigationVesselBase", typeof(BlockLiquidIrrigationVesselBase));
-            //api.RegisterBlockClass("BlockLiquidIrrigationVesselTopOpened", typeof(BlockLiquidIrrigationVesselTopOpened));
+            api.RegisterBlockEntityClass("befloatingdock", typeof(BEFloatingDock));
 
             api.RegisterBlockClass("blockearthwormcastings", typeof(BlockEarthwormCastings));
             api.RegisterBlockClass("blockfuse", typeof(BlockFuse));
@@ -195,6 +217,7 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockClass("blocksmoker", typeof(BlockSmoker));
             api.RegisterBlockClass("blockfurrowedland", typeof(BlockFurrowedLand));
             api.RegisterBlockClass("blockpipe", typeof(BlockPipe));
+            api.RegisterBlockClass("blockfloatingdock", typeof(BlockFloatingDock));
 
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));
             api.RegisterItemClass("itemfuse", typeof(ItemFuse));
@@ -212,8 +235,12 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterItemClass("itemwillowisp", typeof(ItemWillowisp));
             api.RegisterItemClass("itembioluminescent", typeof(ItemBioluminescent));
             api.RegisterItemClass("itemstick", typeof(ItemStick));
+
             api.RegisterItemClass("ItemHoeExtended", typeof(ItemHoeExtended));
+            api.RegisterItemClass("itemfishingspear", typeof(ItemFishingSpear));
+
         }
+
 
         public void UpdateSpawnRate(ICoreAPI api, string entityCode, double multiplier)
         {
@@ -277,6 +304,17 @@ namespace PrimitiveSurvival.ModSystem
         public override void AssetsFinalize(ICoreAPI api)
         {
             this.UpdateSpawnRates(api);
+            /*
+            if (api.Side != EnumAppSide.Client)
+            { return; }
+            foreach (CollectibleObject obj in api.World.Collectibles)
+            {
+                if (obj.Code.Path.StartsWith("hoe-"))
+                {
+                    obj.CollectibleBehaviors = obj.CollectibleBehaviors.Append(new BehaviorFurrow(obj));
+                }
+            }
+            */
         }
 
 
@@ -285,6 +323,8 @@ namespace PrimitiveSurvival.ModSystem
             base.Start(api);
             api.World.Logger.Event("started 'Primitive Survival' mod");
             this.RegisterClasses(api);
+
+            //Achievements.AchievementsManager.RegisterAchievement("primitivesurvival", "psthegreathunter", "game:item-stick");
         }
 
 
@@ -319,6 +359,7 @@ namespace PrimitiveSurvival.ModSystem
             }
             */
         }
+
 
         private static void AddChunkToDictionary(IServerChunk chunk)
         {
@@ -360,6 +401,7 @@ namespace PrimitiveSurvival.ModSystem
             Debug.WriteLine("----------- Chunk " + pos.ToVec3d() + " - " + msg + ":" + fishing);
             */
         }
+
 
         private void RepleteFishStocks(float par)
         {
@@ -435,6 +477,7 @@ namespace PrimitiveSurvival.ModSystem
             base.Dispose();
         }
 
+
         //allow pumpkin vines to grow on furrowed land and irrigation vessels
         public class PS_CanSupportPumpkin_Patch
         {
@@ -450,6 +493,7 @@ namespace PrimitiveSurvival.ModSystem
                 return true;
             }
         }
+
 
         // display mod name in the hud for blocks
         public class PS_BlockGetPlacedBlockInfo_Patch
@@ -479,7 +523,7 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     if (domain == "primitivesurvival")
                     {
-                        dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>Primitive Survival</i></font>");
+                        dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>\" + Lang.GetMatching(\"game:tabname-primitive\") + \"</i></font>");
                     }
                 }
             }

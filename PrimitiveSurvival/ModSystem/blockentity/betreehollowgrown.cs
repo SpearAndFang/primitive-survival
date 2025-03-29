@@ -295,22 +295,30 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void updateMeshes()
         {
-            var index = this.LastFilledSlot() + 1;
-            if (index == 0)
-            { return; } //inventory empty
-            for (var slot = 0; slot < index; slot++)
+            //try/catch an attempt to prevent the obscure crash reported by TRexTheHunter - Dec 29, 2023
+            // 
+            try
             {
-                if (!this.inventory[slot].Empty)
+                var index = this.LastFilledSlot() + 1;
+                if (index == 0)
+                { return; } //inventory empty
+                for (var slot = 0; slot < index; slot++)
                 {
-                    var stack = this.inventory[slot].Itemstack;
-                    if (stack?.Item?.Shape != null)
+                    if (!this.inventory[slot].Empty)
                     {
-                        if ((stack.Collectible as ItemWearable) == null)
+                        var stack = this.inventory[slot].Itemstack;
+                        if (stack?.Item?.Shape != null)
                         {
-                            this.updateMesh(slot);
+                            if ((stack.Collectible as ItemWearable) == null)
+                            {
+                                this.updateMesh(slot);
+                            }
                         }
                     }
                 }
+            }
+            catch
+            {
             }
         }
 

@@ -139,7 +139,7 @@
     "burnDuration": 10
   },
   "sounds": {
-    "place": "game:block/cloth",
+    "place": "game:block/planks",
     "walk": "game:walk/cloth"
   },
   "guiTransform": {

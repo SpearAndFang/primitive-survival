@@ -204,7 +204,7 @@ namespace PrimitiveSurvival.ModSystem
         public bool ShouldConnectAt(IWorldAccessor world, BlockPos ownPos, BlockFacing side)
         {
             var block = world.BlockAccessor.GetBlock(ownPos.AddCopy(side), BlockLayersAccess.Default);
-            return block.FirstCodePart() == this.FirstCodePart() || block.FirstCodePart() == "firework" || block.FirstCodePart() == "oreblastingbomb"; //|| block.SideSolid[side.Opposite.Index]
+            return block.FirstCodePart() == this.FirstCodePart() || block.FirstCodePart() == "firework" || block.Code.Path.StartsWith("bomb-") || block.FirstCodePart() == "rockblastingbomb"; //|| block.SideSolid[side.Opposite.Index]
         }
 
 

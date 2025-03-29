@@ -6,6 +6,15 @@
 			"states": [ "copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ]
 		}
 	],
+	"attributes": {
+		"onTongTransform": {
+			"translation": {
+				"x": -0.7,
+				"y": -0.6,
+				"z": -0.7
+			}
+		}
+	},
 	"shapeByType": {
 		"*-copper": { "base": "item/buckethandle" },
 		"*-tinbronze": { "base": "item/buckethandle" },

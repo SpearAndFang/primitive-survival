@@ -41,7 +41,7 @@
   ],
   "drops": [],
   "client": {
-    "renderer": "Shape", //"entitygenericshaperenderer",
+    "renderer": "Shape", //"entitygenericshaperenderer", //Shape (with a capital S) 1.20 this was reverted back..AGAIN
     "pitchStep": false,
     "shapeByType": {
       "*-normal": { "base": "entity/land/livingdead" }
@@ -71,10 +71,7 @@
         "code": "controlledphysics",
         "stepHeight": 1.1251
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      // { "code": "floatupwhenstuck", "onlyWhenDead": true },
       { "code": "interpolateposition" },
       {
         "code": "harvestable",
@@ -95,7 +92,7 @@
         "animationSpeed": 0.7,
         "weight": 10,
         "blendMode": "Average",
-        "triggeredBy": { "onControls": ["dead"] }
+        "triggeredBy": { "onControls": [ "dead" ] }
       },
       {
         "code": "idle",
@@ -125,10 +122,7 @@
         "code": "deaddecay",
         "hoursToDecay": 3
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      // { "code": "floatupwhenstuck", "onlyWhenDead": true },
       {
         "code": "despawn",
         "minPlayerDistance": 32,
@@ -345,6 +339,14 @@
               "code": "primitivesurvival:skullofthedead-normal",
               "quantity": {
                 "avg": 0.25,
+                "var": 0
+              }
+            },
+            {
+              "type": "item",
+              "code": "primitivesurvival:clothes-lowerbody-clean-pants",
+              "quantity": {
+                "avg": 0.35,
                 "var": 0
               }
             }

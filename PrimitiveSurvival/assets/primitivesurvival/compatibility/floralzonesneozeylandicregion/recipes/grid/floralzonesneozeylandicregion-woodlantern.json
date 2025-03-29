@@ -1,0 +1,27 @@
+[
+  {
+    "ingredientPattern": "BCB,BPB,BBB",
+    "ingredients": {
+      "P": { "type": "item", "code": "game:metalplate-copper" },
+      "C": { "type": "item", "code": "game:candle" },
+      "B": {
+        "type": "item",
+        "code": "floralzonesneozeylandicregion:plank-*",
+        "allowedVariants": [
+          "araucariaheterophylla",
+          "dacrydiumcupressinum",
+          "nothofagusmenziesii",
+          "podocarpustotara"
+        ],
+        "name": "wood"
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:woodlantern-{wood}-up",
+      "attributes": { "material": "wood", "lining": "plain", "glass": "" }
+    }
+  }
+]

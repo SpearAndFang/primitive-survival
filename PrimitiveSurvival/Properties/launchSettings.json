@@ -2,15 +2,21 @@
   "profiles": {
     "Client": {
       "commandName": "Executable",
-      "executablePath": "$(VINTAGE_STORY)/Vintagestory.exe",
+      "executablePath": "$(VINTAGE_STORY)\\Vintagestory.exe",
       "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      "workingDirectory": "$(VINTAGE_STORY)"
+      "workingDirectory": "$(VINTAGE_STORY)",
+      "environmentVariables": {
+        "VINTAGE_STORY": "C:\\Users\\Admin\\AppData\\Roaming\\Vintagestory"
+      }
     },
     "Server": {
       "commandName": "Executable",
-      "executablePath": "$(VINTAGE_STORY)/VintagestoryServer.exe",
+      "executablePath": "$(VINTAGE_STORY)\\Vintagestory.exe",
       "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      "workingDirectory": "$(VINTAGE_STORY)"
+      "workingDirectory": "$(VINTAGE_STORY)",
+      "environmentVariables": {
+        "VINTAGE_STORY": "C:\\Users\\Admin\\AppData\\Roaming\\Vintagestory"
+      }
     }
   }
 }

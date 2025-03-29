@@ -6,12 +6,18 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
-    using System.Diagnostics;
+    //using System.Diagnostics;
+    //using Vintagestory.API.Datastructures;
+
     //using Vintagestory.GameContent;
 
     public class BlockTreeHollowGrown : Block
     {
         private WorldInteraction[] interactions;
+
+        //the idg patch
+        private readonly string[] validWoodTypes = { "acacia", "birch", "kapok", "larch", "maple", "oak", "pine", "walnut" };
+
         public override void OnLoaded(ICoreAPI api)
         {
             if (api.Side != EnumAppSide.Client)
@@ -51,14 +57,21 @@ namespace PrimitiveSurvival.ModSystem
                 bedc.OnBreak(); //  byPlayer, pos);
 
                 var newPath = "primitivesurvival:treehollowplaced-" + blockToBreak.FirstCodePart(2) + "-north";
-                var newBlock = this.api.World.GetBlock(new AssetLocation(newPath)) as BlockTreeHollowPlaced;
-                world.BlockAccessor.SetBlock(newBlock.BlockId, pos);
-                if (world.BlockAccessor.GetBlockEntity(pos) is BETreeHollowPlaced be)
+                var newAsset = new AssetLocation(newPath);
+
+                //idg bug fix
+                bool found = validWoodTypes.Contains(blockToBreak.FirstCodePart(2));
+                if (newAsset != null && found)
                 {
-                    be.Initialize(this.api);
-                    be.type = blockToBreak.FirstCodePart(1);
-                    be.MarkDirty();
-                    world.BlockAccessor.BreakBlock(pos, null, 1);
+                    var newBlock = this.api.World.GetBlock(newAsset) as BlockTreeHollowPlaced;
+                    world.BlockAccessor.SetBlock(newBlock.BlockId, pos);
+                    if (world.BlockAccessor.GetBlockEntity(pos) is BETreeHollowPlaced be)
+                    {
+                        be.Initialize(this.api);
+                        be.type = blockToBreak.FirstCodePart(1);
+                        be.MarkDirty();
+                        world.BlockAccessor.BreakBlock(pos, null, 1);
+                    }
                 }
             }
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);

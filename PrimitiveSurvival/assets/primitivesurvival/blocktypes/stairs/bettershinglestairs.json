@@ -9,7 +9,19 @@
     }
   },
   "variantgroups": [
-    { "code": "variant", "states": ["blue", "brown", "fire", "red"] },
+    {
+      "code": "variant",
+      "states": [
+        "black",
+        "brown",
+        "cream",
+        "fire",
+        "gray",
+        "orange",
+        "red",
+        "tan"
+      ]
+    },
     { "code": "type", "states": ["normal", "inside", "outside"] },
     {
       "code": "updown",

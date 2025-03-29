@@ -1,0 +1,14 @@
+[
+  {
+    "ingredientPattern": "S,L,G",
+    "width": 1,
+    "height": 3,
+    "ingredients": {
+      "S": { "type": "item", "code": "game:saw-*", "istool": "true" },
+      "L": { "type": "block", "code": "wildcrafttree:log-*", "allowedVariants": [ "placed-banyan-ud", "placed-bearnut-ud", "placed-beech-ud", "placed-bluemahoe-ud", "placed-catalpa-ud", "placed-cedar-ud", "placed-chlorociboria-ud", "placed-dalbergia-ud", "placed-douglasfir-ud", "placed-elm-ud", "placed-empresstree-ud", "placed-eucalyptus-ud", "placed-ghostgum-ud", "placed-ginkgo-ud", "placed-guajacum-ud", "placed-honeylocust-ud", "placed-jacaranda-ud", "placed-kauri-ud", "placed-mahogany-ud", "placed-ohia-ud", "placed-petrified-ud", "placed-poplar-ud", "placed-redcedar-ud", "placed-sal-ud", "placed-satinash-ud", "placed-saxaul-ud", "placed-spruce-ud", "placed-sycamore-ud", "placed-tuja-ud", "placed-umnini-ud", "placed-willow-ud", "placed-yew-ud" ], "quantity": 1 },
+      "G": { "type": "block", "code": "game:glassslab-*-down-free", "name": "color" }
+    },
+    "output": { "type": "block", "code": "primitivesurvival:fireflies-empty-straight", "quantity": 4 }
+  }
+]
+

@@ -5,13 +5,19 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-    using Vintagestory.GameContent;
     using Vintagestory.API.Util;
+    using Vintagestory.GameContent;
     //using System.Diagnostics;
 
-    public class BlockMetalBucketFilled : Block
+    public class BlockMetalBucketFilled : BlockLiquidContainerTopOpened
+
     {
-        protected WorldInteraction[] interactions;
+        public override float CapacityLitres => 10;
+        protected WorldInteraction[] newinteractions;
+        public ItemStack[] lcdstacks;
+        protected override string meshRefsCacheKey => Code.ToShortString() + "meshRefs";
+
+        public override bool AllowHeldLiquidTransfer => false; //we need this to prevent lava from transferring to wood buckets for example
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -19,37 +25,41 @@ namespace PrimitiveSurvival.ModSystem
 
             if (api.Side != EnumAppSide.Client)
             { return; }
-            var capi = api as ICoreClientAPI;
+  
+            List<ItemStack> liquidContainerStacks = new List<ItemStack>();
 
-            this.interactions = ObjectCacheUtil.GetOrCreate(api, "metalbucketfilled", () =>
+            foreach (CollectibleObject obj in api.World.Collectibles)
             {
-                var liquidContainerStacks = new List<ItemStack>();
-                foreach (var obj in api.World.Collectibles)
-                {
-                    if (obj is ILiquidSource || obj is ILiquidSink || obj is BlockWateringCan)
-                    {
-                        var stacks = obj.GetHandBookStacks(capi);
-                        if (stacks == null)
-                        { continue; }
+                if (obj is BlockMetalBucket)
+                    liquidContainerStacks.Add(new ItemStack(obj));
+            }
+            lcdstacks = liquidContainerStacks.ToArray();
+         }
 
-                        foreach (var stack in stacks)
-                        {
-                            stack.StackSize = 1;
-                            liquidContainerStacks.Add(stack);
-                        }
-                    }
-                }
-                var lcstacks = liquidContainerStacks.ToArray();
-                return new WorldInteraction[] {
+
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
+        {
+            this.newinteractions = ObjectCacheUtil.GetOrCreate(api, "blockmetalbucketfilled", () =>
+            {
+               return new WorldInteraction[] {
                     new WorldInteraction()
                     {
                         ActionLangCode = "blockhelp-behavior-rightclickpickup",
                         MouseButton = EnumMouseButton.Right,
                         RequireFreeHand = true
-                    }
+                    },
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "blockhelp-bucket-rightclick",
+                        MouseButton = EnumMouseButton.Right,
+                        Itemstacks = lcdstacks
+                    },
                 };
             });
+            var allinteractions = newinteractions;
+            return allinteractions;
         }
+
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
@@ -58,6 +68,62 @@ namespace PrimitiveSurvival.ModSystem
                 return base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             }
             return false;
+        }
+
+
+        public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        {
+            var activeSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
+            if (activeSlot.Empty)
+            {
+                return base.OnBlockInteractStart(world, byPlayer, blockSel);
+            }
+
+            var activeSlotPath = activeSlot.Itemstack.Collectible.Code.Path;
+            if (activeSlotPath.StartsWith("metalbucket-"))
+            {
+                return base.OnBlockInteractStart(world, byPlayer, blockSel);
+            }
+            return false;
+        }
+
+
+        public override void OnBlockInteractStop(float secondsUsed, IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        {
+            var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
+            var beb = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEMetalBucketFilled;
+
+            var activeSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
+            if (activeSlot.Empty)
+            {
+                base.OnBlockInteractStop(secondsUsed, world, byPlayer, blockSel);
+                return;
+            }
+
+            var placedBlockPath = block.Code.Path;
+            var activeSlotPath = activeSlot.Itemstack.Collectible.Code.Path;
+
+            if (placedBlockPath.StartsWith("metalbucket-filled") && activeSlotPath.StartsWith("metalbucket-empty"))
+            {
+                //if the player just scooped lava out of this bucket swap out the one on the ground
+                var newAssetLocation = new AssetLocation("primitivesurvival:" + block.Code.Path.Replace("-filled", "-empty"));
+                var newblock = world.GetBlock(newAssetLocation);
+                world.BlockAccessor.SetBlock(newblock.BlockId, blockSel.Position); //put lava above
+                var beb2 = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEMetalBucket;
+                beb2.MeshAngle = beb.MeshAngle;
+                this.api.World.BlockAccessor.MarkBlockDirty(blockSel.Position); //let the server know the lava's there
+
+
+                //now swap out the one in the inventory
+                var newblock2 = world.GetBlock(new AssetLocation("primitivesurvival:" + activeSlotPath.Replace("-empty", "-filled")));
+                if (newblock2 != null)
+                {
+                    var newStack = new ItemStack(newblock2);
+                    //activeSlot.TakeOut(1);
+                    activeSlot.Itemstack = newStack;
+                    activeSlot.MarkDirty();
+                }
+            }
         }
 
 
@@ -70,8 +136,37 @@ namespace PrimitiveSurvival.ModSystem
             var bucketPath = slot.Itemstack.Block.Code.Path;
             var pos = blockSel.Position;
             var block = byEntity.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);
+            
+            if (block.Code.Path.Contains("metalbucket-empty"))
+            { 
+                var beb = byEntity.World.BlockAccessor.GetBlockEntity(pos) as BEMetalBucket;
 
-            if (byEntity.Controls.Sprint && (this.api.World.Side == EnumAppSide.Server))
+                if (beb.Inventory.Empty)
+                {
+                    var newAssetLocation = new AssetLocation("primitivesurvival:" + block.Code.Path.Replace("-empty", "-filled"));
+                    var newblock = byEntity.World.GetBlock(newAssetLocation);
+
+                    byEntity.World.BlockAccessor.SetBlock(newblock.BlockId, blockSel.Position); //put lava above
+                    this.api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's there
+                    var beb2 = byEntity.World.BlockAccessor.GetBlockEntity(pos) as BEMetalBucketFilled;
+                    beb2.MeshAngle = beb.MeshAngle;
+                    this.api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's there
+                                                                      //now remove the lava from the slot block
+
+                    var activeSlotPath = slot.Itemstack.Collectible.Code.Path;
+                    //now swap out the one in the inventory
+                    var newblock2 = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + activeSlotPath.Replace("-filled", "-empty")));
+                    if (newblock2 != null)
+                    {
+                        var newStack = new ItemStack(newblock2);
+                        //activeSlot.TakeOut(1);
+                        slot.Itemstack = newStack;
+                        slot.MarkDirty();
+                    }
+                }
+
+            }
+            else if (byEntity.Controls.Sprint && (this.api.World.Side == EnumAppSide.Server))
             {
                 var newblock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-filled", "-empty")));
                 var newStack = new ItemStack(newblock);
@@ -122,49 +217,7 @@ namespace PrimitiveSurvival.ModSystem
             return val;
         }
 
-
-        public override void OnBeforeRender(ICoreClientAPI capi, ItemStack itemstack, EnumItemRenderTarget target, ref ItemRenderInfo renderinfo)
-        {
-            Dictionary<int, MeshRef> meshrefs = null;
-            if (capi.ObjectCache.TryGetValue("bucketMeshRefs", out var obj))
-            { meshrefs = obj as Dictionary<int, MeshRef>; }
-            else
-            { capi.ObjectCache["bucketMeshRefs"] = meshrefs = new Dictionary<int, MeshRef>(); }
-        }
-
-
-        /*
-        public int GetBucketHashCode(IClientWorldAccessor world, ItemStack contentStack)
-        {
-            var s = contentStack.StackSize + "x" + contentStack.Collectible.Code.ToShortString();
-            return s.GetHashCode();
-        }
-        */
-
-        public override void OnUnloaded(ICoreAPI api)
-        {
-            if (!(api is ICoreClientAPI capi))
-            { return; }
-            if (capi.ObjectCache.TryGetValue("bucketMeshRefs", out var obj))
-            {
-                var meshrefs = obj as Dictionary<int, MeshRef>;
-                foreach (var val in meshrefs)
-                {
-                    val.Value.Dispose();
-                }
-                capi.ObjectCache.Remove("bucketMeshRefs");
-            }
-        }
-
-
-        public MeshData GenMesh(ICoreClientAPI capi)
-        {
-            var shape = capi.Assets.TryGet("primitivesurvival:shapes/block/metalbucket/filled.json").ToObject<Shape>();
-            capi.Tesselator.TesselateShape(this, shape, out var bucketmesh);
-            return bucketmesh;
-        }
-
-
+        
         public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
         {
             return new WorldInteraction[]

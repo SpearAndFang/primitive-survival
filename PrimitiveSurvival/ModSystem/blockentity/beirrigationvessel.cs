@@ -7,6 +7,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
+    
     //using System.Diagnostics;
 
     public class BEIrrigationVessel : BlockEntityLiquidContainer
@@ -17,6 +18,7 @@ namespace PrimitiveSurvival.ModSystem
         private BlockIrrigationVessel ownBlock;
         public float MeshAngle;
         public bool Buried;
+        public string SoilType;
 
         private readonly double updateMinutes = 1.0; //update neighbors once per minute
 
@@ -77,7 +79,7 @@ namespace PrimitiveSurvival.ModSystem
                 this.Pos.SouthCopy(),
                 this.Pos.SouthCopy().EastCopy(),
                 this.Pos.WestCopy(),
-                this.Pos.WestCopy().SouthCopy()
+                this.Pos.WestCopy().SouthCopy() 
             }; //immediate neighbors
 
             double waterUsed = 0;
@@ -149,14 +151,49 @@ namespace PrimitiveSurvival.ModSystem
                 //add dirt
                 if (this.Buried)
                 {
+                    //default
                     shapePath = "primitivesurvival:shapes/block/clay/irrigationvessel/soildry";
+                    if (this.SoilType != null)
+                    {
+                        if (this.SoilType == "")
+                        {
+                            this.SoilType = "low";
+                        }
+                        string finalBlock = "game:farmland-dry-" + this.SoilType;
+                        var assetLoc = new AssetLocation(finalBlock);
+                        if (assetLoc != null)
+                        {
+                            var tempBlock = this.Api.World.GetBlock(assetLoc);
+                            shapePath = "game:shapes/" + tempBlock.Shape.Base.Path;
+                            tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tempBlock);
+                        }
+                    }
+
                     if (!this.inventory.Empty)
                     {
                         if (this.inventory[0].Itemstack.Collectible.Code.Path.Contains("water"))
                         {
+                            //wet default
                             shapePath = "primitivesurvival:shapes/block/clay/irrigationvessel/soilwet";
+                            if (this.SoilType != null)
+                            {
+                                if (this.SoilType == "")
+                                {
+                                    this.SoilType = "low";
+                                }
+                                string finalBlock = "game:farmland-moist-" + this.SoilType;
+                                var assetLoc = new AssetLocation(finalBlock);
+                                if (assetLoc != null)
+                                {
+                                    var tempBlock = this.Api.World.GetBlock(assetLoc);
+                                    shapePath = "game:shapes/" + tempBlock.Shape.Base.Path;
+                                    
+                                    tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tempBlock);
+                                }
+                            }
                         }
                     }
+
                     mesh = block.GenMesh(this.Api as ICoreClientAPI, shapePath, tmpTextureSource);
                     mesher.AddMeshData(mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, this.MeshAngle, 0));
                 }
@@ -205,6 +242,13 @@ namespace PrimitiveSurvival.ModSystem
             base.FromTreeAttributes(tree, worldForResolving);
             this.MeshAngle = tree.GetFloat("meshAngle", this.MeshAngle);
             this.Buried = tree.GetBool("buried", this.Buried);
+            this.SoilType = tree.GetString("soiltype", this.SoilType);
+
+            if (this.SoilType == null ) 
+            {
+                this.SoilType = "low";
+            }
+
             if (this.Api != null)
             {
                 if (this.Api.Side == EnumAppSide.Client)
@@ -221,17 +265,14 @@ namespace PrimitiveSurvival.ModSystem
             base.ToTreeAttributes(tree);
             tree.SetFloat("meshAngle", this.MeshAngle);
             tree.SetBool("buried", this.Buried);
+            tree.SetString("soiltype", this.SoilType);
         }
 
 
-        //Pretty sure this aint doing shit
-        public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
-        {
-            var slot = this.inventory[0];
-            if (slot.Empty)
-            { sb.AppendLine(Lang.Get("Empty")); }
-            else
-            { sb.AppendLine(Lang.Get("Contents: {0}x{1}", slot.Itemstack.StackSize, slot.Itemstack.GetName())); }
-        }
+        //Pretty sure this aint doing shit - moved to the block side
+        //public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
+        //{
+        //   
+        //}
     }
 }

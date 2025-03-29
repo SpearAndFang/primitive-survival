@@ -1,0 +1,25 @@
+{
+  "ingredientPattern": "LLL,P_P",
+  "width": 3,
+  "height": 2,
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "primitivesurvival:cordage",
+      "quantity": 1
+    },
+    "L": {
+      "type": "block",
+      "code": "game:log-placed-*-ud",
+      "name": "wood",
+      "allowedVariants": [ "birch", "oak", "maple", "pine", "acacia", "kapok", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart" ],
+      "quantity": 1
+    }
+  },
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:floatingdock-{wood}-ns",
+    "quantity": 1
+  }
+} 
+

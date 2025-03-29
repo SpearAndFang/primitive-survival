@@ -9,6 +9,7 @@ namespace PrimitiveSurvival.ModSystem
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
+
             var face = blockSel.Face.ToString();
             string newPath;
             Block blockToPlace = this;

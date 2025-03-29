@@ -76,7 +76,7 @@ namespace PrimitiveSurvival.ModSystem
             var block = world.BlockAccessor.GetBlock(blockSrc.Position, BlockLayersAccess.Default);
             if (block.Fertility <= 0)
             {
-                failureCode = Lang.Get("primitivesurvival:blockdesc-snare-suitable-ground-needed");
+                failureCode = Lang.Get("softer-ground-needed");
                 return false;
             }
             var facing = SuggestedHVOrientation(byPlayer, blockSel)[0].ToString();

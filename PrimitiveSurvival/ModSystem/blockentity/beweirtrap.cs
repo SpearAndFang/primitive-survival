@@ -11,6 +11,8 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
+    using System.Diagnostics;
+
     //using System.Diagnostics;
 
     //public class BEWeirTrap : BlockEntityDisplayCase //1.18
@@ -21,6 +23,7 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int escapePercent = ModConfig.Loaded.WeirTrapEscapePercent;
         private readonly double updateMinutes = ModConfig.Loaded.WeirTrapUpdateMinutes;
         private readonly int rotRemovedPercent = ModConfig.Loaded.WeirTrapRotRemovedPercent;
+        private readonly bool relicsDisabled = ModConfig.Loaded.RelicsDisabled;
 
         private readonly int tickSeconds = 3;
         private readonly int maxSlots = 2;
@@ -284,7 +287,7 @@ namespace PrimitiveSurvival.ModSystem
                 if (rando < 1) //10% chance of a seashell (or relic) 
                 {
                     rando = Rnd.Next(10);
-                    if (rando < 1) //10% chance of a relic
+                    if (rando < 1 && relicsDisabled == false) //10% chance of a relic
                     {
                         var thisRelic = this.relics[Rnd.Next(this.relics.Count())];
                         newStack = new ItemStack(this.Api.World.GetBlock(new AssetLocation("primitivesurvival:" + thisRelic + "-North")), 1);
@@ -536,7 +539,7 @@ namespace PrimitiveSurvival.ModSystem
                             else if (this.inventory[i].Itemstack.Block.Code.Path.Contains("necronomicon"))
                             { shapePath = "primitivesurvival:shapes/block/relic/necronomicon-closed"; }
                             else
-                            { shapePath = "game:shapes/block/seashell/" + this.inventory[i].Itemstack.Block.FirstCodePart(1); }
+                            { shapePath = "game:shapes/block/aquatic/seashell/" + this.inventory[i].Itemstack.Block.FirstCodePart(1); }
                             tmpTextureSource = tesselator.GetTextureSource(this.inventory[i].Itemstack.Block);
 
                         }

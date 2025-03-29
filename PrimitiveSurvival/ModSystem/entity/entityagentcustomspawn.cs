@@ -1,7 +1,7 @@
 namespace PrimitiveSurvival.ModSystem
 {
-    //using System.Diagnostics;
     using Vintagestory.API.Common;
+    //using System.Diagnostics;
     //using Vintagestory.API.Common.Entities;
 
     public class EntityAgentCustomSpawn : EntityAgent
@@ -30,6 +30,8 @@ namespace PrimitiveSurvival.ModSystem
                 }
             }
         }
+
+
     }
 }
 

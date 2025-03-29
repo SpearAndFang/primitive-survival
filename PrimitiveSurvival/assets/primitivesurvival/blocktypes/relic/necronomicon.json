@@ -19,6 +19,8 @@
   ],
   "maxstacksize": 1,
   "attributes": {
+    "placement": "top",
+    "placetype": "book",
     "displaycaseable": true,
     "shelvable": true,
     "bookshelveable": true,

@@ -43,7 +43,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 if (blockChk.Code.Path.Contains("stake-") || blockChk.Code.Path.Contains("stakeinwater-"))
                 { widthStr = "small"; }
-                else if (blockChk.Code.GetName().Contains("woodenfence-"))
+                else if (blockChk.Code.GetName().Contains("fence-"))
                 { widthStr = "medium"; }
                 else
                 {
@@ -63,7 +63,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             var blockChk = blockAccessor.GetBlock(testpos, BlockLayersAccess.Default);
             bool validEnd;
-            if (blockChk.Code.GetName().Contains("woodenfence-") || blockChk.Code.Path.Contains("stake-") || blockChk.Code.Path.Contains("stakeinwater-"))
+            if (blockChk.Code.GetName().Contains("fence-") || blockChk.Code.Path.Contains("stake-") || blockChk.Code.Path.Contains("stakeinwater-"))
             { validEnd = true; }
             else if (blockChk.Code.GetName().Contains("limbtrotlinelure"))
             { validEnd = false; }
@@ -79,9 +79,14 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (BlockHeight(blockAccessor, neighbor) != "small" && !blockChk.Code.Path.Contains("limbtrotlinelure"))
                         {
-                            if ((!blockChk.Code.GetName().Contains("woodenfence-")) && !blockChk.Code.Path.Contains("stake-") && !blockChk.Code.Path.Contains("stakeinwater-"))
+                            if ((!blockChk.Code.GetName().Contains("fence-")) && !blockChk.Code.Path.Contains("stake-") && !blockChk.Code.Path.Contains("stakeinwater-"))
                             { validEnd = false; }
                         }
+                    }
+                    var waterblockChk = blockAccessor.GetBlock(neighbor, BlockLayersAccess.Fluid);
+                    if (waterblockChk.BlockId > 0)
+                    {
+                        validEnd = false; //prevent underwater cordage
                     }
                 }
             }

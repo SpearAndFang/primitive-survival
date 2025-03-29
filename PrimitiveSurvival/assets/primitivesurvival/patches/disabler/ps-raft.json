@@ -11,6 +11,50 @@
   },
   {
     "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "primitivesurvival:compatibility/floralzonescaperegion/recipes/grid/floralzonescaperegion-raft.json",
+    "condition": {
+      "when": "RaftEnabled",
+      "isValue": "false"
+    },
+    "dependsOn": [ { "modid": "floralzonescaperegion" } ]
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "primitivesurvival:compatibility/floralzonescaribbeanregion/recipes/grid/floralzonescaribbeanregion-raft.json",
+    "condition": {
+      "when": "RaftEnabled",
+      "isValue": "false"
+    },
+    "dependsOn": [ { "modid": "floralzonescaribbeanregion" } ]
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "primitivesurvival:compatibility/floralzonescentralaustralianregion/recipes/grid/floralzonescentralaustralianregion-raft.json",
+    "condition": {
+      "when": "RaftEnabled",
+      "isValue": "false"
+    },
+    "dependsOn": [ { "modid": "floralzonescentralaustralianregion" } ]
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "primitivesurvival:compatibility/floralzonesneozeylandicregion/recipes/grid/floralzonesneozeylandicregion-raft.json",
+    "condition": {
+      "when": "RaftEnabled",
+      "isValue": "false"
+    },
+    "dependsOn": [ { "modid": "floralzonesneozeylandicregion" } ]
+  },
+  {
+    "op": "add",
     "path": "/enabled",
     "value": false,
     "file": "primitivesurvival:blocktypes/raft/raft.json",

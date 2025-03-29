@@ -82,15 +82,15 @@
     },
     "size": 1.4,
     "behaviors": [
-      { "code": "repulseagents" },
+      {
+        "code": "repulseagents",
+        "movable": false
+      },
       {
         "code": "controlledphysics",
         "stepHeight": 0.6
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": false
-      },
+      // { "code": "floatupwhenstuck", "onlyWhenDead": false },
       { "code": "interpolateposition" },
       { "code": "carryable" }
     ],
@@ -195,15 +195,12 @@
   },
   "server": {
     "behaviors": [
-      { "code": "repulseagents" },
+      { "code": "repulseagents", "movable": false },
       {
         "code": "controlledphysics",
         "stepHeight": 0.6
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": false
-      },
+      // { "code": "floatupwhenstuck", "onlyWhenDead": false },
       {
         "code": "taskai",
         "aitasks": [
@@ -212,6 +209,13 @@
             "priority": 1,
             "movespeed": 0,
             "animationSpeed": 1.0,
+            "animation": "idle"
+          },
+          {
+            "code": "wander",
+            "priority": 1.1,
+            "movespeed": 0,
+            "animationSpeed": 0.7,
             "animation": "idle"
           }
         ]

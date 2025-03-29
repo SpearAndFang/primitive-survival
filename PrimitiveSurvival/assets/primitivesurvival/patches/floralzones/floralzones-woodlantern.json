@@ -1,0 +1,39 @@
+[
+  {
+    "op": "addmerge",
+    "path": "/variantgroups/0/states",
+    "value": ["afrocarpusfalcatus", "searsialancea"],
+    "file": "primitivesurvival:blocktypes/wood/woodlantern.json",
+    "side": "Server",
+    "dependsOn": [{ "modid": "floralzonescaperegion" }]
+  },
+  {
+    "op": "addmerge",
+    "path": "/variantgroups/0/states",
+    "value": ["lysilomalatisiliquum"],
+    "file": "primitivesurvival:blocktypes/wood/woodlantern.json",
+    "side": "Server",
+    "dependsOn": [{ "modid": "floralzonescaribbeanregion" }]
+  },
+  {
+    "op": "addmerge",
+    "path": "/variantgroups/0/states",
+    "value": ["corymbiaaparrerinja", "eucalyptuscamaldulensis"],
+    "file": "primitivesurvival:blocktypes/wood/woodlantern.json",
+    "side": "Server",
+    "dependsOn": [{ "modid": "floralzonescentralaustralianregion" }]
+  },
+  {
+    "op": "addmerge",
+    "path": "/variantgroups/0/states",
+    "value": [
+      "araucariaheterophylla",
+      "dacrydiumcupressinum",
+      "nothofagusmenziesii",
+      "podocarpustotara"
+    ],
+    "file": "primitivesurvival:blocktypes/wood/woodlantern.json",
+    "side": "Server",
+    "dependsOn": [{ "modid": "floralzonesneozeylandicregion" }]
+  }
+]

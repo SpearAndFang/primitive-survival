@@ -1901,7 +1901,8 @@ namespace PrimitiveSurvival.ModSystem
             var updata = SerializerUtil.Serialize(this.particleData);
             if (this.blockEntityPos != null)
             {
-                this.capi.Network.SendBlockEntityPacket(this.blockEntityPos.X, this.blockEntityPos.Y, this.blockEntityPos.Z, 1091, updata);
+                var tempPos = new BlockPos(this.blockEntityPos.X, this.blockEntityPos.Y, this.blockEntityPos.Z, 0); //1.20
+                this.capi.Network.SendBlockEntityPacket(tempPos, 1091, updata);
             }
         }
 

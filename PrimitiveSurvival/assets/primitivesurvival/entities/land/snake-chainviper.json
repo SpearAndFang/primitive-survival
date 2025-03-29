@@ -1,6 +1,6 @@
 {
   "code": "chainviper",
-  "class": "EntityAgent",
+  "class": "entitypsagent",
   "hitboxSize": {
     "x": 1,
     "y": 0.6
@@ -36,10 +36,6 @@
         "code": "controlledphysics",
         "stepHeight": 1.1251
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
       { "code": "interpolateposition" },
       { "code": "harvestable" },
       {
@@ -61,30 +57,32 @@
         "code": "idle",
         "animation": "idle",
         "blendMode": "AddAverage",
-        "animationSpeed": 1,
-        "weight": 1
+        "animationSpeed": 0.4
       },
       {
         "code": "sleep",
         "animation": "sleep",
-        "animationSpeed": 0.5,
-        "weight": 1,
+        "animationSpeed": 0.3,
         "blendMode": "AddAverage"
       },
       {
         "code": "sit",
         "animation": "sit",
-        "animationSpeed": 0.5,
-        "weight": 1,
+        "animationSpeed": 0.3,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "attack",
+        "animation": "attack",
+        "animationSpeed": 0.1,
         "blendMode": "AddAverage"
       },
       {
         "code": "wander",
         "animation": "wander",
-        "animationSpeed": 0.5,
-        "weight": 1,
-        "blendMode": "AddAverage",
-        "triggeredBy": { "defaultAnim": true }
+        "animationSpeed": 0.4,
+        "blendMode": "AddAverage"
+        // "triggeredBy": { "defaultAnim": true }
       }
     ]
   },
@@ -104,10 +102,7 @@
         "code": "deaddecay", // Makes the dead entity stay for one hour
         "hoursToDecay": 1
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      // { "code": "floatupwhenstuck","onlyWhenDead": true},
       {
         "code": "harvestable",
         "drops": [
@@ -131,6 +126,14 @@
             "slot": 0,
             "priority": 1,
             "accumType": "max"
+          },
+          {
+            "code": "aggressiveondamage",
+            "duration": 15,
+            "chance": 0.6,
+            "slot": 0,
+            "priority": 2,
+            "accumType": "noaccum"
           }
         ]
       },
@@ -151,11 +154,10 @@
             "slot": 1,
             "mincooldown": 1500,
             "maxcooldown": 4500,
-            "movespeed": 0.08,
-            "attackDurationMs": 0,
-            "damagePlayerAtMs": 0,
-            "animation": "wander",
-            "animationSpeed": 0.4,
+            "attackDurationMs": 1000,
+            "damagePlayerAtMs": 900,
+            "animation": "attack",
+            "animationSpeed": 0.1,
             "whenInEmotionState": "aggressiveondamage"
           },
           {
@@ -175,8 +177,6 @@
             "entityCodes": [ "player" ],
             "priority": 2,
             "movespeed": 0.008,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "seekingRange": 14,
             "animation": "wander",
             "animationSpeed": 0.4
@@ -184,55 +184,46 @@
 
           {
             "code": "meleeattackvenomous",
-            "entityCodes": [ "player" ],
+            "entityCodes": [ "hare-*" ],
             "priority": 1.6,
-            "damage": 8,
+            "damage": 2,
             "slot": 1,
             "mincooldown": 1500,
-            "maxcooldown": 4500,
-            "movespeed": 0.008,
-            "attackDurationMs": 300,
-            "damagePlayerAtMs": 500,
-            "animation": "wander",
-            "animationSpeed": 0.4
+            "maxcooldown": 1500,
+            "attackDurationMs": 1000,
+            "damagePlayerAtMs": 900,
+            "animation": "attack",
+            "animationSpeed": 0.1
           },
           {
             "code": "seekentity",
             "entityCodes": [ "hare-*" ],
             "priority": 1.5,
+            "priorityForCancel": 1.6,
             "movespeed": 0.006,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "animationSpeed": 0.4,
             "seekingRange": 20,
             "animation": "wander",
             "whenNotInEmotionState": "saturated"
           },
-
           {
             "code": "getoutofwater",
             "priority": 1.4,
             "movespeed": 0.014,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "animation": "wander",
             "animationSpeed": 0.4
           },
           {
             "code": "idle",
             "priority": 1.38,
-            "minduration": 200000,
-            "maxduration": 800000,
             "animation": "sleep",
-            "movespeed": 0.0,
-            "animationSpeed": 1,
-            "mincooldown": 10000,
-            "maxcooldown": 30000,
+            "movespeed": 0,
+            "animationSpeed": 0.5,
             "whenNotInEmotionState": "aggressiveondamage",
             "duringDayTimeFrames": [
               {
-                "fromHour": 10,
-                "toHour": 18
+                "fromHour": 12,
+                "toHour": 15
               },
               {
                 "fromHour": 1,
@@ -248,34 +239,16 @@
             "priority": 1.0,
             "priorityForCancel": 1.35,
             "movespeed": 0.008,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "animation": "wander",
             "animationSpeed": 0.4,
             "preferredLightLevel": 20
-          },
-          {
-            "code": "idle",
-            "priority": 5,
-            "minduration": 2000,
-            "maxduration": 30000,
-            "mincooldown": 2000,
-            "maxcooldown": 120000,
-            "animation": "sleep",
-            "movespeed": 0.0,
-            "animationSpeed": 1,
-            "stopOnNearbyEntityCodes": [ "player" ],
-            "stopRange": 8,
-            "stopOnHurt": true
           },
           {
             "code": "lookaround",
             "priority": 0.5,
             "animation": "sit",
             "movespeed": 0.0,
-            "animationSpeed": 0.5,
-            "minduration": 2000,
-            "maxduration": 3000
+            "animationSpeed": 0.4
           }
         ]
       }

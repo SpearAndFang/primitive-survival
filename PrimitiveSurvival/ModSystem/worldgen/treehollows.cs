@@ -109,18 +109,18 @@ namespace PrimitiveSurvival.ModSystem
 
             //Debug.WriteLine("Entering the death loop for chunk " + chunkX + " " + chunkZ);
             var hollowsPlacedCount = 0;
-            for (var i = 0; i < chunks.Length; i++)
+            for (var i = 0; i < chunks.Length-2; i=i+2)
             {
                 //var blockPos = new BlockPos();
                 var blockPos = new BlockPos(0,0,0,0);
-                for (var x = 0; x < this.chunkSize; x++)
+                for (var x = 0; x < this.chunkSize/2; x = x + 2)
                 {
-                    for (var z = 0; z < this.chunkSize; z++)
+                    for (var z = 0; z < this.chunkSize/2; z = z + 2)
                     {
                         //for (var y = 0; y < this.worldBlockAccessor.MapSizeY; y++)
                         //VINTER'S PERFORMANCE PATCH
                         var terrainHeight = this.worldBlockAccessor.GetTerrainMapheightAt(blockPos);
-                        for (var y = terrainHeight; y < terrainHeight + 8; y++) //only scan 8 blocks high
+                        for (var y = terrainHeight; y < terrainHeight + 6; y++) //only scan 6 blocks high
                         {
                             if (hollowsPlacedCount < ModConfig.Loaded.TreeHollowsMaxPerChunk)
                             {

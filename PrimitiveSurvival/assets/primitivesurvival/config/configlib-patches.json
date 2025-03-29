@@ -1,0 +1,931 @@
+{
+  "version": 1.3,
+  "file": "primitivesurvival119.json",
+  "settings": {
+    "float": {
+      "DEADFALLMAXANIMALHEIGHT": {
+        "name": "DeadfallMaxAnimalHeight",
+        "ingui": "primitivesurvival:DeadfallMaxAnimalHeight",
+        "weight": 5,
+        "comment": "primitivesurvival:DeadfallMaxAnimalHeight-Comment",
+        "default": 0.7,
+        "range": {
+          "min": 0.1,
+          "max": 2.0
+        }
+      },
+      "FISHBASKETUPDATEMINUTES": {
+        "name": "FishBasketUpdateMinutes",
+        "ingui": "primitivesurvival:FishBasketUpdateMinutes",
+        "weight": 15,
+        "comment": "primitivesurvival:FishBasketUpdateMinutes-Comment",
+        "default": 2.2,
+        "range": {
+          "min": 0.1,
+          "max": 100.0
+        }
+      },
+      "FURROWEDLANDBLOCKAGECHANCEPERCENT": {
+        "name": "FurrowedLandBlockageChancePercent",
+        "ingui": "primitivesurvival:FurrowedLandBlockageChancePercent",
+        "weight": 24,
+        "comment": "primitivesurvival:FurrowedLandBlockageChancePercent-Comment",
+        "default": 0.05,
+        "range": {
+          "min": 0.0,
+          "max": 100.0
+        }
+      },
+      "FURROWEDLANDMINMOISTURECLOSE": {
+        "name": "FurrowedLandMinMoistureClose",
+        "ingui": "primitivesurvival:FurrowedLandMinMoistureClose",
+        "weight": 26,
+        "comment": "primitivesurvival:FurrowedLandMinMoistureClose-Comment",
+        "default": 0.85,
+        "range": {
+          "min": 0.75,
+          "max": 1.0
+        }
+      },
+      "FURROWEDLANDMINMOISTUREFAR": {
+        "name": "FurrowedLandMinMoistureFar",
+        "ingui": "primitivesurvival:FurrowedLandMinMoistureFar",
+        "weight": 27,
+        "comment": "primitivesurvival:FurrowedLandMinMoistureFar-Comment",
+        "default": 0.6,
+        "range": {
+          "min": 0.5,
+          "max": 1.0
+        }
+      },
+      "LIMBTROTLINEUPDATEMINUTES": {
+        "name": "LimbTrotlineUpdateMinutes",
+        "ingui": "primitivesurvival:LimbTrotlineUpdateMinutes",
+        "weight": 33,
+        "comment": "primitivesurvival:LimbTrotlineUpdateMinutes-Comment",
+        "default": 2.4,
+        "range": {
+          "min": 0.1,
+          "max": 100.0
+        }
+      },
+      "PIPEMINMOISTURE": {
+        "name": "PipeMinMoisture",
+        "ingui": "primitivesurvival:PipeMinMoisture",
+        "weight": 42,
+        "comment": "primitivesurvival:PipeMinMoisture-Comment",
+        "default": 0.92,
+        "range": {
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "PIPEBLOCKAGECHANCEPERCENT": {
+        "name": "PipeBlockageChancePercent",
+        "ingui": "primitivesurvival:PipeBlockageChancePercent",
+        "weight": 41,
+        "comment": "primitivesurvival:PipeBlockageChancePercent-Comment",
+        "default": 0.02,
+        "range": {
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "RAFTWATERSPEEDMODIFIER": {
+        "name": "RaftWaterSpeedModifier",
+        "ingui": "primitivesurvival:RaftWaterSpeedModifier",
+        "weight": 44,
+        "comment": "primitivesurvival:RaftWaterSpeedModifier-Comment",
+        "default": 0.2,
+        "range": {
+          "min": 0.05,
+          "max": 1.0
+        }
+      },
+      "RAFTFLOTATIONMODIFIER": {
+        "name": "RaftFlotationModifier",
+        "ingui": "primitivesurvival:RaftFlotationModifier",
+        "weight": 45,
+        "comment": "primitivesurvival:RaftFlotationModifier-Comment",
+        "default": 0.03,
+        "range": {
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "SNAREMAXANIMALHEIGHT": {
+        "name": "SnareMaxAnimalHeight",
+        "ingui": "primitivesurvival:SnareMaxAnimalHeight",
+        "weight": 49,
+        "comment": "primitivesurvival:SnareMaxAnimalHeight-Comment",
+        "default": 0.8,
+        "range": {
+          "min": 0.1,
+          "max": 3.0
+        }
+      },
+      "SPAWNMULTIPLIERBIOLUMINESCENTGLOBE": {
+        "name": "SpawnMultiplierBioluminescentGlobe",
+        "ingui": "primitivesurvival:SpawnMultiplierBioluminescentGlobe",
+        "weight": 53,
+        "comment": "primitivesurvival:SpawnMultiplierBio-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERBIOLUMINESCENTJELLY": {
+        "name": "SpawnMultiplierBioluminescentJelly",
+        "ingui": "primitivesurvival:SpawnMultiplierBioluminescentJelly",
+        "weight": 54,
+        "comment": "primitivesurvival:SpawnMultiplierBio-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERBIOLUMINESCENTORANGEJELLY": {
+        "name": "SpawnMultiplierBioluminescentOrangeJelly",
+        "ingui": "primitivesurvival:SpawnMultiplierBioluminescentOrangeJelly",
+        "weight": 55,
+        "comment": "primitivesurvival:SpawnMultiplierBio-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERBIOLUMINESCENTWORM": {
+        "name": "SpawnMultiplierBioluminescentWorm",
+        "ingui": "primitivesurvival:SpawnMultiplierBioluminescentWorm",
+        "weight": 56,
+        "comment": "primitivesurvival:SpawnMultiplierBio-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERCRABBAIRDI": {
+        "name": "SpawnMultiplierCrabBairdi",
+        "ingui": "primitivesurvival:SpawnMultiplierCrabBairdi",
+        "weight": 57,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERCRABLAND": {
+        "name": "SpawnMultiplierCrabLand",
+        "ingui": "primitivesurvival:SpawnMultiplierCrabLand",
+        "weight": 58,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERLIVINGDEAD": {
+        "name": "SpawnMultiplierLivingDead",
+        "ingui": "primitivesurvival:SpawnMultiplierLivingDead",
+        "weight": 59,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERSNAKEBLACKRAT": {
+        "name": "SpawnMultiplierSnakeBlackRat",
+        "ingui": "primitivesurvival:SpawnMultiplierSnakeBlackRat",
+        "weight": 60,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERSNAKECHAINVIPER": {
+        "name": "SpawnMultiplierSnakeChainViper",
+        "ingui": "primitivesurvival:SpawnMultiplierSnakeChainViper",
+        "weight": 61,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERSNAKECOACHWHIP": {
+        "name": "SpawnMultiplierSnakeCoachWhip",
+        "ingui": "primitivesurvival:SpawnMultiplierSnakeCoachWhip",
+        "weight": 62,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERSNAKEPITVIPER": {
+        "name": "SpawnMultiplierSnakePitViper",
+        "ingui": "primitivesurvival:SpawnMultiplierSnakePitViper",
+        "weight": 63,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERWILLOWISPGREEN": {
+        "name": "SpawnMultiplierWillowispGreen",
+        "ingui": "primitivesurvival:SpawnMultiplierWillowispGreen",
+        "weight": 64,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERWILLOWISPWHITE": {
+        "name": "SpawnMultiplierWillowispWhite",
+        "ingui": "primitivesurvival:SpawnMultiplierWillowispWhite",
+        "weight": 65,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "SPAWNMULTIPLIERWILLOWISPYELLOW": {
+        "name": "SpawnMultiplierWillowispYellow",
+        "ingui": "primitivesurvival:SpawnMultiplierWillowispYellow",
+        "weight": 66,
+        "comment": "primitivesurvival:SpawnMultiplier-Comment",
+        "default": 1.0,
+        "range": {
+          "min": 0.0,
+          "max": 5.0
+        }
+      },
+      "TREEHOLLOWSSPAWNPROBABILITY": {
+        "name": "TreeHollowsSpawnProbability",
+        "ingui": "primitivesurvival:TreeHollowsSpawnProbability",
+        "weight": 70,
+        "comment": "primitivesurvival:TreeHollowsSpawnProbability-Comment",
+        "default": 0.15,
+        "range": {
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "TREEHOLLOWSUPDATEMINUTES": {
+        "name": "TreeHollowsUpdateMinutes",
+        "ingui": "primitivesurvival:TreeHollowsUpdateMinutes",
+        "weight": 71,
+        "comment": "primitivesurvival:TreeHollowsUpdateMinutes-Comment",
+        "default": 360.0,
+        "range": {
+          "min": 10.0,
+          "max": 9999.0
+        }
+      },
+      "WEIRTRAPUPDATEMINUTES": {
+        "name": "WeirTrapUpdateMinutes",
+        "ingui": "primitivesurvival:WeirTrapUpdateMinutes",
+        "weight": 74,
+        "comment": "primitivesurvival:WeirTrapUpdateMinutes-Comment",
+        "default": 2.6,
+        "range": {
+          "min": 0.1,
+          "max": 100.0
+        }
+      }
+    },
+    "integer": {
+      "DEADFALLBAITSTOLENPERCENT": {
+        "name": "DeadfallBaitStolenPercent",
+        "ingui": "primitivesurvival:DeadfallBaitStolenPercent",
+        "weight": 4,
+        "comment": "primitivesurvival:DeadfallBaitStolenPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "DeadfallMaxDamageSet": {
+        "name": "DeadfallMaxDamageSet",
+        "ingui": "primitivesurvival:DeadfallMaxDamageSet",
+        "weight": 6,
+        "comment": "primitivesurvival:DeadfallMaxDamageSet-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "DEADFALLMAXDAMAGEBAITED": {
+        "name": "DeadfallMaxDamageBaited",
+        "ingui": "primitivesurvival:DeadfallMaxDamageBaited",
+        "weight": 7,
+        "comment": "primitivesurvival:DeadfallMaxDamageBaited-Comment",
+        "default": 20,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "DEADFALLTRIPPEDPERCENT": {
+        "name": "DeadfallTrippedPercent",
+        "ingui": "primitivesurvival:DeadfallTrippedPercent",
+        "weight": 8,
+        "comment": "primitivesurvival:DeadfallTrippedPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FALLDAMAGEMULTIPLIERWOODSPIKES": {
+        "name": "FallDamageMultiplierWoodSpikes",
+        "ingui": "primitivesurvival:FallDamageMultiplierWoodSpikes",
+        "weight": 9,
+        "comment": "primitivesurvival:FallDamageMultiplierWoodSpikes-Comment",
+        "default": 25,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FALLDAMAGEMULTIPLIERMETALSPIKES": {
+        "name": "FallDamageMultiplierMetalSpikes",
+        "ingui": "primitivesurvival:FallDamageMultiplierMetalSpikes",
+        "weight": 10,
+        "comment": "primitivesurvival:FallDamageMultiplierMetalSpikes-Comment",
+        "default": 80,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHBASKETCATCHPERCENT": {
+        "name": "FishBasketCatchPercent",
+        "ingui": "primitivesurvival:FishBasketCatchPercent",
+        "weight": 11,
+        "comment": "primitivesurvival:FishBasketCatchPercent-Comment",
+        "default": 5,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHBASKETBAITEDCATCHPERCENT": {
+        "name": "FishBasketBaitedCatchPercent",
+        "ingui": "primitivesurvival:FishBasketBaitedCatchPercent",
+        "weight": 12,
+        "comment": "primitivesurvival:FishBasketBaitedCatchPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHBASKETBAITSTOLENPERCENT": {
+        "name": "FishBasketBaitStolenPercent",
+        "ingui": "primitivesurvival:FishBasketBaitStolenPercent",
+        "weight": 13,
+        "comment": "primitivesurvival:FishBasketBaitStolenPercent-Comment",
+        "default": 5,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHBASKETESCAPEPERCENT": {
+        "name": "FishBasketEscapePercent",
+        "ingui": "primitivesurvival:FishBasketEscapePercent",
+        "weight": 14,
+        "comment": "primitivesurvival:FishBasketEscapePercent-Comment",
+        "default": 15,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHBASKETROTREMOVEDPERCENT": {
+        "name": "FishBasketRotRemovedPercent",
+        "ingui": "primitivesurvival:FishBasketRotRemovedPercent",
+        "weight": 16,
+        "comment": "primitivesurvival:FishBasketRotRemovedPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHCHANCEOFEGGSPERCENT": {
+        "name": "FishChanceOfEggsPercent",
+        "ingui": "primitivesurvival:FishChanceOfEggsPercent",
+        "weight": 17,
+        "comment": "primitivesurvival:FishChanceOfEggsPercent-Comment",
+        "default": 20,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHCHUNKDEPLETIONRATE": {
+        "name": "FishChunkDepletionRate",
+        "ingui": "primitivesurvival:FishChunkDepletionRate",
+        "weight": 18,
+        "comment": "primitivesurvival:FishChunkDepletionRate-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHCHUNKREPLETIONRATE": {
+        "name": "FishChunkRepletionRate",
+        "ingui": "primitivesurvival:FishChunkRepletionRate",
+        "weight": 19,
+        "comment": "primitivesurvival:FishChunkRepletionRate-Comment",
+        "default": 1,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHCHUNKREPLETIONMINUTES": {
+        "name": "FishChunkRepletionMinutes",
+        "ingui": "primitivesurvival:FishChunkRepletionMinutes",
+        "weight": 20,
+        "comment": "primitivesurvival:FishChunkRepletionMinutes-Comment",
+        "default": 30,
+        "range": {
+          "min": 0,
+          "max": 999
+        }
+      },
+      "FISHEGGSCHUNKREPLETIONRATE": {
+        "name": "FishEggsChunkRepletionRate",
+        "ingui": "primitivesurvival:FishEggsChunkRepletionRate",
+        "weight": 21,
+        "comment": "primitivesurvival:FishEggsChunkRepletionRate-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FISHCHUNKMAXDEPLETIONPERCENT": {
+        "name": "FishChunkMaxDepletionPercent",
+        "ingui": "primitivesurvival:FishChunkMaxDepletionPercent",
+        "weight": 22,
+        "comment": "primitivesurvival:FishChunkMaxDepletionPercent-Comment",
+        "default": 95,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "FURROWEDLANDUPDATEFREQUENCY": {
+        "name": "FurrowedLandUpdateFrequency",
+        "ingui": "primitivesurvival:FurrowedLandUpdateFrequency",
+        "weight": 23,
+        "comment": "primitivesurvival:FurrowedLandUpdateFrequency-Comment",
+        "default": 120,
+        "range": {
+          "min": 1,
+          "max": 999
+        }
+      },
+      "LIMBTROTLINECATCHPERCENT": {
+        "name": "LimbTrotlineCatchPercent",
+        "ingui": "primitivesurvival:LimbTrotlineCatchPercent",
+        "weight": 28,
+        "comment": "primitivesurvival:LimbTrotlineCatchPercent-Comment",
+        "default": 1,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "LIMBTROTLINEBAITEDCATCHPERCENT": {
+        "name": "LimbTrotlineBaitedCatchPercent",
+        "ingui": "primitivesurvival:LimbTrotlineBaitedCatchPercent",
+        "weight": 29,
+        "comment": "primitivesurvival:LimbTrotlineBaitedCatchPercent-Comment",
+        "default": 5,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "LIMBTROTLINELUREDCATCHPERCENT": {
+        "name": "LimbTrotlineLuredCatchPercent",
+        "ingui": "primitivesurvival:LimbTrotlineLuredCatchPercent",
+        "weight": 30,
+        "comment": "primitivesurvival:LimbTrotlineLuredCatchPercent-Comment",
+        "default": 5,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "LIMBTROTLINEBAITEDLUREDCATCHPERCENT": {
+        "name": "LimbTrotlineBaitedLuredCatchPercent",
+        "ingui": "primitivesurvival:LimbTrotlineBaitedLuredCatchPercent",
+        "weight": 31,
+        "comment": "primitivesurvival:LimbTrotlineBaitedLuredCatchPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "LIMBTROTLINEBAITSTOLENPERCENT": {
+        "name": "LimbTrotlineBaitStolenPercent",
+        "ingui": "primitivesurvival:LimbTrotlineBaitStolenPercent",
+        "weight": 32,
+        "comment": "primitivesurvival:LimbTrotlineBaitStolenPercent-Comment",
+        "default": 5,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "LIMBTROTLINEROTREMOVEDPERCENT": {
+        "name": "LimbTrotlineRotRemovedPercent",
+        "ingui": "primitivesurvival:LimbTrotlineRotRemovedPercent",
+        "weight": 34,
+        "comment": "primitivesurvival:LimbTrotlineRotRemovedPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "MONKEYBRIDGEMAXLENGTH": {
+        "name": "MonkeyBridgeMaxLength",
+        "ingui": "primitivesurvival:MonkeyBridgeMaxLength",
+        "weight": 35,
+        "comment": "primitivesurvival:MonkeyBridgeMaxLength-Comment",
+        "default": 60,
+        "range": {
+          "min": 10,
+          "max": 999
+        }
+      },
+      "PARTICULATORMAXPARTICLESQUANTITY": {
+        "name": "ParticulatorMaxParticlesQuantity",
+        "ingui": "primitivesurvival:ParticulatorMaxParticlesQuantity",
+        "weight": 37,
+        "comment": "primitivesurvival:ParticulatorMaxParticlesQuantity-Comment",
+        "default": 5000,
+        "range": {
+          "min": 100,
+          "max": 9999
+        }
+      },
+      "PARTICULATORMAXPARTICLESSIZE": {
+        "name": "ParticulatorMaxParticlesSize",
+        "ingui": "primitivesurvival:ParticulatorMaxParticlesSize",
+        "weight": 38,
+        "comment": "primitivesurvival:ParticulatorMaxParticlesSize-Comment",
+        "default": 255,
+        "range": {
+          "min": 1,
+          "max": 999
+        }
+      },
+      "PIPEUPDATEFREQUENCY": {
+        "name": "PipeUpdateFrequency",
+        "ingui": "primitivesurvival:PipeUpdateFrequency",
+        "weight": 40,
+        "comment": "primitivesurvival:PipeUpdateFrequency-Comment",
+        "default": 130,
+        "range": {
+          "min": 10,
+          "max": 999
+        }
+      },
+      "SNAREBAITSTOLENPERCENT": {
+        "name": "SnareBaitStolenPercent",
+        "ingui": "primitivesurvival:SnareBaitStolenPercent",
+        "weight": 48,
+        "comment": "primitivesurvival:SnareBaitStolenPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "SNAREMAXDAMAGESET": {
+        "name": "SnareMaxDamageSet",
+        "ingui": "primitivesurvival:SnareMaxDamageSet",
+        "weight": 50,
+        "comment": "primitivesurvival:SnareMaxDamageSet-Comment",
+        "default": 12,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "SNAREMAXDAMAGEBAITED": {
+        "name": "SnareMaxDamageBaited",
+        "ingui": "primitivesurvival:SnareMaxDamageBaited",
+        "weight": 51,
+        "comment": "primitivesurvival:SnareMaxDamageBaited-Comment",
+        "default": 24,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "SNARETRIPPEDPERCENT": {
+        "name": "SnareTrippedPercent",
+        "ingui": "primitivesurvival:SnareTrippedPercent",
+        "weight": 52,
+        "comment": "primitivesurvival:SnareTrippedPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "TREEHOLLOWSMAXITEMS": {
+        "name": "TreeHollowsMaxItems",
+        "ingui": "primitivesurvival:TreeHollowsMaxItems",
+        "weight": 67,
+        "comment": "primitivesurvival:TreeHollowsMaxItems-Comment",
+        "default": 8,
+        "range": {
+          "min": 0,
+          "max": 8
+        }
+      },
+      "TREEHOLLOWSMAXPERCHUNK": {
+        "name": "TreeHollowsMaxPerChunk",
+        "ingui": "primitivesurvival:TreeHollowsMaxPerChunk",
+        "weight": 69,
+        "comment": "primitivesurvival:TreeHollowsMaxPerChunk-Comment",
+        "default": 1,
+        "range": {
+          "min": 0,
+          "max": 10
+        }
+      },
+      "WEIRTRAPCATCHPERCENT": {
+        "name": "WeirTrapCatchPercent",
+        "ingui": "primitivesurvival:WeirTrapCatchPercent",
+        "weight": 72,
+        "comment": "primitivesurvival:WeirTrapCatchPercent-Comment",
+        "default": 3,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "WEIRTRAPESCAPEPERCENT": {
+        "name": "WeirTrapEscapePercent",
+        "ingui": "primitivesurvival:WeirTrapEscapePercent",
+        "weight": 73,
+        "comment": "primitivesurvival:WeirTrapEscapePercent-Comment",
+        "default": 15,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "WEIRTRAPROTREMOVEDPERCENT": {
+        "name": "WeirTrapRotRemovedPercent",
+        "ingui": "primitivesurvival:WeirTrapRotRemovedPercent",
+        "weight": 75,
+        "comment": "primitivesurvival:WeirTrapRotRemovedPercent-Comment",
+        "default": 10,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "WORMFOUNDPERCENTROCK": {
+        "name": "WormFoundPercentRock",
+        "ingui": "primitivesurvival:WormFoundPercentRock",
+        "weight": 76,
+        "comment": "primitivesurvival:WormFoundPercentRock-Comment",
+        "default": 3,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      "WORMFOUNDPERCENTSTICKFLINT": {
+        "name": "WormFoundPercentStickFlint",
+        "ingui": "primitivesurvival:WormFoundPercentStickFlint",
+        "weight": 77,
+        "comment": "primitivesurvival:WormFoundPercentStickFlint-Comment",
+        "default": 25,
+        "range": {
+          "min": 0,
+          "max": 100
+        }
+      }
+    },
+    "boolean": {
+      "ALTARDROPSFISH": {
+        "name": "AltarDropsFish",
+        "ingui": "primitivesurvival:AltarDropsFish",
+        "weight": 1,
+        "comment": "primitivesurvival:AltarDropsFish-Comment",
+        "default": true
+      },
+      "ALTARDROPSGOLD": {
+        "name": "AltarDropsGold",
+        "ingui": "primitivesurvival:AltarDropsGold",
+        "weight": 2,
+        "comment": "primitivesurvival:AltarDropsGold-Comment",
+        "default": true
+      },
+      "ALTARDROPSVEGETABLES": {
+        "name": "AltarDropsVegetables",
+        "ingui": "primitivesurvival:AltarDropsVegetables",
+        "weight": 3,
+        "comment": "primitivesurvival:AltarDropsVegetables-Comment",
+        "default": true
+      },
+      "FURROWEDLANDENABLED": {
+        "name": "FurrowedLandEnabled",
+        "ingui": "primitivesurvival:FurrowedLandEnabled",
+        "weight": 25,
+        "comment": "primitivesurvival:FurrowedLandEnabled-Comment",
+        "default": true
+      },
+      "METALBUCKETDISABLED": {
+        "name": "MetalBucketDisabled",
+        "ingui": "primitivesurvival:MetalBucketDisabled",
+        "weight": 34.3,
+        "comment": "primitivesurvival:MetalBucketDisabled-Comment",
+        "default": false
+      },
+      "PARTICULATORENABLED": {
+        "name": "ParticulatorEnabled",
+        "ingui": "primitivesurvival:ParticulatorEnabled",
+        "weight": 36,
+        "comment": "primitivesurvival:ParticulatorEnabled-Comment",
+        "default": false
+      },
+      "PARTICULATORHIDECODETABS": {
+        "name": "ParticulatorHideCodeTabs",
+        "ingui": "primitivesurvival:ParticulatorHideCodeTabs",
+        "weight": 39,
+        "comment": "primitivesurvival:ParticulatorHideCodeTabs-Comment",
+        "default": false
+      },
+      "RAFTENABLED": {
+        "name": "RaftEnabled",
+        "ingui": "primitivesurvival:RaftEnabled",
+        "weight": 43,
+        "comment": "primitivesurvival:RaftEnabled-Comment",
+        "default": true
+      },
+      "RELICSDISABLED": {
+        "name": "RelicsDisabled",
+        "ingui": "primitivesurvival:RelicsDisabled",
+        "weight": 45.4,
+        "comment": "primitivesurvival:RelicsDisabled-Comment",
+        "default": false
+      },
+      "SHOWMODNAMEINHUD": {
+        "name": "ShowModNameInHud",
+        "ingui": "primitivesurvival:ShowModNameInHud",
+        "weight": 46,
+        "comment": "primitivesurvival:ShowModNameInHud-Comment",
+        "default": true
+      },
+      "SHOWMODNAMEINGUIS": {
+        "name": "ShowModNameInGuis",
+        "ingui": "primitivesurvival:ShowModNameInGuis",
+        "weight": 47,
+        "comment": "primitivesurvival:ShowModNameInGuis-Comment",
+        "default": false
+      },
+      "TREEHOLLOWSENABLEDEVELOPERTOOLS": {
+        "name": "TreeHollowsEnableDeveloperTools",
+        "ingui": "primitivesurvival:TreeHollowsEnableDeveloperTools",
+        "weight": 68,
+        "comment": "primitivesurvival:TreeHollowsEnableDeveloperTools-Comment",
+        "default": false
+      }
+    }
+  },
+  "formatting": [
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Altar-Config",
+      "weight": 0.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Deadfall-Config",
+      "weight": 3.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:FallDamage-Config",
+      "weight": 8.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:FishBasket-Config",
+      "weight": 10.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:FishFarming-Config",
+      "weight": 16.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:FurrowedLand-Config",
+      "weight": 22.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:LimbTrotline-Config",
+      "weight": 27.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:MetalBucket-Config",
+      "weight": 34.2
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:MonkeyBridge-Config",
+      "weight": 34.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Particulator-Config",
+      "weight": 35.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Pipe-Config",
+      "weight": 39.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Raft-Config",
+      "weight": 42.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Relics-Config",
+      "weight": 45.3
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:ShowModName-Config",
+      "weight": 45.5
+    },
+
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Snare-Config",
+      "weight": 47.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:SpawnMultiplier-Config",
+      "weight": 52.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:TreeHollow-Config",
+      "weight": 66.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:WeirTrap-Config",
+      "weight": 71.5
+    },
+    {
+      "type": "separator",
+      "title": "primitivesurvival:Worm-Config",
+      "weight": 75.5
+    }
+  ]
+}

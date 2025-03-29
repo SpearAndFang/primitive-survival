@@ -195,7 +195,7 @@
           "type": "item",
           "code": "game:rot"
         },
-        "transitionRatio": 1
+        "transitionRatio": 0.25
       }
     ],
     "*-cured": [
@@ -207,7 +207,7 @@
           "type": "item",
           "code": "game:rot"
         },
-        "transitionRatio": 1
+        "transitionRatio": 0.25
       }
     ]
   }

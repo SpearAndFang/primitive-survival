@@ -38,7 +38,10 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         world.BlockAccessor.SetBlock(0, blockSel.Position);
                         world.BlockAccessor.TriggerNeighbourBlockUpdate(blockSel.Position);
-                        world.PlaySoundAt(this.pickupSound ?? this.block.GetSounds(world.BlockAccessor, blockSel.Position).Place, byPlayer, null);
+
+                        world.PlaySoundAt(this.pickupSound ?? this.block.GetSounds(world.BlockAccessor, blockSel).Place, byPlayer, null); //1.20
+                        //world.PlaySoundAt(this.pickupSound ?? this.block.GetSounds(world.BlockAccessor, blockSel.Position).Place, byPlayer, null);
+
                         handling = EnumHandling.PreventDefault;
                         return true;
                     }

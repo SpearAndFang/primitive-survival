@@ -3,8 +3,8 @@
   "class": "blockpipe",
   "rainpermeable": true,
   "snowcoverage": false,
-  "lightabsorption": 0,
   "drawtype: ": "json",
+  "blockmaterial": "wood", 
   "maxstacksize": 64,
   "variantgroups": [
     {
@@ -16,14 +16,8 @@
       "states": [ "plain", "aerated" ]
     }
   ],
-  "drops": [
-    {
-      "type": "block",
-      "code": "primitivesurvival:pipe-{material}-{type}",
-      "quantity": { "avg": 1 }
-    }
-  ],
-  "shape": {"base": "block/pipe/wood/base"},
+  "drops": [],
+  "shape": { "base": "block/pipe/wood/base" },
   "textures": {
     "material": { "base": "block/pipe/{material}/{type}" }
   },
@@ -38,7 +32,7 @@
       "*-{material}-{type}"
     ]
   },
-  "blockmaterial": "Wood",
+
   "lightAbsorption": 0,
   "sidesolid": {
     "all": false

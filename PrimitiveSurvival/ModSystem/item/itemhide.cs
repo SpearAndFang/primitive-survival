@@ -3,6 +3,9 @@ namespace PrimitiveSurvival.ModSystem
     using System;
     using System.Linq;
     using Vintagestory.API.Common;
+    using Vintagestory.API.Common.Entities;
+    using Vintagestory.GameContent;
+
     //using System.Diagnostics;
 
     public class ItemPelt : Item
@@ -12,19 +15,33 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
         {
+            if (byEntity.Controls.Sneak) //sneak place gives you vanilla pelt
+            {
+                base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handling);
+                return;
+            }
             handling = EnumHandHandling.PreventDefaultAction;
         }
 
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
-        {
+        { 
             if (blockSel == null || byEntity == null)
             { return; }
+            if (byEntity.Controls.Sneak) //sneak place gives you vanilla pelt
+            {
+                base.OnHeldInteractStop(secondsUsed,slot,byEntity, blockSel, entitySel);    
+                return;
+            }
             var world = byEntity.World;
             if (world.Side == EnumAppSide.Client)
             { return; }
             if (world == null)
             { return; }
 
+            var tempblock = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
+
+            if (tempblock?.Class == "blockhide")
+            { return; }
 
             if (secondsUsed > 0)
             {
@@ -131,6 +148,7 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             blockAccessor.SetBlock(blockNew.BlockId, blockSelAbove.Position);
                         }
+                        world.PlaySoundAt(blockNew.Sounds.Place, blockSel.Position.X + 0.5f, blockSel.Position.Y+0.5f, blockSel.Position.Z+0.5f, byEntity as IPlayer);
                         slot.TakeOut(1);
                         slot.MarkDirty();
                     }
@@ -160,6 +178,7 @@ namespace PrimitiveSurvival.ModSystem
                             { blockAccessor.SetBlock(blockNew.BlockId, blockSel.Position); }
                             else
                             { blockAccessor.SetBlock(blockNew.BlockId, blockSelBeside.Position); }
+                            world.PlaySoundAt(blockNew.Sounds.Place, blockSel.Position.X + 0.5f, blockSel.Position.Y + 0.5f, blockSel.Position.Z + 0.5f, byEntity as IPlayer);
                             slot.TakeOut(1);
                             slot.MarkDirty();
                         }

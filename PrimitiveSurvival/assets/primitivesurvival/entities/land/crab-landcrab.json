@@ -1,6 +1,6 @@
 {
   "code": "landcrab",
-  "class": "EntityAgent",
+  "class": "entitypsagent",
   "hitboxSize": {
     "x": 0.5,
     "y": 0.5
@@ -14,7 +14,7 @@
   "climbTouchDistance": 0.1,
   "rotateModelOnClimb": true,
   "fallDamage": false,
-  "eyeHeight": 0.5,
+  "eyeHeight": 0.3,
   "drops": [],
   "client": {
     "renderer": "Shape",
@@ -30,10 +30,7 @@
         "code": "controlledphysics",
         "stepHeight": 1.1251
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": false
-      },
+      // {"code": "floatupwhenstuck", "onlyWhenDead": false},
       { "code": "interpolateposition" },
       { "code": "harvestable" },
       {
@@ -75,7 +72,7 @@
         "code": "wander",
         "animation": "wander",
         "animationSpeed": 1,
-        "blendMode": "AddAverage"
+        "blendMode": "Average"
       }
     ]
   },
@@ -92,17 +89,14 @@
       },
       {
         "code": "health", // Adds a health bar to the entity
-        "currenthealth": 6,
-        "maxhealth": 10
+        "currenthealth": 3,
+        "maxhealth": 5
       },
       {
         "code": "deaddecay", // Makes the dead entity stay for one hour
         "hoursToDecay": 1
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      // { "code": "floatupwhenstuck", "onlyWhenDead": true },
       {
         "code": "harvestable",
         "drops": [
@@ -141,7 +135,8 @@
             "code": "meleeattackcrab",
             "entityCodes": [ "player" ],
             "priority": 3,
-            "damage": 1,
+            "damage": 0.5,
+            "minDist": 0.5,
             "damageType": "SlashingAttack",
             "slot": 1,
             "mincooldown": 1500,
@@ -180,7 +175,8 @@
             "code": "meleeattackcrab",
             "entityCodes": [ "player" ],
             "priority": 1.6,
-            "damage": 1,
+            "damage": 0.5,
+            "minDist": 0.5,
             "slot": 1,
             "mincooldown": 1500,
             "maxcooldown": 4500,

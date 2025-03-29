@@ -269,7 +269,8 @@ namespace PrimitiveSurvival.ModSystem
             interactions = new WorldInteraction[] {
               new WorldInteraction
               {
-                ActionLangCode = "grunt", // "heldhelp-grunter-grunt",
+                //ActionLangCode = "grunt", // "heldhelp-grunter-grunt",
+                ActionLangCode = "primitivesurvival:heldhelp-grunter-grunt", 
                 HotKeyCode = "sneak",
                 MouseButton = (EnumMouseButton)2
               }

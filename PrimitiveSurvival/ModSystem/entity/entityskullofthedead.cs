@@ -11,10 +11,13 @@ namespace PrimitiveSurvival.ModSystem
         public EntitySkullOfTheDead()
         { }
 
+
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
         {
             base.Initialize(properties, api, InChunkIndex3d);
         }
+
+
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
         {
@@ -23,6 +26,7 @@ namespace PrimitiveSurvival.ModSystem
                 base.OnInteract(byEntity, slot, hitPosition, mode);
                 return;
             }
+
             var stack = new ItemStack(byEntity.World.GetBlock(new AssetLocation("primitivesurvival:skullofthedead-normal")));
             if (!byEntity.TryGiveItemStack(stack))
             { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
@@ -37,13 +41,17 @@ namespace PrimitiveSurvival.ModSystem
             return false;
         }
 
+
+
         private int cnt;
+
+
         public override void OnGameTick(float dt)
         {
+            base.OnGameTick(dt); //this needs to run client and server side 1.20
+
             if (this.Api.Side == EnumAppSide.Server)
             {
-                base.OnGameTick(dt);
-
                 // Needed for GetWalkSpeedMultiplier(), less read those a little less often for performance
                 if (this.cnt++ > 250)
                 {

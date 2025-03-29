@@ -4,6 +4,9 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.MathTools;
+    using Vintagestory.API.Config;
+    using PrimitiveSurvival.ModConfig;
+
 
     public class EntityGenericGlowingAgent : EntityAgent
     {
@@ -31,6 +34,17 @@ namespace PrimitiveSurvival.ModSystem
             if (this.lightHsv == null)
             { this.lightHsv = new byte[] { 1, 0, 4 }; } //arbitrarily give it some light
             this.minLightValue = this.lightHsv[2];
+            
+        }
+
+        public override string GetInfoText()
+        {
+            var result = base.GetInfoText();
+            if (ModConfig.Loaded.ShowModNameInHud)
+            {
+                result += "\n<font color=\"#D8EAA3\"><i>" + Lang.GetMatching("game:tabname-primitive") + "</i></font>\n\n";
+            }
+            return result;
         }
 
         public override void OnGameTick(float dt)

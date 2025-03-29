@@ -27,7 +27,6 @@
           "bluegill",
           "mutant"
         ]
-
       },
       "C": {
         "type": "item",
@@ -54,7 +53,7 @@
     "ingredients": {
       "A": {
         "type": "item",
-        "code": "game:powderedborax",
+        "code": "game:powder-borax", //1.20 powderedborax
         "quantity": 1
       },
       "B": {
@@ -74,7 +73,6 @@
           "bluegill",
           "mutant"
         ]
-
       },
       "C": {
         "type": "item",

@@ -6,6 +6,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
 
+
     public class EntityBioluminescent : EntityGenericGlowingAgent
     {
         //double sitHeight = 1;
@@ -42,7 +43,6 @@ namespace PrimitiveSurvival.ModSystem
             wsys = api.ModLoader.GetModSystem<WeatherSystemBase>();
             roomReg = api.ModLoader.GetModSystem<RoomRegistry>();
         }
-
 
 
         public override void OnGameTick(float dt)

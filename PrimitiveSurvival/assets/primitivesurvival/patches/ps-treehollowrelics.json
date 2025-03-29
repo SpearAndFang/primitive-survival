@@ -1,0 +1,22 @@
+[
+  {
+    "file": "primitivesurvival:blocktypes/wood/treehollowgrown.json",
+    "side": "server",
+    "op": "addeach",
+    "path": "/attributes/primitivesurvival/treeHollowContentsByHollowType/all/-",
+    "value": [
+      {
+        "code": "primitivesurvival:item-psgear-astral",
+        "amount": 1
+      },
+      {
+        "code": "primitivesurvival:item-psgear-ethereal",
+        "amount": 1
+      }
+    ],
+    "condition": {
+      "when": "RelicsDisabled",
+      "isValue": "false"
+    }
+  }
+]

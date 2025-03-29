@@ -1,0 +1,22 @@
+[
+  {
+    "ingredientPattern": "BCB,BPB,BBB",
+    "ingredients": {
+      "P": { "type": "item", "code": "game:metalplate-copper" },
+      "C": { "type": "item", "code": "game:candle" },
+      "B": {
+        "type": "item",
+        "code": "floralzonescentralaustralianregion:plank-*",
+        "allowedVariants": ["corymbiaaparrerinja", "eucalyptuscamaldulensis"],
+        "name": "wood"
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:woodlantern-{wood}-up",
+      "attributes": { "material": "wood", "lining": "plain", "glass": "" }
+    }
+  }
+]

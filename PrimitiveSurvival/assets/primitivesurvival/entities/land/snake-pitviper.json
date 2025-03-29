@@ -1,6 +1,6 @@
 {
   "code": "pitviper",
-  "class": "EntityAgent",
+  "class": "entitypsagent",
   "hitboxSize": {
     "x": 0.4,
     "y": 0.3
@@ -15,30 +15,26 @@
   "client": {
     "renderer": "Shape",
     "shape": { "base": "entity/land/snakevenomous" },
-    "size":  0.5,
-	  "textures": {
-		"eye": {
-		  "base": "primitivesurvival:entity/land/snake/eye-pitviper"
-		},
-		"tongue": {
-		  "base": "primitivesurvival:entity/land/snake/tongue-pitviper"
-		},
-		"scales": {
-		  "base": "primitivesurvival:entity/land/snake/scales-pitviper"
-		},
-		"bone": {
-		  "base": "primitivesurvival:entity/land/snake/bone"
-		}
-	},
+    "size": 0.5,
+    "textures": {
+      "eye": {
+        "base": "primitivesurvival:entity/land/snake/eye-pitviper"
+      },
+      "tongue": {
+        "base": "primitivesurvival:entity/land/snake/tongue-pitviper"
+      },
+      "scales": {
+        "base": "primitivesurvival:entity/land/snake/scales-pitviper"
+      },
+      "bone": {
+        "base": "primitivesurvival:entity/land/snake/bone"
+      }
+    },
     "behaviors": [
       { "code": "repulseagents" },
       {
         "code": "controlledphysics",
         "stepHeight": 1.1251
-      },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
       },
       { "code": "interpolateposition" },
       { "code": "harvestable" },
@@ -55,7 +51,7 @@
         "animationSpeed": 1,
         "weight": 10,
         "blendMode": "AddAverage",
-        "triggeredBy": { "onControls": [ "dead" ] }
+        "triggeredBy": { "onControls": ["dead"] }
       },
       {
         "code": "idle",
@@ -66,7 +62,7 @@
       {
         "code": "sleep",
         "animation": "sleep",
-        "animationSpeed": 0.8,
+        "animationSpeed": 0.5,
         "blendMode": "AddAverage"
       },
       {
@@ -74,13 +70,19 @@
         "animation": "sit",
         "animationSpeed": 0.8,
         "blendMode": "AddAverage"
-       },
+      },
+      {
+        "code": "attack",
+        "animation": "attack",
+        "animationSpeed": 0.1,
+        "blendMode": "AddAverage"
+      },
       {
         "code": "wander",
         "animation": "wander",
-        "animationSpeed": 0.8,
-        "blendMode": "AddAverage",
-        "triggeredBy": { "defaultAnim": true }
+        "animationSpeed": 1.2,
+        "blendMode": "AddAverage"
+        // "triggeredBy": { "defaultAnim": true }
       }
     ]
   },
@@ -100,10 +102,7 @@
         "code": "deaddecay", // Makes the dead entity stay for one hour
         "hoursToDecay": 1
       },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      //{ "code": "floatupwhenstuck", "onlyWhenDead": true },
       {
         "code": "harvestable",
         "drops": [
@@ -127,6 +126,14 @@
             "slot": 0,
             "priority": 1,
             "accumType": "max"
+          },
+          {
+            "code": "aggressiveondamage",
+            "duration": 15,
+            "chance": 0.6,
+            "slot": 0,
+            "priority": 2,
+            "accumType": "noaccum"
           }
         ]
       },
@@ -140,102 +147,91 @@
         "aitasks": [
           {
             "code": "meleeattackvenomous",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 3,
             "damage": 4,
             "damageType": "SlashingAttack",
             "slot": 1,
-            "mincooldown": 2500,
-            "maxcooldown": 7500,
-            "movespeed": 0.016,
-            "attackDurationMs": 500,
-            "damagePlayerAtMs": 300,
-            "animation": "wander",
-            "animationSpeed": 0.8,
+            "attackDurationMs": 1000,
+            "damagePlayerAtMs": 900,
+            "animation": "attack",
+            "animationSpeed": 0.1,
+            "mincooldown": 1500,
+            "maxcooldown": 1500,
             "whenInEmotionState": "aggressiveondamage"
           },
           {
             "code": "seekentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 2.5,
             "movespeed": 0.02,
             "seekingRange": 20,
             "animation": "wander",
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
-            "animationSpeed": 0.8,
+            "animationSpeed": 1.2,
             "whenInEmotionState": "aggressiveondamage"
           },
           {
             "code": "fleeentity",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["player"],
             "priority": 2,
             "movespeed": 0.016,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "seekingRange": 14,
             "animation": "wander",
-            "animationSpeed": 0.8
+            "animationSpeed": 0.8,
+            "whenInEmotionState": "fleeondamage"
           },
 
           {
             "code": "meleeattackvenomous",
-            "entityCodes": [ "player" ],
+            "entityCodes": ["hare-*"],
             "priority": 1.6,
-            "damage": 4,
+            "damage": 1,
+            "damageType": "SlashingAttack",
             "slot": 1,
-            "mincooldown": 2500,
-            "maxcooldown": 7500,
-            "movespeed": 0.016,
-            "attackDurationMs": 500,
-            "damagePlayerAtMs": 300,
-            "animation": "wander",
-            "animationSpeed": 0.8
+            "mincooldown": 1500,
+            "maxcooldown": 1500,
+            "attackDurationMs": 1000,
+            "damagePlayerAtMs": 900,
+            "animation": "attack",
+            "animationSpeed": 0.1
           },
           {
             "code": "seekentity",
-            "entityCodes": [ "hare-*" ],
+            "entityCodes": ["hare-*"],
             "priority": 1.5,
+            "priorityForCancel": 1.6,
             "movespeed": 0.012,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
-            "animationSpeed": 0.8,
+            "animationSpeed": 1.2,
             "seekingRange": 20,
             "animation": "wander",
             "whenNotInEmotionState": "saturated"
           },
-
           {
             "code": "getoutofwater",
             "priority": 1.4,
             "movespeed": 0.028,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "animation": "wander",
-            "animationSpeed": 0.8
+            "animationSpeed": 1.2
           },
           {
             "code": "idle",
             "priority": 1.38,
-            "minduration": 200000,
-            "maxduration": 800000,
+            "priorityForCancel": 1.38,
             "animation": "sleep",
-            "movespeed": 0.0,
+            "movespeed": 0,
             "animationSpeed": 1,
-            "mincooldown": 10000,
-            "maxcooldown": 30000,
             "whenNotInEmotionState": "aggressiveondamage",
             "duringDayTimeFrames": [
               {
-                "fromHour": 10,
-                "toHour": 18
+                "fromHour": 12,
+                "toHour": 15
               },
               {
                 "fromHour": 1,
                 "toHour": 4
               }
             ],
-            "stopOnNearbyEntityCodes": [ "player" ],
+            "stopOnNearbyEntityCodes": ["player"],
             "stopRange": 8,
             "stopOnHurt": true
           },
@@ -244,34 +240,16 @@
             "priority": 1.0,
             "priorityForCancel": 1.35,
             "movespeed": 0.016,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "animation": "wander",
-            "animationSpeed": 0.8,
+            "animationSpeed": 1.2,
             "preferredLightLevel": 20
-          },
-          {
-            "code": "idle",
-            "priority": 5,
-            "minduration": 2000,
-            "maxduration": 30000,
-            "mincooldown": 2000,
-            "maxcooldown": 120000,
-            "animation": "sleep",
-            "movespeed": 0.0,
-            "animationSpeed": 0.8,
-            "stopOnNearbyEntityCodes": [ "player" ],
-            "stopRange": 8,
-            "stopOnHurt": true
           },
           {
             "code": "lookaround",
             "priority": 0.5,
             "animation": "sit",
             "movespeed": 0.0,
-            "animationSpeed": 1,
-            "minduration": 2000,
-            "maxduration": 3000
+            "animationSpeed": 0.8
           }
         ]
       }
@@ -288,7 +266,7 @@
           "avg": 1,
           "var": 0
         },
-        "insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
+        "insideBlockCodes": ["game:air", "game:tallgrass-*"],
         "minTemp": 15,
         "maxTemp": 80,
         "maxRain": 0.43
@@ -306,7 +284,7 @@
           "avg": 1,
           "var": 0
         },
-        "insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
+        "insideBlockCodes": ["game:air", "game:tallgrass-*"],
         "minTemp": 15,
         "maxTemp": 80,
         "maxRain": 0.43,

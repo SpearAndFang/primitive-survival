@@ -57,7 +57,7 @@ namespace PrimitiveSurvival.ModSystem
                                 var entity = world.ClassRegistry.CreateEntity(type);
                                 if (entity != null)
                                 {
-                                    entity.ServerPos.X = pos.X + 0.5f;
+                                    entity.ServerPos.X = pos.X + 0.5f; 
                                     entity.ServerPos.Y = pos.Y + 0f;
                                     entity.ServerPos.Z = pos.Z + 0.5f;
                                     entity.ServerPos.Yaw = (float)Rnd.NextDouble() * 2 * GameMath.PI;

@@ -1,0 +1,14 @@
+[
+    {
+        "ingredientPattern": "BCB,BPB,BBB",
+        "ingredients": {
+            "P": { "type": "item", "code": "game:metalplate-copper" },
+            "C": { "type": "item", "code": "game:candle" },
+            "B": { "type": "item", "code": "wildcrafttree:plank-*", "allowedVariants": [ "banyan", "bearnut", "beech", "bluemahoe", "catalpa", "cedar", "chlorociboria", "dalbergia", "douglasfir", "elm", "empresstree", "eucalyptus", "ghostgum", "ginkgo", "guajacum", "honeylocust", "jacaranda", "kauri", "mahogany", "ohia", "petrified", "poplar", "redcedar", "sal", "satinash", "saxaul", "spruce", "sycamore", "tuja", "umnini", "willow", "yew" ], "name": "wood" },
+        },
+        "width": 3,
+        "height": 3,
+        "output": { "type": "block", "code": "primitivesurvival:woodlantern-{wood}-up", "attributes": { "material": "wood", "lining": "plain", "glass": "" }, },
+    }
+]
+

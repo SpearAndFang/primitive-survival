@@ -4,6 +4,9 @@
     "pslargemold-raw-*": "Block",
     "pslargemold-burned-*": "BlockToolMold"
   },
+  "entityBehaviorsByType": {
+    "pslargemold-burned-*": [{ "name": "TemperatureSensitive" }]
+  },
   "behaviorsByType": {
     "*-raw-*": [
       {
@@ -16,24 +19,21 @@
       },
       { "name": "RightClickPickup" }
     ],
-    "*": [ { "name": "UnstableFalling" } ]
+    "*": [{ "name": "UnstableFalling" }]
   },
   "variantgroups": [
     {
       "code": "materialtype",
-      "states": [ "raw", "burned" ]
+      "states": ["raw", "burned"]
     },
     {
       "code": "tooltype",
-      "states": [
-        "fishinglure",
-        "metalfishinghook",
-        "spikeplate"
-      ]
+      "states": ["fishinglure", "metalfishinghook", "spikeplate"]
     }
   ],
   "attributesByType": {
     "pslargemold-burned-fishinglure": {
+      "shatteredShape": { "base": "game:block/clay/mold/shattered-ingot" },
       "requiredUnits": 100,
       "moldrackable": true,
       "onmoldrackTransform": { "rotation": { "z": 90 } },
@@ -45,6 +45,7 @@
       }
     },
     "pslargemold-burned-metalfishinghook": {
+      "shatteredShape": { "base": "game:block/clay/mold/shattered-ingot" },
       "requiredUnits": 100,
       "moldrackable": true,
       "onmoldrackTransform": { "rotation": { "z": 90 } },
@@ -56,6 +57,7 @@
       }
     },
     "pslargemold-burned-spikeplate": {
+      "shatteredShape": { "base": "game:block/clay/mold/shattered-ingot" },
       "requiredUnits": 200,
       "fillHeight": 7,
       "drop": {
@@ -83,9 +85,9 @@
   },
   "blockmaterial": "Ceramic",
   "creativeinventory": {
-    "general": [ "*" ],
-    "construction": [ "*" ],
-    "primitive": [ "*" ]
+    "general": ["*"],
+    "construction": ["*"],
+    "primitive": ["*"]
   },
   "replaceable": 700,
   "resistance": 1.5,
@@ -103,7 +105,7 @@
     "rotateY": 90
   },
   "sounds": {
-    "walk": "walk/stone"
+    "walk": "game:walk/stone"
   },
   "collisionboxByType": {
     "*spikeplate": {

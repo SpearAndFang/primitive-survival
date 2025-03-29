@@ -41,7 +41,7 @@
         "placed-eucalyptus-ud",
         "placed-cedar-ud"
       ],
-      "quantity": 3
+      "quantity": 1
     },
     "M": {
       "type": "block",
@@ -76,7 +76,7 @@
         "placed-eucalyptus-ud",
         "placed-cedar-ud"
       ],
-      "quantity": 3
+      "quantity": 1
     },
     "N": {
       "type": "block",
@@ -111,7 +111,7 @@
         "placed-eucalyptus-ud",
         "placed-cedar-ud"
       ],
-      "quantity": 3
+      "quantity": 1
     }
 
   },

@@ -164,6 +164,7 @@ namespace PrimitiveSurvival.ModSystem
             };
             this.inventory.OnGetSuitability = (sourceSlot, targetSlot, isMerge) => (isMerge ? (this.inventory.BaseWeight + 3) : (this.inventory.BaseWeight + 1)) + (sourceSlot.Inventory is InventoryBasePlayer ? 1 : 0);
             this.inventory.OnGetAutoPullFromSlot = this.GetAutoPullFromSlot;
+            container.Reset();
             if (block?.Attributes != null)
             {
                 if (block.Attributes["spoilSpeedMulByFoodCat"][this.type].Exists)
@@ -182,9 +183,10 @@ namespace PrimitiveSurvival.ModSystem
 
         public virtual void LateInitInventory()
         {
-            Inventory.LateInitialize(InventoryClassName + "-" + Pos.X + "/" + Pos.Y + "/" + Pos.Z, Api);
+            Inventory.LateInitialize(InventoryClassName + "-" + Pos, Api);
             Inventory.ResolveBlocksOrItems();
-            Inventory.OnAcquireTransitionSpeed = Inventory_OnAcquireTransitionSpeed;
+            container.LateInit();
+            // Inventory.OnAcquireTransitionSpeed = Inventory_OnAcquireTransitionSpeed; 1.20
             MarkDirty();
         }
 
@@ -234,9 +236,12 @@ namespace PrimitiveSurvival.ModSystem
                     tree.ToBytes(writer);
                     data = ms.ToArray();
                 }
+
+                var tempPos = new BlockPos(this.Pos.X, this.Pos.Y, this.Pos.Z, 0); //1.20
+
                 ((ICoreServerAPI)this.Api).Network.SendBlockEntityPacket(
                     (IServerPlayer)byPlayer,
-                    this.Pos.X, this.Pos.Y, this.Pos.Z,
+                    tempPos,
                     (int)EnumBlockContainerPacketId.OpenInventory,
                     data
                 );

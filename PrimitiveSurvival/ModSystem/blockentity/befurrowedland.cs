@@ -104,22 +104,43 @@ namespace PrimitiveSurvival.ModSystem
                 //contains water and no blockage
                 if (Rnd.NextDouble() < (this.FurrowedLandBlockageChancePercent / 100))
                 {
-                    //create a blockage
-                    this.OtherStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("game:" + this.blockageTypes[Rnd.Next(this.blockageTypes.Count())])), Rnd.Next(3) + 1);
+                    //check for room and block above
+                    bool createblockage = true;
+                    var blockabove = this.Api.World.BlockAccessor.GetBlock(this.Pos.UpCopy(), BlockLayersAccess.Default);
+                    if (blockabove.BlockId != 0)
+                    { createblockage = false; }
 
-                    this.Api.World.BlockAccessor.SetBlock(0, this.Pos, BlockLayersAccess.Fluid);
-                    this.MarkDirty(true);
+                    Room room = this.Api.ModLoader.GetModSystem<RoomRegistry>().GetRoomForPosition(this.Pos.UpCopy());
+                    if (room != null)
+                    {
+                        if (room.ExitCount == 0)
+                        { createblockage = false; }
+                    }
+                    
+
+                    if (createblockage)
+                    {
+                        //create a blockage
+                        this.OtherStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("game:" + this.blockageTypes[Rnd.Next(this.blockageTypes.Count())])), Rnd.Next(3) + 1);
+
+                        this.Api.World.BlockAccessor.SetBlock(0, this.Pos, BlockLayersAccess.Fluid);
+                        this.MarkDirty(true);
+                    }
                 }
                 else
                 {
                     //water neighbors
 
-                    //check immediate neighbors (4 sides) - if moisture < 80 add some
+                    //check all immediate neighbors (8 sides) - if moisture < 80 add some
                     var neibPos = new BlockPos[] {
                         this.Pos.EastCopy(),
+                        this.Pos.EastCopy().NorthCopy(),
                         this.Pos.NorthCopy(),
+                        this.Pos.NorthCopy().WestCopy(),
                         this.Pos.SouthCopy(),
-                        this.Pos.WestCopy()
+                        this.Pos.SouthCopy().EastCopy(),
+                        this.Pos.WestCopy(),
+                        this.Pos.WestCopy().SouthCopy()
                     };
 
                     // Examine sides of immediate neighbors
@@ -142,9 +163,17 @@ namespace PrimitiveSurvival.ModSystem
                     //check a little deeper - if moisture < 60 add some
                     neibPos = new BlockPos[] {
                         this.Pos.EastCopy().EastCopy(),
+                        this.Pos.EastCopy().EastCopy().NorthCopy(),
+                        this.Pos.EastCopy().EastCopy().SouthCopy(),
                         this.Pos.NorthCopy().NorthCopy(),
+                        this.Pos.NorthCopy().NorthCopy().EastCopy(),
+                        this.Pos.NorthCopy().NorthCopy().WestCopy(),
                         this.Pos.SouthCopy().SouthCopy(),
-                        this.Pos.WestCopy().WestCopy()
+                        this.Pos.SouthCopy().SouthCopy().EastCopy(),
+                        this.Pos.SouthCopy().SouthCopy().WestCopy(),
+                        this.Pos.WestCopy().WestCopy(),
+                        this.Pos.WestCopy().WestCopy().NorthCopy(),
+                        this.Pos.WestCopy().WestCopy().SouthCopy()
                     };
 
                     // Examine sides of neighbors neighbors

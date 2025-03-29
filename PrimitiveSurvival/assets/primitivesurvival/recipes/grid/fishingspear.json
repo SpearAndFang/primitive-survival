@@ -1,0 +1,54 @@
+[
+  {
+    "ingredientPattern": "KSP",
+    "width": 1,
+    "height": 3,
+    "shapeless": true,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      },
+      "S": {
+        "type": "item",
+        "code": "game:stick",
+        "quantity": 1
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishingspear-wood-empty"
+    }
+  },
+  {
+    "ingredientPattern": "KSP",
+    "width": 1,
+    "height": 3,
+    "shapeless": true,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "primitivesurvival:cordage"
+      },
+      "S": {
+        "type": "item",
+        "code": "game:bamboostakes",
+        "quantity": 1
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishingspear-bamboo-empty"
+    }
+  }
+]

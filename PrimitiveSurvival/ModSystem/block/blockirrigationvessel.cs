@@ -9,8 +9,10 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
     using Vintagestory.API.Datastructures;
-    //using System.Diagnostics;
+    using PrimitiveSurvival.ModConfig;
+    using System;
 
+    //using System.Diagnostics; 
     public class BlockIrrigationVessel : BlockLiquidContainerTopOpened // BlockLiquidIrrigationVesselTopOpened
     {
         public override float CapacityLitres => 50;
@@ -68,6 +70,33 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+        public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
+        {
+            var be = world.BlockAccessor.GetBlockEntity(pos) as BEIrrigationVessel;
+            if (be != null) //this check is overhead irrigation related!
+            {
+                if (be.Buried)
+                {
+                    if (be.SoilType != null)
+                    {
+                        if (be.SoilType == "")
+                        { be.SoilType = "low"; }
+                        AssetLocation AssetLoc = new AssetLocation("game:soil-" + be.SoilType + "-none");
+                        if (AssetLoc != null)
+                        {
+                            var tempStack = new ItemStack(world.GetBlock(AssetLoc), 1);
+                            world.SpawnItemEntity(tempStack, pos.ToVec3d().Add(0.5, 1.1, 0.5));
+                        }
+
+                    }
+
+                }
+            }
+            base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
+
+        }
+
+
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             if (byPlayer.Entity.Controls.Sneak) //sneak place only
@@ -89,6 +118,7 @@ namespace PrimitiveSurvival.ModSystem
                     if (be.Buried)
                     { return false; }
                     be.Buried = true;
+                    be.SoilType = playerStack.Collectible.FirstCodePart(1);
                     be.MarkDirty();
                     playerSlot.TakeOut(1);
                     playerSlot.MarkDirty();
@@ -126,7 +156,8 @@ namespace PrimitiveSurvival.ModSystem
                         }
                         if (world.Side == EnumAppSide.Server)
                         {
-                            world.PlaySoundAt(block.GetSounds(world.BlockAccessor, blockSel.Position).Place, byPlayer, null);
+                            world.PlaySoundAt(block.GetSounds(world.BlockAccessor, blockSel).Place, byPlayer, null); //1.20
+                            //world.PlaySoundAt(block.GetSounds(world.BlockAccessor, blockSel.Position).Place, byPlayer, null);
                         }
                     }
                     return true;
@@ -267,6 +298,16 @@ namespace PrimitiveSurvival.ModSystem
 
             if (world.BlockAccessor.GetBlockEntity(pos) is BEIrrigationVessel be)
             {
+                //debug
+                /*
+                if (be.SoilType != null)
+                {
+                    dsc.AppendLine("Soil Type: " + be.SoilType);
+                }
+                */
+                //end debug
+
+
                 if (be.Buried)
                 {
                     if (be.Inventory.Empty)
@@ -285,6 +326,12 @@ namespace PrimitiveSurvival.ModSystem
                 else
                 {
                     dsc.AppendLine().AppendLine(Lang.GetMatching("primitivesurvival:bury-irrigationvessel"));
+                }
+                
+                if (ModConfig.Loaded.ShowModNameInHud)
+                {
+                    dsc.AppendLine();
+                    dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>" + Lang.GetMatching("game:tabname-primitive") + "</i></font>").AppendLine();
                 }
             }
             return dsc.AppendLine().ToString();

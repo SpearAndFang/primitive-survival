@@ -6,25 +6,22 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
     using Vintagestory.API.Datastructures;
+    using Vintagestory.API.Config;
+    using PrimitiveSurvival.ModConfig;
 
     public class EntityEarthworm : EntityAgent
     {
-
         private int cnt = 0;
         private static readonly Random Rnd = new Random();
 
-
         public EntityEarthworm()
-        {
-        }
-
+        { }
 
 
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
         {
             base.Initialize(properties, api, InChunkIndex3d);
         }
-
 
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
@@ -43,6 +40,17 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+        public override string GetInfoText()
+        {
+            var result = base.GetInfoText();
+            if (ModConfig.Loaded.ShowModNameInHud)
+            {
+                result += "\n<font color=\"#D8EAA3\"><i>" + Lang.GetMatching("game:tabname-primitive") + "</i></font>\n\n";
+            }
+            return result;
+        }
+
+
         public override void OnGameTick(float dt)
         {
             base.OnGameTick(dt);
@@ -53,8 +61,20 @@ namespace PrimitiveSurvival.ModSystem
                 var blockBelow = this.World.BlockAccessor.GetBlock(belowPos, BlockLayersAccess.Default);
 
                 var conds = this.World.BlockAccessor.GetClimateAt(belowPos, EnumGetClimateMode.NowValues); //small aside - get the temperature and kill the worm if necessary
+                Room room = Api.ModLoader.GetModSystem<RoomRegistry>().GetRoomForPosition(belowPos);
+                var wormtemp = conds.Temperature;
+                if (room != null) 
+                { 
+                    if (room.ExitCount == 0)
+                    { 
+                        if (wormtemp <= 0)
+                        { wormtemp += 5; }
+                        else if (wormtemp >= 35)
+                        { wormtemp -= 5; }
+                    }
+                }
                 var escaped = Rnd.Next(200); //one in two hundred chance the worm leaves
-                if (conds.Temperature <= 0 || conds.Temperature >= 35 || escaped < 1)
+                if (wormtemp <= 0 || wormtemp >= 35 || escaped < 1)
                 { this.Die(); } //too cold or hot or the worm just left
                 else
                 {

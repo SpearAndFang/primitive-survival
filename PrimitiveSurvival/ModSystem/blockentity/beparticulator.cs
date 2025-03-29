@@ -510,32 +510,37 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnBlockPlaced(ItemStack byItemStack = null)
         {
-            base.OnBlockPlaced(byItemStack);
-            if ((byItemStack.Block as BlockParticulator) != null)
+            //multiplayer crash happens about here
+            try
             {
-                var settings = (byItemStack.Block as BlockParticulator).GetSettings(byItemStack);
+                base.OnBlockPlaced(byItemStack);
+                if ((byItemStack.Block as BlockParticulator) != null)
+                {
+                    var settings = (byItemStack.Block as BlockParticulator).GetSettings(byItemStack);
 
-                if (settings == null)
-                {
-                    this.Data = new BEParticleData().InitDefaults();
-                    this.Data.linkX = this.Pos.X;
-                    this.Data.linkY = this.Pos.Y;
-                    this.Data.linkZ = this.Pos.Y;
-                }
-                else
-                {
-                    this.Data = SerializerUtil.Deserialize<BEParticleData>(settings);
-                }
-                if (this.Api.Side.IsClient())
-                {
-                    if (this.Data.particleEnabled)
+                    if (settings == null)
                     {
-                        BlockParticulator.ScanAround(this.Api.World, this.Pos);
+                        this.Data = new BEParticleData().InitDefaults();
+                        this.Data.linkX = this.Pos.X;
+                        this.Data.linkY = this.Pos.Y;
+                        this.Data.linkZ = this.Pos.Y;
                     }
+                    else
+                    {
+                        this.Data = SerializerUtil.Deserialize<BEParticleData>(settings);
+                    }
+                    if (this.Api.Side.IsClient())
+                    {
+                        if (this.Data.particleEnabled)
+                        {
+                            BlockParticulator.ScanAround(this.Api.World, this.Pos);
+                        }
+                    }
+                    this.Link(new BlockPos(this.Data.linkX, this.Data.linkY, this.Data.linkZ, 0));
+                    this.InitOffthread();
                 }
-                this.Link(new BlockPos(this.Data.linkX, this.Data.linkY, this.Data.linkZ, 0));
-                this.InitOffthread();
             }
+            catch { }
         }
 
         public void InitOffthread()
@@ -1306,7 +1311,7 @@ namespace PrimitiveSurvival.ModSystem
             if (name == "")
             { name = "-"; }
             dsc.AppendLine(Lang.GetMatching("primitivesurvival:particle-name") + ": " + name);
-            dsc.AppendLine(Lang.GetMatching("primitivesurvival:particle-type") + ": " + Lang.Get(this.Data.particleType));
+            dsc.AppendLine(Lang.GetMatching("primitivesurvival:particle-type") + ": " + Lang.GetMatching("primitivesurvival:" + this.Data.particleType));
             if (this.Data.particleType != "Primary")
             {
                 dsc.Append("\n");

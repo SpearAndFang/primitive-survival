@@ -79,7 +79,7 @@
         "amount": 1
       }
     ],
-    "dependsOn": [ { "modid": "wildcrafttrees" } ]
+    "dependsOn": [{ "modid": "wildcrafttrees" }]
   }
   //JHR
 ]

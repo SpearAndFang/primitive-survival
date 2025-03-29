@@ -287,8 +287,17 @@ namespace PrimitiveSurvival.ModSystem
                 newPath = newPath.Replace("-sideways", "-up");
             }
             blockToPlace = this.api.World.GetBlock(blockToPlace.CodeWithPath(newPath));
-            world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
-            return true;
+
+            if (blockToPlace != null)
+            {
+                world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
+                return true;
+            }
+            else
+            {
+                //attempt to fix Cpt_C0nfus3d's obscure crash - mod conflict?
+                return base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "code": "coachwhip",
-  "class": "EntityAgent",
+  "class": "entitypsagent",
   "hitboxSize": {
     "x": 0.6,
     "y": 0.3
@@ -15,8 +15,8 @@
   "client": {
     "renderer": "Shape",
     "shape": { "base": "entity/land/snake" },
-    "size":  0.7,
-	  "textures": {
+    "size": 0.7,
+    "textures": {
       "eye": {
         "base": "primitivesurvival:entity/land/snake/eye-coachwhip"
       },
@@ -26,19 +26,15 @@
       "scales": {
         "base": "primitivesurvival:entity/land/snake/scales-coachwhip"
       },
-		"bone": {
-		  "base": "primitivesurvival:entity/land/snake/bone"
-		}
-	},
+      "bone": {
+        "base": "primitivesurvival:entity/land/snake/bone"
+      }
+    },
     "behaviors": [
       { "code": "repulseagents" },
       {
         "code": "controlledphysics",
         "stepHeight": 1.1251
-      },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
       },
       { "code": "interpolateposition" },
       { "code": "harvestable" },
@@ -74,8 +70,7 @@
         "code": "sit",
         "animation": "sit",
         "animationSpeed": 1.1,
-        "blendMode": "AddAverage",
-        "triggeredBy": { "defaultAnim": true }
+        "blendMode": "AddAverage"
       },
       {
         "code": "wander",
@@ -100,10 +95,6 @@
       {
         "code": "deaddecay", // Makes the dead entity stay for one hour
         "hoursToDecay": 1
-      },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
       },
       {
         "code": "harvestable",
@@ -140,24 +131,10 @@
         "code": "taskai",
         "aitasks": [
           {
-            "code": "seekentity",
-            "entityCodes": [ "player" ],
-            "priority": 2.5,
-            "movespeed": 0.018,
-            "seekingRange": 20,
-            "animation": "wander",
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
-            "animationSpeed": 1.3,
-            "whenInEmotionState": "aggressiveondamage"
-          },
-          {
             "code": "fleeentity",
             "entityCodes": [ "player" ],
             "priority": 2,
             "movespeed": 0.015,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "seekingRange": 14,
             "animation": "wander",
             "animationSpeed": 1.1
@@ -166,6 +143,7 @@
             "code": "seekentity",
             "entityCodes": [ "hare-*" ],
             "priority": 1.5,
+            "priorityForCancel": 2,
             "movespeed": 0.015,
             "mincooldown": 1500,
             "maxcooldown": 4500,
@@ -179,18 +157,12 @@
             "code": "getoutofwater",
             "priority": 1.4,
             "movespeed": 0.03,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "animation": "wander",
             "animationSpeed": 1
           },
           {
             "code": "idle",
             "priority": 1.38,
-            "minduration": 200000,
-            "maxduration": 800000,
-            "mincooldown": 10000,
-            "maxcooldown": 30000,
             "animation": "sleep",
             "movespeed": 0.0,
             "whenNotInEmotionState": "aggressiveondamage",
@@ -213,32 +185,16 @@
             "priority": 1.0,
             "priorityForCancel": 1.35,
             "movespeed": 0.02,
-            "mincooldown": 1500,
-            "maxcooldown": 4500,
             "animation": "wander",
+            "animationSpeed": 1.0,
             "preferredLightLevel": 20
-          },
-          {
-            "code": "idle",
-            "priority": 5,
-            "minduration": 2000,
-            "maxduration": 30000,
-            "mincooldown": 2000,
-            "maxcooldown": 120000,
-            "animation": "sleep",
-            "movespeed": 0.0,
-            "stopOnNearbyEntityCodes": [ "player" ],
-            "stopRange": 8,
-            "stopOnHurt": true
           },
           {
             "code": "lookaround",
             "priority": 0.5,
             "animation": "sit",
             "movespeed": 0.0,
-            "animationSpeed": 1,
-            "minduration": 2000,
-            "maxduration": 3000
+            "animationSpeed": 1
           }
         ]
       }

@@ -1,0 +1,74 @@
+{
+  "code": "clothes",
+  "class": "ItemWearable",
+  "variantgroups": [
+    { "code": "category", "states": ["lowerbody"] },
+    {
+      "code": "lowerbody",
+      "states": ["clean-pants"]
+    }
+  ],
+  "shapeByType": {
+    "*": { "base": "game:entity/humanoid/seraph/clothing/lowerbody/pants7" }
+  },
+  "storageFlags": 128,
+  "attributes": {
+    "clothescategory": "lowerbody",
+    "wearableAttachment": true
+  },
+  "attributesByType": {
+    "*": { "warmth": 2 }
+  },
+  "texturesByType": {
+    "*": {
+      "seraph": { "base": "game:block/transparent" },
+      "pants": { "base": "item/wearable/{lowerbody}" }
+    }
+  },
+  "creativeinventory": {
+    "general": ["*"],
+    "items": ["*"],
+    "clothing": ["*"],
+    "primitive": ["*"]
+  },
+  "renderAlphaTest": 0.25,
+  "fpHandTransform": {
+    "translation": { "x": -0.25, "y": -0.1, "z": 0.5 },
+    "rotation": { "x": 180, "y": 159, "z": 150 },
+    "scale": 2
+  },
+  "tpHandTransformByType": {
+    "*": {
+      "translation": { "x": -0.6, "y": -0.9, "z": -0.7 },
+      "rotation": { "x": -71, "y": 180, "z": 83 },
+      "scale": 0.55
+    }
+  },
+  "guiTransformByType": {
+    "*": {
+      "rotate": false,
+        "translation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "x": -173,
+          "y": -69,
+          "z": 21
+        },
+        "origin": {
+          "x": 0.5,
+          "y": 0.58,
+          "z": 0.6
+        },
+        "scale": 1.2
+    }
+  },
+  "groundTransform": {
+    "translation": { "x": 0.05, "y": 0.13, "z": 0 },
+    "rotation": { "x": 0, "y": 0, "z": -87 },
+    "origin": { "x": 0.5, "y": 0.5, "z": 0.5299 },
+    "scale": 4
+  }
+}

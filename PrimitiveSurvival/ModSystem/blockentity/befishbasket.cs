@@ -22,6 +22,7 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int escapePercent = ModConfig.Loaded.FishBasketEscapePercent;
         private readonly double updateMinutes = ModConfig.Loaded.FishBasketUpdateMinutes;
         private readonly int rotRemovedPercent = ModConfig.Loaded.FishBasketRotRemovedPercent;
+        private readonly bool relicsDisabled = ModConfig.Loaded.RelicsDisabled;
 
         private readonly int tickSeconds = 4;
         private readonly int maxSlots = 3;
@@ -287,7 +288,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 rando = Rnd.Next(10); //10
 
-                if (rando < 1) //10% chance of a relic
+                if (rando < 1 && relicsDisabled == false) //10% chance of a relic
                 {
                     var thisRelic = this.relics[Rnd.Next(this.relics.Count())];
                     newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:" + thisRelic)), 1);
@@ -613,7 +614,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (this.inventory[i].Itemstack.Block != null) //shell
                         {
-                            shapePath = "game:shapes/block/seashell/" + this.inventory[i].Itemstack.Block.FirstCodePart(1);
+                            shapePath = "game:shapes/block/aquatic/seashell/" + this.inventory[i].Itemstack.Block.FirstCodePart(1);
                             tmpTextureSource = tesselator.GetTextureSource(this.inventory[i].Itemstack.Block);
                         }
                         else if (this.inventory[i].Itemstack.Item.Code.Path.Contains("gear"))

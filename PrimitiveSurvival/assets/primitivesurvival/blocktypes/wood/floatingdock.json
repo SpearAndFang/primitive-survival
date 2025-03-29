@@ -1,9 +1,15 @@
 {
-  "code": "raftkk",
-  "class": "blockraft",
+  "code": "floatingdock",
+  "class": "blockfloatingdock",
+  "entityclass": "befloatingdock",
+  "attributes": {
+    "renderSides": "nsew",
+    "sideShape": "block/floatingdock/side",
+    "baseShape": "block/floatingdock/base"
+  },
   "liquidSelectable": true,
   "behaviors": [
-    { "name": "RightClickPickupRaft" }
+    { "name": "RightClickPickupFloatingDock" }
   ],
   "sidesolid": {
     "all": false
@@ -12,58 +18,60 @@
     "all": false
   },
   "heldTpIdleAnimation": "holdunderarm",
-  "creativeinventory": {},
+  "creativeinventory": {
+    "general": [ "*-ns" ],
+    "primitive": [ "*-ns" ]
+  },
   "variantgroups": [
     {
-      "code": "dir",
-      "loadFromProperties": "abstract/horizontalorientation"
+      "code": "wood",
+      "states": [
+        "birch",
+        "oak",
+        "maple",
+        "pine",
+        "acacia",
+        "kapok",
+        "baldcypress",
+        "larch",
+        "redwood",
+        "ebony",
+        "walnut",
+        "purpleheart"
+      ]
+    },
+    {
+      "code": "orientation",
+      "states": [ "ns", "we" ]
     }
   ],
   "drops": [
     {
       "type": "block",
-      "code": "primitivesurvival:raftkk-north",
+      "code": "primitivesurvival:floatingdock-{wood}-ns",
       "quantity": { "avg": 1 }
     }
   ],
   "shapebytype": {
-    "*-north": {
-      "base": "block/raft/raftkk",
+    "*-ns": {
+      "base": "block/floatingdock/full",
       "rotateY": 90
     },
-    "*-east": {
-      "base": "block/raft/raftkk",
+    "*-we": {
+      "base": "block/floatingdock/full",
       "rotateY": 0
-    },
-    "*-south": {
-      "base": "block/raft/raftkk",
-      "rotateY": 270
-    },
-    "*-west": {
-      "base": "block/raft/raftkk",
-      "rotateY": 180
     }
   },
   "textures": {
-    "pine": {
-      "base": "block/raft/pine"
+
+    "0": {
+      "base": "game:block/wood/debarked/{wood}"
     },
-    "rope": {
-      "base": "block/raft/rope"
-    },
-    "end": {
-      "base": "game:block/wood/treetrunk/oak"
-    },
-    "kk": {
-      "base": "primitivesurvival:block/raft/kk"
-    },
-    "kk2": {
-      "base": "primitivesurvival:block/raft/kk2"
+    "1": {
+      "base": "game:item/resource/rope"
     }
   },
   "blockmaterial": "Wood",
-  "drawtype": "json",
-  "renderpass": "BlendNoCull",
   "replaceable": 550,
   "resistance": 2,
   "lightAbsorption": 0,
@@ -138,77 +146,31 @@
     },
     "scale": 1.05
   },
-  "collisionBoxByType": {
-    "*-north": {
+  "collisionboxes": [
+    {
       "x1": 0,
       "y1": 0,
       "z1": 0,
       "x2": 1,
-      "y2": 0.2,
+      "y2": 0,
       "z2": 1
     },
-    "*-east": {
+    {
       "x1": 0,
-      "y1": 0,
+      "y1": -0.3,
       "z1": 0,
       "x2": 1,
-      "y2": 0.2,
-      "z2": 1,
-      "rotateY": 90
-    },
-    "*-south": {
-      "x1": 0,
-      "y1": 0,
-      "z1": 0,
-      "x2": 1,
-      "y2": 0.2,
+      "y2": 0,
       "z2": 1
-    },
-    "*-west": {
-      "x1": 0,
-      "y1": 0,
-      "z1": 0,
-      "x2": 1,
-      "y2": 0.2,
-      "z2": 1,
-      "rotateY": 270
     }
-  },
-  "selectionBoxByType": {
-    "*-north": {
-      "x1": -0.2,
-      "y1": 0,
-      "z1": 0,
-      "x2": 1.2,
-      "y2": 0.2,
-      "z2": 1
-    },
-    "*-east": {
-      "x1": -0.2,
-      "y1": 0,
-      "z1": 0,
-      "x2": 1.2,
-      "y2": 0.2,
-      "z2": 1,
-      "rotateY": 90
-    },
-    "*-south": {
-      "x1": -0.2,
-      "y1": 0,
-      "z1": 0,
-      "x2": 1.2,
-      "y2": 0.2,
-      "z2": 1
-    },
-    "*-west": {
-      "x1": -0.2,
-      "y1": 0,
-      "z1": 0,
-      "x2": 1.2,
-      "y2": 0.2,
-      "z2": 1,
-      "rotateY": 270
-    }
+  ],
+  "selectionBox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 1,
+    "y2": 0.15,
+    "z2": 1
   },
   "sounds": {
     "place": "game:block/planks",

@@ -3,11 +3,8 @@ namespace PrimitiveSurvival.ModSystem
     using System;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common.Entities;
-    using Vintagestory.API.Config;
     using Vintagestory.GameContent;
     //using System.Diagnostics;
-    using Vintagestory.API.MathTools; //1.18
-
 
     public class EntityGenericShapeRenderer : EntityShapeRenderer, ITexPositionSource
     {
@@ -24,7 +21,6 @@ namespace PrimitiveSurvival.ModSystem
             this.capi = api;
             this.modSystem = api.ModLoader.GetModSystem<PrimitiveSurvivalSystem>();
 
-
             //initialize lighting
             this.offset = entity.SidedPos.X + entity.SidedPos.Y + entity.SidedPos.Z;
             this.strobeFrequency = this.entity.Properties.Attributes["strobeFrequency"].AsFloat();
@@ -33,7 +29,6 @@ namespace PrimitiveSurvival.ModSystem
         public override void DoRender3DOpaqueBatched(float dt, bool isShadowPass)
         {
             // Do nothing
-            // base.DoRender3DOpaqueBatched(dt, isShadowPass);
         }
 
 
@@ -78,13 +73,8 @@ namespace PrimitiveSurvival.ModSystem
             prog.Uniform("fogMinIn", rapi.FogMin);
             prog.Uniform("fogDensityIn", rapi.FogDensity);
 
-            //1.18
-            //prog.BindTexture2D("entityTex", this.capi.EntityTextureAtlas.AtlasTextureIds[0], 0);
             prog.BindTexture2D("entityTex", this.capi.EntityTextureAtlas.Positions[0].atlasTextureId, 0);
-
             prog.UniformMatrix("modelMatrix", this.ModelMat);
-
-            //prog.UniformMatrix("viewMatrix", capi.Render.CurrentModelviewMatrix);
             prog.UniformMatrix("viewMatrix", this.capi.Render.CameraMatrixOriginf);
 
             prog.Uniform("addRenderFlags", this.AddRenderFlags);
@@ -109,26 +99,26 @@ namespace PrimitiveSurvival.ModSystem
             var strength = (float)(this.glitchAffected ? Math.Max(0, 1 - (1 / 0.4f * stabMin)) : 0);
             prog.Uniform("glitchEffectStrength", strength);
 
-            /*prog.UniformMatrices(
-               "elementTransforms",
-               GlobalConstants.MaxAnimatedElements,
-               this.entity.AnimManager.Animator.Matrices
-           ); */ //1.18
-            prog.UniformMatrices(
-               "elementTransforms",
-               GlobalConstants.MaxAnimatedElements,
-               this.entity.AnimManager.Animator.Matrices4x3
-           );
+            //DAMMIT 1.20
+            //DAMMIT 1.20
+            //DAMMIT 1.20
+            //DAMMIT 1.20
+            // what is this "Animation"?
+            prog.UBOs["Animation"].Update(entity.AnimManager.Animator.Matrices, 0, entity.AnimManager.Animator.MaxJointId * 16 * 4); //1.20
 
-            // 1.19 hmmm
-            //if (this.meshRefOpaque != null)
-            //{ this.capi.Render.UploadMultiTextureMesh(this.meshRefOpaque); }
+            //this shit is broken AGAIN JEZUS
+            /*prog.UniformMatrices4x3(
+           "elementTransforms",
+           GlobalConstants.MaxAnimatedElements,
+           this.entity.AnimManager.Animator.Matrices4x3
+            );*/
 
-            /*
-            if (this.meshRefOit != null)
-            { this.capi.Render.RenderMesh(this.meshRefOit); }
-            */ //1.18 is gone
-
+            // 1.19 
+            if (this.meshRefOpaque != null)
+            {
+                this.capi.Render.RenderMultiTextureMesh(this.meshRefOpaque, "entityTex");
+                //this.capi.Render.UploadMultiTextureMesh(this.meshRefOpaque); 
+            }
             prog.Stop();
         }
     }

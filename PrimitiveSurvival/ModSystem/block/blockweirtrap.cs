@@ -74,7 +74,7 @@ namespace PrimitiveSurvival.ModSystem
 
                 // 1.16
                 //var fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
-                var fishWave = EnumWindBitModeMask.ExtraWeakWind | VertexFlags.LiquidWaterModeBitMask;
+                var fishWave = EnumWindBitModeMask.ExtraWeakWind | VertexFlags.LiquidExposedToSkyBitMask; // LiquidWaterModeBitMask; 1.20
 
                 for (var vertexNum = 0; vertexNum < mesh.GetVerticesCount(); vertexNum++)
                 {

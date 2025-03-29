@@ -1,0 +1,167 @@
+{
+  "code": "fishingspear",
+  "class": "itemfishingspear",
+  "damagedby": [ "attacking" ],
+  "tool": "spear",
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "WallHalves",
+        "wallOffY": 2,
+        "sprintKey": true,
+        "selectionBox": {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 1,
+          "y2": 0.1,
+          "z2": 1
+        },
+        "collisionBox": {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 0,
+          "y2": 0,
+          "z2": 0
+        }
+      }
+    },
+    { "name": "AnimationAuthoritative" }
+  ],
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "wood", "bamboo" ]
+    },
+    {
+      "code": "type",
+      "states": [ "empty", "salmon" ]
+    }
+  ],
+
+  "shape": {
+    "base": "primitivesurvival:item/fishing/fishingspear-{type}"
+  },
+  "heldTpIdleAnimation": "spearidle",
+  "heldRightReadyAnimation": "crudeOarStandingReady",
+  "heldTpHitAnimation": "spearhit",
+  "textures": {
+    "material": { "base": "primitivesurvival:item/tool/{material}" },
+    "string": { "base": "game:item/tool/material/string" },
+    "fish": {
+      "base": "primitivesurvival:item/fishing/fish-salmon-raw"
+    }
+  },
+  "attackRange": 3.5,
+  "attackpower": 0.5,
+  "attributes": {
+    "slotRefillIdentifier": "fishingspear",
+    "heldItemPitchFollow": 1,
+    "groundStorageTransform": {
+      "translation": {
+        "x": -0.39,
+        "y": 0.42,
+        "z": 0.25
+      },
+      "rotation": {
+        "x": 16,
+        "y": 1,
+        "z": 90
+      },
+      "scale": 0.81
+    },
+    "toolrackTransform": {
+      "translation": {
+        "x": -0.35,
+        "y": 0.05,
+        "z": 0.4
+      },
+      "rotation": {
+        "x": 89,
+        "y": 1,
+        "z": 1
+      }
+    }
+  },
+  "durability": 16,
+  "creativeinventory": {
+    "general": [ "*-empty" ],
+    "items": [ "*-empty" ],
+    "tools": [ "*-empty" ],
+    "primitive": [ "*-empty" ]
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 33,
+      "y": 0,
+      "z": -127
+    },
+    "origin": {
+      "x": 1.29,
+      "y": 0.05,
+      "z": 0.52
+    },
+    "scale": 2.26
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0.1,
+      "y": 0.4,
+      "z": 0.16
+    },
+    "rotation": {
+      "x": -82,
+      "y": 180,
+      "z": 96
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2.45
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3.4
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.29,
+      "y": 0.02,
+      "z": -0.57
+    },
+    "rotation": {
+      "x": -90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 0.8
+  }
+}

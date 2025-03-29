@@ -3,9 +3,6 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.MathTools;
-    //using Vintagestory.API.Client;
-    //using Vintagestory.API.Util;
-    //using Vintagestory.GameContent;
     //using System.Diagnostics;
 
 
@@ -19,6 +16,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             base.Initialize(properties, api, inChunkIndex3d);
         }
+
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
         {

@@ -1,0 +1,54 @@
+{
+	"editor": {
+		"allAngles": false,
+		"singleTexture": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textures": {
+		"blastpowdersack": "primitivesurvival:block/cloth/blastpowdersack",
+		"blastingpowder": "game:item/resource/crushed/blastingpowder"
+	},
+	"elements": [
+		{
+			"name": "Middle",
+			"from": [ 5.0, 0.0, 5.0 ], 
+			"to": [ 11.0, 6.0, 11.0 ], 
+			"faces": {
+				"north": { "texture": "#blastpowdersack", "uv": [ 10.0, 9.0, 16.0, 15.0 ] },
+				"east": { "texture": "#blastpowdersack", "uv": [ 0.0, 9.0, 6.0, 15.0 ] },
+				"south": { "texture": "#blastpowdersack", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
+				"west": { "texture": "#blastpowdersack", "uv": [ 10.0, 9.0, 16.0, 15.0 ] },
+				"up": { "texture": "#blastpowdersack", "uv": [ 0.0, 9.0, 6.0, 15.0 ] },
+				"down": { "texture": "#blastpowdersack", "uv": [ 10.0, 8.0, 16.0, 14.0 ] }
+			}
+		},
+		{
+			"name": "Top",
+			"from": [ 6.5, 6.0, 6.5 ], 
+			"to": [ 9.5, 8.0, 9.5 ], 
+			"faces": {
+				"north": { "texture": "#blastpowdersack", "uv": [ 0.0, 2.5, 3.0, 4.5 ] },
+				"east": { "texture": "#blastpowdersack", "uv": [ 2.0, 2.5, 5.0, 4.5 ] },
+				"south": { "texture": "#blastpowdersack", "uv": [ 7.0, 2.5, 10.0, 4.5 ] },
+				"west": { "texture": "#blastpowdersack", "uv": [ 8.0, 2.5, 11.0, 4.5 ] },
+				"up": { "texture": "#blastpowdersack", "uv": [ 13.0, 0.0, 16.0, 3.0 ] },
+				"down": { "texture": "#blastpowdersack", "uv": [ 3.5, 3.0, 6.5, 6.0 ], "enabled": false }
+			}
+		},
+		{
+			"name": "Fuse",
+			"from": [ 7.6, 7.6, 7.7 ], 
+			"to": [ 8.1, 10.6, 8.2 ], 
+			"rotationOrigin": [ 7.6, 7.6, 8.2 ],
+			"rotationZ": -22.5,
+			"faces": {
+				"north": { "texture": "#blastingpowder", "uv": [ 8.0, 7.0, 8.5, 10.0 ] },
+				"east": { "texture": "#blastingpowder", "uv": [ 8.0, 7.0, 8.5, 10.0 ] },
+				"south": { "texture": "#blastingpowder", "uv": [ 8.0, 7.0, 8.5, 10.0 ] },
+				"west": { "texture": "#blastingpowder", "uv": [ 8.0, 7.0, 8.5, 10.0 ] },
+				"up": { "texture": "#blastingpowder", "uv": [ 8.0, 7.0, 8.5, 7.5 ] },
+				"down": { "texture": "#blastingpowder", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
+			}
+		}
+	]}

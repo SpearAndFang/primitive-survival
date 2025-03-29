@@ -1,0 +1,13 @@
+{
+  "ingredientPattern": "BC,BF",
+  "ingredients": {
+    "B": { "type": "item", "code": "game:blastingpowder", "quantity": 4 },
+    "C": { "type": "item", "code": "game:flaxtwine" },
+    "F": { "type": "block", "code": "game:linen-*" }
+  },
+  "name": "rockblastingbomb",
+  "width": 2,
+  "height": 2,
+  "shapeless": false,
+  "output": { "type": "block", "code": "primitivesurvival:rockblastingbomb", "quantity": 8 }
+}

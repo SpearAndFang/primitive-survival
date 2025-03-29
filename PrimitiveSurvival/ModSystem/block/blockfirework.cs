@@ -54,7 +54,7 @@ namespace PrimitiveSurvival.ModSystem
 
 
 
-        public EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting) 
+        public EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
         {
             if (!(byEntity.World.BlockAccessor.GetBlockEntity(pos) is BEFirework befirework) || befirework.IsLit)
             { return EnumIgniteState.NotIgnitablePreventDefault; }
@@ -109,7 +109,7 @@ namespace PrimitiveSurvival.ModSystem
             var blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position, BlockLayersAccess.Default);
             if ((blockBelow.Fertility <= 0) || inwater)
             {
-                failureCode = Lang.Get("primitivesurvival:blockdesc-firework-suitable-ground-needed");
+                failureCode = Lang.Get("softer-ground-needed");
                 return false;
             }
             return base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);

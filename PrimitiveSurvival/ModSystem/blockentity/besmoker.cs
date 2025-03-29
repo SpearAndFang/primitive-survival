@@ -234,7 +234,7 @@ namespace PrimitiveSurvival.ModSystem
             { smokerPath = this.inventory[0].Itemstack.Collectible.Code.Path; }
             if (this.State == "open")
             {
-                if (playerPath == "firewood")
+                if (playerPath.Contains("firewood"))
                 {
                     //try placing or removing firewood
                     //if the firewood slot is empty or less than full add one
@@ -483,9 +483,23 @@ namespace PrimitiveSurvival.ModSystem
 
             var WoodCount = 0;
             if (!this.WoodSlot.Empty)
-            { WoodCount = this.WoodStack.StackSize; }
-            sb.AppendLine(WoodCount.ToString() + "/4 " + Lang.Get("item-firewood"));
-            sb.AppendLine();
+            {
+                WoodCount = this.WoodStack.StackSize;
+                var WoodType = this.WoodStack.Item?.Code.Path;
+                var Domain = this.WoodStack.Item?.Code.Domain;
+                if (WoodType == null)
+                { 
+                    WoodType = "firewood";
+                    Domain = "game";
+                }
+                sb.AppendLine(WoodCount.ToString() + "/4 " + Lang.Get(Domain + ":item-"+WoodType));
+                sb.AppendLine();
+            }
+            else
+            {
+                sb.AppendLine(WoodCount.ToString() + "/4 " + Lang.Get("item-firewood"));
+                sb.AppendLine();
+            }
 
             var percentComplete = Math.Round((this.Api.World.Calendar.TotalDays - this.burningStartTotalDays) / (this.burningUntilTotalDays - this.burningStartTotalDays) * 100, 0);
 

@@ -77,7 +77,7 @@ namespace PrimitiveSurvival.ModSystem
 
                 if ((conds.Temperature >= this.tempRequired) && (hourOfDay <= this.hourRequired) && (this.Api.World.Rand.Next(100) < this.firefliesCatchPercent))
                 {
-                    var fftype = this.Api.World.Rand.Next(this.fireflyTypes.Count() - 1);
+                    var fftype = this.Api.World.Rand.Next(this.fireflyTypes.Count());
                     var thisBlockPath = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default).Code.Path;
                     var location = "primitivesurvival:fireflies-" + this.fireflyTypes[fftype];
                     //Debug.WriteLine(location);

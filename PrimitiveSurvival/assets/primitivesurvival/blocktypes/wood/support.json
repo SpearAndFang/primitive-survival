@@ -22,22 +22,7 @@
       "states": [ "ns", "ew" ]
     }
   ],
-  "dropsbyType": {
-    "*-wood-*": [
-      {
-        "type": "block",
-        "code": "primitivesurvival:support-{material}-main-ns",
-        "quantity": { "avg": 1 }
-      }
-    ],
-    "*-bamboo-*": [
-      {
-        "type": "block",
-        "code": "primitivesurvival:support-{material}-main-ns",
-        "quantity": { "avg": 1 }
-      }
-    ]
-  },
+  "drops": [],
   "drawtype": "json",
   "shapebytype": {
     "*-wood-main-ns": {

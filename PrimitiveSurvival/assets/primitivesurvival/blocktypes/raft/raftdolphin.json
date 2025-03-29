@@ -11,7 +11,8 @@
   "sideopaque": {
     "all": false
   },
-  "heldTpIdleAnimation": "holdunderarm",
+  "ambientocclusion": false,
+  "heldTpIdleAnimation": "holdbothhandslarge",
   "creativeinventory": {},
   "variantgroups": [
     {
@@ -45,14 +46,11 @@
     }
   },
   "textures": {
-    "pine": {
-      "base": "block/raft/pine"
+    "0": {
+      "base": "game:block/wood/debarked/oak" //block/raft/pine  
     },
-    "rope": {
-      "base": "block/raft/rope"
-    },
-    "end": {
-      "base": "game:block/wood/treetrunk/oak"
+    "1": {
+      "base": "game:item/resource/rope" //block/raft/rope
     },
     "skin": {
       "base": "primitivesurvival:block/raft/dolphin"
@@ -109,21 +107,16 @@
   },
   "tpHandTransform": {
     "translation": {
-      "x": -0.3,
-      "y": -0.4,
-      "z": 0
+      "x": -0.23,
+      "y": -0.09,
+      "z": -0.32
     },
     "rotation": {
-      "x": 116,
-      "y": -22,
-      "z": 163
+      "x": 11,
+      "y": 14,
+      "z": -4
     },
-    "origin": {
-      "x": 0,
-      "y": 0.25,
-      "z": 0
-    },
-    "scale": 0.94
+    "scale": 1
   },
   "guiTransform": {
     "rotation": {

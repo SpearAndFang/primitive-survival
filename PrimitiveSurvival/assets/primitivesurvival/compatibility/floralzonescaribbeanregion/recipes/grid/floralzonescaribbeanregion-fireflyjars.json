@@ -1,0 +1,26 @@
+[
+  {
+    "ingredientPattern": "S,L,G",
+    "width": 1,
+    "height": 3,
+    "ingredients": {
+      "S": { "type": "item", "code": "game:saw-*", "istool": "true" },
+      "L": {
+        "type": "block",
+        "code": "floralzonescaribbeanregion:log-*",
+        "allowedVariants": ["placed-lysilomalatisiliquum-ud"],
+        "quantity": 1
+      },
+      "G": {
+        "type": "block",
+        "code": "game:glassslab-*-down-free",
+        "name": "color"
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:fireflies-empty-straight",
+      "quantity": 4
+    }
+  }
+]

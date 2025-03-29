@@ -5,7 +5,9 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Util;
     using Vintagestory.API.Client;
-    using System.Diagnostics;
+    using Vintagestory.API.Config;
+
+    //using System.Diagnostics;
 
     public class BlockSkullOfTheDead : Block
     {
@@ -21,6 +23,15 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (!this.CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))
             { return false; }
+
+            var blockSrc = blockSel.Clone();
+            blockSrc.Position.Y--;
+            var block = world.BlockAccessor.GetBlock(blockSrc.Position, BlockLayersAccess.Default);
+            if (block.Fertility <= 0)
+            {
+                failureCode = Lang.Get("softer-ground-needed");
+                return false;
+            }
 
             var location = new AssetLocation(this.Code.Domain, this.Code.Path);
             //Debug.WriteLine(location);

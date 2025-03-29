@@ -1,0 +1,42 @@
+[
+  {
+    "op": "addmerge",
+    "path": "/variantgroups/0/states",
+    "value": [
+      "banyan",
+      "bearnut",
+      "beech",
+      "bluemahoe",
+      "catalpa",
+      "cedar",
+      "chlorociboria",
+      "dalbergia",
+      "douglasfir",
+      "elm",
+      "empresstree",
+      "eucalyptus",
+      "ghostgum",
+      "ginkgo",
+      "guajacum",
+      "honeylocust",
+      "jacaranda",
+      "kauri",
+      "mahogany",
+      "ohia",
+      "petrified",
+      "poplar",
+      "redcedar",
+      "sal",
+      "saxaul",
+      "spruce",
+      "sycamore",
+      "tuja",
+      "umnini",
+      "willow",
+      "yew"
+    ],
+    "file": "primitivesurvival:blocktypes/wood/woodlantern.json",
+    "side": "Server",
+    "dependsOn": [{ "modid": "wildcrafttree" }]
+  }
+]

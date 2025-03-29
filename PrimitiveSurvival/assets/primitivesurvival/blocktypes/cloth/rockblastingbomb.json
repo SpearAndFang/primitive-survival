@@ -1,0 +1,92 @@
+{
+  "code": "rockblastingbomb",
+  "class": "blockbombfuse",
+  "entityClass": "bebombfuse",
+  "attributes": {
+    "blastRadius": 6,
+    "injureRadius": 12,
+    "blastType": 1
+  },
+  "storageFlags": 5,
+  "behaviors": [ { "name": "Unstable" } ],
+  "shape": { "base": "primitivesurvival:block/cloth/rockblastingbomb" },
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "blockmaterial": "Cloth",
+  "creativeinventory": {
+    "general": [ "*" ],
+    "decorative": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "replaceable": 5100,
+  "resistance": 0.75,
+  "lightAbsorption": 0,
+  "selectionbox": {
+    "x1": 0.3125,
+    "y1": 0,
+    "z1": 0.3125,
+    "x2": 0.6875,
+    "y2": 0.5,
+    "z2": 0.6875
+  },
+  "collisionbox": {
+    "x1": 0.3125,
+    "y1": 0,
+    "z1": 0.3125,
+    "x2": 0.6875,
+    "y2": 0.5,
+    "z2": 0.6875
+  },
+  "sounds": {
+    "place": "game:block/cloth",
+    "walk": "game:walk/cloth"
+  },
+  "materialDensity": 200,
+  "guiTransform": {
+    "translation": {
+      "x": 1,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -26,
+      "y": -22,
+      "z": -23
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.27,
+      "z": 0.5
+    },
+    "scale": 2.25
+  },
+  "fpHandTransform": {
+    "rotation": {
+      "x": -19,
+      "y": -45,
+      "z": 0
+    },
+    "scale": 1.2
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -1.1,
+      "y": -0.5,
+      "z": -1
+    },
+    "rotation": {
+      "x": 0,
+      "y": -2,
+      "z": -69
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.25,
+      "z": 0.5
+    },
+    "scale": 0.5
+  },
+  "groundTransform": {
+    "scale": 2.5
+  }
+}

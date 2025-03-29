@@ -1,6 +1,8 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using Vintagestory.API.Client;
     using Vintagestory.API.Common;
+    using Vintagestory.API.Config;
 
     public class ItemWoodSpikeBundle : Item
     {
@@ -25,7 +27,14 @@ namespace PrimitiveSurvival.ModSystem
             if (face == "up")
             {
                 if (block.Fertility <= 0 && !block.Code.Path.Contains("tallgrass-"))
-                { return; }
+                {
+                    if (api.Side == EnumAppSide.Client)
+                    {
+                        (api as ICoreClientAPI).TriggerIngameError(this, "cantplace", Lang.Get("game:placefailure-softer-ground-needed"));
+                    }
+                    return;
+                }
+
                 var blockSelAbove = blockSel.Clone();
                 blockSelAbove.Position.Y += 1;
                 var blockAbove = world.BlockAccessor.GetBlock(blockSelAbove.Position, BlockLayersAccess.Default);
@@ -74,6 +83,13 @@ namespace PrimitiveSurvival.ModSystem
                         blockAccessor.SetBlock(blockNew.BlockId, blockSelBeside.Position);
                         slot.TakeOut(1);
                         slot.MarkDirty();
+                    }
+                    else if (block.Fertility <= 0)
+                    {
+                        if (api.Side == EnumAppSide.Client)
+                        {
+                            (api as ICoreClientAPI).TriggerIngameError(this, "cantplace", Lang.Get("game:placefailure-softer-ground-needed"));
+                        }
                     }
                 }
             }

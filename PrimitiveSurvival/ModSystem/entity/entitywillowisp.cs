@@ -45,7 +45,6 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
-
         public override void OnGameTick(float dt)
         {
             if (this.World.Side == EnumAppSide.Server)

@@ -248,5 +248,30 @@
       "code": "primitivesurvival:fishfillet-raw",
       "quantity": 4
     }
+  },
+  {
+    "ingredientPattern": "HF",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "H": {
+        "type": "item",
+        "code": "game:hammer-*",
+        "isTool": true
+      },
+      "F": {
+        "type": "item",
+        "code": "primitivesurvival:fishfillet-raw",
+        "quantity": 2
+      }
+    },
+    "name": "fishfromfillet",
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "game:fish-raw",
+      "quantity": 1
+    }
   }
 ]

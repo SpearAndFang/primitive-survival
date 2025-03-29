@@ -16,6 +16,14 @@
       "states": [ "free" ]
     }
   ],
+  "fertilityByType": {
+    "*-verylow-free": 5,
+    "*-low-free": 25,
+    "*-medium-free": 50,
+    "*-compost-free": 65,
+    "*-high-free": 80,
+    "*": 5
+  },
   "creativeinventory": { "general": [ "" ] },
   "shapebytype": {
     "*": { "base": "block/pipe/soil/base" }

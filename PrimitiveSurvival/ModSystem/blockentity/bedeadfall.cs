@@ -255,22 +255,23 @@ namespace PrimitiveSurvival.ModSystem
                     if (this.BaitStack.Item != null)
                     {
                         if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0)
-                        { sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-rotten")); }
+                        { sb.AppendLine(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-rotten")); }
                         else
-                        { sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-ok")); }
+                        { sb.AppendLine(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-ok")); }
                     }
                     else if (this.BaitStack.Block != null)
                     {
                         if (Array.IndexOf(this.baitTypes, this.BaitStack.Block.FirstCodePart()) < 0)
-                        { sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-rotten")); }
+                        { sb.AppendLine(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-rotten")); }
                         else
-                        { sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-ok")); }
+                        { sb.AppendLine(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-ok")); }
                     }
                 }
                 else if (this.BaitSlot.Empty)
-                { sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-needed")); }
+                { 
+                    //sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-needed")); 
+                }
             }
-            sb.AppendLine().AppendLine();
         }
 
 

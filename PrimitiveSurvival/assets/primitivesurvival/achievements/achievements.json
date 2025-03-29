@@ -1,0 +1,175 @@
+[
+  {
+    "enabled": "true",
+    "id": "psthegreathunter",
+    "graphicCode": "primitivesurvival:earthworm",
+    "criteriaType": "EatAny",
+    "criteriaData": ["primitivesurvival:earthworm"]
+  },
+  {
+    "enabled": "true",
+    "id": "pssomethingsfishy",
+    "graphicCode": "primitivesurvival:psfish-pike-raw",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": ["primitivesurvival:psfish-*"]
+  },
+  {
+    "enabled": "true",
+    "id": "pswhatajerk",
+    "graphicCode": "primitivesurvival:jerky-redmeat-cured",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": ["primitivesurvival:jerky-*"]
+  },
+  {
+    "enabled": "true",
+    "id": "psitsatrap",
+    "graphicCode": "primitivesurvival:deadfall-set-granite-north",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": [
+      "primitivesurvival:deadfall-*",
+      "primitivesurvival:snare-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "psdontpokethebear",
+    "graphicCode": "primitivesurvival:woodspikebundle",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": [
+      "primitivesurvival:woodspikebundle",
+      "primitivesurvival:spikeplate-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "pshoarderdisorder",
+    "graphicCode": "primitivesurvival:treehollowplaced-pine-north",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": ["primitivesurvival:treehollowplaced-*"]
+  },
+  {
+    "enabled": "true",
+    "id": "pslivenupthejoint",
+    "graphicCode": "primitivesurvival:wolfhead-steppe-female-north",
+    "criteriaType": "DestroyAnyBlock",
+    "criteriaData": [
+      "primitivesurvival:fishmount-*",
+      "primitivesurvival:foxhide-*",
+      "primitivesurvival:harehide-*",
+      "primitivesurvival:raccoonhide-*",
+      "primitivesurvival:wolfhide-*",
+      "primitivesurvival:hyenahide-*",
+      "primitivesurvival:pighide-*",
+      "primitivesurvival:sheephide-*",
+      "primitivesurvival:foxhead-*",
+      "primitivesurvival:harehead-*",
+      "primitivesurvival:raccoonhead-*",
+      "primitivesurvival:wolfhead-*",
+      "primitivesurvival:hyenahead-*",
+      "primitivesurvival:pighead-*",
+      "primitivesurvival:sheephead-*",
+      "primitivesurvival:moosehide-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "psupinsmoke",
+    "graphicCode": "primitivesurvival:trussedmeat-redmeat-raw",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": ["primitivesurvival:smokedmeat-*"]
+  },
+  {
+    "enabled": "true",
+    "id": "psmyspiritanimal",
+    "graphicCode": "primitivesurvival:raftps-north",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": [
+      "primitivesurvival:raftcrab-*",
+      "primitivesurvival:raftdolphin-*",
+      "primitivesurvival:raftps-*",
+      "primitivesurvival:raftshark-*",
+      "primitivesurvival:rafttuna-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "pstheresasnakeinmyboot",
+    "graphicCode": "primitivesurvival:snake-blackrat",
+    "criteriaType": "KillAnyEntity",
+    "criteriaData": [
+      "primitivesurvival:blackrat",
+      "primitivesurvival:coachwhip",
+      "primitivesurvival:pitviper",
+      "primitivesurvival:chainviper"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "pscrabbypatty",
+    "graphicCode": "primitivesurvival:crabmeat-raw",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": ["primitivesurvival:crabmeat-*"]
+  },
+  {
+    "enabled": "true",
+    "id": "pssuperpooper",
+    "graphicCode": "primitivesurvival:earthwormcastings",
+    "criteriaType": "DestroyAnyBlock",
+    "criteriaData": ["primitivesurvival:earthwormcastings"]
+  },
+  {
+    "enabled": "true",
+    "id": "psdistinguishedseraph",
+    "graphicCode": "primitivesurvival:caviar-cured",
+    "criteriaType": "EatAny",
+    "criteriaData": ["primitivesurvival:caviar-*"]
+  },
+  {
+    "enabled": "true",
+    "id": "pspyrotechnician",
+    "graphicCode": "primitivesurvival:firework-missile",
+    "criteriaType": "CreateAnyFromGridRecipe",
+    "criteriaData": ["primitivesurvival:firework-*"]
+  },
+  {
+    "enabled": "true",
+    "id": "psbugcatcher",
+    "graphicCode": "primitivesurvival:fireflies-treetop-straight",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": [
+      "primitivesurvival:fireflies-treetop-*",
+      "primitivesurvival:fireflies-mysticlantern-*",
+      "primitivesurvival:fireflies-blueghost-*",
+      "primitivesurvival:fireflies-rover-*",
+      "primitivesurvival:fireflies-fairyring-*",
+      "primitivesurvival:fireflies-candle-*",
+      "primitivesurvival:fireflies-marshimp-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "psrelichunter",
+    "graphicCode": "primitivesurvival:necronomicon-north",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": [
+      "primitivesurvival:cthulu-statue-*",
+      "primitivesurvival:dagon-statue-*",
+      "primitivesurvival:hydra-statue-*",
+      "primitivesurvival:nephrenka-statue-*",
+      "primitivesurvival:temporalbase-*",
+      "primitivesurvival:temporalcube-*",
+      "primitivesurvival:temporallectern-*",
+      "primitivesurvival:necronomicon-*"
+    ]
+  },
+  {
+    "enabled": "true",
+    "id": "psreanimator",
+    "graphicCode": "primitivesurvival:skullofthedead-normal",
+    "criteriaType": "HaveAnyInInventory",
+    "criteriaData": [
+      "primitivesurvival:skullofthedead-*",
+      "primitivesurvival:handofthedead-*"
+    ]
+  }
+]

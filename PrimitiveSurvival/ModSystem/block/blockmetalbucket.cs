@@ -1,71 +1,25 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using System;
-    using System.Collections.Generic;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-    using Vintagestory.API.Util;
     using Vintagestory.GameContent;
     //using System.Diagnostics;
 
 
     public class BlockMetalBucket : BlockLiquidContainerTopOpened
     {
+
         public override float CapacityLitres => 10;
-        protected new WorldInteraction[] interactions;
+        protected WorldInteraction[] newinteractions;
+        public ItemStack[] lcdstacks;
+        protected override string meshRefsCacheKey => Code.ToShortString() + "meshRefs";
+        public override bool AllowHeldLiquidTransfer => true; 
+
 
         public override void OnLoaded(ICoreAPI api)
-        {
-            base.OnLoaded(api);
-
-            if (api.Side != EnumAppSide.Client)
-            { return; }
-            var capi = api as ICoreClientAPI;
-
-            this.interactions = ObjectCacheUtil.GetOrCreate(api, "metalbucketfilled", () =>
-            {
-                var liquidContainerStacks = new List<ItemStack>();
-                foreach (var obj in api.World.Collectibles)
-                {
-                    if (obj is ILiquidSource || obj is ILiquidSink || obj is BlockWateringCan)
-                    {
-                        var stacks = obj.GetHandBookStacks(capi);
-                        if (stacks == null)
-                        { continue; }
-
-                        foreach (var stack in stacks)
-                        {
-                            stack.StackSize = 1;
-                            liquidContainerStacks.Add(stack);
-                        }
-                    }
-                }
-                var lcstacks = liquidContainerStacks.ToArray();
-                return new WorldInteraction[] {
-                    new WorldInteraction()
-                    {
-                        ActionLangCode = "blockhelp-behavior-rightclickpickup",
-                        MouseButton = EnumMouseButton.Right,
-                        RequireFreeHand = true
-                    },
-                    new WorldInteraction()
-                    {
-                        ActionLangCode = "blockhelp-bucket-rightclick",
-                        MouseButton = EnumMouseButton.Right,
-                        Itemstacks = lcstacks
-                    }
-                };
-            });
-        }
-
-
-        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
-        {
-            if (byPlayer.Entity.Controls.Sneak) //sneak place only
-            { return base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode); }
-            return false;
-        }
+        { base.OnLoaded(api); }
 
 
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
@@ -84,18 +38,33 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     if (this.api.World.Side == EnumAppSide.Server)
                     {
-                        var newblock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-empty", "-filled")));
-                        var newStack = new ItemStack(newblock);
-                        slot.TakeOut(1);
-                        slot.MarkDirty();
-                        if (!byEntity.TryGiveItemStack(newStack))
-                        { this.api.World.SpawnItemEntity(newStack, byEntity.Pos.XYZ.AddCopy(0, 0.5, 0)); }
-                        newblock = byEntity.World.GetBlock(new AssetLocation("lava-still-3"));
 
-                        this.api.World.BlockAccessor.SetBlock(newblock.BlockId, pos); //replace lava with less lava
-                        newblock.OnNeighbourBlockChange(byEntity.World, pos, pos.NorthCopy());
-                        this.api.World.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
-                        this.api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's gone
+                        IPlayer byPlayer = (byEntity as EntityPlayer)?.Player;
+                        IBlockAccessor blockAcc = byEntity.World.BlockAccessor;
+
+                        if (byEntity.World.BlockAccessor.GetBlockEntity(blockSel.Position) is BEMetalBucket bect)
+                        { }
+                        else
+                        {
+                            //swap empty bucket with "filled" one
+                            var newblock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-empty", "-filled")));
+                            var newStack = new ItemStack(newblock);
+                            slot.TakeOut(1);
+                            slot.MarkDirty();
+                            
+                            //HAHA WTF don't comment out
+                            //if (!byEntity.TryGiveItemStack(newStack));
+                            byEntity.TryGiveItemStack(newStack);
+
+                            //remove lava from in world
+                            newblock = byEntity.World.GetBlock(new AssetLocation("lava-still-3"));
+                            this.api.World.BlockAccessor.SetBlock(newblock.BlockId, pos); //replace lava with less lava
+                            newblock.OnNeighbourBlockChange(byEntity.World, pos, pos.NorthCopy());
+                            this.api.World.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
+                            this.api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's gone
+                        }
+                        
+                        
                     }
                     handHandling = EnumHandHandling.PreventDefault;
                     if ((byEntity as EntityPlayer) != null)  //bucket scooping lava animation
@@ -130,43 +99,6 @@ namespace PrimitiveSurvival.ModSystem
                 }
             }
             return val;
-        }
-
-
-        public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture)
-        {
-            var tesselator = capi.Tesselator;
-            var shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
-            tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0, 0, 0));
-            return mesh;
-
-        }
-
-
-        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
-        {
-            return this.interactions;
-        }
-
-
-        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
-        {
-            return new WorldInteraction[]
-            {
-                new WorldInteraction()
-                {
-                    ActionLangCode = "heldhelp-fill",
-                    MouseButton = EnumMouseButton.Right,
-                    ShouldApply = (wi, bs, es) => this.GetCurrentLitres(inSlot.Itemstack) < this.CapacityLitres
-                },
-                new WorldInteraction()
-                {
-                    ActionLangCode = "heldhelp-place",
-                    HotKeyCode = "sneak",
-                    MouseButton = EnumMouseButton.Right,
-                    ShouldApply = (wi, bs, es) => true
-                }
-            };
         }
     }
 }

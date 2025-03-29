@@ -8,12 +8,13 @@
       "groupBy": ["betterbrickstairs-*-up-north-free"],
       "excludeByType": {
         "*-brown-*": true,
-        "*-red-*": true
+        "*-red-*": true,
+        "*-blue-*": true
       }
     }
   },
   "variantgroups": [
-    { "code": "material", "states": ["blue", "brown", "fire", "red"] },
+    { "code": "material", "states": ["blue", "brown", "fire", "red"] }, //fire is all that's left, the others are still here for downward compatibility
     {
       "code": "type",
       "states": ["normal", "inside", "outside"]

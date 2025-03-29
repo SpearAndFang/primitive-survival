@@ -95,6 +95,8 @@ namespace PrimitiveSurvival.ModSystem
             { return false; }
 
             var byPlayer = (byEntity as EntityPlayer).Player;
+            
+            
             if (byEntity.World is IClientWorldAccessor)
             {
                 var tf = new ModelTransform();
@@ -110,8 +112,13 @@ namespace PrimitiveSurvival.ModSystem
                 tf.Origin.Set(0f, 0, 0.5f);
                 tf.Rotation.Set(0, rotateWithReset * 45, 0);
                 tf.Translation.Set(scrapeShake, 0, scrapeWithReset / 2);
-                byEntity.Controls.UsingHeldItemTransformBefore = tf;
+
+                // obsolete in 1.19.4 - I think this whole if statement can come out at some point
+                //byEntity.Controls.UsingHeldItemTransformBefore = tf;
+
             }
+
+
             if (secondsUsed > 0.35f && secondsUsed < 0.87f)
             {
                 var dir = new Vec3d().AheadCopy(1, 0, byEntity.SidedPos.Yaw - GameMath.PI);

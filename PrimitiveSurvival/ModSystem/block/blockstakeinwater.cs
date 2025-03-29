@@ -70,7 +70,7 @@ namespace PrimitiveSurvival.ModSystem
             var blockBelow = world.BlockAccessor.GetBlock(blockSelBelow.Position, BlockLayersAccess.Default);
             if (blockBelow.Fertility <= 0)
             {
-                failureCode = Lang.Get("primitivesurvival:blockdesc-firework-suitable-ground-needed");
+                failureCode = Lang.Get("softer-ground-needed");
                 return false;
             }
             var orientations = this.GetOrientations(world, pos);

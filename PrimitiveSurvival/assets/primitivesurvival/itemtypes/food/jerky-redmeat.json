@@ -28,7 +28,7 @@
       "useFirepitModel": "Spit"
     },
     "nutritionPropsWhenInMeal": {
-      "satiety": 105,
+      "satiety": 75, //105
       "foodcategory": "Protein"
     }
   },
@@ -58,12 +58,12 @@
   },
   "nutritionPropsByType": {
     "jerky-redmeat-cooked": {
-      "satiety": 70,
+      "satiety": 50, //70
       "health": 0,
       "foodcategory": "Protein"
     },
     "jerky-redmeat-cured": {
-      "satiety": 50,
+      "satiety": 35, //50
       "health": 0,
       "foodcategory": "Protein"
     }

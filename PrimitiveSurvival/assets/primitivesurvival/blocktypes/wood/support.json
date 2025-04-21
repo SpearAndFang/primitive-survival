@@ -64,8 +64,14 @@
     }
   },
   "creativeinventory": {
-    "general": [ "*-wood-main-ns", "*-bamboo-main-ns" ],
-    "primitive": [ "*-wood-main-ns", "*-bamboo-main-ns" ]
+    "general": [
+      // "*-wood-main-ns",
+      // "*-bamboo-main-ns"
+    ],
+    "primitive": [
+      // "*-wood-main-ns",
+      // "*-bamboo-main-ns"
+    ]
   },
   "materialDensity": 150,
   "blockmaterial": "Wood",

@@ -23,13 +23,13 @@
   },
   "creativeinventory": {
     "general": [
-      "*-{material}-{type}"
+ //     "*-{material}-{type}"
     ],
     "items": [
-      "*-{material}-{type}"
+ //     "*-{material}-{type}"
     ],
     "primitive": [
-      "*-{material}-{type}"
+ //     "*-{material}-{type}"
     ]
   },
 

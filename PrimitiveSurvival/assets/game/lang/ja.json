@@ -1,0 +1,9 @@
+{
+  "comment_description": "Japanese localization file for 'Primitive Survival'.",
+  "comment_version": "Mod Version: v3.7.6",
+  "comment_author": "Translated By: Macoto Hino",
+  "comment_technical_details": "Machine translation using PCOT and DeepL.",
+
+  "heldhelp-spearfish": "魚を突く",
+  "heldhelp-removefish": "魚を取る"
+}

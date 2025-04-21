@@ -230,6 +230,9 @@ namespace PrimitiveSurvival.ModSystem
             var shapeBase = "primitivesurvival:shapes/";
             string shapePath;
             var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockWoodSupportSpikes;
+            
+            if (block == null)
+            { return true; }
             var texture = tesselator.GetTextureSource(block);
             ITexPositionSource tmpTextureSource;
             shapePath = "block/woodsupportspikes";

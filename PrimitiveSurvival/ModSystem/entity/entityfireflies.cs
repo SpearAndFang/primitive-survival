@@ -20,6 +20,13 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
         {
+            //add claim support v3.7.7
+            IPlayer plr = (byEntity as EntityPlayer)?.Player;
+            if (plr != null && !byEntity.World.Claims.TryAccess(plr, Pos.AsBlockPos, EnumBlockAccessFlags.Use))
+            {
+                return; //fireflies claimed by someone else
+            }
+
             if (!this.Alive || this.World.Side == EnumAppSide.Client || mode == 0)
             {
                 base.OnInteract(byEntity, slot, hitPosition, mode);
@@ -32,7 +39,7 @@ namespace PrimitiveSurvival.ModSystem
             { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
             this.World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5, null, false, 16);
             this.Die(); //remove from the ground
-            
+
             return;
         }
     }

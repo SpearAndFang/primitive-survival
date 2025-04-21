@@ -30,6 +30,7 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             if (world.BlockAccessor.GetBlockEntity(blockSel.Position) is BEWoodSupportSpikes be)
@@ -72,8 +73,34 @@ namespace PrimitiveSurvival.ModSystem
                 block = world.BlockAccessor.GetBlock(neibpos.DownCopy(), BlockLayersAccess.Default);
                 if (block.FirstCodePart() == "woodsupportspikes")
                 {
-                    world.BlockAccessor.BreakBlock(neibpos.DownCopy(), null);
-                    world.BlockAccessor.BreakBlock(neibpos, null);
+                    // ALTERNATE after-the-fact METHOD OF --SNEAK-- PLACING FERTILE BLOCKS ON SPIKE TRAP
+                    // if sand or dirt placed above the spikes, and the spikes have three layers of grass
+                    // remove the block above and add it to the inventory
+                    bool breakDontPlace = true;
+                    
+                    var aboveblock = world.BlockAccessor.GetBlock(pos.UpCopy(), BlockLayersAccess.Default);
+                    if (this.api.World.BlockAccessor.GetBlockEntity(pos) is BEWoodSupportSpikes be)
+                    {
+                        var grassStack = be.Inventory[2].Itemstack;
+                        var dirtStack = be.Inventory[3];
+                        if (grassStack?.Collectible.Code.Path == "drygrass" && dirtStack.Empty)
+                        {
+                            if (aboveblock.Fertility > 0)
+                            {
+                                breakDontPlace = false;
+                                world.BlockAccessor.SetBlock(0,pos.UpCopy());
+                                var tempStack = new ItemStack(aboveblock);
+                                be.Inventory[3].Itemstack = tempStack;
+                                
+                            }
+                        }
+                    }
+                    
+                    if (breakDontPlace)
+                    {
+                        world.BlockAccessor.BreakBlock(neibpos.DownCopy(), null);
+                        world.BlockAccessor.BreakBlock(neibpos, null);
+                    }
                 }
             }
         }

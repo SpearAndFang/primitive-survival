@@ -540,6 +540,8 @@ namespace PrimitiveSurvival.ModSystem
 
         private bool TryTake(IPlayer byPlayer) //, BlockSelection blockSel)
         {
+            if (byPlayer == null)
+            { return false; } // should be impossible but whatevs https://github.com/SpearAndFang/primitive-survival/issues/21
             var facing = byPlayer.CurrentBlockSelection.Face.Opposite;
             var index = -1;
             var playerFacing = facing.ToString();

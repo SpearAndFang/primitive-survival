@@ -54,15 +54,18 @@ namespace PrimitiveSurvival.ModSystem
                                     else if (pitViperNum > 0)
                                     { type = world.GetEntityType(new AssetLocation("primitivesurvival:pitviper")); }
                                 }
-                                var entity = world.ClassRegistry.CreateEntity(type);
-                                if (entity != null)
+                                if (type != null) // https://github.com/SpearAndFang/primitive-survival/issues/25
                                 {
-                                    entity.ServerPos.X = pos.X + 0.5f; 
-                                    entity.ServerPos.Y = pos.Y + 0f;
-                                    entity.ServerPos.Z = pos.Z + 0.5f;
-                                    entity.ServerPos.Yaw = (float)Rnd.NextDouble() * 2 * GameMath.PI;
-                                    world.SpawnEntity(entity);
-                                    handling = EnumHandling.PreventDefault;
+                                    var entity = world.ClassRegistry.CreateEntity(type);
+                                    if (entity != null)
+                                    {
+                                        entity.ServerPos.X = pos.X + 0.5f;
+                                        entity.ServerPos.Y = pos.Y + 0f;
+                                        entity.ServerPos.Z = pos.Z + 0.5f;
+                                        entity.ServerPos.Yaw = (float)Rnd.NextDouble() * 2 * GameMath.PI;
+                                        world.SpawnEntity(entity);
+                                        handling = EnumHandling.PreventDefault;
+                                    }
                                 }
                             }
                         }

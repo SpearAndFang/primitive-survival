@@ -113,6 +113,7 @@
     "z2": 0.75
   },
   "materialDensity": 400,
+  "heldRightReadyAnimation": "helditemreadybucket",
   "tpHandTransform": {
     "translation": {
       "x": -0.86,
@@ -124,7 +125,7 @@
       "y": 0,
       "z": 0
     },
-    "scale": 0.55
+    "scale": 0.62
   },
   "guiTransform": {
     "origin": {

@@ -234,7 +234,23 @@ namespace PrimitiveSurvival.ModSystem
             { smokerPath = this.inventory[0].Itemstack.Collectible.Code.Path; }
             if (this.State == "open")
             {
-                if (playerPath.Contains("firewood"))
+                if (smokerPath.Contains("smoked") || smokerPath.Contains("rot"))
+                {
+                    //try placing or removing trussed meat
+                    //if there's an available trussed meat slot, try adding one
+                    var cnt = this.FirstFreeSlot() - 1;
+                    if (cnt == -2)
+                    { cnt = 3; }
+                    if (0 <= cnt && cnt <= 3)
+                    { result = this.TryTake(byPlayer, this.inventory[cnt]); }
+                    //else try removing one? Nah once its in its in
+                    if (result)
+                    {
+                        this.Api.World.PlaySoundAt(this.meatSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z, byPlayer);
+                        return true;
+                    }
+                }
+                else if (playerPath.Contains("firewood"))
                 {
                     //try placing or removing firewood
                     //if the firewood slot is empty or less than full add one
@@ -251,22 +267,7 @@ namespace PrimitiveSurvival.ModSystem
                         return true;
                     }
                 }
-                else if (smokerPath.Contains("smoked") || smokerPath.Contains("rot"))
-                {
-                    //try placing or removing trussed meat
-                    //if there's an available trussed meat slot, try adding one
-                    var cnt = this.FirstFreeSlot() - 1;
-                    if (cnt == -2)
-                    { cnt = 3; }
-                    if (0 <= cnt && cnt <= 3)
-                    { result = this.TryTake(byPlayer, this.inventory[cnt]); }
-                    //else try removing one? Nah once its in its in
-                    if (result)
-                    {
-                        this.Api.World.PlaySoundAt(this.meatSound, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z, byPlayer);
-                        return true;
-                    }
-                }
+
                 else if (playerPath.Contains("trussedmeat") && playerPath.Contains("raw"))
                 {
                     //try placing or removing trussed meat

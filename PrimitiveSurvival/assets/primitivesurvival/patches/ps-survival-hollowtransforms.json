@@ -12,22 +12,24 @@
         }
       }
     },
+    "side": "Server",
     "file": "game:itemtypes/tool/knife.json"
   },
   {
     "op": "add",
     "path": "/behaviors/-",
     "value": {
-        "name": "inTreeHollowTransform",
-        "properties": {
-          "rotation": {
-            "x": 4,
-            "y": -84,
-            "z": 5
-          },
+      "name": "inTreeHollowTransform",
+      "properties": {
+        "rotation": {
+          "x": 4,
+          "y": -84,
+          "z": 5
+        },
         "scale": 0.89
       }
-	},
+    },
+    "side": "Server",
     "file": "game:itemtypes/tool/wrench.json"
   },
   {
@@ -158,6 +160,7 @@
         }
       }
     ],
+    "side": "Server",
     "file": "game:itemtypes/resource/treeseed.json"
   }
 ]

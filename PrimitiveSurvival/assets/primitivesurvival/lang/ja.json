@@ -824,7 +824,11 @@
   "block-smoker-closed-*": "燻製機",
   "block-smoker-lit-*": "燻製機(点火)",
   "blockdesc-smoker-*": "4本の薪と生の束ねた肉を最大4本まで入れ、松明で火を点けて開始します。",
-  "blockhelp-smoker-rightclick": "開 / 吊り下げ / 取り出し / 閉",
+  "blockhelp-smoker-rightclickopen": "開",
+  "blockhelp-smoker-rightclickclose": "閉",
+  "blockhelp-smoker-trussedmeat": "add trussed meat",
+  "blockhelp-smoker-firewood": "add firewood",
+  "blockhelp-smoker-smokedmeat": "remove smoked meat",
   "blockhelp-smoker-complete": "完了",
 
   "item-smokedmeat-redmeat-raw": "燻した赤肉",

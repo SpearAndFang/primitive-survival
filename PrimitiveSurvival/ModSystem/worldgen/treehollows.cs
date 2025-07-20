@@ -7,6 +7,8 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
+    using Vintagestory.API.Config;
+
     //using System.Diagnostics;
 
 
@@ -27,7 +29,11 @@ namespace PrimitiveSurvival.ModSystem
         {
             this.sapi = api;
             this.worldBlockAccessor = api.World.BlockAccessor;
-            this.chunkSize = this.worldBlockAccessor.ChunkSize;
+
+            //   v3.7.9 performance   
+            //this.chunkSize = this.worldBlockAccessor.ChunkSize;
+            this.chunkSize = GlobalConstants.ChunkSize;
+
             this.treeTypes = new HashSet<string>();
             this.LoadTreeTypes(this.treeTypes);
 

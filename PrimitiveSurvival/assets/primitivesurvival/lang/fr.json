@@ -825,7 +825,11 @@
   "block-smoker-closed-*": "Fumoir",
   "block-smoker-lit-*": "Fumoir (allumé)",
   "blockdesc-smoker-*": "Ajoutez 4 bois de chauffage et jusqu'à 4 viandes crues ficelées, puis allumez avec une torche pour démarrer le processus.",
-  "blockhelp-smoker-rightclick": "ouvrir / placer / récuperer / fermer",
+  "blockhelp-smoker-rightclickopen": "ouvrir",
+  "blockhelp-smoker-rightclickclose": "fermer",
+  "blockhelp-smoker-trussedmeat": "add trussed meat",
+  "blockhelp-smoker-firewood": "add firewood",
+  "blockhelp-smoker-smokedmeat": "remove smoked meat",
   "blockhelp-smoker-complete": "complet",
 
   "item-smokedmeat-redmeat-raw": "Viande rouge fumée",

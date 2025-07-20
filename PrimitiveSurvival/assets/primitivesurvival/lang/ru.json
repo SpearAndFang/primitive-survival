@@ -824,7 +824,11 @@
   "block-smoker-closed-*": "Коптильня",
   "block-smoker-lit-*": "Коптильня (зажжённая)",
   "blockdesc-smoker-*": "Добавьте 4 дрова и до 4 сырых кусков мяса, затем зажгите факелом, чтобы начать процесс.",
-  "blockhelp-smoker-rightclick": "открыть / загрузить / выгрузить / закрыть",
+  "blockhelp-smoker-rightclickopen": "открыть",
+  "blockhelp-smoker-rightclickclose": "закрыть",
+  "blockhelp-smoker-trussedmeat": "add trussed meat",
+  "blockhelp-smoker-firewood": "add firewood",
+  "blockhelp-smoker-smokedmeat": "remove smoked meat",
   "blockhelp-smoker-complete": "complete",
 
   "item-smokedmeat-redmeat-raw": "Копчёное красное мясо",

@@ -829,7 +829,11 @@
   "block-smoker-closed-*": "Räucherei",
   "block-smoker-lit-*": "Räucherei (entzündet)",
   "blockdesc-smoker-*": "Füge 4 Brennhölzer und bis zu 4 rohe Fleischstücke hinzu und zünde sie mit einer Fackel an, um den Prozess zu starten.",
-  "blockhelp-smoker-rightclick": "Öffne / Belade / Entlade / Schließe",
+  "blockhelp-smoker-rightclickopen": "Öffne",
+  "blockhelp-smoker-rightclickclose": "Schließe",
+  "blockhelp-smoker-trussedmeat": "add trussed meat",
+  "blockhelp-smoker-firewood": "add firewood",
+  "blockhelp-smoker-smokedmeat": "remove smoked meat",
   "blockhelp-smoker-complete": "Abgeschlossen",
 
   "item-smokedmeat-redmeat-raw": "Geräuchertes Rotfleisch",

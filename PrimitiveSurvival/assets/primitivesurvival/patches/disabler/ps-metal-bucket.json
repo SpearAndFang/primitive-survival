@@ -7,7 +7,8 @@
     "condition": {
       "when": "MetalBucketDisabled",
       "isValue": "true"
-    }
+    },
+    "side": "Server"
   },
   {
     "op": "add",
@@ -17,7 +18,8 @@
     "condition": {
       "when": "MetalBucketDisabled",
       "isValue": "true"
-    }
+    },
+    "side": "Server"
   },
   {
     "op": "add",
@@ -27,7 +29,8 @@
     "condition": {
       "when": "MetalBucketDisabled",
       "isValue": "true"
-    }
+    },
+    "side": "Server"
   },
   {
     "op": "add",

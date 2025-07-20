@@ -1,15 +1,27 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    //using System.Diagnostics;
+    using System.Linq; //1.18
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
-    //using System.Diagnostics;
-    using System.Linq; //1.18
     using Vintagestory.GameContent;
 
     public class BlockSmoker : Block, IIgnitable
     {
+
+        public override void OnLoaded(ICoreAPI api)
+        {
+            base.OnLoaded(api);
+
+            if (api.Side != EnumAppSide.Client)
+            { return; }
+
+            
+        }
 
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
         {
@@ -17,39 +29,128 @@ namespace PrimitiveSurvival.ModSystem
 
             if (be?.State == "lit")
             { return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer); }
-            else if (be?.State == "closed" && be?.WoodSlot.StackSize == 4 && be?.Inventory[0].Empty == false)
+
+            List<ItemStack> torchStacklist = BlockBehaviorCanIgnite.CanIgniteStacks(api, false);
+            
+            if (be?.State == "closed" && be?.WoodSlot.StackSize == 4 && be?.Inventory[0].Empty == false)
             {
                 return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer).Append(new WorldInteraction[] {
                 new WorldInteraction()
                 {
                     ActionLangCode = "blockhelp-forge-ignite",
                     MouseButton = EnumMouseButton.Right,
-                    HotKeyCode = "shift"
+                    HotKeyCode = "shift",
+                    Itemstacks = torchStacklist.ToArray(),
+                        GetMatchingStacks = (wi, bs, es) => {
+                              return wi.Itemstacks;
+                        }
                 },
                 new WorldInteraction()
                 {
-                    ActionLangCode = "primitivesurvival:blockhelp-smoker-rightclick",
+                    ActionLangCode = "primitivesurvival:blockhelp-smoker-rightclickopen",
                     MouseButton = EnumMouseButton.Right,
                     HotKeyCode = null
                 }
                 });
             }
-            else if (be?.State != "lit")
+
+            if (be?.State == "closed")
             {
                 return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer).Append(new WorldInteraction[] {
                 new WorldInteraction()
                 {
-                    ActionLangCode = "primitivesurvival:blockhelp-smoker-rightclick",
+                    ActionLangCode = "primitivesurvival:blockhelp-smoker-rightclickopen",
                     MouseButton = EnumMouseButton.Right,
                     HotKeyCode = null
                 }
                 });
             }
-            else
+
+            if (be?.State == "open" && be?.Inventory[0].Empty == false)
             {
-                return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer);
+                if (be.Inventory[0].Itemstack.Collectible.FirstCodePart(2) == "smoked")
+                {
+                    return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer).Append(new WorldInteraction[] {
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "primitivesurvival:blockhelp-smoker-smokedmeat",
+                        MouseButton = EnumMouseButton.Right,
+                        HotKeyCode = null
+                    }
+                    });
+                }
             }
+
+            List<ItemStack> trussedMeatStacklist = new List<ItemStack>();
+            List<ItemStack> firewoodStacklist = new List<ItemStack>();
+
+            foreach (CollectibleObject obj in api.World.Collectibles)
+            {
+                if (obj.Code.FirstCodePart() == "trussedmeat")
+                {
+                    List<ItemStack> stacks = obj.GetHandBookStacks(api as ICoreClientAPI);
+                    if (stacks != null) trussedMeatStacklist.AddRange(stacks);
+                }
+                else
+                {
+                    if (obj.Code.FirstCodePart().Contains("firewood")) //regular or smoked or other I suppose
+                    {
+                        List<ItemStack> stacks = obj.GetHandBookStacks(api as ICoreClientAPI);
+                        if (stacks != null) firewoodStacklist.AddRange(stacks);
+                    }
+                }
+            }
+            return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer).Append(new WorldInteraction[] {
+            new WorldInteraction()
+            {
+                ActionLangCode = "primitivesurvival:blockhelp-smoker-rightclickclose",
+                MouseButton = EnumMouseButton.Right,
+                HotKeyCode = null
+            },
+            new WorldInteraction()
+            {
+                ActionLangCode = "primitivesurvival:blockhelp-smoker-trussedmeat",
+                HotKeyCode = null,
+                MouseButton = EnumMouseButton.Right,
+                Itemstacks = trussedMeatStacklist.ToArray(),
+                GetMatchingStacks = getMatchingStacks
+            },
+            new WorldInteraction()
+                {
+                    ActionLangCode = "primitivesurvival:blockhelp-smoker-firewood",
+                    HotKeyCode = null,
+                    MouseButton = EnumMouseButton.Right,
+                    Itemstacks = firewoodStacklist.ToArray(),
+                    GetMatchingStacks = getMatchingStacks
+                }
+            });
         }
+
+
+
+        private ItemStack[] getMatchingStacks(WorldInteraction wi, BlockSelection selection, EntitySelection entitySelection)
+        {
+            var be = api.World.BlockAccessor.GetBlockEntity(selection.Position) as BESmoker;
+
+            if (be == null || wi.Itemstacks.Length == 0) return null;
+
+            List<ItemStack> matchStacks = new List<ItemStack>();
+            foreach (ItemStack stack in wi.Itemstacks)
+            {
+                if (stack.Collectible.Code.FirstCodePart().Contains("firewood"))
+                {
+                    if (be.Inventory[4].StackSize < 4) matchStacks.Add(stack);
+                }
+                if (stack.Collectible.Code.FirstCodePart() == "trussedmeat")
+                {
+                    if (be.Inventory[3].Empty) matchStacks.Add(stack);
+                }
+            }
+            Debug.WriteLine("hoo");
+            return matchStacks.ToArray();
+
+        }
+
 
         // 1.19
         EnumIgniteState IIgnitable.OnTryIgniteStack(EntityAgent byEntity, BlockPos pos, ItemSlot slot, float secondsIgniting)

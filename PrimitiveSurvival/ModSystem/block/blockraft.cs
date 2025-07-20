@@ -21,7 +21,7 @@ namespace PrimitiveSurvival.ModSystem
         private ILoadedSound wsound;
         private readonly string[] raftTypes = { "raftps", "raftcrab", "raftdolphin", "raftshark", "rafttuna", "raftps" };
 
-        private float interval = 1f;
+        //private float interval = 1f;
         //private AssetLocation splashSound = new AssetLocation("game", "sounds/environment/waterwaves");
 
         double prevms = 0;

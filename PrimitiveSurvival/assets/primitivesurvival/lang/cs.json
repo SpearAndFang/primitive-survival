@@ -825,7 +825,11 @@
   "block-smoker-closed-*": "Udírna",
   "block-smoker-lit-*": "Udírna (zapálená)",
   "blockdesc-smoker-*": "Přidejte 4 kusy palivového dřeva a až 4 kusy syrového masa svázaného provázkem, poté zapalte pochodní, aby se proces uzení spustil.",
-  "blockhelp-smoker-rightclick": "otevřít / zavěsit / vytáhnout / zavřít",
+  "blockhelp-smoker-rightclickopen": "otevřít",
+  "blockhelp-smoker-rightclickclose": "zavřít",
+  "blockhelp-smoker-trussedmeat": "add trussed meat",
+  "blockhelp-smoker-firewood": "add firewood",
+  "blockhelp-smoker-smokedmeat": "remove smoked meat",
   "blockhelp-smoker-complete": "máš vyuzeno",
 
   "item-smokedmeat-redmeat-raw": "Uzené červené maso",
@@ -1237,14 +1241,14 @@
   "MetalBucket-Config": "Konfigurace kovového kbelíku",
   "MetalBucketDisabled": "Kovový kbelík zakázán",
   "MetalBucketDisabled-Comment": "Zakázat kovový kbelík.",
-  
+
   "Relics-Config": "Konfigurace relikvií",
   "RelicsDisabled": "Relikvie zakázány",
   "RelicsDisabled-Comment": "Zabránit chytání relikvií do pastí na jezy a rybích košů.",
-  
+
   "block-rockblastingbomb": "Bomba na odstřelování kamenů",
   "blockdesc-rockblastingbomb": "Tato bomba je obzvláště účinná pro těžbu kamenů, ale méně pro odstřelování rudy.",
-  
+
   "item-fishingspear-wood-*": "Rybářské kopí (dřevo)",
   "item-fishingspear-bamboo-*": "Rybářské kopí (bambus)",
   "itemdesc-fishingspear-*": "Výpad jako obyčejný oštěp na lov ryb.",
@@ -1280,15 +1284,15 @@
   "primitivesurvival:block-woodlantern-nothofagusmenziesii-*": "Dřevěná lucerna (Totara)",
   "primitivesurvival:block-woodlantern-podocarpustotara-*": "Dřevěná lucerna (Norfolk Island Pine)",
 
-"ingameerror-mb-close-endpoint-invalid": "Uzavřený koncový bod je neplatný. Musí to být blok plné velikosti s blokem plné velikosti nad ním",
-"ingameerror-mb-far-endpoint-invalid": "Vzdálený koncový bod je neplatný. Musí to být blok plné velikosti s blokem plné velikosti nad ním",
-"ingameerror-mb-close-endpoint-neighbor-invalid": "Uzavřený koncový bod je neplatný. Vedle něj je něco, co blokuje umístění",
-"ingameerror-mb-far-endpoint-neighbor-invalid": "Vzdálený koncový bod je neplatný. Vedle něj je něco, co blokuje umístění",
-"ingameerror-mb-bridge-too-far": "Vypadá to, že potřebujete více kusů opičí lávky nebo vzdálenost mezi koncovými body překračuje maximální délku",
-"ingameerror-mb-bridge-cant-place": "V cestě je opičí lávka",
+  "ingameerror-mb-close-endpoint-invalid": "Uzavřený koncový bod je neplatný. Musí to být blok plné velikosti s blokem plné velikosti nad ním",
+  "ingameerror-mb-far-endpoint-invalid": "Vzdálený koncový bod je neplatný. Musí to být blok plné velikosti s blokem plné velikosti nad ním",
+  "ingameerror-mb-close-endpoint-neighbor-invalid": "Uzavřený koncový bod je neplatný. Vedle něj je něco, co blokuje umístění",
+  "ingameerror-mb-far-endpoint-neighbor-invalid": "Vzdálený koncový bod je neplatný. Vedle něj je něco, co blokuje umístění",
+  "ingameerror-mb-bridge-too-far": "Vypadá to, že potřebujete více kusů opičí lávky nebo vzdálenost mezi koncovými body překračuje maximální délku",
+  "ingameerror-mb-bridge-cant-place": "V cestě je opičí lávka",
 
-"game:placefailure-support-needed": "Potřebujeme více podpory",
-"game:placefailure-support-ground-unsuitable": "pro umístění této podpory potřebujete vhodnější terén",
+  "game:placefailure-support-needed": "Potřebujeme více podpory",
+  "game:placefailure-support-ground-unsuitable": "pro umístění této podpory potřebujete vhodnější terén",
 
   "block-support-*": "Nosník pro potrubí",
   "blockdesc-support-*": "Položte na zemědělskou půdu k uchycení zavlažovacích trubek",
@@ -1321,7 +1325,7 @@
   "support-rightclick-add-pipe": "Klikněte pravým tlačítkem pro přidání potrubí k této podpěře",
   "pipe-rightclick-add-pipe": "Klikněte pravým tlačítkem na konec potrubí pro přidání dalšího potrubí",
 
-    //1.20 below
+  //1.20 below
 
   "block-betterfoureightbrickstairs-four-red-*": "Vylepšené schody z velkých červených cihel",
   "block-betterfoureightbrickstairs-four-brown-*": "Vylepšené schody z velkých hnědých cihel",

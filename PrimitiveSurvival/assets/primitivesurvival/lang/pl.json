@@ -824,7 +824,11 @@
   "block-smoker-closed-*": "Smoker",
   "block-smoker-lit-*": "Smoker (lit)",
   "blockdesc-smoker-*": "Add 4 firewood and up to 4 raw trussed meats, then light with a torch to start the process.",
-  "blockhelp-smoker-rightclick": "open / load / unload / close",
+  "blockhelp-smoker-rightclickopen": "open",
+  "blockhelp-smoker-rightclickclose": "close",
+  "blockhelp-smoker-trussedmeat": "add trussed meat",
+  "blockhelp-smoker-firewood": "add firewood",
+  "blockhelp-smoker-smokedmeat": "remove smoked meat",
   "blockhelp-smoker-complete": "complete",
 
   "item-smokedmeat-redmeat-raw": "Smoked Redmeat",

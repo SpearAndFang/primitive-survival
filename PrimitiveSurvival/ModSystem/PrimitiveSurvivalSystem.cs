@@ -1,19 +1,19 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using HarmonyLib;
+    using PrimitiveSurvival.ModConfig;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using Vintagestory.API.Common;
-    using Vintagestory.API.Server;
     using Vintagestory.API.Client;
-    using Vintagestory.API.Util;
+    using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-    using Vintagestory.GameContent;
-    using PrimitiveSurvival.ModConfig;
+    using Vintagestory.API.Server;
+    using Vintagestory.API.Util;
+    using Vintagestory.API.Config;
     using Vintagestory.Client.NoObf;
-    using System.Diagnostics;
-
+    using Vintagestory.GameContent;
+ 
     //using System.Diagnostics;
 
     public class PrimitiveSurvivalSystem : ModSystem
@@ -27,12 +27,16 @@ namespace PrimitiveSurvival.ModSystem
 
         private bool prevChunksLoaded;
 
+        // v3.7.9 warning
         private ICoreServerAPI sapi;
         private ICoreClientAPI capi;
 
         private VenomOverlayRenderer vrenderer;
 
         private readonly Harmony harmony = new Harmony("com.spearandfang.primitivesurvival");
+
+        private IServerNetworkChannel serverChannel;
+        private ICoreAPI api;
 
         public override void StartClientSide(ICoreClientAPI api)
         {
@@ -48,6 +52,7 @@ namespace PrimitiveSurvival.ModSystem
                 var PSBlockGetPlacedBlockInfoOriginal = typeof(Block).GetMethod(nameof(Block.GetPlacedBlockInfo));
                 var PSBlockGetPlacedBlockInfoPostfix = typeof(PS_BlockGetPlacedBlockInfo_Patch).GetMethod(nameof(PS_BlockGetPlacedBlockInfo_Patch.PSBlockGetPlacedBlockInfoPostfix));
                 this.harmony.Patch(PSBlockGetPlacedBlockInfoOriginal, postfix: new HarmonyMethod(PSBlockGetPlacedBlockInfoPostfix));
+                //this.Mod.Logger.Event($"ShowModNameInHud set to {ModConfig.Loaded.ShowModNameInHud} on client");
             }
 
             if (ModConfig.Loaded.ShowModNameInGuis)
@@ -55,6 +60,8 @@ namespace PrimitiveSurvival.ModSystem
                 var PSCollectibleGetHeldItemInfoOriginal = typeof(CollectibleObject).GetMethod(nameof(CollectibleObject.GetHeldItemInfo));
                 var PSCollectibleGetHeldItemInfoPostfix = typeof(PS_CollectibleGetHeldItemInfo_Patch).GetMethod(nameof(PS_CollectibleGetHeldItemInfo_Patch.PSCollectibleGetHeldItemInfoPostfix));
                 this.harmony.Patch(PSCollectibleGetHeldItemInfoOriginal, postfix: new HarmonyMethod(PSCollectibleGetHeldItemInfoPostfix));
+                //this.Mod.Logger.Event($"ShowModNameInGuis set to {ModConfig.Loaded.ShowModNameInGuis} on client");
+
             }
 
             this.capi = api;
@@ -71,6 +78,164 @@ namespace PrimitiveSurvival.ModSystem
             //JHR
             (this.capi.World as ClientMain).RegisterDialog(new GuiDialogHollowTransform(this.capi));
             //END JHR
+
+            capi.Network.RegisterChannel("primitivesurvival")
+               .RegisterMessageType<SyncClientPacket>()
+               .SetMessageHandler<SyncClientPacket>(packet =>
+               {
+                   ModConfig.Loaded.AltarDropsFish = packet.AltarDropsFish;
+                   this.Mod.Logger.Event($"Received AltarDropsFish of {packet.AltarDropsFish} from server");
+                   ModConfig.Loaded.AltarDropsGold = packet.AltarDropsGold;
+                   this.Mod.Logger.Event($"Received AltarDropsGold of {packet.AltarDropsGold} from server");
+                   ModConfig.Loaded.AltarDropsVegetables = packet.AltarDropsVegetables;
+                   this.Mod.Logger.Event($"Received AltarDropsVegetables of {packet.AltarDropsVegetables} from server");
+                   ModConfig.Loaded.DeadfallBaitStolenPercent = packet.DeadfallBaitStolenPercent;
+                   this.Mod.Logger.Event($"Received DeadfallBaitStolenPercent of {packet.DeadfallBaitStolenPercent} from server");
+                   ModConfig.Loaded.DeadfallMaxAnimalHeight = packet.DeadfallMaxAnimalHeight;
+                   this.Mod.Logger.Event($"Received DeadfallMaxAnimalHeight of {packet.DeadfallMaxAnimalHeight} from server");
+                   ModConfig.Loaded.DeadfallMaxDamageSet = packet.DeadfallMaxDamageSet;
+                   this.Mod.Logger.Event($"Received DeadfallMaxDamageSet of {packet.DeadfallMaxDamageSet} from server");
+                   ModConfig.Loaded.DeadfallMaxDamageBaited = packet.DeadfallMaxDamageBaited;
+                   this.Mod.Logger.Event($"Received DeadfallMaxDamageBaited of {packet.DeadfallMaxDamageBaited} from server");
+                   ModConfig.Loaded.DeadfallTrippedPercent = packet.DeadfallTrippedPercent;
+                   this.Mod.Logger.Event($"Received DeadfallTrippedPercent of {packet.DeadfallTrippedPercent} from server");
+                   ModConfig.Loaded.FallDamageMultiplierWoodSpikes = packet.FallDamageMultiplierWoodSpikes;
+                   this.Mod.Logger.Event($"Received FallDamageMultiplierWoodSpikes of {packet.FallDamageMultiplierWoodSpikes} from server");
+                   ModConfig.Loaded.FallDamageMultiplierMetalSpikes = packet.FallDamageMultiplierMetalSpikes;
+                   this.Mod.Logger.Event($"Received FallDamageMultiplierMetalSpikes of {packet.FallDamageMultiplierMetalSpikes} from server");
+                   
+                   ModConfig.Loaded.FishBasketCatchPercent = packet.FishBasketCatchPercent;
+                   this.Mod.Logger.Event($"Received FishBasketCatchPercent of {packet.FishBasketCatchPercent} from server");
+                   ModConfig.Loaded.FishBasketBaitedCatchPercent = packet.FishBasketBaitedCatchPercent;
+                   this.Mod.Logger.Event($"Received FishBasketBaitedCatchPercent of {packet.FishBasketBaitedCatchPercent} from server");
+                   ModConfig.Loaded.FishBasketBaitStolenPercent = packet.FishBasketBaitStolenPercent;
+                   this.Mod.Logger.Event($"Received FishBasketBaitStolenPercent of {packet.FishBasketBaitStolenPercent} from server");
+                   ModConfig.Loaded.FishBasketEscapePercent = packet.FishBasketEscapePercent;
+                   this.Mod.Logger.Event($"Received FishBasketEscapePercent of {packet.FishBasketEscapePercent} from server");
+                   ModConfig.Loaded.FishBasketUpdateMinutes = packet.FishBasketUpdateMinutes;
+                   this.Mod.Logger.Event($"Received FishBasketUpdateMinutes of {packet.FishBasketUpdateMinutes} from server");
+                   ModConfig.Loaded.FishBasketRotRemovedPercent = packet.FishBasketRotRemovedPercent;
+                   this.Mod.Logger.Event($"Received FishBasketRotRemovedPercent of {packet.FishBasketRotRemovedPercent} from server");
+                   ModConfig.Loaded.FishChanceOfEggsPercent = packet.FishChanceOfEggsPercent;
+                   this.Mod.Logger.Event($"Received FishChanceOfEggsPercent of {packet.FishChanceOfEggsPercent} from server");
+                   ModConfig.Loaded.FishChunkDepletionRate = packet.FishChunkDepletionRate;
+                   this.Mod.Logger.Event($"Received FishChunkDepletionRate of {packet.FishChunkDepletionRate} from server");
+                   ModConfig.Loaded.FishChunkRepletionRate = packet.FishChunkRepletionRate;
+                   this.Mod.Logger.Event($"Received FishChunkRepletionRate of {packet.FishChunkRepletionRate} from server");
+                   ModConfig.Loaded.FishChunkRepletionMinutes = packet.FishChunkRepletionMinutes;
+                   this.Mod.Logger.Event($"Received FishChunkRepletionMinutes of {packet.FishChunkRepletionMinutes} from server");
+                   
+                   ModConfig.Loaded.FishEggsChunkRepletionRate = packet.FishEggsChunkRepletionRate;
+                   this.Mod.Logger.Event($"Received FishEggsChunkRepletionRate of {packet.FishEggsChunkRepletionRate} from server");
+                   ModConfig.Loaded.FishChunkMaxDepletionPercent = packet.FishChunkMaxDepletionPercent;
+                   this.Mod.Logger.Event($"Received FishChunkMaxDepletionPercent of {packet.FishChunkMaxDepletionPercent} from server");
+                   ModConfig.Loaded.FurrowedLandUpdateFrequency = packet.FurrowedLandUpdateFrequency;
+                   this.Mod.Logger.Event($"Received FurrowedLandUpdateFrequency of {packet.FurrowedLandUpdateFrequency} from server");
+                   ModConfig.Loaded.FurrowedLandBlockageChancePercent = packet.FurrowedLandBlockageChancePercent;
+                   this.Mod.Logger.Event($"Received FurrowedLandBlockageChancePercent of {packet.FurrowedLandBlockageChancePercent} from server");
+                   ModConfig.Loaded.FurrowedLandMinMoistureClose = packet.FurrowedLandMinMoistureClose;
+                   this.Mod.Logger.Event($"Received FurrowedLandMinMoistureClose of {packet.FurrowedLandMinMoistureClose} from server");
+                   ModConfig.Loaded.FurrowedLandMinMoistureFar = packet.FurrowedLandMinMoistureFar;
+                   this.Mod.Logger.Event($"Received FurrowedLandMinMoistureFar of {packet.FurrowedLandMinMoistureFar} from server");
+                   ModConfig.Loaded.LimbTrotlineCatchPercent = packet.LimbTrotlineCatchPercent;
+                   this.Mod.Logger.Event($"Received LimbTrotlineCatchPercent of {packet.LimbTrotlineCatchPercent} from server");
+                   ModConfig.Loaded.LimbTrotlineBaitedCatchPercent = packet.LimbTrotlineBaitedCatchPercent;
+                   this.Mod.Logger.Event($"Received LimbTrotlineBaitedCatchPercent of {packet.LimbTrotlineBaitedCatchPercent} from server");
+                   ModConfig.Loaded.LimbTrotlineLuredCatchPercent = packet.LimbTrotlineLuredCatchPercent;
+                   this.Mod.Logger.Event($"Received LimbTrotlineLuredCatchPercent of {packet.LimbTrotlineLuredCatchPercent} from server");
+                   ModConfig.Loaded.LimbTrotlineBaitedLuredCatchPercent = packet.LimbTrotlineBaitedLuredCatchPercent;
+                   this.Mod.Logger.Event($"Received LimbTrotlineBaitedLuredCatchPercent of {packet.LimbTrotlineBaitedLuredCatchPercent} from server");
+
+                   ModConfig.Loaded.LimbTrotlineBaitStolenPercent = packet.LimbTrotlineBaitStolenPercent;
+                   this.Mod.Logger.Event($"Received LimbTrotlineBaitStolenPercent of {packet.LimbTrotlineBaitStolenPercent} from server");
+                   ModConfig.Loaded.LimbTrotlineUpdateMinutes = packet.LimbTrotlineUpdateMinutes;
+                   this.Mod.Logger.Event($"Received LimbTrotlineUpdateMinutes of {packet.LimbTrotlineUpdateMinutes} from server");
+                   ModConfig.Loaded.LimbTrotlineRotRemovedPercent = packet.LimbTrotlineRotRemovedPercent;
+                   this.Mod.Logger.Event($"Received LimbTrotlineRotRemovedPercent of {packet.LimbTrotlineRotRemovedPercent} from server");
+                   ModConfig.Loaded.MonkeyBridgeMaxLength = packet.MonkeyBridgeMaxLength;
+                   this.Mod.Logger.Event($"Received MonkeyBridgeMaxLength of {packet.MonkeyBridgeMaxLength} from server");
+                   ModConfig.Loaded.ParticulatorMaxParticlesQuantity = packet.ParticulatorMaxParticlesQuantity;
+                   this.Mod.Logger.Event($"Received ParticulatorMaxParticlesQuantity of {packet.ParticulatorMaxParticlesQuantity} from server");
+                   ModConfig.Loaded.ParticulatorMaxParticlesSize = packet.ParticulatorMaxParticlesSize;
+                   this.Mod.Logger.Event($"Received ParticulatorMaxParticlesSize of {packet.ParticulatorMaxParticlesSize} from server");
+                   ModConfig.Loaded.ParticulatorHideCodeTabs = packet.ParticulatorHideCodeTabs;
+                   this.Mod.Logger.Event($"Received ParticulatorHideCodeTabs of {packet.ParticulatorHideCodeTabs} from server");
+                   ModConfig.Loaded.PipeUpdateFrequency = packet.PipeUpdateFrequency;
+                   this.Mod.Logger.Event($"Received PipeUpdateFrequency of {packet.PipeUpdateFrequency} from server");
+                   ModConfig.Loaded.PipeBlockageChancePercent = packet.PipeBlockageChancePercent;
+                   this.Mod.Logger.Event($"Received PipeBlockageChancePercent of {packet.PipeBlockageChancePercent} from server");
+                   ModConfig.Loaded.PipeMinMoisture = packet.PipeMinMoisture;
+                   this.Mod.Logger.Event($"Received PipeMinMoisture of {packet.PipeMinMoisture} from server");
+                   
+                   ModConfig.Loaded.RaftWaterSpeedModifier = packet.RaftWaterSpeedModifier;
+                   this.Mod.Logger.Event($"Received RaftWaterSpeedModifier of {packet.RaftWaterSpeedModifier} from server");
+                   ModConfig.Loaded.RaftFlotationModifier = packet.RaftFlotationModifier;
+                   this.Mod.Logger.Event($"Received RaftFlotationModifier of {packet.RaftFlotationModifier} from server");
+                   ModConfig.Loaded.SnareBaitStolenPercent = packet.SnareBaitStolenPercent;
+                   this.Mod.Logger.Event($"Received SnareBaitStolenPercent of {packet.SnareBaitStolenPercent} from server");
+                   ModConfig.Loaded.SnareMaxAnimalHeight = packet.SnareMaxAnimalHeight;
+                   this.Mod.Logger.Event($"Received SnareMaxAnimalHeight of {packet.SnareMaxAnimalHeight} from server");
+                   ModConfig.Loaded.SnareMaxDamageSet = packet.SnareMaxDamageSet;
+                   this.Mod.Logger.Event($"Received SnareMaxDamageSet of {packet.SnareMaxDamageSet} from server");
+                   ModConfig.Loaded.SnareMaxDamageBaited = packet.SnareMaxDamageBaited;
+                   this.Mod.Logger.Event($"Received SnareMaxDamageBaited of {packet.SnareMaxDamageBaited} from server");
+                   ModConfig.Loaded.SnareTrippedPercent = packet.SnareTrippedPercent;
+                   this.Mod.Logger.Event($"Received SnareTrippedPercent of {packet.SnareTrippedPercent} from server");
+                   ModConfig.Loaded.SpawnMultiplierBioluminescentGlobe = packet.SpawnMultiplierBioluminescentGlobe;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierBioluminescentGlobe of {packet.SpawnMultiplierBioluminescentGlobe} from server");
+
+                   ModConfig.Loaded.SpawnMultiplierBioluminescentJelly = packet.SpawnMultiplierBioluminescentJelly;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierBioluminescentJelly of {packet.SpawnMultiplierBioluminescentJelly} from server");
+                   ModConfig.Loaded.SpawnMultiplierBioluminescentOrangeJelly = packet.SpawnMultiplierBioluminescentOrangeJelly;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierBioluminescentOrangeJelly of {packet.SpawnMultiplierBioluminescentOrangeJelly} from server");
+                   ModConfig.Loaded.SpawnMultiplierBioluminescentWorm = packet.SpawnMultiplierBioluminescentWorm;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierBioluminescentWorm of {packet.SpawnMultiplierBioluminescentWorm} from server");
+                   ModConfig.Loaded.SpawnMultiplierCrabBairdi = packet.SpawnMultiplierCrabBairdi;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierCrabBairdi of {packet.SpawnMultiplierCrabBairdi} from server");
+                   ModConfig.Loaded.SpawnMultiplierCrabLand = packet.SpawnMultiplierCrabLand;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierCrabLand of {packet.SpawnMultiplierCrabLand} from server");
+                   ModConfig.Loaded.SpawnMultiplierLivingDead = packet.SpawnMultiplierLivingDead;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierLivingDead of {packet.SpawnMultiplierLivingDead} from server");
+                   ModConfig.Loaded.SpawnMultiplierSnakeBlackRat = packet.SpawnMultiplierSnakeBlackRat;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierSnakeBlackRat of {packet.SpawnMultiplierSnakeBlackRat} from server");
+                   ModConfig.Loaded.SpawnMultiplierSnakeChainViper = packet.SpawnMultiplierSnakeChainViper;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierSnakeChainViper of {packet.SpawnMultiplierSnakeChainViper} from server");
+                   ModConfig.Loaded.SpawnMultiplierSnakeCoachWhip = packet.SpawnMultiplierSnakeCoachWhip;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierSnakeCoachWhip of {packet.SpawnMultiplierSnakeCoachWhip} from server");
+                   ModConfig.Loaded.SpawnMultiplierSnakePitViper = packet.SpawnMultiplierSnakePitViper;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierSnakePitViper of {packet.SpawnMultiplierSnakePitViper} from server");
+
+                   ModConfig.Loaded.SpawnMultiplierWillowispGreen = packet.SpawnMultiplierWillowispGreen;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierWillowispGreen of {packet.SpawnMultiplierWillowispGreen} from server");
+                   ModConfig.Loaded.SpawnMultiplierWillowispWhite = packet.SpawnMultiplierWillowispWhite;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierWillowispWhite of {packet.SpawnMultiplierWillowispWhite} from server");
+                   ModConfig.Loaded.SpawnMultiplierWillowispYellow = packet.SpawnMultiplierWillowispYellow;
+                   this.Mod.Logger.Event($"Received SpawnMultiplierWillowispYellow of {packet.SpawnMultiplierWillowispYellow} from server");
+                   ModConfig.Loaded.TreeHollowsMaxItems = packet.TreeHollowsMaxItems;
+                   this.Mod.Logger.Event($"Received TreeHollowsMaxItems of {packet.TreeHollowsMaxItems} from server");
+                   ModConfig.Loaded.TreeHollowsEnableDeveloperTools = packet.TreeHollowsEnableDeveloperTools;
+                   this.Mod.Logger.Event($"Received TreeHollowsEnableDeveloperTools of {packet.TreeHollowsEnableDeveloperTools} from server");
+                   ModConfig.Loaded.TreeHollowsMaxPerChunk = packet.TreeHollowsMaxPerChunk;
+                   this.Mod.Logger.Event($"Received TreeHollowsMaxPerChunk of {packet.TreeHollowsMaxPerChunk} from server");
+                   ModConfig.Loaded.TreeHollowsSpawnProbability = packet.TreeHollowsSpawnProbability;
+                   this.Mod.Logger.Event($"Received TreeHollowsSpawnProbability of {packet.TreeHollowsSpawnProbability} from server");
+                   ModConfig.Loaded.TreeHollowsUpdateMinutes = packet.TreeHollowsUpdateMinutes;
+                   this.Mod.Logger.Event($"Received TreeHollowsUpdateMinutes of {packet.TreeHollowsUpdateMinutes} from server");
+                   ModConfig.Loaded.WeirTrapCatchPercent = packet.WeirTrapCatchPercent;
+                   this.Mod.Logger.Event($"Received WeirTrapCatchPercent of {packet.WeirTrapCatchPercent} from server");
+                   ModConfig.Loaded.WeirTrapEscapePercent = packet.WeirTrapEscapePercent;
+                   this.Mod.Logger.Event($"Received WeirTrapEscapePercent of {packet.WeirTrapEscapePercent} from server");
+
+                   ModConfig.Loaded.WeirTrapUpdateMinutes = packet.WeirTrapUpdateMinutes;
+                   this.Mod.Logger.Event($"Received WeirTrapUpdateMinutes of {packet.WeirTrapUpdateMinutes} from server");
+                   ModConfig.Loaded.WeirTrapRotRemovedPercent = packet.WeirTrapRotRemovedPercent;
+                   this.Mod.Logger.Event($"Received WeirTrapRotRemovedPercent of {packet.WeirTrapRotRemovedPercent} from server");
+                   ModConfig.Loaded.WormFoundPercentRock = packet.WormFoundPercentRock;
+                   this.Mod.Logger.Event($"Received WormFoundPercentRock of {packet.WormFoundPercentRock} from server");
+                   ModConfig.Loaded.WormFoundPercentStickFlint = packet.WormFoundPercentStickFlint;
+                   this.Mod.Logger.Event($"Received WormFoundPercentStickFlint of {packet.WormFoundPercentStickFlint} from server");
+
+               });
         }
 
 
@@ -97,6 +262,18 @@ namespace PrimitiveSurvival.ModSystem
             api.World.Config.SetBool("MetalBucketDisabled", ModConfig.Loaded.MetalBucketDisabled);
             api.World.Config.SetBool("RelicsDisabled", ModConfig.Loaded.RelicsDisabled);
             api.World.Config.SetBool("ParticulatorEnabled", ModConfig.Loaded.ParticulatorEnabled);
+
+            /* debug
+            if (api.Side == EnumAppSide.Server)
+            {
+                this.Mod.Logger.Event($"FurrowedLandEnabled set to {ModConfig.Loaded.FurrowedLandEnabled} on server");
+                this.Mod.Logger.Event($"RaftEnabled set to {ModConfig.Loaded.RaftEnabled} on server");
+                this.Mod.Logger.Event($"MetalBucketDisabled set to {ModConfig.Loaded.MetalBucketDisabled} on server");
+                this.Mod.Logger.Event($"RelicsDisabled set to {ModConfig.Loaded.RelicsDisabled} on server");
+                this.Mod.Logger.Event($"ParticulatorEnabled set to {ModConfig.Loaded.ParticulatorEnabled} on server");
+            }
+            */
+            
             base.StartPre(api);
 
             // temp stupid bandaid
@@ -293,11 +470,104 @@ namespace PrimitiveSurvival.ModSystem
         public override void StartServerSide(ICoreServerAPI api)
         {
             this.prevChunksLoaded = false;
-            base.StartServerSide(api);
+            base.StartServerSide(sapi);
             this.sapi = api;
+
             api.Event.SaveGameLoaded += this.OnSaveGameLoading;
             api.Event.GameWorldSave += this.OnSaveGameSaving;
             var repleteTick = api.Event.RegisterGameTickListener(this.RepleteFishStocks, 60000 * ModConfig.Loaded.FishChunkRepletionMinutes);
+
+            sapi.Event.PlayerJoin += this.OnPlayerJoin; // add method so we can remove it in dispose to prevent memory leaks
+            // register network channel to send data to clients
+            this.serverChannel = sapi.Network.RegisterChannel("primitivesurvival")
+                .RegisterMessageType<SyncClientPacket>()
+                .SetMessageHandler<SyncClientPacket>((player, packet) => { /* do nothing. idk why this handler is even needed, but it is */ });
+
+        }
+
+
+        private void OnPlayerJoin(IServerPlayer player)
+        {
+            // send the connecting player the settings it needs to be synced
+            this.serverChannel.SendPacket(new SyncClientPacket
+            {
+                AltarDropsFish = ModConfig.Loaded.AltarDropsFish,
+                AltarDropsGold = ModConfig.Loaded.AltarDropsGold,
+                AltarDropsVegetables = ModConfig.Loaded.AltarDropsVegetables,
+                DeadfallBaitStolenPercent = ModConfig.Loaded.DeadfallBaitStolenPercent,
+                DeadfallMaxAnimalHeight = ModConfig.Loaded.DeadfallMaxAnimalHeight,
+                DeadfallMaxDamageSet = ModConfig.Loaded.DeadfallMaxDamageSet,
+                DeadfallMaxDamageBaited = ModConfig.Loaded.DeadfallMaxDamageBaited,
+                DeadfallTrippedPercent = ModConfig.Loaded.DeadfallTrippedPercent,
+                FallDamageMultiplierWoodSpikes = ModConfig.Loaded.FallDamageMultiplierWoodSpikes,
+                FallDamageMultiplierMetalSpikes = ModConfig.Loaded.FallDamageMultiplierMetalSpikes,
+                FishBasketCatchPercent = ModConfig.Loaded.FishBasketCatchPercent,
+                FishBasketBaitedCatchPercent = ModConfig.Loaded.FishBasketBaitedCatchPercent,
+                FishBasketBaitStolenPercent = ModConfig.Loaded.FishBasketBaitStolenPercent,
+                FishBasketEscapePercent = ModConfig.Loaded.FishBasketEscapePercent,
+                FishBasketUpdateMinutes = ModConfig.Loaded.FishBasketUpdateMinutes,
+
+                FishBasketRotRemovedPercent = ModConfig.Loaded.FishBasketRotRemovedPercent,
+                FishChanceOfEggsPercent = ModConfig.Loaded.FishChanceOfEggsPercent,
+                FishChunkDepletionRate = ModConfig.Loaded.FishChunkDepletionRate,
+                FishChunkRepletionRate = ModConfig.Loaded.FishChunkRepletionRate,
+                FishChunkRepletionMinutes = ModConfig.Loaded.FishChunkRepletionMinutes,
+                FishEggsChunkRepletionRate = ModConfig.Loaded.FishEggsChunkRepletionRate,
+                FishChunkMaxDepletionPercent = ModConfig.Loaded.FishChunkMaxDepletionPercent,
+                FurrowedLandUpdateFrequency = ModConfig.Loaded.FurrowedLandUpdateFrequency,
+                FurrowedLandBlockageChancePercent = ModConfig.Loaded.FurrowedLandBlockageChancePercent,
+                FurrowedLandMinMoistureClose = ModConfig.Loaded.FurrowedLandMinMoistureClose,
+                FurrowedLandMinMoistureFar = ModConfig.Loaded.FurrowedLandMinMoistureFar,
+                LimbTrotlineCatchPercent = ModConfig.Loaded.LimbTrotlineCatchPercent,
+                LimbTrotlineBaitedCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedCatchPercent,
+                LimbTrotlineLuredCatchPercent = ModConfig.Loaded.LimbTrotlineLuredCatchPercent,
+                LimbTrotlineBaitedLuredCatchPercent = ModConfig.Loaded.LimbTrotlineBaitedLuredCatchPercent,
+                LimbTrotlineBaitStolenPercent = ModConfig.Loaded.LimbTrotlineBaitStolenPercent,
+                LimbTrotlineUpdateMinutes = ModConfig.Loaded.LimbTrotlineUpdateMinutes,
+                LimbTrotlineRotRemovedPercent = ModConfig.Loaded.LimbTrotlineRotRemovedPercent,
+                MonkeyBridgeMaxLength = ModConfig.Loaded.MonkeyBridgeMaxLength,
+
+                ParticulatorMaxParticlesQuantity = ModConfig.Loaded.ParticulatorMaxParticlesQuantity,
+                ParticulatorMaxParticlesSize = ModConfig.Loaded.ParticulatorMaxParticlesSize,
+                ParticulatorHideCodeTabs = ModConfig.Loaded.ParticulatorHideCodeTabs,
+                PipeUpdateFrequency = ModConfig.Loaded.PipeUpdateFrequency,
+                PipeBlockageChancePercent = ModConfig.Loaded.PipeBlockageChancePercent,
+                PipeMinMoisture = ModConfig.Loaded.PipeMinMoisture,
+                RaftWaterSpeedModifier = ModConfig.Loaded.RaftWaterSpeedModifier,
+                RaftFlotationModifier = ModConfig.Loaded.RaftFlotationModifier,
+                SnareBaitStolenPercent = ModConfig.Loaded.SnareBaitStolenPercent,
+                SnareMaxAnimalHeight = ModConfig.Loaded.SnareMaxAnimalHeight,
+                SnareMaxDamageSet = ModConfig.Loaded.SnareMaxDamageSet,
+                SnareMaxDamageBaited = ModConfig.Loaded.SnareMaxDamageBaited,
+                SnareTrippedPercent = ModConfig.Loaded.SnareTrippedPercent,
+
+                SpawnMultiplierBioluminescentGlobe = ModConfig.Loaded.SpawnMultiplierBioluminescentGlobe,
+                SpawnMultiplierBioluminescentJelly = ModConfig.Loaded.SpawnMultiplierBioluminescentJelly,
+                SpawnMultiplierBioluminescentOrangeJelly = ModConfig.Loaded.SpawnMultiplierBioluminescentOrangeJelly,
+                SpawnMultiplierBioluminescentWorm = ModConfig.Loaded.SpawnMultiplierBioluminescentWorm,
+                SpawnMultiplierCrabBairdi = ModConfig.Loaded.SpawnMultiplierCrabBairdi,
+                SpawnMultiplierCrabLand = ModConfig.Loaded.SpawnMultiplierCrabLand,
+                SpawnMultiplierLivingDead = ModConfig.Loaded.SpawnMultiplierLivingDead,
+                SpawnMultiplierSnakeBlackRat = ModConfig.Loaded.SpawnMultiplierSnakeBlackRat,
+                SpawnMultiplierSnakeChainViper = ModConfig.Loaded.SpawnMultiplierSnakeChainViper,
+                SpawnMultiplierSnakeCoachWhip = ModConfig.Loaded.SpawnMultiplierSnakeCoachWhip,
+                SpawnMultiplierSnakePitViper = ModConfig.Loaded.SpawnMultiplierSnakePitViper,
+                SpawnMultiplierWillowispGreen = ModConfig.Loaded.SpawnMultiplierWillowispGreen,
+                SpawnMultiplierWillowispWhite = ModConfig.Loaded.SpawnMultiplierWillowispWhite,
+                SpawnMultiplierWillowispYellow = ModConfig.Loaded.SpawnMultiplierWillowispYellow,
+
+                TreeHollowsMaxItems = ModConfig.Loaded.TreeHollowsMaxItems,
+                TreeHollowsEnableDeveloperTools = ModConfig.Loaded.TreeHollowsEnableDeveloperTools,
+                TreeHollowsMaxPerChunk = ModConfig.Loaded.TreeHollowsMaxPerChunk,
+                TreeHollowsSpawnProbability = ModConfig.Loaded.TreeHollowsSpawnProbability,
+                TreeHollowsUpdateMinutes = ModConfig.Loaded.TreeHollowsUpdateMinutes,
+                WeirTrapCatchPercent = ModConfig.Loaded.WeirTrapCatchPercent,
+                WeirTrapEscapePercent = ModConfig.Loaded.WeirTrapEscapePercent,
+                WeirTrapUpdateMinutes = ModConfig.Loaded.WeirTrapUpdateMinutes,
+                WeirTrapRotRemovedPercent = ModConfig.Loaded.WeirTrapRotRemovedPercent,
+                WormFoundPercentRock = ModConfig.Loaded.WormFoundPercentRock,
+                WormFoundPercentStickFlint = ModConfig.Loaded.WormFoundPercentStickFlint
+            }, player);
         }
 
 
@@ -332,7 +602,11 @@ namespace PrimitiveSurvival.ModSystem
         {
             fishingChunks = new Dictionary<IServerChunk, int>();
             // attempt to load the (short) list of all active fishing chunks
-            var data = this.sapi.WorldManager.SaveGame.GetData("chunklist");
+
+            // v3.7.9 warning
+            //var data = this.sapi.WorldManager.SaveGame.GetData("chunklist");
+            var data = sapi.WorldManager.SaveGame.GetData("chunklist");
+            
             chunkList = data == null ? new List<string>() : SerializerUtil.Deserialize<List<string>>(data);
         }
 
@@ -350,7 +624,13 @@ namespace PrimitiveSurvival.ModSystem
             }
             //Debug.WriteLine("----------- Chunk depletion data saved to " + chunkcount + " chunks");
             // now attempt to save the (short) list of all active fishing chunks
-            this.sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
+
+            // v3.7.9 warning
+            //this.sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
+            sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
+
+
+
             /*
             Debug.WriteLine("----------- Chunk depletion data saved for " + chunkList.Count() + " chunks");
             foreach (var entry in chunkList)
@@ -420,7 +700,10 @@ namespace PrimitiveSurvival.ModSystem
                     };*/
                     var pos = new BlockPos(coords[0].ToInt(), coords[1].ToInt(), coords[2].ToInt(), 0);
 
-                    var getchunk = this.sapi.WorldManager.GetChunk(pos);
+                    // v3.7.9 warning
+                    //var getchunk = this.sapi.WorldManager.GetChunk(pos);
+                    var getchunk = (this.api as ICoreServerAPI).WorldManager.GetChunk(pos);
+
                     if (getchunk != null)
                     {
                         var getdata = getchunk.GetServerModdata("primitivesurvival");
@@ -523,7 +806,7 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     if (domain == "primitivesurvival")
                     {
-                        dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>\" + Lang.GetMatching(\"game:tabname-primitive\") + \"</i></font>");
+                        dsc.AppendLine("\n<font color=\"#D8EAA3\"><i>" + Lang.GetMatching("game:tabname-primitive") + "</i></font>");
                     }
                 }
             }

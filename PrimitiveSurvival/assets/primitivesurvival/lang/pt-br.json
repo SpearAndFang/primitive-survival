@@ -824,7 +824,11 @@
   "block-smoker-closed-*": "Defumador",
   "block-smoker-lit-*": "Defumador (aceso)",
   "blockdesc-smoker-*": "Adicione 4 unidades de lenha e no máximo 4 carnes amarradas cruas, então acenda com uma tocha para iniciar o processo.",
-  "blockhelp-smoker-rightclick": "abrir / encher / esvaziar / fechar",
+  "blockhelp-smoker-rightclickopen": "abrir",
+  "blockhelp-smoker-rightclickclose": "fechar",
+  "blockhelp-smoker-trussedmeat": "add trussed meat",
+  "blockhelp-smoker-firewood": "add firewood",
+  "blockhelp-smoker-smokedmeat": "remove smoked meat",
   "blockhelp-smoker-complete": "completo",
 
   "item-smokedmeat-redmeat-raw": "Carne Vermelha Defumada",

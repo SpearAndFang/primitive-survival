@@ -18,8 +18,6 @@
 
   "block-stake-*": "杭",
   "blockdesc-stake-*": "土や砂利の中にしっかりと押し込むことが出来る研ぎ澄まされた棒です。罠や釣りの材料として重宝される。また、良い柵にもなる。",
-  //"block-stakeinwater-*": "杭",
-  //"blockdesc-stakeinwater-*": "土や砂利の中にしっかりと押し込むことが出来る研ぎ澄まされた棒です。罠や釣りの材料として重宝される。また、良い柵にもなる。",
 
   "block-snare-*": "スネア",
   "block-deadfall-*-andesite*": "安山岩の落とし罠",
@@ -744,8 +742,8 @@
   "pie-single-primitivesurvival:snakemeat-raw-perfect": "ヘビのパイ",
   "pie-single-primitivesurvival:snakemeat-raw-charred": "ヘビのパイ(黒焦げ)",
 
-  "block-bearhead-polar1-female*": "ホッキョクグマの毛皮(メス)",
-  "block-bearhead-polar1-male*": "ホッキョクグマの毛皮(オス)",
+  "block-bearhead-polar*-female*": "ホッキョクグマの毛皮(メス)",
+  "block-bearhead-polar*-male*": "ホッキョクグマの毛皮(オス)",
   "block-bearhead-brown*-female*": "ヒグマの毛皮(メス)",
   "block-bearhead-brown*-male*": "ヒグマの毛皮(オス)",
   "block-bearhead-black*-female*": "クロクマの毛皮(メス)",
@@ -755,8 +753,8 @@
   "block-bearhead-panda*-female*": "パンダの毛皮(メス)",
   "block-bearhead-panda*-male*": "パンダの毛皮(オス)",
 
-  "block-bearhide-polar1-female*": "ホッキョクグマの毛皮(メス)",
-  "block-bearhide-polar1-male*": "ホッキョクグマの毛皮(オス)",
+  "block-bearhide-polar*-female*": "ホッキョクグマの毛皮(メス)",
+  "block-bearhide-polar*-male*": "ホッキョクグマの毛皮(オス)",
   "block-bearhide-brown*-female*": "ヒグマの毛皮(メス)",
   "block-bearhide-brown*-male*": "ヒグマの毛皮(オス)",
   "block-bearhide-black*-female*": "クロクマの毛皮(メス)",
@@ -1324,8 +1322,6 @@
   "support-rightclick-add-pipe": "右クリックで支柱にパイプを追加する",
   "pipe-rightclick-add-pipe": "パイプの端を右クリックしてパイプを追加する",
 
-  //1.20 below
-
   "block-betterfoureightbrickstairs-four-red-*": "(改)赤色の粘土の大レンガの階段",
   "block-betterfoureightbrickstairs-four-brown-*": "(改)茶色の粘土の大レンガの階段",
   "block-betterfoureightbrickstairs-four-black-*": "(改)黒色の粘土の大レンガの階段",
@@ -1364,5 +1360,16 @@
   "game:placefailure-softer-ground-needed": "軟らかい地面にしか設置出来ない",
 
   "item-clothes-lowerbody-clean-pants": "清潔なズボン",
-  "itemdesc-clothes-lowerbody-clean-pants": "<font color=\"#99c9f9\"><i>今後、この手のアイテムが必要になる可能性はかなり高い。</i></font><br>"
+  "itemdesc-clothes-lowerbody-clean-pants": "<font color=\"#99c9f9\"><i>今後、この手のアイテムが必要になる可能性はかなり高い。</i></font><br>",
+
+  "block-hare*-cape-female*": "Cape Hare Pelt (female)",
+  "block-hare*-cape-male*": "Cape Hare Pelt (male)",
+  "block-hare*-european-female*": "European Hare Pelt (female)",
+  "block-hare*-european-male*": "European Hare Pelt (male)",
+  "block-hare*-indian-female*": "Indian Hare Pelt (female)",
+  "block-hare*-indian-male*": "Indian Hare Pelt (male)",
+  "block-hare*-jackblack-female*": "Jackblack Hare Pelt (female)",
+  "block-hare*-jackblack-male*": "Jackblack Hare Pelt (male)",
+  "block-hare*-scrub-female*": "Scrub Hare Pelt (female)",
+  "block-hare*-scrub-male*": "Scrub Hare Pelt (male)"
 }

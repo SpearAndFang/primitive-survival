@@ -1,11 +1,22 @@
 {
-  "code": "foxhide",
+  "code": "harehide",
   "class": "blockhide",
   "behaviors": [{ "name": "Unstable" }],
   "variantgroups": [
     {
       "code": "species",
-      "states": ["arctic", "red"]
+      "states": [
+        "arctic",
+        "ashgrey",
+        "darkbrown",
+        "darkgrey",
+        "desert",
+        "gold",
+        "lightbrown",
+        "lightgrey",
+        "silver",
+        "smokegrey"
+      ]
     },
     {
       "code": "type",
@@ -27,7 +38,7 @@
   ],
   "attributes": {
     "handbook": {
-      "groupBy": ["foxhide-*"]
+      "groupBy": ["harehide-*"]
     }
   },
   "drops": [
@@ -39,46 +50,42 @@
   ],
   "shapebytype": {
     "*-north": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 270
     },
     "*-northeast": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 225
     },
     "*-east": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 180
     },
     "*-southeast": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 135
     },
     "*-south": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 90
     },
     "*-southwest": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 45
     },
     "*-west": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 0
     },
     "*-northwest": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehide",
       "rotateY": 315
     }
   },
   "sidesolid": { "all": false },
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
-  "creativeinventory": {
-    "general": ["*-{species}-{type}-north"],
-    "decorative": ["*-{species}-{type}-north"],
-    "primitive": ["*-{species}-{type}-north"]
-  },
+  "creativeinventory": { "primitive": ["*-arctic-{type}-north"] },
   "replaceable": 5200,
   "resistance": 0.5,
   "vertexFlags": {
@@ -88,7 +95,7 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/animal/mammal/fox/{species}-{type}"
+        "base": "game:entity/animal/mammal/hare/arctic-{type}1"
       }
     }
   },
@@ -100,7 +107,6 @@
     "y2": 0.0625,
     "z2": 1
   },
-
   "collisionbox": null,
   "combustibleProps": {
     "burnTemperature": 400,

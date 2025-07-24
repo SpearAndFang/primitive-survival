@@ -12,7 +12,20 @@
       "type": "block",
       "code": "game:log-placed-*-ud",
       "name": "wood",
-      "allowedVariants": [ "birch", "oak", "maple", "pine", "acacia", "kapok", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart" ],
+      "allowedVariants": [
+        "birch",
+        "oak",
+        "maple",
+        "pine",
+        "acacia",
+        "kapok",
+        "baldcypress",
+        "larch",
+        "redwood",
+        "ebony",
+        "walnut",
+        "purpleheart"
+      ],
       "quantity": 1
     }
   },
@@ -21,5 +34,4 @@
     "code": "primitivesurvival:floatingdock-{wood}-ns",
     "quantity": 1
   }
-} 
-
+}

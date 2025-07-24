@@ -4,25 +4,28 @@
   "variantgroups": [
     {
       "code": "species",
-      "states": [ "black1", "brown1", "brown2", "brown3", "panda1", "polar1", "sun1" ]
+      "states": [
+        "black-adult1",
+        "brown-adult1",
+        "brown-adult2",
+        "brown-adult3",
+        "panda-adult1",
+        "polar-adult1",
+        "sun-adult1"
+      ]
     },
     {
       "code": "type",
-      "states": [ "male", "female" ]
+      "states": ["male", "female"]
     },
     {
       "code": "dir",
-      "states": [
-        "north",
-        "east",
-        "south",
-        "west"
-      ]
+      "states": ["north", "east", "south", "west"]
     }
   ],
   "attributes": {
     "handbook": {
-      "groupBy": [ "bearhead-*" ]
+      "groupBy": ["bearhead-*"]
     }
   },
   "drops": [
@@ -54,9 +57,9 @@
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
   "creativeinventory": {
-    "general": [ "*-{species}-{type}-north" ],
-    "decorative": [ "*-{species}-{type}-north" ],
-    "primitive": [ "*-{species}-{type}-north" ]
+    "general": ["*-{species}-{type}-north"],
+    "decorative": ["*-{species}-{type}-north"],
+    "primitive": ["*-{species}-{type}-north"]
   },
   "replaceable": 5200,
   "resistance": 0.5,
@@ -67,7 +70,7 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/bear/{species}"
+        "base": "game:entity/animal/mammal/bear/{species}"
       },
       "plaque": {
         "base": "game:block/reed/beehive/floor"

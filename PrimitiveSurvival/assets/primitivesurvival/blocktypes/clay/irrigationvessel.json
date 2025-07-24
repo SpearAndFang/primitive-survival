@@ -16,14 +16,14 @@
     }
   },
   "creativeinventory": {
-    "general": [ "irrigationvessel-normal" ],
-    "decorative": [ "irrigationvessel-normal" ],
-    "primitive": [ "irrigationvessel-normal" ]
+    "general": [ "irrigationvessel-{type}" ],
+    "decorative": [ "irrigationvessel-{type}" ],
+    "primitive": [ "irrigationvessel-{type}" ]
   },
   "variantgroups": [
     {
       "code": "type",
-      "states": [ "normal" ]
+      "states": [ "normal","fire","black","brown","cream","gray","orange","red","tan" ]
     }
   ],
   "shapebytype": {
@@ -39,11 +39,45 @@
   },
   "blockmaterial": "Ceramic",
   "texturesByType": {
-    "*": {
+
+    "*-normal": {
       "ceramic": { "base": "game:block/clay/ceramic" },
       "top": { "base": "primitivesurvival:block/clay/topburned" },
       "sides": { "base": "game:block/clay/vessel/sides/burned" },
       "inside": { "base": "game:block/clay/vessel/inside/burned" },
+      "up": { "base": "primitivesurvival:block/clay/fertcompost-moist" },
+      "side": { "base": "game:block/soil/fertcompost" },
+      "updry": { "base": "primitivesurvival:block/clay/fertcompost-dry" },
+      "sidedry": { "base": "game:block/soil/fertlow" }
+      },
+    "*": {
+      "ceramic": { "base": "game:block/clay/hardened/{type}" },
+      "top": {
+        "base": "game:block/clay/hardened/{type}",
+        "overlays": [ "game:block/clay/overlay/vessel-top" ]
+      },
+      "sides": {
+        "base": "game:block/clay/hardened/{type}",
+        "overlays": [ "game:block/clay/overlay/vessel-sides" ]
+      },
+      "inside": {
+        "base": "game:block/clay/hardened/{type}",
+        "overlays": [ "game:block/clay/overlay/vessel-inside" ]
+      },
+
+      "normal-ceramic": { "base": "game:block/clay/hardened/{type}" },
+      "normal-top": {
+        "base": "game:block/clay/hardened/{type}",
+        "overlays": [ "game:block/clay/overlay/vessel-top" ]
+      },
+      "normal-sides": {
+        "base": "game:block/clay/hardened/{type}",
+        "overlays": [ "game:block/clay/overlay/vessel-sides" ]
+      },
+      "normal-inside": {
+        "base": "game:block/clay/hardened/{type}",
+        "overlays": [ "game:block/clay/overlay/vessel-inside" ]
+      },
       "up": { "base": "primitivesurvival:block/clay/fertcompost-moist" },
       "side": { "base": "game:block/soil/fertcompost" },
       "updry": { "base": "primitivesurvival:block/clay/fertcompost-dry" },
@@ -53,7 +87,7 @@
   "drops": [
     {
       "type": "block",
-      "code": "primitivesurvival:irrigationvessel-normal",
+      "code": "primitivesurvival:irrigationvessel-{type}",
       "quantity": { "avg": 1 }
     }
   ],

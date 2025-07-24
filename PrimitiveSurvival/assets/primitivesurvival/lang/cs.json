@@ -12,8 +12,6 @@
 
   "block-stake-*": "Kolík",
   "blockdesc-stake-*": "Ostrý klacek, který lze bezpečně zatlačit do hlíny nebo štěrku. Užitečná věc pro chytání do pastí a rybaření. Také tvoří dobrý plot.",
-  //"block-stakeinwater-*": "Kolík",
-  //"blockdesc-stakeinwater-*": "Ostrý klacek, který lze bezpečně zatlačit do hlíny nebo štěrku. Užitečná věc pro chytání do pastí a rybaření. Také tvoří dobrý plot.",
 
   "block-snare-*": "Léčka",
   "block-deadfall-*-andesite*": "Andezitová smrtící past",
@@ -738,8 +736,8 @@
   "pie-single-primitivesurvival:snakemeat-raw-perfect": "Hadí koláč",
   "pie-single-primitivesurvival:snakemeat-raw-charred": "Hadí koláč (připálený)",
 
-  "block-bearhead-polar1-female*": "Vycpaná hlava Polárního medvěda (samičky)",
-  "block-bearhead-polar1-male*": "Vycpaná hlava Polárního medvěda (samečka)",
+  "block-bearhead-polar*-female*": "Vycpaná hlava Polárního medvěda (samičky)",
+  "block-bearhead-polar*-male*": "Vycpaná hlava Polárního medvěda (samečka)",
   "block-bearhead-brown*-female*": "Vycpaná hlava Hnědého medvěda (samičky)",
   "block-bearhead-brown*-male*": "Vycpaná hlava Hnědého medvěda (samečka)",
   "block-bearhead-black*-female*": "Vycpaná hlava Černého medvěda (samičky)",
@@ -749,8 +747,8 @@
   "block-bearhead-panda*-female*": "Vycpaná hlava Pandy (samičky)",
   "block-bearhead-panda*-male*": "Vycpaná hlava Pandy (samečka)",
 
-  "block-bearhide-polar1-female*": "Kožešina z Polárního medvěda (samičky)",
-  "block-bearhide-polar1-male*": "Kožešina z Polárního medvěda (samečka)",
+  "block-bearhide-polar*-female*": "Kožešina z Polárního medvěda (samičky)",
+  "block-bearhide-polar*-male*": "Kožešina z Polárního medvěda (samečka)",
   "block-bearhide-brown*-female*": "Kožešina z Hnědého medvěda (samičky)",
   "block-bearhide-brown*-male*": "Kožešina z Hnědého medvěda (samečka)",
   "block-bearhide-black*-female*": "Kožešina z Černého medvěda (samičky)",
@@ -812,7 +810,16 @@
 
   "block-firework-bamboobarrage": "Ohňostroj (Bambusová hráz)",
 
-  "block-irrigationvessel-*": "Zavlažovací nádoba",
+  "block-irrigationvessel-normal": "Zavlažovací nádoba (Dark Brown)",
+  "block-irrigationvessel-fire": "Zavlažovací nádoba (Fireclay)",
+  "block-irrigationvessel-black": "Zavlažovací nádoba (Black)",
+  "block-irrigationvessel-brown": "Zavlažovací nádoba (Brown)",
+  "block-irrigationvessel-cream": "Zavlažovací nádoba (Cream)",
+  "block-irrigationvessel-gray": "Zavlažovací nádoba (Gray)",
+  "block-irrigationvessel-orange": "Zavlažovací nádoba (Orange)",
+  "block-irrigationvessel-red": "Zavlažovací nádoba (Red)",
+  "block-irrigationvessel-tan": "Zavlažovací nádoba (Tan)",
+
   "blockdesc-irrigationvessel-*": "Používejte místo vodních bloků pro lepší zavlažování zemědělské půdy.",
   "fill-irrigationvessel": "Naplňte vodou, aby zůstala vlhká všechna sousední zemědělská půda.",
   "working-irrigationvessel": "Tento zavlažovací nádoba je plně funkční.",
@@ -1325,8 +1332,6 @@
   "support-rightclick-add-pipe": "Klikněte pravým tlačítkem pro přidání potrubí k této podpěře",
   "pipe-rightclick-add-pipe": "Klikněte pravým tlačítkem na konec potrubí pro přidání dalšího potrubí",
 
-  //1.20 below
-
   "block-betterfoureightbrickstairs-four-red-*": "Vylepšené schody z velkých červených cihel",
   "block-betterfoureightbrickstairs-four-brown-*": "Vylepšené schody z velkých hnědých cihel",
   "block-betterfoureightbrickstairs-four-black-*": "Vylepšené schody z velkých černých cihel",
@@ -1362,5 +1367,16 @@
   "block-floatingdock-purpleheart-*": "Plovoucí molo (peltogyn)",
   "blockdesc-floatingdock-*": "Umístěte přímo na vodu",
 
-  "game:placefailure-softer-ground-needed": "lze umístit pouze do měkké půdy"
+  "game:placefailure-softer-ground-needed": "lze umístit pouze do měkké půdy",
+
+  "block-hare*-cape-female*": "Cape Hare Pelt (female)",
+  "block-hare*-cape-male*": "Cape Hare Pelt (male)",
+  "block-hare*-european-female*": "European Hare Pelt (female)",
+  "block-hare*-european-male*": "European Hare Pelt (male)",
+  "block-hare*-indian-female*": "Indian Hare Pelt (female)",
+  "block-hare*-indian-male*": "Indian Hare Pelt (male)",
+  "block-hare*-jackblack-female*": "Jackblack Hare Pelt (female)",
+  "block-hare*-jackblack-male*": "Jackblack Hare Pelt (male)",
+  "block-hare*-scrub-female*": "Scrub Hare Pelt (female)",
+  "block-hare*-scrub-male*": "Scrub Hare Pelt (male)"
 }

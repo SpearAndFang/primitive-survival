@@ -38,7 +38,16 @@
       "F": {
         "type": "item",
         "code": "game:flour-*",
-        "allowedVariants": [ "flax", "millet", "rice", "rye", "spelt", "cassava", "amaranth", "sunflower" ],
+        "allowedVariants": [
+          "flax",
+          "millet",
+          "rice",
+          "rye",
+          "spelt",
+          "cassava",
+          "amaranth",
+          "sunflower"
+        ],
         "name": "type"
       }
     },

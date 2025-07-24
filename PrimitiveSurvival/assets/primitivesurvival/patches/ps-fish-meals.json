@@ -19,7 +19,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-trout-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -31,7 +31,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-trout-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -66,7 +66,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-perch-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -78,7 +78,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-perch-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -113,7 +113,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-salmon-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -125,7 +125,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-salmon-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -160,7 +160,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-carp-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -172,7 +172,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-carp-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -207,7 +207,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-bass-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -219,7 +219,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-bass-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -254,7 +254,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-pike-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -266,7 +266,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-pike-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -301,7 +301,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-arcticchar-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -313,7 +313,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-arcticchar-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -348,7 +348,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-catfish-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -360,7 +360,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-catfish-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -395,7 +395,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-bluegill-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -407,7 +407,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-bluegill-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -442,7 +442,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-mutant-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -454,7 +454,7 @@
       "type": "item",
       "code": "primitivesurvival:psfish-mutant-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -489,7 +489,7 @@
       "type": "item",
       "code": "primitivesurvival:fishfillet-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -501,7 +501,7 @@
       "type": "item",
       "code": "primitivesurvival:fishfillet-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group1" ]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -521,76 +521,76 @@
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-trout-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-perch-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-salmon-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-carp-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-bass-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-pike-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-arcticchar-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-catfish-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-bluegill-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/psfish-mutant-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/fishfillet-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   }
 ]

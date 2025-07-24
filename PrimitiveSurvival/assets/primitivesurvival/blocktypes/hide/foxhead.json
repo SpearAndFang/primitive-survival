@@ -4,25 +4,20 @@
   "variantgroups": [
     {
       "code": "species",
-      "states": [ "arctic", "red" ]
+      "states": ["arctic", "red"]
     },
     {
       "code": "type",
-      "states": [ "female", "male" ]
+      "states": ["female", "male"]
     },
     {
       "code": "dir",
-      "states": [
-        "north",
-        "east",
-        "south",
-        "west"
-      ]
+      "states": ["north", "east", "south", "west"]
     }
   ],
   "attributes": {
     "handbook": {
-      "groupBy": [ "foxhead-*" ]
+      "groupBy": ["foxhead-*"]
     }
   },
   "drops": [
@@ -54,9 +49,9 @@
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
   "creativeinventory": {
-    "general": [ "*-{species}-{type}-north" ],
-    "decorative": [ "*-{species}-{type}-north" ],
-    "primitive": [ "*-{species}-{type}-north" ]
+    "general": ["*-{species}-{type}-north"],
+    "decorative": ["*-{species}-{type}-north"],
+    "primitive": ["*-{species}-{type}-north"]
   },
   "replaceable": 5200,
   "resistance": 0.5,
@@ -67,7 +62,7 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/fox/{species}-{type}"
+        "base": "game:entity/animal/mammal/fox/{species}-{type}"
       },
       "plaque": {
         "base": "game:block/reed/beehive/floor"

@@ -18,6 +18,8 @@ namespace PrimitiveSurvival.ModSystem
         public override float CapacityLitres => 50;
         public override bool CanDrinkFrom => false;
 
+        private readonly string[] vesselTypes = { "normal", "fire", "black", "brown", "cream", "gray", "orange", "red", "tan" };
+
         protected new WorldInteraction[] interactions;
 
 
@@ -112,7 +114,7 @@ namespace PrimitiveSurvival.ModSystem
                 var block = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                 var path = block.Code.Path;
                 var playerStack = playerSlot.Itemstack;
-                if (playerStack.Collectible.Code.Path.Contains("soil-") && path.Contains("-normal"))
+                if (playerStack.Collectible.Code.Path.Contains("soil-") && vesselTypes.Contains(block.LastCodePart()))
                 {
                     var be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEIrrigationVessel;
                     if (be.Buried)
@@ -327,7 +329,7 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     dsc.AppendLine().AppendLine(Lang.GetMatching("primitivesurvival:bury-irrigationvessel"));
                 }
-                
+
                 if (ModConfig.Loaded.ShowModNameInHud)
                 {
                     dsc.AppendLine();

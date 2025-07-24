@@ -1,5 +1,5 @@
 {
-  /* Initial localization translating mod content up to version 2.5.4 made by Kiava https://www.vintagestory.at/forums/topic/2399-primitive-survival/?page=8#comment-17268 */
+  "comment1": "Initial localization translating mod content up to version 2.5.4 made by Kiava https://www.vintagestory.at/forums/topic/2399-primitive-survival/?page=8#comment-17268",
   "game:tabname-primitive": "Primitive Survival",
   "game:ps-quickstart-title": "Primitive Survival: Schnellstart Anleitung",
   "game:ps-quickstart-text": "<strong>Primitive Survival: Schnellstart Anleitung</strong><br><i>Erstens: Bleib am Leben. Zweitens: Wachse und gedeihe!</i><br><br>Aktuelle Versionen der Mod sowie weiterführende Beschreibungen kannst du <a href=\"https://mods.vintagestory.at/primitivesurvival\">hier</a> finden.<br><br><strong>Einleitung</strong><br>Diese Mod soll eine einigermaßen realistische Alternative zu Aktivitäten wie der Jagd und der Tierhaltung sein, obwohl er diese Ansätze ganz gut ergänzt.<br><br>Um ein erfolgreicher Überlebenskünstler zu sein, musst du eine Vielzahl der unten beschriebenen Taktiken nutzen, um an das begehrte Eiweiß zu kommen (zusammen mit den anderen lebensnotwendigen Gütern die Säugetiere anbieten).<br><br><strong>Standort, Standort, Standort</strong><br>Es ist wichtig, einen geeigneten Standort zu wählen, der idealerweise in der Nähe einer ausreichend großen Wasserquelle liegt, die viel <a href=\"handbook://block-tallplant-coopersreed-land-normal-free\">Schilf</a> um sich herum hat. Wenn möglich, sammel unterwegs etwas Nahrung, <a href=\"handbook://item-stick\">Stöcke</a> und <a href=\"handbook://item-stone-granite\">Granitstein</a>.<br><br><strong>Grundlagen</strong><br>Obwohl Stöcke, Steine und Nahrung ausreichen, um deine Fallenroute in Gang zu bringen, wirst du wahrscheinlich noch ein paar andere Kernzutaten benötigen, um einen vielseitigen primitiven Überlebensansatz zu verfolgen. Erwäge durch <a href=\"handbook://craftinginfo-knapping\">Steinbearbeitung</a> ein Messer herzustellen, um einige <a href=\"handbook://block-primitivesurvival:stake-empty\">Pfähle</a> herzustellen (und um Rohrkolben aus Schilf zu ernten). Benutze das Schilf um <a href=\"handbook://item-primitivesurvival:cordage\">Tauwerk</a> herzustellen.<br><br><strong>Fallen</strong><br>Baue einige <a href=\"handbooksearch://Todfalle\">Todfallen</a> und/oder <a href=\"handbook://block-primitivesurvival:snare-set-north\">Schlingen</a> und stelle sie an verschiedenen Orten in der Nähe auf. Diese Fallen sind viel effektiver, wen mit einem Köder versehen sind. Das erreichst du, indem du sie mit einer Art von Nahrung in deinem aktiven Schnellzugriffsteckplatz anklickst. Wenn eine Falle ausgelöst wurde, kannst du sie mit\r\n<hk>primarymouse</hk> wieder aufstellen, und gegebenenfalls neu beködern.<br><br>Schlingen erfordern etwas mehr Zeit und Mühe beim Zusammenbau, sind aber in der Lage, größere Säugetiere zu fangen als eine Todfalle.<br><br>Du kannst auch Säugetiere fangen und töten, indem du eine Handvoll Stöcke zu einem <a href=\"handbook://item-primitivesurvival:woodspikebundle\">Bündel Holzspieße</a> anspitzt und diese dann in weichen Boden (idealerweise in eine Grube) steckst. Verwende die gleichen Holzspieße, um eine Tarnabdeckung für deine Grubenfalle zu bauen. Sobald sie fertiggestellt ist, werden Säugetiere aus der Nähe kommen und sie untersuchen und hoffentlich in deine Falle tappen.<br><br>Nachdem du das Tonformen und -brennen gemeistert hast, kannst du ein <a href=\"handbooksearch://Nagelbrett\">Nagelbrett</a> herstellen. Diese richten noch mehr Schaden als Holzspieße an und können auf jeder Oberfläche platziert werden.<br><br><strong>Fischen</strong><br>Baue mit Stöcken und Tauwerk eine <a href=\"handbook://block-primitivesurvival:fishbasket-north\">Reuse</a> und setze diese ins Wasser, um mit dem Fischen zu beginnen. Du lockst mehr Fische an, wenn du die Reuse beköderst (genau wie bei Fallen).<br><br>Alternativ kannst du auch einfach Pfähle verwenden um eine <strong>Wehrfalle</strong> zu bauen. Baue dazu einen eingezäunten Bereich im Wasser oder am Rande des Wassers mit einem offenen Wasserblock in der Mitte, und klicke dann mit <hk>primarymouse</hk> auf die abgewandte Seite des eingefassten Bereiches. Die Pfahlreihe wird sich in Form eines Ms öffnen, was bedeutet, dass die Wehrfalle aktiv ist.<br><br>Du hast möglicherweise mehr Glück beim Angeln, wenn du eine <strong>Ast-</strong> oder <strong>Langleine</strong> (mit Tauwerk und gegebenenfalls Pfählen) einrichtest. Wähle einen geeigneten Block (z. B. einen Baum, einen Erdblock oder einen Pfahl im Boden neben einer Wasserquelle). Für eine Langleine platzierst du einen anderen geeigneten Block direkt gegenüberliegend auf der anderen Seite des Wassers. Klicke mit Tauwerk im aktiven Schnellzugriffsteckplatz den Pfahl/Block an, während du Richtung Wasser schaust.<br><br>Als Nächstes musst du einige <a href=\"handbooksearch://Angelhaken\">Angelhaken</a> anfertigen, um sie an der Leine zu befestigen. Wenn sich die Haken in deinem aktiven Schnellzugriffsteckplatz befinden, klicke mit <hk>leftmouse</hk> auf die Schnur über dem Wasser, um sie zu befestigen. Ziehe schließlich in Erwägung, die Haken mit Ködern zu versehen, um sie effektiver zu machen.<br><br>Eine Ast- oder Langleine kann sich als effektiver zum Fangen von Fischen erweisen und hat nicht die gleichen Platzbeschränkungen wie ein Angelkorb (Du brauchst also nicht viel Wasser). Sobald du das Tonformen und -brennen beherrschst, kannst du Formen für Angelhaken und <a href=\"handbooksearch://Fischkunstköder\">Fischkunstköder</a> aus Metall herstellen. Befestige einen Köder an deinem Haken um deine Fangaussichten zu erhöhen.<br><br><strong>Lebensmittel</strong><br><br>Koche deinen Fisch über dem Feuer, um etwas dringend benötigtes Eiweiß zu erhalten. Du kannst Fisch auch in Suppen- und Eintopfrezepten anstelle von Fleisch verwenden. Wenn du den Fisch zu <a href=\"handbooksearch://Fischfilet\">Fischfilet</a> verarbeitest, kannst du diesen einfacher zubereiten oder aufbewahren.<br><br>Wenn du dich um Ästen und Steinen oder unter diesen nachsiehst, findest du vielleicht einige <a href=\"handbook://item-primitivesurvival:earthworm\">Regenwürmer</a>, die du mit <hk>primarymouse</hk> einfangen und sie dann für eine Vielzahl von Dingen verwenden kannst. Esse sie für einen schnellen Proteinschub oder benutze sie als Lebendköder für Angeln bzw. Reusen. Lege sie (<hk>sneak</hk> + <hk>primarymouse</hk>) auf fruchtbaren Boden ab, um deinen Garten zu lüften und düngen, oder lege sie in ein Loch mit fruchtbarem Boden um <a href=\"handbook://item-primitivesurvival:earthwormcastings\">Wurmexkremente</a> zu erzeugen, die dann als Dünger verwendet werden kann.<br><br>Wenn du rotes Fleisch oder Buschfleisch hast, schneide es auf, um <a href=\"handbook://item-primitivesurvival:jerky-redmeat-raw\">rote Fleischstreifen (roh)</a> oder <a href=\"handbook://item-primitivesurvival:jerky-bushmeat-raw\">Buschfleischstreifen (roh)</a> zu erhalten. Bevor du es essen kannst, müssen die Streifen allerdings trocknen (oder du kannst es kochen, wenn du dafür zu ungeduldig bist).<br><br><strong>Anderes</strong><br><br>Wenn du mit einem <a href=\"handbooksearch://Fell\">Fell</a> in der Hand auf den Boden klickst, kannst du deine bescheidene Behausung aufpeppen.<br><br>Falls du bereits erfolgreich eine Langleine platziert hast, weißt du genug um eine <a href=\"handbook://item-primitivesurvival:monkeybridge\">Affenbrücke</a> zu bauen. Damit kannst du mit Leichtigkeit tiefe Schluchten oder Seen überqueren. Der einzige wirkliche Unterschied zu der Langleine ist, dass die beiden Endpunkte mindestens zwei Blöcke hoch sein müssen. Ein Baum, z. B. würde sich dafür hervorragend eignen.<br><br>Du kannst auch einen Metallgriff schmieden und, zusammen mit Metallplatten, einen <a href=\"handbooksearch://Metalleimer\">Metalleimer</a> herstellen. Dieser Eimer kann für die gleichen Dinge wie ein Holzeimer, aber auch zum Bewegen von Lava verwendet werden.<br><br>Muscheln und andere Überraschungen (<strong>Dinge, die vorerst nicht benannt werden</strong>) können gelegentlich den Weg in deine Reusen und Reusen finden.<br><br>",
@@ -13,8 +13,6 @@
 
   "block-stake-*": "Pfahl",
   "blockdesc-stake-*": "Ein angespitzter Stock, der sicher in geeignetem Boden verankert werden kann. Ein nützlicher Bestandteil zum Fallenstellen und Fischen.<br>Ergibt auch einen guten Zaun.",
-  //"block-stakeinwater-*": "Pfahl",
-  //"blockdesc-stakeinwater-*": "Ein angespitzter Stock, der sicher im Gewässerboden verankert wurde. Ein nützlicher Teil einer Wehrfalle.",
 
   "block-snare-*": "Schlinge",
   "block-deadfall-*-andesite*": "Todfalle (Andesit)",
@@ -413,7 +411,6 @@
 
   "blockdesc-snare-suitable-ground-needed": "Du benötigst einen geeigneteren Boden, um diese Falle zu platzieren.",
   "blockdesc-firework-suitable-ground-needed": "Du benötigst einen geeigneteren Boden, um diesen Feuerwerkskörper zu platzieren.",
-  /*"blockdesc-stake-suitable-ground-needed": "TEST TEST TEST",*/
   "blockdesc-alcove-unlit": "<hk>primarymouse</hk> mit einer Fackel oder einer Kerze, um die Kerze anzuzünden.",
   "blockdesc-alcove-lit": "hk>primarymouse</hk> wenn du nichts in der Hand hast, um die Kerze zu löschen.",
   "blockdesc-deadfall-tripped": "Die Falle wurde ausgelöst! <hk>primarymouse</hk> um sie wieder aufzustellen.",
@@ -682,7 +679,6 @@
   "blockdesc-snare-set*": "Lege die Schlinge auf Boden aus, um Tiere zu fangen.",
   "blockdesc-woodlantern*": "Nicht so hell wie eine normale Laterne, aber dafür wird kein Glas benötigt und sie sieht hübsch aus.",
   "blockdesc-firework-*": "Zünde den Feuerwerkskörper mit einer Fackel an. Genieße die Schau!",
-  /*"itemdesc-firework-*": "Stecke den Feuerwerkskörper in Erde und zünde ihn mit einer Fackel an.",*/
   "blockdesc-cthulu-statue*": "Was ist dieses seltsame Artefakt? Es scheint auf etwas drauf zu passen...",
   "blockdesc-dagon-statue*": "Was ist dieses seltsame Artefakt? Es scheint auf etwas drauf zu passen...",
   "blockdesc-hydra-statue*": "Was ist dieses seltsame Artefakt? Es scheint auf etwas drauf zu passen...",
@@ -743,8 +739,8 @@
   "pie-single-primitivesurvival:snakemeat-raw-perfect": "Schlangenpastete",
   "pie-single-primitivesurvival:snakemeat-raw-charred": "Schlangenpastete (angebrannt)",
 
-  "block-bearhead-polar1-female*": "Eisbärenpelz (weiblich)",
-  "block-bearhead-polar1-male*": "Eisbärenpelz (männlich)",
+  "block-bearhead-polar*-female*": "Eisbärenpelz (weiblich)",
+  "block-bearhead-polar*-male*": "Eisbärenpelz (männlich)",
   "block-bearhead-brown*-female*": "Braunbärpelz (weiblich)",
   "block-bearhead-brown*-male*": "Braunbärpelz (männlich)",
   "block-bearhead-black*-female*": "Schwarzbärpelz (weiblich)",
@@ -754,8 +750,8 @@
   "block-bearhead-panda*-female*": "Pandabärpelz (weiblich)",
   "block-bearhead-panda*-male*": "Pandabärpelz (männlich)",
 
-  "block-bearhide-polar1-female*": "Eisbärenpelz (weiblich)",
-  "block-bearhide-polar1-male*": "Eisbärenpelz (männlich)",
+  "block-bearhide-polar*-female*": "Eisbärenpelz (weiblich)",
+  "block-bearhide-polar*-male*": "Eisbärenpelz (männlich)",
   "block-bearhide-brown*-female*": "Braunbärpelz (weiblich)",
   "block-bearhide-brown*-male*": "Braunbärpelz (männlich)",
   "block-bearhide-black*-female*": "Schwarzbärpelz (weiblich)",
@@ -816,7 +812,16 @@
 
   "block-firework-bamboobarrage": "Feuerwerk (Bambustrommelfeuer)",
 
-  "block-irrigationvessel-*": "Bewässerungsgefäß",
+  "block-irrigationvessel-normal": "Bewässerungsgefäß (Dark Brown)",
+  "block-irrigationvessel-fire": "Bewässerungsgefäß (Fireclay)",
+  "block-irrigationvessel-black": "Bewässerungsgefäß (Black)",
+  "block-irrigationvessel-brown": "Bewässerungsgefäß (Brown)",
+  "block-irrigationvessel-cream": "Bewässerungsgefäß (Cream)",
+  "block-irrigationvessel-gray": "Bewässerungsgefäß (Gray)",
+  "block-irrigationvessel-orange": "Bewässerungsgefäß (Orange)",
+  "block-irrigationvessel-red": "Bewässerungsgefäß (Red)",
+  "block-irrigationvessel-tan": "Bewässerungsgefäß (Tan)",
+
   "blockdesc-irrigationvessel-*": "Verwende dieses anstelle von Wasserblöcken zur besseren Bewässerung von Ackerland.",
   "fill-irrigationvessel": "Fülle es mit Wasser auf, um alle angrenzenden Ackerflächen feucht zu halten.",
   "working-irrigationvessel": "Dieses Bewässerungsgefäß ist voll funktionsfähig.",
@@ -1080,8 +1085,6 @@
   "item-creature-bairdicrab": "Schneekrabbe",
   "item-creature-landcrab": "Landkrabbe",
 
-  /* Config lib */
-
   "Altar-Config": "Altar-Konfiguration",
   "AltarDropsFish": "Altäre lassen Fisch fallen",
   "AltarDropsFish-Comment": "Legt fest, ob funktionierende Altäre\r\nzusätzlich zu allem anderen auch\r\nFische fallen lassen.",
@@ -1184,11 +1187,11 @@
 
   "Pipe-Config": "---- WIP ---- Bewässerungsrohr-Konfiguration ---- WIP ----",
   "PipeUpdateFrequency": "Aktualisierung, in Sekunden",
-  "PipeUpdateFrequency-Comment": "--Wie oft Bewässerungsrohre aktualisiert werden.--" /* WIP */,
+  "PipeUpdateFrequency-Comment": "--Wie oft Bewässerungsrohre aktualisiert werden.--",
   "PipeBlockageChancePercent": "Wahrscheinlichkeit der Entstehung von Ablagerungen",
-  "PipeBlockageChancePercent-Comment": "--Wahrscheinlichkeit, dass sich Ablagerungen\r\nbilden.--" /* WIP */,
+  "PipeBlockageChancePercent-Comment": "--Wahrscheinlichkeit, dass sich Ablagerungen\r\nbilden.--",
   "PipeMinMoisture": "Minimale Bodenfeuchte",
-  "PipeMinMoisture-Comment": "--Minimale Bodenfeuchte.--" /* WIP */,
+  "PipeMinMoisture-Comment": "--Minimale Bodenfeuchte.--",
 
   "Raft-Config": "Floß-Konfiguration",
   "RaftEnabled": "Floß aktiviert",
@@ -1266,8 +1269,6 @@
   "WormFoundPercentStickFlint": "Fundwahrscheinlichkeit unter Feuersteinen und Stöcken, in Prozent",
   "WormFoundPercentStickFlint-Comment": "Wahrscheinlichkeit, einen Wurm zu finden, wenn\r\nman einen Stock oder Feuerstein aufhebt.",
 
-  /* */
-
   "block-rockblastingbomb": "Steinbombe",
   "blockdesc-rockblastingbomb": "Diese Bombe ist besonders effektiv für das Beseitigen von Gestein, jedoch weniger brauchbar um Erze abzubauen.",
 
@@ -1328,8 +1329,6 @@
   "block-pipe-bamboo-aerated": "Bambushalbrohr (Tröpfchenbewässerung)",
 
   "blockdesc-pipe-*": "Wird zur Bewässerung von Ackerland verwendet. Setzt Rohrstützen voraus.",
-  /*"blockdesc-pipe-*-aerated": "Used with overhead irrigation (pipe supports) to irrigate farmland",
-  "blockdesc-pipe-*-plain": "Used with overhead irrigation (pipe supports) to transport water",*/
 
   "support-heightoffset": "Versatz der Rohrstütze",
   "pipe-heightoffset": "Versatz des Bewässerungsrohres",
@@ -1347,8 +1346,6 @@
 
   "support-rightclick-add-pipe": "Klicke mit <hk>primarymouse</hk>, um ein Bewässerungsrohr auf dieser Rohrstütze zu installieren. Setzt ein Rohr im aktiven Schnellzugriffsteckplatz voraus.",
   "pipe-rightclick-add-pipe": "Klicke mit <hk>primarymouse</hk> auf ein Rohrende, um ein weiteres Bewässerungsrohr zu installieren. Setzt ein Rohr im aktiven Schnellzugriffsteckplatz voraus.",
-
-  //1.20 below
 
   "block-betterfoureightbrickstairs-four-red-*": "Große Ziegeltreppe aus rotem Ton (verbessert)",
   "block-betterfoureightbrickstairs-four-brown-*": "Große Ziegeltreppe aus grauem Ton (verbessert)",
@@ -1385,5 +1382,16 @@
   "block-floatingdock-purpleheart-*": "Schwimmdock (Amaranth)",
   "blockdesc-floatingdock-*": "Platziere das Dock direkt auf Wasser.",
 
-  "game:placefailure-softer-ground-needed": "you can only place this in soft ground"
+  "game:placefailure-softer-ground-needed": "you can only place this in soft ground",
+
+  "block-hare*-cape-female*": "Cape Hare Pelt (female)",
+  "block-hare*-cape-male*": "Cape Hare Pelt (male)",
+  "block-hare*-european-female*": "European Hare Pelt (female)",
+  "block-hare*-european-male*": "European Hare Pelt (male)",
+  "block-hare*-indian-female*": "Indian Hare Pelt (female)",
+  "block-hare*-indian-male*": "Indian Hare Pelt (male)",
+  "block-hare*-jackblack-female*": "Jackblack Hare Pelt (female)",
+  "block-hare*-jackblack-male*": "Jackblack Hare Pelt (male)",
+  "block-hare*-scrub-female*": "Scrub Hare Pelt (female)",
+  "block-hare*-scrub-male*": "Scrub Hare Pelt (male)"
 }

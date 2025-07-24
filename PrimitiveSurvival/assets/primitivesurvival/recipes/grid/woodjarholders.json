@@ -11,7 +11,20 @@
     "L": {
       "type": "block",
       "code": "game:log-*",
-      "allowedVariants": [ "placed-birch-ud", "placed-oak-ud", "placed-maple-ud", "placed-pine-ud", "placed-acacia-ud", "placed-kapok-ud", "placed-baldcypress-ud", "placed-larch-ud", "placed-redwood-ud", "placed-ebony-ud", "placed-walnut-ud", "placed-purpleheart-ud" ],
+      "allowedVariants": [
+        "placed-birch-ud",
+        "placed-oak-ud",
+        "placed-maple-ud",
+        "placed-pine-ud",
+        "placed-acacia-ud",
+        "placed-kapok-ud",
+        "placed-baldcypress-ud",
+        "placed-larch-ud",
+        "placed-redwood-ud",
+        "placed-ebony-ud",
+        "placed-walnut-ud",
+        "placed-purpleheart-ud"
+      ],
       "quantity": 1
     },
     "G": {
@@ -24,5 +37,4 @@
     "code": "primitivesurvival:woodjarholder-north",
     "quantity": 4
   }
-} 
-
+}

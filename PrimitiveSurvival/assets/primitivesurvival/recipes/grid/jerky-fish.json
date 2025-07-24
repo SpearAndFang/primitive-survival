@@ -2,23 +2,23 @@
   "ingredientPattern": "K,H,S",
   "enabled": true,
   "shapeless": true,
-    "ingredients": {
-        "K": {
-            "type": "item",
-            "code": "game:knife-*",
-            "isTool": true
-        },
-        "H": {
-            "type": "item",
-            "code": "primitivesurvival:fishfillet-raw",
-            "quantity": 4
-        },
-        "S": {
-            "type": "item",
-            "code": "game:salt",
-            "quantity": 1
-        }
+  "ingredients": {
+    "K": {
+      "type": "item",
+      "code": "game:knife-*",
+      "isTool": true
     },
+    "H": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 4
+    },
+    "S": {
+      "type": "item",
+      "code": "game:salt",
+      "quantity": 1
+    }
+  },
   "name": "jerky-fish",
   "width": 1,
   "height": 3,

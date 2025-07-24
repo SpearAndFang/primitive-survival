@@ -19,7 +19,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-redmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group6" ]
+      "textureMapping": ["meat", "group6"]
     }
   },
   {
@@ -31,7 +31,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-redmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group6" ]
+      "textureMapping": ["meat", "group6"]
     }
   },
   {
@@ -66,7 +66,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-bushmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group6" ]
+      "textureMapping": ["meat", "group6"]
     }
   },
   {
@@ -78,7 +78,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-bushmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group6" ]
+      "textureMapping": ["meat", "group6"]
     }
   },
   {
@@ -113,7 +113,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-fish-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -125,7 +125,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-fish-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -160,7 +160,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-poultry-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -172,7 +172,7 @@
       "type": "item",
       "code": "primitivesurvival:smokedmeat-poultry-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -192,27 +192,27 @@
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/smokedmeat-redmeat-raw",
-    "value": [ "meat", "group6" ]
+    "value": ["meat", "group6"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/smokedmeat-bushmeat-raw",
-    "value": [ "meat", "group6" ]
+    "value": ["meat", "group6"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/smokedmeat-fish-raw",
-    "value": [ "meat", "group5" ]
+    "value": ["meat", "group5"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/smokedmeat-poultry-raw",
-    "value": [ "meat", "group5" ]
+    "value": ["meat", "group5"]
   }
 ]

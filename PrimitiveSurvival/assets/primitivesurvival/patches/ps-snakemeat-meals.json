@@ -19,7 +19,7 @@
       "type": "item",
       "code": "primitivesurvival:snakemeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group3" ]
+      "textureMapping": ["meat", "group3"]
     }
   },
   {
@@ -31,7 +31,7 @@
       "type": "item",
       "code": "primitivesurvival:snakemeat-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group3" ]
+      "textureMapping": ["meat", "group3"]
     }
   },
   {
@@ -50,6 +50,6 @@
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/snakemeat-raw",
-    "value": [ "meat", "group5" ]
+    "value": ["meat", "group5"]
   }
 ]

@@ -8,6 +8,9 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
     using Vintagestory.API.Util;
+
+    //3.9
+    using Vintagestory.API.Datastructures;
     //using System.Diagnostics;
 
 
@@ -29,7 +32,10 @@ namespace PrimitiveSurvival.ModSystem
         private float curTurnRadPerSec = 0;
 
 
-        public AiTaskMeleeAttackCrab(EntityAgent entity) : base(entity)
+        // 3.9
+        //public AiTaskMeleeAttackCrab(EntityAgent entity) : base(entity)
+        public AiTaskMeleeAttackCrab(EntityAgent entity, JsonObject taskConfig, JsonObject aiConfig) : base(entity, taskConfig, aiConfig)
+
         { }
 
 
@@ -45,14 +51,18 @@ namespace PrimitiveSurvival.ModSystem
 
                 // 1.16
                 //if (this.whenInEmotionState != null && !this.entity.HasEmotionState(this.whenInEmotionState))
-                if (this.whenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.whenInEmotionState) != true)
+
+                // 3.9 whenInEmotionState -> WhenInEmotionState
+                if (this.WhenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.WhenInEmotionState) != true)
                 {
                     return false;
                 }
 
                 // 1.16
                 //if (this.whenNotInEmotionState != null && this.entity.HasEmotionState(this.whenNotInEmotionState))
-                if (this.whenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.whenNotInEmotionState) == true)
+
+                // 3.9 whenInEmotionState -> WhenInEmotionState
+                if (this.WhenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.WhenNotInEmotionState) == true)
                 {
                     return false;
                 }
@@ -61,7 +71,9 @@ namespace PrimitiveSurvival.ModSystem
 
                 var generation = this.entity.WatchedAttributes.GetInt("generation", 0);
                 var fearReductionFactor = Math.Max(0f, (this.tamingGenerations - generation) / this.tamingGenerations);
-                if (this.whenInEmotionState != null)
+
+                // 3.9 whenInEmotionState -> WhenInEmotionState
+                if (this.WhenInEmotionState != null)
                 {
                     fearReductionFactor = 1;
                 }

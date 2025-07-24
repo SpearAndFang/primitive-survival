@@ -52,7 +52,6 @@
             },
             "scale": 1.21
           },
-          //the rest of these are wildcraft trees but should be fine here, mod or no mod
           "*-bearnut": {
             "rotation": {
               "x": 67,

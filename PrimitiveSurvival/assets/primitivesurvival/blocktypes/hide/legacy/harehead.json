@@ -1,11 +1,21 @@
 {
-  "code": "foxhide",
+  "code": "harehead",
   "class": "blockhide",
-  "behaviors": [{ "name": "Unstable" }],
   "variantgroups": [
     {
       "code": "species",
-      "states": ["arctic", "red"]
+      "states": [
+        "arctic",
+        "ashgrey",
+        "darkbrown",
+        "darkgrey",
+        "desert",
+        "gold",
+        "lightbrown",
+        "lightgrey",
+        "silver",
+        "smokegrey"
+      ]
     },
     {
       "code": "type",
@@ -13,21 +23,12 @@
     },
     {
       "code": "dir",
-      "states": [
-        "north",
-        "northeast",
-        "east",
-        "southeast",
-        "south",
-        "southwest",
-        "west",
-        "northwest"
-      ]
+      "states": ["north", "east", "south", "west"]
     }
   ],
   "attributes": {
     "handbook": {
-      "groupBy": ["foxhide-*"]
+      "groupBy": ["harehead-*"]
     }
   },
   "drops": [
@@ -39,46 +40,26 @@
   ],
   "shapebytype": {
     "*-north": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehead",
       "rotateY": 270
     },
-    "*-northeast": {
-      "base": "block/hide/foxhide",
-      "rotateY": 225
-    },
     "*-east": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehead",
       "rotateY": 180
     },
-    "*-southeast": {
-      "base": "block/hide/foxhide",
-      "rotateY": 135
-    },
     "*-south": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehead",
       "rotateY": 90
     },
-    "*-southwest": {
-      "base": "block/hide/foxhide",
-      "rotateY": 45
-    },
     "*-west": {
-      "base": "block/hide/foxhide",
+      "base": "block/hide/harehead",
       "rotateY": 0
-    },
-    "*-northwest": {
-      "base": "block/hide/foxhide",
-      "rotateY": 315
     }
   },
   "sidesolid": { "all": false },
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
-  "creativeinventory": {
-    "general": ["*-{species}-{type}-north"],
-    "decorative": ["*-{species}-{type}-north"],
-    "primitive": ["*-{species}-{type}-north"]
-  },
+  "creativeinventory": { "primitive": ["*-arctic-{type}-north"] },
   "replaceable": 5200,
   "resistance": 0.5,
   "vertexFlags": {
@@ -88,19 +69,47 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/animal/mammal/fox/{species}-{type}"
+        "base": "game:entity/animal/mammal/hare/arctic-{type}1"
+      },
+      "plaque": {
+        "base": "game:block/reed/beehive/floor"
       }
     }
   },
-  "selectionBox": {
-    "x1": 0,
-    "y1": 0,
-    "z1": 0,
-    "x2": 1,
-    "y2": 0.0625,
-    "z2": 1
+  "selectionBoxByType": {
+    "*-north": {
+      "x1": 0.25,
+      "y1": 0.25,
+      "z1": 0.7,
+      "x2": 0.75,
+      "y2": 0.75,
+      "z2": 1
+    },
+    "*-east": {
+      "x1": 0,
+      "y1": 0.25,
+      "z1": 0.25,
+      "x2": 0.3,
+      "y2": 0.75,
+      "z2": 0.75
+    },
+    "*-south": {
+      "x1": 0.25,
+      "y1": 0.25,
+      "z1": 0,
+      "x2": 0.75,
+      "y2": 0.75,
+      "z2": 0.3
+    },
+    "*-west": {
+      "x1": 0.7,
+      "y1": 0.25,
+      "z1": 0.25,
+      "x2": 1,
+      "y2": 0.75,
+      "z2": 0.75
+    }
   },
-
   "collisionbox": null,
   "combustibleProps": {
     "burnTemperature": 400,
@@ -113,14 +122,15 @@
   "guiTransform": {
     "translation": {
       "x": 0,
-      "y": 3,
+      "y": 2.6,
       "z": 0
     },
     "origin": {
-      "x": 0.5,
-      "y": 0.0625,
-      "z": 0.5
-    }
+      "x": 0.58,
+      "y": 0.45,
+      "z": 0.9
+    },
+    "scale": 2.36
   },
   "groundTransform": {
     "translation": {
@@ -138,13 +148,13 @@
       "y": -0.02,
       "z": 0.5
     },
-    "scale": 1.5
+    "scale": 3
   },
   "tpHandTransform": {
     "translation": {
-      "x": -1.7,
-      "y": 0.1,
-      "z": -1.5
+      "x": -0.9,
+      "y": -0.8,
+      "z": -1
     },
     "rotation": {
       "x": -46,
@@ -153,8 +163,16 @@
     },
     "origin": {
       "x": 0.5,
-      "y": 0,
+      "y": 1,
       "z": 0.5
+    },
+    "scale": 0.69
+  },
+  "fpHandTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": -4.7,
+      "z": 1.9
     }
   },
   "materialDensity": 200

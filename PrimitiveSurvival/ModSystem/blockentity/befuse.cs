@@ -202,9 +202,10 @@ namespace PrimitiveSurvival.ModSystem
             this.Api.World.BlockAccessor.SetBlock(0, this.Pos);
         }
 
-
-        internal void OnBlockExploded(BlockPos pos)
+        // 3.9
+        internal void OnBlockExploded(BlockPos pos, string ignitedByPlayerUid)
         {
+            //consider improving land claim via ignitedByPlayerUid
             if (this.Api.Side == EnumAppSide.Server)
             {
                 if (!this.IsLit || this.remainingSeconds > 0.1)

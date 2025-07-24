@@ -1,15 +1,15 @@
 {
   "code": "pighide",
   "class": "blockhide",
-  "behaviors": [ { "name": "Unstable" } ],
+  "behaviors": [{ "name": "Unstable" }],
   "variantgroups": [
     {
       "code": "species",
-      "states": [ "wild" ]
+      "states": ["wild"]
     },
     {
       "code": "type",
-      "states": [ "male", "female" ]
+      "states": ["male", "female"]
     },
     {
       "code": "dir",
@@ -27,7 +27,7 @@
   ],
   "attributes": {
     "handbook": {
-      "groupBy": [ "pighide-*" ]
+      "groupBy": ["pighide-*"]
     }
   },
   "drops": [
@@ -107,9 +107,9 @@
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
   "creativeinventory": {
-    "general": [ "*-{species}-{type}-north" ],
-    "decorative": [ "*-{species}-{type}-north" ],
-    "primitive": [ "*-{species}-{type}-north" ]
+    "general": ["*-{species}-{type}-north"],
+    "decorative": ["*-{species}-{type}-north"],
+    "primitive": ["*-{species}-{type}-north"]
   },
   "replaceable": 5200,
   "resistance": 0.5,
@@ -120,7 +120,7 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/pig/pig-{species}-{type}1"
+        "base": "game:entity/animal/mammal/hooved/pig/eurasian-{type}1"
       }
     }
   },

@@ -12,8 +12,6 @@
 
   "block-stake-*": "Piquet",
   "blockdesc-stake-*": "Un bâton taillé pour être facilement enfoncé dans la terre ou le gravier. Un ingrédient utile pour la pêche et les pièges. Peut aussi servir de clôture.",
-  //"block-stakeinwater-*": "Piquet",
-  //"blockdesc-stakeinwater-*": "Un bâton taillé pour être facilement enfoncé dans la terre ou le gravier. Un ingrédient utile pour la pêche et les pièges. Peut aussi servir de clôture.",
 
   "block-snare-*": "Collet",
   "block-deadfall-*-andesite*": "Assommoir en andésite",
@@ -738,8 +736,8 @@
   "pie-single-primitivesurvival:snakemeat-raw-perfect": "Tourte au serpent",
   "pie-single-primitivesurvival:snakemeat-raw-charred": "Tourte au serpent (brûlée)",
 
-  "block-bearhead-polar1-female*": "Peau d'ourse polaire",
-  "block-bearhead-polar1-male*": "Peau d'ours polaire",
+  "block-bearhead-polar*-female*": "Peau d'ourse polaire",
+  "block-bearhead-polar*-male*": "Peau d'ours polaire",
   "block-bearhead-brown*-female*": "Peau d'ourse brunne",
   "block-bearhead-brown*-male*": "Peau d'ours brun",
   "block-bearhead-black*-female*": "Peau d'ourse noire",
@@ -749,8 +747,8 @@
   "block-bearhead-panda*-female*": "Peau de panda géante",
   "block-bearhead-panda*-male*": "Peau de panda géant",
 
-  "block-bearhide-polar1-female*": "Peau d'ourse polaire",
-  "block-bearhide-polar1-male*": "Peau d'ours polaire",
+  "block-bearhide-polar*-female*": "Peau d'ourse polaire",
+  "block-bearhide-polar*-male*": "Peau d'ours polaire",
   "block-bearhide-brown*-female*": "Peau d'ourse brunne",
   "block-bearhide-brown*-male*": "Peau d'ours brun",
   "block-bearhide-black*-female*": "Peau d'ourse noire",
@@ -812,7 +810,16 @@
 
   "block-firework-bamboobarrage": "Feu d'artifice (barrage de bambous)",
 
-  "block-irrigationvessel-*": "Oya",
+  "block-irrigationvessel-normal": "Oya (Dark Brown)",
+  "block-irrigationvessel-fire": "Oya (Fireclay)",
+  "block-irrigationvessel-black": "Oya (Black)",
+  "block-irrigationvessel-brown": "Oya (Brown)",
+  "block-irrigationvessel-cream": "Oya (Cream)",
+  "block-irrigationvessel-gray": "Oya (Gray)",
+  "block-irrigationvessel-orange": "Oya (Orange)",
+  "block-irrigationvessel-red": "Oya (Red)",
+  "block-irrigationvessel-tan": "Oya (Tan)",
+
   "blockdesc-irrigationvessel-*": "À utiliser à la place des blocs d'eau pour mieux irriguer votre terre labourée.",
   "fill-irrigationvessel": "Remplissez avec de l'eau pour garder la terre alentour humide.",
   "working-irrigationvessel": "Cette oya est prête à l'emploi.",
@@ -1327,8 +1334,6 @@
   "support-rightclick-add-pipe": "Clic droit pour ajouter un tuyau à ce support.",
   "pipe-rightclick-add-pipe": "Clic droit sur une extrémité de tuyau pour ajouter plus de tuyau.",
 
-  //1.20 below
-
   "block-betterfoureightbrickstairs-four-red-*": "Escaliers améliorés en briques de grande taille en argile rouge",
   "block-betterfoureightbrickstairs-four-brown-*": "Escaliers améliorés en briques de grande taille en argile marron",
   "block-betterfoureightbrickstairs-four-black-*": "Escaliers améliorés en briques de grande taille en argile noire",
@@ -1368,5 +1373,16 @@
   "game:placefailure-softer-ground-needed": "Vous ne pouvez le placer que dans un sol meuble",
 
   "item-clothes-lowerbody-clean-pants": "Pantalon propre",
-  "itemdesc-clothes-lowerbody-clean-pants": "<font color=\"#99c9f9\"><i>Il y a de grandes chances que vous en ayez besoin maintenant.</i></font><br>"
+  "itemdesc-clothes-lowerbody-clean-pants": "<font color=\"#99c9f9\"><i>Il y a de grandes chances que vous en ayez besoin maintenant.</i></font><br>",
+
+  "block-hare*-cape-female*": "Cape Hare Pelt (female)",
+  "block-hare*-cape-male*": "Cape Hare Pelt (male)",
+  "block-hare*-european-female*": "European Hare Pelt (female)",
+  "block-hare*-european-male*": "European Hare Pelt (male)",
+  "block-hare*-indian-female*": "Indian Hare Pelt (female)",
+  "block-hare*-indian-male*": "Indian Hare Pelt (male)",
+  "block-hare*-jackblack-female*": "Jackblack Hare Pelt (female)",
+  "block-hare*-jackblack-male*": "Jackblack Hare Pelt (male)",
+  "block-hare*-scrub-female*": "Scrub Hare Pelt (female)",
+  "block-hare*-scrub-male*": "Scrub Hare Pelt (male)"
 }

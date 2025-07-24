@@ -27,7 +27,6 @@ namespace PrimitiveSurvival.ModSystem
 
         private bool prevChunksLoaded;
 
-        // v3.7.9 warning
         private ICoreServerAPI sapi;
         private ICoreClientAPI capi;
 
@@ -241,6 +240,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void StartPre(ICoreAPI api)
         {
+
             // Load/create common config file in ..\VintageStoryData\ModConfig\thisModID
             var cfgFileName = this.thisModID + ".json";
             try
@@ -319,8 +319,12 @@ namespace PrimitiveSurvival.ModSystem
 
             api.RegisterEntityBehaviorClass("carryable", typeof(EntityBehaviorCarryable));
 
-            AiTaskRegistry.Register("meleeattackvenomous", typeof(AiTaskMeleeAttackVenomous));
-            AiTaskRegistry.Register("meleeattackcrab", typeof(AiTaskMeleeAttackCrab));
+            //3.9
+            //AiTaskRegistry.Register("meleeattackvenomous", typeof(AiTaskMeleeAttackVenomous));
+            //AiTaskRegistry.Register("meleeattackcrab", typeof(AiTaskMeleeAttackCrab));
+            AiTaskRegistry.Register<AiTaskMeleeAttackVenomous>("meleeattackvenomous");
+            AiTaskRegistry.Register<AiTaskMeleeAttackCrab>("meleeattackcrab");
+
 
             api.RegisterCollectibleBehaviorClass("inTreeHollowTransform", typeof(BehaviorInTreeHollowTransform));
             // ItemHoe class is preventing this from working
@@ -570,9 +574,12 @@ namespace PrimitiveSurvival.ModSystem
             }, player);
         }
 
-
+        
         public override void AssetsFinalize(ICoreAPI api)
         {
+            // 3.9 
+            base.AssetsFinalize(api);
+
             this.UpdateSpawnRates(api);
             /*
             if (api.Side != EnumAppSide.Client)
@@ -603,8 +610,6 @@ namespace PrimitiveSurvival.ModSystem
             fishingChunks = new Dictionary<IServerChunk, int>();
             // attempt to load the (short) list of all active fishing chunks
 
-            // v3.7.9 warning
-            //var data = this.sapi.WorldManager.SaveGame.GetData("chunklist");
             var data = sapi.WorldManager.SaveGame.GetData("chunklist");
             
             chunkList = data == null ? new List<string>() : SerializerUtil.Deserialize<List<string>>(data);
@@ -625,9 +630,7 @@ namespace PrimitiveSurvival.ModSystem
             //Debug.WriteLine("----------- Chunk depletion data saved to " + chunkcount + " chunks");
             // now attempt to save the (short) list of all active fishing chunks
 
-            // v3.7.9 warning
-            //this.sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
-            sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
+            this.sapi.WorldManager.SaveGame.StoreData("chunklist", SerializerUtil.Serialize(chunkList));
 
 
 
@@ -700,9 +703,7 @@ namespace PrimitiveSurvival.ModSystem
                     };*/
                     var pos = new BlockPos(coords[0].ToInt(), coords[1].ToInt(), coords[2].ToInt(), 0);
 
-                    // v3.7.9 warning
-                    //var getchunk = this.sapi.WorldManager.GetChunk(pos);
-                    var getchunk = (this.api as ICoreServerAPI).WorldManager.GetChunk(pos);
+                    var getchunk = this.sapi.WorldManager.GetChunk(pos);
 
                     if (getchunk != null)
                     {

@@ -5,7 +5,7 @@
       "M": {
         "type": "item",
         "code": "game:*-raw",
-        "allowedVariants": [ "redmeat", "poultry", "fish", "bushmeat" ],
+        "allowedVariants": ["redmeat", "poultry", "fish", "bushmeat"],
         "name": "meat",
         "quantity": 4
       },
@@ -51,7 +51,7 @@
       "M": {
         "type": "item",
         "code": "game:*-raw",
-        "allowedVariants": [ "redmeat", "poultry", "fish", "bushmeat" ],
+        "allowedVariants": ["redmeat", "poultry", "fish", "bushmeat"],
         "name": "meat",
         "quantity": 4
       },
@@ -97,7 +97,7 @@
       "M": {
         "type": "item",
         "code": "primitivesurvival:trussedmeat-*-raw",
-        "allowedVariants": [ "redmeat", "poultry", "fish", "bushmeat" ],
+        "allowedVariants": ["redmeat", "poultry", "fish", "bushmeat"],
         "name": "meat",
         "quantity": 1
       },

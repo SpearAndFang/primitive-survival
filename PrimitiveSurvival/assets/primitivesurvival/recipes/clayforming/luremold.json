@@ -3,7 +3,7 @@
     "type": "item",
     "code": "game:clay-*",
     "name": "type",
-    "allowedVariants": ["blue", "red", "fire"] //1.20
+    "allowedVariants": ["blue", "red", "fire"]
   },
   "pattern": [
     [

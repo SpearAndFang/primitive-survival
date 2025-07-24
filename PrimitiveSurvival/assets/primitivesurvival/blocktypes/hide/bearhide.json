@@ -1,15 +1,23 @@
 {
   "code": "bearhide",
   "class": "blockhide",
-  "behaviors": [ { "name": "Unstable" } ],
+  "behaviors": [{ "name": "Unstable" }],
   "variantgroups": [
     {
       "code": "species",
-      "states": [ "black1", "brown1", "brown2", "brown3", "panda1", "polar1", "sun1" ]
+      "states": [
+        "black-adult1",
+        "brown-adult1",
+        "brown-adult2",
+        "brown-adult3",
+        "panda-adult1",
+        "polar-adult1",
+        "sun-adult1"
+      ]
     },
     {
       "code": "type",
-      "states": [ "male", "female" ]
+      "states": ["male", "female"]
     },
     {
       "code": "dir",
@@ -27,7 +35,7 @@
   ],
   "attributes": {
     "handbook": {
-      "groupBy": [ "bearhide-*" ]
+      "groupBy": ["bearhide-*"]
     }
   },
   "drops": [
@@ -77,9 +85,9 @@
   "faceCullMode": "NeverCull",
   "blockmaterial": "Cloth",
   "creativeinventory": {
-    "general": [ "*-{species}-{type}-north" ],
-    "decorative": [ "*-{species}-{type}-north" ],
-    "primitive": [ "*-{species}-{type}-north" ]
+    "general": ["*-{species}-{type}-north"],
+    "decorative": ["*-{species}-{type}-north"],
+    "primitive": ["*-{species}-{type}-north"]
   },
   "drawtype": "json",
   "replaceable": 600,
@@ -91,7 +99,7 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/bear/{species}"
+        "base": "game:entity/animal/mammal/bear/{species}"
       }
     }
   },

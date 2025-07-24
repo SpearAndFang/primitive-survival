@@ -9,5 +9,9 @@
   "width": 2,
   "height": 2,
   "shapeless": false,
-  "output": { "type": "block", "code": "primitivesurvival:rockblastingbomb", "quantity": 8 }
+  "output": {
+    "type": "block",
+    "code": "primitivesurvival:rockblastingbomb",
+    "quantity": 8
+  }
 }

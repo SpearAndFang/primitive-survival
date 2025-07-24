@@ -168,8 +168,10 @@ namespace PrimitiveSurvival.ModSystem
             return false;
         }
 
-        internal void OnBlockExploded(BlockPos pos)
+        // 3.9
+        internal void OnBlockExploded(BlockPos pos, string ignitedByPlayerUid)
         {
+            //consider improving land claim via ignitedByPlayerUid
             if (this.Api.Side == EnumAppSide.Server)
             {
                 if ((!this.IsLit || this.remainingSeconds > 0.3) && !this.NearToClaimedLand())

@@ -42,7 +42,7 @@ namespace PrimitiveSurvival.ModSystem
         private AssetLocation dryPickupSound;
 
         BlockSupport ownBlock;
-        string[] sourceTypes = { "water-", "barrel", "irrigationvessel-normal" };
+        string[] sourceTypes = { "water-", "barrel", "irrigationvessel-" }; //irrigationvessel-normal
         string dom = "primitivesurvival:";
 
         public BESupport()

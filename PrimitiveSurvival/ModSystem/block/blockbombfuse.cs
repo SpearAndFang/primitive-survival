@@ -100,11 +100,14 @@ namespace PrimitiveSurvival.ModSystem
             bebomb?.OnIgnite(byPlayer);
         }
 
-
-        public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType)
+        // 3.9
+        //public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType)
+        public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType, string ignitedByPlayerUid)
         {
             var bebomb = world.BlockAccessor.GetBlockEntity(pos) as BEBombFuse;
-            bebomb?.OnBlockExploded(pos);
+            // 3.9
+            //bebomb?.OnBlockExploded(pos);
+            bebomb?.OnBlockExploded(pos, ignitedByPlayerUid);
         }
 
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)

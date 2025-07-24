@@ -3,9 +3,12 @@ namespace PrimitiveSurvival.ModSystem
     using System;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
+    using Vintagestory.API.Config;
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
+    using Vintagestory.GameContent;
+
     //using System.Diagnostics;
 
     public class BEFirework : BlockEntity
@@ -269,7 +272,7 @@ namespace PrimitiveSurvival.ModSystem
             }
             else if (type == "boomer")
             {
-                var color = ColorUtil.ToRgba(rand.Next(0, 255), rand.Next(0, 255), rand.Next(0, 255), rand.Next(0, 255));
+                var color = ColorUtil.ToRgba(rand.Next(140, 255), rand.Next(100, 255), rand.Next(100, 255), rand.Next(100, 255));
 
                 particles = new SimpleParticleProperties(
                     1000, 0, // quantity
@@ -443,11 +446,19 @@ namespace PrimitiveSurvival.ModSystem
                     }
                 }
 
+                //3.9 ashes wasn't working below - how about this
+                if (this.remainingSeconds <= 0)
+                {
+                    Block.SpawnBlockBrokenParticles(this.Pos, null);
+                    this.Api.World.BlockAccessor.BreakBlock(this.Pos, null, 0f);
+                }
+
+
                 if (this.Api.Side == EnumAppSide.Server && this.remainingSeconds <= 0)
                 {
                     this.Combust(dt);
                 }
-
+                                
                 if (this.Api.Side == EnumAppSide.Client)
                 {
                     smallSparks.MinPos.Set(this.Pos.X + 0.45, this.Pos.Y + 0.53, this.Pos.Z + 0.45);
@@ -555,9 +566,10 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (this.Block.LastCodePart() == "missile" || this.Block.LastCodePart() == "boomer")
             {
-                ((IServerWorldAccessor)this.Api.World).CreateExplosion(this.Pos, this.BlastType, this.BlastRadius, this.InjureRadius);
+                ((IServerWorldAccessor)this.Api.World).CreateExplosion(this.Pos, this.BlastType, this.BlastRadius, this.InjureRadius); 
             }
 
+            /* 3.9 wtf
             //ashes
             var minPos = this.Pos.ToVec3d().AddCopy(1f, 1f, 1f);
             var maxPos = this.Pos.ToVec3d().AddCopy(0f, -0.3f, -0f);
@@ -570,15 +582,17 @@ namespace PrimitiveSurvival.ModSystem
                     2 * (float)this.Api.World.Rand.NextDouble(),
                     1f - 2 * (float)this.Api.World.Rand.NextDouble()
                 );
-                this.Api.World.SpawnParticles(10, color, minPos, maxPos, tmp, tmp, 1.5f, 1f, 0.25f + (float)this.Api.World.Rand.NextDouble() * 0.25f, EnumParticleModel.Cube, null);
+               // this.Api.World.SpawnParticles(10, color, minPos, maxPos, tmp, tmp, 1.5f, 1f, 0.25f + (float)this.Api.World.Rand.NextDouble() * 0.25f, EnumParticleModel.Cube, null);
             }
-
+        
             this.Api.World.BlockAccessor.SetBlock(0, this.Pos);
+            */
         }
 
-
-        internal void OnBlockExploded(BlockPos pos)
+        // 3.9
+        internal void OnBlockExploded(BlockPos pos, string ignitedByPlayerUid)
         {
+            //consider improving land claim via ignitedByPlayerUid
             if (this.Api.Side == EnumAppSide.Server)
             {
                 if (!this.IsLit || this.remainingSeconds > 0.3)

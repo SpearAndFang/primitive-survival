@@ -35,7 +35,7 @@
       "type": "block",
       "code": "game:glass-*",
       "name": "type",
-      "allowedVariants": [ "quartz", "plain" ]
+      "allowedVariants": ["quartz", "plain"]
     },
     "M": {
       "type": "block",
@@ -45,8 +45,14 @@
     "P": {
       "type": "item",
       "code": "game:metalplate-*",
-      "allowedVariants": [ "tinbronze", "bismuthbronze", "iron", "meteoriciron", "steel" ]
-    },
+      "allowedVariants": [
+        "tinbronze",
+        "bismuthbronze",
+        "iron",
+        "meteoriciron",
+        "steel"
+      ]
+    }
   },
   "width": 3,
   "height": 3,
@@ -56,4 +62,3 @@
     "quantity": 1
   }
 }
-

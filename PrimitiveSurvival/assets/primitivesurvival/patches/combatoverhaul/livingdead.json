@@ -1,88 +1,88 @@
 ﻿[
-    {
-        "side": "Server",
-        "file": "entities/land/livingdead",
-        "op": "add",
-        "path": "/client/behaviors/-",
-        "value": {
-            "code": "CombatOverhaul:EntityColliders",
-            "elementsByType": {
-                "*": {
-                    "Torso": [ "body" ],
-                    "Head": [ "Head" ],
-                    "Arm": [ "Larm", "Rarm" ],
-                    "Leg": [ "Lleg", "Rleg" ],
-                    "Critical": [],
-                    "Resistant": []
-                }
-            }
-        },
-        "dependsOn": [ { "modid": "combatoverhaul" } ]
+  {
+    "side": "Server",
+    "file": "entities/land/livingdead",
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityColliders",
+      "elementsByType": {
+        "*": {
+          "Torso": ["body"],
+          "Head": ["Head"],
+          "Arm": ["Larm", "Rarm"],
+          "Leg": ["Lleg", "Rleg"],
+          "Critical": [],
+          "Resistant": []
+        }
+      }
     },
-    {
-        "side": "Server",
-        "file": "entities/land/livingdead",
-        "op": "add",
-        "path": "/server/behaviors/-",
-        "value": {
-            "code": "CombatOverhaul:EntityColliders",
-            "elementsByType": {
-                "*": {
-                    "Torso": [ "body" ],
-                    "Head": [ "Head" ],
-                    "Arm": [ "Larm", "Rarm" ],
-                    "Leg": [ "Lleg", "Rleg" ],
-                    "Critical": [],
-                    "Resistant": []
-                }
-            }
-        },
-        "dependsOn": [ { "modid": "combatoverhaul" } ]
+    "dependsOn": [{ "modid": "combatoverhaul" }]
+  },
+  {
+    "side": "Server",
+    "file": "entities/land/livingdead",
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityColliders",
+      "elementsByType": {
+        "*": {
+          "Torso": ["body"],
+          "Head": ["Head"],
+          "Arm": ["Larm", "Rarm"],
+          "Leg": ["Lleg", "Rleg"],
+          "Critical": [],
+          "Resistant": []
+        }
+      }
     },
-    {
-        "side": "Server",
-        "file": "entities/land/livingdead",
-        "op": "add",
-        "path": "/server/behaviors/-",
-        "value": {
-            "code": "CombatOverhaul:EntityDamageModel",
-            "damageModel": {
-                "TorsoDamageMultiplier": 1,
-                "LimbsDamageMultiplier": 0.75,
-                "HeadDamageMultiplier": 1.25,
-                "CriticalDamageMultiplier": 2,
-                "DefaultResistsByType": {
-                    "*": {
-                        "BluntAttack": 0,
-                        "SlashingAttack": 7,
-                        "PiercingAttack": 8
-                    }
-                }
-            }
-        },
-        "dependsOn": [ { "modid": "combatoverhaul" } ]
+    "dependsOn": [{ "modid": "combatoverhaul" }]
+  },
+  {
+    "side": "Server",
+    "file": "entities/land/livingdead",
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityDamageModel",
+      "damageModel": {
+        "TorsoDamageMultiplier": 1,
+        "LimbsDamageMultiplier": 0.75,
+        "HeadDamageMultiplier": 1.25,
+        "CriticalDamageMultiplier": 2,
+        "DefaultResistsByType": {
+          "*": {
+            "BluntAttack": 0,
+            "SlashingAttack": 7,
+            "PiercingAttack": 8
+          }
+        }
+      }
     },
-    {
-        "side": "Server",
-        "file": "entities/land/livingdead",
-        "op": "add",
-        "path": "/client/behaviors/-",
-        "value": {
-            "code": "CombatOverhaul:EntityDamageModel",
-            "damageModel": {
-                "TorsoDamageMultiplier": 1,
-                "LimbsDamageMultiplier": 0.75,
-                "HeadDamageMultiplier": 1.25,
-                "CriticalDamageMultiplier": 2,
-                "DefaultResistsByType": {
-                    "*": {
-                        "BluntAttack": 0,
-                        "SlashingAttack": 7,
-                        "PiercingAttack": 8
-                    }
-                }
-            }
-        },
-        "dependsOn": [ { "modid": "combatoverhaul" } ]
-    }
+    "dependsOn": [{ "modid": "combatoverhaul" }]
+  },
+  {
+    "side": "Server",
+    "file": "entities/land/livingdead",
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "value": {
+      "code": "CombatOverhaul:EntityDamageModel",
+      "damageModel": {
+        "TorsoDamageMultiplier": 1,
+        "LimbsDamageMultiplier": 0.75,
+        "HeadDamageMultiplier": 1.25,
+        "CriticalDamageMultiplier": 2,
+        "DefaultResistsByType": {
+          "*": {
+            "BluntAttack": 0,
+            "SlashingAttack": 7,
+            "PiercingAttack": 8
+          }
+        }
+      }
+    },
+    "dependsOn": [{ "modid": "combatoverhaul" }]
+  }
 ]

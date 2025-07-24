@@ -53,7 +53,7 @@
     "ingredients": {
       "A": {
         "type": "item",
-        "code": "game:powder-borax", //1.20 powderedborax
+        "code": "game:powder-borax",
         "quantity": 1
       },
       "B": {

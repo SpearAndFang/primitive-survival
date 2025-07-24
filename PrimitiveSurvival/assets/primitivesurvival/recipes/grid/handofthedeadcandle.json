@@ -8,7 +8,11 @@
       "code": "game:candle",
       "quantity": 1
     },
-    "B": { "type": "block", "code": "primitivesurvival:handofthedead-empty-north", "quantity": 1 }
+    "B": {
+      "type": "block",
+      "code": "primitivesurvival:handofthedead-empty-north",
+      "quantity": 1
+    }
   },
   "name": "handofthedeadcandle",
   "width": 1,

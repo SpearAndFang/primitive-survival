@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using System.Linq;
     using Vintagestory.API.Common;
     using Vintagestory.API.Common.Entities;
-    using Vintagestory.GameContent;
+    using Vintagestory.GameContent; 
 
     //using System.Diagnostics;
 
@@ -60,7 +60,7 @@ namespace PrimitiveSurvival.ModSystem
                     outHide = hideTypes[Rnd.Next(hideTypes.Count())];
                     if (outHide == "bearhide-")
                     {
-                        string[] mammalTypes = { "black1", "brown1", "brown2", "brown3", "panda1", "polar1", "sun1" };
+                        string[] mammalTypes = {  "black-adult1", "brown-adult1", "brown-adult2", "brown-adult3", "panda-adult1", "polar-adult1", "sun-adult1" };
                         outHide += mammalTypes[Rnd.Next(mammalTypes.Count())] + "-";
                     }
                 }
@@ -87,7 +87,7 @@ namespace PrimitiveSurvival.ModSystem
                     }
                     else if (outHide == "harehide-")
                     {
-                        string[] mammalTypes = { "arctic-", "ashgrey-", "darkbrown-", "darkgrey-", "desert-", "gold-", "lightbrown-", "lightgrey-", "silver-", "smokegrey-" };
+                        string[] mammalTypes = { "cape-", "european-", "indian-", "jackblack-", "scrub-" };
                         outHide += mammalTypes[Rnd.Next(mammalTypes.Count())];
                     }
                 }

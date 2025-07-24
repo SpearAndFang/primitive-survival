@@ -12,8 +12,6 @@
 
   "block-stake-*": "Estaca",
   "blockdesc-stake-*": "Uma vareta afiada que pode ser colocada seguramente em terra ou cascalho. Um item muito útil para armadilhas e pesca. Também faz uma boa cerca.",
-  //"block-stakeinwater-*": "Estaca",
-  //"blockdesc-stakeinwater-*": "ma vareta afiada que pode ser colocada seguramente em terra ou cascalho. Um item muito útil para armadilhas e pesca. Também faz uma boa cerca.",
 
   "block-snare-*": "Armadilha",
   "block-deadfall-*-andesite*": "Arapuca de Andesito",
@@ -678,7 +676,7 @@
   "blockdesc-necronomicon-*": "O que é este livro misterioso?  Certamente há uma maneira de abri-lo...",
   "blockdesc-snare-set*": "Coloque em solo macio para pegar animais.  Adicione comida para ser mais efetiva.",
   "blockdesc-woodlantern*": "Não tão brilhante quanto uma lanterna comum, mas não precisa de vidro e é bonita.",
-  "blockdesc-firework-*": "Coloque em solo macio and light it with a torch.  Enjoy the show!",
+  "blockdesc-firework-*": "Coloque em solo macio and light it with a torch, or connect several together with fuses for some serious pyrotechnics. Enjoy the show!",
   "blockdesc-cthulu-statue*": "O que é este estranho artefato? Parece que se encaixa em cima de algo...",
   "blockdesc-dagon-statue*": "O que é este estranho artefato? Parece que se encaixa em cima de algo...",
   "blockdesc-hydra-statue*": "O que é este estranho artefato? Parece que se encaixa em cima de algo...",
@@ -738,8 +736,8 @@
   "pie-single-primitivesurvival:snakemeat-raw-perfect": "Torta de cobra",
   "pie-single-primitivesurvival:snakemeat-raw-charred": "Torta de cobra (queimado)",
 
-  "block-bearhead-polar1-female*": "Pele de Urso Polar (fêmea)",
-  "block-bearhead-polar1-male*": "Pele de Urso Polar (macho)",
+  "block-bearhead-polar*-female*": "Pele de Urso Polar (fêmea)",
+  "block-bearhead-polar*-male*": "Pele de Urso Polar (macho)",
   "block-bearhead-brown*-female*": "Pele de Urso Pardo (fêmea)",
   "block-bearhead-brown*-male*": "Pele de Urso Pardo (macho)",
   "block-bearhead-black*-female*": "Pele de Urso Preto (fêmea)",
@@ -749,8 +747,8 @@
   "block-bearhead-panda*-female*": "Pele de Urso Panda (fêmea)",
   "block-bearhead-panda*-male*": "Pele de Urso Panda (macho)",
 
-  "block-bearhide-polar1-female*": "Pele de Urso Polar (fêmea)",
-  "block-bearhide-polar1-male*": "Pele de Urso Polar (macho)",
+  "block-bearhide-polar*-female*": "Pele de Urso Polar (fêmea)",
+  "block-bearhide-polar*-male*": "Pele de Urso Polar (macho)",
   "block-bearhide-brown*-female*": "Pele de Urso Pardo (fêmea)",
   "block-bearhide-brown*-male*": "Pele de Urso Pardo(macho)",
   "block-bearhide-black*-female*": "Pele de Urso Preto (fêmea)",
@@ -811,7 +809,16 @@
 
   "block-firework-bamboobarrage": "Fogos de Artifício (Barreira de Bambú)",
 
-  "block-irrigationvessel-*": "Recipiente de Irrigação",
+  "block-irrigationvessel-normal": "Recipiente de Irrigação (Dark Brown)",
+  "block-irrigationvessel-fire": "Recipiente de Irrigação (Fireclay)",
+  "block-irrigationvessel-black": "Recipiente de Irrigação (Black)",
+  "block-irrigationvessel-brown": "Recipiente de Irrigação (Brown)",
+  "block-irrigationvessel-cream": "Recipiente de Irrigação (Cream)",
+  "block-irrigationvessel-gray": "Recipiente de Irrigação (Gray)",
+  "block-irrigationvessel-orange": "Recipiente de Irrigação (Orange)",
+  "block-irrigationvessel-red": "Recipiente de Irrigação (Red)",
+  "block-irrigationvessel-tan": "Recipiente de Irrigação (Tan)",
+
   "blockdesc-irrigationvessel-*": "Use no lugar de blocos de água para uma melhor irrigação do solo.",
   "fill-irrigationvessel": "Encha com água para manter húmida toda a terra arada próxima.",
   "working-irrigationvessel": "Este recipiente de irrigação está completamente funcional.",
@@ -1324,8 +1331,6 @@
   "support-rightclick-add-pipe": "Clique com o Botão direito para adicionar um cano neste suporte",
   "pipe-rightclick-add-pipe": "Clique com o Botão direito no final de um cano para extender com mais canos",
 
-  //1.20 below
-
   "block-betterfoureightbrickstairs-four-red-*": "Degraus melhorados de tijolo grande de argila vermelha",
   "block-betterfoureightbrickstairs-four-brown-*": "Degraus melhorados de tijolo grande de argila marrom",
   "block-betterfoureightbrickstairs-four-black-*": "Degraus melhorados de tijolo grande de argila preta",
@@ -1361,5 +1366,16 @@
   "block-floatingdock-purpleheart-*": "Doca Flutuante (Roxinho)",
   "blockdesc-floatingdock-*": "Coloque diretamente na água",
 
-  "game:placefailure-softer-ground-needed": "você só pode colocar isto em solo macio"
+  "game:placefailure-softer-ground-needed": "você só pode colocar isto em solo macio",
+
+  "block-hare*-cape-female*": "Cape Hare Pelt (female)",
+  "block-hare*-cape-male*": "Cape Hare Pelt (male)",
+  "block-hare*-european-female*": "European Hare Pelt (female)",
+  "block-hare*-european-male*": "European Hare Pelt (male)",
+  "block-hare*-indian-female*": "Indian Hare Pelt (female)",
+  "block-hare*-indian-male*": "Indian Hare Pelt (male)",
+  "block-hare*-jackblack-female*": "Jackblack Hare Pelt (female)",
+  "block-hare*-jackblack-male*": "Jackblack Hare Pelt (male)",
+  "block-hare*-scrub-female*": "Scrub Hare Pelt (female)",
+  "block-hare*-scrub-male*": "Scrub Hare Pelt (male)"
 }

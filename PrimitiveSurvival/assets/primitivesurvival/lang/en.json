@@ -12,8 +12,6 @@
 
   "block-stake-*": "Stake",
   "blockdesc-stake-*": "A sharpened stick which can be securely pushed into dirt or gravel. A useful ingredient for trapping and fishing. Also makes a good fence.",
-  //"block-stakeinwater-*": "Stake",
-  //"blockdesc-stakeinwater-*": "A sharpened stick which can be securely pushed into dirt or gravel. A useful ingredient for trapping and fishing. Also makes a good fence.",
 
   "block-snare-*": "Snare",
   "block-deadfall-*-andesite*": "Andesite Deadfall",
@@ -678,7 +676,7 @@
   "blockdesc-necronomicon-*": "What is this mysterious book?  Surely there's a way to open it...",
   "blockdesc-snare-set*": "Place it in soft ground to catch animals.  Bait it so it's more effective.",
   "blockdesc-woodlantern*": "Not as bright as a regular lantern, but no glass required and it looks pretty.",
-  "blockdesc-firework-*": "Place it in soft ground and light it with a torch.  Enjoy the show!",
+  "blockdesc-firework-*": "Place it in soft ground and light it with a torch, or connect several together with fuses for some serious pyrotechnics. Enjoy the show!",
   "blockdesc-cthulu-statue*": "What is this strange artifact?  It appears to mount on top of something...",
   "blockdesc-dagon-statue*": "What is this strange artifact?  It appears to mount on top of something...",
   "blockdesc-hydra-statue*": "What is this strange artifact?  It appears to mount on top of something...",
@@ -738,8 +736,8 @@
   "pie-single-primitivesurvival:snakemeat-raw-perfect": "Snake pie",
   "pie-single-primitivesurvival:snakemeat-raw-charred": "Snake pie (charred)",
 
-  "block-bearhead-polar1-female*": "Polar Bear Pelt (female)",
-  "block-bearhead-polar1-male*": "Polar Bear Pelt (male)",
+  "block-bearhead-polar*-female*": "Polar Bear Pelt (female)",
+  "block-bearhead-polar*-male*": "Polar Bear Pelt (male)",
   "block-bearhead-brown*-female*": "Brown Bear Pelt (female)",
   "block-bearhead-brown*-male*": "Brown Bear Pelt (male)",
   "block-bearhead-black*-female*": "Black Bear Pelt (female)",
@@ -749,8 +747,8 @@
   "block-bearhead-panda*-female*": "Panda Bear Pelt (female)",
   "block-bearhead-panda*-male*": "Panda Bear Pelt (male)",
 
-  "block-bearhide-polar1-female*": "Polar Bear Pelt (female)",
-  "block-bearhide-polar1-male*": "Polar Bear Pelt (male)",
+  "block-bearhide-polar*-female*": "Polar Bear Pelt (female)",
+  "block-bearhide-polar*-male*": "Polar Bear Pelt (male)",
   "block-bearhide-brown*-female*": "Brown Bear Pelt (female)",
   "block-bearhide-brown*-male*": "Brown Bear Pelt (male)",
   "block-bearhide-black*-female*": "Black Bear Pelt (female)",
@@ -812,7 +810,16 @@
 
   "block-firework-bamboobarrage": "Firework (Bamboo Barrage)",
 
-  "block-irrigationvessel-*": "Irrigation Vessel",
+  "block-irrigationvessel-normal": "Irrigation Vessel (Dark Brown)",
+  "block-irrigationvessel-fire": "Irrigation Vessel (Fireclay)",
+  "block-irrigationvessel-black": "Irrigation Vessel (Black)",
+  "block-irrigationvessel-brown": "Irrigation Vessel (Brown)",
+  "block-irrigationvessel-cream": "Irrigation Vessel (Cream)",
+  "block-irrigationvessel-gray": "Irrigation Vessel (Gray)",
+  "block-irrigationvessel-orange": "Irrigation Vessel (Orange)",
+  "block-irrigationvessel-red": "Irrigation Vessel (Red)",
+  "block-irrigationvessel-tan": "Irrigation Vessel (Tan)",
+
   "blockdesc-irrigationvessel-*": "Use instead of water blocks for better farmland irrigation.",
   "fill-irrigationvessel": "Fill with water to keep all neighboring farmland moist.",
   "working-irrigationvessel": "This irrigation vessel is fully functional.",
@@ -1325,8 +1332,6 @@
   "support-rightclick-add-pipe": "Right click to add a pipe to this support",
   "pipe-rightclick-add-pipe": "Right click on a pipe end to add more pipe",
 
-  //1.20 below
-
   "block-betterfoureightbrickstairs-four-red-*": "Better Red clay large brick stairs",
   "block-betterfoureightbrickstairs-four-brown-*": "Better Brown clay large brick stairs",
   "block-betterfoureightbrickstairs-four-black-*": "Better Black clay large brick stairs",
@@ -1365,5 +1370,16 @@
   "game:placefailure-softer-ground-needed": "you can only place this in soft ground",
 
   "item-clothes-lowerbody-clean-pants": "Clean pants",
-  "itemdesc-clothes-lowerbody-clean-pants": "<font color=\"#99c9f9\"><i>There's a pretty good chance that you'll be needing these now.</i></font><br>"
+  "itemdesc-clothes-lowerbody-clean-pants": "<font color=\"#99c9f9\"><i>There's a pretty good chance that you'll be needing these now.</i></font><br>",
+
+  "block-hare*-cape-female*": "Cape Hare Pelt (female)",
+  "block-hare*-cape-male*": "Cape Hare Pelt (male)",
+  "block-hare*-european-female*": "European Hare Pelt (female)",
+  "block-hare*-european-male*": "European Hare Pelt (male)",
+  "block-hare*-indian-female*": "Indian Hare Pelt (female)",
+  "block-hare*-indian-male*": "Indian Hare Pelt (male)",
+  "block-hare*-jackblack-female*": "Jackblack Hare Pelt (female)",
+  "block-hare*-jackblack-male*": "Jackblack Hare Pelt (male)",
+  "block-hare*-scrub-female*": "Scrub Hare Pelt (female)",
+  "block-hare*-scrub-male*": "Scrub Hare Pelt (male)"
 }

@@ -84,12 +84,16 @@ namespace PrimitiveSurvival.ModSystem
             befirework?.OnIgnite(byPlayer);
         }
 
-
-        public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType)
+        // 3.9
+        //public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType)
+        public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType, string ignitedByPlayerUid)
         {
             //IMPORTANT NOTICE FOR MODDERS: If you override Block.OnBlockExploded() and don't call the base method you now must manually delete the block with "world.BulkBlockAccessor.SetBlock(0, pos);" or your block will become a source of infinite drops
             var befirework = world.BlockAccessor.GetBlockEntity(pos) as BEFirework;
-            befirework?.OnBlockExploded(pos);
+
+            // 3.9
+            //befirework?.OnBlockExploded(pos);
+            befirework?.OnBlockExploded(pos, ignitedByPlayerUid);
         }
 
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)

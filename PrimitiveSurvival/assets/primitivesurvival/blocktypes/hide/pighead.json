@@ -4,25 +4,20 @@
   "variantgroups": [
     {
       "code": "species",
-      "states": [ "wild" ]
+      "states": ["wild"]
     },
     {
       "code": "type",
-      "states": [ "male", "female" ]
+      "states": ["male", "female"]
     },
     {
       "code": "dir",
-      "states": [
-        "north",
-        "east",
-        "south",
-        "west"
-      ]
+      "states": ["north", "east", "south", "west"]
     }
   ],
   "attributes": {
     "handbook": {
-      "groupBy": [ "pighead-*" ]
+      "groupBy": ["pighead-*"]
     }
   },
   "drops": [
@@ -70,9 +65,9 @@
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
   "creativeinventory": {
-    "general": [ "*-{species}-{type}-north" ],
-    "decorative": [ "*-{species}-{type}-north" ],
-    "primitive": [ "*-{species}-{type}-north" ]
+    "general": ["*-{species}-{type}-north"],
+    "decorative": ["*-{species}-{type}-north"],
+    "primitive": ["*-{species}-{type}-north"]
   },
   "replaceable": 5200,
   "resistance": 0.5,
@@ -83,7 +78,7 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/pig/pig-{species}-{type}1"
+        "base": "game:entity/animal/mammal/hooved/pig/eurasian-{type}1"
       },
       "plaque": {
         "base": "game:block/reed/beehive/floor"

@@ -19,7 +19,7 @@
       "when": "RaftEnabled",
       "isValue": "false"
     },
-    "dependsOn": [ { "modid": "floralzonescaperegion" } ],
+    "dependsOn": [{ "modid": "floralzonescaperegion" }],
     "side": "Server"
   },
   {
@@ -31,7 +31,7 @@
       "when": "RaftEnabled",
       "isValue": "false"
     },
-    "dependsOn": [ { "modid": "floralzonescaribbeanregion" } ],
+    "dependsOn": [{ "modid": "floralzonescaribbeanregion" }],
     "side": "Server"
   },
   {
@@ -43,7 +43,7 @@
       "when": "RaftEnabled",
       "isValue": "false"
     },
-    "dependsOn": [ { "modid": "floralzonescentralaustralianregion" } ],
+    "dependsOn": [{ "modid": "floralzonescentralaustralianregion" }],
     "side": "Server"
   },
   {
@@ -55,7 +55,7 @@
       "when": "RaftEnabled",
       "isValue": "false"
     },
-    "dependsOn": [ { "modid": "floralzonesneozeylandicregion" } ],
+    "dependsOn": [{ "modid": "floralzonesneozeylandicregion" }],
     "side": "Server"
   },
   {

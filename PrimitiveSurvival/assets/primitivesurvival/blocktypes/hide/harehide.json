@@ -1,15 +1,15 @@
 {
   "code": "harehide",
   "class": "blockhide",
-  "behaviors": [ { "name": "Unstable" } ],
+  "behaviors": [{ "name": "Unstable" }],
   "variantgroups": [
     {
       "code": "species",
-      "states": [ "arctic", "ashgrey", "darkbrown", "darkgrey", "desert", "gold", "lightbrown", "lightgrey", "silver", "smokegrey" ]
+      "states": ["cape", "european", "indian", "jackblack", "scrub"] 
     },
     {
       "code": "type",
-      "states": [ "female", "male" ]
+      "states": ["female", "male"]
     },
     {
       "code": "dir",
@@ -27,7 +27,7 @@
   ],
   "attributes": {
     "handbook": {
-      "groupBy": [ "harehide-*" ]
+      "groupBy": ["harehide-*"]
     }
   },
   "drops": [
@@ -75,9 +75,9 @@
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
   "creativeinventory": {
-    "general": [ "*-{species}-{type}-north" ],
-    "decorative": [ "*-{species}-{type}-north" ],
-    "primitive": [ "*-{species}-{type}-north" ]
+    "general": ["*-{species}-{type}-north"],
+    "decorative": ["*-{species}-{type}-north"],
+    "primitive": ["*-{species}-{type}-north"]
   },
   "replaceable": 5200,
   "resistance": 0.5,
@@ -88,7 +88,7 @@
   "texturesByType": {
     "*": {
       "normal": {
-        "base": "game:entity/hare/{type}-{species}"
+        "base": "game:entity/animal/mammal/hare/{species}-{type}1"
       }
     }
   },

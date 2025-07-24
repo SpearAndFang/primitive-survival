@@ -19,7 +19,7 @@
       "type": "item",
       "code": "primitivesurvival:jerky-redmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group6" ]
+      "textureMapping": ["meat", "group6"]
     }
   },
   {
@@ -31,7 +31,7 @@
       "type": "item",
       "code": "primitivesurvival:jerky-redmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group6" ]
+      "textureMapping": ["meat", "group6"]
     }
   },
   {
@@ -66,7 +66,7 @@
       "type": "item",
       "code": "primitivesurvival:jerky-bushmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -78,7 +78,7 @@
       "type": "item",
       "code": "primitivesurvival:jerky-bushmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -113,7 +113,7 @@
       "type": "item",
       "code": "primitivesurvival:jerky-fish-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -125,7 +125,7 @@
       "type": "item",
       "code": "primitivesurvival:jerky-fish-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group2" ]
+      "textureMapping": ["meat", "group2"]
     }
   },
   {
@@ -144,21 +144,20 @@
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/jerky-redmeat-raw",
-    "value": [ "meat", "group6" ]
+    "value": ["meat", "group6"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/jerky-bushmeat-raw",
-    "value": [ "meat", "group5" ]
+    "value": ["meat", "group5"]
   },
   {
     "file": "game:blocktypes/clay/pot",
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/jerky-fish-raw",
-    "value": [ "meat", "group5" ]
+    "value": ["meat", "group5"]
   }
-
 ]

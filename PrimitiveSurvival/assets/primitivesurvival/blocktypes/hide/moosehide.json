@@ -1,17 +1,15 @@
 {
   "code": "moosehide",
   "class": "blockhide",
-  "behaviors": [ { "name": "Unstable" } ],
+  "behaviors": [{ "name": "Unstable" }],
   "variantgroups": [
     {
       "code": "species",
-      "states": [
-        "all"
-      ]
+      "states": ["all"]
     },
     {
       "code": "type",
-      "states": [ "female", "male" ]
+      "states": ["female", "male"]
     },
     {
       "code": "dir",
@@ -29,7 +27,7 @@
   ],
   "attributes": {
     "handbook": {
-      "groupBy": [ "moosehide-*" ]
+      "groupBy": ["moosehide-*"]
     }
   },
   "drops": [
@@ -77,9 +75,9 @@
   "sideopaque": { "all": false },
   "blockmaterial": "Cloth",
   "creativeinventory": {
-    "general": [ "*-{species}-{type}-north" ],
-    "decorative": [ "*-{species}-{type}-north" ],
-    "primitive": [ "*-{species}-{type}-north" ]
+    "general": ["*-{species}-{type}-north"],
+    "decorative": ["*-{species}-{type}-north"],
+    "primitive": ["*-{species}-{type}-north"]
   },
   "replaceable": 5200,
   "resistance": 0.5,
@@ -90,7 +88,7 @@
   "texturesByType": {
     "*": {
       "moose-adult": {
-        "base": "game:entity/hooved/deer/moose-adult"
+        "base": "game:entity/animal/mammal/hooved/deer/moose-adult"
       }
     }
   },

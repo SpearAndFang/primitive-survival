@@ -12,8 +12,6 @@
 
   "block-stake-*": "Кол",
   "blockdesc-stake-*": "Заострённая палка, которую можно воткнуть в землю или гравий. Отличный компонент для создания ловушки или для рыбалки. А ещё из него можно сделать изгородь.",
-  //"block-stakeinwater-*": "Кол",
-  //"blockdesc-stakeinwater-*": "Заострённая палка, которую можно воткнуть в землю или гравий. Отличный компонент для создания ловушки или для рыбалки. А ещё из него можно сделать изгородь.",
 
   "block-snare-*": "Силок",
   "block-deadfall-*-andesite*": "Западня из андезита",
@@ -738,8 +736,8 @@
   "pie-single-primitivesurvival:snakemeat-raw-perfect": "Змеиный пирог",
   "pie-single-primitivesurvival:snakemeat-raw-charred": "Змеиный пирог (обугленный)",
 
-  "block-bearhead-polar1-female*": "Шкура полярного медведя (самки)",
-  "block-bearhead-polar1-male*": "Шкура полярного медведя (самца)",
+  "block-bearhead-polar*-female*": "Шкура полярного медведя (самки)",
+  "block-bearhead-polar*-male*": "Шкура полярного медведя (самца)",
   "block-bearhead-brown*-female*": "Шкура бурого медведя (самки)",
   "block-bearhead-brown*-male*": "Шкура бурого медведя (самца)",
   "block-bearhead-black*-female*": "Шкура чёрного медведя (самки)",
@@ -749,8 +747,8 @@
   "block-bearhead-panda*-female*": "Шкура панды (самки)",
   "block-bearhead-panda*-male*": "Шкура панды (самца)",
 
-  "block-bearhide-polar1-female*": "Шкура полярного медведя (самки)",
-  "block-bearhide-polar1-male*": "Шкура полярного медведя (самца)",
+  "block-bearhide-polar*-female*": "Шкура полярного медведя (самки)",
+  "block-bearhide-polar*-male*": "Шкура полярного медведя (самца)",
   "block-bearhide-brown*-female*": "Шкура бурого медведя (самки)",
   "block-bearhide-brown*-male*": "Шкура бурого медведя (самца)",
   "block-bearhide-black*-female*": "Шкура чёрного медведя (самки)",
@@ -811,7 +809,16 @@
 
   "block-firework-bamboobarrage": "Фейрверк (Бамбуковый вал)",
 
-  "block-irrigationvessel-*": "Орошительный сосуд",
+  "block-irrigationvessel-normal": "Орошительный сосуд (Dark Brown)",
+  "block-irrigationvessel-fire": "Орошительный сосуд (Fireclay)",
+  "block-irrigationvessel-black": "Орошительный сосуд (Black)",
+  "block-irrigationvessel-brown": "Орошительный сосуд (Brown)",
+  "block-irrigationvessel-cream": "Орошительный сосуд (Cream)",
+  "block-irrigationvessel-gray": "Орошительный сосуд (Gray)",
+  "block-irrigationvessel-orange": "Орошительный сосуд (Orange)",
+  "block-irrigationvessel-red": "Орошительный сосуд (Red)",
+  "block-irrigationvessel-tan": "Орошительный сосуд (Tan)",
+
   "blockdesc-irrigationvessel-*": "Используйте вместо блоков воды для лучшего орошения земли.",
   "fill-irrigationvessel": "Заполните водой, чтобы удерживать соседние земли влажными.",
   "working-irrigationvessel": "Этот орошительный сосуд полностью функционален.",
@@ -1324,8 +1331,6 @@
   "support-rightclick-add-pipe": "Right click to add a pipe to this support",
   "pipe-rightclick-add-pipe": "Right click on a pipe end to add more pipe",
 
-  //1.20 below
-
   "block-betterfoureightbrickstairs-four-red-*": "Better Red clay large brick stairs",
   "block-betterfoureightbrickstairs-four-brown-*": "Better Brown clay large brick stairs",
   "block-betterfoureightbrickstairs-four-black-*": "Better Black clay large brick stairs",
@@ -1361,5 +1366,16 @@
   "block-floatingdock-purpleheart-*": "Floating Dock (Purpleheart)",
   "blockdesc-floatingdock-*": "Place this directly on water",
 
-  "game:placefailure-softer-ground-needed": "you can only place this in soft ground"
+  "game:placefailure-softer-ground-needed": "you can only place this in soft ground",
+
+  "block-hare*-cape-female*": "Cape Hare Pelt (female)",
+  "block-hare*-cape-male*": "Cape Hare Pelt (male)",
+  "block-hare*-european-female*": "European Hare Pelt (female)",
+  "block-hare*-european-male*": "European Hare Pelt (male)",
+  "block-hare*-indian-female*": "Indian Hare Pelt (female)",
+  "block-hare*-indian-male*": "Indian Hare Pelt (male)",
+  "block-hare*-jackblack-female*": "Jackblack Hare Pelt (female)",
+  "block-hare*-jackblack-male*": "Jackblack Hare Pelt (male)",
+  "block-hare*-scrub-female*": "Scrub Hare Pelt (female)",
+  "block-hare*-scrub-male*": "Scrub Hare Pelt (male)"
 }

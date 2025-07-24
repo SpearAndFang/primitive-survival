@@ -19,7 +19,7 @@
       "type": "item",
       "code": "primitivesurvival:crabmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": [ "meat", "group4" ]
+      "textureMapping": ["meat", "group4"]
     }
   },
   {
@@ -31,7 +31,7 @@
       "type": "item",
       "code": "primitivesurvival:crabmeat-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": [ "meat", "group4" ]
+      "textureMapping": ["meat", "group4"]
     }
   },
   {
@@ -50,6 +50,6 @@
     "side": "server",
     "op": "add",
     "path": "/attributesByType/claypot-cooked/textureMapping/crabmeat-raw",
-    "value": [ "meat", "group4" ]
+    "value": ["meat", "group4"]
   }
 ]

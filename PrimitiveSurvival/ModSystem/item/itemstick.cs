@@ -20,7 +20,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnHeldIdle(ItemSlot slot, EntityAgent byEntity)
         {
-            this.canGrunt = byEntity.LeftHandItemSlot?.Itemstack?.Collectible.Code.Path == "grunter";
+            this.canGrunt = byEntity?.LeftHandItemSlot?.Itemstack?.Collectible.Code.Path == "grunter";
             if (this.canGrunt)
             {
                 this.GetHeldInteractionHelp(slot);
@@ -51,29 +51,34 @@ namespace PrimitiveSurvival.ModSystem
             }
             else
             {
-                this.FpHandTransform.Translation.X = 0f;
-                this.FpHandTransform.Translation.Y = 0f;
-                this.FpHandTransform.Translation.Z = 0f;
-                this.FpHandTransform.Rotation.X = 72;
-                this.FpHandTransform.Rotation.Y = 143;
-                this.FpHandTransform.Rotation.Z = -30;
-                this.FpHandTransform.Origin.X = 0.5f;
-                this.FpHandTransform.Origin.Y = 0.3f;
-                this.FpHandTransform.Origin.Z = 0.5f;
-                this.FpHandTransform.Scale = 1.53f;
+                //3.91 hotfix
+                /*
+                    this.FpHandTransform.Translation.X = 0f;
+                    this.FpHandTransform.Translation.Y = 0f;
+                    this.FpHandTransform.Translation.Z = 0f;
+                    this.FpHandTransform.Rotation.X = 72;
+                    this.FpHandTransform.Rotation.Y = 143;
+                    this.FpHandTransform.Rotation.Z = -30;
+                    this.FpHandTransform.Origin.X = 0.5f;
+                    this.FpHandTransform.Origin.Y = 0.3f;
+                    this.FpHandTransform.Origin.Z = 0.5f;
+                    this.FpHandTransform.Scale = 1.53f;
 
-                this.TpHandTransform.Translation.X = -1.22f;
-                this.TpHandTransform.Translation.Y = 0.06f;
-                this.TpHandTransform.Translation.Z = -0.89f;
-                this.TpHandTransform.Rotation.X = -6;
-                this.TpHandTransform.Rotation.Y = 30;
-                this.TpHandTransform.Rotation.Z = 18;
-                this.TpHandTransform.Origin.X = 0.5f;
-                this.TpHandTransform.Origin.Y = 0f;
-                this.TpHandTransform.Origin.Z = 0.5f;
-                this.TpHandTransform.Scale = 0.5899f;
+                    this.TpHandTransform.Translation.X = -1.22f;
+                    this.TpHandTransform.Translation.Y = 0.06f;
+                    this.TpHandTransform.Translation.Z = -0.89f;
+                    this.TpHandTransform.Rotation.X = -6;
+                    this.TpHandTransform.Rotation.Y = 30;
+                    this.TpHandTransform.Rotation.Z = 18;
+                    this.TpHandTransform.Origin.X = 0.5f;
+                    this.TpHandTransform.Origin.Y = 0f;
+                    this.TpHandTransform.Origin.Z = 0.5f;
+                    this.TpHandTransform.Scale = 0.5899f;
+                */
             }
             base.OnHeldIdle(slot, byEntity);
+
+
         }
 
 

@@ -360,6 +360,8 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockEntityClass("befurrowedland", typeof(BEFurrowedLand));
             api.RegisterBlockEntityClass("befloatingdock", typeof(BEFloatingDock));
 
+            //api.RegisterBlockEntityClass("psbetoolmold", typeof(PSBlockEntityToolMold)); //temp fix
+
             api.RegisterBlockClass("blockearthwormcastings", typeof(BlockEarthwormCastings));
             api.RegisterBlockClass("blockfuse", typeof(BlockFuse));
             api.RegisterBlockClass("blockstakeinwater", typeof(BlockStakeInWater));
@@ -399,6 +401,8 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterBlockClass("blockfurrowedland", typeof(BlockFurrowedLand));
             api.RegisterBlockClass("blockpipe", typeof(BlockPipe));
             api.RegisterBlockClass("blockfloatingdock", typeof(BlockFloatingDock));
+
+            //api.RegisterBlockClass("psblocktoolmold", typeof(PSBlockToolMold)); //temp fix
 
             api.RegisterItemClass("itemcordage", typeof(ItemCordage));
             api.RegisterItemClass("itemfuse", typeof(ItemFuse));

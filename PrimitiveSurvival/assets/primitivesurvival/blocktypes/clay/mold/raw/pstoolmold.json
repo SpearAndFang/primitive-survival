@@ -1,0 +1,337 @@
+{
+  "code": "pstoolmold",
+  "class": "Block",
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": { "layout": "SingleCenter" }
+    },
+    { "name": "Unplaceable" }, // The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility
+    { "name": "RightClickPickup" }
+  ],
+  "variantgroups": [
+    {
+      "code": "color",
+      "states": [ "blue", "red", "fire" ]
+    },
+    {
+      "code": "materialtype",
+      "states": [ "raw" ]
+    },
+    {
+      "code": "tooltype",
+      "states": [ "fishinglure", "metalfishinghook", "spikeplate" ]
+    }
+  ],
+  "shape": {
+    "base": "primitivesurvival:block/clay/mold/{tooltype}",
+    "rotateY": 90
+  },
+  "textures": { "all": { "base": "game:block/clay/{color}clay" } },
+  "attributes": {
+    "reinforcable": true,
+    "onTongTransformByType": {
+      "pstoolmold-*-spikeplate": {
+        "translation": {
+          "x": -0.9,
+          "y": -1.2,
+          "z": -0.94
+        },
+        "rotation": {
+          "x": -6,
+          "y": 93,
+          "z": -34
+        },
+        "scale": 0.74
+      },
+      "*": {
+        "translation": {
+          "x": -0.9,
+          "y": -1.5,
+          "z": -0.6
+        },
+        "rotation": {
+          "x": 117,
+          "y": 0,
+          "z": 0
+        },
+        "scale": 0.74
+      }
+    },
+    "shelvableByType": {
+      "*": false
+    }
+  },
+  "attributesByType": {
+    "pstoolmold-red-raw-*": {
+      "beehivekiln": {
+        "0": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-tan-fired-{tooltype}"
+        },
+        "1": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-orange-fired-{tooltype}"
+        },
+        "2": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-red-fired-{tooltype}"
+        },
+        "3": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-brown-fired-{tooltype}"
+        }
+      }
+    },
+    "pstoolmold-blue-raw-*": {
+      "beehivekiln": {
+        "0": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-cream-fired-{tooltype}"
+        },
+        "1": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-gray-fired-{tooltype}"
+        },
+        "2": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-black-fired-{tooltype}"
+        },
+        "3": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-black-fired-{tooltype}"
+        }
+      }
+    },
+    "pstoolmold-fire-raw-*": {
+      "beehivekiln": {
+        "0": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-fire-fired-{tooltype}"
+        },
+        "1": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-fire-fired-{tooltype}"
+        },
+        "2": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-fire-fired-{tooltype}"
+        },
+        "3": {
+          "type": "block",
+          "code": "primitivesurvival:pstoolmold-fire-fired-{tooltype}"
+        }
+      }
+    }
+  },
+  "combustiblePropsByType": {
+    "pstoolmold-fire-raw-*": {
+      "meltingPoint": 650,
+      "meltingDuration": 45,
+      "smeltedRatio": 1,
+      "smeltingType": "fire",
+      "smeltedStack": {
+        "type": "block",
+        "code": "primitivesurvival:pstoolmold-fire-fired-{tooltype}"
+      },
+      "requiresContainer": false
+    },
+    "pstoolmold-*-raw-*": {
+      "meltingPoint": 650,
+      "meltingDuration": 45,
+      "smeltedRatio": 1,
+      "smeltingType": "fire",
+      "smeltedStack": {
+        "type": "block",
+        "code": "primitivesurvival:pstoolmold-blue-fired-{tooltype}"
+      },
+      "requiresContainer": false
+    }
+  },
+  "blockmaterial": "Ceramic",
+  "creativeinventory": {
+    "general": [ "*" ],
+    "construction": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "replaceable": 700,
+  "resistance": 1.5,
+  "maxStackSize": 8,
+  "lightAbsorption": 0,
+  "sounds": {
+    "walk": "game:walk/stone"
+  },
+  "collisionboxByType": {
+    "*-spikeplate": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.5,
+      "z2": 1
+    },
+    "*": {
+      "x1": 0.0625,
+      "y1": 0,
+      "z1": 0.0625,
+      "x2": 0.9375,
+      "y2": 0.125,
+      "z2": 0.9375
+    }
+  },
+  "selectionboxByType": {
+    "*-spikeplate": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.5,
+      "z2": 1
+    },
+    "*": {
+      "x1": 0.0625,
+      "y1": 0,
+      "z1": 0.0625,
+      "x2": 0.9375,
+      "y2": 0.125,
+      "z2": 0.9375
+    }
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "heldTpIdleAnimationByType": {
+    "*-spikeplate": "holdbothhandslarge"
+  },
+  "heldTpUseAnimationByType": {
+    "*-spikeplate": "twohandplaceblock"
+  },
+  "guiTransformByType": {
+    "*-spikeplate": {
+      "translation": {
+        "x": 0,
+        "y": 3,
+        "z": 0
+      },
+      "rotation": {
+        "x": -22.6,
+        "y": -46,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.2625,
+        "z": 0.5
+      },
+      "scale": 1.25
+    },
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 3,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.0625,
+        "z": 0.5
+      },
+      "scale": 1.33
+    }
+  },
+  "tpHandTransformByType": {
+    "*-spikeplate": {
+      "translation": {
+        "x": -1,
+        "y": -0.6,
+        "z": -0.65
+      },
+      "rotation": {
+        "x": -87,
+        "y": 0,
+        "z": -100
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      },
+      "scale": 0.61
+    },
+    "*": {
+      "translation": {
+        "x": -1,
+        "y": -0.6,
+        "z": -1.05
+      },
+      "rotation": {
+        "x": -87,
+        "y": 9,
+        "z": 4
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      },
+      "scale": 0.5
+    }
+  },
+  "fpHandTransformByType": {
+    "*-spikeplate": {
+      "translation": {
+        "x": -0.3,
+        "y": 0,
+        "z": 0.5
+      },
+      "rotation": {
+        "x": 16,
+        "y": -50,
+        "z": 1
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      }
+    },
+    "*": {
+      "translation": {
+        "x": -0.3,
+        "y": 0,
+        "z": 0.5
+      },
+      "rotation": {
+        "x": 16,
+        "y": -51,
+        "z": 91
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      }
+    }
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2.2
+  }
+}

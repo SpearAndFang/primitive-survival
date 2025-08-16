@@ -44,14 +44,15 @@ namespace PrimitiveSurvival.ModSystem
 
         public override void OnGroundIdle(EntityItem entityItem)
         {
-            this.GroundTransform.Rotation.Y = -GameMath.Mod(entityItem.World.ElapsedMilliseconds / 50f, 360);
-
             if (entityItem.World is IClientWorldAccessor)
             {
+                this.GroundTransform.Rotation.Y = -GameMath.Mod(entityItem.World.ElapsedMilliseconds / 50f, 360);
                 this.particlesHeld.MinQuantity = 1;
                 var pos = entityItem.SidedPos.XYZ;
                 this.SpawnParticles(entityItem.World, pos, false);
             }
+
+
         }
 
 

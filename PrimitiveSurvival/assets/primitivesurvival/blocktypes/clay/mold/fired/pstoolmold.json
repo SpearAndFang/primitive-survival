@@ -1,0 +1,292 @@
+{
+  "code": "pstoolmold",
+  "class": "BlockToolMold", //psblocktoolmold changed back to BlockToolMold  once the bug was fixed
+  "entityClass": "ToolMold", //psbetoolmold changed back to ToolMold once the bug was fixed
+  "behaviors": [
+    { "name": "Lockable" },
+    { "name": "UnstableFalling" }
+  ],
+  "entityBehaviors": [ { "name": "TemperatureSensitive" } ],
+  "variantgroups": [
+    {
+      "code": "color",
+      "states": [
+        "blue",
+        "fire",
+        "black",
+        "brown",
+        "cream",
+        "gray",
+        "orange",
+        "red",
+        "tan"
+      ]
+    },
+    {
+      "code": "materialtype",
+      "states": [ "fired" ]
+    },
+    {
+      "code": "tooltype",
+      "states": [ "fishinglure", "metalfishinghook", "spikeplate" ]
+    }
+  ],
+  "shape": {
+    "base": "primitivesurvival:block/clay/mold/{tooltype}",
+    "rotateY": 90
+  },
+  "textures": {
+    "floor": { "base": "game:block/clay/hardened/{color}" },
+    "other": { "base": "game:block/clay/hardened/{color}" }
+  },
+  "attributes": {
+    "reinforcable": true,
+    "shatteredShape": { "base": "game:block/clay/mold/shattered-ingot" },
+    "onTongTransformByType": {
+      "pstoolmold-*-fired-spikeplate": {
+        "translation": {
+          "x": -1.35,
+          "y": -1,
+          "z": -0.64
+        },
+        "rotation": {
+          "x": 180,
+          "y": -20,
+          "z": 105
+        },
+        "scale": 0.75
+      },
+      "*": {
+        "translation": {
+          "x": -1.7,
+          "y": -1.3,
+          "z": -0.57
+        },
+        "rotation": {
+          "x": 98,
+          "y": 16,
+          "z": 3
+        },
+        "scale": 0.55
+      }
+    }
+  },
+  "attributesByType": {
+    "pstoolmold-*-fired-spikeplate": {
+      "requiredUnits": 200,
+      "fillHeight": 7,
+      "drop": {
+        "type": "block",
+        "code": "primitivesurvival:spikeplate-{metal}"
+      }
+    },
+    "pstoolmold-*-fired-fishinglure": {
+      "requiredUnits": 100,
+      "fillHeight": 1,
+      "moldrackable": true,
+      "onmoldrackTransform": { "rotation": { "z": 90 } },
+      "drop": {
+        "type": "item",
+        "code": "primitivesurvival:{tooltype}-{metal}",
+        "quantity": 4
+      }
+    },
+    "pstoolmold-*-fired-metalfishinghook": {
+      "requiredUnits": 100,
+      "fillHeight": 1,
+      "moldrackable": true,
+      "onmoldrackTransform": { "rotation": { "z": 90 } },
+      "drop": {
+        "type": "item",
+        "code": "primitivesurvival:{tooltype}-{metal}",
+        "quantity": 6
+      }
+    }
+  },
+  "blockmaterial": "Ceramic",
+  "creativeinventory": {
+    "general": [ "*" ],
+    "construction": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "replaceable": 700,
+  "resistance": 1.5,
+  "maxStackSize": 8,
+  "lightAbsorption": 0,
+  "sounds": {
+    "walk": "game:walk/stone"
+  },
+  "collisionboxByType": {
+    "*-spikeplate": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.5,
+      "z2": 1
+    },
+    "*": {
+      "x1": 0.0625,
+      "y1": 0,
+      "z1": 0.0625,
+      "x2": 0.9375,
+      "y2": 0.125,
+      "z2": 0.9375
+    }
+  },
+  "selectionboxByType": {
+    "*-spikeplate": {
+      "x1": 0,
+      "y1": 0,
+      "z1": 0,
+      "x2": 1,
+      "y2": 0.5,
+      "z2": 1
+    },
+    "*": {
+      "x1": 0.0625,
+      "y1": 0,
+      "z1": 0.0625,
+      "x2": 0.9375,
+      "y2": 0.125,
+      "z2": 0.9375
+    }
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "heldTpIdleAnimationByType": {
+    "*-spikeplate": "holdbothhandslarge"
+  },
+  "heldTpUseAnimationByType": {
+    "*-spikeplate": "twohandplaceblock"
+  },
+  "guiTransformByType": {
+    "*spikeplate": {
+      "translation": {
+        "x": 0,
+        "y": 3,
+        "z": 0
+      },
+      "rotation": {
+        "x": -22.6,
+        "y": -46,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.2625,
+        "z": 0.5
+      },
+      "scale": 1.25
+    },
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 3,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.0625,
+        "z": 0.5
+      },
+      "scale": 1.33
+    }
+  },
+  "tpHandTransformByType": {
+    "*-spikeplate": {
+      "translation": {
+        "x": -1,
+        "y": -0.6,
+        "z": -0.65
+      },
+      "rotation": {
+        "x": -87,
+        "y": 0,
+        "z": -100
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      },
+      "scale": 0.61
+    },
+    "*": {
+      "translation": {
+        "x": -1,
+        "y": -0.6,
+        "z": -1.05
+      },
+      "rotation": {
+        "x": -87,
+        "y": 9,
+        "z": 4
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      },
+      "scale": 0.5
+    }
+  },
+  "fpHandTransformByType": {
+    "*-spikeplate": {
+      "translation": {
+        "x": -0.3,
+        "y": 0,
+        "z": 0.5
+      },
+      "rotation": {
+        "x": 16,
+        "y": -50,
+        "z": 1
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      }
+    },
+    "*": {
+      "translation": {
+        "x": -0.3,
+        "y": 0,
+        "z": 0.5
+      },
+      "rotation": {
+        "x": 16,
+        "y": -51,
+        "z": 91
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.125,
+        "z": 0.5
+      }
+    }
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": -45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2.2
+  }
+}

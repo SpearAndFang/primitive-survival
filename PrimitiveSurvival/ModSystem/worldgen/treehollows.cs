@@ -8,6 +8,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Server;
     using PrimitiveSurvival.ModConfig;
     using Vintagestory.API.Config;
+    using System.Diagnostics;
 
     //using System.Diagnostics;
 
@@ -292,20 +293,29 @@ namespace PrimitiveSurvival.ModSystem
                 if (nextItem.Contains("item-"))
                 {
                     nextItem = nextItem.Replace("item-", "");
-                    var item = sapi.World.GetItem(new AssetLocation(nextItem));
-                    if (itemStacks.ContainsKey(nextItem))
-                    { itemStacks[nextItem].StackSize++; }
-                    else
-                    { itemStacks.Add(nextItem, new ItemStack(item)); }
+
+                    AssetLocation aloc = new AssetLocation(nextItem);
+                    if (aloc != null)
+                    {
+                        var item = sapi.World.GetItem(aloc);
+                        if (itemStacks.ContainsKey(nextItem))
+                        { itemStacks[nextItem].StackSize++; }
+                        else
+                        { itemStacks.Add(nextItem, new ItemStack(item)); }
+                    }
                 }
                 else //block
                 {
                     nextItem = nextItem.Replace("block-", "");
-                    var item = sapi.World.GetBlock(new AssetLocation(nextItem));
-                    if (itemStacks.ContainsKey(nextItem))
-                    { itemStacks[nextItem].StackSize++; }
-                    else
-                    { itemStacks.Add(nextItem, new ItemStack(item)); }
+                    AssetLocation aloc = new AssetLocation(nextItem);
+                    if (aloc != null)
+                    {
+                        var item = sapi.World.GetBlock(aloc);
+                        if (itemStacks.ContainsKey(nextItem))
+                        { itemStacks[nextItem].StackSize++; }
+                        else
+                        { itemStacks.Add(nextItem, new ItemStack(item)); }
+                    }
                 }
             }
             return itemStacks.Values;

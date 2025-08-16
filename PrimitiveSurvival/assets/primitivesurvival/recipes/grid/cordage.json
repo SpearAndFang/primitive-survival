@@ -1,6 +1,6 @@
 [
   {
-    "ingredientPattern": "WW",
+    "ingredientPattern": "W,W",
     "ingredients": {
       "W": {
         "type": "block",
@@ -8,8 +8,8 @@
         "quantity": 1
       }
     },
-    "width": 2,
-    "height": 1,
+    "width": 1,
+    "height": 2,
     "output": {
       "type": "item",
       "code": "primitivesurvival:cordage",
@@ -17,16 +17,16 @@
     }
   },
   {
-    "ingredientPattern": "W",
+    "ingredientPattern": "W,W,W",
     "ingredients": {
       "W": {
         "type": "block",
         "code": "game:wildvine-end-*",
-        "quantity": 3
+        "quantity": 1
       }
     },
     "width": 1,
-    "height": 1,
+    "height": 3,
     "output": {
       "type": "item",
       "code": "primitivesurvival:cordage",
@@ -34,16 +34,16 @@
     }
   },
   {
-    "ingredientPattern": "W",
+    "ingredientPattern": "W,W",
     "ingredients": {
       "W": {
         "type": "block",
         "code": "game:wildvine-tropical-section-*",
-        "quantity": 2
+        "quantity": 1
       }
     },
     "width": 1,
-    "height": 1,
+    "height": 2,
     "output": {
       "type": "item",
       "code": "primitivesurvival:cordage",
@@ -51,16 +51,16 @@
     }
   },
   {
-    "ingredientPattern": "W",
+    "ingredientPattern": "W,W,W",
     "ingredients": {
       "W": {
         "type": "block",
         "code": "game:wildvine-tropical-end-*",
-        "quantity": 3
+        "quantity": 1
       }
     },
     "width": 1,
-    "height": 1,
+    "height": 3,
     "output": {
       "type": "item",
       "code": "primitivesurvival:cordage",

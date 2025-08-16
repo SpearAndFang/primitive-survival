@@ -2,8 +2,8 @@
   "ingredient": {
     "type": "item",
     "code": "game:clay-*",
-    "name": "type",
-    "allowedVariants": ["blue", "red", "fire"]
+    "name": "color",
+    "allowedVariants": ["blue", "fire", "red"]
   },
   "pattern": [
     [
@@ -154,6 +154,6 @@
   "name": "Spike Plate Mold",
   "output": {
     "type": "block",
-    "code": "primitivesurvival:pslargemold-raw-spikeplate"
+    "code": "primitivesurvival:pstoolmold-{color}-raw-spikeplate"
   }
 }

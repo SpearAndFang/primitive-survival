@@ -66,10 +66,6 @@
           {
             "code": "block-mushroom-greencrackedrussula-normal",
             "amount": 1
-          },
-          {
-            "code": "item-creature-wolf-pup",
-            "amount": 1
           }
         ],
         "up": [

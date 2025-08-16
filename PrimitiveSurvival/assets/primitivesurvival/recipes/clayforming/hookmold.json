@@ -2,8 +2,8 @@
   "ingredient": {
     "type": "item",
     "code": "game:clay-*",
-    "name": "type",
-    "allowedVariants": ["blue", "red", "fire"]
+    "name": "color",
+    "allowedVariants": ["blue", "fire", "red"]
   },
   "pattern": [
     [
@@ -42,6 +42,6 @@
   "name": "Hook Mold",
   "output": {
     "type": "block",
-    "code": "primitivesurvival:pslargemold-raw-metalfishinghook"
+    "code": "primitivesurvival:pstoolmold-{color}-raw-metalfishinghook"
   }
 }

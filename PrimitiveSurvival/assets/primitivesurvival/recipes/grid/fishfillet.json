@@ -273,5 +273,87 @@
       "code": "game:fish-raw",
       "quantity": 1
     }
+  },
+
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "name": "type",
+        "code": "primitivesurvival:pssaltwaterfish-*-raw",
+        "allowedVariants": [ "perch-pacific", "mackerel-atlantic", "herring-atlantic" ],
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "name":  "type",
+        "code": "primitivesurvival:pssaltwaterfish-*-raw",
+        "allowedVariants": [ "sturgeon-atlantic", "mahi-mahi-common", "coelacanth-common", "grouper-black" ],
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 4
+    }
+  },
+  {
+    "ingredientPattern": "K,H",
+    "enabled": true,
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      },
+      "H": {
+        "type": "item",
+        "name": "type",
+        "code": "primitivesurvival:pssaltwaterfish-*-raw",
+        "allowedVariants": [ "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "pollock-alaska", "barracuda-great", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "wreckfish-atlantic" ],
+        "quantity": 1
+      }
+    },
+    "name": "fishfillet",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "item",
+      "code": "primitivesurvival:fishfillet-raw",
+      "quantity": 2
+    }
   }
 ]

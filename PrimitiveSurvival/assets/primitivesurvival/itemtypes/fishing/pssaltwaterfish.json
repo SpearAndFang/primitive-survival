@@ -1,0 +1,527 @@
+{
+  "code": "pssaltwaterfish",
+  "class": "itempsfish",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "bream",
+        "gurnard",
+        "haddock",
+        "hake",
+        "herring",
+        "mackerel",
+        "pollock",
+        "perch",
+        "barracuda",
+        "grouper",
+        "snapper",
+        "tuna",
+        "wolf",
+        "amberjack",
+        "mahi-mahi",
+        "wreckfish",
+        "coelacanth",
+        "sturgeon"
+      ]
+    },
+    {
+      "code": "species",
+      "states": [
+        "common",
+        "banded",
+        "bicolor",
+        "black",
+        "blackwedged",
+        "copperband",
+        "creole",
+        "longspine",
+        "powderblue",
+        "titan",
+        "yellowstripe",
+        "alaska",
+        "atlantic",
+        "cape",
+        "pacific",
+        "sea",
+        "silver",
+        "bering",
+        "great",
+        "pink",
+        "red",
+        "skipjack",
+        "yellowtail"
+      ]
+    },
+    {
+      "code": "state",
+      "states": [ "raw", "cooked" ]
+    }
+  ],
+  "allowedVariants": [
+    "*-bream-sea-*",
+    "*-gurnard-cape-*",
+    "*-haddock-common-*",
+    "*-hake-silver-*",
+    "*-herring-atlantic-*",
+    "*-mackerel-atlantic-*",
+    "*-pollock-alaska-*",
+    "*-perch-pacific-*",
+
+    "*-barracuda-great-*",
+    "*-grouper-black-*",
+    "*-snapper-red-*",
+    "*-tuna-skipjack-*",
+    "*-wolf-bering-*",
+
+    "*-amberjack-yellowtail-*",
+    "*-mahi-mahi-common-*",
+    "*-wreckfish-atlantic-*",
+
+    "*-coelacanth-common-*",
+    "*-sturgeon-atlantic-*"
+  ],
+  "shape": { "base": "game:entity/animal/fish/saltwater/{type}-adult" },
+  "texturesbytype": {
+    "*-raw": {
+      "skin": {
+        "base": "game:entity/animal/fish/saltwater/{type}-{species}-adult*"
+      }
+    },
+    "*-cooked": {
+      "skin": { "base": "item/saltwater/{type}-{species}-adult1*" }
+    }
+  },
+
+  "maxstacksizeByType": {
+    "*-perch-pacific*": 64,
+    "*-mackerel-atlantic*": 64,
+    "*-herring-atlantic*": 64,
+    "*-sturgeon*": 16,
+    "*-mahi-mahi*": 16,
+    "*-coelacanth*": 16,
+    "*-grouper*": 16,
+    "*": 32
+  },
+  "attributesByType": {
+    "*-perch-pacific*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 1.2,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": -0.02
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 180,
+        "foodcategory": "Protein"
+      }
+    },
+    "*-mackerel-atlantic*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 1.3,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": 0
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 180,
+        "foodcategory": "Protein"
+      }
+    },
+    "*-herring-atlantic*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 1.2,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": -0.02
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 180,
+        "foodcategory": "Protein"
+      }
+    },
+
+    "*-sturgeon*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 1,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": -0.02
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 600,
+        "foodcategory": "Protein"
+      }
+    },
+    "*-mahi-mahi*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 0.95,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": -0.015
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 600,
+        "foodcategory": "Protein"
+      }
+    },
+    "*-coelacanth*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 0.95,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": -0.015
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 600,
+        "foodcategory": "Protein"
+      }
+    },
+    "*-grouper*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 0.95,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": -0.015
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 600,
+        "foodcategory": "Protein"
+      }
+    },
+    "*": {
+      "inFirePitProps": {
+        "transform": {
+          "scale": 1.25,
+          "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+          },
+          "translation": {
+            "x": 0.01,
+            "y": 0.2,
+            "z": -0.02
+          },
+          "rotation": {
+            "x": 179.5,
+            "y": 127.5,
+            "z": 179.5
+          }
+        },
+        "useFirepitModel": "Spit"
+      },
+      "nutritionPropsWhenInMeal": {
+        "satiety": 320,
+        "foodcategory": "Protein"
+      }
+    }
+  },
+
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ],
+    "primitive": [ "*" ]
+  },
+  "nutritionPropsByType": {
+    "*catfish-cooked": {
+      "satiety": 480,
+      "foodcategory": "Protein"
+    },
+    "*bass-cooked": {
+      "satiety": 120,
+      "foodcategory": "Protein"
+    },
+    "*bluegill-cooked": {
+      "satiety": 120,
+      "foodcategory": "Protein"
+    },
+    "*mutant-cooked": {
+      "satiety": 120,
+      "foodcategory": "Protein"
+    },
+    "*-cooked": {
+      "satiety": 240,
+      "foodcategory": "Protein"
+    }
+  },
+  "materialDensity": 150,
+  "guiTransformByType": {
+    "*": {
+      "translation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 163,
+        "y": 142,
+        "z": -40
+      },
+      "origin": {
+        "x": 0.23,
+        "y": -0.14,
+        "z": -0.15
+      },
+      "scale": 1.48
+    }
+  },
+  "tpHandTransformByType": {
+    "*": {
+      "translation": {
+        "x": -1,
+        "y": -0.2,
+        "z": -0.6
+      },
+      "rotation": {
+        "x": -66,
+        "y": -158,
+        "z": 116
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.2,
+        "z": 0.5
+      },
+      "scale": 0.61
+    }
+  },
+  "groundTransformByType": {
+    "*": {
+      "translation": {
+        "x": 0.2,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": -8,
+        "y": -63,
+        "z": -7
+      }
+    }
+  },
+
+  "combustiblePropsByType": {
+    "*sturgeon-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 60,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    },
+    "*grouper-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 60,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    },
+    "*mahi-mahi-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 60,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    },
+    "*coelacanth-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 60,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    },
+
+    "*perch-pacific-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 15,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    },
+    "*mackerel-atlantic-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 15,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    },
+    "*herring-atlantic-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 15,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    },
+    "*-raw": {
+      "meltingPoint": 150,
+      "meltingDuration": 30,
+      "smeltedRatio": 1,
+      "smeltingType": "cook",
+      "smeltedStack": {
+        "type": "item",
+        "code": "pssaltwaterfish-{type}-{species}-cooked"
+      },
+      "requiresContainer": false
+    }
+  },
+  "transitionablePropsByType": {
+    "*-cooked": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 120 },
+        "spoilHours": { "avg": 36 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ],
+    "*-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 48 },
+        "spoilHours": { "avg": 12 },
+        "transitionedStack": {
+          "type": "item",
+          "code": "game:rot"
+        },
+        "transitionRatio": 1
+      }
+    ]
+  }
+}

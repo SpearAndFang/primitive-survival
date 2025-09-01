@@ -30,6 +30,10 @@ namespace PrimitiveSurvival.ModSystem
         private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
         private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
 
+        // Salt Water Fish WIP
+        //private readonly string[] saltWaterFishTypes = { "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic" };
+
+
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
         private readonly string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
         private readonly string[] relics = { "temporalbase", "temporalcube", "temporallectern", "cthulu-statue", "dagon-statue", "hydra-statue", "nephrenka-statue", "necronomicon" };
@@ -47,7 +51,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
             //this.meshes = new MeshData[this.maxSlots]; //1.18
-            var meshes  = new MeshData[this.maxSlots];
+            var meshes = new MeshData[this.maxSlots];
         }
 
         public ItemSlot Catch1Slot => this.inventory[0];

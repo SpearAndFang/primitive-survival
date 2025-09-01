@@ -7,19 +7,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:snakemeat-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:snakemeat-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group3"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -30,8 +19,20 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:snakemeat-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:snakemeat-raw",
       "shapeElement": "bowl/red meat 2/*",
-      "textureMapping": ["meat", "group3"]
+      "textureMapping": ["meat", "group1"]
     }
   },
   {
@@ -42,14 +43,15 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:snakemeat-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/snakemeat-raw",
-    "value": ["meat", "group5"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/snakemeat-raw",
+    "value": ["meat", "group4"]
   }
 ]

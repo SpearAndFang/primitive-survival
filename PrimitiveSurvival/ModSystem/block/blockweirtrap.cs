@@ -104,7 +104,7 @@ namespace PrimitiveSurvival.ModSystem
                 world.BlockAccessor.SetBlock(world.GetBlock(new AssetLocation("water-still-7")).BlockId, pos);
             }
 
-            
+
             world.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default).OnNeighbourBlockChange(world, pos, pos);
         }
 

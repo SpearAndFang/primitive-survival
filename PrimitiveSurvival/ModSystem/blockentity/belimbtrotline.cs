@@ -30,6 +30,10 @@ namespace PrimitiveSurvival.ModSystem
         private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
         private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
 
+        // Salt Water Fish WIP
+        //private readonly string[] saltWaterFishTypes = { "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic" };
+
+
         private static readonly Random Rnd = new Random();
 
         private long particleTick;

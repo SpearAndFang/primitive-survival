@@ -1253,7 +1253,7 @@
   "RelicsDisabled-Comment": "Prevent catching relics in weir\r\ntraps and fish baskets.",
 
   "block-rockblastingbomb": "Rock blasting bomb",
-  "blockdesc-rockblastingbomb": "This bomb is particularly effective for mining rock, but less so for ore blasting.",
+  "blockdesc-rockblastingbomb": "This bomb is particularly effective for mining rock, but less so for ore blasting. Blast radius is 6 while the vanilla stone blasting bomb is 4.",
 
   "item-fishingspear-wood-*": "Fishing spear (Wood)",
   "item-fishingspear-bamboo-*": "Fishing spear (Bamboo)",
@@ -1420,5 +1420,65 @@
 
   "blockcraftdesc-pstoolmold-*-raw-fishinglure": "To create fishing lures directly from molten metal",
   "blockcraftdesc-pstoolmold-*-raw-metalfishinghook": "To create metal fishing hooks directly from molten metal",
-  "blockcraftdesc-pstoolmold-*-raw-spikeplate": "To create a plate of spikes for a pit trap"
+  "blockcraftdesc-pstoolmold-*-raw-spikeplate": "To create a plate of spikes for a pit trap",
+
+
+  //1.21
+  "item-pssaltwaterfish-bream-sea-raw": "Sea bream (Raw)",
+  "item-pssaltwaterfish-gurnard-cape-raw": "Cape gurnard (Raw)",
+  "item-pssaltwaterfish-haddock-common-raw": "Haddock (Raw)",
+  "item-pssaltwaterfish-hake-silver-raw": "Silver Hake (Raw)",
+  "item-pssaltwaterfish-herring-atlantic-raw": "Herring (Raw)",
+  "item-pssaltwaterfish-mackerel-atlantic-raw": "Mackerel (Raw)",
+  "item-pssaltwaterfish-pollock-alaska-raw": "Pollock (Raw)",
+  "item-pssaltwaterfish-perch-pacific-raw": "Sea perch (Raw)",
+  "item-pssaltwaterfish-barracuda-great-raw": "Barracuda (Raw)",
+  "item-pssaltwaterfish-grouper-black-raw": "Black grouper (Raw)",
+  "item-pssaltwaterfish-salmon-pink-raw": "Pink salmon (Raw)",
+  "item-pssaltwaterfish-snapper-red-raw": "Red snapper (Raw)",
+  "item-pssaltwaterfish-tuna-skipjack-raw": "Skipjack tuna (Raw)",
+  "item-pssaltwaterfish-wolf-bering-raw": "Wolf fish (Raw)",
+  "item-pssaltwaterfish-amberjack-yellowtail-raw": "Yellowtail amberjack (Raw)",
+  "item-pssaltwaterfish-mahi-mahi-common-raw": "Mahi-mahi (Raw)",
+  "item-pssaltwaterfish-wreckfish-atlantic-raw": "Wreckfish (Raw)",
+  "item-pssaltwaterfish-coelacanth-common-raw": "Coelacanth (Raw)",
+  "item-pssaltwaterfish-sturgeon-atlantic-raw": "Sturgeon (Raw)",
+
+  "item-pssaltwaterfish-bream-sea-cooked": "Sea bream (Cooked)",
+  "item-pssaltwaterfish-gurnard-cape-cooked": "Cape gurnard (Cooked)",
+  "item-pssaltwaterfish-haddock-common-cooked": "Haddock (Cooked)",
+  "item-pssaltwaterfish-hake-silver-cooked": "Silver Hake (Cooked)",
+  "item-pssaltwaterfish-herring-atlantic-cooked": "Herring (Cooked)",
+  "item-pssaltwaterfish-mackerel-atlantic-cooked": "Mackerel (Cooked)",
+  "item-pssaltwaterfish-pollock-alaska-cooked": "Pollock (Cooked)",
+  "item-pssaltwaterfish-perch-pacific-cooked": "Sea perch (Cooked)",
+  "item-pssaltwaterfish-barracuda-great-cooked": "Barracuda (Cooked)",
+  "item-pssaltwaterfish-grouper-black-cooked": "Black grouper (Cooked)",
+  "item-pssaltwaterfish-salmon-pink-cooked": "Pink salmon (Cooked)",
+  "item-pssaltwaterfish-snapper-red-cooked": "Red snapper (Cooked)",
+  "item-pssaltwaterfish-tuna-skipjack-cooked": "Skipjack tuna (Cooked)",
+  "item-pssaltwaterfish-wolf-bering-cooked": "Wolf fish (Cooked)",
+  "item-pssaltwaterfish-amberjack-yellowtail-cooked": "Yellowtail amberjack (Cooked)",
+  "item-pssaltwaterfish-mahi-mahi-common-cooked": "Mahi-mahi (Cooked)",
+  "item-pssaltwaterfish-wreckfish-atlantic-cooked": "Wreckfish (Cooked)",
+  "item-pssaltwaterfish-coelacanth-common-cooked": "Coelacanth (Cooked)",
+  "item-pssaltwaterfish-sturgeon-atlantic-cooked": "Sturgeon (Cooked)",
+
+  "itemdesc-pssaltwaterfish-coelacanth-*": "The favored habitat of this fish is the deep ocean",
+  "itemdesc-pssaltwaterfish-*": "The favored habitat of this fish is the open ocean",
+
+  "item-smokedmeat-redmeat-partbaked": "Smoked Redmeat (part-baked)",
+  "item-smokedmeat-bushmeat-partbaked": "Smoked Bushmeat (part-baked)",
+  "item-smokedmeat-poultry-partbaked": "Smoked Poultry (part-baked)",
+  "item-smokedmeat-fish-partbaked": "Smoked Fish (part-baked)",
+
+  "item-smokedmeat-redmeat-cooked": "Smoked Redmeat (cooked)",
+  "item-smokedmeat-bushmeat-cooked": "Smoked Bushmeat (cooked)",
+  "item-smokedmeat-poultry-cooked": "Smoked Poultry (cooked)",
+  "item-smokedmeat-fish-cooked": "Smoked Fish (cooked)",
+
+  "item-smokedmeat-redmeat-charred": "Smoked Redmeat (charred)",
+  "item-smokedmeat-bushmeat-charred": "Smoked Bushmeat (charred)",
+  "item-smokedmeat-poultry-charred": "Smoked Poultry (charred)",
+  "item-smokedmeat-fish-charred": "Smoked Fish (charred)"
 }

@@ -7,19 +7,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-trout-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:psfish-trout-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group1"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -30,6 +19,18 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-trout-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:psfish-trout-raw",
       "shapeElement": "bowl/red meat 2/*",
       "textureMapping": ["meat", "group1"]
     }
@@ -42,7 +43,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-trout-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -54,19 +56,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-perch-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:psfish-perch-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group1"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -77,6 +68,18 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-perch-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:psfish-perch-raw",
       "shapeElement": "bowl/red meat 2/*",
       "textureMapping": ["meat", "group1"]
     }
@@ -89,7 +92,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-perch-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -101,19 +105,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-salmon-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:psfish-salmon-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group1"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -124,6 +117,18 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-salmon-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:psfish-salmon-raw",
       "shapeElement": "bowl/red meat 2/*",
       "textureMapping": ["meat", "group1"]
     }
@@ -136,7 +141,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-salmon-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -148,19 +154,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-carp-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:psfish-carp-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group1"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -171,6 +166,18 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-carp-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:psfish-carp-raw",
       "shapeElement": "bowl/red meat 2/*",
       "textureMapping": ["meat", "group1"]
     }
@@ -183,7 +190,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-carp-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -195,19 +203,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-bass-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:psfish-bass-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group1"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -218,6 +215,18 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-bass-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:psfish-bass-raw",
       "shapeElement": "bowl/red meat 2/*",
       "textureMapping": ["meat", "group1"]
     }
@@ -230,7 +239,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-bass-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -242,19 +252,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-pike-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:psfish-pike-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group1"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -265,6 +264,18 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-pike-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:psfish-pike-raw",
       "shapeElement": "bowl/red meat 2/*",
       "textureMapping": ["meat", "group1"]
     }
@@ -277,7 +288,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-pike-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -289,19 +301,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-arcticchar-raw",
-      "shapeElement": "bowl/meat stew/*"
-    }
-  },
-  {
-    "file": "game:recipes/cooking/meatystew",
-    "side": "server",
-    "op": "add",
-    "path": "/ingredients/2/validStacks/-",
-    "value": {
-      "type": "item",
-      "code": "primitivesurvival:psfish-arcticchar-raw",
-      "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group1"]
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
@@ -312,6 +313,18 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-arcticchar-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:psfish-arcticchar-raw",
       "shapeElement": "bowl/red meat 2/*",
       "textureMapping": ["meat", "group1"]
     }
@@ -324,7 +337,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-arcticchar-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -336,14 +350,15 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-catfish-raw",
-      "shapeElement": "bowl/meat stew/*"
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/2/validStacks/-",
+    "path": "/ingredients/3/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-catfish-raw",
@@ -355,7 +370,7 @@
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/3/validStacks/-",
+    "path": "/ingredients/4/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-catfish-raw",
@@ -371,7 +386,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-catfish-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -383,14 +399,15 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-bluegill-raw",
-      "shapeElement": "bowl/meat stew/*"
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/2/validStacks/-",
+    "path": "/ingredients/3/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-bluegill-raw",
@@ -402,7 +419,7 @@
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/3/validStacks/-",
+    "path": "/ingredients/4/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-bluegill-raw",
@@ -418,7 +435,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-bluegill-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -430,14 +448,15 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-mutant-raw",
-      "shapeElement": "bowl/meat stew/*"
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/2/validStacks/-",
+    "path": "/ingredients/3/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-mutant-raw",
@@ -449,7 +468,7 @@
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/3/validStacks/-",
+    "path": "/ingredients/4/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-mutant-raw",
@@ -465,7 +484,8 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:psfish-mutant-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
@@ -477,14 +497,15 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:fishfillet-raw",
-      "shapeElement": "bowl/meat stew/*"
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
     }
   },
   {
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/2/validStacks/-",
+    "path": "/ingredients/3/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:fishfillet-raw",
@@ -496,7 +517,7 @@
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
-    "path": "/ingredients/3/validStacks/-",
+    "path": "/ingredients/4/validStacks/-",
     "value": {
       "type": "item",
       "code": "primitivesurvival:fishfillet-raw",
@@ -512,85 +533,86 @@
     "value": {
       "type": "item",
       "code": "primitivesurvival:fishfillet-raw",
-      "shapeElement": "bowl/meat/*"
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
     }
   },
 
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-trout-raw",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-trout-raw",
     "value": ["meat", "group4"]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-perch-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-perch-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-salmon-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-salmon-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-carp-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-carp-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-bass-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-bass-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-pike-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-pike-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-arcticchar-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-arcticchar-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-catfish-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-catfish-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-bluegill-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-bluegill-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/psfish-mutant-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/psfish-mutant-raw",
+    "value": [ "meat", "group4" ]
   },
   {
-    "file": "game:blocktypes/clay/pot",
+    "file": "game:blocktypes/clay/fired/pot",
     "side": "server",
     "op": "add",
-    "path": "/attributesByType/claypot-cooked/textureMapping/fishfillet-raw",
-    "value": ["meat", "group4"]
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/fishfillet-raw",
+    "value": [ "meat", "group4" ]
   }
 ]

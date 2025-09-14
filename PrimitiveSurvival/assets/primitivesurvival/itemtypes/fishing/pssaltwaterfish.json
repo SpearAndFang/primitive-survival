@@ -15,6 +15,7 @@
         "perch",
         "barracuda",
         "grouper",
+        "salmon",
         "snapper",
         "tuna",
         "wolf",
@@ -68,8 +69,10 @@
     "*-pollock-alaska-*",
     "*-perch-pacific-*",
 
+
     "*-barracuda-great-*",
     "*-grouper-black-*",
+    "*-salmon-pink-*",
     "*-snapper-red-*",
     "*-tuna-skipjack-*",
     "*-wolf-bering-*",
@@ -375,14 +378,14 @@
   "tpHandTransformByType": {
     "*": {
       "translation": {
-        "x": -1,
-        "y": -0.2,
-        "z": -0.6
+        "x": -0.61,
+        "y": -0.23,
+        "z": -0.83
       },
       "rotation": {
-        "x": -66,
-        "y": -158,
-        "z": 116
+        "x": -7,
+        "y": -172,
+        "z": 180
       },
       "origin": {
         "x": 0.5,
@@ -396,14 +399,20 @@
     "*": {
       "translation": {
         "x": 0.2,
-        "y": 0,
+        "y": 0.14,
         "z": 0
       },
       "rotation": {
         "x": -8,
         "y": -63,
         "z": -7
-      }
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5299
+      },
+      "scale": 1.95
     }
   },
 

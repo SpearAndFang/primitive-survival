@@ -1,0 +1,1062 @@
+[
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-bream-sea-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-bream-sea-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-bream-sea-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-bream-sea-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-gurnard-cape-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-gurnard-cape-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-gurnard-cape-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-gurnard-cape-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-haddock-common-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-haddock-common-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-haddock-common-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-haddock-common-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-hake-silver-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-hake-silver-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-hake-silver-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-hake-silver-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-herring-atlantic-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-herring-atlantic-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-herring-atlantic-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-herring-atlantic-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mackerel-atlantic-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mackerel-atlantic-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mackerel-atlantic-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mackerel-atlantic-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-pollock-alaska-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-pollock-alaska-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-pollock-alaska-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-pollock-alaska-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-perch-pacific-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-perch-pacific-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-perch-pacific-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-perch-pacific-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-barracuda-great-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-barracuda-great-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-barracuda-great-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-barracuda-great-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-grouper-black-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-grouper-black-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-grouper-black-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-grouper-black-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-salmon-pink-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-salmon-pink-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-salmon-pink-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-salmon-pink-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-snapper-red-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-snapper-red-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-snapper-red-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-snapper-red-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-tuna-skipjack-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-tuna-skipjack-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-tuna-skipjack-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-tuna-skipjack-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wolf-bering-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wolf-bering-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wolf-bering-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wolf-bering-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-amberjack-yellowtail-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-amberjack-yellowtail-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-amberjack-yellowtail-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-amberjack-yellowtail-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mahi-mahi-common-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mahi-mahi-common-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mahi-mahi-common-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-mahi-mahi-common-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wreckfish-atlantic-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wreckfish-atlantic-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wreckfish-atlantic-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-wreckfish-atlantic-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-coelacanth-common-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-coelacanth-common-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-coelacanth-common-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-coelacanth-common-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-sturgeon-atlantic-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-sturgeon-atlantic-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-sturgeon-atlantic-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:pssaltwaterfish-sturgeon-atlantic-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+
+
+
+
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-bream-sea-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-gurnard-cape-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-haddock-common-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-hake-silver-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-herring-atlantic-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-mackerel-atlantic-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-pollock-alaska-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-perch-pacific-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-barracuda-great-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-grouper-black-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-salmon-pink-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-snapper-red-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-tuna-skipjack-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-wolf-bering-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-amberjack-yellowtail-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-mahi-mahi-common-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-wreckfish-atlantic-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-coelacanth-common-raw",
+    "value": [ "meat", "group4" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/pssaltwaterfish-sturgeon-atlantic-raw",
+    "value": [ "meat", "group4" ]
+  }
+]

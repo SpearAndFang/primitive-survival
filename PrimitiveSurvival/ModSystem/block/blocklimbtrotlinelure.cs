@@ -1,20 +1,96 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using System;
+    using System.Diagnostics;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
 
     public class BlockLimbTrotLineLure : Block
     {
-        private static readonly Random Rnd = new Random();
+        private static readonly Random Rnd = new Random(); 
 
         public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, bool alive) //, ITesselatorAPI tesselator = null)
         {
             Shape shape; // = null;
             var tesselator = capi.Tesselator;
             shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
-            tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(this.Shape.rotateX, this.Shape.rotateY, this.Shape.rotateZ));
+            float x = this.Shape.rotateX;
+            float y = this.Shape.rotateY;
+            float z = this.Shape.rotateZ;
+
+            if (shapePath.Contains("/saltwater/"))
+            {
+                x = 0f;
+                y = 180 + this.Shape.rotateY;
+                z = 0f;
+                if (y == 270f) { x = 60f; }
+                else { z = -60f; }
+            }
+            tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(x, y, z));
+
+            var offY = -0.83f;
+            var offL = 0.47f;
+
+            if (shapePath.Contains("/saltwater/"))
+            {
+
+                if (shapePath.Contains("coelacanth") || shapePath.Contains("grouper") || shapePath.Contains("mahi-mahi"))
+                { 
+                    offY = -1.1f;
+                    offL = 0.56f;
+                }
+                if (shapePath.Contains("barracuda"))
+                {
+                    offY = -1f;
+                    offL = 0.6f;
+                }
+                if (shapePath.Contains("sturgeon"))
+                {
+                    offY = -1f;
+                    offL = 0.66f;
+                }
+                if (shapePath.Contains("haddock") || shapePath.Contains("pollock") || shapePath.Contains("gurnard"))
+                {
+                    offY = -0.88f;
+                    offL = 0.50f;
+                }
+                if (shapePath.Contains("herring") || shapePath.Contains("mackerel"))
+                {
+                    offY = -0.7f;
+                    offL = 0.45f;
+                }
+                if (shapePath.Contains("perch"))
+                {
+                    offY = -0.55f;
+                    offL = 0.375f;
+                }
+                if (shapePath.Contains("amberjack") || shapePath.Contains("snapper"))
+                {
+                    offY = -0.88f;
+                    offL = 0.5f;
+                }
+
+                if (y == 270f) 
+                { 
+                    mesh.Translate(-0.06f, offY, offL); 
+                }
+                else if (y == 450f) 
+                { 
+                    mesh.Translate(0.06f, offY, -offL); 
+                }
+                else if (y == 180f) 
+                { 
+                    mesh.Translate(-offL, offY, -0.06f); 
+                }
+                else if (y == 360f) 
+                { 
+                    mesh.Translate(offL, offY, 0.06f); 
+                }
+
+                
+            }
+
             if (shapePath.Contains("catfish"))
             { mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.7f, 0.7f, 0.7f); }
             if (shapePath.Contains("lure"))
@@ -33,10 +109,13 @@ namespace PrimitiveSurvival.ModSystem
                 { flength = 0.8; }
                 else if (shapePath.Contains("bluegill"))
                 { flength = 0.25; }
-
-                // 1.16
-                //var fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
-                var fishWave = EnumWindBitModeMask.ExtraWeakWind | VertexFlags.LiquidExposedToSkyBitMask; // LiquidWaterModeBitMask; 1.20
+                if (shapePath.Contains("/saltwater/"))
+                {
+                    flength = offY * -1 - 0.2f;
+                }
+                    // 1.16
+                    //var fishWave = VertexFlags.LeavesWindWaveBitMask | VertexFlags.WeakWaveBitMask;
+                    var fishWave = EnumWindBitModeMask.ExtraWeakWind | VertexFlags.LiquidExposedToSkyBitMask; // LiquidWaterModeBitMask; 1.20
 
                 for (var vertexNum = 0; vertexNum < mesh.GetVerticesCount(); vertexNum++)
                 {
@@ -55,6 +134,9 @@ namespace PrimitiveSurvival.ModSystem
 
             if ((this.Shape.rotateY == 0 || this.Shape.rotateY == 90) && !shapePath.Contains("-end") && !shapePath.Contains("-middle"))
             { mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, 180 * GameMath.DEG2RAD, 0); }
+
+
+
             return mesh;
         }
 

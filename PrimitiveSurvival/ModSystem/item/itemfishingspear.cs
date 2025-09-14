@@ -6,9 +6,13 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Server;
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
+    using System.Linq;
+    using System.Diagnostics;
 
     public class ItemFishingSpear : Item
     {
+        private readonly string[] validFishTypes = { "salmon", "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic" };
+
         public override void OnLoaded(ICoreAPI api) 
         {
             base.OnLoaded(api);
@@ -42,7 +46,11 @@ namespace PrimitiveSurvival.ModSystem
                 //bool swimmer = entitySel.Entity.Swimming;
                 byEntity.Attributes.SetInt("didattack", 1);
 
-                if (entitySel.Entity.Code.Path =="salmon")
+                var thisEntity = entitySel.Entity.Code.Path;
+                //Debug.WriteLine(thisEntity);
+                bool containsAny = validFishTypes.Any(s => thisEntity.Contains(s));
+                if (containsAny)
+                //if (entitySel.Entity.Code.Path =="salmon")
                 {
                     if (!byEntity.IsEyesSubmerged() && entitySel.Entity.FeetInLiquid)
                     {
@@ -50,7 +58,23 @@ namespace PrimitiveSurvival.ModSystem
                     }
                     var prevDura = slot.Itemstack.Collectible.GetRemainingDurability(slot.Itemstack);
                     ICoreServerAPI sapi = api as ICoreServerAPI;
-                    string newcode = slot.Itemstack.Collectible.Code.Path.Replace("empty", "salmon");
+
+                    string fishtype = "salmon"; //the default 
+                    if (entitySel.Entity.Code.Path.Contains("saltwater-"))
+                    {
+                        if (!entitySel.Entity.Code.Path.Contains("salmon")) //ahh hell I didn't make a saltwater salmon item
+                        {
+                            // uggh why don't entities have a .Variant option
+                            fishtype = entitySel.Entity.Code.Path;
+                            fishtype = fishtype.Replace("fish-saltwater-", "");
+                            fishtype = fishtype.Replace(entitySel.Entity.LastCodePart(0), "");
+                            fishtype = fishtype.Replace(entitySel.Entity.LastCodePart(1), "");
+                            fishtype = fishtype.Replace("--", "");
+                            //Debug.WriteLine(fishtype);
+                        }
+                    }
+
+                    string newcode = slot.Itemstack.Collectible.Code.Path.Replace("empty", fishtype);
                     var spearStack = new ItemStack(byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode)), 1);
                     slot.Itemstack.SetFrom(spearStack);
                     slot.Itemstack.Attributes.SetInt("durability", prevDura);
@@ -95,8 +119,9 @@ namespace PrimitiveSurvival.ModSystem
 
             //switch spear back to empty
             var prevDura = slot.Itemstack.Collectible.GetRemainingDurability(slot.Itemstack);
-
-            string newcode = slot.Itemstack.Collectible.Code.Path.Replace("salmon", "empty");
+            string materialtype = slot.Itemstack.Collectible.Variant["material"];
+            string fishtype = slot.Itemstack.Collectible.Variant["type"];
+            string newcode = "fishingspear-" + materialtype + "-empty";
             var spearStack = new ItemStack(byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode)), 1);
             slot.Itemstack = spearStack;
             slot.Itemstack.Attributes.SetInt("durability", prevDura);
@@ -104,6 +129,10 @@ namespace PrimitiveSurvival.ModSystem
 
             //transfer fish to empty inventory firstorempty inventory slot (or failing that, drop it)
             var newItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:psfish-salmon-raw"));
+            if (fishtype != "salmon")
+            { 
+                newItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + fishtype + "-raw"));
+            }
             if (newItem == null)
             { return; }
             var giveStack = new ItemStack(newItem, 1);

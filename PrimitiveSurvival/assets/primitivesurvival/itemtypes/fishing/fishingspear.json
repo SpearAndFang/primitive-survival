@@ -37,12 +37,34 @@
     },
     {
       "code": "type",
-      "states": [ "empty", "salmon" ]
+      "states": [
+        "empty",
+        "salmon",
+        "bream-sea",
+        "gurnard-cape",
+        "haddock-common",
+        "hake-silver",
+        "herring-atlantic",
+        "mackerel-atlantic",
+        "pollock-alaska",
+        "perch-pacific",
+        "barracuda-great",
+        "grouper-black",
+        "salmon-pink",
+        "snapper-red",
+        "tuna-skipjack",
+        "wolf-bering",
+        "amberjack-yellowtail",
+        "mahi-mahi-common",
+        "wreckfish-atlantic",
+        "coelacanth-common",
+        "sturgeon-atlantic"
+      ]
     }
   ],
 
   "shape": {
-    "base": "primitivesurvival:item/fishing/fishingspear-{type}"
+    "base": "primitivesurvival:item/fishing/spear/fishingspear-{type}"
   },
   "heldTpIdleAnimation": "spearidle",
   "heldRightReadyAnimation": "crudeOarStandingReady",
@@ -52,6 +74,9 @@
     "string": { "base": "game:item/tool/material/string" },
     "fish": {
       "base": "primitivesurvival:item/fishing/fish-salmon-raw"
+    },
+    "skin": {
+      "base": "game:entity/animal/fish/saltwater/{type}-adult*"
     }
   },
   "attackRange": 3.5,
@@ -91,6 +116,7 @@
     "items": [ "*-empty" ],
     "tools": [ "*-empty" ],
     "primitive": [ "*-empty" ]
+    //"primitive": [ "*" ]
   },
   "guiTransform": {
     "translation": {

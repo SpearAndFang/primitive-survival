@@ -1,5 +1,6 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using System.Diagnostics;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
@@ -11,7 +12,39 @@ namespace PrimitiveSurvival.ModSystem
         {
             var tesselator = capi.Tesselator;
             var shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
-            tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0, 0, 0));
+
+            float x = 0f;
+            float y = 0f;
+            float z = 0f;
+
+            if (shapePath.Contains("/saltwater/"))
+            {
+                x = 0f;
+                y = 180;
+                z = -60f;
+            }
+
+            var offY = -0.83f;
+            if (shapePath.Contains("/saltwater/"))
+            {
+                if (shapePath.Contains("coelacanth") || shapePath.Contains("grouper") || shapePath.Contains("mahi-mahi"))
+                { offY = -1.1f; }
+                if (shapePath.Contains("barracuda"))
+                { offY = -1f; }
+                if (shapePath.Contains("sturgeon"))
+                { offY = -1f; }
+                if (shapePath.Contains("haddock") || shapePath.Contains("pollock") || shapePath.Contains("gurnard"))
+                { offY = -0.88f; }
+                if (shapePath.Contains("herring") || shapePath.Contains("mackerel"))
+                { offY = -0.7f; }
+                if (shapePath.Contains("perch"))
+                { offY = -0.55f; }
+                if (shapePath.Contains("amberjack") || shapePath.Contains("snapper"))
+                { offY = -0.88f; }
+            }
+
+
+            tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(x, y, z));
             if (slot == 0)
             {
                 if (shapePath.Contains("seashell"))
@@ -20,6 +53,13 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     mesh.Translate(-0.4f, 0.1f, 0f);
                     mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, 20 * GameMath.DEG2RAD, 0);
+                }
+                else if (shapePath.Contains("/saltwater/"))
+                {
+                    /////////////////////////////////////
+                    mesh.Translate(-0.1f, 1.4f+offY, -0.6f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 70 * GameMath.DEG2RAD, 100 * GameMath.DEG2RAD, 230 * GameMath.DEG2RAD);
+                    /////////////////////////////////////
                 }
                 else
                 {
@@ -41,6 +81,13 @@ namespace PrimitiveSurvival.ModSystem
                     mesh.Translate(0.6f, 0.1f, -0.1f);
                     mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, 340 * GameMath.DEG2RAD, 0);
                 }
+                else if (shapePath.Contains("/saltwater/"))
+                {
+                    /////////////////////////////////////
+                    mesh.Translate(-0.1f, 1.3f+offY, 0.7f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 70 * GameMath.DEG2RAD, 80 * GameMath.DEG2RAD, 230 * GameMath.DEG2RAD);
+                    /////////////////////////////////////
+                }
                 else
                 {
                     mesh.Translate(0.5f, 1.4f, 0.7f);
@@ -57,7 +104,12 @@ namespace PrimitiveSurvival.ModSystem
             if (alive) //let's animate these fishes
             {
                 var flength = 0.45;
-                if (shapePath.Contains("catfish") || shapePath.Contains("salmon"))
+                if (shapePath.Contains("/saltwater/"))
+                {
+                    flength = offY * -1 - 0.4f;
+                    //Debug.WriteLine(flength);
+                }
+                else if (shapePath.Contains("catfish") || shapePath.Contains("salmon"))
                 { flength = 0.55; }
                 else if (shapePath.Contains("perch") || shapePath.Contains("bass"))
                 { flength = 0.35; }

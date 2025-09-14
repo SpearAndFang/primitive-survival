@@ -3,16 +3,51 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
+    using System.Diagnostics;
 
     public class BlockFishBasket : Block
     {
-
+        
         public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, int slot, bool alive, ITesselatorAPI tesselator = null)
         {
             Shape shape = null;
             tesselator = capi.Tesselator;
             shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
-            tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(0, 0, 0));
+
+            float x = 0f;
+            float y = 0f;
+            float z = 0f;
+
+            if (shapePath.Contains("/saltwater/"))
+            {
+                x = 0f;
+                y = 0f;
+                z = 60f;
+            }
+
+            var offY = 1.5f-0.83f;
+            if (shapePath.Contains("/saltwater/"))
+            {
+                alive = false; //lets skip this for now
+
+                //clean this shit up later
+                if (shapePath.Contains("coelacanth") || shapePath.Contains("grouper") || shapePath.Contains("mahi-mahi"))
+                { offY = 1.5f-0.88f; }
+                if (shapePath.Contains("barracuda"))
+                { offY = 1.5f-0.88f; }
+                if (shapePath.Contains("sturgeon"))
+                { offY = 1.5f-0.88f; }
+                if (shapePath.Contains("haddock") || shapePath.Contains("pollock") || shapePath.Contains("gurnard"))
+                { offY = 1.5f-0.88f; }
+                if (shapePath.Contains("herring") || shapePath.Contains("mackerel"))
+                { offY = 1.5f-0.7f; }
+                if (shapePath.Contains("perch"))
+                { offY = 1.5f-0.55f; }
+                if (shapePath.Contains("amberjack") || shapePath.Contains("snapper"))
+                { offY = 1.5f-0.88f; }
+            }
+
+            tesselator.TesselateShape(shapePath, shape, out var mesh, texture, new Vec3f(x, y, z));
             if (slot == 0) //bait
             { mesh.Translate(-0.03f, 0.3f, 0.15f); }
             else if (slot == 1) //fish, rot, seashell
@@ -21,6 +56,17 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     mesh.Translate(0.3f, -0.1f, -0.2f);
                     mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0 * GameMath.DEG2RAD, 0 * GameMath.DEG2RAD, 60 * GameMath.DEG2RAD);
+                }
+                else if (shapePath.Contains("/saltwater/"))
+                {
+                    /////////////////////////////////////
+                    mesh.Translate(0f, 0.85f-offY, 0.15f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 70 * GameMath.DEG2RAD, 80 * GameMath.DEG2RAD, 250 * GameMath.DEG2RAD);
+                    if (shapePath.Contains("coelacanth") || shapePath.Contains("grouper") || shapePath.Contains("mahi-mahi"))
+                    {
+                        mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.75f, 0.75f, 0.75f);
+                    }
+
                 }
                 else
                 {
@@ -34,6 +80,17 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     mesh.Translate(-0.3f, -0.1f, -0.15f);
                     mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0 * GameMath.DEG2RAD, 0 * GameMath.DEG2RAD, -60 * GameMath.DEG2RAD);
+                }
+                else if (shapePath.Contains("/saltwater/"))
+                {
+                    
+                    /////////////////////////////////////
+                    mesh.Translate(-0.05f, 0.88f-offY, -0.13f);
+                    mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 70 * GameMath.DEG2RAD, 110 * GameMath.DEG2RAD, 245 * GameMath.DEG2RAD);
+                    if (shapePath.Contains("coelacanth") || shapePath.Contains("grouper") || shapePath.Contains("mahi-mahi"))
+                    {
+                        mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.75f, 0.75f, 0.75f);
+                    }
                 }
                 else
                 {

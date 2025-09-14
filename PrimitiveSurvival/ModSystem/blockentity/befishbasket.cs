@@ -10,7 +10,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.Server;
-    using PrimitiveSurvival.ModConfig;
+    using PrimitiveSurvival.ModConfig; 
     //using System.Diagnostics;
 
     //public class BEFishBasket : BlockEntityDisplayCase //1.18
@@ -28,10 +28,10 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int maxSlots = 3;
         private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked", "insect" };
         private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
-        private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
 
-        // Salt Water Fish WIP
-        //private readonly string[] saltWaterFishTypes = { "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic" };
+        // Salt Water Fish OLD
+        //private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
+        private readonly string[] saltWaterFishTypes = { "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "salmon-pink", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic" };
 
 
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
@@ -306,7 +306,7 @@ namespace PrimitiveSurvival.ModSystem
 
                 if (waterBlock.Code.Path.Contains("saltwater"))
                 {
-                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
                 }
                 else
                 {
@@ -315,7 +315,7 @@ namespace PrimitiveSurvival.ModSystem
             }
             if (this.inventory[slot].Empty)
             {
-                if (newStack.Collectible.Code.Path.Contains("psfish"))
+                if (newStack.Collectible.Code.Path.Contains("psfish") || newStack.Collectible.Code.Path.Contains("pssaltwaterfish"))
                 {
                     /*********************************************/
                     //depletion check last
@@ -346,7 +346,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 /*********************************************/
                 //Debug.WriteLine("Escaped: " + inventory[slot].Itemstack.Collectible.Code.Path);
-                if (this.inventory[slot].Itemstack.Collectible.Code.Path.Contains("psfish"))
+                if (this.inventory[slot].Itemstack.Collectible.Code.Path.Contains("psfish") || this.inventory[slot].Itemstack.Collectible.Code.Path.Contains("pssaltwaterfish"))
                 {
                     //replete (at deplete rate)
                     PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.Api as ICoreServerAPI, this.Pos, -ModConfig.Loaded.FishChunkDepletionRate);
@@ -421,7 +421,7 @@ namespace PrimitiveSurvival.ModSystem
                 //Debug.WriteLine("Putting a " + playerStack.Item.FirstCodePart());
                 if (Array.IndexOf(this.baitTypes, playerStack.Item.FirstCodePart()) >= 0 && this.BaitSlot.Empty)
                 { index = 0; }
-                else if (playerStack.Item.Code.Path.Contains("psfish"))
+                else if (playerStack.Item.Code.Path.Contains("psfish") || playerStack.Item.Code.Path.Contains("pssaltwaterfish"))
                 {
                     if (this.Catch1Slot.Empty)
                     { index = 1; }
@@ -516,7 +516,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (this.Catch1Stack.Block != null)
                         { }
-                        else if (!this.Catch1Stack.Item.Code.Path.Contains("psfish"))
+                        else if (!(this.Catch1Stack.Item.Code.Path.Contains("psfish") || this.Catch1Stack.Item.Code.Path.Contains("pssaltwaterfish")))
                         { sb.Append(" " + Lang.Get("primitivesurvival:blockdesc-fishbasket-catch-rotten")); }
                         rot = true;
                     }
@@ -524,7 +524,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (this.Catch2Stack.Block != null)
                         { }
-                        else if (!this.Catch2Stack.Item.Code.Path.Contains("psfish"))
+                        else if (!(this.Catch2Stack.Item.Code.Path.Contains("psfish") || this.Catch2Stack.Item.Code.Path.Contains("pssaltwaterfish")))
                         { sb.Append(" " + Lang.Get("primitivesurvival:blockdesc-fishbasket-catch-rotten")); }
                     }
                     sb.AppendLine().AppendLine();
@@ -630,12 +630,7 @@ namespace PrimitiveSurvival.ModSystem
                             shapePath = "game:shapes/item/gear-" + gearType;
                             tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);
                         }
-                        else if (!this.inventory[i].Itemstack.Item.Code.Path.Contains("psfish"))
-                        {
-                            tmpBlock = this.Api.World.GetBlock(block.CodeWithPath("texturerot"));
-                            tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);
-                            shapePath = "primitivesurvival:shapes/item/fishing/fish-pike";
-                        }
+                        
                         else if (this.inventory[i].Itemstack.Item.Code.Path.Contains("psfish"))
                         {
                             shapePath = "primitivesurvival:shapes/item/fishing/fish-" + this.inventory[i].Itemstack.Item.LastCodePart(1).ToString();
@@ -649,6 +644,24 @@ namespace PrimitiveSurvival.ModSystem
                                 alive = true;
                                 tmpTextureSource = texture;
                             }
+                        }
+                        else if (this.inventory[i].Itemstack.Item.Code.Path.Contains("pssaltwaterfish"))
+                        {
+                            string fishcode = this.inventory[i].Itemstack.Item.LastCodePart(2).ToString();
+                            if (fishcode == "mahi") { fishcode = "mahi-mahi"; }
+                            shapePath = "game:shapes/entity/animal/fish/saltwater/" + fishcode + "-adult";
+                            //Debug.WriteLine(this.inventory[i].Itemstack.Item.Code.Path);
+                            string tmpBlockCode = "fishmount-" + fishcode + "-" + this.inventory[i].Itemstack.Item.LastCodePart(1).ToString() + "-normal-north";
+                            //Debug.WriteLine(tmpBlockCode);
+                            tmpBlock = this.Api.World.GetBlock(block.CodeWithPath(tmpBlockCode));
+                            tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);
+                            alive = true;
+                        }
+                        else //rot
+                        {
+                            tmpBlock = this.Api.World.GetBlock(block.CodeWithPath("texturerot"));
+                            tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);
+                            shapePath = "primitivesurvival:shapes/item/fishing/fish-pike";
                         }
                         if (shapePath != "")
                         {

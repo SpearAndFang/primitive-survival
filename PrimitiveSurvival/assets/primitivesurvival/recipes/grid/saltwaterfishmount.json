@@ -1,0 +1,112 @@
+[
+  {
+    "ingredientPattern": "AB,CK",
+    "width": 2,
+    "height": 2,
+    "shapeless": true,
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:salt",
+        "quantity": 1
+      },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:pssaltwaterfish-*-raw",
+        "name": "fish",
+        "quantity": 1,
+        "allowedVariants": [
+          "bream-sea",
+          "gurnard-cape",
+          "haddock-common",
+          "hake-silver",
+          "herring-atlantic",
+          "mackerel-atlantic",
+          "pollock-alaska",
+          "perch-pacific",
+          "barracuda-great",
+          "grouper-black",
+          "salmon-pink",
+          "snapper-red",
+          "tuna-skipjack",
+          "wolf-bering",
+          "amberjack-yellowtail",
+          "mahi-mahi-common",
+          "wreckfish-atlantic",
+          "coelacanth-common",
+          "sturgeon-atlantic"
+        ]
+      },
+      "C": {
+        "type": "item",
+        "code": "game:drygrass",
+        "quantity": 1
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:fishmount-{fish}-normal-north",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "AB,CK",
+    "width": 2,
+    "height": 2,
+    "shapeless": true,
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:powder-borax",
+        "quantity": 1
+      },
+      "B": {
+        "type": "item",
+        "code": "primitivesurvival:pssaltwaterfish-*-raw",
+        "name": "fish",
+        "quantity": 1,
+        "allowedVariants": [
+          "bream-sea",
+          "gurnard-cape",
+          "haddock-common",
+          "hake-silver",
+          "herring-atlantic",
+          "mackerel-atlantic",
+          "pollock-alaska",
+          "perch-pacific",
+          "barracuda-great",
+          "grouper-black",
+          "salmon-pink",
+          "snapper-red",
+          "tuna-skipjack",
+          "wolf-bering",
+          "amberjack-yellowtail",
+          "mahi-mahi-common",
+          "wreckfish-atlantic",
+          "coelacanth-common",
+          "sturgeon-atlantic"
+        ]
+      },
+      "C": {
+        "type": "item",
+        "code": "game:drygrass",
+        "quantity": 1
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "primitivesurvival:fishmount-{fish}-normal-north",
+      "quantity": 1
+    }
+  }
+]

@@ -159,7 +159,7 @@ namespace PrimitiveSurvival.ModSystem
         {
             var rad = (int)Math.Ceiling(this.BlastRadius);
             var exploArea = new Cuboidi(this.Pos.AddCopy(-rad, -rad, -rad), this.Pos.AddCopy(rad, rad, rad));
-            var claims = (this.Api as ICoreServerAPI).WorldManager.SaveGame.LandClaims;
+            var claims = (this.Api as ICoreServerAPI).WorldManager.LandClaims;
             for (var i = 0; i < claims.Count; i++)
             {
                 if (claims[i].Intersects(exploArea))

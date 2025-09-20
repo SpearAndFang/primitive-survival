@@ -1,0 +1,20 @@
+[
+  {
+    "dependsOn": [ { "modid": "realsmoke" } ],
+    "file": "primitivesurvival:blocktypes/wood/smoker.json",
+    "op": "addmerge",
+    "path": "/entityBehaviors",
+    "value":
+    [{
+      "name": "BlockEntityBehaviorRealSmokeEmitter",
+      "properties": {
+        "isSmoking": "IsBurning",
+        "smokeProduction": 3,
+        "temperature": 900,
+        "multivent": true,
+        "ventAbove": 2,
+        "canVentSideways": false
+      }
+    }]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "dependsOn": [ { "modid": "realsmoke" } ],
+    "file": "primitivesurvival:blocktypes/relic/handofthedead.json",
+    "op": "addmerge",
+    "path": "/entityBehaviorsByType",
+    "value": { "*-candle*": [] }
+  },
+  {
+    "dependsOn": [ { "modid": "realsmoke" } ],
+    "file": "primitivesurvival:blocktypes/relic/handofthedead.json",
+    "op": "addmerge",
+    "path": "/entityBehaviorsByType/*-candle*",
+    "value": [
+      {
+        "name": "BlockEntityBehaviorRealSmokeEmitter",
+        "properties": {
+          "smokeProduction": 2,
+          "temperature": 1100,
+          "ventAbove": 1,
+          "canVentSideways": true
+        }
+      }
+    ]
+  }
+]

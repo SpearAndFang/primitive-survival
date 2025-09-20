@@ -35,7 +35,7 @@ namespace PrimitiveSurvival.ModSystem
         private readonly Harmony harmony = new Harmony("com.spearandfang.primitivesurvival");
 
         private IServerNetworkChannel serverChannel;
-        private ICoreAPI api;
+        //private ICoreAPI api;
 
         public override void StartClientSide(ICoreClientAPI api)
         {

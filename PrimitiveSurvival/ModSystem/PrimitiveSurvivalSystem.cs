@@ -414,6 +414,7 @@ namespace PrimitiveSurvival.ModSystem
             api.RegisterItemClass("itemsnake", typeof(ItemSnake));
             api.RegisterItemClass("itemcrab", typeof(ItemCrab));
             api.RegisterItemClass("itempsfish", typeof(ItemPSFish));
+            api.RegisterItemClass("itempsfishnorestock", typeof(ItemPSFishNoRestock));
             api.RegisterItemClass("itemfisheggs", typeof(ItemFishEggs));
             api.RegisterItemClass("itemlinktool", typeof(ItemLinkTool));
             api.RegisterItemClass("itemlivingdead", typeof(ItemLivingDead));

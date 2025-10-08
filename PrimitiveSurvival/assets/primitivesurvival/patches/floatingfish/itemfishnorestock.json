@@ -1,0 +1,18 @@
+[
+  {
+    "op": "replace",
+    "path": "/class",
+    "value": "itempsfishnorestock",
+    "file": "primitivesurvival:itemtypes/fishing/psfish.json",
+    "side": "Server",
+    "dependsOn": [{ "modid": "floatingfish" }]
+  },
+  {
+    "op": "replace",
+    "path": "/class",
+    "value": "itempsfishnorestock",
+    "file": "primitivesurvival:itemtypes/fishing/pssaltwaterfish.json",
+    "side": "Server",
+    "dependsOn": [ { "modid": "floatingfish" } ]
+  }
+]

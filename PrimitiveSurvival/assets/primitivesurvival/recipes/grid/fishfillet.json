@@ -343,7 +343,7 @@
         "type": "item",
         "name": "type",
         "code": "primitivesurvival:pssaltwaterfish-*-raw",
-        "allowedVariants": [ "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "pollock-alaska", "barracuda-great", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "wreckfish-atlantic" ],
+        "allowedVariants": [ "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "pollock-alaska", "barracuda-great", "salmon-pink", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "wreckfish-atlantic" ],
         "quantity": 1
       }
     },

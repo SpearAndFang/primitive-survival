@@ -1670,5 +1670,7 @@
   "block-fishmount-mahi-mahi-common-*": "Mahi-mahi (Mounted)",
   "block-fishmount-wreckfish-atlantic-*": "Wreckfish (Mounted)",
   "block-fishmount-coelacanth-common-*": "Coelacanth (Mounted)",
-  "block-fishmount-sturgeon-atlantic-*": "Sturgeon (Mounted)"
+  "block-fishmount-sturgeon-atlantic-*": "Sturgeon (Mounted)",
+
+  "recipeingredient-item-jerky-insturmentalcase": "Jerky"
 }

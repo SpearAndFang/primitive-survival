@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/elements/5/children/1/to/1",
+    "value": 4.88,
+    "file": "bomb:shapes/block/cloth/reedbomb.json"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "op": "replace",
+    "path": "/class",
+    "value": "blockbombfuse",
+    "file": "bomb:blocktypes/cloth/brickbomb3.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/entityClass",
+    "value": "bebombfuse",
+    "file": "bomb:blocktypes/cloth/brickbomb3.json",
+    "side": "Server"
+  }
+]

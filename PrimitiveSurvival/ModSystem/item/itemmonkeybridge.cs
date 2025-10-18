@@ -271,7 +271,12 @@ namespace PrimitiveSurvival.ModSystem
                 if (blockSel == null || byEntity.World == null || byPlayer == null)
                 { return; }
 
-                var facing = byPlayer.CurrentBlockSelection.Face.Opposite;
+                //var facing = byPlayer.CurrentBlockSelection.Face.Opposite;
+                var facing = byPlayer?.CurrentBlockSelection?.Face?.Opposite;
+                if (facing == null)
+                { return; }
+
+
                 var blockAccessor = byEntity.World.BlockAccessor;
                 var currPos = blockSel.Position.Copy();
                 var validStart = ValidEndpoint(blockAccessor, currPos);

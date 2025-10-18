@@ -1,6 +1,7 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using System;
+    using System.Diagnostics;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
 
@@ -139,10 +140,20 @@ namespace PrimitiveSurvival.ModSystem
             IPlayer byPlayer = null;
             if (byEntity is EntityPlayer player)
             { byPlayer = byEntity.World.PlayerByUid(player.PlayerUID); }
-            if (blockSel == null || byEntity.World == null || byPlayer == null)
+            if (blockSel == null || byEntity == null || byPlayer == null)
             { return; }
 
-            var facing = byPlayer.CurrentBlockSelection.Face.Opposite;
+            // Random console error #36 - DejFidOFF -could not recreate - added more null checking
+            // preemptively did the same for itemmonkeybridge line 274 but simpler - since it is the same logic
+            // facing = byPlayer.CurrentBlockSelection.Face.Opposite;
+            if (byEntity.World == null)
+            { return; }
+
+            BlockFacing facing = null;
+            facing = byPlayer?.CurrentBlockSelection?.Face?.Opposite;
+            if (facing == null)
+            { return; }
+                                    
             var blockAccessor = byEntity.World.BlockAccessor;
             var currPos = blockSel.Position.Copy();
 

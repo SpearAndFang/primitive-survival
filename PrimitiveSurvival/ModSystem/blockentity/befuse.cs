@@ -14,7 +14,7 @@ namespace PrimitiveSurvival.ModSystem
         private float blastRadius;
         private float injureRadius;
         private EnumBlastType blastType;
-        private ILoadedSound fuseSound;
+        private ILoadedSound fuseSound; 
 
         public static SimpleParticleProperties smallSparks;
 

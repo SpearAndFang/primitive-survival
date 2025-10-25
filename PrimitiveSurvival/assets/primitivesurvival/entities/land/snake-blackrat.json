@@ -103,8 +103,8 @@
             "type": "item",
             "code": "primitivesurvival:snakemeat-raw",
             "quantity": {
-              "avg": 6,
-              "var": 2
+              "avg": 4,
+              "var": 1
             }
           }
         ]

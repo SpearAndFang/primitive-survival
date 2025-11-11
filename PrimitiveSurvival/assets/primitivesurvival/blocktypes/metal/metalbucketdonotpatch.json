@@ -42,6 +42,9 @@
       }
     }
   },
+  "attributes": {
+    "handbook": { "groupBy": [ "metalbucket-*" ] }
+  },
   "creativeinventory": {
     "general": [ "metalbucket-*" ],
     "decorative": [ "metalbucket-*" ],

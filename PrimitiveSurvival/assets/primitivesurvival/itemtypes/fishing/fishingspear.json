@@ -108,6 +108,9 @@
         "y": 1,
         "z": 1
       }
+    },
+    "handbook": {
+      "groupBy": ["fishingspear-*"]
     }
   },
   "durability": 16,

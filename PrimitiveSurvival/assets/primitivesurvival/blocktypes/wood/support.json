@@ -22,6 +22,11 @@
       "states": [ "ns", "ew" ]
     }
   ],
+  "attributes": {
+    "handbook": {
+      "groupBy": ["support-*"]
+    }
+  },
   "drops": [],
   "drawtype": "json",
   "shapebytype": {

@@ -5,7 +5,8 @@
   "attributes": {
     "renderSides": "nsew",
     "sideShape": "block/floatingdock/side",
-    "baseShape": "block/floatingdock/base"
+    "baseShape": "block/floatingdock/base",
+    "handbook": { "groupBy": [ "floatingdock-*" ]}
   },
   "liquidSelectable": true,
   "behaviors": [

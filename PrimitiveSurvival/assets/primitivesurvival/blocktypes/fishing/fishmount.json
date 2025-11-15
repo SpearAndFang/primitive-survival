@@ -32,6 +32,9 @@
       ]
     }
   ],
+  "attributes": {
+    "handbook": { "groupBy": [ "fishmount-*" ]}
+  },
   "drops": [
     {
       "type": "block",

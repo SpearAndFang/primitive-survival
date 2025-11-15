@@ -18,7 +18,10 @@
   "attributes": {
     "blastRadius": 0,
     "injureRadius": 2,
-    "blastType": 0
+    "blastType": 0,
+    "handbook": {
+      "groupBy": ["firework-*"]
+    }
   },
   "behaviors": [{ "name": "Unstable" }],
   "shape": {

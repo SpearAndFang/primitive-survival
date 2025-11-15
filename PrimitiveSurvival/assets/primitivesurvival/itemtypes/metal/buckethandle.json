@@ -13,7 +13,10 @@
 				"y": -0.6,
 				"z": -0.7
 			}
-		}
+		},
+    "handbook": {
+      "groupBy": ["buckethandle-*"]
+    }
 	},
 	"shapeByType": {
 		"*-copper": { "base": "item/buckethandle" },

@@ -13,6 +13,9 @@
       "opaqueContentShapeLoc": "primitivesurvival:shapes/block/clay/irrigationvessel/contents",
       "liquidContentShapeLoc": "primitivesurvival:shapes/block/clay/irrigationvessel/liquidcontents",
       "liquidMaxYTranslate": 0.9275
+    },
+    "handbook": {
+      "groupBy": ["irrigationvessel-*"]
     }
   },
   "creativeinventory": {

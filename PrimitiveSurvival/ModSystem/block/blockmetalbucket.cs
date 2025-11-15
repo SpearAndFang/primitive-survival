@@ -26,6 +26,15 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (blockSel == null || byEntity.Controls.Sneak)
             { return; }
+
+            // https://github.com/SpearAndFang/primitive-survival/issues/39
+            var selPos = blockSel?.Position ?? entitySel?.Position?.AsBlockPos;
+            if (selPos == null || !api.World.Claims.TryAccess((byEntity as EntityPlayer).Player, selPos, EnumBlockAccessFlags.Use))
+            {
+                return;
+            }
+            // end issue 39
+
             var bucketPath = slot.Itemstack.Block.Code.Path;
             var pos = blockSel.Position;
             var block = byEntity.World.BlockAccessor.GetBlock(pos, BlockLayersAccess.Default);

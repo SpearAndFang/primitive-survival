@@ -73,6 +73,13 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
+
+            // https://github.com/SpearAndFang/primitive-survival/issues/39
+            if (blockSel != null && !world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
+            {
+                return false;
+            }
+
             var activeSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if (activeSlot.Empty)
             {

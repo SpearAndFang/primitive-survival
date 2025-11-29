@@ -333,20 +333,12 @@
     "primitive": [ "*" ]
   },
   "nutritionPropsByType": {
-    "*catfish-cooked": {
+    "@*-(perch-pacific|mackerel-atlantic|herring-atlantic)-cooked": {
+      "satiety": 120,
+      "foodcategory": "Protein"
+    },
+    "@*-(sturgeon-atlantic|mahi-mahi-common|coelacanth-common|grouper-black)-cooked": {
       "satiety": 480,
-      "foodcategory": "Protein"
-    },
-    "*bass-cooked": {
-      "satiety": 120,
-      "foodcategory": "Protein"
-    },
-    "*bluegill-cooked": {
-      "satiety": 120,
-      "foodcategory": "Protein"
-    },
-    "*mutant-cooked": {
-      "satiety": 120,
       "foodcategory": "Protein"
     },
     "*-cooked": {

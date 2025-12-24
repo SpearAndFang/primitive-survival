@@ -13,6 +13,7 @@ namespace PrimitiveSurvival.ModSystem
     {
         private int cnt = 0;
         private static readonly Random Rnd = new Random();
+        private RoomRegistry roomRegistry;
 
         public EntityEarthworm()
         { }
@@ -21,6 +22,7 @@ namespace PrimitiveSurvival.ModSystem
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
         {
             base.Initialize(properties, api, InChunkIndex3d);
+            this.roomRegistry = this.Api.ModLoader.GetModSystem<RoomRegistry>();
         }
 
 
@@ -32,9 +34,13 @@ namespace PrimitiveSurvival.ModSystem
                 return;
             }
 
-            var stack = new ItemStack(byEntity.World.GetItem(new AssetLocation("primitivesurvival:earthworm")));
-            if (!byEntity.TryGiveItemStack(stack))
-            { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+            var item = byEntity.World.GetItem(new AssetLocation("primitivesurvival:earthworm"));
+            if (item != null)
+            {
+                var stack = new ItemStack(item);
+                if (!byEntity.TryGiveItemStack(stack))
+                { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+            }
             this.Die(); //remove from the ground
             return;
         }
@@ -61,7 +67,8 @@ namespace PrimitiveSurvival.ModSystem
                 var blockBelow = this.World.BlockAccessor.GetBlock(belowPos, BlockLayersAccess.Default);
 
                 var conds = this.World.BlockAccessor.GetClimateAt(belowPos, EnumGetClimateMode.NowValues); //small aside - get the temperature and kill the worm if necessary
-                Room room = Api.ModLoader.GetModSystem<RoomRegistry>().GetRoomForPosition(belowPos);
+                var registry = this.roomRegistry ?? (this.roomRegistry = this.Api.ModLoader.GetModSystem<RoomRegistry>());
+                Room room = registry.GetRoomForPosition(belowPos);
                 var wormtemp = conds.Temperature;
                 if (room != null) 
                 { 
@@ -117,7 +124,10 @@ namespace PrimitiveSurvival.ModSystem
                                         {
                                             this.World.BlockAccessor.BreakBlock(belowPos, null); //For better or worse, you've created a block of Worm Castings
                                             var block = this.World.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:earthwormcastings"));
-                                            this.World.BlockAccessor.SetBlock(block.BlockId, belowPos);
+                                            if (block != null)
+                                            {
+                                                this.World.BlockAccessor.SetBlock(block.BlockId, belowPos);
+                                            }
                                         }
                                     }
                                 }

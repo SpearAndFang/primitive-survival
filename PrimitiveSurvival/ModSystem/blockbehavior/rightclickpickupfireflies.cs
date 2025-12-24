@@ -37,7 +37,10 @@ namespace PrimitiveSurvival.ModSystem
                     var thisBlock = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default);
                     var newBlock = "primitivesurvival:" + thisBlock.Code.Path.Replace("angled", "straight");
                     //Debug.WriteLine(newBlock);
-                    var newStack = new ItemStack(world.GetBlock(new AssetLocation(newBlock)), 1);
+                    var dropBlock = world.GetBlock(new AssetLocation(newBlock));
+                    if (dropBlock == null)
+                    { return false; }
+                    var newStack = new ItemStack(dropBlock, 1);
                     if (byPlayer.InventoryManager.TryGiveItemstack(newStack, true))
                     {
                         world.BlockAccessor.SetBlock(0, blockSel.Position);
@@ -76,4 +79,3 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-

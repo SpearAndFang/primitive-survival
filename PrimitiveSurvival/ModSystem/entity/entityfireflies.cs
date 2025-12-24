@@ -34,9 +34,13 @@ namespace PrimitiveSurvival.ModSystem
             }
             var location = new AssetLocation(this.Code.Domain, this.Code.Path).ToString() + "-straight";
             //Debug.WriteLine(location);
-            var stack = new ItemStack(byEntity.World.GetBlock(new AssetLocation(location)));
-            if (!byEntity.TryGiveItemStack(stack))
-            { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+            var block = byEntity.World.GetBlock(new AssetLocation(location));
+            if (block != null)
+            {
+                var stack = new ItemStack(block);
+                if (!byEntity.TryGiveItemStack(stack))
+                { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+            }
             this.World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5, null, false, 16);
             this.Die(); //remove from the ground
 
@@ -44,4 +48,3 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-

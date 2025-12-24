@@ -4,6 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin\$(Configuration)\Mods\mod</OutputPath>
+    <Version>4.0.3</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>None</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -53,6 +59,9 @@
   <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+  <Content Include="modicon.png" Condition="Exists('modicon.png')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
   <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
@@ -61,5 +70,20 @@
 <ItemGroup>
   <None Include="..\.editorconfig" Link=".editorconfig" />
 </ItemGroup>
+
+<ItemGroup>
+  <None Remove="ref\**" />
+  <None Remove="ref/**" />
+  <Compile Remove="ref\**" />
+  <Compile Remove="ref/**" />
+  <EmbeddedResource Remove="ref\**" />
+  <EmbeddedResource Remove="ref/**" />
+  <Content Remove="ref\**" />
+  <Content Remove="ref/**" />
+</ItemGroup>
+
+  <Target Name="Zip" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <ZipDirectory DestinationFile="bin\$(Configuration)\$(AssemblyName)_v$(Version).zip" SourceDirectory="$(OutDir)" Overwrite="true" />
+  </Target>
 
 </Project>

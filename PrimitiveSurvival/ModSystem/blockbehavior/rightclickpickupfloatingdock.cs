@@ -33,6 +33,8 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     var curType = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default).FirstCodePart(1);
                     var tempBlock = world.GetBlock(new AssetLocation("primitivesurvival:floatingdock-" + curType + "-ns"));
+                    if (tempBlock == null)
+                    { return false; }
                     var newStack = new ItemStack(tempBlock);
                     
                     if (byPlayer.InventoryManager.TryGiveItemstack(newStack, true))
@@ -73,4 +75,3 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-

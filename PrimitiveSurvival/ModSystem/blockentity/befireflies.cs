@@ -4,6 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.Client;
     using Vintagestory.API.Datastructures;
+    using Vintagestory.API.MathTools;
 
     public class BEFireflies : BlockEntity
     {
@@ -13,6 +14,8 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int listenerModifier = 30000; // 30000
         private readonly int firefliesCatchPercent = 10;
         private readonly string[] fireflyTypes = { "treetop", "mysticlantern", "blueghost", "rover", "fairyring", "candle", "marshimp" };
+        private readonly BlockPos tmpScanMinPos = new BlockPos(0);
+        private readonly BlockPos tmpScanMaxPos = new BlockPos(0);
 
         // Stored values
         private int scanIteration;
@@ -43,7 +46,17 @@ namespace PrimitiveSurvival.ModSystem
 
 
             //Changed for 1.17
-            this.Api.World.BlockAccessor.WalkBlocks(this.Pos.AddCopy(minX, -5, minZ), this.Pos.AddCopy(minX + size - 1, 5, minZ + size - 1), (block, x, y, z) =>
+            var baseX = this.Pos.X;
+            var baseY = this.Pos.Y;
+            var baseZ = this.Pos.Z;
+            var dim = this.Pos.dimension;
+            var minPos = this.tmpScanMinPos;
+            var maxPos = this.tmpScanMaxPos;
+            minPos.dimension = dim;
+            maxPos.dimension = dim;
+            minPos.Set(baseX + minX, baseY - 5, baseZ + minZ);
+            maxPos.Set(baseX + minX + size - 1, baseY + 5, baseZ + minZ + size - 1);
+            this.Api.World.BlockAccessor.WalkBlocks(minPos, maxPos, (block, x, y, z) =>
             //this.Api.World.BlockAccessor.WalkBlocks(this.Pos.AddCopy(minX, -5, minZ), this.Pos.AddCopy(minX + size - 1, 5, minZ + size - 1), (block, pos) =>
             {
                 if (block.Id == 0)

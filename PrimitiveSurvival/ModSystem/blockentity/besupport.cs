@@ -25,6 +25,16 @@ namespace PrimitiveSurvival.ModSystem
         private readonly string[] pipeTypes = { "pipe" };
         private readonly string[] blockageTypes = { "rot", "drygrass" };
         protected static readonly Random Rnd = new Random();
+        private readonly BlockPos tmpOffPos = new BlockPos(0);
+        private readonly BlockPos tmpEndPos = new BlockPos(0);
+        private readonly BlockPos tmpDistPos0 = new BlockPos(0);
+        private readonly BlockPos tmpDistPos1 = new BlockPos(0);
+        private readonly BlockPos tmpDistPos2 = new BlockPos(0);
+        private readonly BlockPos tmpNeibPos0 = new BlockPos(0);
+        private readonly BlockPos tmpNeibPos1 = new BlockPos(0);
+        private readonly BlockPos[] distBlocks1;
+        private readonly BlockPos[] distBlocks2;
+        private readonly BlockPos[] distBlocks3;
 
         //the shape file(s)
         private readonly string endShape = "block/pipe/wood/end";
@@ -49,6 +59,9 @@ namespace PrimitiveSurvival.ModSystem
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
             var meshes = new MeshData[this.maxSlots];
+            this.distBlocks1 = new[] { this.tmpDistPos0 };
+            this.distBlocks2 = new[] { this.tmpDistPos0, this.tmpDistPos1 };
+            this.distBlocks3 = new[] { this.tmpDistPos0, this.tmpDistPos1, this.tmpDistPos2 };
         }
 
 
@@ -172,7 +185,7 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     if (!this.LiquidSlot.Empty)
                     {
-                        var rando = Rnd.Next(0); //overall frequency of drips
+                        var rando = 0; //overall frequency of drips
                         if (rando == 0)
                         {
                             this.GenerateWaterParticles(this.Pos, dir);
@@ -191,6 +204,16 @@ namespace PrimitiveSurvival.ModSystem
         {
             //if stacksize of water is ever 0 we need to clear it completely
             var ba = this.Api.World.BlockAccessor;
+            var dim = this.Pos.dimension;
+            var offpos = this.tmpOffPos;
+            var endpos = this.tmpEndPos;
+            offpos.Set(this.Pos, dim);
+            endpos.Set(this.Pos, dim);
+            this.tmpDistPos0.dimension = dim;
+            this.tmpDistPos1.dimension = dim;
+            this.tmpDistPos2.dimension = dim;
+            this.tmpNeibPos0.dimension = dim;
+            this.tmpNeibPos1.dimension = dim;
 
 
             if (ba.GetBlockEntity(this.Pos) is BESupport be)
@@ -234,9 +257,13 @@ namespace PrimitiveSurvival.ModSystem
                 {
 
                     var asset = new AssetLocation("game:waterportion");
-                    ItemStack stack = new ItemStack(Api.World.GetItem(asset), 500); //500 = 50L maybe?
-                    this.LiquidSlot.Itemstack = stack;
-                    this.LiquidSlot.MarkDirty();
+                    var waterItem = Api.World.GetItem(asset);
+                    if (waterItem != null)
+                    {
+                        ItemStack stack = new ItemStack(waterItem, 500); //500 = 50L maybe?
+                        this.LiquidSlot.Itemstack = stack;
+                        this.LiquidSlot.MarkDirty();
+                    }
 
                 }
             }
@@ -258,8 +285,6 @@ namespace PrimitiveSurvival.ModSystem
 
             int pipeLength = 1;
 
-            BlockPos offpos = this.Pos.Copy();
-            BlockPos endpos = this.Pos.Copy();
             Block block;
 
             if (x != 0 || z != 0)
@@ -299,7 +324,7 @@ namespace PrimitiveSurvival.ModSystem
 
             for (int i = pipeLength - 1; i >= 0; i--)
             {
-                offpos = endpos.Copy();
+                offpos.Set(endpos);
                 offpos.X = endpos.X + (x * i);
                 offpos.Z = endpos.Z + (z * i);
                 block = ba.GetBlock(offpos);
@@ -332,20 +357,57 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         //distribute water evenly
                         int connectionCount = this.currentConnections.Length + 1;
-                        BlockPos[] blocks = new BlockPos[connectionCount];
-                        blocks[0] = offpos.Copy();
-
-                        if (connectionCount > 1)
+                        BlockPos[] blocks;
+                        if (connectionCount == 1)
                         {
-                            offpos.X = endpos.X + (x * (i - 1));
-                            offpos.Z = endpos.Z + (z * (i - 1));
-                            blocks[1] = offpos.Copy();
+                            blocks = this.distBlocks1;
                         }
-                        if (connectionCount > 2)
+                        else if (connectionCount == 2)
                         {
-                            offpos.X = endpos.X + (x * (i + 1));
-                            offpos.Z = endpos.Z + (z * (i + 1));
-                            blocks[2] = offpos.Copy();
+                            blocks = this.distBlocks2;
+                        }
+                        else if (connectionCount == 3)
+                        {
+                            blocks = this.distBlocks3;
+                        }
+                        else
+                        {
+                            blocks = new BlockPos[connectionCount];
+                        }
+
+                        if (connectionCount <= 3)
+                        {
+                            blocks[0].Set(offpos, dim);
+
+                            if (connectionCount > 1)
+                            {
+                                offpos.X = endpos.X + (x * (i - 1));
+                                offpos.Z = endpos.Z + (z * (i - 1));
+                                blocks[1].Set(offpos, dim);
+                            }
+                            if (connectionCount > 2)
+                            {
+                                offpos.X = endpos.X + (x * (i + 1));
+                                offpos.Z = endpos.Z + (z * (i + 1));
+                                blocks[2].Set(offpos, dim);
+                            }
+                        }
+                        else
+                        {
+                            blocks[0] = offpos.Copy();
+
+                            if (connectionCount > 1)
+                            {
+                                offpos.X = endpos.X + (x * (i - 1));
+                                offpos.Z = endpos.Z + (z * (i - 1));
+                                blocks[1] = offpos.Copy();
+                            }
+                            if (connectionCount > 2)
+                            {
+                                offpos.X = endpos.X + (x * (i + 1));
+                                offpos.Z = endpos.Z + (z * (i + 1));
+                                blocks[2] = offpos.Copy();
+                            }
                         }
                         DistributeWater(blocks);
                     }
@@ -431,9 +493,13 @@ namespace PrimitiveSurvival.ModSystem
                     if (this.currentEndpoints.Contains(side))
                     {
                         Debug.WriteLine("Adjust Water From Source or Neib: ENDPOINT");
-                        var newStack = new ItemStack(this.Api.World.GetBlock(new AssetLocation("game:water-still-7")), 1);
-                        this.LiquidStack = newStack;
-                        this.MarkDirty();
+                        var waterBlock = this.Api.World.GetBlock(new AssetLocation("game:water-still-7"));
+                        if (waterBlock != null)
+                        {
+                            var newStack = new ItemStack(waterBlock, 1);
+                            this.LiquidStack = newStack;
+                            this.MarkDirty();
+                        }
                     }
                 }
             }
@@ -521,7 +587,7 @@ namespace PrimitiveSurvival.ModSystem
         private void DistributeWater(BlockPos[] blocks)
         {
             var ba = this.Api.World.BlockAccessor;
-            int blockCount = blocks.Count();
+            int blockCount = blocks.Length;
             int waterCount = 0;
 
             //get the total water count
@@ -548,8 +614,12 @@ namespace PrimitiveSurvival.ModSystem
                     else
                     {
                         var asset = new AssetLocation("game:waterportion");
-                        ItemStack stack = new ItemStack(Api.World.GetItem(asset), toDist);
-                        be.LiquidStack = stack;
+                        var waterItem = Api.World.GetItem(asset);
+                        if (waterItem != null)
+                        {
+                            ItemStack stack = new ItemStack(waterItem, toDist);
+                            be.LiquidStack = stack;
+                        }
                     }
                     be.MarkDirty();
                 }
@@ -562,15 +632,21 @@ namespace PrimitiveSurvival.ModSystem
         {
             //look for barrel or irrigation vessel or water
             //do I even need supportDir here? ns or ew
-            BlockPos[] neibPositions = null;
+            bool hasNeibPositions = false;
+            var baseX = this.Pos.X;
+            var baseY = this.Pos.Y;
+            var baseZ = this.Pos.Z;
+            var neibPos0 = this.tmpNeibPos0;
+            var neibPos1 = this.tmpNeibPos1;
             switch (side)
             {
                 case 'e':
                     {
                         if (supportDir == "ns")
                         {
-                            neibPositions = new BlockPos[]
-                            { this.Pos.WestCopy(), this.Pos.WestCopy().NorthCopy()};
+                            neibPos0.Set(baseX - 1, baseY, baseZ);
+                            neibPos1.Set(baseX - 1, baseY, baseZ - 1);
+                            hasNeibPositions = true;
                         }
                         break;
                     }
@@ -578,8 +654,9 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (supportDir == "ns")
                         {
-                            neibPositions = new BlockPos[]
-                            { this.Pos.EastCopy(), this.Pos.EastCopy().NorthCopy()};
+                            neibPos0.Set(baseX + 1, baseY, baseZ);
+                            neibPos1.Set(baseX + 1, baseY, baseZ - 1);
+                            hasNeibPositions = true;
                         }
                         break;
                     }
@@ -587,8 +664,9 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (supportDir == "ew")
                         {
-                            neibPositions = new BlockPos[]
-                            { this.Pos.SouthCopy().UpCopy(), this.Pos.SouthCopy().EastCopy().UpCopy()};
+                            neibPos0.Set(baseX, baseY + 1, baseZ + 1);
+                            neibPos1.Set(baseX + 1, baseY + 1, baseZ + 1);
+                            hasNeibPositions = true;
                         }
                         break;
                     }
@@ -596,15 +674,16 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (supportDir == "ew")
                         {
-                            neibPositions = new BlockPos[]
-                            { this.Pos.NorthCopy().UpCopy(), this.Pos.NorthCopy().EastCopy().UpCopy()};
+                            neibPos0.Set(baseX, baseY + 1, baseZ - 1);
+                            neibPos1.Set(baseX + 1, baseY + 1, baseZ - 1);
+                            hasNeibPositions = true;
                         }
                         break;
                     }
                 default:
                     { break; }
             }
-            if (neibPositions != null)
+            if (hasNeibPositions)
             {
                 foreach (var sourceType in sourceTypes)
                 {
@@ -614,17 +693,22 @@ namespace PrimitiveSurvival.ModSystem
                         layer = BlockLayersAccess.Fluid;
                     }
 
-                    foreach (var neibPos in neibPositions)
+                    var block = this.Api.World.BlockAccessor.GetBlock(neibPos0, layer);
+                    if (block.BlockId != 0)
                     {
-
-                        var block = this.Api.World.BlockAccessor.GetBlock(neibPos, layer);
-                        if (block.BlockId != 0)
+                        //Debug.WriteLine(side + ": " + block.Code.Path);
+                        if (block.Code.Path.StartsWith(sourceType))
                         {
-                            //Debug.WriteLine(side + ": " + block.Code.Path);
-                            if (block.Code.Path.StartsWith(sourceType))
-                            {
-                                this.AddEndpoint(side);
-                            }
+                            this.AddEndpoint(side);
+                        }
+                    }
+                    block = this.Api.World.BlockAccessor.GetBlock(neibPos1, layer);
+                    if (block.BlockId != 0)
+                    {
+                        //Debug.WriteLine(side + ": " + block.Code.Path);
+                        if (block.Code.Path.StartsWith(sourceType))
+                        {
+                            this.AddEndpoint(side);
                         }
                     }
                 }
@@ -847,9 +931,10 @@ namespace PrimitiveSurvival.ModSystem
             {
                 var stackCode = sourceSlot.Itemstack.Collectible.Code.Path;
                 var newAsset = new AssetLocation(stackCode);
-                if (newAsset != null)
+                var item = this.Api.World.GetItem(newAsset);
+                if (item != null)
                 {
-                    var tempStack = new ItemStack(this.Api.World.GetItem(newAsset), sourceSlot.StackSize);
+                    var tempStack = new ItemStack(item, sourceSlot.StackSize);
                     var takeOK = byPlayer.InventoryManager.TryGiveItemstack(tempStack);
                     if (!takeOK) //player has no free slots
                     {

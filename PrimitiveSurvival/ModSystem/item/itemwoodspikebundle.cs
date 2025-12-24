@@ -41,6 +41,8 @@ namespace PrimitiveSurvival.ModSystem
                 if (blockAbove.BlockId == 0 || blockAbove.Code.Path.Contains("tallgrass-") || block.Code.Path.Contains("tallgrass-"))
                 {
                     var blockNew = world.GetBlock(new AssetLocation("primitivesurvival:woodspikes"));
+                    if (blockNew == null)
+                    { return; }
                     var blockAccessor = world.BlockAccessor;
                     if (block.Code.Path.Contains("tallgrass-"))
                     { blockAccessor.SetBlock(blockNew.BlockId, blockSel.Position); }
@@ -79,6 +81,8 @@ namespace PrimitiveSurvival.ModSystem
                     if (placeOk)
                     {
                         var blockNew = world.GetBlock(new AssetLocation("primitivesurvival:woodsupportspikes-" + face));
+                        if (blockNew == null)
+                        { return; }
                         var blockAccessor = world.BlockAccessor;
                         blockAccessor.SetBlock(blockNew.BlockId, blockSelBeside.Position);
                         slot.TakeOut(1);

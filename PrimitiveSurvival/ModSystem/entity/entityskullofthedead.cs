@@ -27,9 +27,13 @@ namespace PrimitiveSurvival.ModSystem
                 return;
             }
 
-            var stack = new ItemStack(byEntity.World.GetBlock(new AssetLocation("primitivesurvival:skullofthedead-normal")));
-            if (!byEntity.TryGiveItemStack(stack))
-            { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+            var block = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:skullofthedead-normal"));
+            if (block != null)
+            {
+                var stack = new ItemStack(block);
+                if (!byEntity.TryGiveItemStack(stack))
+                { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+            }
             this.Die(); //remove from the ground
             return;
         }

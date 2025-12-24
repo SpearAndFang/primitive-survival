@@ -313,8 +313,12 @@ namespace PrimitiveSurvival.ModSystem
                             { dropCount = Rnd.Next(5) + 1; }
                             if (dropCount >= 1)
                             {
-                                var newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation(dropType)), dropCount);
-                                this.Api.World.SpawnItemEntity(newStack, this.Pos.ToVec3d().Add(0.5, 10, 0.5));
+                                var dropItem = this.Api.World.GetItem(new AssetLocation(dropType));
+                                if (dropItem != null)
+                                {
+                                    var newStack = new ItemStack(dropItem, dropCount);
+                                    this.Api.World.SpawnItemEntity(newStack, this.Pos.ToVec3d().Add(0.5, 10, 0.5));
+                                }
                             }
                         }
                     }
@@ -348,8 +352,12 @@ namespace PrimitiveSurvival.ModSystem
                             { dropCount = Rnd.Next(5) + 1; }
                             if (dropCount >= 1)
                             {
-                                var newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation(dropType)), dropCount);
-                                this.Api.World.SpawnItemEntity(newStack, this.Pos.ToVec3d().Add(0.5, 10, 0.5));
+                                var dropItem = this.Api.World.GetItem(new AssetLocation(dropType));
+                                if (dropItem != null)
+                                {
+                                    var newStack = new ItemStack(dropItem, dropCount);
+                                    this.Api.World.SpawnItemEntity(newStack, this.Pos.ToVec3d().Add(0.5, 10, 0.5));
+                                }
                             }
                         }
                     }
@@ -383,6 +391,11 @@ namespace PrimitiveSurvival.ModSystem
                             this.MarkDirty(true);
 
                             var type = this.Api.World.GetEntityType(new AssetLocation("primitivesurvival:livingdead-normal"));
+                            if (type == null)
+                            {
+                                this.Api.World.Logger.Error("BETemporalBase: No such entity - primitivesurvival:livingdead-normal");
+                                continue;
+                            }
                             var entity = this.Api.World.ClassRegistry.CreateEntity(type);
                             if (entity != null)
                             {
@@ -751,4 +764,3 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-

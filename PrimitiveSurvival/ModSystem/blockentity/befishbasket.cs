@@ -286,7 +286,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public bool WorldPut(int slot) //, BlockPos pos)
         {
-            ItemStack newStack; // = null;
+            ItemStack newStack = null;
             var rando = Rnd.Next(5);
             if (rando < 1) // 20% chance of a seashell or relic
             {
@@ -295,10 +295,20 @@ namespace PrimitiveSurvival.ModSystem
                 if (rando < 1 && relicsDisabled == false) //10% chance of a relic
                 {
                     var thisRelic = this.relics[Rnd.Next(this.relics.Count())];
-                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:" + thisRelic)), 1);
+                    var relicItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:" + thisRelic));
+                    if (relicItem != null)
+                    {
+                        newStack = new ItemStack(relicItem, 1);
+                    }
                 }
                 else
-                { newStack = new ItemStack(this.Api.World.GetBlock(new AssetLocation("game:seashell-" + this.shellStates[Rnd.Next(this.shellStates.Count())] + "-" + this.shellColors[Rnd.Next(this.shellColors.Count())])), 1); }
+                {
+                    var shellBlock = this.Api.World.GetBlock(new AssetLocation("game:seashell-" + this.shellStates[Rnd.Next(this.shellStates.Count())] + "-" + this.shellColors[Rnd.Next(this.shellColors.Count())]));
+                    if (shellBlock != null)
+                    {
+                        newStack = new ItemStack(shellBlock, 1);
+                    }
+                }
             }
             else
             {
@@ -306,13 +316,23 @@ namespace PrimitiveSurvival.ModSystem
 
                 if (waterBlock.Code.Path.Contains("saltwater"))
                 {
-                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                    var fishItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw"));
+                    if (fishItem != null)
+                    {
+                        newStack = new ItemStack(fishItem, 1);
+                    }
                 }
                 else
                 {
-                    newStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                    var fishItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw"));
+                    if (fishItem != null)
+                    {
+                        newStack = new ItemStack(fishItem, 1);
+                    }
                 }
             }
+            if (newStack == null)
+            { return false; }
             if (this.inventory[slot].Empty)
             {
                 if (newStack.Collectible.Code.Path.Contains("psfish") || newStack.Collectible.Code.Path.Contains("pssaltwaterfish"))

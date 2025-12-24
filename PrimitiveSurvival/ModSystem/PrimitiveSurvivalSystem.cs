@@ -24,6 +24,7 @@ namespace PrimitiveSurvival.ModSystem
         private static Dictionary<IServerChunk, int> fishingChunks;
 
         public static List<string> chunkList;
+        private static HashSet<string> chunkSet;
 
         private bool prevChunksLoaded;
 
@@ -618,6 +619,7 @@ namespace PrimitiveSurvival.ModSystem
             var data = sapi.WorldManager.SaveGame.GetData("chunklist");
             
             chunkList = data == null ? new List<string>() : SerializerUtil.Deserialize<List<string>>(data);
+            chunkSet = new HashSet<string>(chunkList);
         }
 
 
@@ -666,9 +668,14 @@ namespace PrimitiveSurvival.ModSystem
                 AddChunkToDictionary(chunk);
             }
             var chunkindex = pos.X.ToString() + "," + pos.Y.ToString() + "," + pos.Z.ToString();
-            if (!chunkList.Contains(chunkindex))
+            if (chunkSet == null)
+            {
+                chunkSet = chunkList != null ? new HashSet<string>(chunkList) : new HashSet<string>();
+            }
+            if (!chunkSet.Contains(chunkindex))
             {
                 chunkList.Add(chunkindex);
+                chunkSet.Add(chunkindex);
             }
             if (0 <= fishingChunks[chunk] && fishingChunks[chunk] < ModConfig.Loaded.FishChunkMaxDepletionPercent)
             { fishingChunks[chunk] += rate; }
@@ -819,7 +826,6 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-
 
 
 

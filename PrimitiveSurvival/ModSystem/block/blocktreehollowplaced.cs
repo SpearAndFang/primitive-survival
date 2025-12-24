@@ -189,6 +189,8 @@ namespace PrimitiveSurvival.ModSystem
         {
             var types = this.Attributes["types"].AsArray<string>();
             var meshes = new Dictionary<string, MeshData>();
+            if (types == null)
+            { return meshes; }
             foreach (var type in types)
             {
                 var shapename = this.Attributes["shape"][type].AsString();
@@ -255,7 +257,10 @@ namespace PrimitiveSurvival.ModSystem
 
         public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
         {
-            var stack = new ItemStack(world.GetBlock(this.CodeWithVariant("side", "north")));
+            var pickBlock = world.GetBlock(this.CodeWithVariant("side", "north"));
+            if (pickBlock == null)
+            { return base.OnPickBlock(world, pos); }
+            var stack = new ItemStack(pickBlock);
             if (world.BlockAccessor.GetBlockEntity(pos) is BETreeHollowPlaced be)
             {
                 stack.Attributes.SetString("type", be.type);
@@ -326,7 +331,10 @@ namespace PrimitiveSurvival.ModSystem
 
         public override ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
-            return new ItemStack[] { new ItemStack(world.GetBlock(this.CodeWithVariant("side", "north"))) };
+            var dropBlock = world.GetBlock(this.CodeWithVariant("side", "north"));
+            if (dropBlock == null)
+            { return new ItemStack[] { }; }
+            return new ItemStack[] { new ItemStack(dropBlock) };
         }
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
@@ -365,6 +373,4 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-
-
 

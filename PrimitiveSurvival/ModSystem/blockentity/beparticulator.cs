@@ -466,6 +466,10 @@ namespace PrimitiveSurvival.ModSystem
 
         private GuiDialogParticulator invDialog;
         private static readonly Random Rnd = new Random();
+        private readonly BlockPos tmpLinkPos = new BlockPos(0);
+        private readonly BlockPos tmpNeibDeathPos = new BlockPos(0);
+        private readonly BlockPos tmpNeibSecPos = new BlockPos(0);
+        private WeatherSystemBase weatherSystem;
 
 
         public long particleUpdateTick = 0;
@@ -495,6 +499,7 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(api);
             //this.ownBlock = api.World.BlockAccessor.GetBlock(this.Pos) as BlockParticulator;
             this.capi = api as ICoreClientAPI;
+            this.weatherSystem = this.Api.ModLoader.GetModSystem<WeatherSystemBase>();
 
             if (this.Api.Side.IsClient())
             {
@@ -702,8 +707,9 @@ namespace PrimitiveSurvival.ModSystem
             int color;
             if (temp.useBlockColor)
             {
-                var Pos1 = new BlockPos(temp.linkX, temp.linkY, temp.linkZ, 0);
-                var block = this.Api.World.BlockAccessor.GetBlock(Pos1, BlockLayersAccess.Default);
+                var linkPos = this.tmpLinkPos;
+                linkPos.Set(temp.linkX, temp.linkY, temp.linkZ);
+                var block = this.Api.World.BlockAccessor.GetBlock(linkPos, BlockLayersAccess.Default);
                 color = block.GetRandomColor(this.Api as ICoreClientAPI, this.Pos, BlockFacing.UP);// | (0xff << 24);
             }
             else
@@ -715,17 +721,26 @@ namespace PrimitiveSurvival.ModSystem
                     temp.colorRndG = temp.colorG;
                     temp.colorRndB = temp.colorB;
                 }
-                var a = new[] { temp.colorA, temp.colorRndA };
-                var r = new[] { temp.colorR, temp.colorRndR };
-                var g = new[] { temp.colorG, temp.colorRndG };
-                var b = new[] { temp.colorB, temp.colorRndB };
-                color = ColorUtil.ToRgba(Rnd.Next(a.Min(), a.Max()), Rnd.Next(r.Min(), r.Max()), Rnd.Next(g.Min(), g.Max()), Rnd.Next(b.Min(), b.Max()));
+                int minA = Math.Min(temp.colorA, temp.colorRndA);
+                int maxA = Math.Max(temp.colorA, temp.colorRndA);
+                int minR = Math.Min(temp.colorR, temp.colorRndR);
+                int maxR = Math.Max(temp.colorR, temp.colorRndR);
+                int minG = Math.Min(temp.colorG, temp.colorRndG);
+                int maxG = Math.Max(temp.colorG, temp.colorRndG);
+                int minB = Math.Min(temp.colorB, temp.colorRndB);
+                int maxB = Math.Max(temp.colorB, temp.colorRndB);
+                color = ColorUtil.ToRgba(
+                    Rnd.Next(minA, maxA),
+                    Rnd.Next(minR, maxR),
+                    Rnd.Next(minG, maxG),
+                    Rnd.Next(minB, maxB));
             }
 
             double windAdj = 0;
             if (temp.windAffected && temp.mainThread) //only need to set this in the main thread
             {
-                var windspeed = this.Api.ModLoader.GetModSystem<WeatherSystemBase>()?.WeatherDataSlowAccess.GetWindSpeed(this.Pos.ToVec3d()) ?? 0;
+                var weather = this.weatherSystem ?? (this.weatherSystem = this.Api.ModLoader.GetModSystem<WeatherSystemBase>());
+                var windspeed = weather?.WeatherDataSlowAccess.GetWindSpeed(this.Pos.ToVec3d()) ?? 0;
                 windAdj = windspeed * temp.windAffectednes;
             }
             var minVelocity = new Vec3f(temp.minVelocityX + (float)windAdj, temp.minVelocityY, temp.minVelocityZ);
@@ -1006,7 +1021,9 @@ namespace PrimitiveSurvival.ModSystem
             BEParticleData neibData;
             if (data.neibDeathX != -1)
             {
-                if (this.Api.World.BlockAccessor.GetBlockEntity(new BlockPos(data.neibDeathX, data.neibDeathY, data.neibDeathZ, 0)) is BEParticulator be)
+                var neibDeathPos = this.tmpNeibDeathPos;
+                neibDeathPos.Set(data.neibDeathX, data.neibDeathY, data.neibDeathZ);
+                if (this.Api.World.BlockAccessor.GetBlockEntity(neibDeathPos) is BEParticulator be)
                 {
                     neibData = be.Data;
                     if (neibData != null && !this.Data.mainThread)
@@ -1024,7 +1041,9 @@ namespace PrimitiveSurvival.ModSystem
             }
             if (data.neibSecX != -1)
             {
-                if (this.Api.World.BlockAccessor.GetBlockEntity(new BlockPos(data.neibSecX, data.neibSecY, data.neibSecZ, 0)) is BEParticulator be)
+                var neibSecPos = this.tmpNeibSecPos;
+                neibSecPos.Set(data.neibSecX, data.neibSecY, data.neibSecZ);
+                if (this.Api.World.BlockAccessor.GetBlockEntity(neibSecPos) is BEParticulator be)
                 {
                     neibData = be.Data;
                     if (neibData != null && !this.Data.mainThread)

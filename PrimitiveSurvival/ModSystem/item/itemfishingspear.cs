@@ -75,10 +75,14 @@ namespace PrimitiveSurvival.ModSystem
                     }
 
                     string newcode = slot.Itemstack.Collectible.Code.Path.Replace("empty", fishtype);
-                    var spearStack = new ItemStack(byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode)), 1);
-                    slot.Itemstack.SetFrom(spearStack);
-                    slot.Itemstack.Attributes.SetInt("durability", prevDura);
-                    slot.MarkDirty();
+                    var spearItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode));
+                    if (spearItem != null)
+                    {
+                        var spearStack = new ItemStack(spearItem, 1);
+                        slot.Itemstack.SetFrom(spearStack);
+                        slot.Itemstack.Attributes.SetInt("durability", prevDura);
+                        slot.MarkDirty();
+                    }
 
 
                     sapi.World.DespawnEntity(entitySel.Entity, new EntityDespawnData() { Reason = EnumDespawnReason.Removed });
@@ -122,10 +126,14 @@ namespace PrimitiveSurvival.ModSystem
             string materialtype = slot.Itemstack.Collectible.Variant["material"];
             string fishtype = slot.Itemstack.Collectible.Variant["type"];
             string newcode = "fishingspear-" + materialtype + "-empty";
-            var spearStack = new ItemStack(byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode)), 1);
-            slot.Itemstack = spearStack;
-            slot.Itemstack.Attributes.SetInt("durability", prevDura);
-            slot.MarkDirty();
+            var spearItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode));
+            if (spearItem != null)
+            {
+                var spearStack = new ItemStack(spearItem, 1);
+                slot.Itemstack = spearStack;
+                slot.Itemstack.Attributes.SetInt("durability", prevDura);
+                slot.MarkDirty();
+            }
 
             //transfer fish to empty inventory firstorempty inventory slot (or failing that, drop it)
             var newItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:psfish-salmon-raw"));

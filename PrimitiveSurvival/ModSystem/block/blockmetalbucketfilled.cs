@@ -115,9 +115,12 @@ namespace PrimitiveSurvival.ModSystem
                 //if the player just scooped lava out of this bucket swap out the one on the ground
                 var newAssetLocation = new AssetLocation("primitivesurvival:" + block.Code.Path.Replace("-filled", "-empty"));
                 var newblock = world.GetBlock(newAssetLocation);
+                if (newblock == null)
+                { return; }
                 world.BlockAccessor.SetBlock(newblock.BlockId, blockSel.Position); //put lava above
                 var beb2 = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEMetalBucket;
-                beb2.MeshAngle = beb.MeshAngle;
+                if (beb2 != null && beb != null)
+                { beb2.MeshAngle = beb.MeshAngle; }
                 this.api.World.BlockAccessor.MarkBlockDirty(blockSel.Position); //let the server know the lava's there
 
 
@@ -152,11 +155,14 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     var newAssetLocation = new AssetLocation("primitivesurvival:" + block.Code.Path.Replace("-empty", "-filled"));
                     var newblock = byEntity.World.GetBlock(newAssetLocation);
+                    if (newblock == null)
+                    { return; }
 
                     byEntity.World.BlockAccessor.SetBlock(newblock.BlockId, blockSel.Position); //put lava above
                     this.api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's there
                     var beb2 = byEntity.World.BlockAccessor.GetBlockEntity(pos) as BEMetalBucketFilled;
-                    beb2.MeshAngle = beb.MeshAngle;
+                    if (beb2 != null && beb != null)
+                    { beb2.MeshAngle = beb.MeshAngle; }
                     this.api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's there
                                                                       //now remove the lava from the slot block
 
@@ -175,22 +181,26 @@ namespace PrimitiveSurvival.ModSystem
             }
             else if (byEntity.Controls.Sprint && (this.api.World.Side == EnumAppSide.Server))
             {
-                var newblock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-filled", "-empty")));
-                var newStack = new ItemStack(newblock);
+                var emptyBlock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-filled", "-empty")));
+                if (emptyBlock == null)
+                { return; }
+                var newStack = new ItemStack(emptyBlock);
                 slot.TakeOut(1);
                 slot.MarkDirty();
                 if (!byEntity.TryGiveItemStack(newStack))
                 {
                     this.api.World.SpawnItemEntity(newStack, byEntity.Pos.XYZ.AddCopy(0, 0.5, 0));
                 }
-                newblock = byEntity.World.GetBlock(new AssetLocation("lava-still-7"));
+                var lavaBlock = byEntity.World.GetBlock(new AssetLocation("lava-still-7"));
+                if (lavaBlock == null)
+                { return; }
                 BlockPos targetPos;
                 if (block.IsLiquid())
                 { targetPos = pos; }
                 else
                 { targetPos = blockSel.Position.AddCopy(blockSel.Face); }
-                this.api.World.BlockAccessor.SetBlock(newblock.BlockId, targetPos); //put lava above
-                newblock.OnNeighbourBlockChange(byEntity.World, targetPos, targetPos.NorthCopy());
+                this.api.World.BlockAccessor.SetBlock(lavaBlock.BlockId, targetPos); //put lava above
+                lavaBlock.OnNeighbourBlockChange(byEntity.World, targetPos, targetPos.NorthCopy());
                 this.api.World.BlockAccessor.TriggerNeighbourBlockUpdate(targetPos);
                 this.api.World.BlockAccessor.MarkBlockDirty(targetPos); //let the server know the lava's there
             }

@@ -260,15 +260,22 @@ namespace PrimitiveSurvival.ModSystem
                 if (waterBlock.Code.Path.Contains("water") && areaOK)
                 {
                     path += "open";
-                    block = world.GetBlock(block.CodeWithPath(path));
-                    world.BlockAccessor.SetBlock(block.BlockId, blockSel.Position);
+                    var openBlock = world.GetBlock(block.CodeWithPath(path));
+                    if (openBlock == null)
+                    { return base.OnBlockInteractStart(world, byPlayer, blockSel); }
 
+                    Block trapBlock = null;
                     testBlock = world.BlockAccessor.GetBlock(waterPos, BlockLayersAccess.Default); //make sure it isn't already a weir trap!!!
                     if (!testBlock.Code.Path.Contains("weirtrap"))
                     {
-                        testBlock = world.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:weirtrap-" + facing.ToString()));
-                        world.BlockAccessor.SetBlock(testBlock.BlockId, waterPos);
+                        trapBlock = world.BlockAccessor.GetBlock(new AssetLocation("primitivesurvival:weirtrap-" + facing.ToString()));
+                        if (trapBlock == null)
+                        { return base.OnBlockInteractStart(world, byPlayer, blockSel); }
                     }
+
+                    world.BlockAccessor.SetBlock(openBlock.BlockId, blockSel.Position);
+                    if (trapBlock != null)
+                    { world.BlockAccessor.SetBlock(trapBlock.BlockId, waterPos); }
                     return true;
                 }
             }

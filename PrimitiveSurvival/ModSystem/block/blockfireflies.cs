@@ -59,6 +59,11 @@ namespace PrimitiveSurvival.ModSystem
                 var location = new AssetLocation(this.Code.Domain, this.CodeWithoutParts(1));
                 //Debug.WriteLine(location);
                 var type = byPlayer.WorldData.EntityPlayer.World.GetEntityType(location);
+                if (type == null)
+                {
+                    this.api.World.Logger.Error("BlockFireflies: No such entity - {0}", location);
+                    return false;
+                }
                 var entity = byPlayer.WorldData.EntityPlayer.World.ClassRegistry.CreateEntity(type);
                 if (entity != null)
                 {

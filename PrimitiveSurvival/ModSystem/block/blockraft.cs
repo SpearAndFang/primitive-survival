@@ -136,7 +136,7 @@ namespace PrimitiveSurvival.ModSystem
             int windData = this.VertexFlags.Normal;
             if (downWaterBlock.Code.Path.Contains("water") && (downSolidBlock.Id == 0 || boxHeight < 0.8f))
             {
-                windData = VertexFlags.Normal | EnumWindBitModeMask.Water | VertexFlags.ZOffset;
+                windData = (ushort)VertexFlags.Normal | EnumWindBitModeMask.Water | VertexFlags.ZOffset;
             }
             for (var i = 0; i < sourceMesh.FlagsCount; i++)
             {

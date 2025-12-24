@@ -84,9 +84,10 @@ namespace PrimitiveSurvival.ModSystem
                         if (be.SoilType == "")
                         { be.SoilType = "low"; }
                         AssetLocation AssetLoc = new AssetLocation("game:soil-" + be.SoilType + "-none");
-                        if (AssetLoc != null)
+                        var soilBlock = world.GetBlock(AssetLoc);
+                        if (soilBlock != null)
                         {
-                            var tempStack = new ItemStack(world.GetBlock(AssetLoc), 1);
+                            var tempStack = new ItemStack(soilBlock, 1);
                             world.SpawnItemEntity(tempStack, pos.ToVec3d().Add(0.5, 1.1, 0.5));
                         }
 

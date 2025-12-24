@@ -298,10 +298,13 @@ namespace PrimitiveSurvival.ModSystem
                     if (aloc != null)
                     {
                         var item = sapi.World.GetItem(aloc);
-                        if (itemStacks.ContainsKey(nextItem))
-                        { itemStacks[nextItem].StackSize++; }
-                        else
-                        { itemStacks.Add(nextItem, new ItemStack(item)); }
+                        if (item != null)
+                        {
+                            if (itemStacks.ContainsKey(nextItem))
+                            { itemStacks[nextItem].StackSize++; }
+                            else
+                            { itemStacks.Add(nextItem, new ItemStack(item)); }
+                        }
                     }
                 }
                 else //block
@@ -311,10 +314,13 @@ namespace PrimitiveSurvival.ModSystem
                     if (aloc != null)
                     {
                         var item = sapi.World.GetBlock(aloc);
-                        if (itemStacks.ContainsKey(nextItem))
-                        { itemStacks[nextItem].StackSize++; }
-                        else
-                        { itemStacks.Add(nextItem, new ItemStack(item)); }
+                        if (item != null)
+                        {
+                            if (itemStacks.ContainsKey(nextItem))
+                            { itemStacks[nextItem].StackSize++; }
+                            else
+                            { itemStacks.Add(nextItem, new ItemStack(item)); }
+                        }
                     }
                 }
             }
@@ -372,7 +378,7 @@ namespace PrimitiveSurvival.ModSystem
             { return; }
 
             var attArray = attributesObjectArray.AsArray();
-            if (attributesObjectArray == null)
+            if (attArray == null)
             { return; }
 
 

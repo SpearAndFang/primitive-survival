@@ -206,18 +206,23 @@ namespace PrimitiveSurvival.ModSystem
                                     }
                                     /*********************************************/
                                     //Debug.WriteLine("fish on hook");
+                                    Item caughtItem;
                                     if (belowBlock.Code.Path.Contains("saltwater"))
                                     {
-                                        this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                                        caughtItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw"));
                                     }
                                     else
                                     {
-                                        this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                                        caughtItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw"));
                                     }
-                                    rando = Rnd.Next(2);
-                                    if (rando == 0)
-                                    { this.BaitSlot.TakeOut(1); }
-                                    this.MarkDirty();
+                                    if (caughtItem != null)
+                                    {
+                                        this.CatchStack = new ItemStack(caughtItem, 1);
+                                        rando = Rnd.Next(2);
+                                        if (rando == 0)
+                                        { this.BaitSlot.TakeOut(1); }
+                                        this.MarkDirty();
+                                    }
                                     //Api.World.BlockAccessor.MarkBlockDirty(Pos);
                                     //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
                                     //MarkDirty(true);
@@ -248,15 +253,20 @@ namespace PrimitiveSurvival.ModSystem
                                 }
                                 /*********************************************/
                                 //Debug.WriteLine("fish on hook");
+                                Item caughtItem;
                                 if (belowBlock.Code.Path.Contains("saltwater"))
                                 {
-                                    this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw")), 1);
+                                    caughtItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + this.saltWaterFishTypes[Rnd.Next(this.saltWaterFishTypes.Count())] + "-raw"));
                                 }
                                 else
                                 {
-                                    this.CatchStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw")), 1);
+                                    caughtItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw"));
                                 }
-                                this.MarkDirty();
+                                if (caughtItem != null)
+                                {
+                                    this.CatchStack = new ItemStack(caughtItem, 1);
+                                    this.MarkDirty();
+                                }
                                 //Api.World.BlockAccessor.MarkBlockDirty(Pos);
                                 //Api.World.BlockAccessor.MarkBlockEntityDirty(Pos);
                                 //MarkDirty(true);
@@ -679,4 +689,3 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-

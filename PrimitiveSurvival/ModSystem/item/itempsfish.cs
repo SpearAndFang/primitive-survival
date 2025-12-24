@@ -29,8 +29,11 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     item = this.api.World.GetItem(new AssetLocation("primitivesurvival:fisheggs-raw-ovulated"));
                 }
-                var outStack = new ItemStack(item);
-                this.api.World.SpawnItemEntity(outStack, new Vec3d(byPlayer.Entity.Pos.X + 0.5, byPlayer.Entity.Pos.Y + 0.5, byPlayer.Entity.Pos.Z + 0.5), null);
+                if (item != null)
+                {
+                    var outStack = new ItemStack(item);
+                    this.api.World.SpawnItemEntity(outStack, new Vec3d(byPlayer.Entity.Pos.X + 0.5, byPlayer.Entity.Pos.Y + 0.5, byPlayer.Entity.Pos.Z + 0.5), null);
+                }
             }
         }
 

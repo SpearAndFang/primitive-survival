@@ -60,7 +60,7 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
             //Drop the block in creative mode too so we don't lose a configured block
-            if (byPlayer.WorldData.CurrentGameMode == EnumGameMode.Creative)
+            if (byPlayer != null && byPlayer.WorldData.CurrentGameMode == EnumGameMode.Creative)
             {
                 if (world.BlockAccessor.GetBlockEntity(pos) is BEParticulator be)
                 {

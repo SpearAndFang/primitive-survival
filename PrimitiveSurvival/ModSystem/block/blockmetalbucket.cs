@@ -56,8 +56,13 @@ namespace PrimitiveSurvival.ModSystem
                         else
                         {
                             //swap empty bucket with "filled" one
-                            var newblock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-empty", "-filled")));
-                            var newStack = new ItemStack(newblock);
+                            var filledBlock = byEntity.World.GetBlock(new AssetLocation("primitivesurvival:" + bucketPath.Replace("-empty", "-filled")));
+                            if (filledBlock == null)
+                            { return; }
+                            var lavaBlock = byEntity.World.GetBlock(new AssetLocation("lava-still-3"));
+                            if (lavaBlock == null)
+                            { return; }
+                            var newStack = new ItemStack(filledBlock);
                             slot.TakeOut(1);
                             slot.MarkDirty();
                             
@@ -66,9 +71,8 @@ namespace PrimitiveSurvival.ModSystem
                             byEntity.TryGiveItemStack(newStack);
 
                             //remove lava from in world
-                            newblock = byEntity.World.GetBlock(new AssetLocation("lava-still-3"));
-                            this.api.World.BlockAccessor.SetBlock(newblock.BlockId, pos); //replace lava with less lava
-                            newblock.OnNeighbourBlockChange(byEntity.World, pos, pos.NorthCopy());
+                            this.api.World.BlockAccessor.SetBlock(lavaBlock.BlockId, pos); //replace lava with less lava
+                            lavaBlock.OnNeighbourBlockChange(byEntity.World, pos, pos.NorthCopy());
                             this.api.World.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
                             this.api.World.BlockAccessor.MarkBlockDirty(pos); //let the server know the lava's gone
                         }

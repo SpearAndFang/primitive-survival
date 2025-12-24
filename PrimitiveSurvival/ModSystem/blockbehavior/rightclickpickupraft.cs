@@ -33,6 +33,8 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     var curType = world.BlockAccessor.GetBlock(blockSel.Position, BlockLayersAccess.Default).Code.FirstCodePart();
                     var raftBlock = world.GetBlock(new AssetLocation("primitivesurvival:" + curType + "-north"));
+                    if (raftBlock == null)
+                    { return false; }
                     var newStack = new ItemStack(raftBlock);
                     if (byPlayer.InventoryManager.TryGiveItemstack(newStack, true))
                     {
@@ -72,4 +74,3 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-

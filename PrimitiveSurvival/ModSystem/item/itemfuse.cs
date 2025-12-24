@@ -25,6 +25,8 @@ namespace PrimitiveSurvival.ModSystem
 
             //this will need to change if I add more fuse types!
             var blockNew = world.GetBlock(new AssetLocation("primitivesurvival:bfuse-blackmatch-empty"));
+            if (blockNew == null)
+            { return; }
 
             if (face == "down")
             {

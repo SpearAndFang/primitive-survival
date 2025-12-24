@@ -50,14 +50,20 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnGameTick(float dt)
         {
             base.OnGameTick(dt);
+            if (this.strobeFrequency <= 0f)
+            { return; }
             this.tmp.Set(this.ServerPos.X, this.ServerPos.Y + this.SelectionBox.Y1 + (this.SelectionBox.Y2 / 2), this.ServerPos.Z);
             var entities = this.World.GetEntitiesAround(this.tmp, 5.0f, 5.0f, null);
             if (entities.Length <= 1 && this.FirstCodePart() == "fireflies")
             { return; }
             if (this.strobeFrequency > 0f)
             {
-                var rnd = this.Api.World.Rand.Next(0, entities.Length);
-                float d = rnd / 10;
+                float d = 0f;
+                if (entities.Length > 0)
+                {
+                    var rnd = this.Api.World.Rand.Next(0, entities.Length);
+                    d = rnd / 10;
+                }
 
                 this.time += dt * this.strobeFrequencyWithOffset - d;
                 var timeoff = (float)Math.Abs(Math.Sin(this.time + this.offset));
@@ -66,4 +72,3 @@ namespace PrimitiveSurvival.ModSystem
         }
     }
 }
-

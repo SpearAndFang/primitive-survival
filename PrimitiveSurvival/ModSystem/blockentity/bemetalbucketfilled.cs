@@ -29,7 +29,11 @@ namespace PrimitiveSurvival.ModSystem
             this.ownBlock = this.Block as BlockMetalBucketFilled;
 
             //fill the "filled" bucket with lava
-            this.inventory[0].Itemstack = new ItemStack(api.World.GetItem(new AssetLocation("primitivesurvival:lavaportion")), 10);
+            var lavaItem = api.World.GetItem(new AssetLocation("primitivesurvival:lavaportion"));
+            if (lavaItem != null)
+            {
+                this.inventory[0].Itemstack = new ItemStack(lavaItem, 10);
+            }
             if (this.Api.Side == EnumAppSide.Client)
             {
                 this.currentMesh = this.GenMesh();

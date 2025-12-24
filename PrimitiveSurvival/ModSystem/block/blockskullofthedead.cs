@@ -36,6 +36,11 @@ namespace PrimitiveSurvival.ModSystem
             var location = new AssetLocation(this.Code.Domain, this.Code.Path);
             //Debug.WriteLine(location);
             var type = byPlayer.WorldData.EntityPlayer.World.GetEntityType(location);
+            if (type == null)
+            {
+                this.api.World.Logger.Error("BlockSkullOfTheDead: No such entity - {0}", location);
+                return false;
+            }
             var entity = byPlayer.WorldData.EntityPlayer.World.ClassRegistry.CreateEntity(type);
             if (entity != null)
             {

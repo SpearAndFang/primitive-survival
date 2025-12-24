@@ -21,10 +21,16 @@ namespace PrimitiveSurvival.ModSystem
         public string SoilType;
 
         private readonly double updateMinutes = 1.0; //update neighbors once per minute
+        private readonly BlockPos[] tmpNeibPos;
 
         public BEIrrigationVessel()
         {
             this.inventory = new InventoryGeneric(1, null, null);
+            this.tmpNeibPos = new BlockPos[8];
+            for (int i = 0; i < this.tmpNeibPos.Length; i++)
+            {
+                this.tmpNeibPos[i] = new BlockPos(0);
+            }
         }
 
 
@@ -71,16 +77,24 @@ namespace PrimitiveSurvival.ModSystem
             this.Api.World.BlockAccessor.SetBlock(waterBlock.BlockId, this.Pos, BlockLayersAccess.Fluid); //fill water layer
             //MARK rboys2 end
 
-            var neibPos = new BlockPos[] {
-                this.Pos.EastCopy(),
-                this.Pos.EastCopy().NorthCopy(),
-                this.Pos.NorthCopy(),
-                this.Pos.NorthCopy().WestCopy(),
-                this.Pos.SouthCopy(),
-                this.Pos.SouthCopy().EastCopy(),
-                this.Pos.WestCopy(),
-                this.Pos.WestCopy().SouthCopy() 
-            }; //immediate neighbors
+            var baseX = this.Pos.X;
+            var baseY = this.Pos.Y;
+            var baseZ = this.Pos.Z;
+            var dim = this.Pos.dimension;
+            var neibPos = this.tmpNeibPos;
+            for (int i = 0; i < neibPos.Length; i++)
+            {
+                neibPos[i].dimension = dim;
+            }
+            neibPos[0].Set(baseX + 1, baseY, baseZ);
+            neibPos[1].Set(baseX + 1, baseY, baseZ - 1);
+            neibPos[2].Set(baseX, baseY, baseZ - 1);
+            neibPos[3].Set(baseX - 1, baseY, baseZ - 1);
+            neibPos[4].Set(baseX, baseY, baseZ + 1);
+            neibPos[5].Set(baseX + 1, baseY, baseZ + 1);
+            neibPos[6].Set(baseX - 1, baseY, baseZ);
+            neibPos[7].Set(baseX - 1, baseY, baseZ + 1);
+            //immediate neighbors
 
             double waterUsed = 0;
             // Examine sides of immediate neighbors

@@ -28,6 +28,10 @@ namespace PrimitiveSurvival.ModSystem
         private static readonly Random Rnd = new Random();
         private readonly string[] blockageTypes = { "rot", "stick", "drygrass" };
         private AssetLocation takeSound;
+        private readonly BlockPos tmpUpPos = new BlockPos(0);
+        private readonly BlockPos[] tmpCloseNeibPos;
+        private readonly BlockPos[] tmpFarNeibPos;
+        private RoomRegistry roomRegistry;
 
 
         //inventory setup
@@ -39,6 +43,16 @@ namespace PrimitiveSurvival.ModSystem
         {
             this.inventory = new InventoryGeneric(this.maxSlots, null, null);
             var meshes = new MeshData[this.maxSlots];
+            this.tmpCloseNeibPos = new BlockPos[8];
+            for (int i = 0; i < this.tmpCloseNeibPos.Length; i++)
+            {
+                this.tmpCloseNeibPos[i] = new BlockPos(0);
+            }
+            this.tmpFarNeibPos = new BlockPos[12];
+            for (int i = 0; i < this.tmpFarNeibPos.Length; i++)
+            {
+                this.tmpFarNeibPos[i] = new BlockPos(0);
+            }
         }
         public override InventoryBase Inventory => this.inventory;
 
@@ -66,6 +80,7 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(api);
             this.capi = api as ICoreClientAPI;
             this.takeSound = new AssetLocation("game", "sounds/block/stickplace");
+            this.roomRegistry = this.Api.ModLoader.GetModSystem<RoomRegistry>();
 
             if (this.Block.Attributes != null)
             {
@@ -101,16 +116,24 @@ namespace PrimitiveSurvival.ModSystem
             var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Fluid);
             if (block.Code.Path.Contains("water") && this.OtherSlot.Empty && !block.Code.Path.Contains("saltwater"))
             {
+                var baseX = this.Pos.X;
+                var baseY = this.Pos.Y;
+                var baseZ = this.Pos.Z;
+                var dim = this.Pos.dimension;
                 //contains water and no blockage
                 if (Rnd.NextDouble() < (this.FurrowedLandBlockageChancePercent / 100))
                 {
                     //check for room and block above
                     bool createblockage = true;
-                    var blockabove = this.Api.World.BlockAccessor.GetBlock(this.Pos.UpCopy(), BlockLayersAccess.Default);
+                    var upPos = this.tmpUpPos;
+                    upPos.dimension = dim;
+                    upPos.Set(baseX, baseY + 1, baseZ);
+                    var blockabove = this.Api.World.BlockAccessor.GetBlock(upPos, BlockLayersAccess.Default);
                     if (blockabove.BlockId != 0)
                     { createblockage = false; }
 
-                    Room room = this.Api.ModLoader.GetModSystem<RoomRegistry>().GetRoomForPosition(this.Pos.UpCopy());
+                    var registry = this.roomRegistry ?? (this.roomRegistry = this.Api.ModLoader.GetModSystem<RoomRegistry>());
+                    Room room = registry.GetRoomForPosition(upPos);
                     if (room != null)
                     {
                         if (room.ExitCount == 0)
@@ -121,7 +144,11 @@ namespace PrimitiveSurvival.ModSystem
                     if (createblockage)
                     {
                         //create a blockage
-                        this.OtherStack = new ItemStack(this.Api.World.GetItem(new AssetLocation("game:" + this.blockageTypes[Rnd.Next(this.blockageTypes.Count())])), Rnd.Next(3) + 1);
+                        var blockageItem = this.Api.World.GetItem(new AssetLocation("game:" + this.blockageTypes[Rnd.Next(this.blockageTypes.Count())]));
+                        if (blockageItem != null)
+                        {
+                            this.OtherStack = new ItemStack(blockageItem, Rnd.Next(3) + 1);
+                        }
 
                         this.Api.World.BlockAccessor.SetBlock(0, this.Pos, BlockLayersAccess.Fluid);
                         this.MarkDirty(true);
@@ -132,16 +159,19 @@ namespace PrimitiveSurvival.ModSystem
                     //water neighbors
 
                     //check all immediate neighbors (8 sides) - if moisture < 80 add some
-                    var neibPos = new BlockPos[] {
-                        this.Pos.EastCopy(),
-                        this.Pos.EastCopy().NorthCopy(),
-                        this.Pos.NorthCopy(),
-                        this.Pos.NorthCopy().WestCopy(),
-                        this.Pos.SouthCopy(),
-                        this.Pos.SouthCopy().EastCopy(),
-                        this.Pos.WestCopy(),
-                        this.Pos.WestCopy().SouthCopy()
-                    };
+                    var neibPos = this.tmpCloseNeibPos;
+                    for (int i = 0; i < neibPos.Length; i++)
+                    {
+                        neibPos[i].dimension = dim;
+                    }
+                    neibPos[0].Set(baseX + 1, baseY, baseZ);
+                    neibPos[1].Set(baseX + 1, baseY, baseZ - 1);
+                    neibPos[2].Set(baseX, baseY, baseZ - 1);
+                    neibPos[3].Set(baseX - 1, baseY, baseZ - 1);
+                    neibPos[4].Set(baseX, baseY, baseZ + 1);
+                    neibPos[5].Set(baseX + 1, baseY, baseZ + 1);
+                    neibPos[6].Set(baseX - 1, baseY, baseZ);
+                    neibPos[7].Set(baseX - 1, baseY, baseZ + 1);
 
                     // Examine sides of immediate neighbors
                     foreach (var neib in neibPos)
@@ -161,20 +191,23 @@ namespace PrimitiveSurvival.ModSystem
                     }
 
                     //check a little deeper - if moisture < 60 add some
-                    neibPos = new BlockPos[] {
-                        this.Pos.EastCopy().EastCopy(),
-                        this.Pos.EastCopy().EastCopy().NorthCopy(),
-                        this.Pos.EastCopy().EastCopy().SouthCopy(),
-                        this.Pos.NorthCopy().NorthCopy(),
-                        this.Pos.NorthCopy().NorthCopy().EastCopy(),
-                        this.Pos.NorthCopy().NorthCopy().WestCopy(),
-                        this.Pos.SouthCopy().SouthCopy(),
-                        this.Pos.SouthCopy().SouthCopy().EastCopy(),
-                        this.Pos.SouthCopy().SouthCopy().WestCopy(),
-                        this.Pos.WestCopy().WestCopy(),
-                        this.Pos.WestCopy().WestCopy().NorthCopy(),
-                        this.Pos.WestCopy().WestCopy().SouthCopy()
-                    };
+                    neibPos = this.tmpFarNeibPos;
+                    for (int i = 0; i < neibPos.Length; i++)
+                    {
+                        neibPos[i].dimension = dim;
+                    }
+                    neibPos[0].Set(baseX + 2, baseY, baseZ);
+                    neibPos[1].Set(baseX + 2, baseY, baseZ - 1);
+                    neibPos[2].Set(baseX + 2, baseY, baseZ + 1);
+                    neibPos[3].Set(baseX, baseY, baseZ - 2);
+                    neibPos[4].Set(baseX + 1, baseY, baseZ - 2);
+                    neibPos[5].Set(baseX - 1, baseY, baseZ - 2);
+                    neibPos[6].Set(baseX, baseY, baseZ + 2);
+                    neibPos[7].Set(baseX + 1, baseY, baseZ + 2);
+                    neibPos[8].Set(baseX - 1, baseY, baseZ + 2);
+                    neibPos[9].Set(baseX - 2, baseY, baseZ);
+                    neibPos[10].Set(baseX - 2, baseY, baseZ - 1);
+                    neibPos[11].Set(baseX - 2, baseY, baseZ + 1);
 
                     // Examine sides of neighbors neighbors
                     foreach (var neib in neibPos)
@@ -283,15 +316,19 @@ namespace PrimitiveSurvival.ModSystem
             {
                 var stackCode = sourceSlot.Itemstack.Collectible.Code.Path;
                 var newAsset = new AssetLocation(stackCode);
-                var tempStack = new ItemStack(this.Api.World.GetItem(newAsset), sourceSlot.StackSize);
-                var takeOK = byPlayer.InventoryManager.TryGiveItemstack(tempStack);
-                if (!takeOK) //player has no free slots
+                var item = this.Api.World.GetItem(newAsset);
+                if (item != null)
                 {
-                    this.Api.World.SpawnItemEntity(tempStack, byPlayer.Entity.Pos.XYZ.Add(0, 0.5, 0));
+                    var tempStack = new ItemStack(item, sourceSlot.StackSize);
+                    var takeOK = byPlayer.InventoryManager.TryGiveItemstack(tempStack);
+                    if (!takeOK) //player has no free slots
+                    {
+                        this.Api.World.SpawnItemEntity(tempStack, byPlayer.Entity.Pos.XYZ.Add(0, 0.5, 0));
+                    }
+                    sourceSlot.Itemstack = null;
+                    this.MarkDirty(true);
+                    return true;
                 }
-                sourceSlot.Itemstack = null;
-                this.MarkDirty(true);
-                return true;
             }
             return false;
         }

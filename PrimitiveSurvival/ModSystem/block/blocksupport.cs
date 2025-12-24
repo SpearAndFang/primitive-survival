@@ -199,11 +199,11 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         string asset = be.Inventory[0].Itemstack.Collectible.Code.Path;
                         AssetLocation assetloc = new AssetLocation(dom + asset);
-                        if (assetloc != null)
+                        var dropBlock = world.GetBlock(assetloc);
+                        if (dropBlock != null && world.Side == EnumAppSide.Server)
                         {
-                            ItemStack stack = new ItemStack(world.GetBlock(assetloc));
-                            if (stack != null && world.Side == EnumAppSide.Server)
-                            { this.api.World.SpawnItemEntity(stack, pos.ToVec3d().AddCopy(0.5, 1.25, 0.5)); }
+                            ItemStack stack = new ItemStack(dropBlock);
+                            this.api.World.SpawnItemEntity(stack, pos.ToVec3d().AddCopy(0.5, 1.25, 0.5));
                         }
                     }
                     ba.RemoveBlockEntity(mainPos);
@@ -214,9 +214,12 @@ namespace PrimitiveSurvival.ModSystem
             {
                 string asset = dom + "support-" + material + "-main-ns";
                 AssetLocation assetloc = new AssetLocation(asset);
-                ItemStack stack = new ItemStack(world.GetBlock(assetloc));
-                if (stack != null && world.Side == EnumAppSide.Server)
-                { this.api.World.SpawnItemEntity(stack, pos.ToVec3d().AddCopy(0.5, 1.25, 0.5)); }
+                var dropBlock = world.GetBlock(assetloc);
+                if (dropBlock != null && world.Side == EnumAppSide.Server)
+                {
+                    ItemStack stack = new ItemStack(dropBlock);
+                    this.api.World.SpawnItemEntity(stack, pos.ToVec3d().AddCopy(0.5, 1.25, 0.5));
+                }
                 be.OnBlockBroken();
                 base.OnBlockBroken(world, mainPos, byPlayer, 0);
             }

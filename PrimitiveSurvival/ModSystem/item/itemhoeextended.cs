@@ -73,6 +73,13 @@ namespace PrimitiveSurvival.ModSystem
             var pos = blockSel.Position;
             var block = byEntity.World.BlockAccessor.GetBlock(pos);
 
+            if (byEntity.World.BlockAccessor.GetBlock(pos.UpCopy()).Id != 0) //PerkCuss
+            {
+                (api as ICoreClientAPI)?.TriggerIngameError(this, "covered", Lang.Get("Requires no block above"));
+                handHandling = EnumHandHandling.PreventDefault;
+                return;
+            }
+
             byEntity.Attributes.SetInt("didtill", 0);
 
             if (block.Code.Path.StartsWith("soil"))
@@ -93,6 +100,8 @@ namespace PrimitiveSurvival.ModSystem
             { return false; }
             if (byEntity.Controls.ShiftKey && byEntity.Controls.CtrlKey)
             { return false; }
+            if (byEntity.World.BlockAccessor.GetBlock(blockSel.Position.UpCopy()).BlockId != 0)
+            { return false; } //PerkCuss
 
             var byPlayer = (byEntity as EntityPlayer).Player;
             

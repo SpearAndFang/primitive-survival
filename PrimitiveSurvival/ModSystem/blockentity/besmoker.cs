@@ -175,7 +175,11 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     thisStack = "primitivesurvival:" + thisStack.Replace("raw", "smoked");
                     //this.inventory[cnt].TakeOut(1);
-                    this.inventory[cnt].Itemstack = new ItemStack(this.Api.World.GetItem(new AssetLocation(thisStack)), 1);
+                    var smokedItem = this.Api.World.GetItem(new AssetLocation(thisStack));
+                    if (smokedItem != null)
+                    {
+                        this.inventory[cnt].Itemstack = new ItemStack(smokedItem, 1);
+                    }
                 }
             }
             this.IsBurning = false;
@@ -323,10 +327,10 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             var stackCode = "game:rot";
                             var newAsset = new AssetLocation(stackCode);
-                            if (newAsset != null)
+                            var rotItem = this.Api.World.GetItem(newAsset);
+                            if (rotItem != null)
                             {
-                                var tempStack = new ItemStack(this.Api.World.GetItem(newAsset), 4);
-                                double d = index / 10;
+                                var tempStack = new ItemStack(rotItem, 4); double d = index / 10;
                                 this.Api.World.SpawnItemEntity(tempStack, this.Pos.ToVec3d().Add(0.5, 1.0 + d, 0.5));
                             }
                         }
@@ -335,10 +339,10 @@ namespace PrimitiveSurvival.ModSystem
                             var meatCode = stack.Collectible.LastCodePart(1);
                             var stackCode = "primitivesurvival:smokedmeat-" + meatCode + "-raw";
                             var newAsset = new AssetLocation(stackCode);
-                            if (newAsset != null)
+                            var smokedItem = this.Api.World.GetItem(newAsset);
+                            if (smokedItem != null)
                             {
-                                var tempStack = new ItemStack(this.Api.World.GetItem(newAsset), 4);
-                                double d = index / 10;
+                                var tempStack = new ItemStack(smokedItem, 4); double d = index / 10;
                                 this.Api.World.SpawnItemEntity(tempStack, this.Pos.ToVec3d().Add(0.5, 1.0 + d, 0.5));
                             }
                         }
@@ -396,8 +400,10 @@ namespace PrimitiveSurvival.ModSystem
 
                 //Debug.WriteLine(stackCode);
                 var newAsset = new AssetLocation(stackCode);
-                var tempStack = new ItemStack(this.Api.World.GetItem(newAsset), 4);
-                //if (tempStack != null)
+                var meatItem = this.Api.World.GetItem(newAsset);
+                if (meatItem == null)
+                { return false; }
+                var tempStack = new ItemStack(meatItem, 4);                //if (tempStack != null)
                 //{
                 //    sourceSlot.Itemstack = tempStack;
                 //}
@@ -609,7 +615,11 @@ namespace PrimitiveSurvival.ModSystem
                                 if (tmpPath == "rot")
                                 {
                                     var newAsset = new AssetLocation("primitivesurvival:trussedrot");
-                                    tmpStack = new ItemStack(this.Api.World.GetItem(newAsset));
+                                    var trussedItem = this.Api.World.GetItem(newAsset);
+                                    if (trussedItem != null)
+                                    {
+                                        tmpStack = new ItemStack(trussedItem);
+                                    }
                                 }
                                 mesh = this.GenItemMesh(tmpStack, count);
                                 if (mesh != null)

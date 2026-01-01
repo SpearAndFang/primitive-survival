@@ -801,8 +801,7 @@
   },
   "requiredminingtier": 0,
   "sounds": {
-    "place": "game:block/planks",
-    "walk": "game:block/planks"
+    "place": "game:block/planks"
   },
 
   "creativeinventory": {

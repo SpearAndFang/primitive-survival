@@ -1,5 +1,6 @@
 [
   {
+    "enabled":  false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -20,10 +21,11 @@
       "type": "item",
       "code": "primitivesurvival:jerky-redmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group2"]
+      "textureMapping": [ "meat", "group2" ]
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -32,10 +34,11 @@
       "type": "item",
       "code": "primitivesurvival:jerky-redmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group2"]
+      "textureMapping": [ "meat", "group2" ]
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/soup",
     "side": "server",
     "op": "add",
@@ -49,6 +52,7 @@
   },
 
   {
+    "enabled": false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -61,6 +65,7 @@
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -69,10 +74,11 @@
       "type": "item",
       "code": "primitivesurvival:jerky-bushmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group2"]
+      "textureMapping": [ "meat", "group2" ]
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -81,10 +87,11 @@
       "type": "item",
       "code": "primitivesurvival:jerky-bushmeat-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group2"]
+      "textureMapping": [ "meat", "group2" ]
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/soup",
     "side": "server",
     "op": "add",
@@ -98,6 +105,7 @@
   },
 
   {
+    "enabled": false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -110,6 +118,7 @@
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -118,10 +127,11 @@
       "type": "item",
       "code": "primitivesurvival:jerky-fish-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group2"]
+      "textureMapping": [ "meat", "group2" ]
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/meatystew",
     "side": "server",
     "op": "add",
@@ -130,10 +140,11 @@
       "type": "item",
       "code": "primitivesurvival:jerky-fish-raw",
       "shapeElement": "bowl/red meat/*",
-      "textureMapping": ["meat", "group2"]
+      "textureMapping": [ "meat", "group2" ]
     }
   },
   {
+    "enabled": false,
     "file": "game:recipes/cooking/soup",
     "side": "server",
     "op": "add",

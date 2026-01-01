@@ -117,6 +117,7 @@ namespace PrimitiveSurvival.ModSystem
                         Range = 8
                     });
 
+
                     this.wsound.Start();
                 }
             }
@@ -175,6 +176,11 @@ namespace PrimitiveSurvival.ModSystem
                             //just need to find a nearby suitable block to spawn worm
                             var pos = this.targetBlockSel.Position;
                             var type = byEntity.World.GetEntityType(new AssetLocation("primitivesurvival:earthworm"));
+                            if (type == null)
+                            {
+                                byEntity.World.Logger.Error("ItemStick: No such entity - primitivesurvival:earthworm");
+                                return true;
+                            }
                             var entity = byEntity.World.ClassRegistry.CreateEntity(type);
                             if (entity != null)
                             {

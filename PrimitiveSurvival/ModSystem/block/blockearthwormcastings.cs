@@ -10,10 +10,16 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
             var list = new List<ItemStack>();
-            for (var i = 0; i < 16; i++)
+
+            var castingsItem = this.api.World.GetItem(new AssetLocation("primitivesurvival:earthwormcastings"));
+            if (castingsItem != null)
             {
-                list.Add(new ItemStack(this.api.World.GetItem(new AssetLocation("primitivesurvival:earthwormcastings")), 1));
+                for (var i = 0; i < 16; i++)
+                {
+                    list.Add(new ItemStack(castingsItem, 1));
+                }
             }
+
             foreach(var itemStack in list)
             {
                 var rnd= this.api.World.Rand.Next(0, 10);

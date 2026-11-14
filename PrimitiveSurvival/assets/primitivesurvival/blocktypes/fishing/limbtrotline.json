@@ -155,29 +155,7 @@
       "woodmaterial": { "base": "game:block/wood/debarked/oak" },
       "stringmaterial": { "base": "game:block/vines/basket/normal-northsouth" },
       "baitmaterial": { "base": "primitivesurvival:item/fishing/bait" },
-      "troutmaterial": {
-        "base": "primitivesurvival:item/fishing/fish-trout-raw"
-      },
-      "perchmaterial": {
-        "base": "primitivesurvival:item/fishing/fish-perch-raw"
-      },
-      "salmonmaterial": {
-        "base": "primitivesurvival:item/fishing/fish-salmon-raw"
-      },
-      "carpmaterial": {
-        "base": "primitivesurvival:item/fishing/fish-carp-raw"
-      },
-      "pikematerial": {
-        "base": "primitivesurvival:item/fishing/fish-pike-raw"
-      },
-      "arcticcharmaterial": { "base": "item/fishing/fish-arcticchar-raw" },
-      "catfishmaterial": { "base": "item/fishing/fish-catfish-raw" },
-      "bluegillmaterial": { "base": "item/fishing/fish-bluegill-raw" },
-      "bassmaterial": {
-        "base": "primitivesurvival:item/fishing/fish-bass-raw"
-      },
-      "mutantmaterial": { "base": "item/fishing/fish-mutant-raw" }
-    }
+      }
   },
   "guiTransform": {
     "translation": {

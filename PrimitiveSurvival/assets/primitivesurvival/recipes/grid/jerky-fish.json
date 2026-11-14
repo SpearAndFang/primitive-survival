@@ -5,12 +5,12 @@
   "ingredients": {
     "K": {
       "type": "item",
-      "code": "game:knife-*",
+      "tags": ["tool-knife"],
       "isTool": true
     },
     "H": {
       "type": "item",
-      "code": "primitivesurvival:fishfillet-raw",
+      "code": "game:fish-raw",
       "quantity": 4
     },
     "S": {

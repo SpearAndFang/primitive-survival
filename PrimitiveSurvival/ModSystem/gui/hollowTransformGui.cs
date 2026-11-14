@@ -12,7 +12,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Util;
     using Vintagestory.Client;
     using PrimitiveSurvival.ModConfig;
-
+    #nullable disable
     public class GuiDialogHollowTransform : GuiDialog
     {
         private ModelTransform originalTransform;

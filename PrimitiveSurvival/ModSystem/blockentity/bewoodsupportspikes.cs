@@ -8,7 +8,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Config;
-
+    #nullable disable
     //public class BEWoodSupportSpikes : BlockEntityDisplayCase, IAnimalFoodSource //1.18
     public class BEWoodSupportSpikes : BlockEntityDisplayCase, IAnimalFoodSource, ITexPositionSource
     {

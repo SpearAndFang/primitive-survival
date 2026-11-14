@@ -7,7 +7,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
-
+    #nullable disable
     public class BlockDeadfall : Block
     {
         protected static readonly Random Rnd = new Random();

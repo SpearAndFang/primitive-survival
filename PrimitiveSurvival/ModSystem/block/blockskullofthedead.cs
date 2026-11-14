@@ -7,6 +7,8 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Client;
     using Vintagestory.API.Config;
 
+    #nullable disable
+
     //using System.Diagnostics;
 
     public class BlockSkullOfTheDead : Block
@@ -46,19 +48,19 @@ namespace PrimitiveSurvival.ModSystem
             var entity = byPlayer.WorldData.EntityPlayer.World.ClassRegistry.CreateEntity(type);
             if (entity != null)
             {
-                entity.ServerPos.X = blockSel.Position.X + (blockSel.DidOffset ? 0 : blockSel.Face.Normali.X) + 0.5f;
-                entity.ServerPos.Y = blockSel.Position.Y + (blockSel.DidOffset ? 0 : blockSel.Face.Normali.Y);
-                entity.ServerPos.Z = blockSel.Position.Z + (blockSel.DidOffset ? 0 : blockSel.Face.Normali.Z) + 0.5f;
+                entity.Pos.X = blockSel.Position.X + (blockSel.DidOffset ? 0 : blockSel.Face.Normali.X) + 0.5f;
+                entity.Pos.Y = blockSel.Position.Y + (blockSel.DidOffset ? 0 : blockSel.Face.Normali.Y);
+                entity.Pos.Z = blockSel.Position.Z + (blockSel.DidOffset ? 0 : blockSel.Face.Normali.Z) + 0.5f;
 
-                entity.ServerPos.Yaw = 0f;
-                entity.Pos.SetFrom(entity.ServerPos);
-                entity.PositionBeforeFalling.Set(entity.ServerPos.X, entity.ServerPos.Y, entity.ServerPos.Z);
+                entity.Pos.Yaw = 0f;
+                entity.Pos.SetFrom(entity.Pos);
+                entity.PositionBeforeFalling.Set(entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
                 entity.Attributes.SetString("origin", "playerplaced");
                 byPlayer.WorldData.EntityPlayer.World.SpawnEntity(entity);
 
                 if (this.api.Side == EnumAppSide.Server)
                 {
-                    byPlayer.WorldData.EntityPlayer.World.PlaySoundAt(new AssetLocation("game:sounds/player/buildhigh"), entity.ServerPos.X, entity.ServerPos.Y, entity.ServerPos.Z, null, true, 32f, 1f);
+                    byPlayer.WorldData.EntityPlayer.World.PlaySoundAt(new AssetLocation("game:sounds/player/buildhigh"), entity.Pos.X, entity.Pos.Y, entity.Pos.Z, null, true, 32f, 1f);
                 }
             }
             return true;

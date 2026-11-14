@@ -1,17 +1,24 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using Cairo;
+    using System.Diagnostics;
+    using System.Linq;
     using Vintagestory.API.Client;
-    using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Common;
+    using Vintagestory.API.Common.Entities;
+    using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
-    using System.Linq;
-    using System.Diagnostics;
-
+    #nullable disable
     public class ItemFishingSpear : Item
     {
-        private readonly string[] validFishTypes = { "salmon", "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic" };
+        private readonly string[] validFishTypes = { "salmon", "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", 
+                "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "snapper-red", "tuna-skipjack", "wolf-bering", 
+                "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic", "alewife-shad",
+                "chub-river", "crappie-black", "crappie-white", "perch-european", "perch-yellow", "piranha-black", "piranha-red", "trout-brown",  "trout-rainbow",
+                "bass-largemouth", "bass-smallmouth", "carp-common", "carp-grass", "catfish-blue", "catfish-channel", "pickerel-chain", "salmon-coho",
+                "tilapia-nile", "tilapia-red", "walleye-common", "pike-northern", "arapaima-arapaima", "arapaima-gigas", "sheatfish-black", "sheatfish-white" };
 
         public override void OnLoaded(ICoreAPI api) 
         {
@@ -27,64 +34,56 @@ namespace PrimitiveSurvival.ModSystem
             bh.OnBeginHitEntity += ItemSpear_OnBeginHitEntity;
         }
 
-              
+
 
         private void ItemSpear_OnBeginHitEntity(EntityAgent byEntity, ref EnumHandling handling)
         {
-            if (byEntity.World.Side == EnumAppSide.Client)
-            { return; }
+            var eplr = byEntity as EntityPlayer;
+            var slot = eplr?.ActiveHandItemSlot;
+            if (slot?.Itemstack == null) return;
 
-            var slot = byEntity.ActiveHandItemSlot;
-            if (slot.Itemstack?.Collectible?.LastCodePart() != "empty")
-            { return; }
+            if (slot.Itemstack.Attributes.GetString("fish", "none") != "none") return;
 
-            var entitySel = (byEntity as EntityPlayer)?.EntitySelection;
-            
-
-            if (byEntity.Attributes.GetInt("didattack") == 0 && entitySel != null)
+            if (byEntity.World.Side == EnumAppSide.Server)
             {
-                //bool swimmer = entitySel.Entity.Swimming;
-                byEntity.Attributes.SetInt("didattack", 1);
-
-                var thisEntity = entitySel.Entity.Code.Path;
-                //Debug.WriteLine(thisEntity);
-                bool containsAny = validFishTypes.Any(s => thisEntity.Contains(s));
-                if (containsAny)
-                //if (entitySel.Entity.Code.Path =="salmon")
+                Entity target = eplr.EntitySelection?.Entity;
+                if (target == null)
                 {
-                    if (!byEntity.IsEyesSubmerged() && entitySel.Entity.FeetInLiquid)
-                    {
-                        byEntity.World.PlaySoundAt(new AssetLocation("game:sounds/effect/water-fill2"), (float)byEntity.Pos.X, (float)byEntity.Pos.Y, (float)byEntity.Pos.Z, null);
-                    }
-                    var prevDura = slot.Itemstack.Collectible.GetRemainingDurability(slot.Itemstack);
-                    ICoreServerAPI sapi = api as ICoreServerAPI;
+                    target = byEntity.World.GetNearestEntity(byEntity.Pos.XYZ.Add(0, 1.0, 0), 1.0f, 1.0f, (e) => {
+                        return validFishTypes.Any(s => e.Code.Path.Contains(s));
+                    });
+                }
 
-                    string fishtype = "salmon"; //the default 
-                    if (entitySel.Entity.Code.Path.Contains("saltwater-"))
+                if (target != null && byEntity.Attributes.GetInt("didattack") == 0)
+                {
+                    string thisEntityPath = target.Code.Path;
+                    bool isValidFish = validFishTypes.Any(s => thisEntityPath.Contains(s));
+
+                    if (isValidFish)
                     {
-                        if (!entitySel.Entity.Code.Path.Contains("salmon")) //ahh hell I didn't make a saltwater salmon item
+                        byEntity.Attributes.SetInt("didattack", 1);
+                        string fishType = target.FirstCodePart(2) + "-" + target.FirstCodePart(3);
+                        if (fishType == "mahi-mahi")
                         {
-                            // uggh why don't entities have a .Variant option
-                            fishtype = entitySel.Entity.Code.Path;
-                            fishtype = fishtype.Replace("fish-saltwater-", "");
-                            fishtype = fishtype.Replace(entitySel.Entity.LastCodePart(0), "");
-                            fishtype = fishtype.Replace(entitySel.Entity.LastCodePart(1), "");
-                            fishtype = fishtype.Replace("--", "");
-                            //Debug.WriteLine(fishtype);
+                            fishType += "-" + target.FirstCodePart(4);
                         }
-                    }
+                        slot.Itemstack.Attributes.SetString("fish", fishType);
+                        if (!byEntity.IsEyesSubmerged() && target.FeetInLiquid)
+                        {
+                            byEntity.World.PlaySoundAt(new AssetLocation("game:sounds/effect/water-fill2"), (float)byEntity.Pos.X, (float)byEntity.Pos.Y, (float)byEntity.Pos.Z, null);
+                        }
+                        
+     
+                        slot.Itemstack.Collectible.DamageItem(api.World, byEntity, slot, 1);
+                        if (slot.Itemstack == null) return;
+                        
+                        slot.MarkDirty(); //only sync if fish caught
+                        int remainingDurability = slot.Itemstack.Attributes.GetInt("durability", 1);
 
-                    string newcode = slot.Itemstack.Collectible.Code.Path.Replace("empty", fishtype);
-                    var spearItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode));
-                    if (spearItem != null)
-                    {
-                        var spearStack = new ItemStack(spearItem, 1);
-                        slot.Itemstack.SetFrom(spearStack);
-                        slot.Itemstack.Attributes.SetInt("durability", prevDura);
-                        slot.MarkDirty();
+                        byEntity.World.PlaySoundAt(new AssetLocation("game:sounds/arrow-impact"), (float)byEntity.Pos.X, (float)byEntity.Pos.Y, (float)byEntity.Pos.Z, null, randomizePitch: false, volume: 0.5f);
+                        ICoreServerAPI sapi = api as ICoreServerAPI;
+                        (api as ICoreServerAPI).World.DespawnEntity(target, new EntityDespawnData() { Reason = EnumDespawnReason.Removed });
                     }
-
-                    sapi.World.DespawnEntity(entitySel.Entity, new EntityDespawnData() { Reason = EnumDespawnReason.Removed });
                 }
             }
         }
@@ -94,12 +93,15 @@ namespace PrimitiveSurvival.ModSystem
         { return null; }
 
 
+
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
         {
             base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handling);
             if (handling == EnumHandHandling.PreventDefault) return;
             handling = EnumHandHandling.PreventDefault;
         }
+ 
+
 
 
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
@@ -117,36 +119,40 @@ namespace PrimitiveSurvival.ModSystem
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
             if (secondsUsed < 0.35f) return;
-            if (slot.Itemstack.Collectible.LastCodePart() == "empty")
-            { return; }
 
-            //switch spear back to empty
-            var prevDura = slot.Itemstack.Collectible.GetRemainingDurability(slot.Itemstack);
-            string materialtype = slot.Itemstack.Collectible.Variant["material"];
-            string fishtype = slot.Itemstack.Collectible.Variant["type"];
-            string newcode = "fishingspear-" + materialtype + "-empty";
-            var spearItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:" + newcode));
-            if (spearItem != null)
+            var fishType = slot.Itemstack?.Attributes?.GetString("fish", "none") ?? "none";
+
+            if (fishType == "none" && byEntity.World.Side == EnumAppSide.Server) return;
+
+            slot.Itemstack.Attributes.SetString("fish", "none");
+
+            if (byEntity.World.Side == EnumAppSide.Client)
             {
-                var spearStack = new ItemStack(spearItem, 1);
-                slot.Itemstack = spearStack;
-                slot.Itemstack.Attributes.SetInt("durability", prevDura);
+                (byEntity.World as IClientWorldAccessor).Api.Event.EnqueueMainThreadTask(() =>
+                {
+                    slot.Itemstack?.TempAttributes?.RemoveAttribute("meshRefId");
+                }, "remeshspear");
+            }
+            else if (byEntity.World.Side == EnumAppSide.Server)
+            {
+                var fishAsset = new AssetLocation("game:fishraw-freshwater-" + fishType + "-adult");
+                var newItem = byEntity.World.GetItem(fishAsset);
+                if (newItem == null)
+                {
+                    fishAsset = new AssetLocation("game:fishraw-saltwater-" + fishType + "-adult");
+                    newItem = byEntity.World.GetItem(fishAsset);
+                }
+
+                if (newItem != null)
+                {
+                    var giveStack = new ItemStack(newItem, 1);
+                    api.World.SpawnItemEntity(giveStack, byEntity.Pos.XYZ.AddCopy(0, 0.5, 0));
+                }
+
                 slot.MarkDirty();
             }
-            //transfer fish to empty inventory firstorempty inventory slot (or failing that, drop it)
-            var newItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:psfish-salmon-raw"));
-            if (fishtype != "salmon")
-            { 
-                newItem = byEntity.World.GetItem(new AssetLocation("primitivesurvival:pssaltwaterfish-" + fishtype + "-raw"));
-            }
-            if (newItem == null)
-            { return; }
-            var giveStack = new ItemStack(newItem, 1);
-            if (!byEntity.TryGiveItemStack(giveStack))
-            {
-                api.World.SpawnItemEntity(giveStack, byEntity.Pos.XYZ.AddCopy(0, 0.5, 0));
-            }
         }
+
 
 
         public override void OnHeldAttackStop(float secondsPassed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSelection, EntitySelection entitySel)

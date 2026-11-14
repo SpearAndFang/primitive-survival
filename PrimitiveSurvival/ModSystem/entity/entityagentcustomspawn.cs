@@ -3,7 +3,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     //using System.Diagnostics;
     //using Vintagestory.API.Common.Entities;
-
+    #nullable disable
     public class EntityAgentCustomSpawn : EntityAgent
     {
         public EntityAgentCustomSpawn()
@@ -15,7 +15,7 @@ namespace PrimitiveSurvival.ModSystem
             var canspawnon = this.Properties.Attributes?["canSpawnOn"]?.AsArray<string>(null);
             if (canspawnon != null)
             {
-                var path = this.World.BlockAccessor.GetBlock(this.SidedPos.AsBlockPos.Add(0, -1, 0), BlockLayersAccess.Default).Code.Path;
+                var path = this.World.BlockAccessor.GetBlock(this.Pos.AsBlockPos.Add(0, -1, 0), BlockLayersAccess.Default).Code.Path;
                 //Debug.WriteLine("entity spawned on: " + path);
                 var canSpawn = false;
                 foreach (var entry in canspawnon)

@@ -6,12 +6,12 @@
     "ingredients": {
       "H": {
         "type": "item",
-        "code": "game:hammer-*",
+        "tags": ["tool-hammer"],
         "isTool": true
       },
       "K": {
         "type": "item",
-        "code": "game:chisel-*",
+        "tags": ["tool-chisel"],
         "isTool": true
       },
       "V": {
@@ -61,19 +61,19 @@
     "ingredients": {
       "H": {
         "type": "item",
-        "code": "game:hammer-*",
+        "tags": ["tool-hammer"],
         "isTool": true
       },
       "K": {
         "type": "item",
-        "code": "game:chisel-*",
+        "tags": ["tool-chisel"],
         "isTool": true
       },
       "V": {
         "type": "block",
         "code": "game:storagevessel-*-fired",
         "name": "type",
-        "allowedVariants": [ "fire", "black", "brown", "cream", "gray", "orange", "red", "tan" ],
+        "allowedVariants": [ "fire", "black", "brown", "cream", "gray", "orange", "earthyorange", "red", "tan" ],
         "quantity": 1
       }
     },

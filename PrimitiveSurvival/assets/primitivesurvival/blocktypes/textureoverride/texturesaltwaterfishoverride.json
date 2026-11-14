@@ -1,0 +1,37 @@
+{
+  "code": "saltwaterfishoverride",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "bream-sea",
+        "gurnard-cape",
+        "haddock-common",
+        "hake-silver",
+        "herring-atlantic",
+        "mackerel-atlantic",
+        "pollock-alaska",
+        "perch-pacific",
+        "barracuda-great",
+        "grouper-black",
+        "salmon-pink",
+        "snapper-red",
+        "tuna-skipjack",
+        "wolf-bering",
+        "amberjack-yellowtail",
+        "mahi-mahi-common",
+        "wreckfish-atlantic",
+        "coelacanth-common",
+        "sturgeon-atlantic"
+      ]
+    }
+  ],
+    "texturesbytype": {
+    "*": {
+      "skin": { "base": "game:entity/animal/fish/saltwater/{type}-adult*" },
+      "mackerel1": { "base": "game:entity/animal/fish/saltwater/{type}-adult*" }
+    }
+  },
+  "creativeinventory": {
+  }
+}

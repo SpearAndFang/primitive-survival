@@ -3,7 +3,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Client;
     using System;
     //using System.Diagnostics;
-
+    #nullable disable
 
     /*
       https://github.com/anegostudios/vsmodexamples/tree/master/Mods/ScreenOverlayShaderExample

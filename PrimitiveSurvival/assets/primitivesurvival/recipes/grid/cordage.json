@@ -107,7 +107,7 @@
     "ingredients": {
       "K": {
         "type": "item",
-        "code": "game:knife-*",
+        "tags": ["tool-knife"],
         "isTool": true
       },
       "R": {

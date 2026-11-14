@@ -10,7 +10,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
     //using System.Diagnostics;
-
+    #nullable disable   
     // public class BESmoker : BlockEntityDisplayCase //1.18
     public class BESmoker : BlockEntityDisplayCase, ITexPositionSource
     {

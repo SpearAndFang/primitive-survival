@@ -2,7 +2,7 @@ namespace PrimitiveSurvival.ModSystem
 {
     using System;
     using System.Collections.Generic;
-
+    #nullable disable
     // Data structure for picking random items
     public class ShuffleBag<T>
     {

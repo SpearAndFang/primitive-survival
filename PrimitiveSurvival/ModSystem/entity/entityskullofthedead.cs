@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.MathTools;
     //using System.Diagnostics;
-
+    #nullable disable
 
     public class EntitySkullOfTheDead : EntityGenericGlowingAgent
     {
@@ -32,7 +32,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 var stack = new ItemStack(block);
                 if (!byEntity.TryGiveItemStack(stack))
-                { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+                { byEntity.World.SpawnItemEntity(stack, this.Pos.XYZ); }
             }
             this.Die(); //remove from the ground
             return;
@@ -74,7 +74,7 @@ namespace PrimitiveSurvival.ModSystem
                             if (p == "strawdummy")
                             { return true; } //straw dummy restricts attack range
 
-                            if (p == "player" || p == "livingdead" || p == "skullofthedead" || p == "fireflies" || p == "butterfly" || p == "earthworm" || p == "beemob")
+                            if (p == "player" || p == "livingdead" || p == "skullofthedead" || p == "fireflies" || p == "butterfly" || p == "nightcrawler" || p == "beemob")
                             { return false; } //keep looking
 
                             return true; //found, attack, and stop looking for more

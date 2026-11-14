@@ -2,11 +2,7 @@
   "code": "pslargemold",
   "classByType": {
     "pslargemold-raw-*": "Block"
-   // "pslargemold-burned-*": "psblocktoolmold" //change back to BlockToolMold once the bug is fixed
   },
- // "entityBehaviorsByType": {
- //   "pslargemold-burned-*": [ { "name": "TemperatureSensitive" } ]
- // },
   "behaviorsByType": {
     "*-raw-*": [
       {

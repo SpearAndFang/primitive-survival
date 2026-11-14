@@ -6,7 +6,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
     //using System.Diagnostics;
-
+    #nullable disable
     public class BEFuse : BlockEntity
     {
         private float remainingSeconds = 0;

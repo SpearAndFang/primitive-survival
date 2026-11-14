@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
-
+#nullable disable
 namespace Achievements
 {
     internal class AchievementsManager

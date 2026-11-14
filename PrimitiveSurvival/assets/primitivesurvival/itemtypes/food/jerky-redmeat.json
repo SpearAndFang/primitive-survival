@@ -1,37 +1,38 @@
 {
   "code": "jerky-redmeat",
   "maxstacksize": 256,
-  "attributes": {
-    "inContainerTextureByType": {
-      "*-raw": { "base": "game:block/wood/barrel/{type}-redmeat" },
-      "*-cured": { "base": "game:block/wood/barrel/{type}-redmeat" }
-    },
-    "inFirePitProps": {
-      "transform": {
-        "scale": 1,
-        "origin": {
-          "x": 0.5,
-          "y": 0.0625,
-          "z": 0.5
+    "attributes": {
+        "foodTags": [ "meat" ],
+        "inContainerTextureByType": {
+            "*-raw": { "base": "game:block/wood/barrel/{type}-redmeat" },
+            "*-cured": { "base": "game:block/wood/barrel/{type}-redmeat" }
         },
-        "translation": {
-          "x": 0.03,
-          "y": 0.3,
-          "z": 0.06
+        "inFirePitProps": {
+            "transform": {
+                "scale": 1,
+                "origin": {
+                    "x": 0.5,
+                    "y": 0.0625,
+                    "z": 0.5
+                },
+                "translation": {
+                    "x": 0.03,
+                    "y": 0.3,
+                    "z": 0.06
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 45,
+                    "z": 90
+                }
+            },
+            "useFirepitModel": "Spit"
         },
-        "rotation": {
-          "x": 0,
-          "y": 45,
-          "z": 90
+        "nutritionPropsWhenInMeal": {
+            "satiety": 75, //105
+            "foodcategory": "Protein"
         }
-      },
-      "useFirepitModel": "Spit"
     },
-    "nutritionPropsWhenInMeal": {
-      "satiety": 75, //105
-      "foodcategory": "Protein"
-    }
-  },
   "variantgroups": [
     {
       "code": "type",

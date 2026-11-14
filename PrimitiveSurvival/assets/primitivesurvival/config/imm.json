@@ -1,0 +1,545 @@
+{
+	"Configuration": [
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:Deadfall-Config",
+			"Settings": [
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:DeadfallBaitStolenPercent",
+					"Description": "primitivesurvival:DeadfallBaitStolenPercent-Comment",
+					"Map": "DeadfallBaitStolenPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:DeadfallMaxAnimalHeight",
+					"Description": "primitivesurvival:DeadfallMaxAnimalHeight-Comment",
+					"Map": "DeadfallMaxAnimalHeight"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:DeadfallMaxDamageSet",
+					"Description": "primitivesurvival:DeadfallMaxDamageSet-Comment",
+					"Map": "DeadfallMaxDamageSet"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:DeadfallMaxDamageBaited",
+					"Description": "primitivesurvival:DeadfallMaxDamageBaited-Comment",
+					"Map": "DeadfallMaxDamageBaited"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:DeadfallTrippedPercent",
+					"Description": "primitivesurvival:DeadfallTrippedPercent-Comment",
+					"Map": "DeadfallTrippedPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:FallDamage-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:FallDamageMultiplierWoodSpikes",
+					"Description": "primitivesurvival:FallDamageMultiplierWoodSpikes-Comment",
+					"Map": "FallDamageMultiplierWoodSpikes"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:FallDamageMultiplierMetalSpikes",
+					"Description": "primitivesurvival:FallDamageMultiplierMetalSpikes-Comment",
+					"Map": "FallDamageMultiplierMetalSpikes"
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:FishBasket-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:FishBasketCatchPercent",
+					"Description": "primitivesurvival:FishBasketCatchPercent-Comment",
+					"Map": "FishBasketCatchPercent"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FishBasketBaitedCatchPercent",
+					"Description": "primitivesurvival:FishBasketBaitedCatchPercent-Comment",
+					"Map": "FishBasketBaitedCatchPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:FishBasketBaitStolenPercent",
+					"Description": "primitivesurvival:FishBasketBaitStolenPercent-Comment",
+					"Map": "FishBasketBaitStolenPercent"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FishBasketEscapePercent",
+					"Description": "primitivesurvival:FishBasketEscapePercent-Comment",
+					"Map": "FishBasketEscapePercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:FishBasketUpdateMinutes",
+					"Description": "primitivesurvival:FishBasketUpdateMinutes-Comment",
+					"Map": "FishBasketUpdateMinutes"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FishBasketRotRemovedPercent",
+					"Description": "primitivesurvival:FishBasketRotRemovedPercent-Comment",
+					"Map": "FishBasketRotRemovedPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:FishFarming-Config",
+			"Settings": [
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FishChanceOfEggsPercent",
+					"Description": "primitivesurvival:FishChanceOfEggsPercent-Comment",
+					"Map": "FishChanceOfEggsPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FishChunkDepletionRate",
+					"Description": "primitivesurvival:FishChunkDepletionRate-Comment",
+					"Map": "FishChunkDepletionRate",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:FishChunkRepletionRate",
+					"Description": "primitivesurvival:FishChunkRepletionRate-Comment",
+					"Map": "FishChunkRepletionRate"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:FishChunkRepletionMinutes",
+					"Description": "primitivesurvival:FishChunkRepletionMinutes-Comment",
+					"Map": "FishChunkRepletionMinutes"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FishEggsChunkRepletionRate",
+					"Description": "primitivesurvival:FishEggsChunkRepletionRate-Comment",
+					"Map": "FishEggsChunkRepletionRate",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FishChunkMaxDepletionPercent",
+					"Description": "primitivesurvival:FishChunkMaxDepletionPercent-Comment",
+					"Map": "FishChunkMaxDepletionPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:FurrowedLand-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:FurrowedLandUpdateFrequency",
+					"Description": "primitivesurvival:FurrowedLandUpdateFrequency-Comment",
+					"Map": "FurrowedLandUpdateFrequency"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:FurrowedLandBlockageChancePercent",
+					"Description": "primitivesurvival:FurrowedLandBlockageChancePercent-Comment",
+					"Map": "FurrowedLandBlockageChancePercent"
+				},
+				{
+					"Type": "Boolean",
+					"Label": "primitivesurvival:FurrowedLandEnabled",
+					"Description": "primitivesurvival:FurrowedLandEnabled-Comment",
+					"Map": "FurrowedLandEnabled"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FurrowedLandMinMoistureClose",
+					"Description": "primitivesurvival:FurrowedLandMinMoistureClose-Comment",
+					"Map": "FurrowedLandMinMoistureClose",
+					"Min": 0.75,
+					"Max": 1.0,
+					"Step": 0.01
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:FurrowedLandMinMoistureFar",
+					"Description": "primitivesurvival:FurrowedLandMinMoistureFar-Comment",
+					"Map": "FurrowedLandMinMoistureFar",
+					"Min": 0.5,
+					"Max": 1.0,
+					"Step": 0.01
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:LimbTrotline-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:LimbTrotlineCatchPercent",
+					"Description": "primitivesurvival:LimbTrotlineCatchPercent-Comment",
+					"Map": "LimbTrotlineCatchPercent"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:LimbTrotlineBaitedCatchPercent",
+					"Description": "primitivesurvival:LimbTrotlineBaitedCatchPercent-Comment",
+					"Map": "LimbTrotlineBaitedCatchPercent"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:LimbTrotlineLuredCatchPercent",
+					"Description": "primitivesurvival:LimbTrotlineLuredCatchPercent-Comment",
+					"Map": "LimbTrotlineLuredCatchPercent"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:LimbTrotlineBaitedLuredCatchPercent",
+					"Description": "primitivesurvival:LimbTrotlineBaitedLuredCatchPercent-Comment",
+					"Map": "LimbTrotlineBaitedLuredCatchPercent"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:LimbTrotlineBaitStolenPercent",
+					"Description": "primitivesurvival:LimbTrotlineBaitStolenPercent-Comment",
+					"Map": "LimbTrotlineBaitStolenPercent"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:LimbTrotlineUpdateMinutes",
+					"Description": "primitivesurvival:LimbTrotlineUpdateMinutes-Comment",
+					"Map": "LimbTrotlineUpdateMinutes"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:LimbTrotlineRotRemovedPercent",
+					"Description": "primitivesurvival:LimbTrotlineRotRemovedPercent-Comment",
+					"Map": "LimbTrotlineRotRemovedPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:MonkeyBridge-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:MonkeyBridgeMaxLength",
+					"Description": "primitivesurvival:MonkeyBridgeMaxLength-Comment",
+					"Map": "MonkeyBridgeMaxLength"
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:Raft-Config",
+			"Settings": [
+				{
+					"Type": "Boolean",
+					"Label": "primitivesurvival:RaftEnabled",
+					"Description": "primitivesurvival:RaftEnabled-Comment",
+					"Map": "RaftEnabled"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:RaftWaterSpeedModifier",
+					"Description": "primitivesurvival:RaftWaterSpeedModifier-Comment",
+					"Map": "RaftWaterSpeedModifier"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:RaftFlotationModifier",
+					"Description": "primitivesurvival:RaftFlotationModifier-Comment",
+					"Map": "RaftFlotationModifier"
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:ShowModName-Config",
+			"ConfigSide": "Client",
+			"Settings": [
+				{
+					"Type": "Boolean",
+					"Label": "primitivesurvival:ShowModNameInHud",
+					"Description": "primitivesurvival:ShowModNameInHud-Comment",
+					"Map": "ShowModNameInHud"
+				},
+				{
+					"Type": "Boolean",
+					"Label": "primitivesurvival:ShowModNameInGuis",
+					"Description": "primitivesurvival:ShowModNameInGuis-Comment",
+					"Map": "ShowModNameInGuis"
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:Snare-Config",
+			"Settings": [
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:SnareBaitStolenPercent",
+					"Description": "primitivesurvival:SnareBaitStolenPercent-Comment",
+					"Map": "SnareBaitStolenPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SnareMaxAnimalHeight",
+					"Description": "primitivesurvival:SnareMaxAnimalHeight-Comment",
+					"Map": "SnareMaxAnimalHeight"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:SnareMaxDamageSet",
+					"Description": "primitivesurvival:SnareMaxDamageSet-Comment",
+					"Map": "SnareMaxDamageSet"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:SnareMaxDamageBaited",
+					"Description": "primitivesurvival:SnareMaxDamageBaited-Comment",
+					"Map": "SnareMaxDamageBaited"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:SnareTrippedPercent",
+					"Description": "primitivesurvival:SnareTrippedPercent-Comment",
+					"Map": "SnareTrippedPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:SpawnMultiplier-Config",
+			"Settings": [
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierBioluminescentGlobe",
+					"Description": "primitivesurvival:SpawnMultiplierBio-Comment",
+					"Map": "SpawnMultiplierBioluminescentGlobe"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierBioluminescentJelly",
+					"Description": "primitivesurvival:SpawnMultiplierBio-Comment",
+					"Map": "SpawnMultiplierBioluminescentJelly"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierBioluminescentOrangeJelly",
+					"Description": "primitivesurvival:SpawnMultiplierBio-Comment",
+					"Map": "SpawnMultiplierBioluminescentOrangeJelly"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierBioluminescentWorm",
+					"Description": "primitivesurvival:SpawnMultiplierBio-Comment",
+					"Map": "SpawnMultiplierBioluminescentWorm"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierCrabBairdi",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierCrabBairdi"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierCrabLand",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierCrabLand"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierLivingDead",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierLivingDead"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierSnakeBlackRat",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierSnakeBlackRat"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierSnakeChainViper",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierSnakeChainViper"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierSnakeCoachWhip",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierSnakeCoachWhip"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierSnakePitViper",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierSnakePitViper"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierWillowispGreen",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierWillowispGreen"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierWillowispWhite",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierWillowispWhite"
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:SpawnMultiplierWillowispYellow",
+					"Description": "primitivesurvival:SpawnMultiplier-Comment",
+					"Map": "SpawnMultiplierWillowispYellow"
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:TreeHollow-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:TreeHollowsMaxItems",
+					"Description": "primitivesurvival:TreeHollowsMaxItems-Comment",
+					"Map": "TreeHollowsMaxItems"
+				},
+				{
+					"Type": "Boolean",
+					"Label": "primitivesurvival:TreeHollowsEnableDeveloperTools",
+					"Description": "primitivesurvival:TreeHollowsEnableDeveloperTools-Comment",
+					"Map": "TreeHollowsEnableDeveloperTools"
+				},
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:TreeHollowsMaxPerChunk",
+					"Description": "primitivesurvival:TreeHollowsMaxPerChunk-Comment",
+					"Map": "TreeHollowsMaxPerChunk"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:TreeHollowsSpawnProbability",
+					"Description": "primitivesurvival:TreeHollowsSpawnProbability-Comment",
+					"Map": "TreeHollowsSpawnProbability",
+					"Min": 0,
+					"Max": 1,
+					"Step": 0.01
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:TreeHollowsUpdateMinutes",
+					"Description": "primitivesurvival:TreeHollowsUpdateMinutes-Comment",
+					"Map": "TreeHollowsUpdateMinutes"
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:WeirTrap-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:WeirTrapCatchPercent",
+					"Description": "primitivesurvival:WeirTrapCatchPercent-Comment",
+					"Map": "WeirTrapCatchPercent"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:WeirTrapEscapePercent",
+					"Description": "primitivesurvival:WeirTrapEscapePercent-Comment",
+					"Map": "WeirTrapEscapePercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Decimal",
+					"Label": "primitivesurvival:WeirTrapUpdateMinutes",
+					"Description": "primitivesurvival:WeirTrapUpdateMinutes-Comment",
+					"Map": "WeirTrapUpdateMinutes"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:WeirTrapRotRemovedPercent",
+					"Description": "primitivesurvival:WeirTrapRotRemovedPercent-Comment",
+					"Map": "WeirTrapRotRemovedPercent",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		},
+		{
+			"ConfigFile": "primitivesurvival5.json",
+			"ConfigLabel": "primitivesurvival:Worm-Config",
+			"Settings": [
+				{
+					"Type": "Integer",
+					"Label": "primitivesurvival:WormFoundPercentRock",
+					"Description": "primitivesurvival:WormFoundPercentRock-Comment",
+					"Map": "WormFoundPercentRock"
+				},
+				{
+					"Type": "Slider",
+					"Label": "primitivesurvival:WormFoundPercentStickFlint",
+					"Description": "primitivesurvival:WormFoundPercentStickFlint-Comment",
+					"Map": "WormFoundPercentStickFlint",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		}
+	],
+}

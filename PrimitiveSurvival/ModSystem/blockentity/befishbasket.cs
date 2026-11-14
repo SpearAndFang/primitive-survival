@@ -10,9 +10,9 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.Server;
-    using PrimitiveSurvival.ModConfig; 
+    using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
-
+    #nullable disable
     //public class BEFishBasket : BlockEntityDisplayCase //1.18
     public class BEFishBasket : BlockEntityDisplayCase, ITexPositionSource
     {
@@ -22,21 +22,17 @@ namespace PrimitiveSurvival.ModSystem
         private readonly int escapePercent = ModConfig.Loaded.FishBasketEscapePercent;
         private readonly double updateMinutes = ModConfig.Loaded.FishBasketUpdateMinutes;
         private readonly int rotRemovedPercent = ModConfig.Loaded.FishBasketRotRemovedPercent;
-        private readonly bool relicsDisabled = ModConfig.Loaded.RelicsDisabled;
 
         private readonly int tickSeconds = 4;
         private readonly int maxSlots = 3;
-        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "earthworm", "cheese", "fishfillet", "fisheggs", "fisheggscooked", "insect" };
-        private readonly string[] fishTypes = { "trout", "perch", "salmon", "carp", "bass", "pike", "arcticchar", "catfish", "bluegill" };
+        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "nightcrawler", "cheese", "fisheggs", "fisheggscooked", "insect", "fish", "fishingbait" };
 
-        // Salt Water Fish OLD
-        //private readonly string[] saltWaterFishTypes = { "salmon", "bass" };
         private readonly string[] saltWaterFishTypes = { "bream-sea", "gurnard-cape", "haddock-common", "hake-silver", "herring-atlantic", "mackerel-atlantic", "pollock-alaska", "perch-pacific", "barracuda-great", "grouper-black", "salmon-pink", "snapper-red", "tuna-skipjack", "wolf-bering", "amberjack-yellowtail", "mahi-mahi-common", "wreckfish-atlantic", "coelacanth-common", "sturgeon-atlantic" };
+        private readonly string[] freshWaterFishTypes = { "alewife-shad", "chub-river", "crappie-black", "crappie-white", "perch-european", "perch-yellow", "piranha-black", "piranha-red", "trout-brown",  "trout-rainbow", "bass-largemouth", "bass-smallmouth", "carp-common", "carp-grass", "catfish-blue", "catfish-channel", "pickerel-chain", "salmon-coho", "tilapia-nile", "tilapia-red", "walleye-common", "pike-northern", "arapaima-arapaima", "arapaima-gigas", "sheatfish-black", "sheatfish-white" };
 
 
         private readonly string[] shellStates = { "scallop", "sundial", "turritella", "clam", "conch", "seastar", "volute" };
         private readonly string[] shellColors = { "latte", "plain", "seafoam", "darkpurple", "cinnamon", "turquoise" };
-        private readonly string[] relics = { "psgear-astral", "psgear-ethereal" };
         protected static readonly Random Rnd = new Random();
 
         private long particleTick;
@@ -166,6 +162,47 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+        internal void OnBreak()
+        {
+            for (var index = 2; index >= 0; index--)
+            {
+                if (!this.inventory[index].Empty)
+                {
+                    if (this.inventory[index].Itemstack.Collectible.FirstCodePart().Contains("waterfish") ) 
+                    {
+                        var fishType = this.inventory[index].Itemstack.Collectible.FirstCodePart(1) + "-" + this.inventory[index].Itemstack.Collectible.FirstCodePart(2);
+                        if (fishType == "mahi-mahi")
+                        { fishType += "-" + this.inventory[index].Itemstack.Collectible.FirstCodePart(3); }
+
+                        var fishAsset = new AssetLocation("game:creature-fish-freshwater-" + fishType + "-adult");
+                        var newItem = this.Api.World.GetItem(new AssetLocation(fishAsset));
+                        if (newItem == null)
+                        {
+                            fishAsset = new AssetLocation("game:creature-fish-saltwater-" + fishType + "-adult");
+                            newItem = this.Api.World.GetItem(new AssetLocation(fishAsset));
+                        }
+                        if (newItem != null)
+                        {
+                            ItemStack newstack = new ItemStack(newItem, 1);
+                            if (newstack != null)
+                            {
+                                this.Api.World.SpawnItemEntity(newstack, this.Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                            }
+                        }
+                        this.inventory[index].TakeOut(1);
+                    }
+                    else
+                    {
+                        var stack = this.inventory[index].TakeOut(1);
+                        if (stack.StackSize > 0)
+                        { this.Api.World.SpawnItemEntity(stack, this.Pos.ToVec3d().Add(0.5, 0.5, 0.5)); }
+                    }
+                    this.MarkDirty(true);
+                }
+
+            }
+        }
+
         public void FishBasketUpdate(float par)
         {
             var waterAllAround = true;
@@ -288,26 +325,12 @@ namespace PrimitiveSurvival.ModSystem
         {
             ItemStack newStack = null;
             var rando = Rnd.Next(5);
-            if (rando < 1) // 20% chance of a seashell or relic
+            if (rando < 1) // 20% chance of a seashell
             {
-                rando = Rnd.Next(10); //10
-
-                if (rando < 1 && relicsDisabled == false) //10% chance of a relic
+                var shellBlock = this.Api.World.GetBlock(new AssetLocation("game:seashell-" + this.shellStates[Rnd.Next(this.shellStates.Count())] + "-" + this.shellColors[Rnd.Next(this.shellColors.Count())]));
+                if (shellBlock != null)
                 {
-                    var thisRelic = this.relics[Rnd.Next(this.relics.Count())];
-                    var relicItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:" + thisRelic));
-                    if (relicItem != null)
-                    {
-                        newStack = new ItemStack(relicItem, 1);
-                    }
-                }
-                else
-                {
-                    var shellBlock = this.Api.World.GetBlock(new AssetLocation("game:seashell-" + this.shellStates[Rnd.Next(this.shellStates.Count())] + "-" + this.shellColors[Rnd.Next(this.shellColors.Count())]));
-                    if (shellBlock != null)
-                    {
-                        newStack = new ItemStack(shellBlock, 1);
-                    }
+                    newStack = new ItemStack(shellBlock, 1);
                 }
             }
             else
@@ -324,7 +347,7 @@ namespace PrimitiveSurvival.ModSystem
                 }
                 else
                 {
-                    var fishItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfish-" + this.fishTypes[Rnd.Next(this.fishTypes.Count())] + "-raw"));
+                    var fishItem = this.Api.World.GetItem(new AssetLocation("primitivesurvival:psfreshwaterfish-" + this.freshWaterFishTypes[Rnd.Next(this.freshWaterFishTypes.Count())] + "-raw"));
                     if (fishItem != null)
                     {
                         newStack = new ItemStack(fishItem, 1);
@@ -335,7 +358,7 @@ namespace PrimitiveSurvival.ModSystem
             { return false; }
             if (this.inventory[slot].Empty)
             {
-                if (newStack.Collectible.Code.Path.Contains("psfish") || newStack.Collectible.Code.Path.Contains("pssaltwaterfish"))
+                if (newStack.Collectible.Code.Path.Contains("psfreshwaterfish") || newStack.Collectible.Code.Path.Contains("pssaltwaterfish"))
                 {
                     /*********************************************/
                     //depletion check last
@@ -366,7 +389,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 /*********************************************/
                 //Debug.WriteLine("Escaped: " + inventory[slot].Itemstack.Collectible.Code.Path);
-                if (this.inventory[slot].Itemstack.Collectible.Code.Path.Contains("psfish") || this.inventory[slot].Itemstack.Collectible.Code.Path.Contains("pssaltwaterfish"))
+                if (this.inventory[slot].Itemstack.Collectible.Code.Path.Contains("psfreshwaterfish") || this.inventory[slot].Itemstack.Collectible.Code.Path.Contains("pssaltwaterfish"))
                 {
                     //replete (at deplete rate)
                     PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.Api as ICoreServerAPI, this.Pos, -ModConfig.Loaded.FishChunkDepletionRate);
@@ -403,7 +426,7 @@ namespace PrimitiveSurvival.ModSystem
             else
             {
                 var colObj = slot.Itemstack.Collectible;
-                if ((colObj.Attributes != null) || (colObj?.Code?.Path == "insect-grub"))
+                if ((colObj != null) || (colObj?.Code?.Path == "insect-grub"))
                 {
                     if (this.TryPut(slot)) //, blockSel))
                     {
@@ -439,9 +462,10 @@ namespace PrimitiveSurvival.ModSystem
             if (playerStack.Item != null)
             {
                 //Debug.WriteLine("Putting a " + playerStack.Item.FirstCodePart());
-                if (Array.IndexOf(this.baitTypes, playerStack.Item.FirstCodePart()) >= 0 && this.BaitSlot.Empty)
+                //uggh hardcode earthworm
+                if ( (Array.IndexOf(this.baitTypes, playerStack.Item.FirstCodePart()) >= 0 || playerStack.Item.Code.Path.Contains("creature-earthworm"))  && this.BaitSlot.Empty)
                 { index = 0; }
-                else if (playerStack.Item.Code.Path.Contains("psfish") || playerStack.Item.Code.Path.Contains("pssaltwaterfish"))
+                else if (playerStack.Item.Code.Path.Contains("psfreshwaterfish") || playerStack.Item.Code.Path.Contains("pssaltwaterfish"))
                 {
                     if (this.Catch1Slot.Empty)
                     { index = 1; }
@@ -478,39 +502,61 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (!this.Catch2Slot.Empty)
             {
-                /*var rando = Rnd.Next(8);
-                if (rando < 1 && this.Catch2Stack.Item != null) //fish
+                var fishType = this.Catch2Stack.Collectible.FirstCodePart(1) + "-" + this.Catch2Stack.Collectible.FirstCodePart(2);
+                if (fishType == "mahi-mahi")
+                { fishType += "-" + this.Catch2Stack.Collectible.FirstCodePart(3); }
+
+                var fishAsset = new AssetLocation("game:creature-fish-freshwater-" + fishType + "-adult");
+                var newItem = byPlayer.Entity.World.GetItem(new AssetLocation(fishAsset));
+                if (newItem == null)
                 {
-                    //byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
-                    var drop = this.Catch2Stack.Clone();
-                    drop.StackSize = 1;
-                    this.Api.World.SpawnItemEntity(drop, new Vec3d(this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5), null); //slippery
+                    fishAsset = new AssetLocation("game:creature-fish-saltwater-" + fishType + "-adult");
+                    newItem = byPlayer.Entity.World.GetItem(new AssetLocation(fishAsset));
                 }
-                else
-                { byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack); } */
-                byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
-                this.Catch2Slot.TakeOut(1);
-                this.MarkDirty(true);
-                return true;
+                if (newItem != null)
+                {
+                    ItemStack stack = new ItemStack(newItem, 1);
+                    byPlayer.InventoryManager.TryGiveItemstack(stack);
+                    this.Catch2Slot.TakeOut(1);
+                    this.MarkDirty(true);
+                    return true;
+                }
+                else //shell
+                {
+                    byPlayer.InventoryManager.TryGiveItemstack(this.Catch2Stack);
+                    this.Catch2Slot.TakeOut(1);
+                    this.MarkDirty(true);
+                    return true;
+                }
             }
             else if (!this.Catch1Slot.Empty)
             {
-                /*var rando = Rnd.Next(3);
-                if (rando < 2 && this.Catch1Stack.Item != null) //fish
+                var fishType = this.Catch1Stack.Collectible.FirstCodePart(1) + "-" + this.Catch1Stack.Collectible.FirstCodePart(2);
+                if (fishType == "mahi-mahi")
+                { fishType += "-" + this.Catch1Stack.Collectible.FirstCodePart(3); }
+
+                var fishAsset = new AssetLocation("game:creature-fish-freshwater-" + fishType + "-adult");
+                var newItem = byPlayer.Entity.World.GetItem(new AssetLocation(fishAsset));
+                if (newItem == null)
                 {
-                    //ItemStack drop = catch1Stack.Clone();
-                    //drop.StackSize = 1;
-                    //Api.World.SpawnItemEntity(drop, new Vec3d(Pos.X + 0.5, Pos.Y + 0.5, Pos.Z + 0.5), null);
-                    byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
+                    fishAsset = new AssetLocation("game:creature-fish-saltwater-" + fishType + "-adult");
+                    newItem = byPlayer.Entity.World.GetItem(new AssetLocation(fishAsset));
                 }
-                else
+                if (newItem != null)
+                {
+                    ItemStack stack = new ItemStack(newItem, 1);
+                    byPlayer.InventoryManager.TryGiveItemstack(stack);
+                    this.Catch1Slot.TakeOut(1);
+                    this.MarkDirty(true);
+                    return true;
+                }
+                else //shell
                 {
                     byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
-                } */
-                byPlayer.InventoryManager.TryGiveItemstack(this.Catch1Stack);
-                this.Catch1Slot.TakeOut(1);
-                this.MarkDirty(true);
-                return true;
+                    this.Catch1Slot.TakeOut(1);
+                    this.MarkDirty(true);
+                    return true;
+                }
             }
             else if (!this.BaitSlot.Empty)
             {
@@ -536,7 +582,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (this.Catch1Stack.Block != null)
                         { }
-                        else if (!(this.Catch1Stack.Item.Code.Path.Contains("psfish") || this.Catch1Stack.Item.Code.Path.Contains("pssaltwaterfish")))
+                        else if (!(this.Catch1Stack.Item.Code.Path.Contains("psfreshwaterfish") || this.Catch1Stack.Item.Code.Path.Contains("pssaltwaterfish")))
                         { sb.Append(" " + Lang.Get("primitivesurvival:blockdesc-fishbasket-catch-rotten")); }
                         rot = true;
                     }
@@ -544,7 +590,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (this.Catch2Stack.Block != null)
                         { }
-                        else if (!(this.Catch2Stack.Item.Code.Path.Contains("psfish") || this.Catch2Stack.Item.Code.Path.Contains("pssaltwaterfish")))
+                        else if (!(this.Catch2Stack.Item.Code.Path.Contains("psfreshwaterfish") || this.Catch2Stack.Item.Code.Path.Contains("pssaltwaterfish")))
                         { sb.Append(" " + Lang.Get("primitivesurvival:blockdesc-fishbasket-catch-rotten")); }
                     }
                     sb.AppendLine().AppendLine();
@@ -555,7 +601,7 @@ namespace PrimitiveSurvival.ModSystem
                     {
                         if (this.BaitStack.Item != null)
                         {
-                            if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0)
+                            if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0 && (!this.BaitStack.Item.Code.Path.Contains("creature-earthworm")))
                             { sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-rotten")); }
                             else
                             { sb.Append(Lang.Get("primitivesurvival:blockdesc-deadfall-bait-ok")); }
@@ -607,7 +653,8 @@ namespace PrimitiveSurvival.ModSystem
                 {
                     if (this.BaitStack.Item != null)
                     {
-                        if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0)
+                        if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0 && !this.BaitStack.Item.Code.Path.Contains("creature-earthworm"))
+                            if (Array.IndexOf(this.baitTypes, this.BaitStack.Item.FirstCodePart()) < 0)
                         {
                             var tempblock = this.Api.World.GetBlock(block.CodeWithPath("texturerot"));
                             tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tempblock);
@@ -651,19 +698,16 @@ namespace PrimitiveSurvival.ModSystem
                             tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);
                         }
                         
-                        else if (this.inventory[i].Itemstack.Item.Code.Path.Contains("psfish"))
+                        else if (this.inventory[i].Itemstack.Item.Code.Path.Contains("psfreshwaterfish"))
                         {
-                            shapePath = "primitivesurvival:shapes/item/fishing/fish-" + this.inventory[i].Itemstack.Item.LastCodePart(1).ToString();
-                            if (this.inventory[i].Itemstack.Item.Code.Path.Contains("cooked"))
-                            {
-                                tmpBlock = this.Api.World.GetBlock(block.CodeWithPath("texturecooked"));
-                                tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);
-                            }
-                            else
-                            {
-                                alive = true;
-                                tmpTextureSource = texture;
-                            }
+                            string fishcode = this.inventory[i].Itemstack.Item.LastCodePart(2).ToString();
+                            shapePath = "game:shapes/entity/animal/fish/freshwater/" + fishcode + "-adult";
+                            //Debug.WriteLine(this.inventory[i].Itemstack.Item.Code.Path);
+                            string tmpBlockCode = "freshwaterfishoverride-" + fishcode + "-" + this.inventory[i].Itemstack.Item.LastCodePart(1).ToString();
+                            //Debug.WriteLine(tmpBlockCode);
+                            tmpBlock = this.Api.World.GetBlock(block.CodeWithPath(tmpBlockCode));
+                            tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);
+                            alive = true;
                         }
                         else if (this.inventory[i].Itemstack.Item.Code.Path.Contains("pssaltwaterfish"))
                         {
@@ -671,7 +715,7 @@ namespace PrimitiveSurvival.ModSystem
                             if (fishcode == "mahi") { fishcode = "mahi-mahi"; }
                             shapePath = "game:shapes/entity/animal/fish/saltwater/" + fishcode + "-adult";
                             //Debug.WriteLine(this.inventory[i].Itemstack.Item.Code.Path);
-                            string tmpBlockCode = "fishmount-" + fishcode + "-" + this.inventory[i].Itemstack.Item.LastCodePart(1).ToString() + "-normal-north";
+                            string tmpBlockCode = "saltwaterfishoverride-" + fishcode + "-" + this.inventory[i].Itemstack.Item.LastCodePart(1).ToString();
                             //Debug.WriteLine(tmpBlockCode);
                             tmpBlock = this.Api.World.GetBlock(block.CodeWithPath(tmpBlockCode));
                             tmpTextureSource = ((ICoreClientAPI)this.Api).Tesselator.GetTextureSource(tmpBlock);

@@ -11,14 +11,14 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using PrimitiveSurvival.ModConfig;
     using System;
-
+    #nullable disable
     //using System.Diagnostics; 
     public class BlockIrrigationVessel : BlockLiquidContainerTopOpened // BlockLiquidIrrigationVesselTopOpened
     {
         public override float CapacityLitres => 50;
         public override bool CanDrinkFrom => false;
 
-        private readonly string[] vesselTypes = { "normal", "fire", "black", "brown", "cream", "gray", "orange", "red", "tan" };
+        private readonly string[] vesselTypes = { "normal", "fire", "black", "brown", "cream", "gray", "orange", "red", "tan", "earthyorange" };
 
         protected new WorldInteraction[] interactions;
 

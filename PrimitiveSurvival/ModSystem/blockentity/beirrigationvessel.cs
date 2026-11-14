@@ -7,7 +7,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
-    
+    #nullable disable
     //using System.Diagnostics;
 
     public class BEIrrigationVessel : BlockEntityLiquidContainer
@@ -53,6 +53,9 @@ namespace PrimitiveSurvival.ModSystem
 
         public void IrrigationVesselUpdate(float par)
         {
+            if (this.Api.Side == EnumAppSide.Client) return;
+
+
             //MARK rboys2
             if (this.inventory[0].Empty && !this.Buried)
             {

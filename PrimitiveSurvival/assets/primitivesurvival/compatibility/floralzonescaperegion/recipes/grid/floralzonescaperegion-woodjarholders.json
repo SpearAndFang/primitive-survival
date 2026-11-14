@@ -4,7 +4,7 @@
     "width": 1,
     "height": 3,
     "ingredients": {
-      "S": { "type": "item", "code": "game:saw-*", "istool": "true" },
+      "S": { "type": "item", "tags": ["tool-saw"], "istool": "true" },
       "L": {
         "type": "block",
         "code": "floralzonescaperegion:log-*",

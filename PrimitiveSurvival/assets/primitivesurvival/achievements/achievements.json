@@ -2,16 +2,9 @@
   {
     "enabled": "true",
     "id": "psthegreathunter",
-    "graphicCode": "primitivesurvival:earthworm",
+    "graphicCode": "primitivesurvival:nightcrawler",
     "criteriaType": "EatAny",
-    "criteriaData": ["primitivesurvival:earthworm"]
-  },
-  {
-    "enabled": "true",
-    "id": "pssomethingsfishy",
-    "graphicCode": "primitivesurvival:psfish-pike-raw",
-    "criteriaType": "HaveAnyInInventory",
-    "criteriaData": ["primitivesurvival:psfish-*"]
+    "criteriaData": ["primitivesurvival:nightcrawler"]
   },
   {
     "enabled": "true",
@@ -46,30 +39,6 @@
     "graphicCode": "primitivesurvival:treehollowplaced-pine-north",
     "criteriaType": "HaveAnyInInventory",
     "criteriaData": ["primitivesurvival:treehollowplaced-*"]
-  },
-  {
-    "enabled": "true",
-    "id": "pslivenupthejoint",
-    "graphicCode": "primitivesurvival:wolfhead-steppe-female-north",
-    "criteriaType": "DestroyAnyBlock",
-    "criteriaData": [
-      "primitivesurvival:fishmount-*",
-      "primitivesurvival:foxhide-*",
-      "primitivesurvival:harehide-*",
-      "primitivesurvival:raccoonhide-*",
-      "primitivesurvival:wolfhide-*",
-      "primitivesurvival:hyenahide-*",
-      "primitivesurvival:pighide-*",
-      "primitivesurvival:sheephide-*",
-      "primitivesurvival:foxhead-*",
-      "primitivesurvival:harehead-*",
-      "primitivesurvival:raccoonhead-*",
-      "primitivesurvival:wolfhead-*",
-      "primitivesurvival:hyenahead-*",
-      "primitivesurvival:pighead-*",
-      "primitivesurvival:sheephead-*",
-      "primitivesurvival:moosehide-*"
-    ]
   },
   {
     "enabled": "true",
@@ -144,22 +113,6 @@
       "primitivesurvival:fireflies-fairyring-*",
       "primitivesurvival:fireflies-candle-*",
       "primitivesurvival:fireflies-marshimp-*"
-    ]
-  },
-  {
-    "enabled": "true",
-    "id": "psrelichunter",
-    "graphicCode": "primitivesurvival:necronomicon-north",
-    "criteriaType": "HaveAnyInInventory",
-    "criteriaData": [
-      "primitivesurvival:cthulu-statue-*",
-      "primitivesurvival:dagon-statue-*",
-      "primitivesurvival:hydra-statue-*",
-      "primitivesurvival:nephrenka-statue-*",
-      "primitivesurvival:temporalbase-*",
-      "primitivesurvival:temporalcube-*",
-      "primitivesurvival:temporallectern-*",
-      "primitivesurvival:necronomicon-*"
     ]
   },
   {

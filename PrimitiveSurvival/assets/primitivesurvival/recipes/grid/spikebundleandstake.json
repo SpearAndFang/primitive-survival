@@ -6,7 +6,7 @@
     "ingredients": {
       "K": {
         "type": "item",
-        "code": "game:knife-*",
+         "tags": ["tool-knife"],
         "isTool": true
       },
       "S": {
@@ -27,7 +27,7 @@
     "ingredients": {
       "K": {
         "type": "item",
-        "code": "game:knife-*",
+         "tags": ["tool-knife"],
         "isTool": true
       },
       "S": {
@@ -48,7 +48,7 @@
     "ingredients": {
       "K": {
         "type": "item",
-        "code": "game:knife-*",
+         "tags": ["tool-knife"],
         "isTool": true
       },
       "H": {
@@ -70,7 +70,7 @@
     "ingredients": {
       "K": {
         "type": "item",
-        "code": "game:knife-*",
+         "tags": ["tool-knife"],
         "isTool": true
       },
       "H": {

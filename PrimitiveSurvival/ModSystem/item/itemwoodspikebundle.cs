@@ -3,7 +3,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.Config;
-
+    #nullable disable
     public class ItemWoodSpikeBundle : Item
     {
 

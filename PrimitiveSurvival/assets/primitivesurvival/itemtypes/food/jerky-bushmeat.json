@@ -1,45 +1,46 @@
 {
   "code": "jerky-bushmeat",
   "maxstacksize": 256,
-  "attributes": {
-    "inContainerTextureByType": {
-      "*-raw": { "base": "game:block/wood/barrel/{type}-bushmeat" },
-      "*-cured": { "base": "game:block/wood/barrel/{type}-bushmeat" }
-    },
-    "inFirePitProps": {
-      "transform": {
-        "scale": 1,
-        "origin": {
-          "x": 0.5,
-          "y": 0.0625,
-          "z": 0.5
+    "attributes": {
+        "foodTags": [ "meat" ],
+        "inContainerTextureByType": {
+            "*-raw": { "base": "game:block/wood/barrel/{type}-bushmeat" },
+            "*-cured": { "base": "game:block/wood/barrel/{type}-bushmeat" }
         },
-        "translation": {
-          "x": 0,
-          "y": 0.25,
-          "z": 0.02
+        "inFirePitProps": {
+            "transform": {
+                "scale": 1,
+                "origin": {
+                    "x": 0.5,
+                    "y": 0.0625,
+                    "z": 0.5
+                },
+                "translation": {
+                    "x": 0,
+                    "y": 0.25,
+                    "z": 0.02
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 45,
+                    "z": 90
+                }
+            },
+            "useFirepitModel": "Spit"
         },
-        "rotation": {
-          "x": 0,
-          "y": 45,
-          "z": 90
+        "nutritionPropsWhenInMeal": {
+            "satiety": 45,
+            "foodcategory": "Protein"
+        },
+        "handbook": {
+            "extraSections": [
+                {
+                    "title": "handbook-item-sources",
+                    "text": "Obtained by harvesting dead wild animals"
+                }
+            ]
         }
-      },
-      "useFirepitModel": "Spit"
     },
-    "nutritionPropsWhenInMeal": {
-      "satiety": 45,
-      "foodcategory": "Protein"
-    },
-    "handbook": {
-      "extraSections": [
-        {
-          "title": "handbook-item-sources",
-          "text": "Obtained by harvesting dead wild animals"
-        }
-      ]
-    }
-  },
   "variantgroups": [
     {
       "code": "type",

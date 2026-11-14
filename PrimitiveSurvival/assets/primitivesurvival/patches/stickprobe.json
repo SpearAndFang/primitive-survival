@@ -1,0 +1,11 @@
+[
+    {
+        "op": "add",
+        "path": "/behaviors/-",
+        "value": {
+            "name": "fishDepletionProbe"
+        },
+        "file": "game:itemtypes/resource/stick.json",
+        "side": "Server"
+    }
+]

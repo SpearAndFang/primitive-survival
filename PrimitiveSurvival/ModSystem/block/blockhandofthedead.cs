@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     //using System.Diagnostics;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-
+    #nullable disable
     public class BlockHandOfTheDead : Block
     {
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)

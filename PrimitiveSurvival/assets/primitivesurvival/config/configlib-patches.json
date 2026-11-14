@@ -1,6 +1,6 @@
 {
-  "version": 1.3,
-  "file": "primitivesurvival119.json",
+  "version": 1.6,
+  "file": "primitivesurvival5.json",
   "settings": {
     "float": {
       "DEADFALLMAXANIMALHEIGHT": {
@@ -69,36 +69,14 @@
           "max": 100.0
         }
       },
-      "PIPEMINMOISTURE": {
-        "name": "PipeMinMoisture",
-        "ingui": "primitivesurvival:PipeMinMoisture",
-        "weight": 42,
-        "comment": "primitivesurvival:PipeMinMoisture-Comment",
-        "default": 0.92,
-        "range": {
-          "min": 0.0,
-          "max": 1.0
-        }
-      },
-      "PIPEBLOCKAGECHANCEPERCENT": {
-        "name": "PipeBlockageChancePercent",
-        "ingui": "primitivesurvival:PipeBlockageChancePercent",
-        "weight": 41,
-        "comment": "primitivesurvival:PipeBlockageChancePercent-Comment",
-        "default": 0.02,
-        "range": {
-          "min": 0.0,
-          "max": 1.0
-        }
-      },
       "RAFTWATERSPEEDMODIFIER": {
         "name": "RaftWaterSpeedModifier",
         "ingui": "primitivesurvival:RaftWaterSpeedModifier",
         "weight": 44,
         "comment": "primitivesurvival:RaftWaterSpeedModifier-Comment",
-        "default": 0.2,
+        "default": 0.1,
         "range": {
-          "min": 0.05,
+          "min": 0.01,
           "max": 1.0
         }
       },
@@ -107,7 +85,7 @@
         "ingui": "primitivesurvival:RaftFlotationModifier",
         "weight": 45,
         "comment": "primitivesurvival:RaftFlotationModifier-Comment",
-        "default": 0.03,
+        "default": 0.025,
         "range": {
           "min": 0.0,
           "max": 1.0
@@ -305,7 +283,7 @@
         "ingui": "primitivesurvival:WeirTrapUpdateMinutes",
         "weight": 74,
         "comment": "primitivesurvival:WeirTrapUpdateMinutes-Comment",
-        "default": 2.6,
+        "default": 5.0,
         "range": {
           "min": 0.1,
           "max": 100.0
@@ -441,8 +419,8 @@
         "comment": "primitivesurvival:FishChanceOfEggsPercent-Comment",
         "default": 20,
         "range": {
-          "min": 0,
-          "max": 100
+          "min": 20,
+          "max": 20
         }
       },
       "FISHCHUNKDEPLETIONRATE": {
@@ -461,7 +439,7 @@
         "ingui": "primitivesurvival:FishChunkRepletionRate",
         "weight": 19,
         "comment": "primitivesurvival:FishChunkRepletionRate-Comment",
-        "default": 1,
+        "default": 1, 
         "range": {
           "min": 0,
           "max": 100
@@ -472,7 +450,7 @@
         "ingui": "primitivesurvival:FishChunkRepletionMinutes",
         "weight": 20,
         "comment": "primitivesurvival:FishChunkRepletionMinutes-Comment",
-        "default": 30,
+        "default": 20,
         "range": {
           "min": 0,
           "max": 999
@@ -527,7 +505,7 @@
         "ingui": "primitivesurvival:LimbTrotlineBaitedCatchPercent",
         "weight": 29,
         "comment": "primitivesurvival:LimbTrotlineBaitedCatchPercent-Comment",
-        "default": 5,
+        "default": 3,
         "range": {
           "min": 0,
           "max": 100
@@ -538,7 +516,7 @@
         "ingui": "primitivesurvival:LimbTrotlineLuredCatchPercent",
         "weight": 30,
         "comment": "primitivesurvival:LimbTrotlineLuredCatchPercent-Comment",
-        "default": 5,
+        "default": 3,
         "range": {
           "min": 0,
           "max": 100
@@ -549,7 +527,7 @@
         "ingui": "primitivesurvival:LimbTrotlineBaitedLuredCatchPercent",
         "weight": 31,
         "comment": "primitivesurvival:LimbTrotlineBaitedLuredCatchPercent-Comment",
-        "default": 10,
+        "default": 6,
         "range": {
           "min": 0,
           "max": 100
@@ -582,40 +560,7 @@
         "ingui": "primitivesurvival:MonkeyBridgeMaxLength",
         "weight": 35,
         "comment": "primitivesurvival:MonkeyBridgeMaxLength-Comment",
-        "default": 60,
-        "range": {
-          "min": 10,
-          "max": 999
-        }
-      },
-      "PARTICULATORMAXPARTICLESQUANTITY": {
-        "name": "ParticulatorMaxParticlesQuantity",
-        "ingui": "primitivesurvival:ParticulatorMaxParticlesQuantity",
-        "weight": 37,
-        "comment": "primitivesurvival:ParticulatorMaxParticlesQuantity-Comment",
-        "default": 5000,
-        "range": {
-          "min": 100,
-          "max": 9999
-        }
-      },
-      "PARTICULATORMAXPARTICLESSIZE": {
-        "name": "ParticulatorMaxParticlesSize",
-        "ingui": "primitivesurvival:ParticulatorMaxParticlesSize",
-        "weight": 38,
-        "comment": "primitivesurvival:ParticulatorMaxParticlesSize-Comment",
-        "default": 255,
-        "range": {
-          "min": 1,
-          "max": 999
-        }
-      },
-      "PIPEUPDATEFREQUENCY": {
-        "name": "PipeUpdateFrequency",
-        "ingui": "primitivesurvival:PipeUpdateFrequency",
-        "weight": 40,
-        "comment": "primitivesurvival:PipeUpdateFrequency-Comment",
-        "default": 130,
+        "default": 120,
         "range": {
           "min": 10,
           "max": 999
@@ -692,7 +637,7 @@
         "ingui": "primitivesurvival:WeirTrapCatchPercent",
         "weight": 72,
         "comment": "primitivesurvival:WeirTrapCatchPercent-Comment",
-        "default": 3,
+        "default": 2,
         "range": {
           "min": 0,
           "max": 100
@@ -725,7 +670,7 @@
         "ingui": "primitivesurvival:WormFoundPercentRock",
         "weight": 76,
         "comment": "primitivesurvival:WormFoundPercentRock-Comment",
-        "default": 3,
+        "default": 1,
         "range": {
           "min": 0,
           "max": 100
@@ -736,7 +681,7 @@
         "ingui": "primitivesurvival:WormFoundPercentStickFlint",
         "weight": 77,
         "comment": "primitivesurvival:WormFoundPercentStickFlint-Comment",
-        "default": 25,
+        "default": 10,
         "range": {
           "min": 0,
           "max": 100
@@ -744,27 +689,6 @@
       }
     },
     "boolean": {
-      "ALTARDROPSFISH": {
-        "name": "AltarDropsFish",
-        "ingui": "primitivesurvival:AltarDropsFish",
-        "weight": 1,
-        "comment": "primitivesurvival:AltarDropsFish-Comment",
-        "default": true
-      },
-      "ALTARDROPSGOLD": {
-        "name": "AltarDropsGold",
-        "ingui": "primitivesurvival:AltarDropsGold",
-        "weight": 2,
-        "comment": "primitivesurvival:AltarDropsGold-Comment",
-        "default": true
-      },
-      "ALTARDROPSVEGETABLES": {
-        "name": "AltarDropsVegetables",
-        "ingui": "primitivesurvival:AltarDropsVegetables",
-        "weight": 3,
-        "comment": "primitivesurvival:AltarDropsVegetables-Comment",
-        "default": true
-      },
       "FURROWEDLANDENABLED": {
         "name": "FurrowedLandEnabled",
         "ingui": "primitivesurvival:FurrowedLandEnabled",
@@ -772,40 +696,12 @@
         "comment": "primitivesurvival:FurrowedLandEnabled-Comment",
         "default": true
       },
-      "METALBUCKETDISABLED": {
-        "name": "MetalBucketDisabled",
-        "ingui": "primitivesurvival:MetalBucketDisabled",
-        "weight": 34.3,
-        "comment": "primitivesurvival:MetalBucketDisabled-Comment",
-        "default": false
-      },
-      "PARTICULATORENABLED": {
-        "name": "ParticulatorEnabled",
-        "ingui": "primitivesurvival:ParticulatorEnabled",
-        "weight": 36,
-        "comment": "primitivesurvival:ParticulatorEnabled-Comment",
-        "default": false
-      },
-      "PARTICULATORHIDECODETABS": {
-        "name": "ParticulatorHideCodeTabs",
-        "ingui": "primitivesurvival:ParticulatorHideCodeTabs",
-        "weight": 39,
-        "comment": "primitivesurvival:ParticulatorHideCodeTabs-Comment",
-        "default": false
-      },
       "RAFTENABLED": {
         "name": "RaftEnabled",
         "ingui": "primitivesurvival:RaftEnabled",
         "weight": 43,
         "comment": "primitivesurvival:RaftEnabled-Comment",
         "default": true
-      },
-      "RELICSDISABLED": {
-        "name": "RelicsDisabled",
-        "ingui": "primitivesurvival:RelicsDisabled",
-        "weight": 45.4,
-        "comment": "primitivesurvival:RelicsDisabled-Comment",
-        "default": false
       },
       "SHOWMODNAMEINHUD": {
         "name": "ShowModNameInHud",
@@ -831,11 +727,6 @@
     }
   },
   "formatting": [
-    {
-      "type": "separator",
-      "title": "primitivesurvival:Altar-Config",
-      "weight": 0.5
-    },
     {
       "type": "separator",
       "title": "primitivesurvival:Deadfall-Config",
@@ -868,33 +759,13 @@
     },
     {
       "type": "separator",
-      "title": "primitivesurvival:MetalBucket-Config",
-      "weight": 34.2
-    },
-    {
-      "type": "separator",
       "title": "primitivesurvival:MonkeyBridge-Config",
       "weight": 34.5
     },
     {
       "type": "separator",
-      "title": "primitivesurvival:Particulator-Config",
-      "weight": 35.5
-    },
-    {
-      "type": "separator",
-      "title": "primitivesurvival:Pipe-Config",
-      "weight": 39.5
-    },
-    {
-      "type": "separator",
       "title": "primitivesurvival:Raft-Config",
       "weight": 42.5
-    },
-    {
-      "type": "separator",
-      "title": "primitivesurvival:Relics-Config",
-      "weight": 45.3
     },
     {
       "type": "separator",

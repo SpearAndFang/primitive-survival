@@ -11,7 +11,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.Client.NoObf;
     using Vintagestory.API.Common.Entities;
     using System.Diagnostics;
-
+    #nullable disable
     public class BlockRaft : Block, IDrawYAdjustable
     {
 

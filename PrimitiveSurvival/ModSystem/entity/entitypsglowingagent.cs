@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Config;
     using PrimitiveSurvival.ModConfig;
-
+    #nullable disable
 
     public class EntityPSGlowingAgent : EntityAgent
     {

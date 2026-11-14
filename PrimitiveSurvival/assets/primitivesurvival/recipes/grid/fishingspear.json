@@ -16,13 +16,14 @@
       },
       "K": {
         "type": "item",
-        "code": "game:knife-*",
+        "tags": ["tool-knife"],
         "isTool": true
       }
     },
     "output": {
-      "type": "item",
-      "code": "primitivesurvival:fishingspear-wood-empty"
+        "type": "item",
+        "code": "primitivesurvival:fishingspear-wood",
+        "attributes": { "fish": "none" }
     }
   },
   {
@@ -42,13 +43,14 @@
       },
       "K": {
         "type": "item",
-        "code": "game:knife-*",
+        "tags": ["tool-knife"],
         "isTool": true
       }
     },
     "output": {
-      "type": "item",
-      "code": "primitivesurvival:fishingspear-bamboo-empty"
+        "type": "item",
+        "code": "primitivesurvival:fishingspear-bamboo",
+        "attributes": { "fish": "none" }
     }
   }
 ]

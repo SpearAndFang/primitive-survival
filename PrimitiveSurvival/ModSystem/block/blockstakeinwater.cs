@@ -6,7 +6,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.API.Config;
     //using Vintagestory.GameContent;
-
+    #nullable disable
     public class BlockStakeInWater : Block
     {
 

@@ -3,7 +3,7 @@ namespace PrimitiveSurvival.ModSystem
 {
     using Vintagestory.API.Common;
     using Vintagestory.API.Datastructures;
-
+    #nullable disable
     public class BehaviorInTreeHollowTransform : CollectibleBehavior
     {
         public ModelTransform Transform { get; set; } = ModelTransform.NoTransform;

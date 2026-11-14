@@ -1,7 +1,7 @@
 namespace PrimitiveSurvival.ModSystem
 {
     using Vintagestory.API.Common;
-
+    #nullable disable
     public class BlockNSEW : Block
     {
 

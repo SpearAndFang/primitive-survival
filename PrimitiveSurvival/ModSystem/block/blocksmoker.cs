@@ -9,7 +9,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
-
+    #nullable disable
     public class BlockSmoker : Block, IIgnitable
     {
 
@@ -146,7 +146,7 @@ namespace PrimitiveSurvival.ModSystem
                     if (be.Inventory[3].Empty) matchStacks.Add(stack);
                 }
             }
-            Debug.WriteLine("hoo");
+            //Debug.WriteLine("hoo");
             return matchStacks.ToArray();
 
         }

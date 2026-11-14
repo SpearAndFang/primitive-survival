@@ -8,7 +8,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
     using Vintagestory.GameContent;
-
+    #nullable disable
     //using System.Diagnostics;
 
     public class BEFirework : BlockEntity

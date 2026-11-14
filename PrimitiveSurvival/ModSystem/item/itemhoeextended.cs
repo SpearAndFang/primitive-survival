@@ -2,16 +2,18 @@ namespace PrimitiveSurvival.ModSystem
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Threading;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
+    using Vintagestory.API.Config;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
-    using Vintagestory.API.Config;
-    using System.Diagnostics;
+
 
     //using System.Diagnostics;
-
+#nullable disable
 
     public class ItemHoeExtended : ItemHoe
     {
@@ -130,7 +132,7 @@ namespace PrimitiveSurvival.ModSystem
 
             if (secondsUsed > 0.35f && secondsUsed < 0.87f)
             {
-                var dir = new Vec3d().AheadCopy(1, 0, byEntity.SidedPos.Yaw - GameMath.PI);
+                var dir = new Vec3d().AheadCopy(1, 0, byEntity.Pos.Yaw - GameMath.PI);
                 var pos = blockSel.Position.ToVec3d().Add(0.5 + dir.X, 1.03, 0.5 + dir.Z);
 
                 pos.X -= dir.X * secondsUsed * 1 / 0.75f * 1.2f;
@@ -158,8 +160,16 @@ namespace PrimitiveSurvival.ModSystem
         {
             if (blockSel == null)
             { return; }
+
+            
             var pos = blockSel.Position;
             var block = byEntity.World.BlockAccessor.GetBlock(pos);
+
+            if (block.Code.Path.Contains("fallow")) //Involved Farming: Fallow
+            {
+                base.DoTill(secondsUsed, slot, byEntity, blockSel, entitySel);
+                return;
+            }
 
             if (block.Code.Path.StartsWith("farmland"))
             {
@@ -181,7 +191,7 @@ namespace PrimitiveSurvival.ModSystem
                 //now do some of the normal hoe stuff
                 if (block.Sounds != null)
                 {
-                    byEntity.World.PlaySoundAt(block.Sounds.Place, pos.X, pos.Y, pos.Z, null);
+                    byEntity.World.PlaySoundAt(block.Sounds.Place, pos.X, pos.Y, pos.Z, 0, null);
                 }
 
                 var byPlayer2 = (byEntity as EntityPlayer).Player;
@@ -192,6 +202,7 @@ namespace PrimitiveSurvival.ModSystem
                 }
                 return;
             }
+
 
             if (!block.Code.Path.StartsWith("soil"))
             { return; }
@@ -204,7 +215,7 @@ namespace PrimitiveSurvival.ModSystem
 
             if (block.Sounds != null)
             {
-                byEntity.World.PlaySoundAt(block.Sounds.Place, pos.X, pos.Y, pos.Z, null);
+                byEntity.World.PlaySoundAt(block.Sounds.Place, pos.X, pos.Y, pos.Z, 0, null);
             }
             byEntity.World.BlockAccessor.SetBlock(farmland.BlockId, pos);
             slot.Itemstack.Collectible.DamageItem(byEntity.World, byEntity, byPlayer.InventoryManager.ActiveHotbarSlot);

@@ -7,12 +7,16 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
 
+    #nullable disable
+
     public class ItemPSFish : Item
     {
         private readonly int eggsPercent = ModConfig.Loaded.FishChanceOfEggsPercent;
         private readonly int repleteRate = ModConfig.Loaded.FishChunkDepletionRate;
         private static readonly Random Rnd = new Random();
-        public override void OnConsumedByCrafting(ItemSlot[] allInputSlots, ItemSlot stackInSlot, GridRecipe gridRecipe, CraftingRecipeIngredient fromIngredient, IPlayer byPlayer, int quantity)
+        
+        // 1.22 changed to IRecipeBase, IRecipeIngredient
+        public override void OnConsumedByCrafting(ItemSlot[] allInputSlots, ItemSlot stackInSlot, IRecipeBase gridRecipe, IRecipeIngredient fromIngredient, IPlayer byPlayer, int quantity)
         {
             base.OnConsumedByCrafting(allInputSlots, stackInSlot, gridRecipe, fromIngredient, byPlayer, quantity);
 
@@ -46,9 +50,9 @@ namespace PrimitiveSurvival.ModSystem
             { return; }
             if (entityItem.Swimming && world.Rand.NextDouble() < 0.1 && entityItem.Itemstack.Item.LastCodePart() == "raw")
             {
-                //replete
-                PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.api as ICoreServerAPI, entityItem.ServerPos.AsBlockPos, -this.repleteRate);
-                this.GenerateWaterParticles(entityItem.ServerPos.AsBlockPos, world);
+                //replete 1.22 ServerPos x 2 to Pos
+                PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.api as ICoreServerAPI, entityItem.Pos.AsBlockPos, -this.repleteRate);
+                this.GenerateWaterParticles(entityItem.Pos.AsBlockPos, world);
                 entityItem.Die(EnumDespawnReason.Removed, null);
             }
         }

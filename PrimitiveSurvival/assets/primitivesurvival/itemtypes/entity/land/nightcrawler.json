@@ -1,0 +1,83 @@
+{
+    "code": "nightcrawler",
+    "class": "itemnightcrawler",
+    "maxstacksize": 64,
+    "shape": { "base": "game:item/resource/bait-worm" },
+    "textures": {
+        "raw": { "base": "entity/land/nightcrawler" }
+    },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "creatures": [ "*" ],
+        "primitive": [ "*" ]
+    },
+    "attributes": {
+        "nutritionPropsWhenInMeal": {
+            "satiety": 20,
+            "foodcategory": "Protein"
+        },
+        "baitTag": "bait-worm",
+        "handbook": {
+            "groupBy": [ "fishingbait-*", "nightcrawler" ]
+        },
+        "isFishBait": true
+    },
+    "nutritionProps": {
+        "saturation": 20,
+        "foodcategory": "Protein"
+    },
+    //"heldRightTpIdleAnimation": "holdinglanternrighthand",
+    "heldRightReadyAnimation": null,
+    "heldTpUseAnimation": null,
+    "materialDensity": 600,
+    "guiTransform": {
+        "rotation": {
+            "x": -52,
+            "y": 1,
+            "z": 4
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 7
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 5.5
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.65,
+            "y": -0.05,
+            "z": -0.6
+        },
+        "rotation": {
+            "x": 90,
+            "y": -37,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 1
+    }
+}

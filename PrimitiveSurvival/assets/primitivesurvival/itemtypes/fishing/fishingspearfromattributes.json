@@ -1,0 +1,223 @@
+{
+    "code": "fishingspear",
+    "class": "itemspearfromattributes",
+    "damagedby": [ "attacking" ],
+    "tool": "spear", //hmm wont render on toolrack properly
+    "attributes": {
+        "handbook": {
+            "groupBy": [ "fishingspear-*" ]
+        },
+        "variantGroups": {
+            "fish": [
+                "none",
+                "bream-sea",
+                "gurnard-cape",
+                "haddock-common",
+                "hake-silver",
+                "herring-atlantic",
+                "mackerel-atlantic",
+                "pollock-alaska",
+                "perch-pacific",
+                "barracuda-great",
+                "grouper-black",
+                "salmon-pink",
+                "snapper-red",
+                "tuna-skipjack",
+                "wolf-bering",
+                "amberjack-yellowtail",
+                "mahi-mahi-common",
+                "wreckfish-atlantic",
+                "coelacanth-common",
+                "sturgeon-atlantic",
+                "alewife-shad",
+                "chub-river",
+                "crappie-black",
+                "crappie-white",
+                "perch-european",
+                "perch-yellow",
+                "piranha-black",
+                "piranha-red",
+                "trout-brown",
+                "trout-rainbow",
+                "bass-largemouth",
+                "bass-smallmouth",
+                "carp-common",
+                "carp-grass",
+                "catfish-blue",
+                "catfish-channel",
+                "pickerel-chain",
+                "salmon-coho",
+                "tilapia-nile",
+                "tilapia-red",
+                "walleye-common",
+                "pike-northern",
+                "arapaima-arapaima",
+                "arapaima-gigas",
+                "sheatfish-black",
+                "sheatfish-white"
+            ]
+
+        },
+        "allowedVariants": [
+            {
+                "type": "*",
+                "fish": "none" //change this from "none" to "*" to see them all
+            }
+        ],
+        // Note: textures inside attributes. Used to determine what textures to use for attribute variants
+        "textures": {
+            "fishingspear": {
+                "material": "primitivesurvival:item/tool/{material}",
+                "string": "game:item/resource/string"
+                //"fish": "primitivesurvival:item/fishing/fish-salmon-raw"
+                //"skin": "primitivesurvival:item/fishingspearattributes/{fish}"
+            }
+        },
+        "slotRefillIdentifier": "fishingspear",
+        "heldItemPitchFollow": 1,
+        "groundStorageTransform": {
+            "translation": {
+                "x": -0.39,
+                "y": 0.42,
+                "z": 0.25
+            },
+            "rotation": {
+                "x": 16,
+                "y": 1,
+                "z": 90
+            },
+            "scale": 0.81
+        },
+        "toolrackTransform": {
+            "translation": {
+                "x": -0.35,
+                "y": 0.05,
+                "z": 0.4
+            },
+            "rotation": {
+                "x": 89,
+                "y": 1,
+                "z": 1
+            }
+        }
+    },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "primitive": [ "" ]
+    },
+    "behaviors": [
+        {
+            "name": "GroundStorable",
+            "properties": {
+                "layout": "WallHalves",
+                "wallOffY": 2,
+                "sprintKey": true,
+                "selectionBox": {
+                    "x1": 0,
+                    "y1": 0,
+                    "z1": 0,
+                    "x2": 1,
+                    "y2": 0.1,
+                    "z2": 1
+                },
+                "collisionBox": {
+                    "x1": 0,
+                    "y1": 0,
+                    "z1": 0,
+                    "x2": 0,
+                    "y2": 0,
+                    "z2": 0
+                }
+            }
+        },
+        { "name": "AnimationAuthoritative" }
+    ],
+    "variantgroups": [
+        {
+            "code": "material",
+            "states": [ "wood", "bamboo" ]
+        }
+    ],
+    "shape": {
+        "base": "primitivesurvival:item/fishing/fishingspear"
+    },
+    "heldTpIdleAnimation": "spearidle",
+    "heldRightReadyAnimation": "crudeOarStandingReady",
+    "heldTpHitAnimation": "spearhit",
+    "attackRange": 3.5,
+    "attackpower": 0.5,
+    "durability": 16,
+    "guiTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 33,
+            "y": 0,
+            "z": -127
+        },
+        "origin": {
+            "x": 1.29,
+            "y": 0.05,
+            "z": 0.52
+        },
+        "scale": 2.26
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": 0.1,
+            "y": 0.4,
+            "z": 0.16
+        },
+        "rotation": {
+            "x": -82,
+            "y": 180,
+            "z": 96
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 2.45
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.05,
+            "z": 0
+        },
+        "rotation": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 3.4
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -1.29,
+            "y": 0.02,
+            "z": -0.57
+        },
+        "rotation": {
+            "x": -90,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 0.8
+    }
+}

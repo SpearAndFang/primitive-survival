@@ -1,0 +1,282 @@
+[
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-freshwater-(bass|carp|catfish|pickerel|salmon|walleye)-.*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-freshwater-(bass|carp|catfish|pickerel|salmon|walleye)-.*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-freshwater-(crappie|perch|trout|tilapia|piranha)-.*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-freshwater-(crappie|perch|trout|tilapia|piranha)-.*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-saltwater-(amberjack|barracuda|sturgeon)-.*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-saltwater-(amberjack|barracuda|sturgeon)-.*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-saltwater-(bream|hake|haddock|gurnard|pollock|salmon|snapper|tuna|wolf|wreckfish)-.*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/@fishraw-saltwater-(bream|hake|haddock|gurnard|pollock|salmon|snapper|tuna|wolf|wreckfish)-.*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-freshwater-arapaima-*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-freshwater-arapaima-*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-freshwater-pike-*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-freshwater-pike-*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-freshwater-sheatfish-*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-freshwater-sheatfish-*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-saltwater-coelacanth-*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-saltwater-coelacanth-*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-saltwater-grouper-*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-saltwater-grouper-*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-saltwater-mahi-mahi-*-adult/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    },
+    {
+        "op": "add",
+        "path": "/behaviorsByType/*/1/properties/processedStacksByType/fishraw-saltwater-mahi-mahi-*-adult/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "game:itemtypes/food/fishraw.json",
+        "side": "Server"
+    }
+]

@@ -9,12 +9,12 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.GameContent;
     using Vintagestory.API.Config;
     using Vintagestory.API.Common.Entities;
-
+    #nullable disable
 
     //public class BEDeadfall : BlockEntityDisplayCase, IAnimalFoodSource //1.18
     public class BEDeadfall : BlockEntityDisplayCase, IAnimalFoodSource, ITexPositionSource
     {
-        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fishfillet", "fisheggs", "fisheggscooked" };
+        private readonly string[] baitTypes = { "fruit", "grain", "legume", "meat", "vegetable", "jerky", "mushroom", "bread", "poultry", "pickledvegetable", "redmeat", "bushmeat", "cheese", "fisheggs", "fisheggscooked", "fish", "fishingbait" };
         protected static readonly Random Rnd = new Random();
         private readonly int maxSlots = 1;
 

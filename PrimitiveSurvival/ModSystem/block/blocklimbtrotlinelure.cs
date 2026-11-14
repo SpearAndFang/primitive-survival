@@ -5,21 +5,27 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-
+    #nullable disable
     public class BlockLimbTrotLineLure : Block
     {
         private static readonly Random Rnd = new Random(); 
 
         public MeshData GenMesh(ICoreClientAPI capi, string shapePath, ITexPositionSource texture, bool alive) //, ITesselatorAPI tesselator = null)
         {
-            Shape shape; // = null;
             var tesselator = capi.Tesselator;
-            shape = capi.Assets.TryGet(shapePath + ".json").ToObject<Shape>();
+            var shapeAsset = capi.Assets.TryGet(shapePath + ".json");
+            Shape shape = null;
+            if (shapeAsset != null)
+            {
+                shape = shapeAsset.ToObject<Shape>();
+            }
+            else { return null; }
+
             float x = this.Shape.rotateX;
             float y = this.Shape.rotateY;
             float z = this.Shape.rotateZ;
 
-            if (shapePath.Contains("/saltwater/"))
+            if (shapePath.Contains("/saltwater/") || (shapePath.Contains("/freshwater/")))
             {
                 x = 0f;
                 y = 180 + this.Shape.rotateY;
@@ -32,9 +38,9 @@ namespace PrimitiveSurvival.ModSystem
             var offY = -0.83f;
             var offL = 0.47f;
 
-            if (shapePath.Contains("/saltwater/"))
+            if (shapePath.Contains("/saltwater/") || (shapePath.Contains("/freshwater/")))
             {
-
+                // saltwater
                 if (shapePath.Contains("coelacanth") || shapePath.Contains("grouper") || shapePath.Contains("mahi-mahi"))
                 { 
                     offY = -1.1f;
@@ -60,7 +66,7 @@ namespace PrimitiveSurvival.ModSystem
                     offY = -0.7f;
                     offL = 0.45f;
                 }
-                if (shapePath.Contains("perch"))
+                if (shapePath.Contains("perch-pacific"))
                 {
                     offY = -0.55f;
                     offL = 0.375f;
@@ -70,6 +76,64 @@ namespace PrimitiveSurvival.ModSystem
                     offY = -0.88f;
                     offL = 0.5f;
                 }
+
+                // freshwater
+                if (shapePath.Contains("arapaima"))
+                {
+                    offY = -1.20f;
+                    offL = 0.56f;
+                    var scale = 0.8f;
+                    mesh.Scale(scale, scale, scale);
+                }
+                if (shapePath.Contains("pike"))
+                {
+                    offY = -1f;
+                    offL = 0.59f;
+                }
+                if (shapePath.Contains("sheatfish"))
+                {
+                    offY = -0.98f;
+                    offL = 0.50f;
+                }
+                if (shapePath.Contains("walleye")  
+                    || shapePath.Contains("pickerel"))
+                {
+                    offY = -0.95f;
+                    offL = 0.55f;
+                }
+                if (shapePath.Contains("trout") || shapePath.Contains("catfish")
+                    || shapePath.Contains("bass") || shapePath.Contains("carp")
+                    || shapePath.Contains("salmon"))
+                {
+                    offY = -0.88f;
+                    offL = 0.5f;
+                }
+
+                if (shapePath.Contains("piranha"))
+                {
+                    offY = -0.7f;
+                    offL = 0.45f;
+                }
+
+                if (shapePath.Contains("perch"))
+                {
+                    offY = -0.55f;
+                    offL = 0.375f;
+                }
+                if (shapePath.Contains("crappie") || shapePath.Contains("tilapia"))
+                {
+                    offY = -0.55f;
+                    offL = 0.375f;
+                }
+                if (shapePath.Contains("alewife") || shapePath.Contains("chub"))
+                {
+                    offY = -0.55f;
+                    offL = 0.375f;
+                }
+
+
+
+
 
                 if (y == 270f) 
                 { 
@@ -91,8 +155,7 @@ namespace PrimitiveSurvival.ModSystem
                 
             }
 
-            if (shapePath.Contains("catfish"))
-            { mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.7f, 0.7f, 0.7f); }
+
             if (shapePath.Contains("lure"))
             {
                 var rando = Rnd.Next(10);
@@ -105,11 +168,7 @@ namespace PrimitiveSurvival.ModSystem
             if (alive) //let's animate these fishes
             {
                 var flength = 0.7;
-                if (shapePath.Contains("catfish"))
-                { flength = 0.8; }
-                else if (shapePath.Contains("bluegill"))
-                { flength = 0.25; }
-                if (shapePath.Contains("/saltwater/"))
+                if (shapePath.Contains("/saltwater/") || (shapePath.Contains("/freshwater/")))
                 {
                     flength = offY * -1 - 0.2f;
                 }
@@ -167,6 +226,7 @@ namespace PrimitiveSurvival.ModSystem
             if (world.BlockAccessor.GetBlockEntity(pos) is BELimbTrotLineLure bedc)
             { bedc.OnBreak(); } // (byPlayer, pos); } //empty the inventory onto the ground
             base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
+            
         }
 
 

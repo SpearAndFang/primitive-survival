@@ -374,6 +374,7 @@
   "idleSoundRange": 14,
   "sounds": {
     "hurt": "entity/livingdead/growl",
-    "death": "entity/livingdead/breathe"
+    "death": "entity/livingdead/breathe",
+    "idle": "entity/livingdead/breathe"
   }
 }

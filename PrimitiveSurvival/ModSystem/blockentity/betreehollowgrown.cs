@@ -12,6 +12,7 @@ namespace PrimitiveSurvival.ModSystem
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
 
+    #nullable disable
     //public class BETreeHollowGrown : BlockEntityDisplayCase //1.18
     public class BETreeHollowGrown : BlockEntityDisplayCase, ITexPositionSource
     {
@@ -65,63 +66,40 @@ namespace PrimitiveSurvival.ModSystem
 
         public void TreeHollowUpdate(float par)
         {
-            if (this.inventory[0].Empty)
+            if (this.inventory.Empty)
             {
-                /*
-                 WHY DID I MAKE THIS SO COMPLICATED?
-                 WELL I DON'T WANT TO MUCK WITH MY DEFAULT MODCONFIG, so here's some words...
-
-                 the modConfig's TreeHollowsUpdateMinutes = 360 minutes
-                  as in update the tree hollow every 360 irl minutes
-
-                 this.irlDayLengthMinutes is 48 by default
-                  as in, 1 in game day is 48 irl minutes
-
-                SO...I want to update the hollows every 360/48 = 7.5 in game days
-                  or every 7.5 * 24 = 180 in game hours
-                */
-                
                 var gameCurrentHours = this.Api.World.Calendar.TotalHours;
-                var updateEveryGameHours = this.updateMinutes / this.irlDayLengthMinutes * 24;
+                var updateEveryGameHours = ((this.updateMinutes > 0 ? this.updateMinutes : 360f) / this.irlDayLengthMinutes) * 24;
+
+                if (this.lastEmptied <= 0)
+                {
+                    this.lastEmptied = gameCurrentHours;
+                    this.MarkDirty();
+                    return;
+                }
+
                 var gameHoursPassed = gameCurrentHours - this.lastEmptied;
                 var updatingInHours = updateEveryGameHours - gameHoursPassed;
 
-                //var relPos = this.RelativeToSpawn(this.Pos);
-                //Debug.WriteLine("--------------------------------------");
-                //Debug.WriteLine("location:" + relPos.X + "," + relPos.Y + "," + relPos.Z);
-                //Debug.WriteLine("Updating in:" + updatingInHours + " hours");
-
                 if (updatingInHours < 0)
                 {
-                    // JHR
-                    /*
-                    var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) as BlockTreeHollowGrown;
-                    */
-                    // END JHR
-
                     try
                     {
                         var uf = new TreeHollows();
-
-                        // JHR
-                        /*
-                        uf.AddItemStacks(this, uf.MakeItemStacks(block.FirstCodePart(1), this.Api as ICoreServerAPI));
-                        */
                         uf.AddItemStacks(this, uf.MakeItemStacks(this.Block, this.Api as ICoreServerAPI));
-                        // END JHR
-
                         this.MarkDirty();
                     }
                     catch
                     {
                         // WHY DOES THIS SOMETIMES FAIL IN MULTIPLAYER?
                     }
-                    // force reset the timer if we end up here for some reason - added in 3.2.9
+
                     this.lastEmptied = this.Api.World.Calendar.TotalHours;
                     this.MarkDirty();
                 }
             }
         }
+
 
 
         internal bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
@@ -149,8 +127,9 @@ namespace PrimitiveSurvival.ModSystem
                         {
                             if (this.TryPut(playerSlot, blockSel))
                             {
-                                var sound = this.Block?.Sounds?.Place;
-                                this.Api.World.PlaySoundAt(sound ?? new AssetLocation("game:sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
+                                var sound = this.Block.Sounds.Place;
+                                Api.World.PlaySoundAt(sound, this.Pos.X, this.Pos.Y, this.Pos.Z, 0, null);
+                                //this.Api.World.PlaySoundAt(sound ?? new AssetLocation("game:sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
                                 return true;
                             }
                         }
@@ -251,29 +230,33 @@ namespace PrimitiveSurvival.ModSystem
             if (index == -1)
             { return false; } //inventory empty
 
-            var stack = this.inventory[index].TakeOut(1);
-            if (byPlayer.InventoryManager.TryGiveItemstack(stack))
+            if (!this.inventory[index].Empty)
             {
-                if (index == 0) //last slot emptied
+                var stack = this.inventory[index].TakeOut(1);
+                if (byPlayer.InventoryManager.TryGiveItemstack(stack))
                 {
-                    //reset the lastEmptied timer
-                    //Debug.WriteLine("----EMPTIED");
-                    this.lastEmptied = this.Api.World.Calendar.TotalHours;
-                    this.MarkDirty();
+                    if (index == 0) //last slot emptied
+                    {
+                        //reset the lastEmptied timer
+                        //Debug.WriteLine("----EMPTIED");
+                        this.lastEmptied = this.Api.World.Calendar.TotalHours;
+                        this.MarkDirty();
+                    }
+
+                    var sound = this.Block.Sounds.Place;
+                    Api.World.PlaySoundAt(sound, this.Pos.X, this.Pos.Y, this.Pos.Z, 0, null);
                 }
 
-                var sound = stack.Block?.Sounds?.Place;
-                this.Api.World.PlaySoundAt(sound ?? new AssetLocation("game:sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
-            }
+                if (stack.StackSize > 0)
+                {
+                    this.Api.World.SpawnItemEntity(stack, this.Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                }
 
-            if (stack.StackSize > 0)
-            {
-                this.Api.World.SpawnItemEntity(stack, this.Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                //this.updateMesh(index);
+                this.MarkDirty();
+                return true;
             }
-
-            //this.updateMesh(index);
-            this.MarkDirty(true);
-            return true;
+            return false;
         }
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolve)
@@ -309,7 +292,7 @@ namespace PrimitiveSurvival.ModSystem
                         var stack = this.inventory[slot].Itemstack;
                         if (stack?.Item?.Shape != null)
                         {
-                            if ((stack.Collectible as ItemWearable) == null)
+                            if ((stack.Collectible.GetCollectibleInterface<IWearableStatsSupplier>() is IWearableStatsSupplier wearableStats))
                             {
                                 this.updateMesh(slot);
                             }
@@ -325,11 +308,11 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
         {
-            MeshData mesh;
+            MeshData mesh = null;
             if (!(this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Default) is BlockTreeHollowGrown block))
             { return base.OnTesselation(mesher, tesselator); }
-            mesh = this.capi.TesselatorManager.GetDefaultBlockMesh(block); //add tree hollow
-            mesher.AddMeshData(mesh);
+           // mesh = this.capi.TesselatorManager.GetDefaultBlockMesh(block); //add tree hollow
+           // mesher.AddMeshData(mesh);
 
             //only render what is in the highest inventory slot
             var index = this.LastFilledSlot();
@@ -343,14 +326,16 @@ namespace PrimitiveSurvival.ModSystem
                         mesh = this.capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
                     }
                     else
-                    {
+                    { 
+                        //THIS IS THE PROBLEM
+
                         this.nowTesselatingObj = stack.Item;
                         //var itemPath = stack.Item.Code.Path;
                         //var itemPathPart = stack.Item.FirstCodePart(1);
                         if (stack?.Item?.Shape != null)
                         {
-                            if ((stack.Collectible as ItemWearable) == null)
-                            {
+                           // if ((stack.Collectible.GetCollectibleInterface<IWearableStatsSupplier>() is IWearableStatsSupplier wearableStats))
+                           // {
                                 if (stack?.Item != null)
                                 {
                                     try //occasional random crash but why?????
@@ -364,12 +349,12 @@ namespace PrimitiveSurvival.ModSystem
                                     catch
                                     {}
                                 }
-                            }
+                           // }
                         }
-                        else
-                        {
-                            // seeds prolly
-                            var shapeBase = "primitivesurvival:shapes/";
+                    else
+                    {
+                    // seeds prolly
+                    var shapeBase = "primitivesurvival:shapes/";
                             var shapePath = "block/trapbait"; //baited (for now)
                             var texture = tesselator.GetTextureSource(block);
                             mesh = block.GenMesh(this.Api as ICoreClientAPI, shapeBase + shapePath, texture, tesselator);
@@ -379,12 +364,18 @@ namespace PrimitiveSurvival.ModSystem
                             }
                         }
                     }
+                    
+                    
                     if (mesh != null)
                     {
                         if (block.FirstCodePart(1).Contains("base"))
-                        { mesh.Translate(new Vec3f(0f, 0.03f, 0f)); }
+                        { 
+                            mesh.Translate(new Vec3f(0f, 0.03f, 0f)); 
+                        }
                         else //up has thicker bottom
-                        { mesh.Translate(new Vec3f(0f, 0.23f, 0f)); }
+                        { 
+                            mesh.Translate(new Vec3f(0f, 0.23f, 0f)); 
+                        }
 
                         //JHR
                         if (stack.Collectible.GetBehavior<BehaviorInTreeHollowTransform>()?.Transform is ModelTransform transform)
@@ -400,8 +391,8 @@ namespace PrimitiveSurvival.ModSystem
                         mesher.AddMeshData(mesh);
                     }
                 }
-            }
-            return true;
+            } 
+            return false;
         }
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)

@@ -1,0 +1,34 @@
+[
+  {
+    "op": "add",
+    "path": "/-",
+    "value": {
+      "name": "fishingpole-bait-ps-nightcrawler",
+      "recipeGroup": 2,
+      "ingredientPattern": "P,B",
+      "shapeless": true,
+      "ingredients": {
+        "P": {
+          "type": "item",
+          "code": "fishingpole-simple-{type}",
+          "allowedVariants": [
+            "wood",
+            "bamboo"
+          ]
+        },
+        "B": {
+          "type": "item",
+          "code": "primitivesurvival:nightcrawler"
+        }
+      },
+      "width": 1,
+      "height": 2,
+      "output": {
+        "type": "item",
+        "code": "fishingpole-simple-{type}"
+      }
+    },
+    "file": "game:recipes/grid/fishinggear.json",
+    "side": "Server"
+  }
+]

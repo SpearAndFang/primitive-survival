@@ -12,6 +12,7 @@ namespace PrimitiveSurvival.ModSystem
     //using Vintagestory.GameContent;
     //using System.Diagnostics;
 
+    #nullable disable
 
     public class BlockTreeHollowPlaced : Block, ITexPositionSource
     {
@@ -280,7 +281,7 @@ namespace PrimitiveSurvival.ModSystem
             foreach (var behavior in this.BlockBehaviors)
             {
                 var handled = EnumHandling.PassThrough;
-                behavior.OnBlockBroken(world, pos, byPlayer, ref handled);
+                behavior.OnBlockBroken(world, pos, byPlayer, 1, ref handled);
                 if (handled == EnumHandling.PreventDefault)
                 { preventDefault = true; }
                 if (handled == EnumHandling.PreventSubsequent)
@@ -300,7 +301,7 @@ namespace PrimitiveSurvival.ModSystem
                         world.SpawnItemEntity(drops[i], new Vec3d(pos.X + 0.5, pos.Y + 0.5, pos.Z + 0.5), null);
                     }
                 }
-                world.PlaySoundAt(this.Sounds.GetBreakSound(byPlayer), pos.X, pos.Y, pos.Z, byPlayer);
+                world.PlaySoundAt(this.Sounds.GetBreakSound(byPlayer), pos.X, pos.Y, pos.Z, 0, byPlayer);
             }
             if (this.EntityClass != null)
             {

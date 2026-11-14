@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Common.Entities;
-
+    #nullable disable
     public class BlockWoodSupportSpikes : Block
     {
 

@@ -7,7 +7,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
-
+    #nullable disable
 
     public class BlockBombFuse : Block, IIgnitable
 

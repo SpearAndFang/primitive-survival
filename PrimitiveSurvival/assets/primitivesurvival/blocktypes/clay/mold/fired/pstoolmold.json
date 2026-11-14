@@ -1,7 +1,7 @@
 {
   "code": "pstoolmold",
-  "class": "BlockToolMold", //psblocktoolmold changed back to BlockToolMold  once the bug was fixed
-  "entityClass": "ToolMold", //psbetoolmold changed back to ToolMold once the bug was fixed
+  "class": "BlockToolMold", 
+  "entityClass": "ToolMold",
   "behaviors": [
     { "name": "Lockable" },
     { "name": "UnstableFalling" }

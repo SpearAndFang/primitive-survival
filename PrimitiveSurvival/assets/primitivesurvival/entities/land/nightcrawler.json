@@ -1,0 +1,87 @@
+{
+    "code": "nightcrawler",
+    "class": "entitynightcrawler",
+    "tags": [ "animal", "huntable", "habitat-land" ],
+    "weight": 0.1,
+    "hitboxSize": {
+        "x": 0.4,
+        "y": 0.4
+    },
+    "deadHitboxSize": {
+        "x": 0.4,
+        "y": 0.4
+    },
+    "attributes": {
+        "spawnAnimation": "dig-out"
+    },
+    "falldamage": false,
+    "eyeHeight": 0,
+    "client": {
+        "renderer": "Shape",
+        //"shape": { "base": "entity/land/earthworm" },
+        "shape": { "base": "game:entity/animal/invertebrate/earthworm" },
+        "size": 1.3,
+        "texture": { "base": "entity/land/nightcrawler" },
+        "behaviors": [
+            {
+                "code": "controlledphysics",
+                "stepHeight": 0.2
+            },
+
+            { "code": "interpolateposition" },
+            { "code": "carryable" }
+        ],
+        "animations": [
+            {
+                "code": "die",
+                "animation": "die",
+                "animationSpeed": 1,
+                "weight": 10,
+                "blendMode": "Average",
+                "triggeredBy": { "onControls": [ "dead" ] }
+            },
+            {
+                "code": "idle",
+                "animation": "idle",
+                "blendMode": "AddAverage",
+                "easeOutSpeed": 4,
+                "triggeredBy": { "defaultAnim": true }
+            },
+            {
+                "code": "walk",
+                "animation": "walk",
+                "blendMode": "Average"
+            },
+            {
+                "code": "dig-out",
+                "animation": "dig-out",
+                "blendMode": "Average",
+                "weight": 20
+            }
+        ]
+    },
+    "server": {
+        "behaviors": [
+            {
+                "code": "controlledphysics",
+                "stepHeight": 0.2
+            },
+            // { "code": "floatupwhenstuck", "onlyWhenDead": false},
+            { "code": "entitystatetags" },
+            {
+                "code": "taskai",
+                "aitasks": [
+                    {
+                        "code": "wander",
+                        "priority": 1.0,
+                        "priorityForCancel": 1.35,
+                        "movespeed": 0.0006,
+                        "animationSpeed": 0.8,
+                        "animation": "walk",
+                        "preferredLightLevel": 12
+                    }
+                ]
+            }
+        ]
+    }
+}

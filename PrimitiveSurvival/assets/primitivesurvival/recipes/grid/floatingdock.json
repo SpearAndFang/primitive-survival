@@ -24,7 +24,8 @@
         "redwood",
         "ebony",
         "walnut",
-        "purpleheart"
+        "purpleheart",
+        "aged"
       ],
       "quantity": 1
     }
@@ -32,6 +33,6 @@
   "output": {
     "type": "block",
     "code": "primitivesurvival:floatingdock-{wood}-ns",
-    "quantity": 1
+    "quantity": 3
   }
 }

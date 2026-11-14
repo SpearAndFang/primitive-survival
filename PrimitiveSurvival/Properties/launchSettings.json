@@ -2,21 +2,15 @@
   "profiles": {
     "Client": {
       "commandName": "Executable",
-      "executablePath": "$(VINTAGE_STORY)\\Vintagestory.exe",
-      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      "workingDirectory": "$(VINTAGE_STORY)",
-      "environmentVariables": {
-        "VINTAGE_STORY": "C:\\Users\\Admin\\AppData\\Roaming\\Vintagestory"
-      }
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(VINTAGE_STORY)/Vintagestory.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(VINTAGE_STORY)"
     },
     "Server": {
       "commandName": "Executable",
-      "executablePath": "$(VINTAGE_STORY)\\Vintagestory.exe",
-      "commandLineArgs": "--tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\"",
-      "workingDirectory": "$(VINTAGE_STORY)",
-      "environmentVariables": {
-        "VINTAGE_STORY": "C:\\Users\\Admin\\AppData\\Roaming\\Vintagestory"
-      }
+      "executablePath": "dotnet",
+      "commandLineArgs": "\"$(VINTAGE_STORY)/VintagestoryServer.dll\" --tracelog --addModPath \"$(ProjectDir)/bin/$(Configuration)/Mods\" --addOrigin \"$(ProjectDir)/assets\"",
+      "workingDirectory": "$(VINTAGE_STORY)"
     }
   }
 }

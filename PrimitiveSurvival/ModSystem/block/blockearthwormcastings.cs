@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using System.Collections.Generic;
     //using System.Diagnostics;
-
+    #nullable disable
     public class BlockEarthwormCastings : Block
     {
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)

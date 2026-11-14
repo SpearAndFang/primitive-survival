@@ -6,13 +6,13 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
-
+    #nullable disable
     public class BlockSpikeTrap : Block
     {
         public override void OnEntityInside(IWorldAccessor world, Entity entity, BlockPos pos)
         {
             base.OnEntityInside(world, entity, pos);
-            if (entity.Alive && entity.Class != "entityearthworm" && entity.Class != "EntityItem")
+            if (entity.Alive && entity.Class != "entitynightcrawler" && entity.Class != "EntityItem")
             {
                 float motion = (float)Math.Abs(entity.Pos.Motion.X + entity.Pos.Motion.Y + entity.Pos.Motion.Z);
                 //Debug.WriteLine(motion);

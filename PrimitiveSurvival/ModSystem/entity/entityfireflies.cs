@@ -5,7 +5,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     //using System.Diagnostics;
 
-
+    #nullable disable
     public class EntityFireflies : EntityGenericGlowingAgent
     {
         public EntityFireflies()
@@ -17,6 +17,22 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(properties, api, inChunkIndex3d);
         }
 
+
+        /*
+        //if the firefly jars are still moving then this should solve it
+        //but I dont know how to recreate it
+        public override void OnGameTick(float dt)
+        {
+            base.OnGameTick(dt);
+
+            // clear horizontal velocity instantly on ground
+            if (this.OnGround)
+            {
+                this.Pos.Motion.X = 0.0;
+                this.Pos.Motion.Z = 0.0;
+            }
+        }
+        */
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
         {
@@ -39,7 +55,7 @@ namespace PrimitiveSurvival.ModSystem
             {
                 var stack = new ItemStack(block);
                 if (!byEntity.TryGiveItemStack(stack))
-                { byEntity.World.SpawnItemEntity(stack, this.ServerPos.XYZ); }
+                { byEntity.World.SpawnItemEntity(stack, this.Pos.XYZ); }
             }
             this.World.PlaySoundAt(new AssetLocation("game:sounds/effect/latch"), this.Pos.X + 0.5, this.Pos.Y + 0.5, this.Pos.Z + 0.5, null, false, 16);
             this.Die(); //remove from the ground

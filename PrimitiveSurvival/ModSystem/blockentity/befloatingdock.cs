@@ -1,13 +1,16 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using System;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
+    using Vintagestory.API.Config;
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
     using Vintagestory.GameContent;
     //using System.Diagnostics;
 
+    #nullable disable
 
     public class BEFloatingDock : BlockEntityDisplayCase, ITexPositionSource
     {
@@ -15,6 +18,7 @@ namespace PrimitiveSurvival.ModSystem
         public ICoreServerAPI sapi;
         //public bool playerIsWalking = false;
         private bool playerIsWalking = false;
+        protected static Random rand = new Random();
 
         public BEFloatingDock() 
         {
@@ -55,27 +59,33 @@ namespace PrimitiveSurvival.ModSystem
             }
         }
 
+
+        protected virtual bool shouldPlaySound()
+        {
+            return rand.NextDouble() < 0.02;
+        }
         public void soundUpdate(float par)
         { 
             if (playerIsWalking)
             {
                 BlockSelection blockSel = new BlockSelection() { Position = this.Pos, Face = BlockFacing.UP };
-                var soundWalkLoc = Block.GetSounds(Api.World.BlockAccessor, blockSel)?.Walk;
-                if (soundWalkLoc != null)
-                {
-                    Api.World.PlaySoundAt(soundWalkLoc, this.Pos.X, this.Pos.Y, this.Pos.Z, null, (float)this.Api.World.Rand.NextDouble() * 0.5f + 0.7f, 4f, 0.5f);
-                }
-                //random creak sounds
-                var rnd = this.Api.World.Rand.Next(0,4);
-                if (rnd == 0 && IsFloating())
-                {
-                    var variant = this.Api.World.Rand.Next(1, 4);
-                    soundWalkLoc = new AssetLocation("game", "sounds/block/woodcreak_" + variant);
-                    Api.World.PlaySoundAt(soundWalkLoc, this.Pos.X, this.Pos.Y, this.Pos.Z, null, (float)this.Api.World.Rand.NextDouble() * 0.5f + 0.7f, 12f, 1f);
-                }
-                playerIsWalking = false;
+                var soundWalkLoc1 = this.Block.Sounds.Walk; // Block.GetSounds(Api.World.BlockAccessor, blockSel)?.Walk;
+                Api.World.PlaySoundAt(soundWalkLoc1, this.Pos.X, this.Pos.Y, this.Pos.Z, 0, null);
             }
+            //random creak sounds
+            //var rnd = this.Api.World.Rand.Next(0,4);
+            var variant = this.Api.World.Rand.Next(1, 4);
+            AssetLocation soundWalkLoc = new AssetLocation("game", "sounds/block/woodcreak_" + variant);
+
+            if (shouldPlaySound() && IsFloating())
+            {
+                // hmmm decreased range and volume, and chance from 25% to 1%
+                Api.World.PlaySoundAt(soundWalkLoc, this.Pos.X, this.Pos.Y, this.Pos.Z, null, (float)this.Api.World.Rand.NextDouble() * 0.5f + 0.7f, 4f, 0.85f);
+                //Api.World.PlaySoundAt(soundWalkLoc, this.Pos.X, this.Pos.Y, this.Pos.Z, null, (float)this.Api.World.Rand.NextDouble() * 0.5f + 0.7f, 12f, 1f);
+            }
+            playerIsWalking = false;
         }
+    
 
 
         public override void OnBlockPlaced(ItemStack byItemStack = null)

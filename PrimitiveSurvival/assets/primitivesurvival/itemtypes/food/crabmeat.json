@@ -1,87 +1,89 @@
 {
   "code": "crabmeat",
   "maxstacksize": 64,
-  "attributes": {
-    "inFirePitProps": {
-      "transformbytype": {
-        "*": {
-          "scale": 0.45,
-          "origin": {
-            "x": 0.5,
-            "y": 0,
-            "z": 0.5
-          },
-          "translation": {
-            "x": 0,
-            "y": 0.3,
-            "z": 0
-          },
-          "rotation": {
-            "x": -90,
-            "y": 180,
-            "z": 225
-          }
-        }
-      },
-      "useFirepitModel": "Spit"
-    },
-    "nutritionPropsWhenInMeal": {
-      "satiety": 164,
-      "foodcategory": "Protein"
-    },
-    "bakingPropertiesByType": {
-      "*-raw": {
-        "temp": 150,
-        "levelFrom": 0.0,
-        "levelTo": 0.25,
-        "startScaleY": 1.0,
-        "endScaleY": 1.0,
-        "resultCode": "primitivesurvival:crabmeat-partbaked"
-      },
-      "*-partbaked": {
-        "temp": 150,
-        "levelFrom": 0.25,
-        "levelTo": 0.5,
-        "startScaleY": 1.0,
-        "endScaleY": 1.0,
-        "resultCode": "primitivesurvival:crabmeat-cooked",
-        "initialCode": "primitivesurvival:crabmeat-raw"
-      },
-      "*-cooked": {
-        "temp": 150,
-        "levelFrom": 0.5,
-        "levelTo": 0.75,
-        "startScaleY": 1.0,
-        "endScaleY": 1.0,
-        "resultCode": "primitivesurvival:crabmeat-charred",
-        "initialCode": "primitivesurvival:crabmeat-partbaked"
-      },
-      "*-charred": {
-        "temp": 150,
-        "levelFrom": 0.75,
-        "levelTo": 1.0,
-        "startScaleY": 1.0,
-        "endScaleY": 0.9,
-        "initialCode": "primitivesurvival:crabmeat-cooked"
-      }
-    },
-    "onDisplayTransformByType": {
-      "*": {
-        "translation": {
-          "x": 0,
-          "y": -0.2,
-          "z": 0
+    "attributes": {
+        "foodTags": [ "meat" ],
+        "inFirePitProps": {
+            "transformbytype": {
+                "*": {
+                    "scale": 0.45,
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0,
+                        "z": 0.5
+                    },
+                    "translation": {
+                        "x": 0,
+                        "y": 0.3,
+                        "z": 0
+                    },
+                    "rotation": {
+                        "x": -90,
+                        "y": 180,
+                        "z": 225
+                    }
+                }
+            },
+            "useFirepitModel": "Spit"
         },
-        "scale": 0.6
-      }
+        "nutritionPropsWhenInMeal": {
+            "satiety": 164,
+            "foodcategory": "Protein"
+        },
+        "bakingPropertiesByType": {
+            "*-raw": {
+                "temp": 150,
+                "levelFrom": 0.0,
+                "levelTo": 0.25,
+                "startScaleY": 1.0,
+                "endScaleY": 1.0,
+                "resultCode": "primitivesurvival:crabmeat-partbaked"
+            },
+            "*-partbaked": {
+                "temp": 150,
+                "levelFrom": 0.25,
+                "levelTo": 0.5,
+                "startScaleY": 1.0,
+                "endScaleY": 1.0,
+                "resultCode": "primitivesurvival:crabmeat-cooked",
+                "initialCode": "primitivesurvival:crabmeat-raw"
+            },
+            "*-cooked": {
+                "temp": 150,
+                "levelFrom": 0.5,
+                "levelTo": 0.75,
+                "startScaleY": 1.0,
+                "endScaleY": 1.0,
+                "resultCode": "primitivesurvival:crabmeat-charred",
+                "initialCode": "primitivesurvival:crabmeat-partbaked"
+            },
+            "*-charred": {
+                "temp": 150,
+                "levelFrom": 0.75,
+                "levelTo": 1.0,
+                "startScaleY": 1.0,
+                "endScaleY": 0.9,
+                "initialCode": "primitivesurvival:crabmeat-cooked"
+            }
+        },
+        "onDisplayTransformByType": {
+            "*": {
+                "translation": {
+                    "x": 0,
+                    "y": -0.2,
+                    "z": 0
+                },
+                "scale": 0.6
+            }
+        },
+        "inPiePropertiesByType": {
+            "*-raw": {
+                "texture": "game:block/food/pie/fill-crab",
+                "partType": "Filling",
+                "mixingCodes": [ "potpie" ]
+            }
+        }
     },
-    "inPiePropertiesByType": {
-      "*-raw": {
-        "texture": "game:block/food/pie/fill-crab",
-        "partType": "Filling"
-      }
-    }
-  },
   "variantgroups": [
     {
       "code": "state",

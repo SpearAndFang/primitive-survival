@@ -13,6 +13,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Server;
     //using System.Diagnostics;
 
+    #nullable disable
 
     public class BETreeHollowPlaced : BlockEntityOpenableContainer //, IRotatable
     {
@@ -150,11 +151,11 @@ namespace PrimitiveSurvival.ModSystem
 
                 if (block.Attributes["typedOpenSound"][this.type].Exists)
                 {
-                    this.OpenSound = AssetLocation.Create(block.Attributes["typedOpenSound"][this.type].AsString(this.OpenSound.ToShortString()), this.Block.Code.Domain);
+                    this.OpenSound = block.Attributes["typedOpenSound"][type].AsObject<SoundAttributes?>(null, Block.Code.Domain, true) ?? this.OpenSound;
                 }
                 if (block.Attributes["typedCloseSound"][this.type].Exists)
                 {
-                    this.CloseSound = AssetLocation.Create(block.Attributes["typedCloseSound"][this.type].AsString(this.CloseSound.ToShortString()), this.Block.Code.Domain);
+                    this.CloseSound = block.Attributes["typedCloseSound"][type].AsObject<SoundAttributes?>(null, Block.Code.Domain, true) ?? this.CloseSound;
                 }
             }
 

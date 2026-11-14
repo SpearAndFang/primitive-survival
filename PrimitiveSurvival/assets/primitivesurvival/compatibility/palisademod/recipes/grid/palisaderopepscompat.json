@@ -4,13 +4,13 @@
     "ingredients": {
       "H": {
         "type": "item",
-        "code": "game:hammer-*",
+        "tags": ["tool-hammer"],
         "isTool": true,
         "toolDurabilityCost": 4
       },
       "A": {
         "type": "item",
-        "code": "game:axe-*",
+        "tags": ["tool-axe"],
         "isTool": true,
         "toolDurabilityCost": 4
       },
@@ -62,13 +62,13 @@
     "ingredients": {
       "H": {
         "type": "item",
-        "code": "game:hammer-*",
+        "tags": ["tool-hammer"],
         "isTool": true,
         "toolDurabilityCost": 4
       },
       "A": {
         "type": "item",
-        "code": "game:axe-*",
+        "tags": ["tool-axe"],
         "isTool": true,
         "toolDurabilityCost": 4
       },

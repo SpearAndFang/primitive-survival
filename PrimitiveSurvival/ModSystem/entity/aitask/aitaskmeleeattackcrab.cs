@@ -13,6 +13,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     //using System.Diagnostics;
 
+    #nullable disable
 
     public class AiTaskMeleeAttackCrab : AiTaskMeleeAttack
     {
@@ -53,27 +54,18 @@ namespace PrimitiveSurvival.ModSystem
                 //if (this.whenInEmotionState != null && !this.entity.HasEmotionState(this.whenInEmotionState))
 
                 // 3.9 whenInEmotionState -> WhenInEmotionState
-                if (this.WhenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.WhenInEmotionState) != true)
+                if (this.WhenInEmotionStates != null)
                 {
                     return false;
                 }
 
-                // 1.16
-                //if (this.whenNotInEmotionState != null && this.entity.HasEmotionState(this.whenNotInEmotionState))
-
-                // 3.9 whenInEmotionState -> WhenInEmotionState
-                if (this.WhenInEmotionState != null && this.bhEmo?.IsInEmotionState(this.WhenNotInEmotionState) == true)
-                {
-                    return false;
-                }
-
-                var pos = this.entity.ServerPos.XYZ.Add(0, this.entity.CollisionBox.Y2 / 2, 0).Ahead(this.entity.CollisionBox.XSize / 2, 0, this.entity.ServerPos.Yaw);
+                var pos = this.entity.Pos.XYZ.Add(0, this.entity.CollisionBox.Y2 / 2, 0).Ahead(this.entity.CollisionBox.XSize / 2, 0, this.entity.Pos.Yaw);
 
                 var generation = this.entity.WatchedAttributes.GetInt("generation", 0);
                 var fearReductionFactor = Math.Max(0f, (this.tamingGenerations - generation) / this.tamingGenerations);
 
                 // 3.9 whenInEmotionState -> WhenInEmotionState
-                if (this.WhenInEmotionState != null)
+                if (this.WhenInEmotionStates != null)
                 {
                     fearReductionFactor = 1;
                 }
@@ -132,12 +124,12 @@ namespace PrimitiveSurvival.ModSystem
 
         public override bool ContinueExecute(float dt)
         {
-            var own = this.entity.ServerPos;
-            var his = this.targetEntity.ServerPos;
+            var own = this.entity.Pos;
+            var his = this.targetEntity.Pos;
             var desiredYaw = (float)Math.Atan2(his.X - own.X, his.Z - own.Z);
-            var yawDist = GameMath.AngleRadDistance(this.entity.ServerPos.Yaw, desiredYaw);
-            this.entity.ServerPos.Yaw += GameMath.Clamp(yawDist, -this.curTurnRadPerSec * dt * GlobalConstants.OverallSpeedMultiplier, this.curTurnRadPerSec * dt * GlobalConstants.OverallSpeedMultiplier);
-            this.entity.ServerPos.Yaw %= GameMath.TWOPI;
+            var yawDist = GameMath.AngleRadDistance(this.entity.Pos.Yaw, desiredYaw);
+            this.entity.Pos.Yaw += GameMath.Clamp(yawDist, -this.curTurnRadPerSec * dt * GlobalConstants.OverallSpeedMultiplier, this.curTurnRadPerSec * dt * GlobalConstants.OverallSpeedMultiplier);
+            this.entity.Pos.Yaw %= GameMath.TWOPI;
 
             if (this.lastCheckOrAttackMs + this.damagePlayerAtMs > this.entity.World.ElapsedMilliseconds)
             {
@@ -181,8 +173,8 @@ namespace PrimitiveSurvival.ModSystem
 
         private bool HasDirectContact(Entity targetEntity)
         {
-            var targetBox = targetEntity.CollisionBox.ToDouble().Translate(targetEntity.ServerPos.X, targetEntity.ServerPos.Y, targetEntity.ServerPos.Z);
-            var pos = this.entity.ServerPos.XYZ.Add(0, this.entity.CollisionBox.Y2 / 2, 0).Ahead(this.entity.CollisionBox.XSize / 2, 0, this.entity.ServerPos.Yaw);
+            var targetBox = targetEntity.CollisionBox.ToDouble().Translate(targetEntity.Pos.X, targetEntity.Pos.Y, targetEntity.Pos.Z);
+            var pos = this.entity.Pos.XYZ.Add(0, this.entity.CollisionBox.Y2 / 2, 0).Ahead(this.entity.CollisionBox.XSize / 2, 0, this.entity.Pos.Yaw);
             var dist = targetBox.ShortestDistanceFrom(pos);
             var vertDist = Math.Abs(targetBox.ShortestVerticalDistanceFrom(pos.Y));
             if (dist >= this.minDist || vertDist >= this.minVerDist)
@@ -190,9 +182,9 @@ namespace PrimitiveSurvival.ModSystem
                 return false;
             }
 
-            var rayTraceFrom = this.entity.ServerPos.XYZ;
+            var rayTraceFrom = this.entity.Pos.XYZ;
             rayTraceFrom.Y += 1 / 32f;
-            var rayTraceTo = targetEntity.ServerPos.XYZ;
+            var rayTraceTo = targetEntity.Pos.XYZ;
             rayTraceTo.Y += 1 / 32f;
             var directContact = false;
             this.entity.World.RayTraceForSelection(this, rayTraceFrom, rayTraceTo, ref this.blockSel, ref this.entitySel);

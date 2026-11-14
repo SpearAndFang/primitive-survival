@@ -4,7 +4,7 @@
     "ingredients": {
       "C": {
         "type": "item",
-        "code": "game:chisel-*",
+         "tags": ["tool-chisel"],
         "isTool": true
       },
       "I": {
@@ -26,7 +26,7 @@
     "ingredients": {
       "C": {
         "type": "item",
-        "code": "game:chisel-*",
+         "tags": ["tool-chisel"],
         "isTool": true
       },
       "I": {
@@ -48,7 +48,7 @@
     "ingredients": {
       "C": {
         "type": "item",
-        "code": "game:chisel-*",
+         "tags": ["tool-chisel"],
         "isTool": true
       },
       "I": {

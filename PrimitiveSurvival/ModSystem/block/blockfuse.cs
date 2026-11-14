@@ -8,7 +8,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Client;
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
-
+    #nullable disable
 
     public class BlockFuse : Block, IIgnitable
     {

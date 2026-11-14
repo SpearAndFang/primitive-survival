@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using System.Diagnostics;
     using Vintagestory.API.Common;
     using Vintagestory.API.MathTools;
-
+    #nullable disable
 
     public class ItemCordage : Item
     {
@@ -97,7 +97,7 @@ namespace PrimitiveSurvival.ModSystem
 
         public virtual int GetLineLength(IBlockAccessor blockAccessor, BlockSelection blockDest, BlockFacing facing)
         {
-            var maxLength = 20;
+            var maxLength = 41; //40 actually apparently (also see the other 41 below)
             var count = 0;
             var foundEnd = false;
             var testpos = blockDest.Position.Copy();
@@ -174,7 +174,7 @@ namespace PrimitiveSurvival.ModSystem
                 { linelength = 999; }
                 if (linelength > 0)
                 {
-                    if (linelength > 20)
+                    if (linelength > 41)
                     { linelength = 1; } //every once in a while linelength loses its s*&t maybe this prevents that???
                     var blockSize = BlockWidth(blockAccessor, currPos);
                     string newPath;

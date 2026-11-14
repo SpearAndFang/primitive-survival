@@ -6,6 +6,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.GameContent;
 
+    #nullable disable
 
     public class EntityWillowisp : EntityGenericGlowingAgent
     {
@@ -55,7 +56,7 @@ namespace PrimitiveSurvival.ModSystem
 
             if (!this.AnimManager.ActiveAnimationsByAnimCode.ContainsKey("feed") && !this.AnimManager.ActiveAnimationsByAnimCode.ContainsKey("rest"))
             {
-                if (this.ServerPos.Y < this.Pos.Y - 0.25 && !this.Collided)
+                if (this.Pos.Y < this.Pos.Y - 0.25 && !this.Collided)
                 {
                     this.SetAnimation("glide", 1);
                 }
@@ -70,21 +71,21 @@ namespace PrimitiveSurvival.ModSystem
 
             if (this.cnt++ > 30)
             {
-                float affectedness = this.World.BlockAccessor.GetLightLevel(this.SidedPos.XYZ.AsBlockPos, EnumLightLevelType.OnlySunLight) < 14 ? 1 : 0;
-                this.windMotion = this.Api.ModLoader.GetModSystem<WeatherSystemBase>().WeatherDataSlowAccess.GetWindSpeed(this.SidedPos.XYZ * affectedness);
+                float affectedness = this.World.BlockAccessor.GetLightLevel(this.Pos.XYZ.AsBlockPos, EnumLightLevelType.OnlySunLight) < 14 ? 1 : 0;
+                this.windMotion = this.Api.ModLoader.GetModSystem<WeatherSystemBase>().WeatherDataSlowAccess.GetWindSpeed(this.Pos.XYZ * affectedness);
                 this.cnt = 0;
             }
 
             if (this.AnimManager.ActiveAnimationsByAnimCode.ContainsKey("fly"))
             {
-                this.SidedPos.X += Math.Max(0, (this.windMotion - 0.2) / 20.0);
+                this.Pos.X += Math.Max(0, (this.windMotion - 0.2) / 20.0);
             }
 
-            if (this.ServerPos.SquareDistanceTo(this.Pos.XYZ) > 0.01)
+            if (this.Pos.SquareDistanceTo(this.Pos.XYZ) > 0.01)
             {
-                var desiredYaw = (float)Math.Atan2(this.ServerPos.X - this.Pos.X, this.ServerPos.Z - this.Pos.Z);
+                var desiredYaw = (float)Math.Atan2(this.Pos.X - this.Pos.X, this.Pos.Z - this.Pos.Z);
 
-                var yawDist = GameMath.AngleRadDistance(this.SidedPos.Yaw, desiredYaw);
+                var yawDist = GameMath.AngleRadDistance(this.Pos.Yaw, desiredYaw);
                 this.Pos.Yaw += GameMath.Clamp(yawDist, -35 * dt, 35 * dt);
                 this.Pos.Yaw %= GameMath.TWOPI;
             }

@@ -9,7 +9,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
     //using System.Diagnostics;
-
+    #nullable disable
 
     public class BlockFirework : Block, IIgnitable
     {

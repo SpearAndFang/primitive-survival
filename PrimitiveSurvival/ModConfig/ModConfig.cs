@@ -3,10 +3,6 @@ namespace PrimitiveSurvival.ModConfig
     public class ModConfig
     {
         public static ModConfig Loaded { get; set; } = new ModConfig();
-        public bool AltarDropsFish { get; set; } = true;
-        public bool AltarDropsGold { get; set; } = true;
-        public bool AltarDropsVegetables { get; set; } = true;
-
         public int DeadfallBaitStolenPercent { get; set; } = 10;
         public float DeadfallMaxAnimalHeight { get; set; } = 0.7f;
         public int DeadfallMaxDamageSet { get; set; } = 10;
@@ -23,7 +19,7 @@ namespace PrimitiveSurvival.ModConfig
         public int FishChanceOfEggsPercent { get; set; } = 20;
         public int FishChunkDepletionRate { get; set; } = 10;
         public int FishChunkRepletionRate { get; set; } = 1;
-        public int FishChunkRepletionMinutes { get; set; } = 30;
+        public int FishChunkRepletionMinutes { get; set; } = 20;
         public int FishEggsChunkRepletionRate { get; set; } = 10;
         public int FishChunkMaxDepletionPercent { get; set; } = 95;
         public int FurrowedLandUpdateFrequency { get; set; } = 120;
@@ -33,25 +29,16 @@ namespace PrimitiveSurvival.ModConfig
         public double FurrowedLandMinMoistureFar { get; set; } = 0.6;
 
         public int LimbTrotlineCatchPercent { get; set; } = 1;
-        public int LimbTrotlineBaitedCatchPercent { get; set; } = 5;
-        public int LimbTrotlineLuredCatchPercent { get; set; } = 5;
-        public int LimbTrotlineBaitedLuredCatchPercent { get; set; } = 10;
+        public int LimbTrotlineBaitedCatchPercent { get; set; } = 3;
+        public int LimbTrotlineLuredCatchPercent { get; set; } = 3;
+        public int LimbTrotlineBaitedLuredCatchPercent { get; set; } = 6;
         public int LimbTrotlineBaitStolenPercent { get; set; } = 5;
         public double LimbTrotlineUpdateMinutes { get; set; } = 2.4;
         public int LimbTrotlineRotRemovedPercent { get; set; } = 10;
-        public bool MetalBucketDisabled { get; set; } = false;
-        public int MonkeyBridgeMaxLength { get; set; } = 60;
-        public bool ParticulatorEnabled { get; set; } = false;
-        public int ParticulatorMaxParticlesQuantity { get; set; } = 5000;
-        public int ParticulatorMaxParticlesSize { get; set; } = 255;
-        public bool ParticulatorHideCodeTabs { get; set; } = false;
-        public int PipeUpdateFrequency { get; set; } = 130;
-        public double PipeBlockageChancePercent { get; set; } = 0.02;
-        public double PipeMinMoisture { get; set; } = 0.92;
+        public int MonkeyBridgeMaxLength { get; set; } = 120;
         public bool RaftEnabled { get; set; } = true;
-        public float RaftWaterSpeedModifier { get; set; } = 0.2f;
-        public float RaftFlotationModifier { get; set; } = 0.03f;
-        public bool RelicsDisabled { get; set; } = false;
+        public float RaftWaterSpeedModifier { get; set; } = 0.1f;
+        public float RaftFlotationModifier { get; set; } = 0.025f;
         public bool ShowModNameInHud { get; set; } = true;
         public bool ShowModNameInGuis { get; set; } = false;
         public int SnareBaitStolenPercent { get; set; } = 10;
@@ -78,11 +65,11 @@ namespace PrimitiveSurvival.ModConfig
         public int TreeHollowsMaxPerChunk { get; set; } = 1;
         public float TreeHollowsSpawnProbability { get; set; } = 0.15f;
         public double TreeHollowsUpdateMinutes { get; set; } = 360.0;
-        public int WeirTrapCatchPercent { get; set; } = 3;
+        public int WeirTrapCatchPercent { get; set; } = 2;
         public int WeirTrapEscapePercent { get; set; } = 15;
-        public double WeirTrapUpdateMinutes { get; set; } = 2.6;
+        public double WeirTrapUpdateMinutes { get; set; } = 5.0;
         public int WeirTrapRotRemovedPercent { get; set; } = 10;
-        public int WormFoundPercentRock { get; set; } = 3;
-        public int WormFoundPercentStickFlint { get; set; } = 25;
+        public int WormFoundPercentRock { get; set; } = 1;
+        public int WormFoundPercentStickFlint { get; set; } = 10;
     }
 }

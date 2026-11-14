@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Common.Entities;
     //using System.Diagnostics;
-
+    #nullable disable
     public class BlockMonkeyBridge : Block
     {
 

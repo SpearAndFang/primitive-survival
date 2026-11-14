@@ -1,14 +1,17 @@
 namespace PrimitiveSurvival.ModSystem
 {
+    using Vintagestory.API;
     using Vintagestory.API.Client;
     using Vintagestory.API.Common;
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Util;
-
+    
+    #nullable disable
     public class RightClickPickupRaft : BlockBehavior
     {
-        private AssetLocation pickupSound;
+        [DocumentAsJson("Optional", "None")]
+        SoundAttributes pickupSound;
         public RightClickPickupRaft(Block block) : base(block)
         {
         }
@@ -17,8 +20,12 @@ namespace PrimitiveSurvival.ModSystem
         public override void Initialize(JsonObject properties)
         {
             base.Initialize(properties);
-            var strloc = this.block.Attributes?["placeSound"].AsString();
-            this.pickupSound = strloc == null ? null : AssetLocation.Create(strloc, this.block.Code.Domain);
+            //var strloc = this.block.Attributes?["placeSound"].AsString();
+            //this.pickupSound = strloc == null ? null : AssetLocation.Create(strloc, this.block.Code.Domain);
+            JsonObject jsonSound = properties["sound"];
+            if (!jsonSound.Exists) jsonSound = block.Attributes?["placeSound"];
+            pickupSound = jsonSound?.AsObject<SoundAttributes?>(null, block.Code.Domain, true) ?? new SoundAttributes();
+
         }
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
@@ -41,7 +48,7 @@ namespace PrimitiveSurvival.ModSystem
                         world.BlockAccessor.SetBlock(0, blockSel.Position);
                         world.BlockAccessor.TriggerNeighbourBlockUpdate(blockSel.Position);
 
-                        world.PlaySoundAt(this.pickupSound ?? this.block.GetSounds(world.BlockAccessor, blockSel).Place, byPlayer, null); //1.20
+                        world.PlaySoundAt(pickupSound.Location != null ? pickupSound : block.GetSounds(world.BlockAccessor, blockSel).Place, byPlayer, null); 
                         //world.PlaySoundAt(this.pickupSound ?? this.block.GetSounds(world.BlockAccessor, blockSel.Position).Place, byPlayer, null);
 
                         handling = EnumHandling.PreventDefault;

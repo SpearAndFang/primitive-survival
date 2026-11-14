@@ -8,7 +8,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
-
+    #nullable disable
     public class BlockSnare : Block
     {
         protected static readonly Random Rnd = new Random();

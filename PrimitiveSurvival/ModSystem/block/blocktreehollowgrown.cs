@@ -10,7 +10,7 @@ namespace PrimitiveSurvival.ModSystem
     //using Vintagestory.API.Datastructures;
 
     //using Vintagestory.GameContent;
-
+    #nullable disable
     public class BlockTreeHollowGrown : Block
     {
         private WorldInteraction[] interactions;

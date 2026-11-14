@@ -7,7 +7,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     using PrimitiveSurvival.ModConfig;
 
-
+    #nullable disable
     public class EntityGenericGlowingAgent : EntityAgent
     {
         private float time;
@@ -26,7 +26,7 @@ namespace PrimitiveSurvival.ModSystem
             base.Initialize(properties, api, inChunkIndex3d);
             var rnd = api.World.Rand.Next(0, 3);
             float d = rnd / 10;
-            this.offset = this.SidedPos.X + this.SidedPos.Y + this.SidedPos.Z;
+            this.offset = this.Pos.X + this.Pos.Y + this.Pos.Z;
             this.strobeFrequency = properties.Attributes["strobeFrequency"].AsFloat();
             this.strobeFrequencyWithOffset = this.strobeFrequency + d;
             this.minLightLevel = properties.Attributes["minLightLevel"].AsFloat();
@@ -52,7 +52,7 @@ namespace PrimitiveSurvival.ModSystem
             base.OnGameTick(dt);
             if (this.strobeFrequency <= 0f)
             { return; }
-            this.tmp.Set(this.ServerPos.X, this.ServerPos.Y + this.SelectionBox.Y1 + (this.SelectionBox.Y2 / 2), this.ServerPos.Z);
+            this.tmp.Set(this.Pos.X, this.Pos.Y + this.SelectionBox.Y1 + (this.SelectionBox.Y2 / 2), this.Pos.Z);
             var entities = this.World.GetEntitiesAround(this.tmp, 5.0f, 5.0f, null);
             if (entities.Length <= 1 && this.FirstCodePart() == "fireflies")
             { return; }

@@ -6,10 +6,12 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
 
+    #nullable disable
+
     public class BEFireflies : BlockEntity
     {
         private readonly int flowersRequired = 10;
-        private readonly int tempRequired = 25; //degrees C
+        private readonly int tempRequired = 15; //degrees C
         private readonly int hourRequired = 3; // midnight to 3am 
         private readonly int listenerModifier = 30000; // 30000
         private readonly int firefliesCatchPercent = 10;
@@ -80,7 +82,7 @@ namespace PrimitiveSurvival.ModSystem
             if (this.quantityNearbyFlowers >= this.flowersRequired)
             {
                 //check for nighttime and temperature
-                var conds = this.Api.World.BlockAccessor.GetClimateAt(this.Pos, EnumGetClimateMode.NowValues); //small aside - get the temperature and kill the worm if necessary
+                var conds = this.Api.World.BlockAccessor.GetClimateAt(this.Pos, EnumGetClimateMode.NowValues); //small aside - get the temperature 
                 var hourOfDay = this.Api.World.Calendar.HourOfDay;
 
                 //Debug.WriteLine("flowers:" + this.quantityNearbyFlowers);
@@ -105,13 +107,13 @@ namespace PrimitiveSurvival.ModSystem
                     var entity = this.Api.World.ClassRegistry.CreateEntity(type);
                     if (entity != null)
                     {
-                        entity.ServerPos.X = this.Pos.X + 0.5f;
-                        entity.ServerPos.Y = this.Pos.Y;
-                        entity.ServerPos.Z = this.Pos.Z + 0.5f;
+                        entity.Pos.X = this.Pos.X + 0.5f;
+                        entity.Pos.Y = this.Pos.Y;
+                        entity.Pos.Z = this.Pos.Z + 0.5f;
                         if (thisBlockPath.Contains("angled"))
-                        { entity.ServerPos.Yaw = 0.78f; }
-                        entity.Pos.SetFrom(entity.ServerPos);
-                        entity.PositionBeforeFalling.Set(entity.ServerPos.X, entity.ServerPos.Y, entity.ServerPos.Z);
+                        { entity.Pos.Yaw = 0.78f; }
+                        entity.Pos.SetFrom(entity.Pos);
+                        entity.PositionBeforeFalling.Set(entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
                         entity.Attributes.SetString("origin", "playerplaced");
                         this.Api.World.BlockAccessor.SetBlock(0, this.Pos);
                         this.Api.World.SpawnEntity(entity);

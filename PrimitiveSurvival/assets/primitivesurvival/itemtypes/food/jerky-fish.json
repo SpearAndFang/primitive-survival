@@ -1,45 +1,46 @@
 {
   "code": "jerky-fish",
   "maxstacksize": 256,
-  "attributes": {
-    "inContainerTextureByType": {
-      "*-raw": { "base": "game:block/wood/barrel/{type}-bushmeat" },
-      "*-cured": { "base": "game:block/wood/barrel/{type}-bushmeat" }
-    },
-    "inFirePitProps": {
-      "transform": {
-        "scale": 1,
-        "origin": {
-          "x": 0.5,
-          "y": 0.0425,
-          "z": 0.5
+    "attributes": {
+        "foodTags": [ "meat" ],
+        "inContainerTextureByType": {
+            "*-raw": { "base": "game:block/wood/barrel/{type}-bushmeat" },
+            "*-cured": { "base": "game:block/wood/barrel/{type}-bushmeat" }
         },
-        "translation": {
-          "x": -0.03125,
-          "y": 0.225,
-          "z": 0.05
+        "inFirePitProps": {
+            "transform": {
+                "scale": 1,
+                "origin": {
+                    "x": 0.5,
+                    "y": 0.0425,
+                    "z": 0.5
+                },
+                "translation": {
+                    "x": -0.03125,
+                    "y": 0.225,
+                    "z": 0.05
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 45,
+                    "z": 90
+                }
+            },
+            "useFirepitModel": "Spit"
         },
-        "rotation": {
-          "x": 0,
-          "y": 45,
-          "z": 90
+        "nutritionPropsWhenInMeal": {
+            "satiety": 36,
+            "foodcategory": "Protein"
+        },
+        "handbook": {
+            "extraSections": [
+                {
+                    "title": "handbook-item-sources",
+                    "text": "Obtained by harvesting fish"
+                }
+            ]
         }
-      },
-      "useFirepitModel": "Spit"
     },
-    "nutritionPropsWhenInMeal": {
-      "satiety": 36,
-      "foodcategory": "Protein"
-    },
-    "handbook": {
-      "extraSections": [
-        {
-          "title": "handbook-item-sources",
-          "text": "Obtained by harvesting fish"
-        }
-      ]
-    }
-  },
   "variantgroups": [
     {
       "code": "type",
@@ -48,7 +49,7 @@
   ],
   "shape": { "base": "item/food/fish/jerky-fish" },
   "textures": {
-    "fish": { "base": "primitivesurvival:item/fishing/fillet-{type}" }
+    "fish": { "base": "primitivesurvival:item/fishing/jerky-{type}" }
   },
   "creativeinventory": {
     "general": [ "*" ],

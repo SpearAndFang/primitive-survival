@@ -7,7 +7,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Datastructures;
     using Vintagestory.API.MathTools;
     using Vintagestory.API.Server;
-
+    #nullable disable
     public class BEBombFuse : BlockEntity
     {
         private float remainingSeconds = 0;
@@ -75,8 +75,11 @@ namespace PrimitiveSurvival.ModSystem
                 });
             }
 
-            this.blastRadius = this.Block.Attributes["blastRadius"].AsInt(4);
-            this.injureRadius = this.Block.Attributes["injureRadius"].AsInt(8);
+            this.blastRadius = this.Block.Attributes?["blastRadius"]?.AsInt(4) ?? 4;
+            //this.blastRadius = this.Block.Attributes["blastRadius"].AsInt(4);
+            this.injureRadius = this.Block.Attributes?["injureRadius"]?.AsInt(8) ?? 10;
+            //this.injureRadius = this.Block.Attributes["injureRadius"].AsInt(8);
+
             if (this.Block.Code.Path == "rockblastingbomb")
             {
                 this.blastType = (EnumBlastType)this.Block.Attributes["blastType"].AsInt((int)EnumBlastType.RockBlast);
@@ -84,7 +87,7 @@ namespace PrimitiveSurvival.ModSystem
             }
             else
             {
-                this.blastType = (EnumBlastType)this.Block.Attributes["blastType"].AsInt((int)EnumBlastType.OreBlast);
+                this.blastType = (EnumBlastType)(this.Block.Attributes?["blastType"]?.AsInt((int)EnumBlastType.OreBlast) ?? (int)EnumBlastType.OreBlast);
                 //Debug.WriteLine("ORE");
             }
         }

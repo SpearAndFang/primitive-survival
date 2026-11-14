@@ -3,7 +3,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     using Vintagestory.API.Config;
     using PrimitiveSurvival.ModConfig;
-
+    #nullable disable
     public class EntityPSAgent : EntityAgent
     {
         public EntityPSAgent()

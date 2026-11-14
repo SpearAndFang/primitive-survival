@@ -1,9 +1,0 @@
-[
-  {
-    "file": "game:itemtypes/resource/hide",
-    "side": "server",
-    "op": "add",
-    "path": "/class",
-    "value": "itempelt"
-  }
-]

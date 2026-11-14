@@ -36,7 +36,7 @@
       "treeHollowContentsByHollowType": {
         "base": [
           {
-            "code": "primitivesurvival:item-earthworm",
+            "code": "primitivesurvival:item-nightcrawler",
             "amount": 1
           },
           {
@@ -325,10 +325,6 @@
           },
           {
             "code": "item-gear-rusty",
-            "amount": 1
-          },
-          {
-            "code": "item-gear-temporal",
             "amount": 1
           },
           {

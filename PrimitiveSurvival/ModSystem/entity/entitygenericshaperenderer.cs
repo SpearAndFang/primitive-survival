@@ -5,7 +5,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common.Entities;
     using Vintagestory.GameContent;
     //using System.Diagnostics;
-
+    #nullable disable
     public class EntityGenericShapeRenderer : EntityShapeRenderer, ITexPositionSource
     {
         
@@ -22,7 +22,7 @@ namespace PrimitiveSurvival.ModSystem
             this.modSystem = api.ModLoader.GetModSystem<PrimitiveSurvivalSystem>();
 
             //initialize lighting
-            this.offset = entity.SidedPos.X + entity.SidedPos.Y + entity.SidedPos.Z;
+            this.offset = entity.Pos.X + entity.Pos.Y + entity.Pos.Z;
             this.strobeFrequency = this.entity.Properties.Attributes["strobeFrequency"].AsFloat();
         }
 

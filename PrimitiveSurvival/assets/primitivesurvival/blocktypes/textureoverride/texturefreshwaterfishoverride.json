@@ -1,0 +1,43 @@
+{
+  "code": "freshwaterfishoverride",
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+       "alewife-shad",
+      "chub-river",
+      "crappie-black",
+      "crappie-white",
+      "perch-european",
+      "perch-yellow",
+      "piranha-black",
+      "piranha-red",
+      "trout-brown",
+      "trout-rainbow",
+      "bass-largemouth",
+      "bass-smallmouth",
+      "carp-common",
+      "carp-grass",
+      "catfish-blue",
+      "catfish-channel",
+      "pickerel-chain",
+      "salmon-coho",
+      "tilapia-nile",
+      "tilapia-red",
+      "walleye-common",
+      "pike-northern",
+      "arapaima-arapaima",
+      "arapaima-gigas",
+      "sheatfish-black",
+      "sheatfish-white"
+      ]
+    }
+  ],
+    "texturesbytype": {
+    "*": {
+      "skin": { "base": "game:entity/animal/fish/freshwater/{type}-adult*" }
+    }
+  },
+  "creativeinventory": {
+  }
+}

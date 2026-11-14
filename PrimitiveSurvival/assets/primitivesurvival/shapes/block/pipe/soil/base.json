@@ -11,7 +11,7 @@
     "fertcompost": "game:block/soil/fertcompost",
     "water": "game:block/liquid/water",
     "oak": "game:block/wood/debarked/oak",
-    "string": "game:item/tool/material/linen",
+    "string": "game:block/linen",
     "bundle": "game:block/hay/bamboo-top",
     "rot": "game:item/resource/rot/rot-solids",
     "base": "game:item/resource/rot/rot-spill"

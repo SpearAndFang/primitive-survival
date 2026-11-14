@@ -1,5 +1,5 @@
 {
-  "code": "fishfillet",
+  "code": "fishfillet", //obsolete
   "maxstacksize": 64,
   "attributes": {
     "inFirePitProps": {
@@ -89,15 +89,7 @@
     }
   ],
   "shape": { "base": "item/fishing/fish-fillet" },
-  "texturesbytype": {
-    "*": {
-      "normal": { "base": "item/fishing/fillet-{state}" }
-    }
-  },
   "creativeinventory": {
-    "general": [ "*" ],
-    "items": [ "*" ],
-    "primitive": [ "*" ]
   },
   "nutritionPropsByType": {
     "*-partbaked": {

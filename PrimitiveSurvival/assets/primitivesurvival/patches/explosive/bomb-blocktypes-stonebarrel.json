@@ -1,0 +1,30 @@
+[
+    {
+        "op": "replace",
+        "path": "/class",
+        "value": "blockbombfuse",
+        "file": "bomb:blocktypes/stonebarrel.json",
+        "side": "Server",
+        "dependsOn": [
+            { "modid": "explosive" },
+            {
+                "modid": "p1explosives",
+                "invert": true
+            }
+        ]
+    },
+    {
+        "op": "replace",
+        "path": "/entityClass",
+        "value": "bebombfuse",
+        "file": "bomb:blocktypes/stonebarrel.json",
+        "side": "Server",
+        "dependsOn": [
+            { "modid": "explosive" },
+            {
+                "modid": "p1explosives",
+                "invert": true
+            }
+        ]
+    }
+]

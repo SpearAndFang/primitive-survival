@@ -4,7 +4,7 @@
     "enabled": true,
     "shapeless": true,
     "ingredients": {
-      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "K": { "type": "item",  "tags": ["tool-knife"], "isTool": true },
       "B": {
         "type": "item",
         "code": "primitivesurvival:snake-blackrat",
@@ -25,7 +25,7 @@
     "enabled": true,
     "shapeless": true,
     "ingredients": {
-      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "K": { "type": "item",  "tags": ["tool-knife"], "isTool": true },
       "B": {
         "type": "item",
         "code": "primitivesurvival:snake-chainviper",
@@ -46,7 +46,7 @@
     "enabled": true,
     "shapeless": true,
     "ingredients": {
-      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "K": { "type": "item",  "tags": ["tool-knife"], "isTool": true },
       "B": {
         "type": "item",
         "code": "primitivesurvival:snake-coachwhip",
@@ -67,7 +67,7 @@
     "enabled": true,
     "shapeless": true,
     "ingredients": {
-      "K": { "type": "item", "code": "game:knife-*", "isTool": true },
+      "K": { "type": "item",  "tags": ["tool-knife"], "isTool": true },
       "B": {
         "type": "item",
         "code": "primitivesurvival:snake-pitviper",

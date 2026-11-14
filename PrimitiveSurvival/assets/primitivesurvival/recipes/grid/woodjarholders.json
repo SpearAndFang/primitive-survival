@@ -5,7 +5,7 @@
   "ingredients": {
     "S": {
       "type": "item",
-      "code": "game:saw-*",
+       "tags": ["tool-saw"],
       "istool": "true"
     },
     "L": {

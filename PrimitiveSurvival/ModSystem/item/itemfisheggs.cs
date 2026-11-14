@@ -5,10 +5,10 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.MathTools;
     using PrimitiveSurvival.ModConfig;
     //using System.Diagnostics;
-
+    #nullable disable
     public class ItemFishEggs : Item
     {
-        //If you drop the ovulated eggs in water, replete that chunk by RepleteRate
+        //If you drop the fertile eggs in water, replete that chunk by RepleteRate
         public override void OnGroundIdle(EntityItem entityItem)
         {
             base.OnGroundIdle(entityItem);
@@ -20,8 +20,8 @@ namespace PrimitiveSurvival.ModSystem
             if (entityItem.Swimming && world.Rand.NextDouble() < 0.01 && entityItem.Itemstack.Item.LastCodePart() == "ovulated")
             {
                 //replete
-                PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.api as ICoreServerAPI, entityItem.ServerPos.AsBlockPos, -ModConfig.Loaded.FishEggsChunkRepletionRate);
-                this.GenerateWaterParticles(entityItem.ServerPos.AsBlockPos, world);
+                PrimitiveSurvivalSystem.UpdateChunkInDictionary(this.api as ICoreServerAPI, entityItem.Pos.AsBlockPos, -ModConfig.Loaded.FishEggsChunkRepletionRate);
+                this.GenerateWaterParticles(entityItem.Pos.AsBlockPos, world);
                 entityItem.Die(EnumDespawnReason.Removed, null);
             }
         }

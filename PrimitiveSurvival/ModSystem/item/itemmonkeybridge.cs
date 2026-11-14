@@ -10,7 +10,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Config;
     //using System.Diagnostics;
 
-
+    #nullable disable
     public class ItemMonkeyBridge : Item
     {
 

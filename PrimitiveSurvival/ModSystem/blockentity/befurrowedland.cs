@@ -13,7 +13,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Server;
     using Vintagestory.API.Util;
     using Vintagestory.GameContent;
-
+    #nullable disable
     //using System.Diagnostics;
 
     //public class BEFurrowedLand : BlockEntityDisplayCase //1.18
@@ -114,6 +114,8 @@ namespace PrimitiveSurvival.ModSystem
 
         private void OnPipeTick(float dt)
         {
+            if (this.Api.Side == EnumAppSide.Client) return;
+
             var block = this.Api.World.BlockAccessor.GetBlock(this.Pos, BlockLayersAccess.Fluid);
             if (block.Code.Path.Contains("water") && this.OtherSlot.Empty && !block.Code.Path.Contains("saltwater"))
             {
@@ -311,28 +313,48 @@ namespace PrimitiveSurvival.ModSystem
         }
 
 
+
+        //rewrite to address item desync
         private bool TryTake(IPlayer byPlayer, ItemSlot sourceSlot)
         {
-            if (!sourceSlot.Empty)
+            if (sourceSlot.Empty) return false;
+
+            if (Api.Side == EnumAppSide.Server)
             {
-                var stackCode = sourceSlot.Itemstack.Collectible.Code.Path;
-                var newAsset = new AssetLocation(stackCode);
-                var item = this.Api.World.GetItem(newAsset);
-                if (item != null)
+                int totalItems = sourceSlot.Itemstack.StackSize;
+
+                for (int i = 0; i < totalItems; i++)
                 {
-                    var tempStack = new ItemStack(item, sourceSlot.StackSize);
-                    var takeOK = byPlayer.InventoryManager.TryGiveItemstack(tempStack);
-                    if (!takeOK) //player has no free slots
+                    ItemStack singleItem = sourceSlot.Itemstack.Clone();
+                    singleItem.StackSize = 1;
+
+                    double randX = (Rnd.NextDouble() - 0.5) * 0.2;
+                    double randZ = (Rnd.NextDouble() - 0.5) * 0.2;
+
+                    Vec3d spawnPos = this.Pos.ToVec3d().Add(0.5 + randX, 1.1, 0.5 + randZ);
+
+                    EntityItem entity = this.Api.World.SpawnItemEntity(singleItem, spawnPos) as EntityItem;
+                    if (entity != null)
                     {
-                        this.Api.World.SpawnItemEntity(tempStack, byPlayer.Entity.Pos.XYZ.Add(0, 0.5, 0));
+                        entity.Pos.Motion.X = (float)(Rnd.NextDouble() - 0.5) * 0.03f;
+                        entity.Pos.Motion.Y = (float)Rnd.NextDouble() * 0.06f;
+                        entity.Pos.Motion.Z = (float)(Rnd.NextDouble() - 0.5) * 0.03f;
                     }
-                    sourceSlot.Itemstack = null;
-                    this.MarkDirty(true);
-                    return true;
                 }
+
+                SoundAttributes? sound = sourceSlot.Itemstack.Block?.Sounds?.Place;
+                Api.World.PlaySoundAt(sound ?? GlobalConstants.DefaultBuildSound, byPlayer.Entity, byPlayer);
+
+                sourceSlot.Itemstack = null;
+                this.MarkDirty(true);
             }
-            return false;
+
+            return true;
         }
+
+
+
+
 
 
 

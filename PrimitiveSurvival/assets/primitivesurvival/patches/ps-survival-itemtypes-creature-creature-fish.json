@@ -1,0 +1,42 @@
+[
+  {
+    "op": "addmerge",
+    "path": "/transitionablePropsByType",
+    "value": {
+      "creature-fish-saltwater-*": [
+        {
+          "type": "Perish",
+          "freshHours": {
+            "avg": 1
+          },
+          "transitionHours": {
+            "avg": 0
+          },
+          "transitionedStack": {
+            "type": "item",
+            "code": "fishraw-{habitat}-{type}-{species}-{age}"
+          },
+          "transitionRatio": 1.0
+        }
+      ],
+      "creature-fish-freshwater-*": [
+        {
+          "type": "Perish",
+          "freshHours": {
+            "avg": 1
+          },
+          "transitionHours": {
+            "avg": 0
+          },
+          "transitionedStack": {
+            "type": "item",
+            "code": "fishraw-{habitat}-{type}-{species}-{age}"
+          },
+          "transitionRatio": 1.0
+        }
+      ]
+    },
+    "file": "game:itemtypes/creature/creature-fish.json",
+    "side": "Server"
+  }
+]

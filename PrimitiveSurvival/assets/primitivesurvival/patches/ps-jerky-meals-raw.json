@@ -1,0 +1,180 @@
+[
+  {
+    "enabled":  true,
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:jerky-redmeat-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group6" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "primitivesurvival:jerky-redmeat-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": [ "meat", "group2" ]
+    }
+  },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/meatystew",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/4/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-redmeat-raw",
+            "shapeElement": "bowl/red meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/soup",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/4/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-redmeat-raw",
+            "shapeElement": "bowl/meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/meatystew",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/0/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-bushmeat-raw",
+            "shapeElement": "bowl/meat stew/*",
+            "textureMapping": [ "meat", "group6" ]
+        }
+    },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/meatystew",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/3/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-bushmeat-raw",
+            "shapeElement": "bowl/red meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/meatystew",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/4/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-bushmeat-raw",
+            "shapeElement": "bowl/red meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/soup",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/4/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-bushmeat-raw",
+            "shapeElement": "bowl/meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/meatystew",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/0/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-fish-raw",
+            "shapeElement": "bowl/meat stew/*",
+            "textureMapping": [ "meat", "group6" ]
+        }
+    },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/meatystew",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/3/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-fish-raw",
+            "shapeElement": "bowl/red meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/meatystew",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/4/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-fish-raw",
+            "shapeElement": "bowl/red meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+    {
+        "enabled": true,
+        "file": "game:recipes/cooking/soup",
+        "side": "server",
+        "op": "add",
+        "path": "/ingredients/4/validStacks/-",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:jerky-fish-raw",
+            "shapeElement": "bowl/meat/*",
+            "textureMapping": [ "meat", "group2" ]
+        }
+    },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/jerky-redmeat-raw",
+    "value": ["meat", "group6"]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/jerky-bushmeat-raw",
+    "value": [ "meat", "group5" ]
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/jerky-fish-raw",
+    "value": [ "meat", "group5" ]
+  }
+]

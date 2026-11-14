@@ -5,9 +5,6 @@ namespace PrimitiveSurvival.ModSystem
     [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
     public class SyncClientPacket
     {
-        public bool AltarDropsFish;
-        public bool AltarDropsGold;
-        public bool AltarDropsVegetables;
         public int DeadfallBaitStolenPercent;
         public float DeadfallMaxAnimalHeight;
         public int DeadfallMaxDamageSet;
@@ -39,12 +36,6 @@ namespace PrimitiveSurvival.ModSystem
         public double LimbTrotlineUpdateMinutes;
         public int LimbTrotlineRotRemovedPercent;
         public int MonkeyBridgeMaxLength;
-        public int ParticulatorMaxParticlesQuantity;
-        public int ParticulatorMaxParticlesSize;
-        public bool ParticulatorHideCodeTabs;
-        public int PipeUpdateFrequency;
-        public double PipeBlockageChancePercent;
-        public double PipeMinMoisture;
         public float RaftWaterSpeedModifier;
         public float RaftFlotationModifier;
         public int SnareBaitStolenPercent;

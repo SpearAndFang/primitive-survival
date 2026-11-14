@@ -4,7 +4,7 @@ namespace PrimitiveSurvival.ModSystem
     using Vintagestory.API.Common;
     //using Vintagestory.API.MathTools;
     //using System.Diagnostics;
-
+    #nullable disable
     public class ItemFuse : Item
     {
 

@@ -7,6 +7,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <!-- Optional Komet support: pass -p:KometCore=/path/to/Komet.Core.dll (or set KOMET_CORE); without it PS builds as before -->
+  <PropertyGroup>
+    <KometCore Condition="'$(KometCore)' == ''">$(KOMET_CORE)</KometCore>
+    <DefineConstants Condition="'$(KometCore)' != '' And Exists('$(KometCore)')">$(DefineConstants);KOMET</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(KometCore)' != '' And Exists('$(KometCore)')">
+    <Reference Include="Komet.Core">
+      <HintPath>$(KometCore)</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
   <ItemGroup>
     <Reference Include="SkiaSharp">
       <HintPath>..\..\..\..\Users\admin2\AppData\Roaming\VintageStory\Lib\SkiaSharp.dll</HintPath>

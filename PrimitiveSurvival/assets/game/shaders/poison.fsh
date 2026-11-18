@@ -5,6 +5,7 @@
 in vec2 uv;
 out vec4 outColor;
 uniform float time;
+uniform float psVenomStrength = 1.0;
   
 void main () {
 	vec2 position = ( uv.xy ) / 4.0;
@@ -15,6 +16,6 @@ void main () {
 	color += sin( position.x * sin( time / 5.0 ) * 10.0 ) + sin( position.y * sin( time / 4444.2222) * 80.0 );
 	color *= sin( time / 10.0 ) * 0.5;
 
-	outColor = vec4( vec3( color, color * 0.5, sin( color + time / 3.0 ) * 0.75 ), 0.3 );
+	outColor = vec4( vec3( color, color * 0.5, sin( color + time / 3.0 ) * 0.75 ), 0.3 * psVenomStrength );
 
 }

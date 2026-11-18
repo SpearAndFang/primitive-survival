@@ -19,6 +19,8 @@ namespace PrimitiveSurvival.ModSystem
 
         public IShaderProgram overlayShaderProg;
 
+        public bool DrawOverlay { get; set; } = true;
+
         //private readonly VenomOverlayRenderer renderer;
         private float venomCounter;
 
@@ -57,16 +59,11 @@ namespace PrimitiveSurvival.ModSystem
             }
             this.venomCounter -= 1f * deltaTime;
             this.capi.World.SetCameraShake(0.2f);
-            var curShader = this.capi.Render.CurrentActiveShader;
-            curShader.Stop();
+            if (this.DrawOverlay)
+            {
+                this.DrawVenom();
+            }
 
-            this.overlayShaderProg.Use();
-            this.capi.Render.GlToggleBlend(true);
-            var elapsedTime = this.capi.World.ElapsedMilliseconds / 1000f;
-            this.overlayShaderProg.Uniform("time", elapsedTime);
-            this.capi.Render.RenderMesh(this.quadRef);
-            this.overlayShaderProg.Stop();
-            curShader.Use();
 
             if (this.venomCounter < 0)
             {
@@ -78,6 +75,20 @@ namespace PrimitiveSurvival.ModSystem
                     this.venomCounter = 20;
                 }
             } //venomed is the player's name
+        }
+
+        private void DrawVenom()
+        {
+            var curShader = this.capi.Render.CurrentActiveShader;
+            curShader.Stop();
+
+            this.overlayShaderProg.Use();
+            this.capi.Render.GlToggleBlend(true);
+            var elapsedTime = this.capi.World.ElapsedMilliseconds / 1000f;
+            this.overlayShaderProg.Uniform("time", elapsedTime);
+            this.capi.Render.RenderMesh(this.quadRef);
+            this.overlayShaderProg.Stop();
+            curShader.Use();
         }
 
         public bool LoadShader()

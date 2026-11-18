@@ -862,5 +862,7 @@
     "fishingstocksat": "fishing stocks here are {0}% depleted",
 
     "blockdesc-furrowedland-*": "Start furrowing at a water source and work your way inland for the furrow to fill with water automatically. Otherwise you must fill your furrow with a bucket (if liquid source transport is enabled in game).",
-    "block-floatingdock-aged-*": "Floating Dock (Aged Oak)"
+    "block-floatingdock-aged-*": "Floating Dock (Aged Oak)",
+    "komet-venomstrength": "Venom effect strength",
+    "komet-venomstrength-hint": "How strongly the venom tint colours the picture while you are poisoned."
 }

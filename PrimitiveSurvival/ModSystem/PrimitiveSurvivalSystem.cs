@@ -87,6 +87,14 @@ namespace PrimitiveSurvival.ModSystem
 
             this.vrenderer = new VenomOverlayRenderer(api);
             api.Event.RegisterRenderer(this.vrenderer, EnumRenderStage.Ortho);
+#if KOMET
+            // Under Komet the venom tint is a Komet pass; the renderer keeps the timer and camera shake
+            // Komet installs its passes in its own StartClientSide, so wait for the world
+            if (api.ModLoader.IsModEnabled("komet"))
+            {
+                api.Event.LevelFinalize += () => this.vrenderer.DrawOverlay = !KometBridge.Start(this, api);
+            }
+#endif
 
             //JHR
             (this.capi.World as ClientMain).RegisterDialog(new GuiDialogHollowTransform(this.capi));
